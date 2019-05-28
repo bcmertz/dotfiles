@@ -1,1 +1,12 @@
-/home/thistle/.gitconfig
+[user]
+	email = bcmertz@email.wm.edu
+	name = thistle
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[credential]
+	helper = store
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

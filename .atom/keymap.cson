@@ -1,1 +1,6 @@
-/home/thistle/.atom/keymap.cson
+'.editor':
+  'ctrl-d': 'native!'
+  'ctrl-w': 'core:close'
+  'ctrl-/': 'editor:toggle-line-comments'
+  'ctrl-z': 'core:undo'
+  'ctrl-y': 'core:redo'
