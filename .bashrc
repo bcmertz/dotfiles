@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=100000
+HISTFILESIZE=200000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -25,7 +25,7 @@ shopt -s checkwinsize
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
-#shopt -s globstar
+shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -86,7 +86,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -124,14 +124,21 @@ killport() {
 alias c='clear'
 alias s='source ~/.bashrc'
 alias woman="man -k . | dmenu -l 30 | awk '{print $1}' | xargs -r man -Tpdf | zathura -"
+
 # Cute pipe to xclip to pipe to clipboard!
 alias copy='xclip -sel clip'
 
+# Git aliases
+alias gs='git status'
+alias ga='git add $1'
+
 # Configure golang stuff
 export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin:/usr/local/go/bin
+export GOROOT=/usr/local/go
+export PATH=$PATH:$GOPATH/bin
 
 # Configure editor info - emacs!
+export PATH="$HOME/.cask/bin:$PATH" # cask package manager
 export ALTERNATE_EDITOR=""
 export EDITOR="emacsclient -t"          #open the terminal
 export VISUAL="atom" #open atom to do commit messages bc styling gets messed up
@@ -142,11 +149,11 @@ alias emacsgui='emacsclient -create-frame --alternate-editor=""'
 # Hack to remove wifi driver from kernal space and put back in I think - hard restart
 alias fixwifi='sudo modprobe -r mwifiex_pcie && sudo modprobe mwifiex_pcie'
 
-# Android path variables
-export ANDROID_HOME="/home/thistle/Android/Sdk"
-export JAVA_HOME="/opt/android-studio/jre/"
-export ANDROID_NDK_HOME="$ANDROID_HOME/ndk-bundle"
-export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/ndk-bundle:$ANDROID_HOME/platform-tools:/opt/android-studio/jre/bin/:$JAVA_HOME/bin
+ # Android path variables
+#export ANDROID_HOME="/home/thistle/Android/Sdk"
+#export JAVA_HOME="/opt/android-studio/jre/"
+#export ANDROID_NDK_HOME="$ANDROID_HOME/ndk-bundle"
+#export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/ndk-bundle:$ANDROID_HOME/platform-tools:/opt/android-studio/jre/bin/:$JAVA_HOME/bin
 export PYTHONPATH=$HOME/go/src/github.com/getlantern/lantern_aws/lib:$HOME/go/src/github.com/getlantern/secret_lib:$HOME/go/src/github.com/getlantern/config-server/etc
 
 # Interesting network stuff
@@ -158,7 +165,7 @@ if [ -f $HOME/.lanternrc ]; then
     . $HOME/.lanternrc
 fi
 
-# Show git branch name
+# Show git branch name and make pretty command line
 parse_git_branch() {
  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
