@@ -3,4 +3,4 @@
 
 Personal config
 Heavily influenced by zamansky and clarete
-exwm taken directly from clarete
+exwm config taken directly from clarete
