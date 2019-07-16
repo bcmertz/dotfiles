@@ -1,6 +1,6 @@
 # .emacs.d
 
-Personal config
+Personal config - focused on Go and Js development
 
 Heavily influenced by zamansky and clarete
 
