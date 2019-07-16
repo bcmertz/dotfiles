@@ -38,6 +38,16 @@
 	 :config
 	 (which-key-mode))
 
+;; Multiple Cursors
+(use-package multiple-cursors
+  :ensure t
+  :bind
+  ("M-." . mc/mark-next-like-this)
+  ("M-," . mc/mark-previous-like-this)
+  ("C-c M-." . mc/mark-all-like-this)
+  ("C-c C-e" . mc/edit-lines)
+  )
+
 ;; Buffer Management
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
@@ -45,9 +55,18 @@
 
 (defalias 'list-buffers 'ibuffer)    ; better C-x C-b 
 
+;; Ido like M-x command completion
+(use-package smex
+  :ensure t
+  :init (smex-initialize)
+  :bind ("M-x" . smex)
+  )
+
 ;; Sidebar File Viewer
 ;; C-c C-c makes the focused directory the new root view
 (require 'neotree)
 (global-set-key (kbd "C-\\") 'neotree-toggle)
 
+
+;; Git integration
 (global-set-key (kbd "C-x g") 'magit-status)

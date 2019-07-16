@@ -1,5 +1,4 @@
 ;; Packages and repository management
-(package-initialize)
 (require 'package)
 (add-to-list 'package-archives
 	     '("gnu" . "https://elpa.gnu.org/packages/") t)
@@ -22,6 +21,7 @@
 (add-to-list 'load-path "~/.emacs.d")   ; just in case
 (load "general.el")                     ; my configuration
 (load "custom.el")                      ; auto-generated config
+(load "styling.el")                     ; styling config
 
 ;;(require 'custom-exwm-config)           ; use exwm instead of default xinitrc
 ;;(custom-exwm-config)
