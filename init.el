@@ -1,3 +1,6 @@
+;; Don't gc on startup
+(setq gc-cons-threshold most-positive-fixnum)
+
 ;; Packages and repository management
 (require 'package)
 (add-to-list 'package-archives
@@ -30,3 +33,16 @@
 (add-to-list 'load-path "~/.emacs.d/languages")
 (load "custom-golang.el")
 (load "custom-js.el")
+
+;; ;; Sane gc values inside minibufers
+;; (defun my-minibuffer-setup-hook ()
+;;   (setq gc-cons-threshold most-positive-fixnum))
+
+;; (defun my-minibuffer-exit-hook ()
+;;   (setq gc-cons-threshold 800000))
+
+;; (add-hook 'minibuffer-setup-hook #'my-minibuffer-setup-hook)
+;; (add-hook 'minibuffer-exit-hook #'my-minibuffer-exit-hook)
+
+;; Return to normal gc value
+(setq gc-cons-threshold 800000)
