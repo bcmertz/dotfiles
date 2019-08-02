@@ -123,7 +123,7 @@ killport() {
 # Utility aliases
 alias c='clear'
 alias s='source ~/.bashrc'
-alias woman="man -k . | dmenu -l 30 | awk '{print $1}' | xargs -r man -Tpdf | zathura -"
+alias mansplain="man -k . | dmenu -l 30 | awk '{print $1}' | xargs -r man -Tpdf | zathura -"
 alias signature='echo "~/documents/personal/signature.png"'
 
 # Cute pipe to xclip to pipe to clipboard!
