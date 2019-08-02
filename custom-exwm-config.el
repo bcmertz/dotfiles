@@ -1,3 +1,4 @@
+;;; Copied line for line from @clarete
 ;;; custom-exwm-config.el --- EXWM configuration
 ;;; Commentary:
 ;;
