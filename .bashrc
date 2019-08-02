@@ -144,6 +144,7 @@ export ALTERNATE_EDITOR=""
 export EDITOR="emacsclient -t"          #open the terminal
 export VISUAL="atom" #open atom to do commit messages bc styling gets messed up
 alias emacs='emacsclient -t --alternate-editor=""' #default to terminal, if want gui use line below
+alias e='emacsclient -t --alternate-editor=""' # super duper shortcut
 alias emacsgui='emacsclient -create-frame --alternate-editor=""'
 # alias emacs='emacs -nw' #used to allow terminal emacs to run as default
 
