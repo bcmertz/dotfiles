@@ -33,6 +33,7 @@
 (add-to-list 'load-path "~/.emacs.d/languages")
 (load "custom-golang.el")
 (load "custom-js.el")
+(load "custom-markdown.el")
 
 ;; ;; Sane gc values inside minibufers
 ;; (defun my-minibuffer-setup-hook ()
