@@ -49,6 +49,25 @@
   (newline))
 (global-set-key (kbd "C-m") 'return-newline-below)
 
+(defun move-line-up ()
+  "Move up the current line."
+  (interactive)
+  (transpose-lines 1)
+  (forward-line -2)
+  (indent-according-to-mode))
+
+(defun move-line-down ()
+  "Move down the current line."
+  (interactive)
+  (forward-line 1)
+  (transpose-lines 1)
+  (forward-line -1)
+  (indent-according-to-mode))
+
+(global-set-key [(control up)]  'move-line-up)            ;; C-up   moves current line up
+(global-set-key [(control down)]  'move-line-down)        ;; C-down move current line down
+
+
 
 ;; Keystroke Completion
 (use-package which-key
