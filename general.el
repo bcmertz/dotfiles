@@ -43,11 +43,14 @@
 (global-set-key (kbd "C-_") 'undo)                         ;; C-/ in reality
 (global-set-key (kbd "C-x C-e") 'eval-buffer)              ;; useful for editing init.el et al
 
+
 (defun return-newline-below ()                             ;; go to end of line and return
   (interactive)
   (end-of-line)
   (newline))
-(global-set-key (kbd "C-m") 'return-newline-below)
+
+(global-set-key (kbd "<M-RET>") 'return-newline-below)      ;; TTy C-m and RET is weird
+
 
 (defun move-line-up ()
   "Move up the current line."
