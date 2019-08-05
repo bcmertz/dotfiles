@@ -1,5 +1,12 @@
 ;; Failed attempts at various things, for future reference
 
+;; (use-package ace-window  ;; replaced by windmove
+;;   :ensure t
+;;   :init
+;;   (progn
+;;     (global-set-key [remap other-window] 'ace-window)
+;;     ))
+
 ;; (defun return-indent ()
 ;;  (move-end-of-line)
 ;;  (<RET>))

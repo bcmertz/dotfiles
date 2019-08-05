@@ -1,5 +1,9 @@
 ;;;;;;;;;;;;;;;;;;; ALL MODES CONFIG ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+
+
+;; Ivy is a completion framework, similar to Helm. When downloading Ivy, it comes with Counsel and Swiper, which we'll get to in a minute. Ivy doesn't try to do too many things, instead it provides an interface to list, search, filter and perform actions on a collectionof "things". These "things" can range from strings to buffers, Ivy doesn't really care. It just provides a way for the user to interact with this collection.
+
 ;; Ergonomic Text Editing
 (delete-selection-mode 1)                                 ; replace highlighted sections
 (electric-pair-mode 1)                                    ; fill right
@@ -7,25 +11,32 @@
 ;; Navigation
 (use-package avy
   :ensure t
-  :bind ("M-g" . avy-goto-char-2)) ; ("M-g" . avy-goto-line) - not that useful compared
+  :bind ("M-g" . avy-goto-char-2)    ;; go to char
+  ("M-l" . avy-goto-line))           ;; go to line
 (use-package swiper
   :ensure t
   :bind ("C-s" . swiper)
   ("C-r" . swiper))
-(use-package ag
-  :ensure t
-  :bind ("M-s" . ag))
+
+;; (use-package ag
+;;   :ensure t
+;;   :bind ("M-s" . ag))
 
 ;; Better File Searching
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "M-s") 'counsel-ag)
 
-;; Emacs Window Management
-(use-package ace-window
+;; emacs window management
+
+(define-key input-decode-map "\e\eOA" [(meta up)]) ;; because we're in a terminal a lot
+(define-key input-decode-map "\e\eOB" [(meta down)])
+
+(use-package windmove
   :ensure t
-  :init
-  (progn
-    (global-set-key [remap other-window] 'ace-window)
-    ))
+  :config
+  ;; wrap around at edges
+  ;; (setq windmove-wrap-around t)
+  (windmove-default-keybindings 'meta))
 
 ;; Utilities
 (global-set-key (kbd "M-/") 'comment-or-uncomment-region)
