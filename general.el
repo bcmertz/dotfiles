@@ -47,7 +47,7 @@
 (defun return-newline-below ()                             ;; go to end of line and return
   (interactive)
   (end-of-line)
-  (newline))
+  (newline-and-indent))
 
 (global-set-key (kbd "<M-RET>") 'return-newline-below)      ;; TTy C-m and RET is weird
 
