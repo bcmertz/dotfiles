@@ -120,6 +120,10 @@ killport() {
     kill $(lsof -t -i:"$1")
 }
 
+background() { # put it in the background and don't let it speak
+    "$@" > /dev/null 2>&1 &
+}
+
 # Utility aliases
 alias c='clear'
 alias s='source ~/.bashrc'
