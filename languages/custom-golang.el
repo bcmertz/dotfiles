@@ -4,7 +4,7 @@
 (autoload 'go-mode "go-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode))
 
-(require 'go-eldoc)
+(load "go-eldoc.el")
 ;; autocompletion with company mode
 (require 'company)
 (setq company-tooltip-limit 20)                      ; bigger popup window
