@@ -15,7 +15,7 @@
 (add-to-list 'load-path "~/.emacs.d/elpa/yasnippet-*")
 
 ;; TODO figure out ac-update-greedy (?) error, swap for company mode?
-;;(require 'go-autocomplete)
+;;(load ""go-autocomplete.el"")
 ;;(require 'auto-complete-config)
 ;;(ac-config-default)
 
