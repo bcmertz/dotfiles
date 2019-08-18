@@ -51,7 +51,6 @@
 
 (global-set-key (kbd "<M-RET>") 'return-newline-below)      ;; TTy C-m and RET is weird
 
-
 (defun move-line-up ()
   "Move up the current line."
   (interactive)
@@ -67,9 +66,36 @@
   (forward-line -1)
   (indent-according-to-mode))
 
-(global-set-key [(control up)]  'move-line-up)            ;; C-up   moves current line up
-(global-set-key [(control down)]  'move-line-down)        ;; C-down move current line down
+(defun move-region (start end n)
+  "Move the current region up or down by N lines."
+  (interactive "r\np")
+  (let ((line-text (delete-and-extract-region start end)))
+    (forward-line n)
+    (let ((start (point)))
+      (insert line-text)
+      (setq deactivate-mark nil)
+      (set-mark start))))
 
+(defun move-region-up (start end n)
+  "Move the current line up by N lines."
+  (interactive "r\np")
+  (move-region start end (if (null n) -1 (- n))))
+
+(defun move-region-down (start end n)
+  "Move the current line down by N lines."
+  (interactive "r\np")
+  (move-region start end (if (null n) 1 n)))
+
+(defun move-line-region-up (&optional start end n)
+  (interactive "r\np")
+  (if (use-region-p) (move-region-up start end n) (move-line-up)))
+
+(defun move-line-region-down (&optional start end n)
+  (interactive "r\np")
+  (if (use-region-p) (move-region-down start end n) (move-line-down)))
+
+(global-set-key [(control up)] 'move-line-region-up)
+(global-set-key [(control down)] 'move-line-region-down)
 
 
 ;; Keystroke Completion
