@@ -1,7 +1,5 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;; GOLANG CONFIGURATION;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-
-(load "go-eldoc.el")
 ;; autocompletion with company mode
 (require 'company)
 (setq company-tooltip-limit 20)                      ; bigger popup window
@@ -29,7 +27,12 @@
 (defun go-mode-setup () ; use C-c C-j to jump to definition and C-u C-x C-x to jump back
  (setq gofmt-command "goimports")                                ; format on save, remove/add imports as needed
  (add-hook 'before-save-hook 'gofmt-before-save)
+
+ (require 'go-eldoc)
  (go-eldoc-setup)                                                ; provides type info
+ (set-face-attribute 'eldoc-highlight-function-argument nil
+		     :foreground "green"
+		     :weight 'bold)
  (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/go-mode")   ; enable snippets
  (yas-global-mode 1)
 
