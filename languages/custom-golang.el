@@ -41,7 +41,6 @@
 
  (local-set-key (kbd "C-c C-r") 'go-rename))                     ; provide go-rename conveniently
 
-(add-hook 'go-mode-hook 'go-mode-setup)
 ;; figure out ac-update-greedy (?) error, swap for company mode?
 ;;(load ""go-autocomplete.el"")
 ;;(require 'auto-complete-config)
