@@ -1,8 +1,5 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;; GOLANG CONFIGURATION;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;;(add-to-list 'load-path "~/go/src/github.com/dominikh//") only if not from melpa
-(autoload 'go-mode "go-mode" nil t)
-(add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode))
 
 (load "go-eldoc.el")
 ;; autocompletion with company mode
@@ -18,6 +15,16 @@
 ;;(load ""go-autocomplete.el"")
 ;;(require 'auto-complete-config)
 ;;(ac-config-default)
+;; (add-to-list 'load-path "~/go/src/github.com/dominikh//") only if not from melpa
+;; (autoload 'go-mode "go-mode" nil t)
+;; (add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode))
+
+(use-package go-mode
+  :defer t
+  :mode "\\.go\\'"
+  :init
+  (progn
+    (add-hook 'go-mode-hook 'go-mode-setup)))
 
 (defun go-mode-setup () ; use C-c C-j to jump to definition and C-u C-x C-x to jump back
  (setq gofmt-command "goimports")                                ; format on save, remove/add imports as needed
