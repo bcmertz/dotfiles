@@ -48,3 +48,17 @@
 ;;(load ""go-autocomplete.el"")
 ;;(require 'auto-complete-config)
 ;;(ac-config-default)
+
+(defun gocode-toggle ()
+  "Toggle the gocode executable between the module and non-module versions."
+  (interactive)
+  (customize-set-variable
+   'company-go-gocode-command
+   (if (string= company-go-gocode-command "gocode-mod")
+       "gocode" "gocode-mod"))
+
+  ;; The gocode fork that works with modules is slow, so disable idle completion.
+  ;; (if (string= company-go-gocode-command "gocode-mod")
+  ;;     (customize-set-variable 'company-idle-delay nil)
+  ;;   (custom-reevaluate-setting 'company-idle-delay))
+  (message company-go-gocode-command))
