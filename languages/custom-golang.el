@@ -20,6 +20,9 @@
  (set-face-attribute 'eldoc-highlight-function-argument nil
 		     :foreground "green"
 		     :weight 'bold)
+
+ (require 'yasnippet)
+ (add-to-list 'load-path "~/.emacs.d/elpa/yasnippet-*")
  (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/go-mode")   ; enable snippets
  (yas-global-mode 1)
 
