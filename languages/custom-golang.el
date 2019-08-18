@@ -39,9 +39,12 @@
 ;; (setq company-begin-commands '(self-insert-command))  ; start autocompletion after typing, if we want to ignore our special tab key we bind below
 
  (require 'company-go)
+ (customize-set-variable 'company-go-gocode-command "gocode-mod") ; defualt to module support
  (set (make-local-variable 'company-backends) '(company-go))
  (company-mode)
-
+ (global-set-key [backtab] 'company-complete-common) ;; backtab triggers autocomplete 
+ ;; (global-set-key [tab] 'tab-indent-or-complete)
+ 
  (local-set-key (kbd "C-c C-r") 'go-rename))                     ; provide go-rename conveniently
 
 ;; figure out ac-update-greedy (?) error, swap for company mode?
@@ -62,3 +65,26 @@
   ;;     (customize-set-variable 'company-idle-delay nil)
   ;;   (custom-reevaluate-setting 'company-idle-delay))
   (message company-go-gocode-command))
+
+(defun check-expansion ()
+  (save-excursion
+    (if (looking-at "\\_>") t
+      (backward-char 1)
+      (if (looking-at "\\.") t
+	(backward-char 1)
+	(if (looking-at "->") t nil)))))
+
+(defun do-yas-expand ()
+  (let ((yas/fallback-behavior 'return-nil))
+    (yas/expand)))
+
+;; https://www.emacswiki.org/emacs/CompanyMode#toc11
+(defun tab-indent-or-complete ()
+  (interactive)
+  (if (minibufferp)
+      (minibuffer-complete)
+    (if (or (not yas/minor-mode)
+	    (null (do-yas-expand)))
+	(if (check-expansion)
+	    (company-complete-common)
+	  (indent-for-tab-command)))))
