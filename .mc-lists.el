@@ -4,6 +4,8 @@
 (setq mc/cmds-to-run-for-all
       '(
 	indent-for-tab-command
+	move-line-down
+	move-line-up
 	))
 
 (setq mc/cmds-to-run-once
