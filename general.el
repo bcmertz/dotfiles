@@ -42,7 +42,6 @@
 (global-set-key (kbd "C-_") 'undo)                         ;; C-/ in reality
 (global-set-key (kbd "C-x C-e") 'eval-buffer)              ;; useful for editing init.el et al
 
-0
 (defun return-newline-below ()                             ;; go to end of line and return bc in TTy C-m and RET is weird
   (interactive)
   (end-of-line)
