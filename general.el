@@ -1,9 +1,5 @@
 ;;;;;;;;;;;;;;;;;;; ALL MODES CONFIG ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-
-
-;; Ivy is a completion framework, similar to Helm. When downloading Ivy, it comes with Counsel and Swiper, which we'll get to in a minute. Ivy doesn't try to do too many things, instead it provides an interface to list, search, filter and perform actions on a collectionof "things". These "things" can range from strings to buffers, Ivy doesn't really care. It just provides a way for the user to interact with this collection.
-
 ;; Ergonomic Text Editing
 (delete-selection-mode 1)                                 ; replace highlighted sections
 (electric-pair-mode 1)                                    ; fill right
@@ -47,12 +43,12 @@
 (global-set-key (kbd "C-x C-e") 'eval-buffer)              ;; useful for editing init.el et al
 
 
-(defun return-newline-below ()                             ;; go to end of line and return
+(defun return-newline-below ()                             ;; go to end of line and return bc in TTy C-m and RET is weird
   (interactive)
   (end-of-line)
   (newline-and-indent))
 
-(global-set-key (kbd "<M-RET>") 'return-newline-below)      ;; TTy C-m and RET is weird
+(global-set-key (kbd "<M-RET>") 'return-newline-below)     ;; return new line below
 
 (defun move-line-up ()
   "Move up the current line."
