@@ -36,7 +36,10 @@
   :config
   ;; wrap around at edges
   ;; (setq windmove-wrap-around t)
-  (windmove-default-keybindings 'meta))
+  (windmove-default-keybindings 'meta))             ;; M-arrows to move
+
+(global-set-key (kbd "M--") 'shrink-window)
+(global-set-key (kbd "M-=") 'enlarge-window)
 
 ;; Utilities
 (global-set-key (kbd "M-/") 'comment-or-uncomment-region)  ;; M-/
