@@ -7,12 +7,13 @@
 (use-package go-mode
   :defer t
   :mode "\\.go\\'"
+  :custom (gofmt-command "goimports")
   :init
   (progn
     (add-hook 'go-mode-hook 'go-mode-setup)))
 
 (defun go-mode-setup () ; use C-c C-j to jump to definition and C-u C-x C-x to jump back
- (setq gofmt-command "goimports")                                ; format on save, remove/add imports as needed
+add imports as needed
  (add-hook 'before-save-hook 'gofmt-before-save)
 
  (require 'go-eldoc)
