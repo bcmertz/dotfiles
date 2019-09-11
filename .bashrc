@@ -139,7 +139,7 @@ alias ga='git add $1'
 
 # Configure golang stuff
 export GOPATH=$HOME/go
-export GOROOT=/usr/local/go
+# export GOROOT=/usr/local/go
 export PATH=$PATH:$GOPATH/bin
 
 # Configure editor info - emacs!
