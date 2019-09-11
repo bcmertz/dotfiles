@@ -12,8 +12,7 @@
   (progn
     (add-hook 'go-mode-hook 'go-mode-setup)))
 
-(defun go-mode-setup () ; use C-c C-j to jump to definition and C-u C-x C-x to jump back
-add imports as needed
+(defun go-mode-setup () ; use C-c C-j to jump to definition and C-u C-x C-x to jump back add imports as needed
  (add-hook 'before-save-hook 'gofmt-before-save)
 
  (require 'go-eldoc)
