@@ -139,8 +139,12 @@ alias ga='git add $1'
 
 # Configure golang stuff
 export GOPATH=$HOME/go
-# export GOROOT=/usr/local/go
+export GOROOT=/usr/local/go
 export PATH=$PATH:$GOPATH/bin
+# start go docs
+if type godoc > /dev/null; then
+  godoc -http=:6060 &
+fi
 
 # Configure editor info - emacs!
 export PATH="$HOME/.cask/bin:$PATH" # cask package manager
