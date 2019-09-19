@@ -136,6 +136,7 @@ alias copy='xclip -sel clip'
 # Git aliases
 alias gs='git status'
 alias ga='git add $1'
+alias gd='git diff $@'
 
 # Configure golang stuff
 export GOPATH=$HOME/go
@@ -143,7 +144,7 @@ export GOROOT=/usr/local/go
 export PATH=$PATH:$GOPATH/bin
 # start go docs
 if type godoc > /dev/null; then
-    godoc -http=:6060 </dev/null >/dev/null 2>&1 & # orphan godoc and suppress output
+    background godoc -http=:6060
 fi
 
 
