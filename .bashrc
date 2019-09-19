@@ -142,9 +142,12 @@ alias gd='git diff $@'
 export GOPATH=$HOME/go
 export GOROOT=/usr/local/go
 export PATH=$PATH:$GOPATH/bin
-# start go docs
+# if not running start go docs and disown
 if type godoc > /dev/null; then
-    background godoc -http=:6060
+    if ! pgrep -x "godoc" > /dev/null
+    then
+	godoc -http=:6060 </dev/null >/dev/null 2>&1 &
+    fi
 fi
 
 
