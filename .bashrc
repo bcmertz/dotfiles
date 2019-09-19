@@ -124,6 +124,10 @@ background() { # put it in the background and don't let it speak
     "$@" > /dev/null 2>&1 &
 }
 
+set_alias() {
+    alias "$1"="$2"
+}
+
 # Utility aliases
 alias c='clear'
 alias s='source ~/.bashrc'
@@ -134,9 +138,11 @@ alias signature='echo "~/documents/personal/signature.png"'
 alias copy='xclip -sel clip'
 
 # Git aliases
-alias gs='git status'
-alias ga='git add $1'
-alias gd='git diff $@'
+set_alias 'gs' 'git status'
+set_alias 'ga' 'git add $@'
+set_alias 'gc' 'git commit -m"$@"'
+set_alias 'gd' 'git diff $@'
+set_alias 'gb' 'git branch'
 
 # Configure golang stuff
 export GOPATH=$HOME/go
