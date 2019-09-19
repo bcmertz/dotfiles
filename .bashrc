@@ -139,9 +139,9 @@ alias copy='xclip -sel clip'
 
 # Git aliases
 set_alias 'gs' 'git status'
-set_alias 'ga' 'git add $@'
-set_alias 'gc' 'git commit -m"$@"'
-set_alias 'gd' 'git diff $@'
+set_alias 'ga' 'git add'
+set_alias 'gc' 'git commit'
+set_alias 'gd' 'git diff'
 set_alias 'gb' 'git branch'
 
 # Configure golang stuff
