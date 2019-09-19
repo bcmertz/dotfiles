@@ -143,8 +143,9 @@ export GOROOT=/usr/local/go
 export PATH=$PATH:$GOPATH/bin
 # start go docs
 if type godoc > /dev/null; then
-  godoc -http=:6060 &
+    godoc -http=:6060 </dev/null >/dev/null 2>&1 & # orphan godoc and suppress output
 fi
+
 
 # Configure editor info - emacs!
 export PATH="$HOME/.cask/bin:$PATH" # cask package manager
