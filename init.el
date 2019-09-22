@@ -21,7 +21,7 @@
 (add-to-list 'load-path "~/.emacs.d/dependencies")
 
 ;; Configuration of emacs in all modes
-(add-to-list 'load-path "~/.emacs.d")   ; just in case
+(add-to-list 'load-path "~/.emacs.d/lisp")
 (load "general.el")                     ; my configuration
 (load "custom.el")                      ; auto-generated config
 (load "styling.el")                     ; styling config
@@ -59,10 +59,12 @@
  '(custom-enabled-themes nil)
  '(display-line-numbers nil)
  '(file-name-shadow-mode nil)
+ '(gofmt-command "goimports" t)
  '(inhibit-startup-screen t)
  '(markdown-command "/usr/local/bin/pandoc")
  '(package-selected-packages
-   '(flymd exwm ace-window try use-package which-key counsel swiper company-go company flymake-go popup-complete evil neotree direx peep-dired ranger avy nlinum-relative nlinum ag xref-js2 js2-refactor js2-mode go-rename magit markdown-mode go-eldoc go-autocomplete auto-complete flycheck go-mode))
+   (quote
+    (flymd exwm ace-window try use-package which-key counsel swiper company-go company flymake-go popup-complete evil neotree direx peep-dired ranger avy nlinum-relative nlinum ag xref-js2 js2-refactor js2-mode go-rename magit markdown-mode go-eldoc go-autocomplete auto-complete flycheck go-mode)))
  '(speedbar-show-unknown-files t)
  '(winner-mode t))
 (custom-set-faces
