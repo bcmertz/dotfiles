@@ -146,6 +146,7 @@ set_alias 'gb' 'git branch'
 
 # Configure golang stuff
 export GOPATH=$HOME/go
+export PATH=$PATH:/usr/local/go/bin
 export GOROOT=/usr/local/go
 export PATH=$PATH:$GOPATH/bin
 # if not running start go docs and disown
@@ -163,8 +164,8 @@ export ALTERNATE_EDITOR=""
 export EDITOR="emacsclient -t"          #open the terminal
 export VISUAL="atom" #open atom to do commit messages bc styling gets messed up
 alias emacs='emacsclient -t --alternate-editor=""' #default to terminal, if want gui use line below
-alias e='emacsclient -t --alternate-editor=""' # super duper shortcut
 alias emacsgui='emacsclient -create-frame --alternate-editor=""'
+# alias e='emacsclient -t --alternate-editor=""' # super duper shortcut
 # alias emacs='emacs -nw' #used to allow terminal emacs to run as default
 
 # Hack to remove wifi driver from kernal space and put back in I think - hard restart
