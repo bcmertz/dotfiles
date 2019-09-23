@@ -169,7 +169,9 @@ alias emacsgui='emacsclient -create-frame --alternate-editor=""'
 # alias emacs='emacs -nw' #used to allow terminal emacs to run as default
 
 # Hack to remove wifi driver from kernal space and put back in I think - hard restart
-alias fixwifi='sudo modprobe -r mwifiex_pcie && sudo modprobe mwifiex_pcie'
+# alias fixwifi='sudo modprobe -r mwifiex_pcie && sudo modprobe mwifiex_pcie'
+# Restart network manager
+alias fixwifi='sudo  systemctl restart NetworkManager.service'
 
  # Android path variables
 #export ANDROID_HOME="/home/thistle/Android/Sdk"
