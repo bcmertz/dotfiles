@@ -1,11 +1,10 @@
 #!/bin/bash
 
-# atom
-# ln -s ~/dotfiles/.atom/config.cson ~/.atom/config.cson
-# ln -s ~/dotfiles/.atom/keymap.cson ~/.atom/keymap.cson
-
 # bashrc
 ln -s ~/dotfiles/.bashrc ~/.bashrc
+
+# profile
+ln -s ~/dotfiles/.profile ~/.profile
 
 # config
 ln -s ~/dotfiles/.config/mimeapps.list ~/.config/mimeapps.list
