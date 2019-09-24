@@ -161,8 +161,8 @@ fi
 # Configure editor info - emacs!
 export PATH="$HOME/.cask/bin:$PATH" # cask package manager
 export ALTERNATE_EDITOR=""
-export EDITOR="emacsclient -t"          #open the terminal
-export VISUAL="atom" #open atom to do commit messages bc styling gets messed up
+export EDITOR="emacsclient -t"          #open terminal emacs
+export VISUAL="emacsclient -t"          #open terminal emacs
 alias emacs='emacsclient -t --alternate-editor=""' #default to terminal, if want gui use line below
 alias emacsgui='emacsclient -create-frame --alternate-editor=""'
 # alias e='emacsclient -t --alternate-editor=""' # super duper shortcut
