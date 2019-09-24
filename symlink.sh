@@ -15,3 +15,7 @@ ln -s ~/dotfiles/.config/redshift.conf ~/.config/redshift.conf
 
 # git
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
+
+# install custom scripts
+mkdir -p ~/.time # for time on computer cronjob
+ln -s ~/dotfiles/.local/bin/ ~/.local/bin/
