@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # # bashrc
-# ln -s ~/dotfiles/.bashrc ~/.bashrc
+ln -s ~/dotfiles/.bashrc ~/.bashrc
 
 # # applications
 for f in $(ls -d ~/dotfiles/.local/share/applications/*); do ln -s $f ~/.local/share/applications; done
