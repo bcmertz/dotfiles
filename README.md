@@ -1,4 +1,6 @@
-TODO:
-- add cron stuff
-- add encrypted secrets
-- .ssh? lanternrc, etcetera
+Work in progress
+
+- encrypted secrets?
+- more cron jobs?
+
+we shall see
