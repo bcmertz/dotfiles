@@ -5,3 +5,4 @@
 
 date=`date '+%y-%m-%d'`
 echo $((`cat ~/.time/"$date"`+1)) > ~/.time/"$date"
+notify-send "min"
