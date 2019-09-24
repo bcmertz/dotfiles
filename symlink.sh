@@ -19,3 +19,6 @@ ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 # install custom scripts
 mkdir -p ~/.time # for time on computer cronjob
 for f in $(ls -d ~/dotfiles/.local/bin/*); do ln -s $f ~/.local/bin; done
+
+# x
+ln -s ~/dotfiles/.xinitrc ~/.xinitrc
