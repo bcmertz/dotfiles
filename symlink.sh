@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# bashrc
-ln -s ~/dotfiles/.bashrc ~/.bashrc
+# # bashrc
+# ln -s ~/dotfiles/.bashrc ~/.bashrc
 
-# applications
-ln -s ~/dotfiles/.local/share/applications/ ~/.local/share/applications/
+# # applications
+for f in $(ls -d ~/dotfiles/.local/share/applications/*); do ln -s $f ~/.local/share/applications; done
 
 # profile
 ln -s ~/dotfiles/.profile ~/.profile
@@ -18,4 +18,4 @@ ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 
 # install custom scripts
 mkdir -p ~/.time # for time on computer cronjob
-ln -s ~/dotfiles/.local/bin/ ~/.local/bin/
+for f in $(ls -d ~/dotfiles/.local/bin/*); do ln -s $f ~/.local/bin; done
