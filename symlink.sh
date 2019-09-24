@@ -3,6 +3,9 @@
 # bashrc
 ln -s ~/dotfiles/.bashrc ~/.bashrc
 
+# applications
+ln -s ~/dotfiles/.local/share/applications/ ~/.local/share/applications/
+
 # profile
 ln -s ~/dotfiles/.profile ~/.profile
 
