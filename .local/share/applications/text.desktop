@@ -4,4 +4,3 @@ Comment=Suckless Terminal
 Name=Terminal
 Icon=Terminal
 Exec=/usr/local/bin/st
-
