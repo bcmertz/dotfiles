@@ -9,6 +9,8 @@ function die() {
 ln -s ~/dotfiles/.bashrc ~/.bashrc
 ln -s ~/dotfiles/.bash_aliases ~/.bash_aliases
 ln -s ~/dotfiles/.bash_profile ~/.bash_profile
+ln -s ~/dotfiles/.coderc ~/.coderc
+ln -s ~/dotfiles/.utilsrc ~/.utilsrc
 
 # applications
 for f in $(ls -d ~/dotfiles/.local/share/applications/*); do ln -s $f ~/.local/share/applications; done
