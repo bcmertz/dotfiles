@@ -1,0 +1,13 @@
+# cd && ls command
+cds() {
+    cd "$1"
+    ls
+}
+
+killport() {
+    kill $(lsof -t -i:"$1")
+}
+
+background() { # put it in the background and don't let it speak
+    "$@" > /dev/null 2>&1 &
+}

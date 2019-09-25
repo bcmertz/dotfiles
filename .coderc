@@ -1,0 +1,27 @@
+# Emacs config
+export PATH="$HOME/.cask/bin:$PATH"                  # Cask bin
+alias emacs='emacsclient -t --alternate-editor=""'   #default to terminal emacs
+alias emacsgui='emacsclient -create-frame --alternate-editor=""'
+
+# Go configuration
+export GOPATH=$HOME/go
+export PATH=$PATH:/usr/local/go/bin
+export GOROOT=/usr/local/go
+export PATH=$PATH:$GOPATH/bin
+
+# if not running start go docs and disown
+if type godoc > /dev/null; then
+    if ! pgrep -x "godoc" > /dev/null
+    then
+	godoc -http=:6060 </dev/null >/dev/null 2>&1 &
+    fi
+fi
+
+# Android
+#export ANDROID_HOME="/home/thistle/Android/Sdk"
+#export JAVA_HOME="/opt/android-studio/jre/"
+#export ANDROID_NDK_HOME="$ANDROID_HOME/ndk-bundle"
+#export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/ndk-bundle:$ANDROID_HOME/platform-tools:/opt/android-studio/jre/bin/:$JAVA_HOME/bin
+
+# Python
+export PYTHONPATH=$HOME/go/src/github.com/getlantern/lantern_aws/lib:$HOME/go/src/github.com/getlantern/secret_lib:$HOME/go/src/github.com/getlantern/config-server/etc
