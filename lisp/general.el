@@ -1,5 +1,8 @@
 ;;;;;;;;;;;;;;;;;;; ALL MODES CONFIG ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; Follow symlinks
+(setq vc-follow-symlinks t)
+
 ;; Ergonomic Text Editing
 (delete-selection-mode 1)                                 ; replace highlighted sections
 (electric-pair-mode 1)                                    ; fill right
