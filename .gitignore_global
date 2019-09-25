@@ -1,4 +1,5 @@
 # ignore emacs files we don't want to commit
 flymd*
 *~
+.*~
 *#*
