@@ -1,1 +1,1 @@
-To use: `crontab -e` then `* * * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; export DISPLAY=:0; . $HOME/.profile; /home/leila/.local/bin/datelog`
+To use: `crontab -e` then `* * * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; export DISPLAY=:0; . $HOME/.profile; /home/leila/.local/bin/cron/datelog`
