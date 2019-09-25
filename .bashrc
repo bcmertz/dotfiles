@@ -9,14 +9,14 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# set work environment
-if [ -f ~/.lanternrc ]; then
-    . ~/.lanternrc
-fi
-
 # set coding environment
 if [ -f ~/.coderc ]; then
     . ~/.coderc
+fi
+
+# set work environment
+if [ -f ~/.lanternrc ]; then
+    . ~/.lanternrc
 fi
 
 # .bash_history
