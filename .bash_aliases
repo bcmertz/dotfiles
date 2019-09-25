@@ -36,8 +36,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # Utility aliases
 alias c='clear'
 alias s='source ~/.bashrc'
-alias mansplain="man -k . | dmenu -l 30 | awk '{print $1}' | xargs -r man -Tpdf | zathura -"
-alias signature='echo "~/documents/personal/signature.png"'
+alias dot='cds ~/dotfiles/' # jump to dotfiles
 
 # Cute pipe to xclip to pipe to clipboard!
 alias copy='xclip -sel clip'
