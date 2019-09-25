@@ -2,7 +2,7 @@
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 export EDITOR="emacs"
 export TERMINAL="st"
-export BROWSER="firefox"
+export BROWSER="surf"
 export READER="zathura"
 export FILE="nemo"
 
