@@ -1,0 +1,4 @@
+#!/bin/bash
+# kill port number
+
+kill $(lsof -t -i:"$1")

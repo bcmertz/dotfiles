@@ -1,0 +1,5 @@
+#!/bin/bash
+# cd and display contents
+
+cd "$1" && ls
+

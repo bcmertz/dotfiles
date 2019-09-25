@@ -19,11 +19,6 @@ if [ -f ~/.coderc ]; then
     . ~/.coderc
 fi
 
-# set utils [todo: move to .local/bin scripts]
-if [ -f ~/.utilsrc ]; then
-    . ~/.utilsrc
-fi
-
 # .bash_history
 HISTCONTROL=ignoreboth
 shopt -s histappend
