@@ -25,7 +25,7 @@ ln -s ~/dotfiles/.gitignore_global ~/.gitignore_global
 # install custom scripts
 mkdir -p ~/.time # for time on computer cronjob
 for f in $(ls -d ~/dotfiles/.local/bin/*); do ln -s $f ~/.local/bin; done
-
+for f in $(ls -d ~/dotfiles/.local/bin/cron/*); do ln -s $f ~/.local/bin/cron; done
 # x
 ln -s ~/dotfiles/.xinitrc ~/.xinitrc
 
