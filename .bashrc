@@ -140,6 +140,9 @@ alias signature='echo "~/documents/personal/signature.png"'
 # Cute pipe to xclip to pipe to clipboard!
 alias copy='xclip -sel clip'
 
+# start clipmenu (dmenu clip manager) daemon
+clipmenud &
+
 # Git aliases
 set_alias 'gs' 'git status'
 set_alias 'ga' 'git add'
