@@ -1,10 +1,15 @@
 #!/bin/bash
 
-# # bashrc
+function die() {
+  echo "$@"
+  exit 1
+}
+
+# bashrc
 ln -s ~/dotfiles/.bashrc ~/.bashrc
 ln -s ~/dotfiles/.bash_aliases ~/.bash_aliases
 
-# # applications
+# applications
 for f in $(ls -d ~/dotfiles/.local/share/applications/*); do ln -s $f ~/.local/share/applications; done
 
 # profile
@@ -24,3 +29,6 @@ for f in $(ls -d ~/dotfiles/.local/bin/*); do ln -s $f ~/.local/bin; done
 
 # x
 ln -s ~/dotfiles/.xinitrc ~/.xinitrc
+
+# lantern
+ln -s ~/dotfiles/.lanternrc ~/.lanternrc || echo ".lanternrc doesn't exist"
