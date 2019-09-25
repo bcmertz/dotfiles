@@ -32,6 +32,11 @@ shopt -s globstar     # ** matches all files / directories in path
 # Interpret del properly
 tput smkx
 
+# combo cds ls
+cds() {
+    cd "$1" && ls
+}
+
 # enable programmable completion features
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
