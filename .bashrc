@@ -108,6 +108,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Interpret del properly
+tput smkx
+
 export PATH="$HOME/.rbenv/bin:$PATH"
 
 # cd && ls command
