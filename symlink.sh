@@ -8,12 +8,10 @@ function die() {
 # bashrc
 ln -s ~/dotfiles/.bashrc ~/.bashrc
 ln -s ~/dotfiles/.bash_aliases ~/.bash_aliases
+ln -s ~/dotfiles/.bash_profile ~/.bash_profile
 
 # applications
 for f in $(ls -d ~/dotfiles/.local/share/applications/*); do ln -s $f ~/.local/share/applications; done
-
-# profile
-ln -s ~/dotfiles/.profile ~/.profile
 
 # config
 ln -s ~/dotfiles/.config/mimeapps.list ~/.config/mimeapps.list

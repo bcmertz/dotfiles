@@ -1,7 +1,3 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -130,9 +126,6 @@ fi
 
 # Configure editor info - emacs!
 export PATH="$HOME/.cask/bin:$PATH" # cask package manager
-export ALTERNATE_EDITOR=""
-export EDITOR="emacsclient -t"          #open terminal emacs
-export VISUAL="emacsclient -t"          #open terminal emacs
 alias emacs='emacsclient -t --alternate-editor=""' #default to terminal, if want gui use line below
 alias emacsgui='emacsclient -create-frame --alternate-editor=""'
 # alias e='emacsclient -t --alternate-editor=""' # super duper shortcut
