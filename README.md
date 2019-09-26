@@ -1,14 +1,14 @@
 Work in progress
 
+- **Dmenu scripts**
+- **start redshift at login**
+- **fix symlinker for directories**
 - .Xmodmap to switch caps and ctrl
 - i3 and vim configs
 - encrypted secrets?
 - more cron jobs?
 - new st default font
 - urxvt?
-- **Dmenu scripts and symlinks**
-- **fix exports in bash_profile, not maintained**
-- **start redshift at login**
 
 we shall see
 
