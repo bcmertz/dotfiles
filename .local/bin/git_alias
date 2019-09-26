@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# Test if directory is git directory, if so git $1 $@
+
+alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+dir=$(pwd)
+command=$1
+shift
+
+if git rev-parse --git-dir > /dev/null 2>&1; then
+    git $command $@
+fi
+
+if [[ "$PWD" == $HOME ]]; then
+    cfg $command $@
+fi
