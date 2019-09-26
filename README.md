@@ -6,6 +6,8 @@ Work in progress
 - more cron jobs?
 - new st default font
 - urxvt?
+- **Dmenu scripts and symlinks**
+- **fix exports in bash_profile, not maintained**
 
 we shall see
 
