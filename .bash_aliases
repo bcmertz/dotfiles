@@ -36,7 +36,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # Utility aliases
 alias c='clear'
 alias s='source ~/.bashrc'
-alias dot='cds ~/dotfiles/' # jump to dotfiles
+alias dot='cd ~/dotfiles/ && tree' # jump to dotfiles
+alias ag='ag --hidden --ignore node_modules --ignore .git'
 
 # Cute pipe to xclip to pipe to clipboard!
 alias copy='xclip -sel clip'
