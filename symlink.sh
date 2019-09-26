@@ -18,10 +18,11 @@ for f in $(ls -d ~/dotfiles/.local/share/applications/*); do ln -s $f ~/.local/s
 # config
 ln -s ~/dotfiles/.config/mimeapps.list ~/.config/mimeapps.list
 ln -s ~/dotfiles/.config/redshift.conf ~/.config/redshift.conf
+for f in $(ls -d ~/dotfiles/.config/git/*); do ln -s $f ~/.config/git; done
+for f in $(ls -d ~/dotfiles/.config/dmenu/*); do ln -s $f ~/.config/dmenu; done
 
 # git
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
-ln -s ~/dotfiles/.gitignore_global ~/.gitignore_global
 
 # install custom scripts
 for f in $(ls -d ~/dotfiles/.local/bin/*); do ln -s $f ~/.local/bin; done
