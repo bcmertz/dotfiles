@@ -133,7 +133,8 @@
 ;; C-c C-c makes the focused directory the new root view
 (require 'neotree)
 (global-set-key (kbd "C-\\") 'neotree-toggle)
-
+;; Type H to toggle hidden files
+(setq-default neo-show-hidden-files t)
 
 ;; Git integration
 ;; (global-set-key (kbd "C-x g") 'magit-status)
