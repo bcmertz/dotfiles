@@ -2,7 +2,6 @@ set_alias() {
     alias "$1"="$2"
 }
 
-<<<<<<< HEAD
 # Dotfiles
 alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
@@ -12,14 +11,6 @@ alias ga='git_alias add'
 alias gc='git_alias commit'
 alias gd='git_alias diff'
 alias gb='git_alias branch'
-=======
-# Git aliases
-set_alias 'gs' 'git status'
-set_alias 'ga' 'git add'
-set_alias 'gc' 'git commit'
-set_alias 'gd' 'git diff'
-set_alias 'gb' 'git branch'
->>>>>>> 190321874600699a881732b846b11a0316ba4773
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
