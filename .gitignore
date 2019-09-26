@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .Xauthority
 .Xclients
 .atom/
@@ -38,3 +39,10 @@ dotfiles/
 go/
 lantern/
 media/
+=======
+.bashrcbackup
+.lanternrc
+*~
+.*~
+flymd*
+>>>>>>> 190321874600699a881732b846b11a0316ba4773
