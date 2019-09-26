@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+# dmenu-edit: Use dmenu to open and edit a files from a given list
+
+FILES="$HOME/.config/dmenu/edit-list"
+
+choice="$(dmenu < $FILES)"
+if [[ $choice ]]; then
+    emacsclient -c $choice
+fi

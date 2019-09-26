@@ -1,0 +1,4 @@
+#!/bin/bash
+# put it in the background and don't let it speak
+
+"$@" > /dev/null 2>&1 &
