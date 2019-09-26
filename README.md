@@ -1,5 +1,7 @@
 Work in progress
 
+will do this soon **https://news.ycombinator.com/item?id=11071754**
+
 - **Dmenu scripts**
 - **start redshift at login**
 - **fix symlinker for directories**
