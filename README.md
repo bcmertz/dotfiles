@@ -8,6 +8,7 @@ Work in progress
 - urxvt?
 - **Dmenu scripts and symlinks**
 - **fix exports in bash_profile, not maintained**
+- **start redshift at login**
 
 we shall see
 
