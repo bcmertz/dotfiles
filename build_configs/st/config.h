@@ -65,7 +65,7 @@ static unsigned int cursorthickness = 2;
 static int bellvolume = 0;
 
 /* default TERM value */
-char *termname = "st-256color";
+char *termname = "st-meta-256color";
 
 /*
  * spaces per tab
@@ -179,13 +179,11 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_plus,        zoom,           {.f = +1} },
 	{ TERMMOD,              XK_underscore,  zoom,           {.f = -1} },
 	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
-	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
-	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
-	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
+	{ MODKEY,               XK_w,           clipcopy,       {.i =  0} },
+	{ ControlMask,          XK_y,           clippaste,      {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
-	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
-	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
-	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
+	{ MODKEY,               XK_v,           kscrollup,      {.i = -1} },
+	{ ControlMask,          XK_v,           kscrolldown,    {.i = -1} },
 };
 
 /*
