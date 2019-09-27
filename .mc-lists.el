@@ -6,9 +6,11 @@
 	indent-for-tab-command
 	move-line-down
 	move-line-up
+	suspend-frame
 	))
 
 (setq mc/cmds-to-run-once
       '(
+	counsel-find-file
 	swiper
 	))
