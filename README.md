@@ -10,16 +10,16 @@ TODO:
 - more cron jobs?
 - urxvt?
 
-#Usage
+# Usage
 
-##Install
+## Install
 
 To install you must have a clear $HOME dir
 ```
 git clone --bare https://github.com/bcmertz/dotfiles.git $HOME/.cfg
 ```
 
-##Shortcuts
+## Shortcuts
 
 Add some alias like
 
@@ -31,7 +31,7 @@ See `~/.bash_aliases` cfg and git aliases, as well as `~/.local/bin/git_alias`
 
 
 
-#References
+# References
 
 For more information on the git bare repo structure used here, and for references to what inspired the structure of this repo:
 
