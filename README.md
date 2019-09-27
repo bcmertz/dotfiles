@@ -1,13 +1,13 @@
 My dotfiles [work in progress]
 
 TODO:
-- **Dmenu scripts**
-- **start redshift at login**
-- .Xmodmap to switch caps and ctrl
-- i3 and vim configs
+- dmenu scripts
+- keymap util (dmenu or md file)
+- new st default font and C+up/down support
+- .Xmodmap switch caps and ctrl
+- i3 and vim configs?
 - encrypted secrets?
 - more cron jobs?
-- new st default font
 - urxvt?
 
 #Usage
