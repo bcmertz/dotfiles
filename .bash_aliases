@@ -24,7 +24,7 @@ fi
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
-alias l='/usr/bin/ls'
+alias l='/usr/bin/ls --color=auto'
 
 # less annoying tree
 alias tree="tree -a -I 'node_modules|.git'"

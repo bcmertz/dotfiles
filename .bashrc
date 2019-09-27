@@ -34,7 +34,7 @@ tput smkx
 
 # combo cds ls
 cds() {
-    cd "$1" && ls
+    cd "$1" && /usr/bin/ls --color=auto
 }
 
 # enable programmable completion features
