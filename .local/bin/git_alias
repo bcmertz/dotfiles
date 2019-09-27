@@ -6,7 +6,6 @@ alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 command=$1
 shift
-echo $@
 
 if git rev-parse --git-dir > /dev/null 2>&1; then
     git $command $@

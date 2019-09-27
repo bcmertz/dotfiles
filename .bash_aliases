@@ -7,6 +7,7 @@ alias ga='git_alias add'
 alias gc='git_alias commit'
 alias gd='git_alias diff'
 alias gb='git_alias branch'
+alias gp='git_alias push'
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
