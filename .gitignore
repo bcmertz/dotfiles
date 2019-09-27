@@ -25,6 +25,7 @@ coding/
 .node*
 .npm/
 .pki/
+.python_history
 .ssh/
 .surf/
 .terminfo/
