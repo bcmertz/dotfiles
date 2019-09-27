@@ -12,6 +12,7 @@
 .config/
 .lanternrc
 .dbus/
+.dmrc*
 .dir_colors
 .esd_auth
 .emacs.d/
