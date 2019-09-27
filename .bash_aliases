@@ -1,7 +1,3 @@
-set_alias() {
-    alias "$1"="$2"
-}
-
 # Dotfiles
 alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
