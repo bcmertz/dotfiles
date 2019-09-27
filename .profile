@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Adds `~/.local/bin/` and all subdirectories to $PATH
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 export TERMINAL="st"
@@ -17,3 +19,13 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 # start background programs
 background clipmenud
 background redshift
+
+# start x after login
+# if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+echo "starting X"
+startx
+# fi
+
+# if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+#     exec startx
+# fi
