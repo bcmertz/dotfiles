@@ -1,6 +1,4 @@
-My dotfiles [work in progress]
-
-TODO:
+# TODO
 - dmenu scripts
 - keymap util (dmenu or md file)
 - new st default font and C+up/down support
