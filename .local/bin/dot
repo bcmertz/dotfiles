@@ -6,5 +6,5 @@ FILES="$HOME/.config/dmenu/edit-list"
 
 choice="$(dmenu < $FILES)"
 if [[ $choice ]]; then
-    emacsclient -c $choice
+    emacsclient ~/$choice
 fi
