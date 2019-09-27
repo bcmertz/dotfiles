@@ -22,7 +22,7 @@ git clone --bare https://github.com/bcmertz/dotfiles.git $HOME/.cfg
 Add some alias like
 
 ```
-alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 ```
 
 See `~/.bash_aliases` cfg and git aliases, as well as `~/.local/bin/git_alias`
