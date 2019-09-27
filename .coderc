@@ -18,7 +18,7 @@ if type godoc > /dev/null; then
 fi
 
 # Android
-#export ANDROID_HOME="/home/thistle/Android/Sdk"
+#export ANDROID_HOME="/home/leila/Android/Sdk"
 #export JAVA_HOME="/opt/android-studio/jre/"
 #export ANDROID_NDK_HOME="$ANDROID_HOME/ndk-bundle"
 #export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/ndk-bundle:$ANDROID_HOME/platform-tools:/opt/android-studio/jre/bin/:$JAVA_HOME/bin
