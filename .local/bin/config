@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+# config: use dmenu to search for environment config info
+
+# FILES="$HOME/.config/dmenu/edit-list"
+
+# choice="$(dmenu < $FILES)"
+
+# if [[ $choice ]]; then
+#     emacsclient ~/$choice
+# fi
