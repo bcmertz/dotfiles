@@ -1,5 +1,4 @@
 .Xauthority
-.Xclients
 .atom/
 .aws/
 .bash_history
@@ -32,7 +31,6 @@
 .thunderbird/
 .time/
 .transifexrc
-.xsession-errors*
 Desktop/
 Documents/
 Downloads/
