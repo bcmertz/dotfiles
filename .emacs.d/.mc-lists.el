@@ -3,6 +3,7 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+	c-indent-line-or-region
 	indent-for-tab-command
 	move-line-down
 	move-line-up
