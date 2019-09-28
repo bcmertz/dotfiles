@@ -23,6 +23,11 @@ if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
 fi
 
+
+# configure trackpad and other x input
+[ -f ~/.xinput.conf ] && . ~/.xinput.conf
+
+
 # at the start of X
 [ -f ~/.xprofile ] && . ~/.xprofile
 
