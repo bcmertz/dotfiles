@@ -17,9 +17,6 @@
 (require 'cask "~/.cask/cask.el")
 (cask-initialize)
 
-;; Load up any standalone .el files from github or whatever
-(add-to-list 'load-path "~/.emacs.d/dependencies")
-
 ;; Configuration of emacs in all modes
 (add-to-list 'load-path "~/.emacs.d/lisp")
 (load "general.el")                     ; my configuration
