@@ -18,6 +18,7 @@
 .gem/
 .gtkrc-2.0
 .lantern/
+.lesshst
 .local/share/
 .mozilla/
 .netrc
