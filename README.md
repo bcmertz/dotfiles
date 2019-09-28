@@ -1,12 +1,11 @@
 # TODO
+- dwm
+- cron jobs
 - dmenu scripts
-- keymap util (dmenu or md file)
-- new st default font and C+up/down support
+- st C+up/down support
 - .Xmodmap switch caps and ctrl
-- i3 and vim configs?
+- keymap reference (dmenu or md file)
 - encrypted secrets?
-- more cron jobs?
-- urxvt?
 
 # Usage
 
