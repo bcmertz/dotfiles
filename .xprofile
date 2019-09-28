@@ -1,0 +1,6 @@
+#!/bin/bash
+#
+# when x starts, also start...
+
+clipmenud &
+redshift &
