@@ -1,11 +1,12 @@
-# TODO
-- dwm
-- cron jobs
-- dmenu scripts
-- st C+up/down support
-- .Xmodmap switch caps and ctrl
-- keymap reference (dmenu or md file)
-- encrypted secrets?
+# Overview
+
+## System setup: i3 gaps, emacs, st
+
+- WM : i3 gaps
+- Editor : emacs
+- Terminal : st
+- Status : polybar
+- Finder : ranger
 
 # Usage
 
@@ -26,7 +27,11 @@ alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 See `~/.bash_aliases` cfg and git aliases, as well as `~/.local/bin/git_alias`
 
-
+# TODO
+- st C+up/down support
+- .Xmodmap switch caps and ctrl
+- keymap reference (dmenu or md file)
+- encrypted secrets?
 
 # References
 
@@ -34,3 +39,4 @@ For more information on the git bare repo structure used here, and for reference
 
 - https://news.ycombinator.com/item?id=11071754
 - https://www.atlassian.com/git/tutorials/dotfiles
+
