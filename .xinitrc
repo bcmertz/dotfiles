@@ -31,4 +31,4 @@ fi
 # at the start of X
 [ -f ~/.xprofile ] && . ~/.xprofile
 
-exec dwm
+exec i3
