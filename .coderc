@@ -13,7 +13,7 @@ export PATH=$PATH:$GOPATH/bin
 if type godoc > /dev/null; then
     if ! pgrep -x "godoc" > /dev/null
     then
-	godoc -http=:6060 </dev/null >/dev/null 2>&1 &
+	background godoc -http=:6060
     fi
 fi
 
