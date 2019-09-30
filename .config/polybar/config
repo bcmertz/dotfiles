@@ -8,9 +8,9 @@ underline-color = #F7A6B7
 separator = "   "
 tray-position = none
 height = 2.5%
-modules-right = cpu memory network pulseaudio filesystem temperature date
+modules-right = network battery pulseaudio memory cpu filesystem temperature
 modules-left = i3
-modules-center = text
+modules-center = date
 
 [module/text]
 type = custom/text
@@ -23,6 +23,11 @@ type = internal/memory
 interval = 1
 format = <label>
 label = RAM %percentage_used%%
+
+[module/battery]
+type = internal/battery
+battery = BAT2
+adapter = AC
 
 [module/cpu]
 type = internal/cpu
@@ -51,7 +56,6 @@ format-volume = <label-volume>
 [module/date]
 type = internal/date
 interval = 1.0
-date = %Y-%m-%d%
 time = %H:%M
 date-alt = %A, %d %B %Y
 time-alt = %H:%M:%S

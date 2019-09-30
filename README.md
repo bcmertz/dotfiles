@@ -2,11 +2,13 @@
 
 ## System setup: i3 gaps, emacs, st
 
+- OS : manjaro
 - WM : i3 gaps
 - Editor : emacs
 - Terminal : st
 - Status : polybar
 - Finder : ranger
+- Misc : redshift, dmenu, firefox/surf
 
 # Usage
 
