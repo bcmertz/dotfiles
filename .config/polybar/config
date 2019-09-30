@@ -2,8 +2,9 @@
 ; scaling
 dpi = 133
 ; text color
+font-0 = DejaVu Sans Mono 18
 foreground = #F7A6B7
-underline-size = 3
+underline-size = 2
 underline-color = #F7A6B7
 separator = "   "
 tray-position = none
