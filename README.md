@@ -1,6 +1,6 @@
 # Overview
 
-## System setup: i3 gaps, emacs, st
+## System setup:
 
 - OS : manjaro
 - WM : i3 gaps
@@ -8,7 +8,7 @@
 - Terminal : st
 - Status : polybar
 - Finder : ranger
-- Misc : redshift, dmenu, firefox/surf
+- Misc : redshift, dmenu, firefox/surf, ...
 
 # Usage
 
