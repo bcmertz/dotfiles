@@ -7,7 +7,7 @@
 - Terminal : st
 - Status : polybar
 - Finder : ranger
-- Misc : redshift, dmenu, firefox/surf, ...
+- Misc : redshift, dmenu, dunst, firefox/surf, ...
 
 ## Usage
 
@@ -25,6 +25,7 @@ alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 See `~/.bash_aliases` cfg and git aliases, as well as `~/.local/bin/git_alias`
 
 ## TODO
+- Fix up fonts
 - st C+up/down support
 - .Xmodmap switch caps and ctrl
 - keymap reference (dmenu or md file)
