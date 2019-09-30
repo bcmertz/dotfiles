@@ -4,6 +4,7 @@
 
 - OS : manjaro
 - WM : i3 gaps
+- Compositor: compton
 - Editor : emacs
 - Terminal : st
 - Status : polybar
