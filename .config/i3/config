@@ -41,6 +41,7 @@ bindsym $mod+q kill
 bindsym $mod+d exec dmenu_run
 bindsym $mod+c exec clipmenu
 bindsym $mod+u exec unicode_picker
+
 bindsym $mod+b exec firefox
 
 # change focus

@@ -64,6 +64,7 @@ use-ui-max = true
 interval = 1.0
 label-volume = %percentage%%
 format-volume = Vol: <label-volume>
+format-muted = Vol: Muted
 
 [module/date]
 type = internal/date
