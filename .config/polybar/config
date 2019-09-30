@@ -38,7 +38,7 @@ type = internal/battery
 battery = BAT2
 adapter = AC
 format-charging = Bat: <label-charging>
-format-charging-underline = #ffb52a
+format-discharging-underline = #ffb52a
 format-discharging = Bat: <label-discharging>
 
 [module/cpu]
