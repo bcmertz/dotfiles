@@ -1,7 +1,13 @@
 #!/bin/bash
 #
-# when x starts, also start...
+# when x starts, also...
 
-clipmenud &
-redshift &
-unclutter &
+compton -b & # move to xcompmgr &?
+feh --bg-scale $HOME/Media/pictures/wallpapers/wallpaper.jpg # Set bg
+dunst & # notifications
+redshift & # reduce bluelight
+clipmenud & # clipmenu daemon
+unclutter & # get rid of mouse
+
+
+
