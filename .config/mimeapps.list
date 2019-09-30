@@ -43,7 +43,7 @@ text/x-vb=emacs.desktop
 text/yaml=emacs.desktop
 
 [Added Associations]
-text/plain=emacs.desktop;
+text/plain=atom.desktop;emacs.desktop;
 image/bmp=pix.desktop;
 image/gif=pix.desktop;
 image/jpeg=pix.desktop;
