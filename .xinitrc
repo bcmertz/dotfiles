@@ -25,7 +25,7 @@ fi
 
 
 # configure trackpad and other x input
-[ -f ~/.xinput.conf ] && . ~/.xinput.conf
+[ -f ~/.xinput ] && . ~/.xinput
 
 
 # at the start of X
