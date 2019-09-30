@@ -7,7 +7,6 @@ foreground = #F7A6B7
 background = #40000000
 underline-size = 2
 underline-color = #F7A6B7
-separator = " "
 tray-position = none
 height = 2.5%
 modules-right = network battery pulseaudio memory cpu temperature filesystem
