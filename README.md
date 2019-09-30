@@ -7,7 +7,8 @@
 - Terminal : st
 - Status : polybar
 - Finder : ranger
-- Misc : redshift, dmenu, dunst, firefox/surf, ...
+- Notifications : dunst
+- Misc : redshift, dmenu, firefox/surf, ...
 
 ## Usage
 
