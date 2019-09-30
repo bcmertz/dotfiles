@@ -2,15 +2,15 @@
 ; scaling
 dpi = 133
 ; text color
-font-0 = fixed:pixelsize=14
+font-0 = fixed:pixelsize=18
 foreground = #F7A6B7
 background = #40000000
 underline-size = 2
 underline-color = #F7A6B7
-separator = "   "
+separator = " "
 tray-position = none
 height = 2.5%
-modules-right = network battery pulseaudio memory cpu filesystem temperature
+modules-right = network battery pulseaudio memory cpu temperature filesystem
 modules-left = i3
 modules-center = date
 
@@ -38,9 +38,9 @@ label = RAM %percentage_used%%
 type = internal/battery
 battery = BAT2
 adapter = AC
-format-charging = <label-charging>
+format-charging = Bat: <label-charging>
 format-charging-underline = #ffb52a
-format-discharging = <label-discharging>
+format-discharging = Bat: <label-discharging>
 
 [module/cpu]
 type = internal/cpu
@@ -64,7 +64,7 @@ sink = alsa_output.pci-0000_00_1f.3.analog-stereo
 use-ui-max = true
 interval = 1.0
 label-volume = %percentage%%
-format-volume = <label-volume>
+format-volume = Vol: <label-volume>
 
 [module/date]
 type = internal/date
@@ -81,7 +81,7 @@ interval = 10
 fixed-values = true
 spacing = 4
 format-mounted = <label-mounted>
-label-mounted = %percentage_free%% used of %total%
+label-mounted = %percentage_free%% used of /
 
 [module/temperature]
 type = internal/temperature
@@ -92,7 +92,7 @@ base-temperature = 20
 warn-temperature = 60
 format = <label>
 format-warn = <label-warn>
-label = Temp %temperature-f%
+label = %temperature-f%
 label-warn = TEMP %temperature-f%
 label-warn-foreground = #f00
 
