@@ -9,7 +9,15 @@
 set $mod Mod4
 
 # Polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+bar {
+	font pango:mono 10
+	status_command i3blocks
+	position top
+	mode dock
+	modifier None
+}
+
 
 # Font for window titles
 font pango:DejaVu Sans Mono 10
