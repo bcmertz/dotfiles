@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+case $BLOCK_BUTTON in
+    1) groff -mom ~/.local/share/readme.mom -Tpdf | zathura - ;;
+    3) pgrep -x dunst >/dev/null && notify-send "❓ Help module" "\- Left click to open environment guide.
+esac; 
+echo "❓"

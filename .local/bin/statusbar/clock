@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+date '+%I:%M%p %a %b %d'
+
+case $BLOCK_BUTTON in
+	1) notify-send "This Month" "$(cal --color=always | sed "s/..7m/<b><span color=\"red\">/;s/..27m/<\/span><\/b>/")"
+esac

@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+#
+# Shows CPU temperature.
+# - Click to show intensive processes.
+# - % is of single core."
+
+
+case $BLOCK_BUTTON in
+	1) notify-send "🖥 CPU hogs" "$(ps axch -o cmd:15,%cpu --sort=-%cpu | head)" ;;
+esac
+
+sensors -f | awk '/Core 0/ {print $3}'
