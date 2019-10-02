@@ -43,14 +43,10 @@ click-left = notify-send "🖥 CPU hogs" "$(ps axch -o cmd:15,%cpu --sort=-%cpu 
 click-right = notify-send "🖥 CPU hogs" "$(ps axch -o cmd:15,%cpu --sort=-%cpu | head)"
 
 [module/network]
-type = internal/network
-interface = wlp3s0
-interval = 2.0
-format-connected = <label-connected>
-format-disconnected = <label-disconnected>
-label-connected = WiFi: %signal%%
-label-disconnected = not connected
-label-disconnected-foreground = #66ffffff
+type = custom/script
+exec = internet
+interval = 2
+format = 🌐 <label>
 
 [module/volume]
 type = custom/script
