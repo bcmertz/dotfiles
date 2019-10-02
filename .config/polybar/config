@@ -1,4 +1,132 @@
 [bar/default]
+dpi = 133
+font-0 = roboto:pixelsize=18:antialias=false;1
+font-1 = Unifont:style=Medium:antialias=false
+font-2 = Symbola:pixelsize=18:style=Regular:antialias=false
+foreground = #F7A6B7
+background = #40000000
+underline-size = 2
+underline-color = #F7A6B7
+tray-position = none
+height = 2.5%
+modules-right = custom-memory custom-battery custom-cpu custom-pulseaudio custom-date custom-weather custom-filesystem
+modules-left = i3
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 0
+module-margin-right = 2
+
+
+[module/custom-memory]
+type = custom/script
+exec = memory
+interval = 1
+format = 🧠 <label>
+click-left = notify-send "🧠 Memory hogs" "$(ps axch -o cmd:15,%mem --sort=-%mem | head)"
+click-right = notify-send "🧠 Memory hogs" "$(ps axch -o cmd:15,%mem --sort=-%mem | head)"
+
+[module/custom-battery]
+type = custom/script
+exec = battery BAT2
+click-left = notify-send "⚡ Full 🔌 Charging 🔋 Discharging"
+interval = 2
+format = <label>
+
+[module/custom-cpu]
+type = custom/script
+exec = cpu
+interval = 1
+format = 💻 <label>
+click-left = notify-send "🖥 CPU hogs" "$(ps axch -o cmd:15,%cpu --sort=-%cpu | head)"
+click-right = notify-send "🖥 CPU hogs" "$(ps axch -o cmd:15,%cpu --sort=-%cpu | head)"
+
+[module/custom-network]
+type = custom/script
+exec = internet
+interval = 5
+format = <label>
+click-left = $TERMINAL -e sudo wifi-menu
+click-right = notify-send "📡: no wifi connection 📶: wifi connection with quality ❎: no ethernet 🌐: ethernet working"
+
+[module/custom-pulseaudio]
+type = custom/script
+exec = volume
+interval = 1
+format = <label>
+
+[module/custom-date]
+type = custom/script
+exec = clock
+interval = 1
+format = 📅 <label>
+click-left = notify-send "This Month" "$(cal --color=always | sed "s/..7m/<b><span color=\"red\">/;s/..27m/<\/span><\/b>/")"
+click-right = notify-send "This Month" "$(cal --color=always | sed "s/..7m/<b><span color=\"red\">/;s/..27m/<\/span><\/b>/")"
+
+[module/custom-weather]
+type = custom/script
+exec = weather
+interval = 120
+format = <label>
+click-left = curl -s "wttr.in" > "$HOME/.local/share/weatherreport" && $TERMINAL -e less -S "$HOME/.local/share/weatherreport"
+
+[module/custom-filesystem]
+type = custom/script
+exec = disk /
+interval = 60
+format = <label>
+click-left = pgrep -x dunst >/dev/null && notify-send "💽 Disk space" "$(df -h --output=target,used,size)"
+click-right =  pgrep -x dunst >/dev/null && notify-send "💽 Disk module" "\- Shows used hard drive space.
+- Click to show all disk info."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[bar/deprecated]
 ; scaling
 dpi = 133
 ; text color
