@@ -71,7 +71,7 @@ click-left = curl -s "wttr.in" > "$HOME/.local/share/weatherreport" && $TERMINAL
 
 [module/filesystem]
 type = custom/script
-exec = disk /
+exec = disk / 📁
 interval = 60
 format = <label>
 click-left = pgrep -x dunst >/dev/null && notify-send "💽 Disk space" "$(df -h --output=target,used,size)"
