@@ -40,3 +40,5 @@ lantern/
 Media/
 coding/
 .fehbg
+.wget-hsts
+.gnupg/
