@@ -9,7 +9,7 @@ underline-size = 2
 underline-color = #F7A6B7
 tray-position = none
 height = 2.5%
-modules-right = network volume battery memory temp date weather filesystem
+modules-right = network volume battery memory temp filesystem weather date
 modules-left = i3
 
 padding-left = 0
