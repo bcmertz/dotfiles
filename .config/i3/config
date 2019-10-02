@@ -9,7 +9,8 @@
 set $mod Mod4
 
 # Polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id polybar default &
+
 # bar {
 # 	font pango:mono 10
 # 	status_command i3blocks
