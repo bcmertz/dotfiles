@@ -9,7 +9,7 @@ underline-size = 2
 underline-color = #F7A6B7
 tray-position = none
 height = 2.5%
-modules-right = custom-memory custom-battery custom-cpu custom-pulseaudio custom-date custom-weather custom-filesystem
+modules-right = network volume battery memory temp date weather filesystem
 modules-left = i3
 
 padding-left = 0
@@ -19,7 +19,7 @@ module-margin-left = 0
 module-margin-right = 2
 
 
-[module/custom-memory]
+[module/memory]
 type = custom/script
 exec = memory
 interval = 1
@@ -27,153 +27,20 @@ format = 🧠 <label>
 click-left = notify-send "🧠 Memory hogs" "$(ps axch -o cmd:15,%mem --sort=-%mem | head)"
 click-right = notify-send "🧠 Memory hogs" "$(ps axch -o cmd:15,%mem --sort=-%mem | head)"
 
-[module/custom-battery]
+[module/battery]
 type = custom/script
 exec = battery BAT2
 click-left = notify-send "⚡ Full 🔌 Charging 🔋 Discharging"
 interval = 2
 format = <label>
 
-[module/custom-cpu]
+[module/temp]
 type = custom/script
 exec = cpu
 interval = 1
 format = 💻 <label>
 click-left = notify-send "🖥 CPU hogs" "$(ps axch -o cmd:15,%cpu --sort=-%cpu | head)"
 click-right = notify-send "🖥 CPU hogs" "$(ps axch -o cmd:15,%cpu --sort=-%cpu | head)"
-
-[module/custom-network]
-type = custom/script
-exec = internet
-interval = 5
-format = <label>
-click-left = $TERMINAL -e sudo wifi-menu
-click-right = notify-send "📡: no wifi connection 📶: wifi connection with quality ❎: no ethernet 🌐: ethernet working"
-
-[module/custom-pulseaudio]
-type = custom/script
-exec = volume
-interval = 1
-format = <label>
-
-[module/custom-date]
-type = custom/script
-exec = clock
-interval = 1
-format = 📅 <label>
-click-left = notify-send "This Month" "$(cal --color=always | sed "s/..7m/<b><span color=\"red\">/;s/..27m/<\/span><\/b>/")"
-click-right = notify-send "This Month" "$(cal --color=always | sed "s/..7m/<b><span color=\"red\">/;s/..27m/<\/span><\/b>/")"
-
-[module/custom-weather]
-type = custom/script
-exec = weather
-interval = 120
-format = <label>
-click-left = curl -s "wttr.in" > "$HOME/.local/share/weatherreport" && $TERMINAL -e less -S "$HOME/.local/share/weatherreport"
-
-[module/custom-filesystem]
-type = custom/script
-exec = disk /
-interval = 60
-format = <label>
-click-left = pgrep -x dunst >/dev/null && notify-send "💽 Disk space" "$(df -h --output=target,used,size)"
-click-right =  pgrep -x dunst >/dev/null && notify-send "💽 Disk module" "\- Shows used hard drive space.
-- Click to show all disk info."
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[bar/deprecated]
-; scaling
-dpi = 133
-; text color
-font-0 = fixed:pixelsize=18
-foreground = #F7A6B7
-background = #40000000
-underline-size = 2
-underline-color = #F7A6B7
-tray-position = none
-height = 2.5%
-modules-right = network battery pulseaudio memory cpu temperature filesystem
-modules-left = i3
-modules-center = date
-
-padding-left = 0
-padding-right = 2
-
-module-margin-left = 0
-module-margin-right = 2
-
-
-
-[module/text]
-type = custom/text
-content = dsfsdf
-content-foreground = #00000000
-content-background = #00000000
-
-[module/memory]
-type = internal/memory
-interval = 1
-format = <label>
-label = RAM %percentage_used%%
-
-[module/battery]
-type = internal/battery
-battery = BAT2
-adapter = AC
-format-charging = Bat: <label-charging>
-format-discharging-underline = #ffb52a
-format-discharging = Bat: <label-discharging>
-
-[module/cpu]
-type = internal/cpu
-interval = 1
-format = <label>
-label = CPU %percentage%%
 
 [module/network]
 type = internal/network
@@ -185,44 +52,35 @@ label-connected = WiFi: %signal%%
 label-disconnected = not connected
 label-disconnected-foreground = #66ffffff
 
-[module/pulseaudio]
-type = internal/pulseaudio
-sink = alsa_output.pci-0000_00_1f.3.analog-stereo
-use-ui-max = true
-interval = 1.0
-label-volume = %percentage%%
-format-volume = Vol: <label-volume>
-format-muted = Vol: Muted
+[module/volume]
+type = custom/script
+exec = volume
+interval = 1
+format = <label>
 
 [module/date]
-type = internal/date
-interval = 1.0
-time = %H:%M:%S
-date-alt = %A, %d %B %Y
-time-alt = %H:%M:%S
-label = %date% %time%
+type = custom/script
+exec = clock
+interval = 1
+format = 📅 <label>
+click-left = notify-send "This Month" "$(cal --color=always | sed "s/..7m/<b><span color=\"red\">/;s/..27m/<\/span><\/b>/")"
+click-right = notify-send "This Month" "$(cal --color=always | sed "s/..7m/<b><span color=\"red\">/;s/..27m/<\/span><\/b>/")"
+
+[module/weather]
+type = custom/script
+exec = weather
+interval = 120
+format = <label>
+click-left = curl -s "wttr.in" > "$HOME/.local/share/weatherreport" && $TERMINAL -e less -S "$HOME/.local/share/weatherreport"
 
 [module/filesystem]
-type = internal/fs
-mount-0 = /
-interval = 10
-fixed-values = true
-spacing = 4
-format-mounted = <label-mounted>
-label-mounted = %percentage_free%% used of /
-
-[module/temperature]
-type = internal/temperature
-interval = 1
-thermal-zone = 0
-hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
-base-temperature = 20
-warn-temperature = 60
+type = custom/script
+exec = disk /
+interval = 60
 format = <label>
-format-warn = <label-warn>
-label = %temperature-f%
-label-warn = TEMP %temperature-f%
-label-warn-foreground = #f00
+click-left = pgrep -x dunst >/dev/null && notify-send "💽 Disk space" "$(df -h --output=target,used,size)"
+click-right =  pgrep -x dunst >/dev/null && notify-send "💽 Disk module" "\- Shows used hard drive space.
+- Click to show all disk info."
 
 [module/i3]
 type = internal/i3
