@@ -1,4 +1,4 @@
-## System setup:
+## System setup
 
 - OS : manjaro
 - WM : i3 gaps
