@@ -9,7 +9,8 @@ underline-size = 2
 underline-color = #F7A6B7
 tray-position = none
 height = 2.5%
-modules-right = network volume battery memory temp filesystem weather date
+modules-right = network volume battery memory temp filesystem weather
+modules-center = date
 modules-left = i3
 
 padding-left = 0
@@ -57,8 +58,8 @@ format = <label>
 [module/date]
 type = custom/script
 exec = clock
-interval = 1
-format = 📅 <label>
+interval = 10
+format = <label>
 click-left = notify-send "This Month" "$(cal --color=always | sed "s/..7m/<b><span color=\"red\">/;s/..27m/<\/span><\/b>/")"
 click-right = notify-send "This Month" "$(cal --color=always | sed "s/..7m/<b><span color=\"red\">/;s/..27m/<\/span><\/b>/")"
 
