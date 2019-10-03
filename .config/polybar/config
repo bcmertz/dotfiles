@@ -52,7 +52,7 @@ format = 🌐 <label>
 [module/volume]
 type = custom/script
 exec = volume
-interval = 1
+interval = 0.2
 format = <label>
 
 [module/date]
