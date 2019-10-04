@@ -27,7 +27,7 @@ See `~/.bash_aliases` cfg and git aliases, as well as `~/.local/bin/git_alias`
 
 ## TODO
 - Fix up fonts
-- st C+up/down support
+- st Ctrl and Alt + arrow key support
 - .Xmodmap switch caps and ctrl
 - keymap reference (dmenu or md file)
 - encrypted secrets?
