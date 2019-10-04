@@ -48,6 +48,7 @@ type = custom/script
 exec = internet
 interval = 2
 format = 🌐 <label>
+# click-left = st -- bash -c sudo wifi-menu
 
 [module/volume]
 type = custom/script
