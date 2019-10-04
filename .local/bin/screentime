@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# show all the times in this folder
+
+total=0
+number=0
+
+for filename in ~/.time/*-* ; do
+    amt=$(cat $filename)
+    total=`expr $total + $amt`
+    number=`expr $number + 1`
+done
+
+average=`expr $total / $number`
+hrs=`expr $average / 60`
+echo "daily screentime:" $hrs "hours"
