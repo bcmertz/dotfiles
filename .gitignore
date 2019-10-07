@@ -42,3 +42,4 @@ coding/
 .fehbg
 .wget-hsts
 .gnupg/
+.cargo/
