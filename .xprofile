@@ -2,12 +2,12 @@
 #
 # when x starts, also...
 
-compton -b & # move to xcompmgr &?
+compton -b &    # move to xcompmgr &?
+dunst &         # notifications
+redshift &      # reduce bluelight
+clipmenud &     # clipmenu daemon
+unclutter &     # get rid of mouse
 feh --bg-scale $HOME/.config/wallpaper/wallpaper.jpg # Set bg
-dunst & # notifications
-redshift & # reduce bluelight
-clipmenud & # clipmenu daemon
-unclutter & # get rid of mouse
 
 
 
