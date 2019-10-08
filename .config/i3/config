@@ -24,7 +24,7 @@ exec_always --no-startup-id polybar default &
 font pango:DejaVu Sans Mono 10
 
 for_window [class="^.*"] border pixel 1
-gaps inner 20
+gaps inner 10
 gaps outer 0
 
 # Audio controls
