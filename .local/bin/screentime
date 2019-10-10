@@ -13,4 +13,4 @@ done
 
 average=`expr $total / $number`
 hrs=`expr $average / 60`
-echo "average screentime per day:" $average min = $hrs "hours"
+echo "average screentime per day:" $average min = $hrs "hours, over $number days"
