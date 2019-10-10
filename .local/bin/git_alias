@@ -3,6 +3,7 @@
 # Test if directory is git directory, if so git $1 $@
 
 alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+IFS='\n'
 
 command=$1
 shift
