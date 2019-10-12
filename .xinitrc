@@ -2,18 +2,8 @@
 
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
-sysresources=/etc/X11/xinit/.Xresources
-sysmodmap=/etc/X11/xinit/.Xmodmap
 
 # merge in defaults and keymaps
-
-if [ -f $sysresources ]; then
-    xrdb -merge $sysresources
-fi
-
-if [ -f $sysmodmap ]; then
-    xmodmap $sysmodmap
-fi
 
 if [ -f "$userresources" ]; then
     xrdb -merge "$userresources"
@@ -23,12 +13,10 @@ if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
 fi
 
-
-# configure trackpad and other x input
+# configure trackpad and other X input
 [ -f ~/.xinput ] && . ~/.xinput
 
-
-# at the start of X
+# enable these programs at the start of X
 [ -f ~/.xprofile ] && . ~/.xprofile
 
 exec i3
