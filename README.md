@@ -28,9 +28,8 @@ alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 See `~/.bash_aliases` cfg and git aliases, as well as `~/.local/bin/git_alias`
 
 ## TODO
-- Fix up fonts
+- Fix up fonts and tty sizing
 - st Ctrl and Alt + arrow key support
-- .Xmodmap switch caps and ctrl
 - keymap reference (dmenu or md file)
 - encrypted secrets?
 
