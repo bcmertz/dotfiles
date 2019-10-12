@@ -49,5 +49,3 @@ alias freenet='java -jar new_installer_offline.jar'
 
 # Hack to remove wifi driver from kernal space and put back in I think - hard restart
 alias fixwifi='sudo modprobe -r mwifiex_pcie && sudo modprobe mwifiex_pcie'
-# Restart network manager
-#alias fixwifi='sudo  systemctl restart NetworkManager.service'
