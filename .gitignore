@@ -44,3 +44,6 @@ coding/
 .gnupg/
 .cargo/
 calibre/
+*.txt
+*.pdf
+*.html
