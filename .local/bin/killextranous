@@ -1,0 +1,5 @@
+#!/bin/bash
+#
+# kills my most used and most useless programs
+
+killall gocode godoc gocode-mod flashlight npm
