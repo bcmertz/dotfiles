@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# use the terminal emulator passed-in, or fall back
+if [ "$#" -ne 1 ]; then
+  if [ -x "$(command -v -- "$1")" ]; then
+    TERMINAL="$1"
+	shift
+  fi
+fi
+
+# fall back to terminal variable, urxvt, gnome-terminal, or xterm if installed
+if [ ! -x "$TERMINAL" -a -x "$(command -v urxvt)" ]; then
+  TERMINAL="$(command -v urxvt)"
+elif [ -x "$(command -v gnome-terminal)" ]; then
+  TERMINAL="$(command -v gnome-terminal)"
+elif [ -x "$(command -v xterm)" ]; then
+  TERMINAL="$(command -v xterm)"
+else
+  echo "Usage: $0 <some-terminal>"
+  exit 64
+fi
+
+# make sure dmenu is installed
+if [ ! -x "$(command -v dmenu)" ]; then
+  echo "Requires dmenu"
+  exit 69
+fi
+
+choice=$(compgen -c | dmenu "$@")
+binary=$(awk '{print $1;}' <<< $choice)
+fullpath=$(command -v $binary)
+
+if [ -x $fullpath ]; then
+  #FIXME: Wayland
+  if ldd $fullpath | grep libX11 > /dev/null; then
+    $choice
+  else
+    $TERMINAL -e "$choice"
+  fi
+fi

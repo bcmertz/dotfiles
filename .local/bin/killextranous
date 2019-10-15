@@ -2,4 +2,4 @@
 #
 # kills my most used and most useless programs
 
-killall gocode godoc gocode-mod flashlight npm
+killall -q emacs godoc gocode gocode-mod flashlight npm
