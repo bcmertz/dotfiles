@@ -49,3 +49,9 @@ alias freenet='java -jar new_installer_offline.jar'
 
 # Hack to remove wifi driver from kernal space and put back in I think - hard restart
 alias fixwifi='sudo modprobe -r mwifiex_pcie && sudo modprobe mwifiex_pcie'
+
+# Work
+alias fl='cds ~/go/src/github.com/getlantern/flashlight'
+alias ui='cds ~/go/src/github.com/getlantern/lantern-desktop-ui'
+alias lb='cds ~/go/src/github.com/getlantern/lantern-build'
+alias lt='cds ~/go/src/github.com/getlantern/load-testing'
