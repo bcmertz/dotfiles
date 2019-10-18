@@ -23,6 +23,7 @@
 .netrc
 .node*
 .npm/
+.thumbnails/
 .pki/
 .python_history
 .ssh/

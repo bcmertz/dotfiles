@@ -6,7 +6,7 @@
 - Editor : emacs
 - Terminal : st
 - Status : polybar
-- Finder : ranger
+- File Manger : pcmanfm / ranger
 - Notifications : dunst
 - Misc : redshift, dmenu, firefox/surf, ...
 
