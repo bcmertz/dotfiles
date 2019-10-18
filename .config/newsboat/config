@@ -1,4 +1,4 @@
-show-read-feeds yes
+show-read-feeds no
 
 external-url-viewer "$BROWSER %u"
 
