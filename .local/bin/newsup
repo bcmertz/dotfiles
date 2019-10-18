@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+# Set as a cron job to update RSS entries for newsboat
+
+ping -q -c 1 1.1.1.1 > /dev/null || exit
+
+/usr/bin/notify-send "📰 Updating RSS feeds..."
+
+/usr/bin/newsboat -x reload
+/usr/bin/notify-send "📰 RSS feed update complete."
