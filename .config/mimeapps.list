@@ -84,3 +84,4 @@ text/x-sql=emacs.desktop;
 text/x-vb=emacs.desktop;
 text/yaml=emacs.desktop;
 application/pdf=org.pwmt.zathura.desktop;
+video/mp4=firefox.desktop;chromium.desktop;pragha.desktop;xplayer.desktop;
