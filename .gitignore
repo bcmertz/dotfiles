@@ -1,5 +1,6 @@
 .Xauthority
 .atom/
+.amplify/
 .aws/
 .bash_history
 .bash_logout
