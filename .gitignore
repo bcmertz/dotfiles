@@ -20,9 +20,10 @@
 !.config/fontconfig/*
 !.config/git/*
 !.config/i3/*
-!.config/mimeapps.list
+!.config/pcmanfm/*
 !.config/newsboat/*
 !.config/polybar/*
+!.config/mimeapps.list
 !.config/redshift.conf
 
 # git
