@@ -52,6 +52,7 @@ bindsym $mod+c exec clipmenu
 bindsym $mod+u exec unicode_picker
 
 bindsym $mod+b exec firefox
+bindsym $mod+m exec pcmanfm
 
 # change focus
 bindsym $mod+j focus left
