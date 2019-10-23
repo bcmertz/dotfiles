@@ -7,10 +7,10 @@ export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$
 export TERMINAL="st"
 export BROWSER="firefox"
 export READER="zathura"
-export FILE="nemo"
+export FILE="pcmanfm"
 export ALTERNATE_EDITOR=""
 export EDITOR="emacsclient -t"
-export VISUAL="emacsclient -t"
+export VISUAL="/usr/bin/emacs"
 
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
