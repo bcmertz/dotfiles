@@ -4,9 +4,9 @@
 
 ping -q -c 1 1.1.1.1 > /dev/null || exit
 
-/usr/bin/notify-send "📹 Downloading new youtube videos"
+/usr/bin/notify-send -u low "📹 Downloading new youtube videos"
 
 youtube-dl :ytsubs -o '~/Media/videos/yt/%(title)s.%(ext)s' -i --netrc --verbose --cookies ~/.config/youtube-dl/cookies.txt --dateafter now-3day --max-downloads 20 --playlist-end 20 --download-archive ~/.config/youtube-dl/archive --mark-watched --write-thumbnail
 
-/usr/bin/notify-send "📹 Updated videos :)"
+/usr/bin/notify-send -u low "📹 Updated videos :)"
 
