@@ -9,9 +9,9 @@ underline-size = 2
 underline-color = #F7A6B7
 tray-position = none
 height = 2.5%
-modules-right = network volume battery memory temp filesystem weather
+modules-right = network volume battery memory temp filesystem
 modules-center = date
-modules-left = i3
+modules-left = i3 weather
 
 padding-left = 0
 padding-right = 2
@@ -69,7 +69,7 @@ type = custom/script
 exec = weather
 interval = 120
 format = <label>
-click-left = curl -s "wttr.in" > "$HOME/.local/share/weatherreport" && $TERMINAL -e less -S "$HOME/.local/share/weatherreport"
+click-left = $TERMINAL -e displayweather
 
 [module/filesystem]
 type = custom/script
