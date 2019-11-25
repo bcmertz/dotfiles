@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# Normall all this would be in .profile and this script would just be `.profile` but here we are
-
 # Adds `~/.local/bin/` and all subdirectories to $PATH
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 export TERMINAL="st"
