@@ -8,6 +8,3 @@ redshift &      # reduce bluelight
 clipmenud &     # clipmenu daemon
 unclutter &     # get rid of mouse
 feh --bg-scale $HOME/.config/wallpaper/wallpaper.jpg # Set bg
-
-
-
