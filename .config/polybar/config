@@ -69,7 +69,7 @@ type = custom/script
 exec = weather
 interval = 120
 format = <label>
-click-left = $TERMINAL -e displayweather
+click-left = displayweather
 
 [module/filesystem]
 type = custom/script

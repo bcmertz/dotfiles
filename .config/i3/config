@@ -27,6 +27,11 @@ for_window [class="^.*"] border pixel 1
 gaps inner 10
 gaps outer 0
 
+# Browser popups
+for_window [window_role="pop-up"] floating enable
+# Weather reports
+for_window [class="Lxterminal"] floating enable fullscreen
+
 # Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
