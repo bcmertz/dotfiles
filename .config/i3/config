@@ -8,8 +8,8 @@
 # Windows key as Mod
 set $mod Mod4
 
-# Polybar
-exec_always --no-startup-id polybar default &
+# Startup polybar if it isn't running
+exec_always --no-startup-id refreshpolybar
 
 # bar {
 # 	font pango:mono 10
