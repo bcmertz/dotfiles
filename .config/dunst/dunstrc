@@ -84,13 +84,21 @@
 [urgency_normal]
     background = "#458588"
     foreground = "#ebdbb2"
-    timeout = 5
+    timeout = 0
 
 [urgency_critical]
     background = "#cc2421"
     foreground = "#ebdbb2"
     frame_color = "#fabd2f"
     timeout = 0
+
+# CUSTOM CLASSES
+[low-priority]
+    # Firefox notifications should disappear unlike other normal notifications
+    desktop_entry = Firefox
+    msg_urgency = normal
+    urgency = low
+    timeout = 3
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.
@@ -115,7 +123,3 @@
 #    summary = "*script*"
 #    script = dunst_test.sh
 
-#[ignore]
-#    # This notification will not be displayed
-#    summary = "foobar"
-#    format = ""
