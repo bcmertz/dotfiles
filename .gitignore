@@ -3,7 +3,6 @@
 .*
 
 # dotfiles
-!README.md
 !.profile
 !.xinitrc
 !.xinput
@@ -14,35 +13,47 @@
 !.bash_profile
 !.inputrc
 !.coderc
-!.config/compton/*
-!.config/dmenu/*
-!.config/dunst/*
-!.config/fontconfig/*
-!.config/git/*
-!.config/i3/*
-!.config/pcmanfm/*
-!.config/newsboat/*
-!.config/polybar/*
-!.config/mimeapps.list
-!.config/redshift.conf
 
 # git
+!README.md
 !.gitconfig
 !.gitignore
 
+# config
+!.config/
+!.config/mimeapps.list
+!.config/redshift.conf
+!.config/*/
+!.config/i3/*
+!.config/git/*
+!.config/dunst/*
+!.config/dmenu/*
+!.config/compton/*
+!.config/polybar/*
+!.config/pcmanfm/*
+!.config/newsboat/*
+!.config/fontconfig/*
+
 # emacs
-!.emacs.d/*
+!.emacs.d/
 !.emacs.d/.mc-lists.el
-.emacs.d/auto-save-list/
-.emacs.d/elpa/
-.emacs.d/games/
-.emacs.d/smex-items
+!.emacs.d/*/
+!.emacs.d/lisp/*
+!.emacs.d/languages/*
 
 # icons
 !.icons/default/index.theme
 
 # scripts
-!.local/bin/*
+!.local/
+!.local/bin/
+!.local/bin/**
 
 # apps
+!.local/share/
+!.local/share/applications/
 !.local/share/applications/*
+
+# ignore emacs files
+*~
+.*~
