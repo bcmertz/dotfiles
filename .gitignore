@@ -51,6 +51,8 @@
 
 # apps
 !.local/share/
+!.local/share/dmenu/
+!.local/share/dmenu/*
 !.local/share/applications/
 !.local/share/applications/*
 
