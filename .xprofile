@@ -7,4 +7,4 @@ dunst &         # notifications
 redshift &      # reduce bluelight
 clipmenud &     # clipmenu daemon
 unclutter &     # get rid of mouse
-feh --bg-scale $HOME/.config/wallpaper/wallpaper.jpg # Set bg
+feh --bg-scale $HOME/.local/share/wallpaper/wallpaper.jpg # Set bg

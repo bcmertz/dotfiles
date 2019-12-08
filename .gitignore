@@ -49,12 +49,12 @@
 !.local/bin/
 !.local/bin/**
 
-# apps
+# shared resources
 !.local/share/
-!.local/share/dmenu/
+!.local/share/*/
 !.local/share/dmenu/*
-!.local/share/applications/
 !.local/share/applications/*
+!.local/share/wallpaper/*
 
 # ignore emacs files
 *~
