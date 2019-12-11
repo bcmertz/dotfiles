@@ -25,6 +25,3 @@ fi
 
 # Python
 export PYTHONPATH=$HOME/go/src/github.com/getlantern/lantern_aws/lib:$HOME/go/src/github.com/getlantern/secret_lib:$HOME/go/src/github.com/getlantern/config-server/etc
-
-# Github
-alias github="surf www.github.com/bcmertz"
