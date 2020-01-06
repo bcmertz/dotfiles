@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+lxterminal -e bash -c 'sudo wifi-menu'
