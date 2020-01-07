@@ -10,12 +10,12 @@ export GOROOT=/usr/local/go
 export PATH=$PATH:$GOPATH/bin
 
 # if not running start go docs and disown
-if type godoc > /dev/null; then
-    if ! pgrep -x "godoc" > /dev/null
-    then
-	background godoc -http=:6060
-    fi
-fi
+# if type godoc > /dev/null; then
+#     if ! pgrep -x "godoc" > /dev/null
+#     then
+# 	background godoc -http=:6060
+#     fi
+# fi
 
 # Android
 #export ANDROID_HOME="/home/leila/Android/Sdk"
