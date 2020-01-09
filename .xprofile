@@ -8,4 +8,4 @@ redshift &      # reduce bluelight
 clipmenud &     # clipmenu daemon
 unclutter &     # get rid of mouse
 xautolock -time 30 -locker slock & # autolock screen after half an hour
-feh --bg-scale $HOME/.local/share/wallpaper/wallpaper.jpg # Set bg
+setbg # set background
