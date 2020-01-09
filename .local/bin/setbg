@@ -1,0 +1,6 @@
+#!/bin/bash
+#
+# set background to system wallpaper
+
+feh --bg-scale $HOME/.local/share/wallpaper/wallpaper.jpg # Set bg
+
