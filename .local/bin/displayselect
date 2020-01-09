@@ -70,4 +70,4 @@ esac
 
 setbg		# Fix background if screen size/arangement has changed.
 pgrep -x dunst >/dev/null && killall dunst && setsid dunst & # Restart dunst to ensure proper location on screen
-i3 restart # refresh i3
+i3-msg restart # refresh i3
