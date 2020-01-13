@@ -28,9 +28,6 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='/usr/bin/ls --color=auto'
 
-# wifi
-alias wifi='sudo wifi-menu'
-
 # less annoying tree
 alias tree="tree -a -I 'node_modules|.git'"
 
