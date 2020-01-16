@@ -2,7 +2,7 @@
 #
 # when x starts, also...
 
-compton -b &    # move to xcompmgr &?
+picom -b &      # compositor
 dunst &         # notifications
 redshift &      # reduce bluelight
 clipmenud &     # clipmenu daemon
