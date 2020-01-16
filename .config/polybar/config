@@ -1,6 +1,6 @@
 [bar/default]
 dpi = 133
-font-0 = roboto:pixelsize=18:antialias=false;1
+font-0 = whatver:pixelsize=18:antialias=false;1
 font-1 = Unifont:style=Medium:antialias=false
 font-2 = Symbola:pixelsize=18:style=Regular:antialias=false
 foreground = #F7A6B7
