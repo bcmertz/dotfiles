@@ -53,7 +53,7 @@ bindsym $mod+q kill
 
 # dmenu tools
 bindsym $mod+d exec dmenu_run
-bindsym $mod+Shift+d exec bmenu
+bindsym $mod+Shift+d exec showbmenu
 bindsym $mod+c exec clipmenu
 bindsym $mod+u exec unicode_picker
 

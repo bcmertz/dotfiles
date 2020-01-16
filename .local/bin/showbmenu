@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+lxterminal -e bash -c 'bmenu'
