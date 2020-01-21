@@ -76,7 +76,7 @@ type = custom/script
 exec = disk / 📁
 interval = 60
 format = <label>
-click-left = pgrep -x dunst >/dev/null && notify-send "💽 Disk space" "$(df -h --output=target,used,size)"
+click-left = pgrep -x dunst >/dev/null && notify-send "💽 Disk space" "$(df -h / --output=target,used,size && echo -e '\nFolders' && du -sh * | sort -hr)"
 click-right =  pgrep -x dunst >/dev/null && notify-send "💽 Disk module" "\- Shows used hard drive space.
 - Click to show all disk info."
 
