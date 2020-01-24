@@ -56,6 +56,3 @@ alias ui='cds ~/go/src/github.com/getlantern/lantern-desktop-ui'
 alias lb='cds ~/go/src/github.com/getlantern/lantern-build'
 alias lt='cds ~/go/src/github.com/getlantern/load-testing'
 alias buildlantern='DISABLE_PORT_RANDOMIZATION=true make lantern'
-
-# Until codebase updates to Go1.13
-alias go='GO111MODULE=on go'
