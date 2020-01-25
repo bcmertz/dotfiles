@@ -3,6 +3,8 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+	c-electric-brace
+	c-electric-semi&comma
 	c-indent-line-or-region
 	indent-for-tab-command
 	move-line-down
