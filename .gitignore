@@ -56,10 +56,6 @@
 !.local/share/applications/*
 !.local/share/wallpaper/*
 
-!coding/
-!coding/st/
-!coding/st/*
-
 # ignore emacs files
 *~
 .*~
