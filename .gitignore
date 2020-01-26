@@ -28,7 +28,7 @@
 !.config/git/*
 !.config/dunst/*
 !.config/dmenu/*
-!.config/compton/*
+!.config/picom/*
 !.config/polybar/*
 !.config/pcmanfm/*
 !.config/newsboat/*
