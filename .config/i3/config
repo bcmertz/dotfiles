@@ -51,14 +51,21 @@ bindsym $mod+Return exec st
 # kill focused window
 bindsym $mod+q kill
 
-# dmenu tools
-bindsym $mod+d exec dmenu_run
+# dmenu programs
 bindsym $mod+Shift+d exec showbmenu
-bindsym $mod+c exec clipmenu
+bindsym $mod+d exec dmenu_run
 bindsym $mod+u exec unicode_picker
+bindsym $mod+y exec clipmenu
 
+# program launchers (mostly bottom row)
+bindsym $mod+z exec zathura
+bindsym $mod+x exec pcmanfm
+bindsym $mod+c exec gcolor2
+bindsym $mod+p exec peek
 bindsym $mod+b exec firefox
-bindsym $mod+m exec pcmanfm
+bindsym $mod+m exec vlcn
+bindsym $mod+t exec deluge
+bindsym $mod+a exec atom
 
 # change focus
 bindsym $mod+j focus left
@@ -105,7 +112,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+#bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
