@@ -1,0 +1,8 @@
+#!/bin/sh
+# 
+# cycle through wallpapers
+
+
+filename=$(ls ~/.local/share/wallpaper/ | shuf -n 1)
+
+feh --bg-scale $HOME/.local/share/wallpaper/$filename # Set bg

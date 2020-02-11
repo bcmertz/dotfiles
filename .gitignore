@@ -54,7 +54,7 @@
 !.local/share/*/
 !.local/share/dmenu/*
 !.local/share/applications/*
-!.local/share/wallpaper/*
+!.local/share/wallpaper/wallpaper.jpg
 
 # ignore emacs files
 *~
