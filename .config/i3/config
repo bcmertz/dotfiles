@@ -60,7 +60,8 @@ bindsym $mod+y exec clipmenu
 # program launchers (mostly bottom row)
 bindsym $mod+z exec zathura
 bindsym $mod+x exec pcmanfm
-bindsym $mod+c exec gcolor2
+bindsym $mod+g exec gcolor2
+bindsym $mod+c exec calibre
 bindsym $mod+p exec peek
 bindsym $mod+b exec firefox
 bindsym $mod+m exec vlc
