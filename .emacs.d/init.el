@@ -24,6 +24,9 @@
 (load "styling.el")                     ; styling config
 (add-hook 'after-init-hook (lambda () (load-theme 'monokai t)))
 
+(setq initial-buffer-choice "~/go/src/github.com/getlantern/todo.org")
+(setq default-directory "~/go/src/github.com/getlantern/" )
+
 ;;(require 'custom-exwm-config)           ; use exwm instead of default xinitrc
 ;;(custom-exwm-config)
 
