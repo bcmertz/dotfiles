@@ -139,4 +139,4 @@
 (setq-default neo-show-hidden-files t)
 
 ;; Git integration
-;; (global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-x g") 'magit-status)
