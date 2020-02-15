@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: for
+# --
+for ($1; $2; $3) {
+  $0
+}

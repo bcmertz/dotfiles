@@ -40,6 +40,9 @@
 !.emacs.d/*/
 !.emacs.d/lisp/*
 !.emacs.d/languages/*
+!.emacs.d/snippets/*/
+!.emacs.d/snippets/js-mode/*
+!.emacs.d/snippets/go-mode/*
 
 # icons
 !.icons/default/index.theme
@@ -59,3 +62,5 @@
 # ignore emacs files
 *~
 .*~
+\#*
+.\#*

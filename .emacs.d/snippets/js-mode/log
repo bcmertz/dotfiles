@@ -1,0 +1,4 @@
+#
+# name: log
+# --
+console.log($1)
