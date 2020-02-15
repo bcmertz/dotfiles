@@ -133,10 +133,16 @@
 
 ;; Sidebar File Viewer
 ;; C-c C-c makes the focused directory the new root view
-(require 'neotree)
-(global-set-key (kbd "C-\\") 'neotree-toggle)
-;; Type H to toggle hidden files
-(setq-default neo-show-hidden-files t)
+(use-package neotree
+  :ensure t
+  :config
+  ;; Type H to toggle hidden files
+  (setq-default neo-show-hidden-files t)
+  (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+  (setq neo-smart-open t)
+  (setq neo-window-fixed-size ())
+  :bind("C-\\" . neotree-toggle))
+
 
 ;; Git integration
 (global-set-key (kbd "C-x g") 'magit-status)
