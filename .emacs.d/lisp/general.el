@@ -37,10 +37,10 @@
   ;; (setq windmove-wrap-around t)
   (windmove-default-keybindings 'meta))             ;; M-arrows to move
 
-(global-set-key (kbd "M--") 'shrink-window-horizontally)
-(global-set-key (kbd "M-+") 'shrink-window)
+(global-set-key (kbd "M-+") 'enlarge-window)
 (global-set-key (kbd "M-=") 'enlarge-window-horizontally)
 (global-set-key (kbd "M-_") 'shrink-window)
+(global-set-key (kbd "M--") 'shrink-window-horizontally)
 
 ;; Utilities
 (global-set-key (kbd "M-/") 'comment-or-uncomment-region)  ;; M-/
