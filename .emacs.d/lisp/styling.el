@@ -1,5 +1,9 @@
 ; Style Emacs
 
+;; Themeing
+(if (display-graphic-p)
+     (add-hook 'after-init-hook (lambda () (load-theme 'monokai t))))
+
 ;; Smooth Scrolling
 (setq scroll-margin 1
       scroll-conservatively 101

@@ -22,7 +22,6 @@
 (load "general.el")                     ; my configuration
 (load "custom.el")                      ; auto-generated config
 (load "styling.el")                     ; styling config
-(add-hook 'after-init-hook (lambda () (load-theme 'monokai t)))
 
 (setq initial-buffer-choice "~/go/src/github.com/getlantern/todo.org")
 (setq default-directory "~/go/src/github.com/getlantern/" )
