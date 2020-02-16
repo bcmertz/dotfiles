@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: func
+# --
+$1($2) {
+  $0
+}
