@@ -19,6 +19,10 @@
 !.gitconfig
 !.gitignore
 
+# installed packages
+!packages.txt
+!aur-packages.txt
+
 # config
 !.config/
 !.config/mimeapps.list
