@@ -27,6 +27,17 @@ alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 See `~/.bash_aliases` cfg and git aliases, as well as `~/.local/bin/git_alias`
 
+
+Install dependencies
+```
+install_package_list
+```
+
+Document Dependencies
+```
+makepackagelist
+```
+
 ## TODO
 - Fix up fonts and tty sizing
 - st Ctrl and Alt + arrow key support
