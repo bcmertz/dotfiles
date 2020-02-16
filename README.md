@@ -39,10 +39,7 @@ makepackagelist
 ```
 
 ## TODO
-- Fix up fonts and tty sizing
-- st Ctrl and Alt + arrow key support
-- keymap reference (dmenu or md file)
-- encrypted secrets?
+- terminal(st) emacs Ctrl and Alt + arrow support
 
 ## References
 
