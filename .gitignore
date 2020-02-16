@@ -19,10 +19,6 @@
 !.gitconfig
 !.gitignore
 
-# installed packages
-!packages.txt
-!aur-packages.txt
-
 # config
 !.config/
 !.config/mimeapps.list
@@ -62,6 +58,10 @@
 !.local/share/dmenu/*
 !.local/share/applications/*
 !.local/share/wallpaper/wallpaper.jpg
+
+# installed packages
+!.local/share/packages/packages.txt
+!.local/share/packages/aur-packages.txt
 
 # ignore emacs files
 *~
