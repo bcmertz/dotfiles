@@ -28,7 +28,7 @@ See `~/.bash_aliases` cfg and git aliases, as well as `~/.local/bin/git_alias`
 
 Install dependencies
 ```
-install_package_list
+installpackagelist
 ```
 
 Document Dependencies
