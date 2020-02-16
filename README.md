@@ -10,8 +10,6 @@
 - Notifications : dunst
 - Misc : redshift, dmenu, firefox/surf, xautolock/slock ...
 
-Baseline RAM usage around 160 MiB
-
 ## Usage
 
 To install you must have a clear $HOME dir
