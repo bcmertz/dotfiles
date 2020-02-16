@@ -8,7 +8,7 @@
 - Status : polybar
 - File Manger : pcmanfm / ranger
 - Notifications : dunst
-- Misc : redshift, dmenu, firefox/surf, ...
+- Misc : redshift, dmenu, firefox/surf, xautolock/slock ...
 
 Baseline RAM usage around 160 MiB
 
