@@ -20,7 +20,6 @@
 ;; Configuration of emacs in all modes
 (add-to-list 'load-path "~/.emacs.d/lisp")
 (load "general.el")                     ; my configuration
-(load "custom.el")                      ; auto-generated config
 (load "styling.el")                     ; styling config
 
 (setq initial-buffer-choice "~/go/src/github.com/getlantern/todo.org")
@@ -35,15 +34,6 @@
 (load "custom-js.el")
 (load "custom-markdown.el")
 
-;; ;; Sane gc values inside minibufers
-;; (defun my-minibuffer-setup-hook ()
-;;   (setq gc-cons-threshold most-positive-fixnum))
-
-;; (defun my-minibuffer-exit-hook ()
-;;   (setq gc-cons-threshold 800000))
-
-;; (add-hook 'minibuffer-setup-hook #'my-minibuffer-setup-hook)
-;; (add-hook 'minibuffer-exit-hook #'my-minibuffer-exit-hook)
 
 ;; Return to normal gc value
 (setq gc-cons-threshold 800000)
