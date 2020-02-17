@@ -26,9 +26,18 @@
 (global-set-key (kbd "M-s") 'counsel-ag)
 
 ;; emacs window management
+(add-hook 'tty-setup-hook  ;; st translations
+	  '(lambda ()
+	     (define-key input-decode-map "\e[1;3A" [meta up])
+	     (define-key input-decode-map "\e[1;3B" [(meta down)])
+	     (define-key input-decode-map "\e[1;3C" [(meta right)])
+	     (define-key input-decode-map "\e[1;3D" [(meta left)])
+	     (define-key input-decode-map "\e[1;5A" [(control up)])
+	     (define-key input-decode-map "\e[1;5B" [(control down)])
+	     (define-key input-decode-map "\e[1;5C" [(control right)])
+	     (define-key input-decode-map "\e[1;5D" [(control left)])
+	     ))
 
-(define-key input-decode-map "\e\eOA" [(meta up)]) ;; because we're in a terminal a lot
-(define-key input-decode-map "\e\eOB" [(meta down)])
 
 (use-package windmove
   :ensure t
