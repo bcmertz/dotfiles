@@ -34,7 +34,6 @@ cpupower
 crda
 cronie
 cryptsetup
-deluge
 device-mapper
 dfc
 dhclient
@@ -220,6 +219,7 @@ the_silver_searcher
 thunderbird
 tldr
 tlp
+transmission-gtk
 tree
 ttf-bitstream-vera
 ttf-dejavu
@@ -275,7 +275,6 @@ xorg-xhost
 xorg-xinit
 xorg-xkill
 xorg-xprop
-xterm
 xz
 yarn
 yay
