@@ -61,8 +61,7 @@ type = custom/script
 exec = clock
 interval = 10
 format = <label>
-click-left = notify-send "This Month" "$(cal --color=always | sed "s/..7m/<b><span color=\"red\">/;s/..27m/<\/span><\/b>/")"
-click-right = notify-send "This Month" "$(cal --color=always | sed "s/..7m/<b><span color=\"red\">/;s/..27m/<\/span><\/b>/")"
+click-left = calendar
 
 [module/weather]
 type = custom/script
