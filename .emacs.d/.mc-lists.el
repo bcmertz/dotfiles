@@ -15,6 +15,7 @@
 (setq mc/cmds-to-run-once
       '(
 	counsel-find-file
+	eval-buffer
 	help-for-help
 	swiper
 	))
