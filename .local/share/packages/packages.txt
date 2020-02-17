@@ -30,6 +30,7 @@ clipit
 clipmenu
 clipnotify
 coreutils
+cowsay
 cpupower
 crda
 cronie
@@ -216,7 +217,6 @@ tar
 terminus-font
 texinfo
 the_silver_searcher
-thunderbird
 tldr
 tlp
 transmission-gtk
