@@ -2,7 +2,7 @@
 
 - OS : manjaro
 - WM : i3 gaps
-- Compositor: compton
+- Compositor: compton (picom)
 - Editor : emacs
 - Terminal : st
 - Status : polybar
