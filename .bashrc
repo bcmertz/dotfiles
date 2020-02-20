@@ -22,8 +22,8 @@ fi
 # .bash_history
 HISTCONTROL=ignoreboth
 shopt -s histappend
-HISTSIZE=10000
-HISTFILESIZE=20000
+HISTSIZE=100000
+HISTFILESIZE=200000
 
 # bash configuration
 shopt -s checkwinsize # update rows & columns
