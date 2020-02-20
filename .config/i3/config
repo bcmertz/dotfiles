@@ -32,6 +32,9 @@ for_window [window_role="pop-up"] floating enable
 # Weather reports
 for_window [class="Lxterminal"] floating enable fullscreen
 
+# Screenshot util
+bindsym Print exec i3-scrot
+
 # Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
