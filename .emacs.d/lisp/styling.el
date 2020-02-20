@@ -26,6 +26,8 @@
 ;;  monokai-yellow         "#E5C07B"
 ;;  )
 
+(require 'spaceline-config)
+(spaceline-spacemacs-theme)
 
 ;; Smooth Scrolling
 (setq scroll-margin 1
