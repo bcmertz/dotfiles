@@ -26,14 +26,10 @@ $if mode=emacs
 "\e[A": history-search-backward
 "\e[B": history-search-forward
 
-# for rxvt
-"\e[8~": end-of-line
-
 # for non RH/Debian xterm, can't hurt for RH/DEbian xterm
 "\eOH": beginning-of-line
 "\eOF": end-of-line
+"\eOA": history-search-backward
+"\eOB": history-search-forward
 
-# for freebsd console
-"\e[H": beginning-of-line
-"\e[F": end-of-line
 $endif
