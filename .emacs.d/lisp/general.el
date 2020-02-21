@@ -3,15 +3,28 @@
 ;; Follow symlinks
 (setq vc-follow-symlinks t)
 
-;; Text Editing
-(setq-default indent-tabs-mode nil)                            ;; use spaces instead of tabs
-(set-default 'truncate-lines t)                                ;; truncate long lines
-(delete-selection-mode 1)                                      ;; replace highlighted sections
-(electric-pair-mode 1)                                         ;; fill right
-(global-set-key (kbd "<mouse-6>") (lambda () (interactive)     ;; Horizontal scrolling mouse events should actually scroll left and right.
+;; use spaces instead of tabs
+(setq-default indent-tabs-mode nil)
+
+;; truncate long lines l/r horizontal scrolling
+(set-default 'truncate-lines t)
+(global-set-key (kbd "<mouse-6>") (lambda () (interactive)
                                     (if truncate-lines (scroll-right 1))))
 (global-set-key (kbd "<mouse-7>") (lambda () (interactive)
                                         (if truncate-lines (scroll-left 1))))
+
+;; replace highlighted sections
+(delete-selection-mode 1)
+
+;; smart parenthesis
+(require 'smartparens-config)
+(smartparens-global-mode t)
+(show-smartparens-global-mode +1)
+(global-set-key (kbd "C-<escape>") 'sp-show-enclosing-pair)
+(global-set-key (kbd "M-<escape>") 'sp-up-sexp)
+(global-set-key (kbd "C-M-<escape>") 'sp-down-sexp)
+
+  
 
 ;; Navigation
 (use-package avy
@@ -22,10 +35,6 @@
   :ensure t
   :bind ("C-s" . swiper)
   ("C-r" . swiper))
-
-;; (use-package ag
-;;   :ensure t
-;;   :bind ("M-s" . ag))
 
 ;; Better File Searching
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
