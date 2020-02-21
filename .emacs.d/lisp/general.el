@@ -3,12 +3,15 @@
 ;; Follow symlinks
 (setq vc-follow-symlinks t)
 
-;; Dont use tabs
-(setq-default indent-tabs-mode nil)
-
-;; Ergonomic Text Editing
-(delete-selection-mode 1)                                 ; replace highlighted sections
-(electric-pair-mode 1)                                    ; fill right
+;; Text Editing
+(setq-default indent-tabs-mode nil)                            ;; use spaces instead of tabs
+(set-default 'truncate-lines t)                                ;; truncate long lines
+(delete-selection-mode 1)                                      ;; replace highlighted sections
+(electric-pair-mode 1)                                         ;; fill right
+(global-set-key (kbd "<mouse-6>") (lambda () (interactive)     ;; Horizontal scrolling mouse events should actually scroll left and right.
+                                    (if truncate-lines (scroll-right 1))))
+(global-set-key (kbd "<mouse-7>") (lambda () (interactive)
+                                        (if truncate-lines (scroll-left 1))))
 
 ;; Navigation
 (use-package avy
