@@ -2,7 +2,7 @@
 
 ;; Themeing
 (if (display-graphic-p)
-     (add-hook 'after-init-hook (lambda () (load-theme 'monokai t))))
+     (add-hook 'after-init-hook (lambda () (load-theme 'atom-one-dark t))))
 
 ;; Custom monokai theme values
 ;; (setq ;; foreground and background
