@@ -3,6 +3,9 @@
 ;; Follow symlinks
 (setq vc-follow-symlinks t)
 
+;; Dont use tabs
+(setq-default indent-tabs-mode nil)
+
 ;; Ergonomic Text Editing
 (delete-selection-mode 1)                                 ; replace highlighted sections
 (electric-pair-mode 1)                                    ; fill right
@@ -27,16 +30,16 @@
 
 ;; emacs window management
 (add-hook 'tty-setup-hook  ;; st translations
-	  '(lambda ()
-	     (define-key input-decode-map "\e[1;3A" [meta up])
-	     (define-key input-decode-map "\e[1;3B" [(meta down)])
-	     (define-key input-decode-map "\e[1;3C" [(meta right)])
-	     (define-key input-decode-map "\e[1;3D" [(meta left)])
-	     (define-key input-decode-map "\e[1;5A" [(control up)])
-	     (define-key input-decode-map "\e[1;5B" [(control down)])
-	     (define-key input-decode-map "\e[1;5C" [(control right)])
-	     (define-key input-decode-map "\e[1;5D" [(control left)])
-	     ))
+          '(lambda ()
+             (define-key input-decode-map "\e[1;3A" [meta up])
+             (define-key input-decode-map "\e[1;3B" [(meta down)])
+             (define-key input-decode-map "\e[1;3C" [(meta right)])
+             (define-key input-decode-map "\e[1;3D" [(meta left)])
+             (define-key input-decode-map "\e[1;5A" [(control up)])
+             (define-key input-decode-map "\e[1;5B" [(control down)])
+             (define-key input-decode-map "\e[1;5C" [(control right)])
+             (define-key input-decode-map "\e[1;5D" [(control left)])
+             ))
 
 
 (use-package windmove
@@ -112,9 +115,9 @@
 
 ;; Keystroke Completion
 (use-package which-key
-	 :ensure t
-	 :config
-	 (which-key-mode))
+         :ensure t
+         :config
+         (which-key-mode))
 
 ;; Multiple Cursors
 (use-package multiple-cursors
@@ -162,7 +165,7 @@
 With argument, do this that many times."
     (interactive "p")
     (if (use-region-p)
-	(delete-region (region-beginning) (region-end))
+        (delete-region (region-beginning) (region-end))
       (delete-region (point) (progn (forward-word arg) (point)))))
 
 (defun backward-delete-word (arg)
