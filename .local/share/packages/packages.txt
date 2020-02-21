@@ -73,6 +73,7 @@ gimp
 git
 glibc
 gnome-keyring
+gnome-screenshot
 gparted
 grep
 grub
@@ -200,7 +201,6 @@ rsync
 rust
 s-nail
 sbxkb
-screenfetch
 sed
 shadow
 snapd
