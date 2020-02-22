@@ -3,19 +3,20 @@
 
 (setq mc/cmds-to-run-for-all
       '(
-	c-electric-brace
-	c-electric-semi&comma
-	c-indent-line-or-region
-	indent-for-tab-command
-	move-line-down
-	move-line-up
-	suspend-frame
-	))
+        c-electric-brace
+        c-electric-semi&comma
+        c-indent-line-or-region
+        indent-for-tab-command
+        kill-region
+        move-line-down
+        move-line-up
+        suspend-frame
+        ))
 
 (setq mc/cmds-to-run-once
       '(
-	counsel-find-file
-	eval-buffer
-	help-for-help
-	swiper
-	))
+        counsel-find-file
+        eval-buffer
+        help-for-help
+        swiper
+        ))

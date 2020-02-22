@@ -41,7 +41,7 @@
 (global-set-key (kbd "M-s") 'counsel-ag)
 
 ;; emacs window management
-(add-hook 'tty-setup-hook  ;; st translations
+(add-hook 'tty-setup-hook  ;; terminal specific escape codes
           '(lambda ()
              (define-key input-decode-map "\e[1;3A" [meta up])
              (define-key input-decode-map "\e[1;3B" [(meta down)])
