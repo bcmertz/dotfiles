@@ -2,6 +2,13 @@
 # 
 # cycle through wallpapers
 
-filename=$(ls ~/.local/share/wallpaper/ | shuf -n 1)
+previous=$(cat ~/.local/share/currentwallpaper.txt)
 
+filename=$(ls ~/.local/share/wallpaper/ | shuf -n 1)
+while [ $filename = $previous ]
+do
+    filename=$(ls ~/.local/share/wallpaper/ | shuf -n 1)
+done
+
+echo $filename > ~/.local/share/currentwallpaper.txt
 feh --bg-scale $HOME/.local/share/wallpaper/$filename # Set bg
