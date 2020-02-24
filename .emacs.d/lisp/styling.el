@@ -4,27 +4,12 @@
 (if (display-graphic-p)
      (add-hook 'after-init-hook (lambda () (load-theme 'atom-one-dark t))))
 
-;; Custom monokai theme values
-;; (setq ;; foreground and background
-;;  monokai-foreground     "#ABB2BF"
-;;  monokai-background     "#282C34"
-;;  ;; highlights and comments
-;;  monokai-comments       "#F8F8F0"
-;;  monokai-emphasis       "#282C34"
-;;  ;;monokai-highlight      "#FFB269"
-;;  monokai-highlight-alt  "#6A6637"
-;;  monokai-highlight-line "#1B1D1E"
-;;  monokai-line-number    "#F8F8F0"
-;;  ;; colours
-;;  monokai-blue           "#61AFEF"
-;;  monokai-cyan           "#56B6C2"
-;;  monokai-green          "#98C379"
-;;  monokai-gray           "#3E4451"
-;;  monokai-violet         "#C678DD"
-;;  monokai-red            "#E06C75"
-;;  monokai-orange         "#D19A66"
-;;  monokai-yellow         "#E5C07B"
-;;  )
+;; line numbers
+(global-display-line-numbers-mode -1)   ; give display numbers
+
+;; margins
+(setq-default left-margin-width 2 right-margin-width 1)
+(set-window-buffer nil (current-buffer))
 
 (require 'spaceline-config)
 (spaceline-spacemacs-theme)
@@ -40,12 +25,12 @@
       hscroll-step 5)
 
 ;; Turn on and off highlighting of current line
-(hl-line-mode 1)
+(global-hl-line-mode 1)
 
 (defun styling/turn-on-hl-line ()
   (interactive)
-  (hl-line-mode 1))
+  (global-hl-line-mode 1))
 
 (defun styling/turn-off-hl-line ()
   (interactive)
-  (hl-line-mode -1))
+  (global-hl-line-mode -1))
