@@ -41,21 +41,25 @@
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 (setq projectile-project-search-path '("~/coding/" "~/go/src/github.com/getlantern/"))
 
-(defun neotree-project-root-dir-or-current-dir ()
-  "Open NeoTree using the project root, using projectile, or the
-current buffer directory."
-  (interactive)
-  (let ((project-dir (ignore-errors (projectile-project-root)))
-        (file-name (buffer-file-name))
-        (neo-smart-open t))
-    (if (neo-global--window-exists-p)
-        (neotree-hide)
-      (progn
-        (neotree-show)
-        (if project-dir
-            (neotree-dir project-dir))
-        (if file-name
-            (neotree-find file-name))))))
+(defun neotree-project-dir-toggle ()
+    "Open NeoTree using the project root, using find-file-in-project,
+or the current buffer directory."
+    (interactive)
+    (let ((project-dir (ignore-errors   ;;; Pick one: projectile or find-file-in-project
+           ; (projectile-project-root)
+             (ffip-project-root)
+             ))
+          (file-name (buffer-file-name))
+          (neo-smart-open t))
+      (if (and (fboundp 'neo-global--window-exists-p)
+               (neo-global--window-exists-p))
+          (neotree-hide)
+        (progn
+          (neotree-show)
+          (if project-dir
+              (neotree-dir project-dir))
+          (if file-name
+              (neotree-find file-name))))))
 
 ;; Sidebar File Viewer
 ;; C-c C-c makes the focused directory the new root view
@@ -67,7 +71,7 @@ current buffer directory."
   (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
   (setq neo-autorefresh nil)
   (setq neo-window-fixed-size ())
-  :bind("C-\\" . neotree-project-root-dir-or-current-dir))
+  :bind("C-\\" . neotree-project-dir-toggle))
 
 ;; Better File Searching
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
