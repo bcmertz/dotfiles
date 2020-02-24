@@ -3,8 +3,8 @@
 Heavily influenced by zamansky and clarete
 
 - Theme: atom-one-dark, spaceline mode-line
-- Navigation: avy, swiper, counsel, windmove, which-key, ido, neotree, smex
 - Editing: smartparens, multiple-cursors, magit
+- Navigation: projectile, avy, swiper, counsel, windmove, which-key, ido, neotree, smex
 - GO: go-mode, yasnippet, go-eldoc, company autocompletion, goimports, gocode backend
 - JS: js-mode, yasnippet, flycheck
 
