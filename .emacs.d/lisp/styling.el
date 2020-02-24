@@ -2,7 +2,10 @@
 
 ;; Themeing
 (if (display-graphic-p)
-     (add-hook 'after-init-hook (lambda () (load-theme 'atom-one-dark t))))
+    (add-hook 'after-init-hook (lambda ()
+                                 (load-theme 'atom-one-dark t)
+                                 ;; (load-theme 'kaolin-ocean t)
+                                 )))
 
 ;; line numbers
 (global-display-line-numbers-mode -1)   ; give display numbers

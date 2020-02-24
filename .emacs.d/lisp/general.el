@@ -24,7 +24,14 @@
 (global-set-key (kbd "M-<escape>") 'sp-up-sexp)
 (global-set-key (kbd "C-M-<escape>") 'sp-down-sexp)
 
-  
+;; select current line
+(defun mark-entire-line ()
+  "mark the whole line from the indent to the end"
+  (interactive)
+  (beginning-of-line-text)
+  (set-mark-command nil)
+  (end-of-line))
+(global-set-key (kbd "C-x C-l") 'mark-entire-line)
 
 ;; Navigation
 (use-package avy
