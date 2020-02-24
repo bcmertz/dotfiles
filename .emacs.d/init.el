@@ -33,6 +33,7 @@
 (load "custom-golang.el")
 (load "custom-js.el")
 (load "custom-markdown.el")
+(load "custom-css.el")
 
 ;; Return to normal gc value
 (setq gc-cons-threshold 800000)
