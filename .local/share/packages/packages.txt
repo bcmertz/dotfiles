@@ -177,6 +177,7 @@ os-prober
 p7zip
 pacman
 pamac-gtk
+pandoc
 patch
 patchutils
 pciutils
