@@ -7,6 +7,7 @@
 !.xinitrc
 !.xinput
 !.xprofile
+!.Xmodmap
 !.Xresources
 !.bashrc
 !.bash_aliases
