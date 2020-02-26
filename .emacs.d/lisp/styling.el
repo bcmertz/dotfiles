@@ -27,8 +27,10 @@
       hscroll-margin 5
       hscroll-step 5)
 
-;; Turn on and off highlighting of current line
-(global-hl-line-mode 1)
+;; Highlight current line in gui emacs
+(if (display-graphic-p)
+    (global-hl-line-mode 1))
+
 
 (defun styling/turn-on-hl-line ()
   (interactive)

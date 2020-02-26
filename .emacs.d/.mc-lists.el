@@ -10,6 +10,7 @@
         kill-region
         move-line-down
         move-line-up
+        org-self-insert-command
         suspend-frame
         ))
 
@@ -18,5 +19,6 @@
         counsel-find-file
         eval-buffer
         help-for-help
+        org-return
         swiper
         ))
