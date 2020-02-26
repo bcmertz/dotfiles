@@ -1,10 +1,32 @@
 ;;;;;;;;;;;;;;;;;;; ALL MODES CONFIG ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; code folding
+(use-package origami
+  :ensure t
+  :commands (origami-mode)
+  :bind (:map origami-mode-map
+              ("C-c o :" . origami-recursively-toggle-node)
+              ("C-c o a" . origami-toggle-all-nodes)
+              ("C-c o t" . origami-toggle-node)
+              ("C-c o o" . origami-show-only-node)
+              ("C-c o u" . origami-undo)
+              ("C-c o U" . origami-redo)
+              ("C-c o C-r" . origami-reset)
+              )
+  :config
+  (setq origami-show-fold-header t)
+  :init
+  (add-hook 'prog-mode-hook 'origami-mode))
+
+
 ;; Follow symlinks
 (setq vc-follow-symlinks t)
 
 ;; use spaces instead of tabs
 (setq-default indent-tabs-mode nil)
+
+;; use y/n instead of yes or no
+(fset 'yes-or-no-p 'y-or-n-p)
 
 ;; truncate long lines l/r horizontal scrolling
 (set-default 'truncate-lines t)
