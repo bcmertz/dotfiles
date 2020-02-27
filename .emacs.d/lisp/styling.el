@@ -18,14 +18,24 @@
 (spaceline-spacemacs-theme)
 
 ;; Smooth Scrolling
-(setq scroll-margin 1
-      scroll-conservatively 101
-      scroll-up-aggressively 0.01
-      scroll-down-aggressively 0.01
-      scroll-preserve-screen-position t
-      auto-window-vscroll nil
-      hscroll-margin 5
-      hscroll-step 5)
+;; (setq scroll-margin 1)
+;; (setq scroll-conservatively 101
+;;       scroll-up-aggressively 0.01
+;;       scroll-down-aggressively 0.01
+;;       scroll-preserve-screen-position t
+;;       auto-window-vscroll nil
+;;       hscroll-margin 5
+;;       hscroll-step 5)
+;; ;; scroll one line at a time (less "jumpy" than defaults)
+;;(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+;;(setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
+
+(setq scroll-step 1) ;; keyboard scroll one line at a time
+
+;; (require 'smooth-scrolling)
+(require 'sublimity-scroll)
+(setq sublimity-scroll-weight 5
+      sublimity-scroll-drift-length 10)
 
 ;; Highlight current line in gui emacs
 (if (display-graphic-p)
