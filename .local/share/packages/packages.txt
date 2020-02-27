@@ -230,6 +230,7 @@ ttf-indic-otf
 ttf-liberation
 ttf-roboto
 unclutter
+unzip
 upower
 usbutils
 util-linux
@@ -281,5 +282,6 @@ yarn
 yay
 youtube-dl
 zathura
+zathura-pdf-mupdf
 zensu
 zsh
