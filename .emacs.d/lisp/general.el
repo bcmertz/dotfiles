@@ -1,23 +1,10 @@
 ;;;;;;;;;;;;;;;;;;; ALL MODES CONFIG ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; code folding
-(use-package origami
-  :ensure t
-  :commands (origami-mode)
-  :bind (:map origami-mode-map
-              ("C-c o :" . origami-recursively-toggle-node)
-              ("C-c o a" . origami-toggle-all-nodes)
-              ("C-c o t" . origami-toggle-node)
-              ("C-c o o" . origami-show-only-node)
-              ("C-c o u" . origami-undo)
-              ("C-c o U" . origami-redo)
-              ("C-c o C-r" . origami-reset)
-              )
-  :config
-  (setq origami-show-fold-header t)
-  :init
-  (add-hook 'prog-mode-hook 'origami-mode))
-
+(require 'vimish-fold)
+(vimish-fold-global-mode 1)
+(global-set-key (kbd "C-c f f") #'vimish-fold)
+(global-set-key (kbd "C-c f d") #'vimish-fold-delete)
 
 ;; Follow symlinks
 (setq vc-follow-symlinks t)
@@ -106,20 +93,29 @@ or the current buffer directory."
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "M-s") 'counsel-ag)
 
-;; emacs window management
-(add-hook 'tty-setup-hook  ;; terminal specific escape codes
+;; terminal specific escape codes
+(add-hook 'tty-setup-hook
           '(lambda ()
-             (define-key input-decode-map "\e[1;3A" [meta up])
+             (define-key input-decode-map "\e[1;3A" [M-up])
              (define-key input-decode-map "\e[1;3B" [(meta down)])
              (define-key input-decode-map "\e[1;3C" [(meta right)])
              (define-key input-decode-map "\e[1;3D" [(meta left)])
-             (define-key input-decode-map "\e[1;5A" [(control up)])
+             (define-key input-decode-map "\e[1;2A" [S-up])
+             (define-key input-decode-map "\e[1;2B" [(shift down)])
+             (define-key input-decode-map "\e[1;2C" [(shift right)])
+             (define-key input-decode-map "\e[1;2D" [(shift left)])
+             (define-key input-decode-map "\e[1;5A" [(C-up)])
              (define-key input-decode-map "\e[1;5B" [(control down)])
              (define-key input-decode-map "\e[1;5C" [(control right)])
              (define-key input-decode-map "\e[1;5D" [(control left)])
              ))
 
+(if (equal "st-meta-256color" (tty-type))
+        (define-key input-decode-map "\e[1;2A\" [S-up]))
+(defadvice terminal-init-xterm (after select-shift-up activate)
+  (define-key input-decode-map \"\e[1;2A\" [S-up]))]))]"))
 
+;; emacs window management
 (use-package windmove
   :ensure t
   :config
