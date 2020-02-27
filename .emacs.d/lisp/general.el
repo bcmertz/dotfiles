@@ -5,6 +5,8 @@
 (vimish-fold-global-mode 1)
 (global-set-key (kbd "C-c f f") #'vimish-fold)
 (global-set-key (kbd "C-c f d") #'vimish-fold-delete)
+(global-set-key (kbd "C-c f l") #'vimish-fold-avy) ;; fold to line
+(global-set-key (kbd "M-`") #'vimish-fold-delete-all)
 
 ;; Follow symlinks
 (setq vc-follow-symlinks t)
