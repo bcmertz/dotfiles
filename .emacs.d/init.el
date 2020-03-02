@@ -37,6 +37,8 @@
 
 ;; Return to normal gc value
 (setq gc-cons-threshold 800000)
+;; garbage collect when emacs leaves focus
+(add-hook 'focus-out-hook 'garbage-collect)
 
 ;; Custom
 (custom-set-variables
