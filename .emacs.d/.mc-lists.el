@@ -11,6 +11,8 @@
         move-line-down
         move-line-up
         org-self-insert-command
+        sp-remove-active-pair-overlay
+        backward-delete-word
         suspend-frame
         ))
 
