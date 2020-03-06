@@ -102,6 +102,11 @@ or the current buffer directory."
   (setq neo-window-fixed-size ())
   :bind("C-\\" . neotree-project-dir-toggle))
 
+;; text selection
+(use-package expand-region
+  :bind("C-;" . er/expand-region)
+  )
+
 ;; Better File Searching
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "M-s") 'counsel-ag)
