@@ -1,6 +1,6 @@
 ;; Don't gc on startup
 (setq gc-cons-threshold most-positive-fixnum)
-
+(setq warning-minimum-level :emergency)
 ;; Packages and repository management
 (require 'package)
 (add-to-list 'package-archives
