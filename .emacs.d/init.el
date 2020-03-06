@@ -1,6 +1,7 @@
 ;; Don't gc on startup
 (setq gc-cons-threshold most-positive-fixnum)
-(setq warning-minimum-level :emergency)
+;; (setq warning-minimum-level :emergency)
+
 ;; Packages and repository management
 (require 'package)
 (add-to-list 'package-archives
@@ -13,9 +14,6 @@
 	     '("melpa-1" . "https://melpa.milkbox.net/packages/") t)
 (add-to-list 'package-archives
 	     '("melpa-2" . "https://melpa.org/packages/") t)
-
-(require 'cask "~/.cask/cask.el")
-(cask-initialize)
 
 ;; Configuration of emacs in all modes
 (add-to-list 'load-path "~/.emacs.d/lisp")

@@ -135,7 +135,6 @@ or the current buffer directory."
 
 ;; emacs window management
 (use-package windmove
-  :ensure t
   :config
   ;; wrap around at edges
   ;; (setq windmove-wrap-around t)
