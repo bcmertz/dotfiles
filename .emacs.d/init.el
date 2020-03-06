@@ -22,8 +22,7 @@
 (load "general.el")                     ; my configuration
 (load "styling.el")                     ; styling config
 
-(setq initial-buffer-choice "~/go/src/github.com/getlantern/todo.org")
-(setq default-directory "~/go/src/github.com/getlantern/" )
+(setq initial-buffer-choice "~/todo.org")
 
 ;;(require 'custom-exwm-config)           ; use exwm instead of default xinitrc
 ;;(custom-exwm-config)
