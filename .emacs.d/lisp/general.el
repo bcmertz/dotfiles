@@ -24,6 +24,17 @@
 (global-set-key (kbd "<mouse-7>") (lambda () (interactive)
                                         (if truncate-lines (scroll-left 1))))
 
+;; Utilities
+(global-set-key (kbd "M-/") 'comment-or-uncomment-region)
+(global-set-key (kbd "C-/") 'undo)
+(global-set-key (kbd "C-x C-e") 'eval-buffer)
+(if (display-graphic-p)  ;; use after init hook for it to work for some reason
+    (add-hook 'after-init-hook (lambda ()
+                                 (global-unset-key (kbd "C-_"))
+                                 (global-set-key (kbd "C-+") 'text-scale-increase)
+                                 (global-set-key (kbd "C-_") 'text-scale-decrease)
+                                 )))
+
 ;; replace highlighted sections
 (delete-selection-mode 1)
 
@@ -129,11 +140,6 @@ or the current buffer directory."
 (global-set-key (kbd "M-=") 'enlarge-window-horizontally)
 (global-set-key (kbd "M-_") 'shrink-window)
 (global-set-key (kbd "M--") 'shrink-window-horizontally)
-
-;; Utilities
-(global-set-key (kbd "M-/") 'comment-or-uncomment-region)  ;; M-/
-(global-set-key (kbd "C-_") 'undo)                         ;; C-/ in reality
-(global-set-key (kbd "C-x C-e") 'eval-buffer)              ;; useful for editing init.el et al
 
 (defun return-newline-below ()                             ;; go to end of line and return bc in TTy C-m and RET is weird
   (interactive)
