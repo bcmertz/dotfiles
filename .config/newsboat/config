@@ -1,6 +1,6 @@
-show-read-feeds no
+show-read-feeds yes
+auto-reload yes
 
 external-url-viewer "$BROWSER %u"
 
-macro , open-in-browser
-macro p set browser "tsp youtube-dl -o '~/Media/videos/yt/%(title)s.%(ext)s' --restrict-filenames"; open-in-browser ; set browser "$BROWSER %u"
+bind-key O open-all-unread-in-browser-and-mark-read

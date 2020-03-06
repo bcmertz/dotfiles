@@ -1,3 +1,6 @@
-https://www.archlinux.org/feeds/news/ "tech"
-http://rss.cnn.com/rss/edition.rss "news"
 https://www.xkcd.com/atom.xml "comics"
+https://www.gunnerkrigg.com/rss.xml "comics"
+https://waitbutwhy.com/feed "comics"
+https://www.theoatmeal.com/feed/rss "comics"
+https://www.smbc-comics.com/comic/rss "comics"
+http://feeds.nature.com/nature/rss/current?format=xml "news"
