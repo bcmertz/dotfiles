@@ -1,15 +1,3 @@
-## System setup
-
-- OS : manjaro
-- WM : i3 gaps
-- Compositor: compton (picom)
-- Editor : emacs
-- Terminal : st
-- Status : polybar
-- File Manger : pcmanfm / ranger
-- Notifications : dunst
-- Misc : redshift, dmenu, firefox/surf, xautolock/slock ...
-
 ## Usage
 
 To install you must have a clear $HOME dir
