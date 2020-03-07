@@ -36,9 +36,6 @@ Document Dependencies
 makepackagelist
 ```
 
-## TODO
-- Emacs daemon and client
-
 ## References
 
 For more information on the git bare repo structure used here, and for references to what inspired the structure of this repo:
