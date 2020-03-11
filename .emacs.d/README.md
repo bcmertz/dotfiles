@@ -1,6 +1,6 @@
 # .emacs.d
 
-Heavily influenced by zamansky and clarete
+Influenced by zamansky, clarete, and spacemacs
 
 - Theme: atom-one-dark, spaceline mode-line
 - Editing: smartparens, multiple-cursors, magit
