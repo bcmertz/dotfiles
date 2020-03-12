@@ -88,3 +88,5 @@
 	(if (check-expansion)
 	    (company-complete-common)
 	  (indent-for-tab-command)))))
+
+(provide 'custom-golang)

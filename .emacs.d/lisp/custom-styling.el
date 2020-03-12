@@ -43,3 +43,12 @@
 (defun styling/turn-off-hl-line ()
   (interactive)
   (global-hl-line-mode -1))
+
+;; truncate long lines l/r horizontal scrolling
+(set-default 'truncate-lines t)
+(global-set-key (kbd "<mouse-6>") (lambda () (interactive)
+                                    (if truncate-lines (scroll-right 1))))
+(global-set-key (kbd "<mouse-7>") (lambda () (interactive)
+                                        (if truncate-lines (scroll-left 1))))
+
+(provide 'custom-styling)

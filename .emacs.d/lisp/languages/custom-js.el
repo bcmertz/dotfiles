@@ -13,7 +13,6 @@
 
 (use-package flycheck
   :ensure t
-  :mode "\\.js\\'"
   :init
   (progn
     (setq flycheck-highlighting-mode 'lines)
@@ -22,3 +21,5 @@
       (flycheck-mode))
 
     (add-hook 'js-mode-hook #'setup-js-mode)))
+
+(provide 'custom-js)

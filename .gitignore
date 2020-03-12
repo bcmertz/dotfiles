@@ -41,7 +41,7 @@
 !.emacs.d/.mc-lists.el
 !.emacs.d/*/
 !.emacs.d/lisp/*
-!.emacs.d/languages/*
+!.emacs.d/lisp/languages/*
 !.emacs.d/snippets/*/
 !.emacs.d/snippets/js-mode/*
 !.emacs.d/snippets/go-mode/*
