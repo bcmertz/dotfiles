@@ -15,6 +15,80 @@
 
 (setq initial-buffer-choice "~/todo.org")
 
+
+(require 'evil)
+(evil-mode 1)
+
+(use-package general
+  :ensure t
+  :config
+  (general-override-mode 1) 
+  (general-define-key
+   :states '(normal visual insert emacs)
+   :prefix "SPC"
+   :non-normal-prefix "C-SPC"
+
+    ;; simple command
+    "c"   (general-simulate-key "C-c")
+    "h"   (general-simulate-key "C-h")
+    "u"   (general-simulate-key "C-u")
+
+    "g" '(avy-goto-char :which-key "goto char")
+    "l" '(avy-goto-line :which-key "goto line")
+    "p"  (general-simulate-key "C-c p" :which-key "projectile")   
+    "s" 'swiper
+    "r" 'swiper
+    "\\" 'neotree-project-dir-toggle
+    ";" 'er/expand-region
+    "e" 'evil-mode
+
+    "x"  '(:ignore t :which-key "file")
+    "xf" 'counsel-find-file
+    "xs" 'save-buffer
+    "xS" 'save-some-buffers
+    "xa" 'counsel-ag
+
+    "w"  '(:ignore t :which-key "window")
+    "w=" 'enlarge-window-horizontally
+    "w+" 'enlarge-window
+    "w-" 'shrink-window-horizontally
+    "w_" 'shrink-window
+    "wo"  'other-window
+
+    "t"  '(:ignore t :which-key "theme")
+    "th" 'global-hl-line-mode
+    "tn" 'global-display-line-numbers-mode
+    "tl" 'load-theme
+    "td" 'disable-theme
+
+    "f"  '(:ignore t :which-key "folding")
+    "ff" 'vimish-fold
+    "fd" 'vimish-fold-delete
+    "fl" 'vimish-fold-avy
+    "fD" 'vimish-fold-delete-all
+
+    "m"  '(:ignore t :which-key "multicurse")
+    "m." 'mc/mark-next-like-this
+    "m," 'mc/mark-previous-like-this
+    "ma" 'mc/mark-all-like-this
+    "me" 'mc/edit-lines
+ 
+    ;; Buffer operations
+    "b"   '(:ignore t :which-key "buffer")
+    "bk"  'kill-this-buffer
+    "bK"  'kill-buffer-and-window
+    "b]"  'next-buffer
+    "b["  'previous-buffer
+    "bR"  'rename-file-and-buffer
+    "br"  'revert-buffer   
+    
+    ;; Applications
+    "a" '(:ignore t :which-key "Applications")
+    "ag" 'magit-status
+    "ad" 'dired))
+
+(global-set-key (kbd "M-SPC") 'evil-mode)
+
 ;; Follow symlinks
 (setq vc-follow-symlinks t)
 ;; use y/n instead of yes or no
