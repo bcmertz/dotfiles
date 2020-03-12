@@ -29,18 +29,17 @@
    :non-normal-prefix "C-SPC"
 
     ;; simple command
-    "c"   (general-simulate-key "C-c")
-    "h"   (general-simulate-key "C-h")
-    "u"   (general-simulate-key "C-u")
+    "c"   (general-simulate-key "C-c" :which-key "c")
+    "h"   (general-simulate-key "C-h" :which-key "help")
+    "u"   (general-simulate-key "C-u" :which-key "u")
 
     "g" '(avy-goto-char :which-key "goto char")
     "l" '(avy-goto-line :which-key "goto line")
     "p"  (general-simulate-key "C-c p" :which-key "projectile")   
     "s" 'swiper
-    "r" 'swiper
-    "\\" 'neotree-project-dir-toggle
-    ";" 'er/expand-region
-    "e" 'evil-mode
+    "\\" '(neotree-project-dir-toggle :which-key "neotree")
+    ";" '(er/expand-region :which-key "expand")
+    "e" '(evil-mode :which-key "evil")
 
     "x"  '(:ignore t :which-key "file")
     "xf" 'counsel-find-file
