@@ -35,6 +35,7 @@ cpupower
 crda
 cronie
 cryptsetup
+ctags
 device-mapper
 dfc
 dhclient
