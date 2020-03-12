@@ -38,9 +38,10 @@
 
 # emacs
 !.emacs.d/
-!.emacs.d/.mc-lists.el
 !.emacs.d/init.el
 !.emacs.d/custom.el
+!.emacs.d/README.md
+!.emacs.d/.mc-lists.el
 !.emacs.d/*/
 !.emacs.d/lisp/*
 !.emacs.d/lisp/languages/*
