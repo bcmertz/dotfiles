@@ -24,7 +24,8 @@ Influenced by zamansky, clarete, and spacemacs
 
 ## Editing
 
-- zap-to-char : M+z
+- expand-region : C-;
+- avy-zap-to-char : M+z
 - return-newine-below : M-RET
 - mc/mark-next-like-this : "M-."
 - mc/mark-previous-like-this : "M-,"
@@ -49,4 +50,5 @@ Influenced by zamansky, clarete, and spacemacs
 
 ## Markdown
 
-- flymd-flyit (preview) : C-c m
+- markdown-live-preview-mode : C-c m
+

@@ -41,6 +41,11 @@
 ;; replace highlighted sections
 (delete-selection-mode 1)
 
+;; text selection
+(use-package expand-region
+  :bind("C-;" . er/expand-region)
+  )
+
 ;; smart parenthesis
 (require 'smartparens-config)
 (smartparens-global-mode t)
@@ -104,11 +109,6 @@ or the current buffer directory."
   (setq neo-autorefresh nil)
   (setq neo-window-fixed-size ())
   :bind("C-\\" . neotree-project-dir-toggle))
-
-;; text selection
-(use-package expand-region
-  :bind("C-;" . er/expand-region)
-  )
 
 ;; Better File Searching
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
