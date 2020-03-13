@@ -1,6 +1,10 @@
 # .emacs.d
 
-Influenced by zamansky, clarete, and spacemacs
+Spacemacs like / lite config, using general.el to bind leader key to SPC
+Influenced by sam217pa, zamansky, clarete, and spacemacs
+
+
+Toggle evil : M-SPC
 
 - Theme: atom-one-dark, spaceline mode-line
 - Editing: smartparens, multiple-cursors, magit

@@ -33,8 +33,8 @@
     "h"   (general-simulate-key "C-h" :which-key "help")
     "u"   (general-simulate-key "C-u" :which-key "u")
 
-    "g" '(avy-goto-char :which-key "goto char")
-    "l" '(avy-goto-line :which-key "goto line")
+    "SPC" '(avy-goto-char :which-key "goto char")
+    "j" '(avy-goto-line :which-key "goto line")
     "p"  (general-simulate-key "C-c p" :which-key "projectile")   
     "s" 'swiper
     "\\" '(neotree-project-dir-toggle :which-key "neotree")
