@@ -18,7 +18,7 @@
 (load "custom-css.el")
 
 ;; set customize config file location
-(setq custom-file "~/.emacs.d/custom.el")
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
 
 ;; Return to normal gc value
