@@ -54,7 +54,7 @@
     "w_" 'shrink-window
     "wo" 'other-window
     "w0" 'delete-window
-    "w1" 'delete-other-window
+    "w1" 'delete-other-windows
     "w2" 'split-window-below
     "w3" 'split-window-right
 
