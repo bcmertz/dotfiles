@@ -52,7 +52,11 @@
     "w+" 'enlarge-window
     "w-" 'shrink-window-horizontally
     "w_" 'shrink-window
-    "wo"  'other-window
+    "wo" 'other-window
+    "w0" 'delete-window
+    "w1" 'delete-other-window
+    "w2" 'split-window-below
+    "w3" 'split-window-right
 
     "t"  '(:ignore t :which-key "theme")
     "th" 'global-hl-line-mode
