@@ -12,5 +12,9 @@
 (global-set-key (kbd "M-_") 'shrink-window)
 (global-set-key (kbd "M--") 'shrink-window-horizontally)
 
+(global-set-key (kbd "<M-S-up>")     'buf-move-up)
+(global-set-key (kbd "<M-S-down>")   'buf-move-down)
+(global-set-key (kbd "<M-S-left>")   'buf-move-left)
+(global-set-key (kbd "<M-S-right>")  'buf-move-right)
 
 (provide 'custom-windowing)
