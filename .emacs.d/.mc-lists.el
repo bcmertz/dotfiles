@@ -3,6 +3,7 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        backward-delete-word
         c-electric-brace
         c-electric-semi&comma
         c-indent-line-or-region
@@ -11,8 +12,8 @@
         move-line-down
         move-line-up
         org-self-insert-command
+        smex
         sp-remove-active-pair-overlay
-        backward-delete-word
         suspend-frame
         ))
 
