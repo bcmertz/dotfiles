@@ -12,6 +12,7 @@
 (load "custom-navigation.el")
 (load "custom-editing.el")
 (load "custom-windowing.el")
+(load "custom-flycheck.el")
 (load "custom-golang.el")
 (load "custom-js.el")
 (load "custom-markdown.el")

@@ -13,8 +13,26 @@
 (add-to-list 'package-archives
 	     '("melpa-2" . "https://melpa.org/packages/") t)
 
+;; see our todo
 (setq initial-buffer-choice "~/todo.org")
 
+;; backup and tmp files
+(setq make-backup-files nil)
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+
+;; confirm we want to exit the garden
+(setq confirm-kill-emacs 'y-or-n-p)
+
+;; save place in files
+(save-place-mode 1)
+
+;; delete trailing whitespace
+(add-hook 'before-save-hook '(lambda()
+                               (when (not (or (derived-mode-p 'markdown-mode)))
+                                 (delete-trailing-whitespace))))
 
 (require 'evil)
 (evil-mode 1)
@@ -22,7 +40,7 @@
 (use-package general
   :ensure t
   :config
-  (general-override-mode 1) 
+  (general-override-mode 1)
   (general-define-key
    :states '(normal visual insert emacs)
    :prefix "SPC"
@@ -35,7 +53,7 @@
 
     "SPC" '(avy-goto-char :which-key "goto char")
     "j" '(avy-goto-line :which-key "goto line")
-    "p"  (general-simulate-key "C-c p" :which-key "projectile")   
+    "p"  (general-simulate-key "C-c p" :which-key "projectile")
     "s" 'swiper
     "\\" '(neotree-project-dir-toggle :which-key "neotree")
     ";" '(er/expand-region :which-key "expand")
@@ -75,7 +93,7 @@
     "m," 'mc/mark-previous-like-this
     "ma" 'mc/mark-all-like-this
     "me" 'mc/edit-lines
- 
+
     ;; Buffer operations
     "b"   '(:ignore t :which-key "buffer")
     "bk"  'kill-this-buffer
@@ -83,8 +101,8 @@
     "b]"  'next-buffer
     "b["  'previous-buffer
     "bR"  'rename-file-and-buffer
-    "br"  'revert-buffer   
-    
+    "br"  'revert-buffer
+
     ;; Applications
     "a" '(:ignore t :which-key "Applications")
     "ag" 'magit-status

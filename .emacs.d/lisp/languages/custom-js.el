@@ -11,15 +11,4 @@
 
 (setq js-indent-level 2)
 
-(use-package flycheck
-  :ensure t
-  :init
-  (progn
-    (setq flycheck-highlighting-mode 'lines)
-    (defun setup-js-mode ()
-      (flycheck-select-checker 'javascript-eslint)
-      (flycheck-mode))
-
-    (add-hook 'js-mode-hook #'setup-js-mode)))
-
 (provide 'custom-js)
