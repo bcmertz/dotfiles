@@ -34,6 +34,6 @@
 ;; Return to normal gc value
 (setq gc-cons-threshold 800000)
 ;; garbage collect when emacs leaves focus
-(add-hook 'after-focus-change-function 'garbage-collect)
+(add-hook 'focus-out-hook 'garbage-collect)
 
 ;;; init.el ends here
