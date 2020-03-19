@@ -41,13 +41,12 @@
   :ensure t
   :config
   (general-override-mode 1)
-  (general-define-key
-   :states '(normal visual insert emacs)
-   :prefix "SPC"
-   :non-normal-prefix "C-SPC"
-
-    ;; simple command
-    "c"   (general-simulate-key "C-c" :which-key "c")
+  (general-create-definer tyrant-def
+    :states '(normal visual insert motion emacs)
+    :prefix "SPC"
+    :non-normal-prefix "C-SPC")
+  (tyrant-def
+    "" nil
     "h"   (general-simulate-key "C-h" :which-key "help")
     "u"   (general-simulate-key "C-u" :which-key "u")
 
@@ -88,11 +87,11 @@
     "fl" 'vimish-fold-avy
     "fD" 'vimish-fold-delete-all
 
-    "m"  '(:ignore t :which-key "multicurse")
-    "m." 'mc/mark-next-like-this
-    "m," 'mc/mark-previous-like-this
-    "ma" 'mc/mark-all-like-this
-    "me" 'mc/edit-lines
+    "c"  '(:ignore t :which-key "multicurse")
+    "c." 'mc/mark-next-like-this
+    "c," 'mc/mark-previous-like-this
+    "ca" 'mc/mark-all-like-this
+    "ce" 'mc/edit-lines
 
     ;; Buffer operations
     "b"   '(:ignore t :which-key "buffer")

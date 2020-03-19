@@ -10,7 +10,12 @@
   :custom (gofmt-command "goimports")
   :init
   (progn
-    (add-hook 'go-mode-hook 'go-mode-setup)))
+    (add-hook 'go-mode-hook 'go-mode-setup))
+  :general
+  (tyrant-def go-mode-map
+    "mr"  'go-rename
+    "mt"  'gocode-toggle))
+
 
 (defun go-mode-setup () ; use C-c C-j to jump to definition and C-u C-x C-x to jump back add imports as needed
  (add-hook 'before-save-hook 'gofmt-before-save)
@@ -42,9 +47,9 @@
  (customize-set-variable 'company-go-gocode-command "gocode-mod") ; defualt to module support
  (set (make-local-variable 'company-backends) '(company-go))
  (company-mode)
- (global-set-key [backtab] 'company-complete-common) ;; backtab triggers autocomplete 
+ (global-set-key [backtab] 'company-complete-common) ;; backtab triggers autocomplete
  ;; (global-set-key [tab] 'tab-indent-or-complete)
- 
+
  (local-set-key (kbd "C-c C-r") 'go-rename))                     ; provide go-rename conveniently
 
 ;; figure out ac-update-greedy (?) error, swap for company mode?
