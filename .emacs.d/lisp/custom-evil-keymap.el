@@ -28,6 +28,7 @@
     "\\" '(neotree-project-dir-toggle :which-key "neotree")
     ";" '(er/expand-region :which-key "expand")
     "e" '(evil-mode :which-key "evil")
+    "m" '(:ignore t :which-key "mode")
 
     "x"  '(:ignore t :which-key "file")
     "xf" 'counsel-find-file
