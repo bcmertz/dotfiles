@@ -8,7 +8,7 @@
   :config
   (setq-default flycheck-check-syntax-automatically '(save))
   ;; disable documentation related emacs lisp checker
-  (setq-default flycheck-disabled-checkers '())
+  (setq-default flycheck-disabled-checkers '(go-staticcheck))
   (setq flycheck-mode-line-prefix "✔"))
 
 (provide 'custom-flycheck)
