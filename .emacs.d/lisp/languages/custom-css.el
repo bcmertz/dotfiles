@@ -1,8 +1,13 @@
-;;;;;;;;;;;;;;;;;;;;;CSS Configuration;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+;;; custom-css.el --- css config
+;;;
+;;; Commentary:
+;;;
+;;; css config
+;;;
+;;; Code:
 (use-package css
   :defer t)
 
 (setq css-indent-offset 2)
 
-(provide 'custom-css)
+;;; custom-css.el ends here

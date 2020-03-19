@@ -1,3 +1,10 @@
+;;; custom-evil-keymap.el --- set evil mode keymap
+;;;
+;;; Commentary:
+;;;
+;;; toggle with M-SPC; leader key is SPC
+;;;
+;;; Code:
 (require 'evil)
 (evil-mode 1)
 
@@ -72,6 +79,5 @@
     "ad" 'dired))
 
 (global-set-key (kbd "M-SPC") 'evil-mode)
-
 
 ;;; custom-evil-keymap.el ends here

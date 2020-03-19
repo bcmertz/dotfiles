@@ -1,9 +1,9 @@
 ;;; init.el --- loads various configuration layers
-
-
+;;;
 ;;; Commentary:
-;; This is my personal config, based heavily on clarete, spacemacs, zamanksy, sam217pa
-
+;;;
+;;; This is my personal config, based heavily on clarete, spacemacs, zamanksy, sam217pa
+;;;
 ;;; Code:
 (setq gc-cons-threshold most-positive-fixnum) ; Don't gc on startup
 

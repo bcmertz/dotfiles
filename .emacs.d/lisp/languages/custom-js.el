@@ -1,5 +1,10 @@
-;;;;;;;;;;;;;;;;;;;;;JS Configuration;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+;;; custom-js.el --- js configuration
+;;;
+;;; Commentary:
+;;;
+;;; snippets, keybindings
+;;;
+;;; Code:
 (use-package js
   :defer t
   :mode "\\*.js\\'"
@@ -14,7 +19,4 @@
     "mf"  'js-find-symbol)
   )
 
-
 (setq js-indent-level 2)
-
-(provide 'custom-js)

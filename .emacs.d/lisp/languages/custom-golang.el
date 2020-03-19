@@ -1,9 +1,10 @@
-;;;;;;;;;;;;;;;;;;;;;;;;; GOLANG CONFIGURATION;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;; (add-to-list 'load-path "~/go/src/github.com/dominikh//") only if not from melpa
-;; (autoload 'go-mode "go-mode" nil t)
-;; (add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode))
-
+;;; custom-golang.el --- golang configuration
+;;;
+;;; Commentary:
+;;;
+;;; snippets, formatting, docs, autocompletion, etc
+;;;
+;;; Code:
 (use-package go-mode
   :defer t
   :mode "\\.go\\'"
@@ -94,4 +95,4 @@
 	    (company-complete-common)
 	  (indent-for-tab-command)))))
 
-(provide 'custom-golang)
+;;; custom-golang.el ends here

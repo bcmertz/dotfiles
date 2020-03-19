@@ -1,5 +1,10 @@
-;;;;;;;;;;;;;;;;;;;; navigation related config ;;;;;;;;;;;;;;;;;;;
-
+;;; custom-navigation.el --- nav config
+;;;
+;;; Commentary:
+;;;
+;;; moving around files and buffers in Emacs
+;;;
+;;; Code:
 ;; Navigation
 (use-package avy
   :ensure t
@@ -37,7 +42,7 @@
 (setq ido-everywhere t)
 (ido-mode 1)              ; Better C-x b
 
-(defalias 'list-buffers 'ibuffer)    ; better C-x C-b 
+(defalias 'list-buffers 'ibuffer)    ; better C-x C-b
 
 ;; Ido like M-x command completion
 (use-package smex
@@ -46,5 +51,4 @@
   :bind ("M-x" . smex)
   )
 
-
-(provide 'custom-navigation)
+;;; custom-navigaton.el ends here

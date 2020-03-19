@@ -1,5 +1,10 @@
-;; custom editing config ;;;
-
+;;; custom-editing.el --- configuration pertaining to editing text
+;;;
+;;; Commentary:
+;;;
+;;; code folding, syntax based packages, multiple cursors, etc
+;;;
+;;; Code:
 ;; zap to char using avy
 (global-set-key (kbd "M-z") 'avy-zap-to-char-dwim)
 
@@ -58,9 +63,15 @@
   ("C-c C-e" . mc/edit-lines)
   )
 
+;; Keystroke Completion
+(use-package which-key
+         :ensure t
+         :config
+         (which-key-mode))
+
 (global-unset-key (kbd "M-<down-mouse-1>"))
 (global-set-key (kbd "M-<mouse-1>") 'mc/add-cursor-on-click)
 
 (global-set-key (read-kbd-macro "<M-DEL>") 'backward-delete-word)
 
-(provide 'custom-editing)
+;;; custom-editing.el ends here

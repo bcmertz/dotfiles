@@ -1,6 +1,10 @@
-;;; custom utilities ;;;
-
-
+;;; custom-funcs.el --- utilities and custom defined functions
+;;;
+;;; Commentary:
+;;;
+;;; custom funcs
+;;;
+;;; Code:
 ;; select current line
 (defun mark-entire-line ()
   "mark the whole line from the indent to the end"
@@ -30,7 +34,8 @@ or the current buffer directory."
           (if file-name
               (neotree-find file-name))))))
 
-(defun return-newline-below ()                             ;; go to end of line and return bc in TTy C-m and RET is weird
+(defun return-newline-below ()
+  "Go to end of line and return bc in TTy C-m and RET is weird."
   (interactive)
   (end-of-line)
   (newline-and-indent))
@@ -94,4 +99,4 @@ With argument, do this that many times."
     (interactive "p")
     (delete-word (- arg)))
 
-(provide 'custom-funcs)
+;;; custom-funcs.el ends here

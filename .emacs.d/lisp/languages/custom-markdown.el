@@ -1,5 +1,10 @@
-;;;;;;;;;;;;;;;;;;;;;;; Markdown Config ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+;;; custom-markdown.el --- markdown configuratiob
+;;;
+;;; Commentary:
+;;;
+;;; markdown preview
+;;;
+;;; Code:
 (use-package markdown-mode
   :ensure t
   :bind ("C-c m" . markdown-live-preview-mode)
@@ -12,4 +17,4 @@
     "mp"  'markdown-live-preview-mode)
   )
 
-(provide 'custom-markdown)
+;;; custom-markdown.el ends here

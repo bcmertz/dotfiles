@@ -1,5 +1,10 @@
-;;;;;;;;;;;;;;;;;;;; windowing related config ;;;;;;;;;;;;;;;;;;;
-
+;;; custom-windowing.el --- window manager
+;;;
+;;; Commentary:
+;;;
+;;; moving and resizing windows / buffers
+;;;
+;;; Code:
 ;; emacs window management
 (use-package windmove
   :config
@@ -17,4 +22,4 @@
 (global-set-key (kbd "<M-S-left>")   'buf-move-left)
 (global-set-key (kbd "<M-S-right>")  'buf-move-right)
 
-(provide 'custom-windowing)
+;;; custom-windowing.el ends here

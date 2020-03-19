@@ -1,5 +1,10 @@
-; Style Emacs
-
+;;; custom-styling.el --- custom styling
+;;;
+;;; Commentary:
+;;;
+;;; modeline, scrolling, theme, etc
+;;;
+;;; Code:
 ;; Themeing
 (if (display-graphic-p)
     (add-hook 'after-init-hook (lambda ()
@@ -51,4 +56,4 @@
 (global-set-key (kbd "<mouse-7>") (lambda () (interactive)
                                         (if truncate-lines (scroll-left 1))))
 
-(provide 'custom-styling)
+;;; custom-styling.el ends here

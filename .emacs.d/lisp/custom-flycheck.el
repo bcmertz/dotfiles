@@ -1,4 +1,10 @@
-;;;;;;;;;;;;;;;;;;;;;Flycheck Configuration;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; custom-flycheck.el --- syntax checking
+;;;
+;;; Commentary:
+;;;
+;;; syntax checking
+;;;
+;;; Code:
 
 (use-package flycheck
   :defer t
@@ -11,4 +17,4 @@
   (setq-default flycheck-disabled-checkers '(go-staticcheck))
   (setq flycheck-mode-line-prefix "✔"))
 
-(provide 'custom-flycheck)
+;;; custom-flycheck.el ends here
