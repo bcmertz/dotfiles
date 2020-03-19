@@ -29,7 +29,7 @@
       `((".*" ,temporary-file-directory t)))
 
 ;; confirm we want to exit the garden
-(setq confirm-kill-emacs 'y-or-n-p)
+;; (setq confirm-kill-emacs 'y-or-n-p)
 
 ;; save place in files
 (save-place-mode 1)
