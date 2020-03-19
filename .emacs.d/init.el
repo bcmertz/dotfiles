@@ -7,6 +7,7 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "lisp/languages" user-emacs-directory))
 (load "custom-general.el")
+(load "custom-evil-keymap") ;; toggle evil with M-SPC; SPC is leader key
 (load "custom-funcs.el")
 (load "custom-styling.el")
 (load "custom-navigation.el")
