@@ -14,6 +14,7 @@
   :ensure t
   :bind ("C-s" . swiper)
   ("C-r" . swiper))
+(setq ivy-count-format "(%d/%d) ")
 
 (projectile-mode +1)
 (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
