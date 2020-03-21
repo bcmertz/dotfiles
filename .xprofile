@@ -8,5 +8,5 @@ redshift &      # reduce bluelight
 clipmenud &     # clipmenu daemon
 unclutter &     # get rid of mouse
 xautolock -time 30 -locker slock & # autolock screen after half an hour
-xset r rate 330 &  # faster repeating keys
+xset r rate 300 50 &  # faster repeating keys
 setbg # set background
