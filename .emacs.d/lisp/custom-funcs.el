@@ -40,49 +40,42 @@ or the current buffer directory."
   (end-of-line)
   (newline-and-indent))
 
+(defun move-lines (n)
+  (let ((beg) (end) (keep))
+    (if mark-active
+        (save-excursion
+          (setq keep t)
+          (setq beg (region-beginning)
+                end (region-end))
+          (goto-char beg)
+          (setq beg (line-beginning-position))
+          (goto-char end)
+          (setq end (line-beginning-position 2)))
+      (setq beg (line-beginning-position)
+            end (line-beginning-position 2)))
+    (let ((offset (if (and (mark t)
+                           (and (>= (mark t) beg)
+                                (< (mark t) end)))
+                      (- (point) (mark t))))
+          (rewind (- end (point))))
+      (goto-char (if (< n 0) beg end))
+      (forward-line n)
+      (insert (delete-and-extract-region beg end))
+      (backward-char rewind)
+      (if offset (set-mark (- (point) offset))))
+    (if keep
+        (setq mark-active t
+              deactivate-mark nil))))
 
-(defun move-line-up ()
-  "Move up the current line."
-  (interactive)
-  (transpose-lines 1)
-  (forward-line -2)
-  (indent-according-to-mode))
+(defun move-lines-up (n)
+  "move the line(s) spanned by the active region up by N lines."
+  (interactive "*p")
+  (move-lines (- (or n 1))))
 
-(defun move-line-down ()
-  "Move down the current line."
-  (interactive)
-  (forward-line 1)
-  (transpose-lines 1)
-  (forward-line -1)
-  (indent-according-to-mode))
-
-(defun move-region (start end n)
-  "Move the current region up or down by N lines."
-  (interactive "r\np")
-  (let ((line-text (delete-and-extract-region start end)))
-    (forward-line n)
-    (let ((start (point)))
-      (insert line-text)
-      (setq deactivate-mark nil)
-      (set-mark start))))
-
-(defun move-region-up (start end n)
-  "Move the current line up by N lines."
-  (interactive "r\np")
-  (move-region start end (if (null n) -1 (- n))))
-
-(defun move-region-down (start end n)
-  "Move the current line down by N lines."
-  (interactive "r\np")
-  (move-region start end (if (null n) 1 n)))
-
-(defun move-line-region-up (&optional start end n)
-  (interactive "r\np")
-  (if (use-region-p) (move-region-up start end n) (move-line-up)))
-
-(defun move-line-region-down (&optional start end n)
-  (interactive "r\np")
-  (if (use-region-p) (move-region-down start end n) (move-line-down)))
+(defun move-lines-down (n)
+  "move the line(s) spanned by the active region down by N lines."
+  (interactive "*p")
+  (move-lines (or n 1)))
 
 ;; delete don't kill backwards for M-del
 (defun delete-word (arg)

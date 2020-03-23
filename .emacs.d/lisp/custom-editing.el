@@ -50,8 +50,8 @@
 
 (global-set-key (kbd "<M-RET>") 'return-newline-below)     ;; return new line below
 
-(global-set-key [(control up)] 'move-line-region-up)
-(global-set-key [(control down)] 'move-line-region-down)
+(global-set-key [(control up)] 'move-lines-up)
+(global-set-key [(control down)] 'move-lines-down)
 
 ;; Multiple Cursors
 (use-package multiple-cursors
