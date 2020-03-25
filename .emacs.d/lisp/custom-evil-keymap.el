@@ -5,8 +5,10 @@
 ;;; toggle with M-SPC; leader key is SPC
 ;;;
 ;;; Code:
-(require 'evil)
-(evil-mode 1)
+(use-package evil
+  :ensure t
+  :defer t
+  )
 
 (use-package general
   :ensure t
