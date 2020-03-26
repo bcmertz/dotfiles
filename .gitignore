@@ -9,6 +9,7 @@
 !.xprofile
 !.Xresources
 !.bashrc
+!.gtkrc-2.0
 !.bash_aliases
 !.bash_profile
 !.inputrc
