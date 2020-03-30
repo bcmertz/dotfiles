@@ -9,7 +9,7 @@
 (if (display-graphic-p)
     (add-hook 'after-init-hook (lambda ()
                                  (load-theme 'atom-one-dark t)
-                                 ;; (load-theme 'kaolin-ocean t)
+                                 ;; (load-theme 'kaolin-temple t)
                                  )))
 
 ;; line numbers
