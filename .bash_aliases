@@ -39,9 +39,10 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias c='clear'
 alias s='source ~/.bashrc'
 alias ag='ag --hidden --ignore node_modules --ignore .git'
-
-# Cute pipe to xclip to pipe to clipboard!
 alias copy='xclip -sel clip'
+alias r='fc -s'
+alias rc='fc -s | copy'
+
 
 # Interesting network stuff
 alias i2p='i2prouter console'
