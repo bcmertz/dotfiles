@@ -62,6 +62,7 @@ file
 filesystem
 findutils
 firefox
+firefox-i18n-fa
 flac
 flex
 gawk

@@ -1,5 +1,6 @@
 heroku-cli
 linux-surface
 linux-surface-headers
+multimarkdown
 ttf-symbola
 ttf-unifont
