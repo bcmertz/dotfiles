@@ -1,6 +1,8 @@
+arch-wiki-docs
 heroku-cli
 linux-surface
 linux-surface-headers
 multimarkdown
+pygtk
 ttf-symbola
 ttf-unifont

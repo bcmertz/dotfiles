@@ -123,6 +123,7 @@ logrotate
 lvm2
 lxappearance
 lxinput
+lxsession
 lxterminal
 lynx
 m4
@@ -194,7 +195,6 @@ poppler-data
 powertop
 procps-ng
 psmisc
-pygtk
 qt5-styleplugins
 qt5ct
 ranger
