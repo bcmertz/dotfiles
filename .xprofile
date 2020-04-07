@@ -9,4 +9,5 @@ clipmenud &     # clipmenu daemon
 unclutter &     # get rid of mouse
 xautolock -time 30 -locker slock & # autolock screen after half an hour
 xset r rate 300 50 &  # faster repeating keys
+lxpolkit &      # authentication agent
 setbg # set background
