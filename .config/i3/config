@@ -40,6 +40,7 @@ for_window [window_role="pop-up"] floating enable
 for_window [class="Lxterminal"] floating enable fullscreen
 # xarchiver
 for_window [class="Xarchiver"] floating enable
+for_window [class="Progress"] floating enable
 
 # Screenshot
 bindsym Print exec i3-scrot
