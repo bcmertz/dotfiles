@@ -38,6 +38,8 @@ gaps outer 0
 for_window [window_role="pop-up"] floating enable
 # Weather reports
 for_window [class="Lxterminal"] floating enable fullscreen
+# xarchiver
+for_window [class="Xarchiver"] floating enable
 
 # Screenshot
 bindsym Print exec i3-scrot
