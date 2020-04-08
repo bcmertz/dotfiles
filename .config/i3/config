@@ -81,7 +81,7 @@ bindsym $mod+c exec calibre
 bindsym $mod+p exec peek
 bindsym $mod+b exec firefox
 bindsym $mod+m exec vlc
-bindsym $mod+t exec deluge
+bindsym $mod+t exec transmission-gtk
 bindsym $mod+a exec emacs
 
 # change focus
