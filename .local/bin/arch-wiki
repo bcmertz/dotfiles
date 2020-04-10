@@ -1,9 +1,0 @@
-#!/bin/bash
-#
-# Give dmenu list of all the arch wiki docs
-
-chosen=$(ls /usr/share/doc/arch-wiki/html/en | dmenu -i -l 20 -fn Monospace-18)
-
-[ "$chosen" != "" ] || exit
-
-firefox /usr/share/doc/arch-wiki/html/en/$chosen
