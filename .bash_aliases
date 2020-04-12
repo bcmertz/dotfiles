@@ -50,6 +50,9 @@ alias fixwifi='sudo modprobe -r mwifiex_pcie && sudo modprobe mwifiex_pcie'
 # arduino
 alias fixarduino='sudo chmod a+rw /dev/ttyACM0'
 
+# spotify
+alias spotify='background spotify --force-device-scale-factor=2'
+
 # Work
 alias fl='cds ~/go/src/github.com/getlantern/flashlight'
 alias ui='cds ~/go/src/github.com/getlantern/lantern-desktop-ui'
