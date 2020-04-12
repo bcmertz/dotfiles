@@ -34,7 +34,6 @@ tput smkx
 
 # combo cds ls
 cds() {
-    echo $1
     if [ -z "$1" ]; then
         cd ~ && /usr/bin/ls --color=auto
     else
