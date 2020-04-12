@@ -34,7 +34,12 @@ tput smkx
 
 # combo cds ls
 cds() {
-    cd "$1" && /usr/bin/ls --color=auto
+    echo $1
+    if [ -z "$1" ]; then
+        cd ~ && /usr/bin/ls --color=auto
+    else
+        cd "$1" && /usr/bin/ls --color=auto
+    fi
 }
 
 # enable programmable completion features
