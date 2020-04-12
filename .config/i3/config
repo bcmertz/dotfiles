@@ -72,13 +72,14 @@ bindsym $mod+d exec dmenu_run
 bindsym $mod+u exec unicode_picker
 bindsym $mod+y exec clipmenu
 bindsym $mod+o exec info_query
+bindsym $mod+p exec passmenu
 
 # program launchers (mostly bottom row)
 bindsym $mod+z exec zathura
 bindsym $mod+x exec pcmanfm
 bindsym $mod+g exec gcolor2
 bindsym $mod+c exec calibre
-bindsym $mod+p exec peek
+bindsym $mod+s exec peek
 bindsym $mod+b exec firefox
 bindsym $mod+m exec vlc
 bindsym $mod+t exec transmission-gtk
@@ -118,7 +119,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+#bindsym $mod+s layout stacking
 #bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
