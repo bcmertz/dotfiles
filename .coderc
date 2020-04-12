@@ -6,8 +6,7 @@ alias emacsgui='emacsclient -create-frame --alternate-editor=""'
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin
 export GOROOT=/usr/local/go
-export PATH=$PATH:$GOPATH/bin
-export PATH=~/.npm-global/bin:$PATH
+export PATH=$PATH:$GOPATH/bin:~/.npm-global/bin
 
 # if not running start go docs and disown
 # if type godoc > /dev/null; then
