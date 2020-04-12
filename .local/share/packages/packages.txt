@@ -36,6 +36,7 @@ crda
 cronie
 cryptsetup
 ctags
+deadbeef
 device-mapper
 dfc
 dhclient
