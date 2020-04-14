@@ -41,7 +41,7 @@ for_window [class="Lxterminal"] floating enable fullscreen
 # xarchiver
 for_window [class="Xarchiver"] floating enable
 for_window [class="Progress"] floating enable
-
+for_window [class="File Upload"] floating enable
 # Screenshot
 bindsym Print exec i3-scrot
 # Interactive screenshot
@@ -72,6 +72,7 @@ bindsym $mod+u exec unicode_picker
 bindsym $mod+y exec clipmenu
 bindsym $mod+o exec info_query
 bindsym $mod+p exec passmenu
+bindsym $mod+w exec displayselect
 
 # program launchers (mostly bottom row)
 bindsym $mod+z exec zathura
