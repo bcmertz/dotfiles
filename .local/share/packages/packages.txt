@@ -182,6 +182,7 @@ p7zip
 pacman
 pamac-gtk
 pandoc
+pass
 patch
 patchutils
 pciutils
@@ -196,12 +197,14 @@ poppler-data
 powertop
 procps-ng
 psmisc
+qt4
 qt5-styleplugins
 qt5ct
 ranger
 redshift
 reiserfsprogs
 rsync
+ruby
 rust
 s-nail
 sbxkb
