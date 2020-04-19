@@ -17,24 +17,24 @@
     "mr"  'go-rename
     "mt"  'gocode-toggle))
 
-
 (defun go-mode-setup () ; use C-c C-j to jump to definition and C-u C-x C-x to jump back add imports as needed
- (add-hook 'before-save-hook 'gofmt-before-save)
- (require 'go-eldoc)
- (go-eldoc-setup)                                                ; provides type info
- (set-face-attribute 'eldoc-highlight-function-argument nil
-		     :foreground "green"
-		     :weight 'bold)
+  (add-hook 'before-save-hook 'gofmt-before-save)
+  (require 'go-eldoc)
+  (go-eldoc-setup)                                                ; provides type info
+  (set-face-attribute 'eldoc-highlight-function-argument nil
+		      :foreground "green"
+		      :weight 'bold)
 
- (require 'yasnippet)
- (add-to-list 'load-path "~/.emacs.d/elpa/yasnippet-*")
- (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/go-mode")   ; enable snippets
- (yas-global-mode 1)
- (local-set-key (kbd "C-c C-r") 'go-rename))                     ; provide go-rename conveniently
+  (require 'yasnippet)
+  (add-to-list 'load-path "~/.emacs.d/elpa/yasnippet-*")
+  (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/go-mode")   ; enable snippets
+  (yas-global-mode 1)
+  (local-set-key (kbd "C-c C-r") 'go-rename))                     ; provide go-rename conveniently
 
-(require 'company-go)
-(customize-set-variable 'company-go-gocode-command "gocode-mod") ; defualt to module support
-(set (make-local-variable 'company-backends) '(company-go))
+  (require 'company-go)
+  (customize-set-variable 'company-go-gocode-command "gocode-mod") ; defualt to module support
+  (set (make-local-variable 'company-backends) '(company-go))
+  (company-mode)
 
 (defun gocode-toggle ()
   "Toggle the gocode executable between the module and non-module versions."
