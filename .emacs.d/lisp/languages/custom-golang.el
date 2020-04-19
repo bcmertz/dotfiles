@@ -50,16 +50,4 @@
   ;;   (custom-reevaluate-setting 'company-idle-delay))
   (message company-go-gocode-command))
 
-(defun check-expansion ()
-  (save-excursion
-    (if (looking-at "\\_>") t
-      (backward-char 1)
-      (if (looking-at "\\.") t
-	(backward-char 1)
-	(if (looking-at "->") t nil)))))
-
-(defun do-yas-expand ()
-  (let ((yas/fallback-behavior 'return-nil))
-    (yas/expand)))
-
 ;;; custom-golang.el ends here
