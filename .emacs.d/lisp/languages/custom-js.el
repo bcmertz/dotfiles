@@ -14,6 +14,7 @@
   (require 'yasnippet)
   (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/js-mode")
   (yas-global-mode 1)
+  (company-mode)
   :general
   (tyrant-def js-mode-map
     "mf"  'js-find-symbol)

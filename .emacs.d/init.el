@@ -17,6 +17,7 @@
 (load "custom-evil-keymap") ;; toggle evil with M-SPC; SPC is leader key
 (load "custom-funcs.el")
 (load "custom-styling.el")
+(load "custom-autocomplete.el")
 (load "custom-navigation.el")
 (load "custom-editing.el")
 (load "custom-windowing.el")
