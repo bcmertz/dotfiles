@@ -120,6 +120,7 @@ libva-mesa-driver
 libva-vdpau-driver
 licenses
 linux54
+linux54-virtualbox-host-modules
 logrotate
 lvm2
 lxappearance
@@ -226,6 +227,7 @@ texinfo
 the_silver_searcher
 tldr
 tlp
+torbrowser-launcher
 transmission-gtk
 tree
 ttf-bitstream-vera
@@ -245,6 +247,8 @@ vi
 vibrancy-icons-teal
 viewnior
 vim
+virtualbox
+virtualbox-host-dkms
 vlc
 volumeicon
 vulkan-intel
