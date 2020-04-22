@@ -88,3 +88,4 @@ text/yaml=emacs.desktop;
 application/pdf=org.pwmt.zathura.desktop;
 video/mp4=firefox.desktop;chromium.desktop;pragha.desktop;xplayer.desktop;
 video/x-matroska=vlc.desktop;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop;
