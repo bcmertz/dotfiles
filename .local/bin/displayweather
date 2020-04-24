@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
 
-lxterminal -e bash -c 'head -n -1 $HOME/.local/share/weatherreport; read'
+st -c 'Fullscreen st' -e bash -c 'head -n -1 $HOME/.local/share/weatherreport; read'

@@ -37,11 +37,12 @@ gaps outer 0
 # Browser popups
 for_window [window_role="pop-up"] floating enable
 # Weather reports
-for_window [class="Lxterminal"] floating enable fullscreen
+for_window [class="Fullscreen st"] floating enable fullscreen
 # xarchiver
 for_window [class="Xarchiver"] floating enable
 for_window [class="Progress"] floating enable
 for_window [class="File Upload"] floating enable
+
 # Screenshot
 bindsym Print exec i3-scrot
 # Interactive screenshot
