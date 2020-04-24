@@ -4,4 +4,4 @@
 
 chosen=$(ls ~/Documents/recipes/ | dmenu -i -l 25 -fn Monospace-14)
 [ "$chosen" != "" ] || exit
-emacs ~/Documents/recipes/$chosen
+st -c 'Fullscreen st' -e bash -c "head -n -1 ~/Documents/recipes/$chosen; read"
