@@ -230,10 +230,10 @@ tlp
 torbrowser-launcher
 transmission-gtk
 tree
+ttf-anonymous-pro
 ttf-bitstream-vera
 ttf-dejavu
 ttf-droid
-ttf-inconsolata
 ttf-indic-otf
 ttf-liberation
 ttf-roboto
@@ -247,7 +247,6 @@ vi
 vibrancy-icons-teal
 viewnior
 vim
-virtualbox
 virtualbox-host-dkms
 vlc
 volumeicon

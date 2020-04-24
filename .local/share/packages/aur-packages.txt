@@ -4,5 +4,6 @@ linux-surface
 linux-surface-headers
 multimarkdown
 pygtk
+ttf-inconsolata-g
 ttf-symbola
 ttf-unifont
