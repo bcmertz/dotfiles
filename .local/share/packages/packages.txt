@@ -7,7 +7,6 @@ alsa-utils
 apparmor
 arandr
 artwork-i3
-atom
 autoconf
 automake
 avahi
@@ -53,6 +52,7 @@ ecryptfs-utils
 efibootmgr
 emacs
 epdfview
+etcher
 exfat-utils
 f2fs-tools
 fakeroot
@@ -170,7 +170,9 @@ networkmanager-openvpn
 networkmanager-pptp
 networkmanager-vpnc
 newsboat
+nextcloud-client
 nfs-utils
+npm
 nss-mdns
 ntfs-3g
 ntp
