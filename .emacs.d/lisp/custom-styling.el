@@ -51,6 +51,8 @@
 
 ;; truncate long lines l/r horizontal scrolling
 (set-default 'truncate-lines t)
+(add-hook 'text-mode-hook (lambda () (setq truncate-lines nil)))
+
 (global-set-key (kbd "<mouse-6>") (lambda () (interactive)
                                     (if truncate-lines (scroll-right 1))))
 (global-set-key (kbd "<mouse-7>") (lambda () (interactive)
