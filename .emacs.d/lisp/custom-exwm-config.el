@@ -34,6 +34,7 @@
 
   ;; 's-r': Reset
   (exwm-input-set-key (kbd "s-r") #'exwm-reset)
+  (define-key exwm-mode-map (kbd "C-c") nil)
 
   ;; 's-w': Switch workspace
   (exwm-input-set-key (kbd "s-w") #'exwm-workspace-switch)

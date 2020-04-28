@@ -10,9 +10,9 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "lisp/languages" user-emacs-directory))
 
-;; emacs as os window manager
-(require 'custom-exwm-config)          
-(custom-exwm-config)
+;; emacs as window manager
+;; (require 'custom-exwm-config)
+;; (custom-exwm-config)
 
 ;; general configuration
 (load "custom-general.el")
