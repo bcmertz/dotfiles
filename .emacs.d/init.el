@@ -7,11 +7,13 @@
 ;;; Code:
 (setq gc-cons-threshold most-positive-fixnum) ; Don't gc on startup
 
-;;(require 'custom-exwm-config)          ; emacs as os window manager
-;;(custom-exwm-config)
-
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "lisp/languages" user-emacs-directory))
+
+;; emacs as os window manager
+(require 'custom-exwm-config)          
+(custom-exwm-config)
+
 ;; general configuration
 (load "custom-general.el")
 (load "custom-evil-keymap") ;; toggle evil with M-SPC; SPC is leader key
