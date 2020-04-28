@@ -11,8 +11,15 @@
 (add-to-list 'load-path (expand-file-name "lisp/languages" user-emacs-directory))
 
 ;; emacs as window manager
-;; (require 'custom-exwm-config)
-;; (custom-exwm-config)
+(setq session (getenv "SESSION"))
+(if (equal session "emacs")
+    (progn
+      (message "managing windows")
+      (require 'custom-exwm-config)
+      (custom-exwm-config)
+      )
+  )
+
 
 ;; general configuration
 (load "custom-general.el")
@@ -24,7 +31,8 @@
 (load "custom-editing.el")
 (load "custom-windowing.el")
 (load "custom-flycheck.el")
-;; language configuration
+
+;; mode configurations
 (load "custom-golang.el")
 (load "custom-js.el")
 (load "custom-markdown.el")

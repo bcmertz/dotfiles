@@ -19,5 +19,11 @@ fi
 # enable these programs at the start of X
 [ -f ~/.xprofile ] && . ~/.xprofile
 
-exec i3
-#exec emacs
+# choose wm, default to i3
+session=${1:-i3}
+export SESSION=$session
+
+case $session in
+   emacs             ) exec emacs;;
+   i3                ) exec i3;;
+esac
