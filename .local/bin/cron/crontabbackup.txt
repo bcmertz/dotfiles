@@ -1,0 +1,3 @@
+* * * * * ~/.local/bin/cron/datelog
+0 0,6,12,18 * * * ~/.local/bin/cron/checkupdates
+0 * * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; export DISPLAY=:0; ~/.local/bin/cron/setbg
