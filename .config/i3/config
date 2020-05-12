@@ -31,8 +31,8 @@ client.background       #2f343f
 font pango:DejaVu Sans Mono 10
 
 for_window [class="^.*"] border pixel 2
-gaps inner 10
-gaps outer 0
+gaps inner 15
+gaps outer 15
 
 # Browser popups
 for_window [window_role="pop-up"] floating enable
@@ -42,6 +42,10 @@ for_window [class="Fullscreen st"] floating enable fullscreen
 for_window [class="Xarchiver"] floating enable
 for_window [class="Progress"] floating enable
 for_window [class="File Upload"] floating enable
+for_window [title="GIMP Startup"] move workspace $ws5
+for_window [class="Gimp"] move workspace $ws5
+for_window [class="Emacs"] move workspace $ws2
+for_window [class="firefox"] move workspace $ws1
 
 # Screenshot
 bindsym $mod+Print exec i3-scrot
