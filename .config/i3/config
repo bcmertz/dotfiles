@@ -44,9 +44,9 @@ for_window [class="Progress"] floating enable
 for_window [class="File Upload"] floating enable
 
 # Screenshot
-bindsym Print exec i3-scrot
+bindsym $mod+Print exec i3-scrot
 # Interactive screenshot
-bindsym $mod+Print exec gnome-screenshot -i
+bindsym Print exec gnome-screenshot -i
 
 # Audio controls
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
