@@ -79,10 +79,12 @@ bindsym $mod+o exec info_query
 bindsym $mod+p exec passmenu
 bindsym $mod+w exec displayselect
 bindsym $mod+Shift+i exec recipes
+bindsym $mod+Shift+w exec wallpaper_picker
 
 # program launchers (mostly bottom row)
 bindsym $mod+z exec zathura
-bindsym $mod+x exec pcmanfm
+bindsym $mod+x exec displayranger
+bindsym $mod+Shift+x exec pcmanfm
 bindsym $mod+g exec gcolor2
 bindsym $mod+c exec calibre
 bindsym $mod+s exec peek

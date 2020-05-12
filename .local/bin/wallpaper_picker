@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# select wallpaper from list
+
+chosen=$(ls ~/.local/share/wallpaper/ | dmenu -i -l 15)
+[ "$chosen" != "" ] || setbg && exit
+setbg $chosen
