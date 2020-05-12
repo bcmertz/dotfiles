@@ -63,7 +63,7 @@
 !.local/share/*/
 !.local/share/dmenu/*
 !.local/share/applications/*
-!.local/share/wallpaper/wallpaper.jpg
+!.local/share/wallpaper/*
 
 # installed packages
 !.local/share/packages/packages.txt
