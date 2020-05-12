@@ -2,4 +2,7 @@
 #
 # check for pacman updates
 
-checkupdates -d | notify-send
+n=$(checkupdates | wc -l)
+if [ "$n" != "0" ]; then
+    notify-send -u low "Updates Available 📦" "$n updates available."
+fi
