@@ -7,6 +7,7 @@ alsa-utils
 apparmor
 arandr
 artwork-i3
+atom
 autoconf
 automake
 avahi
@@ -71,6 +72,7 @@ gcc
 gcc-libs
 gcolor2
 gconf
+gedit
 gettext
 gimp
 git
@@ -158,7 +160,6 @@ mobile-broadband-provider-info
 moc
 modemmanager
 morc_menu
-mousepad
 nano
 ncdu
 neofetch
@@ -170,7 +171,6 @@ networkmanager-openvpn
 networkmanager-pptp
 networkmanager-vpnc
 newsboat
-nextcloud-client
 nfs-utils
 npm
 nss-mdns
@@ -276,8 +276,6 @@ xf86-video-amdgpu
 xf86-video-ati
 xf86-video-intel
 xf86-video-nouveau
-xfburn
-xfce4-power-manager
 xfsprogs
 xorg-server
 xorg-twm

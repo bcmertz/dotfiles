@@ -1,5 +1,6 @@
 arch-wiki-docs
 heroku-cli
+lib32-libxft-bgra
 linux-surface
 linux-surface-headers
 multimarkdown

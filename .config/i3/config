@@ -93,6 +93,7 @@ bindsym $mod+Shift+b exec torbrowser-launcher
 bindsym $mod+m exec vlc
 bindsym $mod+t exec transmission-gtk
 bindsym $mod+a exec emacs
+bindsym $mod+Shift+a exec mousepad
 
 # change focus
 bindsym $mod+j focus left
