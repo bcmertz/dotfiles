@@ -36,25 +36,6 @@ modules-left = bspwm weather
 modules-center = date
 modules-right = network volume battery memory temp filesystem
 
-[module/bspwm]
-type = internal/bspwm
-pin-workspaces = true
-inline-mode = false
-enable-click = true
-enable-scroll = false
-reverse-scroll = false
-fuzzy-match = true
-ws-icon-0 = 1
-ws-icon-1 = 2
-ws-icon-2 = 3
-ws-icon-3 = 4
-ws-icon-4 = 5
-ws-icon-5 = 6
-ws-icon-6 = 7
-ws-icon-7 = 8
-ws-icon-8 = 9
-ws-icon-9 = 10
-
 [module/memory]
 type = custom/script
 exec = memory
@@ -116,6 +97,37 @@ click-right =  pgrep -x dunst >/dev/null && notify-send "💽 Disk module" "\- S
 
 [module/i3]
 type = internal/i3
+pin-workspaces = true
+strip-wsnumbers = true
+index-sort = true
+enable-click = true
+enable-scroll = false
+wrapping-scroll = false
+reverse-scroll = false
+fuzzy-match = true
+format = <label-state> <label-mode>
+label-mode = %mode%
+label-mode-padding = 0
+label-mode-background = #e60053
+label-focused = %index%
+label-focused-foreground = #A0000000
+label-focused-background = #A7A6B7
+label-focused-underline = #fba922
+label-focused-padding = 2
+label-unfocused = %index%
+label-unfocused-padding = 2
+label-visible = %index%
+label-visible-underline = #555555
+label-visible-padding = 2
+label-urgent = %index%
+label-urgent-foreground = #000000
+label-urgent-background = #bd2c40
+label-urgent-padding = 2
+label-separator-padding = 0
+label-separator-foreground = #ffb52a
+
+[module/bspwm]
+type = internal/bspwm
 pin-workspaces = true
 strip-wsnumbers = true
 index-sort = true
