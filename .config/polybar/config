@@ -1,4 +1,4 @@
-[bar/default]
+[bar/i3]
 dpi = 133
 font-0 = whatver:pixelsize=18:antialias=false;1
 font-1 = Unifont:style=Medium:antialias=false
@@ -9,16 +9,51 @@ underline-size = 2
 underline-color = #F7A6B7
 tray-position = none
 height = 2.5%
-modules-right = network volume battery memory temp filesystem
-modules-center = date
-modules-left = i3 weather
-
 padding-left = 0
 padding-right = 2
-
 module-margin-left = 0
 module-margin-right = 2
+modules-left = i3 weather
+modules-center = date
+modules-right = network volume battery memory temp filesystem
 
+[bar/bspwm]
+dpi = 133
+font-0 = whatver:pixelsize=18:antialias=false;1
+font-1 = Unifont:style=Medium:antialias=false
+font-2 = Symbola:pixelsize=18:style=Regular:antialias=false
+foreground = #F7A6B7
+background = #50000000
+underline-size = 2
+underline-color = #F7A6B7
+tray-position = none
+height = 2.5%
+padding-left = 0
+padding-right = 2
+module-margin-left = 0
+module-margin-right = 2
+modules-left = bspwm weather
+modules-center = date
+modules-right = network volume battery memory temp filesystem
+
+[module/bspwm]
+type = internal/bspwm
+pin-workspaces = true
+inline-mode = false
+enable-click = true
+enable-scroll = false
+reverse-scroll = false
+fuzzy-match = true
+ws-icon-0 = 1
+ws-icon-1 = 2
+ws-icon-2 = 3
+ws-icon-3 = 4
+ws-icon-4 = 5
+ws-icon-5 = 6
+ws-icon-6 = 7
+ws-icon-7 = 8
+ws-icon-8 = 9
+ws-icon-9 = 10
 
 [module/memory]
 type = custom/script

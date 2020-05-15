@@ -26,4 +26,5 @@ export SESSION=$session
 case $session in
    emacs             ) exec emacs;;
    i3                ) exec i3;;
+   bspwm|bsp         ) exec bspwm;;
 esac
