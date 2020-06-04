@@ -4,7 +4,7 @@ lib32-libxft-bgra
 linux-surface
 linux-surface-headers
 multimarkdown
-pygtk
 ttf-inconsolata-g
 ttf-symbola
 ttf-unifont
+xdg-su

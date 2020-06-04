@@ -7,6 +7,7 @@ alsa-utils
 apparmor
 arandr
 artwork-i3
+aspell-en
 atom
 autoconf
 automake
@@ -21,6 +22,7 @@ bison
 blueman
 bluez-utils
 bmenu
+bspwm
 btrfs-progs
 bzip2
 calibre
@@ -72,7 +74,6 @@ gcc
 gcc-libs
 gcolor2
 gconf
-gedit
 gettext
 gimp
 git
@@ -80,6 +81,7 @@ glibc
 gnome-keyring
 gnome-screenshot
 gparted
+gpick
 grep
 grub
 grub-theme-manjaro-dev
@@ -105,6 +107,7 @@ inxi
 iproute2
 iputils
 jfsutils
+kcolorchooser
 kvantum-manjaro
 less
 lib32-flex
@@ -160,6 +163,7 @@ mobile-broadband-provider-info
 moc
 modemmanager
 morc_menu
+mousepad
 nano
 ncdu
 neofetch
@@ -176,7 +180,6 @@ npm
 nss-mdns
 ntfs-3g
 ntp
-open-fuse-iso
 openresolv
 openssh
 os-prober
@@ -199,6 +202,7 @@ poppler-data
 powertop
 procps-ng
 psmisc
+pygtk
 qt4
 qt5-styleplugins
 qt5ct
@@ -217,6 +221,7 @@ spectre-meltdown-checker
 speedtest-cli
 subversion
 sudo
+sxhkd
 sysfsutils
 syslog-ng
 systemd
@@ -264,7 +269,6 @@ xautolock
 xclip
 xcursor-chameleon-pearl
 xcursor-maia
-xdg-su
 xdg-user-dirs
 xdg-utils
 xdotool
