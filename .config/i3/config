@@ -34,6 +34,7 @@ for_window [class="^.*"] border pixel 2
 gaps inner 15
 gaps outer 0
 
+focus_follows_mouse no
 # Browser popups
 for_window [window_role="pop-up"] floating enable
 # float file manager
@@ -42,6 +43,7 @@ for_window [window_role="pop-up"] floating enable
 for_window [class="Fullscreen st"] floating enable fullscreen
 # xarchiver
 for_window [class="Xarchiver"] floating enable
+for_window [class="Gpick"] floating enable
 for_window [class="Progress"] floating enable
 for_window [class="File Upload"] floating enable
 for_window [title="GIMP Startup"] move workspace $ws5
@@ -87,7 +89,7 @@ bindsym $mod+Shift+w exec wallpaper_picker
 bindsym $mod+z exec zathura
 bindsym $mod+x exec displayranger
 bindsym $mod+Shift+x exec pcmanfm
-bindsym $mod+g exec gcolor2
+bindsym $mod+g exec gpick
 bindsym $mod+c exec calibre
 bindsym $mod+s exec peek
 bindsym $mod+b exec firefox
