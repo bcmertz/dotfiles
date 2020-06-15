@@ -27,4 +27,5 @@ case $session in
    emacs             ) exec emacs;;
    i3                ) exec i3;;
    bspwm|bsp         ) exec bspwm;;
+   cinnamon|mint     ) exec cinnamon-session;;
 esac
