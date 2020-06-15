@@ -16,12 +16,12 @@ fi
 # configure trackpad and other X input
 [ -f ~/.xinput ] && . ~/.xinput
 
-# enable these programs at the start of X
-[ -f ~/.xprofile ] && . ~/.xprofile
-
 # choose wm, default to i3
 session=${1:-i3}
 export SESSION=$session
+
+# enable these programs at the start of X
+[ -f ~/.xprofile ] && . ~/.xprofile
 
 case $session in
    emacs             ) exec emacs;;

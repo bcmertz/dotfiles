@@ -2,7 +2,11 @@
 #
 # when x starts, also...
 
-picom -b &      # compositor
+session="${SESSION}"   # start compositor if not cinnamon
+if [ "$session" != "mint"  ]; then
+    picom -b &
+fi
+
 dunst &         # notifications
 redshift &      # reduce bluelight
 clipmenud &     # clipmenu daemon
@@ -10,4 +14,4 @@ unclutter &     # get rid of mouse
 xautolock -time 30 -locker slock & # autolock screen after half an hour
 xset r rate 300 50 &  # faster repeating keys
 lxpolkit &      # authentication agent
-setbg # set background
+setbg           # set background
