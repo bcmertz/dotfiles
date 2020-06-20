@@ -53,6 +53,9 @@
 (global-set-key [(control up)] 'move-lines-up)
 (global-set-key [(control down)] 'move-lines-down)
 
+;; Undo tree
+(global-undo-tree-mode)
+
 ;; Multiple Cursors
 (use-package multiple-cursors
   :ensure t
