@@ -165,6 +165,7 @@ moc
 modemmanager
 morc_menu
 mousepad
+mpv
 nano
 ncdu
 neofetch
