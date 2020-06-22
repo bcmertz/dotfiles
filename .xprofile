@@ -7,10 +7,6 @@ session="${SESSION}"
 if [ "$session" != "mint"  ]; then
     picom -b &
 fi
-# if using bspwm start sxhkd to provide key bindings
-if [ "$session" == "bspwm" ]; then
-    sxhkd &
-fi
 
 dunst &         # notifications
 redshift &      # reduce bluelight
