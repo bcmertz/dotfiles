@@ -2,9 +2,14 @@
 #
 # when x starts, also...
 
-session="${SESSION}"   # start compositor if not cinnamon
+session="${SESSION}"
+# start compositor if not cinnamon
 if [ "$session" != "mint"  ]; then
     picom -b &
+fi
+# if using bspwm start sxhkd to provide key bindings
+if [ "$session" == "bspwm" ]; then
+    sxhkd &
 fi
 
 dunst &         # notifications
