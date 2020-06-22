@@ -28,6 +28,7 @@ bzip2
 calibre
 cantarell-fonts
 chromium
+cinnamon
 clipit
 clipmenu
 clipnotify
@@ -271,6 +272,7 @@ xcursor-chameleon-pearl
 xcursor-maia
 xdg-user-dirs
 xdg-utils
+xdo
 xdotool
 xf86-input-elographics
 xf86-input-evdev
