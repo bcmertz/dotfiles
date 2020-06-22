@@ -11,6 +11,11 @@ alias gp='git_alias push'
 alias gpl='git_alias pull'
 alias gch='git_alias checkout'
 
+# devour opened files
+alias zathura='devour zathura'
+alias feh='devour feh'
+alias mpv='devour mpv'
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
