@@ -99,6 +99,14 @@ bindsym $mod+t exec transmission-gtk
 bindsym $mod+a exec emacs
 bindsym $mod+Shift+a exec mousepad
 
+# scratchpad
+exec --no-startup-id st -n dropdown -e python3
+for_window [instance="dropdown"] floating enable
+for_window [instance="dropdown"] resize set 950 650
+for_window [instance="dropdown"] move scratchpad
+for_window [instance="dropdown"] border pixel 5
+bindsym $mod+Shift+u [instance="dropdown"] scratchpad show [instance="dropdown"] move position center
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
