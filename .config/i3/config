@@ -100,7 +100,7 @@ bindsym $mod+a exec emacs
 bindsym $mod+Shift+a exec mousepad
 
 # scratchpad
-exec --no-startup-id st -n dropdown -e python3
+exec --no-startup-id st -n dropdown -e python3 -q
 for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] resize set 950 650
 for_window [instance="dropdown"] move scratchpad
