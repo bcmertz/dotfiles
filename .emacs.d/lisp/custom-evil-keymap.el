@@ -29,7 +29,6 @@
     "s" 'swiper
     "\\" '(neotree-project-dir-toggle :which-key "neotree")
     ";" '(er/expand-region :which-key "expand")
-    "e" '(evil-mode :which-key "evil")
     "m" '(:ignore t :which-key "mode")
 
     "x"  '(:ignore t :which-key "file")
@@ -79,7 +78,15 @@
     ;; Applications
     "a" '(:ignore t :which-key "Applications")
     "ag" 'magit-status
-    "ad" 'dired))
+    "ad" 'dired
+
+    ;; SmartParens
+    "e" '(:ignore t :which-key "SmartParens")
+    "ee" 'sp-show-enclosing-pair
+    "eu" 'sp-up-sexp
+    "ed" 'sp-down-sexp
+    "ei" 'sp-change-enclosing
+    "ec" 'sp-rewrap-sexp))
 
 (global-set-key (kbd "M-SPC") 'evil-mode)
 

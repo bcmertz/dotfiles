@@ -18,9 +18,11 @@
 (require 'smartparens-config)
 (smartparens-global-mode t)
 (show-smartparens-global-mode +1)
-(global-set-key (kbd "C-<escape>") 'sp-show-enclosing-pair)
-(global-set-key (kbd "M-<escape>") 'sp-up-sexp)
-(global-set-key (kbd "C-M-<escape>") 'sp-down-sexp)
+(global-set-key (kbd "C-c s e") 'sp-show-enclosing-pair)
+(global-set-key (kbd "C-c s u") 'sp-up-sexp)
+(global-set-key (kbd "C-c s d") 'sp-down-sexp)
+(global-set-key (kbd "C-c s i") 'sp-change-enclosing)
+(global-set-key (kbd "C-c s c") 'sp-rewrap-sexp)
 
 ;; code folding
 (require 'vimish-fold)
