@@ -67,5 +67,6 @@
 
 ;; Git integration
 (global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-x c") 'magit-checkout)
 
 ;;; custom-general.el ends here
