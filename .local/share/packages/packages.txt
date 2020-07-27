@@ -27,7 +27,6 @@ btrfs-progs
 bzip2
 calibre
 cantarell-fonts
-chromium
 cinnamon
 clipit
 clipmenu
@@ -68,6 +67,7 @@ filesystem
 findutils
 firefox
 firefox-i18n-fa
+firewalld
 flac
 flex
 gawk
@@ -78,6 +78,7 @@ gconf
 gettext
 gimp
 git
+git-lfs
 glibc
 gnome-keyring
 gnome-screenshot

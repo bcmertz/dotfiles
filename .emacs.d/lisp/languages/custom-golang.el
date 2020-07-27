@@ -5,6 +5,18 @@
 ;;; snippets, formatting, docs, autocompletion, etc
 ;;;
 ;;; Code:
+;; (use-package lsp-mode
+;;   :ensure t
+;;   :commands (lsp lsp-deferred)
+;;   :hook (go-mode . lsp-deferred))
+
+;; ;; Set up before-save hooks to format buffer and add/delete imports.
+;; ;; Make sure you don't have other gofmt/goimports hooks enabled.
+;; (defun lsp-go-install-save-hooks ()
+;;   (add-hook 'before-save-hook #'lsp-format-buffer t t)
+;;   (add-hook 'before-save-hook #'lsp-organize-imports t t))
+;; (add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
+
 (use-package go-mode
   :defer t
   :mode "\\.go\\'"
@@ -24,13 +36,11 @@
   (set-face-attribute 'eldoc-highlight-function-argument nil
 		      :foreground "green"
 		      :weight 'bold)
-
   (require 'yasnippet)
   (add-to-list 'load-path "~/.emacs.d/elpa/yasnippet-*")
   (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/go-mode")   ; enable snippets
   (yas-global-mode 1)
   (local-set-key (kbd "C-c C-r") 'go-rename))                     ; provide go-rename conveniently
-
   (require 'company-go)
   (customize-set-variable 'company-go-gocode-command "gocode-mod") ; defualt to module support
   (set (make-local-variable 'company-backends) '(company-go))
@@ -44,10 +54,10 @@
    (if (string= company-go-gocode-command "gocode-mod")
        "gocode" "gocode-mod"))
 
-  ;; The gocode fork that works with modules is slow, so disable idle completion.
-  ;; (if (string= company-go-gocode-command "gocode-mod")
-  ;;     (customize-set-variable 'company-idle-delay nil)
-  ;;   (custom-reevaluate-setting 'company-idle-delay))
-  (message company-go-gocode-command))
+;; The gocode fork that works with modules is slow, so disable idle completion.
+;; (if (string= company-go-gocode-command "gocode-mod")
+;;     (customize-set-variable 'company-idle-delay nil)
+;;   (custom-reevaluate-setting 'company-idle-delay))
+(message company-go-gocode-command))
 
 ;;; custom-golang.el ends here
