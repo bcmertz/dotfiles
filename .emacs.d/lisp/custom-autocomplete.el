@@ -18,6 +18,10 @@
 
 (global-company-mode)
 
+(require 'yasnippet)
+(add-to-list 'load-path "~/.emacs.d/elpa/yasnippet-*")
+(yas-global-mode 1)
+
 ;; https://www.emacswiki.org/emacs/CompanyMode#toc11
 ;; (defun check-expansion ()
 ;;   (save-excursion
