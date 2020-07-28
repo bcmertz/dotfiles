@@ -12,3 +12,5 @@
 	required = true
 [core]
 	excludesfile = /home/leila/.config/git/.gitignore_global
+[pull]
+	rebase = false
