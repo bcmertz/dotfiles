@@ -12,15 +12,14 @@
                                  ;; (load-theme 'kaolin-temple t)
                                  )))
 
-;; line numbers
-(global-display-line-numbers-mode -1)   ; give display numbers
+;; Hide line numbering
+(global-display-line-numbers-mode -1)
 
 ;; margins
 (setq-default left-margin-width 2 right-margin-width 1)
 (set-window-buffer nil (current-buffer))
 
 ;; modeline
-(require 'spaceline-config)
 (spaceline-spacemacs-theme)
 
 ;; center 1 buffer
@@ -28,7 +27,11 @@
 (require 'sublimity-attractive)
 (sublimity-mode 1)
 (setq sublimity-attractive-centering-width 130)
-(sublimity-attractive-hide-bars)
+
+;; Hide Scroll bar,menu bar, tool bar
+(scroll-bar-mode -1)
+(tool-bar-mode -1)
+(menu-bar-mode -1)
 
 ;; smooth scrolling
 (setq redisplay-dont-pause t
