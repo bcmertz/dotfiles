@@ -5,14 +5,18 @@
 if [ "$1" != "" ]; then
     filename=$1
 else
-    previous=$(cat ~/.local/share/currentwallpaper.txt)
+    # get filename of current wallpaper
+    p=$(cat .fehbg | cut -d'/' -f7)
+    previous=${p::-2} # remove trailing '
 
+    # choose new wallpaper
     filename=$(ls ~/.local/share/wallpaper/ | shuf -n 1)
+    # if we choose the previously used wallpaper
     while [ $filename = $previous ]
     do
         filename=$(ls ~/.local/share/wallpaper/ | shuf -n 1)
     done
 fi
 
-echo $filename > ~/.local/share/currentwallpaper.txt
+# set background
 feh --bg-scale $HOME/.local/share/wallpaper/$filename # Set bg
