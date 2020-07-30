@@ -2,6 +2,7 @@
 #
 # cycle through wallpapers
 
+# if image exclicitly specified use it as bg
 if [ "$1" != "" ]; then
     filename=$1
 else
@@ -18,5 +19,5 @@ else
     done
 fi
 
-# set background
+# set bg
 feh --bg-scale $HOME/.local/share/wallpaper/$filename # Set bg
