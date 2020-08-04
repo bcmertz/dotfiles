@@ -22,6 +22,7 @@ bison
 blueman
 bluez-utils
 bmenu
+brave
 bspwm
 btrfs-progs
 bzip2
@@ -63,6 +64,7 @@ feh
 ffmpeg
 ffmpegthumbnailer
 file
+filelight
 filesystem
 findutils
 firefox
@@ -110,6 +112,7 @@ iproute2
 iputils
 jfsutils
 kcolorchooser
+kphotoalbum
 kvantum-manjaro
 less
 lib32-flex
@@ -167,6 +170,7 @@ modemmanager
 morc_menu
 mousepad
 mpv
+mutt
 nano
 ncdu
 neofetch

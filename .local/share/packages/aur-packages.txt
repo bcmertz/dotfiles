@@ -1,8 +1,10 @@
 arch-wiki-docs
+getmail6
 heroku-cli
 lib32-libxft-bgra
 linux-surface
 linux-surface-headers
+mu
 multimarkdown
 ttf-inconsolata-g
 ttf-symbola
