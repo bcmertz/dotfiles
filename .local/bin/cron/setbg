@@ -26,7 +26,9 @@ if [[ "$filename" == "" && "$same" == "false" ]]; then
         filename=$(ls ~/.local/share/wallpaper/ | shuf -n 1)
     done
 elif [ "$same" == "true" ]; then
-    filename=$previous
+    # idk why this hack is necessary for feh to properly set the correct file but it is
+    # filename=$previous would be desireable but it fails for some reason
+    filename=$(echo $previous)
 fi
 
 # set bg
