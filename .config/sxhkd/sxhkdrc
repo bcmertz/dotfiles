@@ -54,6 +54,10 @@ super + a
 super + shift + a
       mousepad
 
+XF86Audio{Raise,Lower}Volume
+        pactl set-sink-volume 0 {+,-}5%
+XF86AudioMute
+        pactl set-sink-mute 0 toggle
 
 # make sxhkd reload its configuration files:
 super + Escape
