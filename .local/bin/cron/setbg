@@ -2,14 +2,22 @@
 #
 # cycle through wallpapers
 
-# if image exclicitly specified use it as bg
-if [ "$1" != "" ]; then
-    filename=$1
-else
-    # get filename of current wallpaper
-    p=$(cat .fehbg | cut -d'/' -f7)
-    previous=${p::-2} # remove trailing '
+filename=''
+same='false'
 
+while getopts 'sf:' flag; do
+    case "${flag}" in
+        s) same='true';;
+        f) filename="${OPTARG}";;
+    esac
+done
+
+
+# get filename of current wallpaper
+p=$(cat .fehbg | cut -d'/' -f7)
+previous=${p::-2} # remove trailing '
+# if image not exclicitly specified get different random image
+if [[ "$filename" == "" && "$same" == "false" ]]; then
     # choose new wallpaper
     filename=$(ls ~/.local/share/wallpaper/ | shuf -n 1)
     # if we choose the previously used wallpaper
@@ -17,6 +25,8 @@ else
     do
         filename=$(ls ~/.local/share/wallpaper/ | shuf -n 1)
     done
+elif [ "same" == true ]; then
+    filename=$previous
 fi
 
 # set bg

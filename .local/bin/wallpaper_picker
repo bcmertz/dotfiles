@@ -5,4 +5,4 @@
 chosen=$(ls ~/.local/share/wallpaper/ | dmenu -i -l 15)
 [ "$chosen" = "" ] && setbg && exit
 echo $chosen
-setbg $chosen
+setbg -f $chosen
