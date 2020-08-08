@@ -9,4 +9,5 @@ multimarkdown
 ttf-inconsolata-g
 ttf-symbola
 ttf-unifont
+vrms-arch
 xdg-su
