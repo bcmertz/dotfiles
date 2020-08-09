@@ -20,7 +20,10 @@
 (set-window-buffer nil (current-buffer))
 
 ;; modeline
-(spaceline-spacemacs-theme)
+;; (spaceline-spacemacs-theme)
+(use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode 1))
 
 ;; center 1 buffer
 (require 'sublimity)

@@ -64,11 +64,11 @@
  '(inhibit-startup-screen t)
  '(lsp-ui-doc-border "#93a1a1")
  '(magit-diff-use-overlays nil)
- '(markdown-command "/usr/bin/pandoc" t)
+ '(markdown-command "/usr/bin/pandoc")
  '(nrepl-message-colors
    '("#dc322f" "#cb4b16" "#b58900" "#5b7300" "#b3c34d" "#0061a8" "#2aa198" "#d33682" "#6c71c4"))
  '(package-selected-packages
-   '(company-lsp lsp-mode drag-stuff jsonl json-mode buffer-move avy-zap expand-region sublimity smooth-scroll smooth-scrolling vimish-fold origami kaolin-themes ripgrep find-file-in-project flx-ido projectile smartparens rainbow-delimiters mic-paren atom-one-dark-theme spaceline smart-mode-line yasnippet all-the-icons atom-dark-theme exwm ace-window try use-package which-key counsel swiper company-go company flymake-go popup-complete evil neotree direx peep-dired ranger avy nlinum-relative nlinum ag xref-js2 js2-refactor js2-mode go-rename magit markdown-mode go-eldoc go-autocomplete auto-complete flycheck go-mode))
+   '(doom-modeline company-lsp lsp-mode drag-stuff jsonl json-mode buffer-move avy-zap expand-region sublimity smooth-scroll smooth-scrolling vimish-fold origami kaolin-themes ripgrep find-file-in-project flx-ido projectile smartparens rainbow-delimiters mic-paren atom-one-dark-theme spaceline smart-mode-line yasnippet all-the-icons atom-dark-theme exwm ace-window try use-package which-key counsel swiper company-go company flymake-go popup-complete evil neotree direx peep-dired ranger avy nlinum-relative nlinum ag xref-js2 js2-refactor js2-mode go-rename magit markdown-mode go-eldoc go-autocomplete auto-complete flycheck go-mode))
  '(pdf-view-midnight-colors '("#b2b2b2" . "#292b2e"))
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
