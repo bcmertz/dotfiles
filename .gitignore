@@ -64,12 +64,9 @@
 !.local/share/
 !.local/share/*/
 !.local/share/dmenu/*
-!.local/share/applications/*
+!.local/share/packages/*
 !.local/share/wallpaper/*
-
-# installed packages
-!.local/share/packages/packages.txt
-!.local/share/packages/aur-packages.txt
+!.local/share/applications/*
 
 # ignore emacs files
 *~
