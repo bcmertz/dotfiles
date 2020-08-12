@@ -30,10 +30,12 @@
 (load "custom-editing.el")
 (load "custom-windowing.el")
 (load "custom-flycheck.el")
+(load "custom-lsp.el")
 
 ;; mode configurations
 (load "custom-golang.el")
 (load "custom-js.el")
+(load "custom-typescript.el")
 (load "custom-markdown.el")
 (load "custom-css.el")
 

@@ -20,4 +20,7 @@
     "mf"  'js-find-symbol)
   )
 
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . js-mode))
 (setq js-indent-level 2)
+
+;;; custom-js.el ends here

@@ -5,10 +5,6 @@
 ;;; snippets, formatting, docs, autocompletion, etc
 ;;;
 ;;; Code:
-(require 'lsp-mode)
-(add-hook 'go-mode-hook #'lsp)
-(require 'company-lsp)
-(push 'company-lsp company-backends)
 (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/go-mode")   ; enable go snippets
 
 ;; ;; Set up before-save hooks to format buffer and add/delete imports.
