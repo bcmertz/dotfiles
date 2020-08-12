@@ -18,19 +18,15 @@
   (add-hook 'before-save-hook #'lsp-organize-imports t t))
 (add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
 
-;; (use-package go-mode
-;;   :defer t
-;;   :mode "\\.go\\'"
-;;   :custom (gofmt-command "goimports")
-;;   :init
-;;   (progn
-;;     (add-hook 'go-mode-hook 'go-mode-setup))
-;;   :general
-;;   (tyrant-def go-mode-map
-;;     "mr"  'go-rename
-;;     "mp"  'godoc-at-point
-;;     "md" 'godef-describe
-;;     "mt"  'gocode-toggle))
+(use-package go-mode
+  :defer t
+  :mode "\\.go\\'"
+  :general
+  (tyrant-def go-mode-map
+    "mr"  'go-rename
+    "mp"  'godoc-at-point
+    "md" 'godef-describe
+    "mt"  'gocode-toggle))
 
 ;; (defun go-mode-setup () ; use C-c C-j to jump to definition and C-u C-x C-x to jump back add imports as needed
 ;;   (add-hook 'before-save-hook 'gofmt-before-save)
