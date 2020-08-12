@@ -7,9 +7,6 @@
 ;;; Code:
 (setq gc-cons-threshold most-positive-fixnum) ; Don't gc on startup
 
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "lisp/languages" user-emacs-directory))
-
 ;; emacs as window manager
 (setq session (getenv "SESSION"))
 (if (equal session "emacs")
@@ -20,6 +17,8 @@
       )
   )
 
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "lisp/languages" user-emacs-directory))
 
 ;; general configuration
 (load "custom-general.el")
