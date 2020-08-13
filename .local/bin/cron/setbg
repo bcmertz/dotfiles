@@ -5,6 +5,7 @@
 filename=''
 same='false'
 
+# parse flags and or filename
 while getopts 'sf:' flag; do
     case "${flag}" in
         s) same='true';;
@@ -16,9 +17,9 @@ done
 # get filename of current wallpaper
 p=$(cat .fehbg | cut -d'/' -f7)
 previous=${p::-2} # remove trailing '
-# if image not exclicitly specified get different random image
+
 if [[ "$filename" == "" && "$same" == "false" ]]; then
-    # choose new wallpaper
+    # if image not exclicitly specified get different random image
     filename=$(ls ~/.local/share/wallpaper/ | shuf -n 1)
     # if we choose the previously used wallpaper
     while [ $filename = $previous ]
@@ -26,6 +27,8 @@ if [[ "$filename" == "" && "$same" == "false" ]]; then
         filename=$(ls ~/.local/share/wallpaper/ | shuf -n 1)
     done
 elif [ "$same" == "true" ]; then
+    # if same flag is passed in dont change the wallpaper
+    #
     # idk why this hack is necessary for feh to properly set the correct file but it is
     # filename=$previous would be desireable but it fails for some reason
     filename=$(echo $previous)
