@@ -4,6 +4,7 @@ acpid
 alsa-firmware
 alsa-plugins
 alsa-utils
+ant
 apparmor
 arandr
 artwork-i3
@@ -49,6 +50,7 @@ diffutils
 dmidecode
 dmraid
 dnsmasq
+docker
 dosfstools
 downgrade
 e2fsprogs
@@ -86,6 +88,7 @@ gnome-keyring
 gnome-screenshot
 gparted
 gpick
+gradle
 grep
 grub
 grub-theme-manjaro-dev
@@ -110,7 +113,10 @@ intel-ucode
 inxi
 iproute2
 iputils
+java-environment-common
+jdk8-openjdk
 jfsutils
+jre-openjdk
 kcolorchooser
 kphotoalbum
 kvantum-manjaro
@@ -156,6 +162,7 @@ manjaro-settings-manager-notifier
 manjaro-system
 markdown_previewer
 matcha-gtk-theme
+maven
 mdadm
 memtest86+
 mesa-demos
