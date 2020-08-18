@@ -15,7 +15,7 @@ done
 
 
 # get filename of current wallpaper
-p=$(cat .fehbg | cut -d'/' -f7)
+p=$(cat $HOME/.fehbg | cut -d'/' -f7)
 previous=${p::-2} # remove trailing '
 
 if [[ "$filename" == "" && "$same" == "false" ]]; then
