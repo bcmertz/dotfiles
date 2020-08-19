@@ -10,7 +10,11 @@
   :defer t
   :diminish flycheck-mode
   :init
-  (add-hook 'after-init-hook #'global-flycheck-mode)
+  (progn
+    (add-hook 'after-init-hook #'global-flycheck-mode)
+    (defun setup-js-mode ()
+      (flycheck-select-checker 'javascript-eslint))
+    (add-hook 'js-mode-hook #'setup-js-mode))
   :config
   (setq-default flycheck-check-syntax-automatically '(save))
   ;; disable documentation related emacs lisp checker
