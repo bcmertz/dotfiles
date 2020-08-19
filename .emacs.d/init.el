@@ -31,6 +31,7 @@
 (load "custom-windowing.el")
 (load "custom-flycheck.el")
 (load "custom-lsp.el")
+(load "custom-git.el")
 
 ;; mode configurations
 (load "custom-golang.el")

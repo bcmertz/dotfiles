@@ -6,6 +6,7 @@
 ;;;
 ;;; Code:
 ;; Packages and repository management
+
 (require 'package)
 (add-to-list 'package-archives
 	     '("gnu" . "https://elpa.gnu.org/packages/") t)
@@ -64,9 +65,5 @@
         (define-key input-decode-map "\e[1;2A\" [S-up]))
 (defadvice terminal-init-xterm (after select-shift-up activate)
   (define-key input-decode-map \"\e[1;2A\" [S-up]))]))]"))
-
-;; Git integration
-(global-set-key (kbd "C-x g") 'magit-status)
-(global-set-key (kbd "C-x c") 'magit-checkout)
 
 ;;; custom-general.el ends here
