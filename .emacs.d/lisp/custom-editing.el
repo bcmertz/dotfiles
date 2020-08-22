@@ -37,6 +37,14 @@
   :bind("C-;" . er/expand-region)
   )
 
+;; Undo tree
+(use-package undo-tree
+  :bind
+  ;; hack to avoid conflict
+  ("C-_" . text-scale-decrease)
+  :config
+  (global-undo-tree-mode))
+
 ;; Utilities
 (global-set-key (kbd "M-/") 'comment-or-uncomment-region)
 (global-set-key (kbd "C-/") 'undo)
@@ -54,9 +62,6 @@
 
 (global-set-key [(control up)] 'move-lines-up)
 (global-set-key [(control down)] 'move-lines-down)
-
-;; Undo tree
-(global-undo-tree-mode)
 
 ;; Multiple Cursors
 (use-package multiple-cursors
