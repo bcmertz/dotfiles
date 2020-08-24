@@ -19,12 +19,12 @@ fi
 # Android
 export ANT_HOME=/opt/ant
 export MAVEN_HOME=/opt/maven
-export GRADLE_HOME=/opt/gradle
-export ANDROID_HOME=/opt/android-sdk
-export ANDROID_SDK_HOME=/opt/android-sdk
-export ANDROID_SDK_ROOT=$HOME/Android/Sdk
+export GRADLE_HOME=$HOME/.gradle
+export ANDROID_HOME=$HOME/Android/sdk
+export ANDROID_SDK_HOME=$ANDROID_HOME
+export ANDROID_SDK_ROOT=$ANDROID_HOME
 export ANDROID_NDK_HOME=/opt/android-ndk
-export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME:$ANDROID_SDK_HOME/tools:$ANDROID_SDK_HOME/tools/bin
 
 # Python
 export PYTHONPATH=$HOME/go/src/github.com/getlantern/lantern_aws/lib:$HOME/go/src/github.com/getlantern/secret_lib:$HOME/go/src/github.com/getlantern/config-server/etc
