@@ -22,7 +22,7 @@
  '(cua-read-only-cursor-color "#859900")
  '(custom-enabled-themes nil)
  '(custom-safe-themes
-   '("ed573618e4c25fa441f12cbbb786fb56d918f216ae4a895ca1c74f34a19cfe67" "a7928e99b48819aac3203355cbffac9b825df50d2b3347ceeec1e7f6b592c647" "3788e589eb432e6a515d557cbeb8dc4eaca9e00ae54f932b4bd43ed78605532e" "2f945b8cbfdd750aeb82c8afb3753ebf76a1c30c2b368d9d1f13ca3cc674c7bc" "054e929c1df4293dd68f99effc595f5f7eb64ff3c064c4cfaad186cd450796db" "b69323309e5839676409607f91c69da2bf913914321c995f63960c3887224848" "53993d7dc1db7619da530eb121aaae11c57eaf2a2d6476df4652e6f0bd1df740" "a70b47c87e9b0940f6fece46656200acbfbc55e129f03178de8f50934ac89f58" "669e02142a56f63861288cc585bee81643ded48a19e36bfdf02b66d745bcc626" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "2642a1b7f53b9bb34c7f1e032d2098c852811ec2881eec2dc8cc07be004e45a0" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "a2cde79e4cc8dc9a03e7d9a42fabf8928720d420034b66aecc5b665bbf05d4e9" "7aaee3a00f6eb16836f5b28bdccde9e1079654060d26ce4b8f49b56689c51904" default))
+   '("3c2f28c6ba2ad7373ea4c43f28fcf2eed14818ec9f0659b1c97d4e89c99e091e" "711efe8b1233f2cf52f338fd7f15ce11c836d0b6240a18fffffc2cbd5bfe61b0" "76bfa9318742342233d8b0b42e824130b3a50dcc732866ff8e47366aed69de11" "a3b6a3708c6692674196266aad1cb19188a6da7b4f961e1369a68f06577afa16" "4bca89c1004e24981c840d3a32755bf859a6910c65b829d9441814000cf6c3d0" "990e24b406787568c592db2b853aa65ecc2dcd08146c0d22293259d400174e37" "c4bdbbd52c8e07112d1bfd00fee22bf0f25e727e95623ecb20c4fa098b74c1bd" "ed573618e4c25fa441f12cbbb786fb56d918f216ae4a895ca1c74f34a19cfe67" "a7928e99b48819aac3203355cbffac9b825df50d2b3347ceeec1e7f6b592c647" "3788e589eb432e6a515d557cbeb8dc4eaca9e00ae54f932b4bd43ed78605532e" "2f945b8cbfdd750aeb82c8afb3753ebf76a1c30c2b368d9d1f13ca3cc674c7bc" "054e929c1df4293dd68f99effc595f5f7eb64ff3c064c4cfaad186cd450796db" "b69323309e5839676409607f91c69da2bf913914321c995f63960c3887224848" "53993d7dc1db7619da530eb121aaae11c57eaf2a2d6476df4652e6f0bd1df740" "a70b47c87e9b0940f6fece46656200acbfbc55e129f03178de8f50934ac89f58" "669e02142a56f63861288cc585bee81643ded48a19e36bfdf02b66d745bcc626" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "2642a1b7f53b9bb34c7f1e032d2098c852811ec2881eec2dc8cc07be004e45a0" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "a2cde79e4cc8dc9a03e7d9a42fabf8928720d420034b66aecc5b665bbf05d4e9" "7aaee3a00f6eb16836f5b28bdccde9e1079654060d26ce4b8f49b56689c51904" default))
  '(display-line-numbers nil)
  '(fci-rule-color "#073642")
  '(file-name-shadow-mode nil)
@@ -62,16 +62,22 @@
      ("XXX+" . "#dc752f")
      ("\\?\\?\\?+" . "#dc752f")))
  '(inhibit-startup-screen t)
+ '(jdee-db-active-breakpoint-face-colors (cons "#000000" "#8CD0D3"))
+ '(jdee-db-requested-breakpoint-face-colors (cons "#000000" "#7F9F7F"))
+ '(jdee-db-spec-breakpoint-face-colors (cons "#000000" "#494949"))
  '(lsp-ui-doc-border "#93a1a1")
  '(magit-diff-use-overlays nil)
  '(markdown-command "/usr/bin/pandoc")
  '(nrepl-message-colors
    '("#dc322f" "#cb4b16" "#b58900" "#5b7300" "#b3c34d" "#0061a8" "#2aa198" "#d33682" "#6c71c4"))
+ '(objed-cursor-color "#CC9393")
  '(package-selected-packages
-   '(git-link lsp-ui typescript-mode doom-modeline company-lsp lsp-mode drag-stuff jsonl json-mode buffer-move avy-zap expand-region sublimity smooth-scroll smooth-scrolling vimish-fold origami kaolin-themes ripgrep find-file-in-project flx-ido projectile smartparens rainbow-delimiters mic-paren atom-one-dark-theme spaceline smart-mode-line yasnippet all-the-icons atom-dark-theme exwm ace-window try use-package which-key counsel swiper company-go company flymake-go popup-complete evil neotree direx peep-dired ranger avy nlinum-relative nlinum ag xref-js2 js2-refactor js2-mode go-rename magit markdown-mode go-eldoc go-autocomplete auto-complete flycheck go-mode))
+   '(doom-themes git-link lsp-ui typescript-mode doom-modeline company-lsp lsp-mode drag-stuff jsonl json-mode buffer-move avy-zap expand-region sublimity smooth-scroll smooth-scrolling vimish-fold origami kaolin-themes ripgrep find-file-in-project flx-ido projectile smartparens rainbow-delimiters mic-paren atom-one-dark-theme spaceline smart-mode-line yasnippet all-the-icons atom-dark-theme exwm ace-window try use-package which-key counsel swiper company-go company flymake-go popup-complete evil neotree direx peep-dired ranger avy nlinum-relative nlinum ag xref-js2 js2-refactor js2-mode go-rename magit markdown-mode go-eldoc go-autocomplete auto-complete flycheck go-mode))
  '(pdf-view-midnight-colors '("#b2b2b2" . "#292b2e"))
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
+ '(rustic-ansi-faces
+   ["#3F3F3F" "#CC9393" "#7F9F7F" "#F0DFAF" "#8CD0D3" "#DC8CC3" "#93E0E3" "#DCDCDC"])
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#073642" 0.2))
  '(speedbar-show-unknown-files t)
  '(term-default-bg-color "#002b36")
