@@ -15,6 +15,7 @@ alias gch='git_alias checkout'
 alias zathura='devour zathura'
 alias feh='devour feh'
 alias mpv='devour mpv'
+alias vlc='devour vlc'
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
