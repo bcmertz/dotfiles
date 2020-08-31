@@ -1,5 +1,7 @@
 ## Usage
 
+### Cloning
+
 To install you must have a clear $HOME dir
 ```
 git clone --bare https://github.com/bcmertz/dotfiles.git $HOME/.cfg
@@ -19,9 +21,27 @@ Install dependencies
 installpackagelist
 ```
 
+Setup GPG keys and trust db from backup
+```
+setup
+```
+
+### Backing up
+
 Document Dependencies
 ```
 makepackagelist
+```
+
+Backup GPG keys and trust db
+```
+backup
+echo "now copy to some device like a thumbdrive"
+```
+
+Backup photos, documents, etc
+```
+backupfiles
 ```
 
 ## References

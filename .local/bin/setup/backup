@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 #
-# setup passwords and pgp keys
+# backup passwords and pgp keys
 
 # gpg keys
 cd ~/
