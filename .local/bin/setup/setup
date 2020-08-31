@@ -2,5 +2,9 @@
 #
 # setup passwords and pgp keys
 
+# gpg keys from backup
+gpg --import public.key
+gpg --allow-secret-key-import --import private.key
 
+# passwords from github
 git clone https://github.com/bcmertz/passwords.git ~/.password-store
