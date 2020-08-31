@@ -63,7 +63,7 @@ type = custom/script
 exec = internet
 interval = 2
 format = 🌐 <label>
-click-left = termview nmtui
+click-left = fullscreen nmtui
 
 [module/volume]
 type = custom/script
