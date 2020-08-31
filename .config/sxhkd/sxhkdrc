@@ -32,7 +32,7 @@ super + shift + w
 super + z
       zathura
 super + x
-      displayranger
+      termview ranger
 super + shift + x
       pcmanfm
 super + g

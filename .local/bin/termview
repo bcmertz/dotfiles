@@ -1,0 +1,4 @@
+#!/bin/bash
+# display terminal program
+
+st -e bash -c "$@"

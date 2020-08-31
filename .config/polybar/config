@@ -63,7 +63,7 @@ type = custom/script
 exec = internet
 interval = 2
 format = 🌐 <label>
-click-left = displaywifiselector
+click-left = termview nmtui
 
 [module/volume]
 type = custom/script
@@ -83,7 +83,7 @@ type = custom/script
 exec = weather
 interval = 120
 format = <label>
-click-left = displayweather
+click-left = fullscreen "head -n -1 $HOME/.local/share/weatherreport; read"
 
 [module/filesystem]
 type = custom/script
