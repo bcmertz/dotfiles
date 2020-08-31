@@ -2,9 +2,19 @@
 #
 # setup passwords and pgp keys
 
+cd ~/
+
 # gpg keys from backup
 gpg --import public.key
 gpg --allow-secret-key-import --import private.key
 
+# gpg trust db
+rm ~/.gnupg/trustdb.gpg
+gpg --import-ownertrust bennett-ownertrust-gpg.txt
+
 # passwords from github
-git clone https://github.com/bcmertz/passwords.git ~/.password-store
+if [ ! -d "~/.password-store/" ]; then
+    git clone https://github.com/bcmertz/passwords.git ~/.password-store
+else
+    echo "password store already exists"
+fi
