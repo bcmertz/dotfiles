@@ -4,6 +4,7 @@ acpid
 alsa-firmware
 alsa-plugins
 alsa-utils
+android-tools
 ant
 apparmor
 arandr
@@ -138,6 +139,7 @@ licenses
 linux54
 linux54-virtualbox-host-modules
 logrotate
+lsof
 lvm2
 lxappearance
 lxinput
@@ -230,6 +232,7 @@ s-nail
 sbxkb
 sed
 shadow
+signify
 snapd
 spectre-meltdown-checker
 speedtest-cli

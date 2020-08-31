@@ -1,5 +1,4 @@
 android-ndk
-android-platform
 android-sdk
 arch-wiki-docs
 getmail6
