@@ -9,5 +9,5 @@ gpg --export-secret-key -a "Bennett" > private.key
 gpg --export-ownertrust > bennett-ownertrust-gpg.txt
 
 # passwords from github
-cds ~/.password-store/
+cd ~/.password-store/
 echo "go to ~/.password-store and backup via git"

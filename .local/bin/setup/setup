@@ -13,7 +13,7 @@ rm ~/.gnupg/trustdb.gpg
 gpg --import-ownertrust bennett-ownertrust-gpg.txt
 
 # passwords from github
-if [ ! -d "~/.password-store/" ]; then
+if [ ! -d "$HOME/.password-store/" ]; then
     git clone https://github.com/bcmertz/passwords.git ~/.password-store
 else
     echo "password store already exists"
