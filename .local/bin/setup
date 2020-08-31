@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+#
+# setup passwords and pgp keys
+
+
+git clone https://github.com/bcmertz/passwords.git ~/.password-store
