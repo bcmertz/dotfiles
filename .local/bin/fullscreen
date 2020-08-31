@@ -1,0 +1,4 @@
+#!/bin/bash
+# open terminal application in fullscreen st terminal
+
+st -c 'Fullscreen st' -e bash -c "$@"
