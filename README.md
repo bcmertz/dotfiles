@@ -18,30 +18,30 @@ See `~/.bash_aliases` cfg and git aliases, as well as `~/.local/bin/git_alias`
 
 Install dependencies
 ```
-~/.local/bin/installpackagelist
+installpackagelist
 ```
 
-Setup GPG keys and trust db from backup
+Setup GPG keys trust db and passwords from backup github
 ```
-~/.local/bin/setup/setup
+setup
 ```
 
 ### Backing up
 
 Document Dependencies
 ```
-~/.local/bin/makepackagelist
+makepackagelist
 ```
 
 Backup GPG keys and trust db
 ```
-~/.local/bin/setup/backup
-echo "now copy to some device like a thumbdrive"
+backup
+echo "now copy to some device like a thumbdrive and push to github @ ~/.password-store"
 ```
 
 Backup photos, documents, etc
 ```
-~/.local/bin/cron/backupfiles
+backupfiles
 ```
 
 ## References
