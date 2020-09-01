@@ -1,13 +1,20 @@
 #!/usr/bin/env sh
 #
-# backup passwords and pgp keys
+# backup passwords and gpg keys
 
-# gpg keys
-cd ~/
+# backup public gpg key
+cd ~/.password-store/
 gpg --export -a "Bennett" > public.key
+
+# backup and encrypt with passphrase private key
 gpg --export-secret-key -a "Bennett" > private.key
+gpg -c private.key
+
+# backup trust db
 gpg --export-ownertrust > bennett-ownertrust-gpg.txt
 
+# remove plaintext private key tmp file
+rm private.key
+
 # passwords from github
-cd ~/.password-store/
 echo "go to ~/.password-store and backup via git"

@@ -1,20 +1,19 @@
 #!/usr/bin/env sh
 #
-# setup passwords and pgp keys
+# setup passwords and gpg keys
 
-cd ~/
+# passwords and keys from github
+if [ ! -d "$HOME/.password-store/" ]; then
+    git clone https://github.com/bcmertz/passwords.git ~/.password-store
+fi
+
+cd ~/.password-store/
 
 # gpg keys from backup
 gpg --import public.key
+gpg --decrypt private.key.gpg > private.key
 gpg --allow-secret-key-import --import private.key
 
 # gpg trust db
 rm ~/.gnupg/trustdb.gpg
 gpg --import-ownertrust bennett-ownertrust-gpg.txt
-
-# passwords from github
-if [ ! -d "$HOME/.password-store/" ]; then
-    git clone https://github.com/bcmertz/passwords.git ~/.password-store
-else
-    echo "password store already exists"
-fi
