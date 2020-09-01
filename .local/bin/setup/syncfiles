@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+#
+# restore files from backup
+
+# rsync something
