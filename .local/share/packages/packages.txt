@@ -85,12 +85,14 @@ gimp
 git
 git-lfs
 glibc
+gnome-disk-utility
 gnome-keyring
 gnome-screenshot
 gparted
 gpick
 gradle
 grep
+grsync
 grub
 grub-theme-manjaro-dev
 gst-libav
