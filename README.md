@@ -23,7 +23,7 @@ installpackagelist
 
 Setup GPG keys trust db and passwords from backup github
 ```
-setup
+setuppass
 ```
 
 ### Backing up
@@ -35,7 +35,7 @@ makepackagelist
 
 Backup GPG keys and trust db
 ```
-backup
+backuppass
 echo "now copy to some device like a thumbdrive and push to github @ ~/.password-store"
 ```
 
