@@ -84,4 +84,8 @@
 
 (global-set-key (read-kbd-macro "<M-DEL>") 'backward-delete-word)
 
+;; rename file and buffer
+(global-unset-key (kbd "C-x C-r"))
+(global-set-key (kbd "C-x C-r") 'rename-file-and-buffer)
+
 ;;; custom-editing.el ends here
