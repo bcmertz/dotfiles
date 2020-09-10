@@ -35,7 +35,8 @@
 
 ;; Better File Searching
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
-(global-set-key (kbd "M-s") 'counsel-ag)
+(global-set-key (kbd "M-s") 'counsel-ag)    ;;;;; C-c C-o 'ivy-occur "Search All Results"
+
 
 
 ;; Buffer Management
