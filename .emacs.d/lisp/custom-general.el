@@ -20,7 +20,7 @@
 	     '("melpa-2" . "https://melpa.org/packages/") t)
 
 ;; see our todo
-;; (setq initial-buffer-choice "~/todo.org")
+(setq initial-buffer-choice "~/todo.org")
 
 (yas-minor-mode)
 ;; backup and tmp files
