@@ -39,6 +39,7 @@
 (load "custom-typescript.el")
 (load "custom-markdown.el")
 (load "custom-css.el")
+(load "custom-html.el")
 
 ;; set customize config file location
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
