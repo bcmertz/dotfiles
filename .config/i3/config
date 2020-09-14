@@ -84,18 +84,23 @@ bindsym $mod+w exec displayselect
 bindsym $mod+Shift+i exec recipes
 bindsym $mod+Shift+w exec wallpaper_picker
 
-# program launchers (mostly bottom row)
-bindsym $mod+z exec zathura
+# program launchers
+# bindsym $mod+z exec zathura
+# bindsym $mod+c exec calibre
+# bindsym $mod+m exec vlc
+# bindsym $mod+t exec transmission-gtk
+# utils
+bindsym $mod+g exec gpick
+bindsym $mod+s exec peek
+# bmenu
 bindsym $mod+Shift+d exec fullscreen bmenu
+# file managers
 bindsym $mod+x exec termview ranger
 bindsym $mod+Shift+x exec pcmanfm
-bindsym $mod+g exec gpick
-bindsym $mod+c exec calibre
-bindsym $mod+s exec peek
+# browsers
 bindsym $mod+b exec firefox
 bindsym $mod+Shift+b exec torbrowser-launcher
-bindsym $mod+m exec vlc
-bindsym $mod+t exec transmission-gtk
+# text editors
 bindsym $mod+a exec emacs
 bindsym $mod+Shift+a exec mousepad
 
