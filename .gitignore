@@ -35,7 +35,6 @@
 !.config/dmenu/*
 !.config/picom/*
 !.config/polybar/*
-!.config/pcmanfm/*
 !.config/newsboat/*
 !.config/fontconfig/*
 
