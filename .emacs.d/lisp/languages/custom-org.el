@@ -10,6 +10,9 @@
   :ensure t
   :defer t
   :config
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+  )
+
+(setq org-return-follows-link t)
 
 ;;; custom-org.el ends here
