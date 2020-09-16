@@ -14,11 +14,6 @@ if [ -f ~/.coderc ]; then
     . ~/.coderc
 fi
 
-# set work environment
-if [ -f ~/.lanternrc ]; then
-    . ~/.lanternrc
-fi
-
 # .bash_history
 HISTCONTROL=ignoreboth
 shopt -s histappend
