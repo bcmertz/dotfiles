@@ -5,13 +5,10 @@
 ;;; org mode
 ;;;
 ;;; Code:
-
 (use-package org-bullets
-  :ensure t
   :defer t
-  :config
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-  )
+  :ensure t
+  :hook (org-mode . org-bullets-mode))
 
 (setq org-return-follows-link t)
 
