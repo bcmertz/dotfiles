@@ -5,7 +5,8 @@
 session="${SESSION}"
 # start compositor if not cinnamon
 if [[ "$session" != "mint" && "$session" != "cinnamon" ]]; then
-    picom -b &
+    # -b daemon, -i no inactive opacity, -I no fading in or -O out
+    picom -b -i 1 -I 1 -O 1 &
 fi
 
 dunst &         # notifications
