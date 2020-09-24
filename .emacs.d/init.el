@@ -32,6 +32,7 @@
 (load "custom-flycheck.el")
 (load "custom-lsp.el")
 (load "custom-git.el")
+(load "custom-compile.el")
 
 ;; mode configurations
 (load "custom-golang.el")
