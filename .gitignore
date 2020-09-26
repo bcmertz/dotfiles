@@ -50,6 +50,7 @@
 !.emacs.d/snippets/*/
 !.emacs.d/snippets/js-mode/*
 !.emacs.d/snippets/go-mode/*
+!.dir-locals.el # eglot config for lsp servers
 
 # icons
 !.icons/default/index.theme

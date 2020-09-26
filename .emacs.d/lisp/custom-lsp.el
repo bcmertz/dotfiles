@@ -25,7 +25,10 @@
 ;;   )
 ;; (push 'company-lsp company-backends)
 
-(use-package eglot :ensure t)
+(use-package eglot
+  :defer t
+  :ensure t
+  )
 
 ;; (add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd-10"))
 
