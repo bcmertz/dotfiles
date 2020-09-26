@@ -8,19 +8,30 @@
 
 ;;; custom-lsp.el ends here
 
-(use-package lsp-mode
-  :hook ((go-mode . lsp)
-         (js-mode . lsp)
-         (typescript-mode . lsp)
-         ;; (lsp-mode . flycheck-mode)
-         ;; (lsp-mode . lsp-enable-which-key-integration)
-         ))
-(use-package lsp-ui
-  :custom
-  (lsp-ui-sideline-enable t)
-  )
+;; (use-package lsp-mode
+;;   :hook ((go-mode . lsp)
+;;          (js-mode . lsp)
+;;          (typescript-mode . lsp)
+;;          ;; (lsp-mode . flycheck-mode)
+;;          ;; (lsp-mode . lsp-enable-which-key-integration)
+;;          ))
+;; (use-package lsp-ui
+;;   :custom
+;;   (lsp-ui-sideline-enable t)
+;;   )
 
-(use-package company-lsp
-  :commands company-lsp
-  )
-(push 'company-lsp company-backends)
+;; (use-package company-lsp
+;;   :commands company-lsp
+;;   )
+;; (push 'company-lsp company-backends)
+
+(use-package eglot :ensure t)
+
+;; (add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd-10"))
+
+;; gopls
+(add-hook 'go-mode-hook 'eglot-ensure)
+
+;; javascript-typescript-langserver
+(add-hook 'js-mode-hook 'eglot-ensure)
+(add-hook 'typescript-mode-hook 'eglot-ensure)

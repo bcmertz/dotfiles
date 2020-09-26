@@ -5,6 +5,9 @@
 ;;; org mode
 ;;;
 ;;; Code:
+(setq org-todo-keywords
+      '((sequence "TODO" "STARTED" "WAITING" "|" "DONE" "CANCELED")))
+
 (use-package org-bullets
   :defer t
   :ensure t
