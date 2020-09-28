@@ -6,7 +6,7 @@
 ;;;
 ;;; Code:
 (setq org-todo-keywords
-      '((sequence "TODO" "STARTED" "WAITING" "|" "DONE" "CANCELED")))
+      '((sequence "TODO(t)" "STARTED(s)" "WAITING(w)" "|" "DONE(d)" "CANCELED(c)")))
 
 (use-package org-bullets
   :defer t
