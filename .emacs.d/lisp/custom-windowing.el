@@ -22,4 +22,6 @@
 (global-set-key (kbd "<M-S-left>")   'buf-move-left)
 (global-set-key (kbd "<M-S-right>")  'buf-move-right)
 
+(global-set-key (kbd "C-x |") 'toggle-window-split)
+
 ;;; custom-windowing.el ends here
