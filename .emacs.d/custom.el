@@ -67,7 +67,7 @@
  '(jdee-db-spec-breakpoint-face-colors (cons "#000000" "#494949"))
  '(lsp-ui-doc-border "#93a1a1")
  '(magit-diff-use-overlays nil)
- '(markdown-command "/usr/bin/pandoc")
+ '(markdown-command "/usr/bin/pandoc" t)
  '(nrepl-message-colors
    '("#dc322f" "#cb4b16" "#b58900" "#5b7300" "#b3c34d" "#0061a8" "#2aa198" "#d33682" "#6c71c4"))
  '(objed-cursor-color "#CC9393")
