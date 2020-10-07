@@ -29,6 +29,7 @@
 !.config/*/
 !.config/i3/*
 !.config/git/*
+!.config/mpd/*
 !.config/bspwm/*
 !.config/sxhkd/*
 !.config/dunst/*
