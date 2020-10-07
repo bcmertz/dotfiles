@@ -5,16 +5,18 @@
 ;;;
 ;;; Code:
 
-;; (use-package doc-view
-;;   :defer t
-;;   :bind
-;;   ("<left>" . image-backward-hscroll)
-;;   ("<right>" . image-forward-hscroll)
-;;   )
+;;(add-to-list 'auto-mode-alist '("\\.tex$" . LaTeX-mode))
+(use-package auctex
+  :defer t
+  :ensure t)
 
-(use-package pdf-tools
-  :ensure t
-  :init ()
-  :config (add-to-list 'auto-mode-alist '("\\.pdf\\'" . pdf-view-mode)))
+;; to use pdfview with tex
+(setq TeX-view-program-selection '((output-pdf "PDF Tools"))
+      TeX-view-program-list '(("PDF Tools" TeX-pdf-tools-sync-view))
+      TeX-source-correlate-start-server t) ;; not sure if last line is neccessary
+
+;; to have the buffer refresh after compilation
+(add-hook 'TeX-after-compilation-finished-functions
+          #'TeX-revert-document-buffer)
 
 ;;; custom-latex.el ends here
