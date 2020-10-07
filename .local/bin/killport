@@ -1,4 +1,13 @@
 #!/bin/bash
+#
 # kill port number
 
-kill $(lsof -t -i:"$1")
+pid=$(lsof -t -i:"$1")
+
+if [ -z "$pid" ]
+then
+    echo "no processes running on port $1"
+else
+    kill $pid
+    echo "killed port $1, PID: $pid"
+fi
