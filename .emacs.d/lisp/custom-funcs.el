@@ -157,7 +157,7 @@ With argument, do this that many times."
 
 
 ;; start bash script and enable shell mode
-(defun start-bash-script ()
+(defun start-shell-script ()
   (interactive)
   (insert "#!/bin/bash\n#\n# description")
   (shell-script-mode))
