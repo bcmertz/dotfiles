@@ -9,7 +9,6 @@
 (if (display-graphic-p)
     (add-hook 'after-init-hook (lambda ()
                                  (load-theme 'atom-one-dark t)
-                                 ;; (load-theme 'kaolin-temple t)
                                  )))
 
 ;; Hide line numbering
@@ -20,9 +19,10 @@
 (set-window-buffer nil (current-buffer))
 
 ;; modeline
-;; (spaceline-spacemacs-theme)
 (use-package doom-modeline
   :ensure t
+  :config
+  (setq doom-modeline-vcs-max-length 22)
   :init (doom-modeline-mode 1))
 
 ;; center 1 buffer

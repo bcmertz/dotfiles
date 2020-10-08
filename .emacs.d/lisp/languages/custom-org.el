@@ -8,6 +8,8 @@
 (setq org-todo-keywords
       '((sequence "TODO(t)" "STARTED(s)" "WAITING(w)" "|" "DONE(d)" "CANCELED(c)")))
 
+;; (setq org-ellipsis "⤵")
+
 (use-package org-bullets
   :defer t
   :ensure t
