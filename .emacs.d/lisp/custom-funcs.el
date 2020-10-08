@@ -155,4 +155,12 @@ With argument, do this that many times."
       (select-window first-win)
       (if this-win-2nd (other-window 1))))))
 
+
+;; start bash script and enable shell mode
+(defun start-bash-script ()
+  (interactive)
+  (insert "#!/bin/bash\n#\n# description")
+  (shell-script-mode))
+
+
 ;;; custom-funcs.el ends here
