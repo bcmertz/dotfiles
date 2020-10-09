@@ -26,6 +26,7 @@
   :custom-face
   (mode-line ((t (:foreground "#D8DEE8" :background "#353645"))))
   (mode-line-inactive ((t (:background "#181A1F"))))
+  (doom-modeline-buffer-modified ((t (:inherit (error bold) :foreground "#599DD5"))))
   :init (doom-modeline-mode 1))
 
 
