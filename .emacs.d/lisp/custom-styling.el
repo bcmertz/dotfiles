@@ -28,9 +28,6 @@
   (mode-line-inactive ((t (:background "#181A1F"))))
   :init (doom-modeline-mode 1))
 
-;; (set-face-foreground 'mode-line "#D8DEE8")
-;; (set-face-background 'mode-line "#353645")
-;; (set-face-background 'mode-line-inactive "#181A1F")
 
 ;; center 1 buffer
 (require 'sublimity)
