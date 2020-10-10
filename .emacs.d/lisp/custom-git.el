@@ -10,6 +10,7 @@
 
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x c") 'magit-checkout)
+(global-set-key (kbd "C-x l") 'magit-log-branches)
 
 (use-package git-link
   :bind
