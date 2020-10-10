@@ -7,16 +7,16 @@
 ;;; Code:
 ;; emacs window management
 
-(use-package centaur-tabs
-  :demand
-  :config
-  (centaur-tabs-mode t)
-  (setq centaur-tabs-height 32)
-  (setq centaur-tabs-set-icons t)
-  (setq centaur-tabs-set-bar 'left)
-  :bind
-  ("C-M-<left>" . centaur-tabs-backward)
-  ("C-M-<right>" . centaur-tabs-forward))
+;; (use-package centaur-tabs
+;;   :demand
+;;   :config
+;;   (centaur-tabs-mode t)
+;;   (setq centaur-tabs-height 32)
+;;   (setq centaur-tabs-set-icons t)
+;;   (setq centaur-tabs-set-bar 'left)
+;;   :bind
+;;   ("C-M-<left>" . centaur-tabs-backward)
+;;   ("C-M-<right>" . centaur-tabs-forward))
 
 
 (use-package windmove
