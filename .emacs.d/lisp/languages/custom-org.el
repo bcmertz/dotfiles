@@ -18,4 +18,5 @@
 (setq org-return-follows-link t)
 (setq org-agenda-files '("~/Documents/org/"))
 
+
 ;;; custom-org.el ends here
