@@ -28,9 +28,4 @@
   :bind
   ("C-c l" . git-link))
 
-(use-package diffview
-  :defer t
-  :mode "\\.diff\\'"
-  )
-
 ;;; custom-git.el ends here
