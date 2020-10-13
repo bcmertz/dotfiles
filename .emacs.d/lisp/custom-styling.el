@@ -41,13 +41,6 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
-;; smooth scrolling
-(setq redisplay-dont-pause t
-  scroll-margin 1
-  scroll-step 1
-  scroll-conservatively 10000
-  scroll-preserve-screen-position 1)
-
 ;; Highlight current line in gui emacs
 (if (display-graphic-p)
     (global-hl-line-mode 1))
@@ -60,13 +53,31 @@
   (interactive)
   (global-hl-line-mode -1))
 
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; scrolling ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; smooth scrolling
+(setq redisplay-dont-pause t
+  scroll-margin 1
+  scroll-step 1
+  scroll-conservatively 10000
+  scroll-preserve-screen-position 1)
+
 ;; truncate long lines l/r horizontal scrolling
 (set-default 'truncate-lines t)
 (add-hook 'text-mode-hook (lambda () (setq truncate-lines nil)))
 
+;; failed attempt to make scrolling only scroll current line and not reset cursorn
+;; (set-default 'auto-hscroll-mode "current-line")
+;; (set-default 'set-minimum t)
 (global-set-key (kbd "<mouse-6>") (lambda () (interactive)
-                                    (if truncate-lines (scroll-right 1))))
+                                    (if truncate-lines (scroll-right 5))))
 (global-set-key (kbd "<mouse-7>") (lambda () (interactive)
-                                        (if truncate-lines (scroll-left 1))))
+                                        (if truncate-lines (scroll-left 5))))
+(global-set-key (kbd "<S-mouse-5>") (lambda () (interactive)
+                                        (if truncate-lines (scroll-left 10))))
+(global-set-key (kbd "<S-mouse-4>") (lambda () (interactive)
+                                        (if truncate-lines (scroll-right 10))))
 
 ;;; custom-styling.el ends here
