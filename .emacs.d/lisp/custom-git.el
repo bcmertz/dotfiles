@@ -7,7 +7,6 @@
 ;;; Code:
 
 (use-package magit
-  :ensure t
   :defer t
   :bind
   ("C-x g" . magit-status)
@@ -28,5 +27,10 @@
   :defer t
   :bind
   ("C-c l" . git-link))
+
+(use-package diffview
+  :defer t
+  :mode "\\.diff\\'"
+  )
 
 ;;; custom-git.el ends here
