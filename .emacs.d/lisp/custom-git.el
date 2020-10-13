@@ -12,6 +12,11 @@
 (global-set-key (kbd "C-x c") 'magit-checkout)
 (global-set-key (kbd "C-x l") 'magit-log-branches)
 
+(use-package github-review
+  :bind
+  ("C-c r" . github-review-start)
+  )
+
 (use-package git-link
   :bind
   ("C-c l" . git-link)
