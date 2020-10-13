@@ -8,7 +8,18 @@
 (setq org-todo-keywords
       '((sequence "TODO(t)" "STARTED(s)" "WAITING(w)" "|" "DONE(d)" "CANCELED(c)")))
 
-;; (setq org-ellipsis "⤵")
+;; start github review with given link at point
+(defun github-start-review-at-link ()
+  "Copies the URL from an org link at the point and starts github review"
+  (interactive)
+  (let ((plain-url (url-get-url-at-point)))
+    (if plain-url
+        (progn
+          (github-review-start plain-url)))))
+
+(use-package org
+  :bind (:map org-mode-map
+         ("C-c r" . github-start-review-at-link)))
 
 (use-package org-bullets
   :defer t
@@ -17,6 +28,7 @@
 
 (setq org-return-follows-link t)
 (setq org-agenda-files '("~/Documents/org/"))
+
 
 
 ;;; custom-org.el ends here

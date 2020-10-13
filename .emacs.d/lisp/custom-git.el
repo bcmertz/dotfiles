@@ -16,8 +16,9 @@
 
 (use-package github-review
   :defer t
-  :bind
-  ("C-c r" . github-review-forge-pr-at-point))
+  :after magit
+  :bind (:map magit-mode-map
+         ("C-c r" . github-review-forge-pr-at-point)))
 
 (use-package forge
   :defer t
