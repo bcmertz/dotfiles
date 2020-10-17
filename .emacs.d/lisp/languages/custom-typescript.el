@@ -1,6 +1,6 @@
-;;; custom-typescript.el --- js configuration
+;;; custom-typescript.el --- ts configuration
 ;;;
-;;; Commentary:
+;;; Commentary: This is really just the web mode config but since we use it for tsx files primarily here it is
 ;;;
 ;;; Code:
 
@@ -25,8 +25,6 @@
     (setq web-mode-css-indent-offset 2)
     (setq web-mode-code-indent-offset 2)
     (setq web-mode-indent-style 2)
-    ;;(flycheck-select-checker 'typescript-tslint)
-    ;;(flycheck-add-mode 'typescript-tslint 'web-mode)
     )
 
 (add-hook 'web-mode-hook  'my-web-mode-hook)
