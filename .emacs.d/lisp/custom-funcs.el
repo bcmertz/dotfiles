@@ -38,7 +38,11 @@ or the current buffer directory."
   "Go to end of line and return bc in TTy C-m and RET is weird."
   (interactive)
   (end-of-line)
-  (newline-and-indent))
+  (newline-and-indent)
+  (if (string= major-mode "web-mode")
+      (indent-relative)
+      )
+  )
 
 (defun move-lines (n)
   (let ((beg) (end) (keep))
