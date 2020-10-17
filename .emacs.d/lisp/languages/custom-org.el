@@ -29,6 +29,7 @@
 (setq org-return-follows-link t)
 (setq org-agenda-files '("~/Documents/org/"))
 
+(global-set-key (kbd "C-c C-l") 'org-store-link)
 
 
 ;;; custom-org.el ends here
