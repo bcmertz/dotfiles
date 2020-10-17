@@ -16,7 +16,6 @@
          ("\\.[jt]sx\\'" . web-mode)
 	 ("\\.html\\'" . web-mode)
          )
-  :after flycheck
   )
 
 (defun my-web-mode-hook ()
