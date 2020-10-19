@@ -39,9 +39,9 @@ or the current buffer directory."
   (interactive)
   (end-of-line)
   (newline-and-indent)
-  (if (string= major-mode "web-mode")
-      (indent-relative)
-      )
+  ;; (if (string= major-mode "web-mode")
+  ;;     (indent-relative)
+  ;;     )
   )
 
 (defun move-lines (n)
