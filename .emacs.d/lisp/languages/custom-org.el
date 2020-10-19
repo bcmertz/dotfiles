@@ -21,6 +21,7 @@
   :bind (:map org-mode-map
          ("C-c r" . github-start-review-at-link)))
 
+;; pretty bullets
 (use-package org-bullets
   :defer t
   :ensure t
@@ -29,7 +30,11 @@
 (setq org-return-follows-link t)
 (setq org-agenda-files '("~/Documents/org/"))
 
-(global-set-key (kbd "C-c C-l") 'org-store-link)
 
+;; overwrite web mode binding for C-c C-l
+(add-hook 'web-mode-hook
+      (lambda ()
+        (local-unset-key (kbd "C-c C-l"))))
+(global-set-key (kbd "C-c C-l") 'org-store-link)
 
 ;;; custom-org.el ends here
