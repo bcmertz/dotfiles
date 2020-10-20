@@ -10,16 +10,25 @@
   :ensure t
   :bind ("M-g" . avy-goto-char-2)    ;; go to char
   ("M-l" . avy-goto-line))           ;; go to line
+
 (use-package swiper
   :ensure t
   :bind ("C-s" . swiper)
   ("C-r" . swiper))
+
+(ivy-mode 1)
 (setq ivy-count-format "(%d/%d) ")
 
 (projectile-mode +1)
 (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 (setq projectile-project-search-path '("~/coding/" "~/go/src/github.com/getlantern/"))
+
+(use-package perspective
+  :bind (("C-x b" . persp-switch-to-buffer*)
+         ("C-x k" . persp-kill-buffer*))
+  :config
+  (persp-mode))
 
 ;; Sidebar File Viewer
 ;; C-c C-c makes the focused directory the new root view
