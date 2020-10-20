@@ -25,14 +25,30 @@
 (setq projectile-project-search-path '("~/coding/" "~/go/src/github.com/getlantern/"))
 
 (use-package perspective
-  :bind (("C-x b" . persp-switch-to-buffer*)
-         ("C-x k" . persp-kill-buffer*))
+  :bind (
+         ("C-x b" . persp-switch-to-buffer)
+         ("C-x k" . persp-kill-buffer)
+         ("C-M-<left>" . persp-prev)
+         ("C-M-<right>" . persp-next)
+         ("C-M-<return>" . persp-switch)
+         ("C-M-<delete>" . persp-state-save)
+         ("C-M-<backspace>" . persp-state-load)
+         )
   :config
-  (persp-mode))
+  (persp-mode)
+  (setq persp-state-default-file "~/.emacs.d/save-perspective")
+  (add-hook 'kill-emacs-hook #'persp-state-save)
+  )
+
+;; Buffer Management
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)              ; Better C-x b
+
+(defalias 'list-buffers 'ibuffer)    ; better C-x C-b
 
 ;; Sidebar File Viewer
-;; C-c C-c makes the focused directory the new root view
-(use-package neotree
+(use-package neotree ;; C-c C-c makes the focused directory the new root view
   :ensure t
   :config
   ;; Type H to toggle hidden files
@@ -45,15 +61,6 @@
 ;; Better File Searching
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "M-s") 'counsel-ag)    ;;;;; C-c C-o 'ivy-occur "Search All Results"
-
-
-
-;; Buffer Management
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
-(ido-mode 1)              ; Better C-x b
-
-(defalias 'list-buffers 'ibuffer)    ; better C-x C-b
 
 ;; Ido like M-x command completion
 (use-package smex
