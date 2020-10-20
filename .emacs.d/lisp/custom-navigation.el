@@ -36,8 +36,9 @@
          )
   :config
   (persp-mode)
-  (setq persp-state-default-file "~/.emacs.d/save-perspective")
+  (setq persp-state-default-file "~/.emacs.d/save-perspective/location")
   (add-hook 'kill-emacs-hook #'persp-state-save)
+  (setq persp-initial-frame-name "emacs")
   )
 
 ;; Buffer Management
