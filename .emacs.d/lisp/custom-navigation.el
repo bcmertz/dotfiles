@@ -26,19 +26,20 @@
 
 (use-package perspective
   :bind (
-         ("C-x b" . persp-switch-to-buffer)
-         ("C-x k" . persp-kill-buffer)
+         ("C-x b" . persp-switch-to-buffer*)
+         ("C-x k" . persp-kill-buffer*)
          ("C-M-<left>" . persp-prev)
          ("C-M-<right>" . persp-next)
          ("C-M-<return>" . persp-switch)
          ("C-M-<delete>" . persp-state-save)
          ("C-M-<backspace>" . persp-state-load)
          )
+  :init
+  (setq persp-initial-frame-name "emacs")
   :config
   (persp-mode)
-  (setq persp-state-default-file "~/.emacs.d/save-perspective/location")
+  (setq persp-state-default-file "~/.emacs.d/save-perspective")
   (add-hook 'kill-emacs-hook #'persp-state-save)
-  (setq persp-initial-frame-name "emacs")
   )
 
 ;; Buffer Management
