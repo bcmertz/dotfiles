@@ -2,10 +2,11 @@
 ;;;
 ;;; Commentary:
 ;;;
-;;; moving around files and buffers in Emacs
+;;; moving around files and buffers and perspectives and windows in Emacs
 ;;;
 ;;; Code:
-;; Navigation
+
+;; code navigation
 (use-package avy
   :ensure t
   :bind ("M-g" . avy-goto-char-2)    ;; go to char
@@ -19,11 +20,15 @@
 (ivy-mode 1)
 (setq ivy-count-format "(%d/%d) ")
 
+
+;; project navigation
 (projectile-mode +1)
 (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 (setq projectile-project-search-path '("~/coding/" "~/go/src/github.com/getlantern/"))
 
+
+;; perspective navigation
 (use-package perspective
   :bind (
          ("C-x b" . persp-switch-to-buffer*)
@@ -53,14 +58,14 @@
 ;; stateful window managemnt
 (winner-mode 1)
 
-;; Buffer Management
+;; Buffer navigation
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (ido-mode 1)              ; Better C-x b
 
 (defalias 'list-buffers 'ibuffer)    ; better C-x C-b
 
-;; Sidebar File Viewer
+;; Sidebar File navigation
 (use-package neotree ;; C-c C-c makes the focused directory the new root view
   :ensure t
   :config
