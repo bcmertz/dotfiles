@@ -44,10 +44,14 @@
 
 ;; https://github.com/nex3/perspective-el#some-musings-on-emacs-window-layouts
 ;; basically reuse display buffers that have been previously opened
-(setq display-buffer-alist
-      '((".*" (display-buffer-reuse-window display-buffer-same-window))))
-(setq display-buffer-reuse-frames t)         ; reuse windows in other frames
-(setq even-window-sizes nil)                 ; display-buffer: avoid resizing
+;; break neotree
+;; (setq display-buffer-alist
+;;       '((".*" (display-buffer-reuse-window display-buffer-same-window))))
+;; (setq display-buffer-reuse-frames t)         ; reuse windows in other frames
+;; (setq even-window-sizes nil)                 ; display-buffer: avoid resizing
+
+;; stateful window managemnt
+(winner-mode 1)
 
 ;; Buffer Management
 (setq ido-enable-flex-matching t)
