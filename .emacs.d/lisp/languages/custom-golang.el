@@ -5,7 +5,6 @@
 ;;; snippets, formatting, docs, autocompletion, etc
 ;;;
 ;;; Code:
-(add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/go-mode")   ; enable go snippets
 
 ;; ;; Set up before-save hooks to format buffer and add/delete imports.
 ;; ;; Make sure you don't have other gofmt/goimports hooks enabled.

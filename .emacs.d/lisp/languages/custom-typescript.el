@@ -4,11 +4,11 @@
 ;;;
 ;;; Code:
 
-;; (use-package typescript-mode
-;;   :defer t
-;;   :init
-;;   (setq typescript-indent-level 2)
-;;   )
+(use-package typescript-mode
+  :defer t
+  :init
+  (setq typescript-indent-level 2)
+  )
 
 (use-package web-mode
   :defer t

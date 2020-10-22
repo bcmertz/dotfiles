@@ -14,6 +14,12 @@
 ;; replace highlighted sections
 (delete-selection-mode 1)
 
+(require 'yasnippet)
+(add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/js-mode")
+(add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/go-mode")
+(add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/web-mode")
+(yas-global-mode 1)
+
 ;; smart parenthesis
 (require 'smartparens-config)
 (smartparens-global-mode t)
