@@ -8,6 +8,10 @@
 ;; zap to char using avy
 (global-set-key (kbd "M-z") 'avy-zap-to-char-dwim)
 
+;; run comment-line instead of comment-dwim
+;; http://ergoemacs.org/misc/emacs_comment-line_vs_comment-dwim.html
+(global-set-key (kbd "M-;") 'comment-line)
+
 ;; use spaces instead of tabs
 (setq-default indent-tabs-mode nil)
 
