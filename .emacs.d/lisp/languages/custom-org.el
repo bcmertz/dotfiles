@@ -19,6 +19,7 @@
 
 (use-package org
   :bind (:map org-mode-map
+         ("<M-return>" . org-return-newline-below)
          ("C-c r" . github-start-review-at-link)))
 
 ;; pretty bullets

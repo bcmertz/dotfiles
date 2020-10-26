@@ -44,6 +44,20 @@ or the current buffer directory."
   ;;     )
   )
 
+(defun org-return-newline-below ()
+  "Go to end of line and org-meta-return"
+  (interactive)
+  (end-of-line)
+  (if (string= major-mode "org-mode")
+      (org-meta-return)
+      (progn
+        (newline-and-indent)
+        (indent-relative)
+        )
+      )
+  )
+
+
 (defun move-lines (n)
   (let ((beg) (end) (keep))
     (if mark-active
