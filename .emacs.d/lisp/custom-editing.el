@@ -10,6 +10,8 @@
 
 ;; run comment-line instead of comment-dwim
 ;; http://ergoemacs.org/misc/emacs_comment-line_vs_comment-dwim.html
+;; I switched this out because comment-dwim breaks lines instead of commenting each line
+;; in a region like comment-line does
 (global-set-key (kbd "M-;") 'comment-line)
 
 ;; use spaces instead of tabs
