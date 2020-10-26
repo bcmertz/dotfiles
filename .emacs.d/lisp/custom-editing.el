@@ -79,7 +79,7 @@
 ;; Multiple Cursors
 (use-package multiple-cursors
   :ensure t
-:bind
+  :bind
   ("M-." . mc/mark-next-like-this)
   ("M-," . mc/mark-previous-like-this)
   ("C-c M-." . mc/mark-all-like-this)
