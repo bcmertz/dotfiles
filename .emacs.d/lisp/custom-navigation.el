@@ -68,15 +68,29 @@
 (defalias 'list-buffers 'ibuffer)    ; better C-x C-b
 
 ;; Sidebar File navigation
-(use-package neotree ;; C-c C-c makes the focused directory the new root view
+;; (use-package neotree ;; C-c C-c makes the focused directory the new root view
+;;   :ensure t
+;;   :config
+;;   ;; Type H to toggle hidden files
+;;   (setq-default neo-show-hidden-files t)
+;;   (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+;;   (setq neo-autorefresh nil)
+;;   (setq neo-window-fixed-size ())
+;;   :bind("C-\\" . neotree-project-dir-toggle))
+(use-package treemacs
   :ensure t
-  :config
-  ;; Type H to toggle hidden files
-  (setq-default neo-show-hidden-files t)
-  (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
-  (setq neo-autorefresh nil)
-  (setq neo-window-fixed-size ())
-  :bind("C-\\" . neotree-project-dir-toggle))
+  :defer t
+  :bind("C-\\" . treemacs)
+  )
+
+(use-package treemacs-projectile
+  :after treemacs projectile
+  :ensure t)
+
+(use-package treemacs-magit
+  :after treemacs magit
+  :ensure t)
+
 
 ;; Better File Searching
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
