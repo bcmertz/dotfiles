@@ -12,6 +12,10 @@
 ;; http://ergoemacs.org/misc/emacs_comment-line_vs_comment-dwim.html
 ;; I switched this out because comment-dwim breaks lines instead of commenting each line
 ;; in a region like comment-line does
+;; also get rid of annoying web mode binding
+(add-hook 'web-mode-hook
+      (lambda ()
+        (local-unset-key (kbd "M-;"))))
 (global-set-key (kbd "M-;") 'comment-line)
 
 ;; use spaces instead of tabs
