@@ -49,6 +49,7 @@ alias copy='xclip -sel clip'
 alias r='fc -s'
 alias rc='fc -s | copy'
 alias wcdir='wc -w *'
+alias reboot='shutdown -r now'
 
 # Hack to remove wifi driver from kernal space and put back in I think - hard restart
 alias fixwifi='sudo modprobe -r mwifiex_pcie && sudo modprobe mwifiex_pcie'
