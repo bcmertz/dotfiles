@@ -21,6 +21,7 @@
   )
 
 ;; general configuration
+;; todo time each modules loading time
 (load "custom-general.el")
 (load "custom-evil-keymap") ;; toggle evil with M-SPC; SPC is leader key
 (load "custom-funcs.el")
