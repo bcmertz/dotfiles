@@ -65,6 +65,8 @@
 (set-default 'truncate-lines t)
 (add-hook 'text-mode-hook (lambda () (setq truncate-lines nil)))
 
+(setq auto-hscroll-mode nil)
+
 (global-set-key (kbd "<mouse-6>") (lambda () (interactive)
                                     (if truncate-lines (scroll-right 5))))
 (global-set-key (kbd "<mouse-7>") (lambda () (interactive)
