@@ -21,36 +21,36 @@
   )
 
 ;; debug startup performance / load time using (measure-time(load "custom-module.el"))
-;; (defmacro measure-time (&rest body)
-;;   "Measure the time it takes to evaluate BODY."
-;;   `(let ((time (current-time)))
-;;      ,@body
-;;           (message "%.06f" (float-time (time-since time)))))
+(defmacro measure-time (&rest body)
+  "Measure the time it takes to evaluate BODY."
+  `(let ((time (current-time)))
+     ,@body
+     (message "%.06f" (float-time (time-since time)))))
 
-;; general configuration
-(load "custom-general.el")
-(load "custom-evil-keymap") ;; toggle evil with M-SPC; SPC is leader key
-(load "custom-funcs.el")
-(load "custom-styling.el")
-(load "custom-autocomplete.el")
-(load "custom-navigation.el")
-(load "custom-editing.el")
-(load "custom-windowing.el")
-(load "custom-flycheck.el")
-(load "custom-lsp.el")
-(load "custom-git.el")
-(load "custom-pdf.el")
-(load "custom-compile.el")
+;; general configuration - toggle evil with M-SPC; SPC is leader key
+(measure-time(load "custom-general.el"))
+(measure-time(load "custom-evil-keymap.el"))
+(measure-time(load "custom-funcs.el"))
+(measure-time(load "custom-styling.el"))
+(measure-time(load "custom-autocomplete.el"))
+(measure-time(load "custom-navigation.el"))
+(measure-time(load "custom-editing.el"))
+(measure-time(load "custom-windowing.el"))
+(measure-time(load "custom-flycheck.el"))
+(measure-time(load "custom-lsp.el"))
+(measure-time(load "custom-git.el"))
+(measure-time(load "custom-pdf.el"))
+(measure-time(load "custom-compile.el"))
 
 ;; mode configurations
-(load "custom-golang.el")
-(load "custom-js.el")
-(load "custom-typescript.el")
-(load "custom-markdown.el")
-(load "custom-css.el")
-(load "custom-html.el")
-(load "custom-org.el")
-(load "custom-latex.el")
+(measure-time(load "custom-golang.el"))
+(measure-time(load "custom-js.el"))
+(measure-time(load "custom-typescript.el"))
+(measure-time(load "custom-markdown.el"))
+(measure-time(load "custom-css.el"))
+(measure-time(load "custom-html.el"))
+(measure-time(load "custom-org.el"))
+(measure-time(load "custom-latex.el"))
 
 ;; set customize config file location
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
