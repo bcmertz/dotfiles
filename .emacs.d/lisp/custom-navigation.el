@@ -98,10 +98,10 @@
 (global-set-key (kbd "M-s") 'counsel-ag)    ;;;;; C-c C-o 'ivy-occur "Search All Results"
 
 ;; Ido like M-x command completion
-(use-package smex
-  :ensure t
-  :init (smex-initialize)
-  :bind ("M-x" . smex)
-  )
+;; (use-package smex
+;;   :ensure t
+;;   :init (smex-initialize)
+;;   :bind ("M-x" . smex)
+;;   )
 
 ;;; custom-navigaton.el ends here
