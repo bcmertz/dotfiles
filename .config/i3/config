@@ -85,6 +85,7 @@ bindsym $mod+p exec passmenu
 bindsym $mod+w exec displayselect
 bindsym $mod+Shift+i exec recipes
 bindsym $mod+Shift+w exec wallpaper_picker
+bindsym $mod+i exec choose_keyboard
 
 # program launchers
 # bindsym $mod+z exec zathura
@@ -115,10 +116,10 @@ for_window [instance="dropdown"] border pixel 5
 bindsym $mod+Shift+u [instance="dropdown"] scratchpad show [instance="dropdown"] move position center
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+i focus up
-bindsym $mod+l focus right
+# bindsym $mod+j focus left
+# bindsym $mod+k focus down
+# bindsym $mod+i focus up
+# bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
