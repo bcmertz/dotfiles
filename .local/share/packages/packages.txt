@@ -102,6 +102,7 @@ gst-plugins-good
 gst-plugins-ugly
 gstreamer
 gtksourceview-pkgbuild
+gucharmap
 gufw
 gvfs
 gvfs-afc
