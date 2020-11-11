@@ -186,6 +186,7 @@ mpv
 mutt
 nano
 ncdu
+ncmpcpp
 neofetch
 netctl
 network-manager-applet
@@ -223,6 +224,7 @@ poppler-data
 powertop
 procps-ng
 psmisc
+pulseeffects
 pygtk
 qt4
 qt5-styleplugins
