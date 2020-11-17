@@ -14,7 +14,7 @@ module-margin-left = 0
 module-margin-right = 2
 modules-left = i3 weather
 modules-center = date
-modules-right = network volume battery memory temp filesystem
+modules-right = network volume battery memory temp filesystem language
 
 [bar/bspwm]
 dpi = 133
@@ -33,7 +33,14 @@ module-margin-left = 0
 module-margin-right = 2
 modules-left = bspwm weather
 modules-center = date
-modules-right = network volume battery memory temp filesystem
+modules-right = network volume battery memory temp filesystem language
+
+[module/language]
+type = custom/script
+exec = language
+interval = 2
+click-left = notify-send "Language" "Alt-Shift to toggle"
+click-right = gkbd-keyboard-display -l fa
 
 [module/memory]
 type = custom/script
