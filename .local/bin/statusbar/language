@@ -2,9 +2,20 @@
 #
 # display language selection
 
+# get current langauge
+current=$(xkb-switch)
 
-case $BLOCK_BUTTON in
-	1) notify-send "Toggle with alt-shift" ;;
-esac
+# get both current and alternate (switched to by Alt-Shift)
+both=$(setxkbmap -query | head -n 3 | tail -n 1 | cut -d ':' -f2 | awk '{$1=$1;print}')
 
-setxkbmap -query | head -n 3 | tail -n 1 | cut -d ':' -f2 | awk '{$1=$1;print}'
+# remove from both all occurences of the current language
+alternate=${both//$current}
+
+#remove all occurences of a comma
+alternate=${alternate//,}
+
+
+# attempt at bold that failed in polybar
+# echo -e "\033[1m$current\033[0m|$alternate"
+
+echo -e "$current|$alternate"
