@@ -1,14 +1,8 @@
 #!/bin/bash
 #
-#
+# choose language keyboard from available options
 
-chosen=$(localectl list-keymaps | dmenu -i -l 15)
+# ignore directories and pipe langauge options to dmenu
+chosen=$(ls -p /usr/share/X11/xkb/symbols/ | egrep -v /$ | dmenu -i -l 15)
 [ "$chosen" = "" ] && exit
 setxkbmap -layout us,$chosen -option grp:alt_shift_toggle
-notify-send "YAY! You're typing in $chosen"
-
-# check if i3 is running and launch relevant polybar config
-# if pgrep -x "i3" > /dev/null
-# then
-#     polybar i3 >>/tmp/polybar.log 2>&1 &
-# fi
