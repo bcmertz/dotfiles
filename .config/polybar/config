@@ -40,7 +40,7 @@ type = custom/script
 exec = language
 interval = 1
 click-left = notify-send "Language" "Alt-Shift to toggle"
-click-right = gkbd-keyboard-display -l fa
+click-right = gkbd-keyboard-display -l ir
 
 [module/memory]
 type = custom/script
