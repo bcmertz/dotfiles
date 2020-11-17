@@ -12,9 +12,9 @@ padding-left = 0
 padding-right = 2
 module-margin-left = 0
 module-margin-right = 2
-modules-left = i3 weather
+modules-left = i3 weather language
 modules-center = date
-modules-right = network volume battery memory temp filesystem language
+modules-right = network volume battery memory temp filesystem
 
 [bar/bspwm]
 dpi = 133
@@ -31,9 +31,9 @@ padding-left = 0
 padding-right = 2
 module-margin-left = 0
 module-margin-right = 2
-modules-left = bspwm weather
+modules-left = bspwm weather language
 modules-center = date
-modules-right = network volume battery memory temp filesystem language
+modules-right = network volume battery memory temp filesystem
 
 [module/language]
 type = custom/script
