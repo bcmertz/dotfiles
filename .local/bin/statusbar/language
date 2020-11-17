@@ -9,9 +9,9 @@ current=$(xkb-switch)
 both=$(setxkbmap -query | head -n 3 | tail -n 1 | cut -d ':' -f2 | awk '{$1=$1;print}')
 
 # https://unix.stackexchange.com/a/104887
-# remove from both all occurences of the current language
+# remove from both the current language
 alternate=${both//$current}
-#remove all occurences of a comma
+#remove comma
 alternate=${alternate//,}
 
 
