@@ -18,4 +18,9 @@ alternate=${alternate//,}
 # attempt at bold that failed in polybar
 # echo -e "\033[1m$current\033[0m|$alternate"
 
-echo -e "$current|$alternate"
+if [ -z "$alternate" ]
+then
+    echo "$current"
+else
+    echo -e "$current|$alternate"
+fi
