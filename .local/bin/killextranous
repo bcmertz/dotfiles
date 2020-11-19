@@ -1,5 +1,0 @@
-#!/bin/bash
-#
-# kills my most used and most useless programs
-
-killall -q emacs godoc gocode gocode-mod flashlight npm
