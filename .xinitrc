@@ -27,7 +27,6 @@ case $session in
    emacs             ) exec emacs;;
    i3                ) exec i3;;
    bspwm             ) exec bspwm;;
-   kde               ) exec startplasma-x11;;
    xfce              ) exec startxfce4;;
    cinnamon|mint     ) exec cinnamon-session;;
 esac

@@ -39,10 +39,6 @@ do
           echo "starting cinnamon"
           break;;
 
-   [4]* ) wm="kde"
-          echo "starting kde"
-          break;;
-
    [5]* ) wm="xfce"
           echo "starting xfce"
           break;;
