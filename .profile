@@ -21,26 +21,30 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 source ~/.bashrc
 
 # (1) prompt user, and read command line argument for window manager
-read -p $'Which window manager? [default] i3 [1] emacs [2] bspwm [3] cinnamon\x0a' wm
+read -p $'Which window manager? [default] i3 [1] emacs [2] bspwm [3] cinnamon [4] kde\x0a' wm
 
 # (2) handle the command line argumen given for window manager
 while true
 do
   case $wm in
    [1]* ) wm="emacs"
-           echo "Starting emacs as window manager"
+           echo "Starting emacs"
            break;;
 
    [2]* ) wm="bspwm"
-          echo "starting bspwm as window mananger"
+          echo "starting bspwm"
           break;;
 
    [3]* ) wm="cinnamon"
-          echo "starting cinnamon desktop environment"
+          echo "starting cinnamon"
+          break;;
+
+   [4]* ) wm="kde"
+          echo "starting kde"
           break;;
 
    * ) wm="i3"
-       echo "starting i3 as window manager"
+       echo "starting i3"
        break ;;
   esac
 done
