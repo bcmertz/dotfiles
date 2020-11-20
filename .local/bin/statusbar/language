@@ -17,8 +17,7 @@ alternate=${alternate//,}
 
 # attempt at bold that failed in polybar
 
-if [ -z "$alternate" ]
-then
+if [ -z "$alternate" ]; then
     echo "$current"
 else
     if [ -t 1 ]; then
