@@ -21,7 +21,7 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 source ~/.bashrc
 
 # (1) prompt user, and read command line argument for window manager
-read -p $'Which window manager? [default] i3 [1] emacs [2] bspwm [3] cinnamon [4] kde\x0a' wm
+read -p $'Which window manager? [default] i3 [1] emacs [2] bspwm [3] cinnamon [4] kde [5] xfce\x0a' wm
 
 # (2) handle the command line argumen given for window manager
 while true
@@ -41,6 +41,10 @@ do
 
    [4]* ) wm="kde"
           echo "starting kde"
+          break;;
+
+   [5]* ) wm="xfce"
+          echo "starting xfce"
           break;;
 
    * ) wm="i3"
