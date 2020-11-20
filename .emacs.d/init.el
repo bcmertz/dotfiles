@@ -15,8 +15,7 @@
 (if (equal session "emacs")
     (progn
       (message "managing windows")
-      (require 'custom-exwm-config)
-      (custom-exwm-config)
+      (load "custom-exwm-config.el")
       )
   )
 
