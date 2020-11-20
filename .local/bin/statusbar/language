@@ -14,14 +14,12 @@ alternate=${both//$current}
 #remove comma
 alternate=${alternate//,}
 
-
-# attempt at bold that failed in polybar
-
 if [ -z "$alternate" ]; then
+    # if only one langauge selected (us default locale)
     echo "$current"
 else
     if [ -t 1 ]; then
-        # terminal
+        # terminal use bold
         echo -e "\033[1m$current\033[0m|$alternate"
     else
         # not terminal don't bold
