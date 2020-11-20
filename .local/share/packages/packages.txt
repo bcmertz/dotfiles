@@ -112,6 +112,7 @@ gvfs-smb
 gzip
 hexchat
 htop
+i3blocks
 inetutils
 intel-ucode
 inxi
