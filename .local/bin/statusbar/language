@@ -16,11 +16,16 @@ alternate=${alternate//,}
 
 
 # attempt at bold that failed in polybar
-# echo -e "\033[1m$current\033[0m|$alternate"
 
 if [ -z "$alternate" ]
 then
     echo "$current"
 else
-    echo -e "$current|$alternate"
+    if [ -t 1 ]; then
+        # terminal
+        echo -e "\033[1m$current\033[0m|$alternate"
+    else
+        # not terminal don't bold
+        echo -e "$current|$alternate"
+    fi
 fi
