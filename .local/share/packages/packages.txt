@@ -148,6 +148,7 @@ lvm2
 lxappearance
 lxinput
 lxsession
+lxterminal
 lynx
 m4
 maia-console
