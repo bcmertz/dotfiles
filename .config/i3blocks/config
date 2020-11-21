@@ -1,13 +1,13 @@
 command=~/.local/bin/statusbar/$BLOCK_NAME
-separator_block_width=25
+separator_block_width=50
 markup=pango
 
-[languageOB]
+[language]
 interval=10
 
-[pacpackages]
-interval=once
-signal=8
+# [pacpackages]
+# interval=once
+# signal=8
 
 [weather]
 interval=18000
