@@ -1,0 +1,69 @@
+command=~/.local/bin/statusbar/$BLOCK_NAME
+separator_block_width=25
+markup=pango
+
+[languageOB]
+interval=10
+
+[pacpackages]
+interval=once
+signal=8
+
+[weather]
+interval=18000
+signal=5
+
+[memory]
+interval=30
+
+# [cpu]
+# interval=15
+
+[volume]
+interval=once
+signal=10
+
+[disk]
+interval=60
+command=disk /home
+
+[battery]
+command=battery BAT0
+interval=5
+
+[clock]
+label=📅
+interval=30
+
+[internet]
+label=🌐
+interval=10
+
+# [record]
+# command=cat /tmp/recordingicon
+# interval=once
+# signal=9
+
+# [music]
+# label=🎼
+# interval=once
+# signal=11
+
+# [news]
+# interval=once
+# signal=6
+
+#[iplocate]
+#interval=30
+
+# [torrent]
+# interval=20
+# signal=7
+
+
+# [mailbox]
+# interval=180
+# signal=12
+
+# [help-icon]
+# interval=once

@@ -37,6 +37,7 @@
 !.config/picom/*
 !.config/polybar/*
 !.config/newsboat/*
+!.config/i3blocks/*
 !.config/fontconfig/*
 
 # emacs
