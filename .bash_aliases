@@ -57,12 +57,23 @@ alias fixwifi='sudo modprobe -r mwifiex_pcie && sudo modprobe mwifiex_pcie'
 # arduino
 alias fixarduino='sudo chmod a+rw /dev/ttyACM0'
 
-# Work
-alias fl='cds ~/go/src/github.com/getlantern/flashlight'
-alias ui='cds ~/go/src/github.com/getlantern/lantern-desktop-ui'
-alias lb='cds ~/go/src/github.com/getlantern/lantern-build'
-alias lm='cds ~/go/src/github.com/getlantern/lantern-build/lantern-mobile'
-alias lt='cds ~/go/src/github.com/getlantern/load-testing'
-alias rs='cds ~/go/src/github.com/getlantern/replica-search'
-alias buildlantern='REPLICA=true DISABLE_PORT_RANDOMIZATION=true make lantern'
-alias buildbeam='REPLICA=true DISABLE_PORT_RANDOMIZATION=true make beam'
+extract () {
+     if [ -f $1 ] ; then
+         case $1 in
+             *.tar.bz2)   tar xjf $1     ;;
+             *.tar.gz)    tar xzf $1     ;;
+             *.bz2)       bunzip2 $1     ;;
+             *.rar)       rar x $1       ;;
+             *.gz)        gunzip $1      ;;
+             *.tar)       tar xf $1      ;;
+             *.tbz2)      tar xjf $1     ;;
+             *.tgz)       tar xzf $1     ;;
+             *.zip)       unzip $1       ;;
+             *.Z)         uncompress $1  ;;
+             *.7z)        7z x $1    ;;
+             *)           echo "'$1' cannot be extracted via extract()" ;;
+         esac
+     else
+         echo "'$1' is not a valid file"
+     fi
+}
