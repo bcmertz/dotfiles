@@ -12,9 +12,10 @@
   :init
   (progn
     (add-hook 'after-init-hook #'global-flycheck-mode)
-    (defun setup-js-mode ()
-      (flycheck-select-checker 'javascript-eslint))
-    (add-hook 'js-mode-hook #'setup-js-mode))
+    ;; (defun setup-js-mode ()
+    ;;   (flycheck-select-checker 'javascript-eslint))
+    ;; (add-hook 'js-mode-hook #'setup-js-mode)
+    )
   :config
   (flycheck-add-mode 'typescript-tslint 'web-mode)
 
