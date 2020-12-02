@@ -11,6 +11,7 @@
         kill-region
         move-line-down
         move-line-up
+        org-kill-line
         org-self-insert-command
         smex
         sp-remove-active-pair-overlay

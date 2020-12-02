@@ -38,4 +38,7 @@
         (local-unset-key (kbd "C-c C-l"))))
 (global-set-key (kbd "C-c C-l") 'org-store-link)
 
+;; make images pretty
+(setq org-image-actual-width (/ (display-pixel-width) 3))
+
 ;;; custom-org.el ends here
