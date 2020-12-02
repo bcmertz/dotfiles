@@ -22,6 +22,32 @@
          ("<M-return>" . org-return-newline-below)
          ("C-c r" . github-start-review-at-link)))
 
+;; failed attempts to add front matter to exported html doc
+;; (setq org-publish-project-alist
+;; '(("org-bcmertz"
+;;    ;; Path to your org files.
+;;    :base-directory "~/Documents/bcmertz.github.io/"
+;;    :base-extension "org"
+
+;;    ;; Path to your Jekyll project.
+;;    :publishing-directory "~/Documents/bcmertz.github.io/"
+;;    :recursive t
+;;    :publishing-function org-publish-org-to-html
+;;    :headline-levels 4
+;;    :html-extension "html"
+;;    :body-only t ;; Only export section between <body> </body>
+;;    )))
+;; (setq org-publish-project-alist
+;;       '(("org-portfolio"
+;;          :base-directory "~/Documents/bcmertz.github.io/"
+;;          :base-extendion "org"
+;;          :publishing-directory "~/Documents/bcmertz.github.io/"
+;;          :recursive t
+;;          :makeindex t
+;;          :html-preamble "This is just a test"
+;;          :publishing-function org-html-publish-to-html)
+;;         ("org" :components ("org-notes"))))
+
 ;; pretty bullets
 (use-package org-bullets
   :defer t
