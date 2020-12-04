@@ -30,6 +30,8 @@ btrfs-progs
 bzip2
 calibre
 cantarell-fonts
+cdrdao
+cdrtools
 cinnamon
 clipit
 clipmenu
@@ -54,6 +56,7 @@ dnsmasq
 docker
 dosfstools
 downgrade
+dvd+rw-tools
 e2fsprogs
 ecryptfs-utils
 efibootmgr
@@ -122,6 +125,7 @@ java-environment-common
 jdk8-openjdk
 jfsutils
 jre-openjdk
+k3b
 kcolorchooser
 kphotoalbum
 kvantum-manjaro
@@ -148,7 +152,6 @@ lvm2
 lxappearance
 lxinput
 lxsession
-lxterminal
 lynx
 m4
 maia-console
@@ -200,6 +203,7 @@ networkmanager-pptp
 networkmanager-vpnc
 newsboat
 nfs-utils
+noto-fonts-emoji
 npm
 nss-mdns
 ntfs-3g
@@ -229,6 +233,7 @@ procps-ng
 psmisc
 pulseeffects
 pygtk
+python
 qt4
 qt5-styleplugins
 qt5ct
@@ -320,6 +325,7 @@ xf86-video-amdgpu
 xf86-video-ati
 xf86-video-intel
 xf86-video-nouveau
+xfce4-terminal
 xfsprogs
 xorg-server
 xorg-twm

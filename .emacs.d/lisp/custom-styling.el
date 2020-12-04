@@ -42,6 +42,12 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
+;; Emoji: 😄, 🤦, 🏴󠁧󠁢󠁳󠁣󠁴󠁿
+(set-fontset-font t 'symbol "Apple Color Emoji")
+(set-fontset-font t 'symbol "Noto Color Emoji" nil 'append)
+(set-fontset-font t 'symbol "Segoe UI Emoji" nil 'append)
+(set-fontset-font t 'symbol "Symbola" nil 'append)
+
 ;; Highlight current line in gui emacs
 (if (display-graphic-p)
     (global-hl-line-mode 1))
