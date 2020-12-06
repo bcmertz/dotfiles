@@ -77,7 +77,7 @@ bindsym $mod+Return exec st
 bindsym $mod+q kill
 
 # dmenu programs
-bindsym $mod+d exec dmenu_run -p "exec"
+bindsym $mod+d exec dmenu_exec
 bindsym $mod+u exec unicode_picker
 bindsym $mod+y exec clipmenu
 bindsym $mod+o exec info_query

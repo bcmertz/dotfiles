@@ -1,0 +1,5 @@
+#!/bin/bash
+#
+# replaces annoying dmenu_run
+
+compgen -c | dmenu -p "exec" "$@" | ${SHELL:-"/bin/sh"} &
