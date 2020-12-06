@@ -9,15 +9,15 @@
 set $mod Mod4
 
 # Startup polybar if it isn't running
-exec_always --no-startup-id refreshpolybar
+#exec_always --no-startup-id refreshpolybar
 
-# bar {
-# 	font pango:mono 10
-# 	status_command i3blocks
-# 	position top
-# 	mode dock
-# 	modifier None
-# }
+bar {
+	font pango:mono 10
+	status_command i3blocks
+	position top
+	mode dock
+	modifier None
+}
 
 # colour of border, background, text, indicator, and child_border
 client.focused          #bf616a #2f343f #d8dee8 #bf616a #d8dee8
@@ -77,7 +77,7 @@ bindsym $mod+Return exec st
 bindsym $mod+q kill
 
 # dmenu programs
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run -p "exec"
 bindsym $mod+u exec unicode_picker
 bindsym $mod+y exec clipmenu
 bindsym $mod+o exec info_query
@@ -88,11 +88,6 @@ bindsym $mod+Shift+i exec recipes
 bindsym $mod+w exec displayselect
 bindsym $mod+Shift+w exec wallpaper_picker
 
-# program launchers
-# bindsym $mod+z exec zathura
-# bindsym $mod+c exec calibre
-# bindsym $mod+m exec vlc
-# bindsym $mod+t exec transmission-gtk
 # utils
 bindsym $mod+g exec gpick
 bindsym $mod+s exec peek
