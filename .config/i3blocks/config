@@ -7,7 +7,8 @@ label=📅
 interval=30
 
 [language]
-interval=10
+label=🗺
+interval=2
 
 [internet]
 label=🌐
@@ -16,10 +17,6 @@ interval=10
 [volume]
 interval=once
 signal=10
-
-# [pacpackages]
-# interval=once
-# signal=8
 
 [battery]
 command=battery BAT2
@@ -33,7 +30,6 @@ interval=30
 label=🖥
 interval=15
 
-
 [disk]
 interval=60
 command=disk / 📁
@@ -42,31 +38,6 @@ command=disk / 📁
 interval=18000
 signal=5
 
-# [record]
-# command=cat /tmp/recordingicon
+# [pacpackages]
 # interval=once
-# signal=9
-
-# [music]
-# label=🎼
-# interval=once
-# signal=11
-
-# [news]
-# interval=once
-# signal=6
-
-#[iplocate]
-#interval=30
-
-# [torrent]
-# interval=20
-# signal=7
-
-
-# [mailbox]
-# interval=180
-# signal=12
-
-# [help-icon]
-# interval=once
+# signal=8
