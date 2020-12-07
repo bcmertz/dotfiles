@@ -9,3 +9,7 @@ if [ "$signal" == "" ]; then
 fi
 
 echo $signal
+
+case $BLOCK_BUTTON in
+	1) fullscreen nmtui
+esac

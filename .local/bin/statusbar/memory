@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
 case $BLOCK_BUTTON in
-	1) notify-send "🧠 Memory hogs" "$(ps axch -o cmd:15,%mem --sort=-%mem | head)" ;;
-	3) notify-send "🧠 Memory hogs" "$(ps axch -o cmd:15,%mem --sort=-%mem | head)" ;;
+    1) notify-send "🧠 Memory hogs" "$(ps axch -o cmd:15,%mem --sort=-%mem | head)";;
+    3) fullscreen htop;;
 esac
 
 free -h | awk '/^Mem:/ {print $3 "/" $2}'

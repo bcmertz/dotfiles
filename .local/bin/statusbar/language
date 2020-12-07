@@ -26,3 +26,8 @@ else
         echo -e "$current|$alternate"
     fi
 fi
+
+case $BLOCK_BUTTON in
+    1) notify-send "Language" "Alt-Shift to toggle";;
+    3) gkbd-keyboard-display -l ir;;
+esac
