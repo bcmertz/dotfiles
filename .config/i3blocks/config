@@ -2,35 +2,6 @@ command=~/.local/bin/statusbar/$BLOCK_NAME
 separator_block_width=50
 markup=pango
 
-[language]
-interval=10
-
-# [pacpackages]
-# interval=once
-# signal=8
-
-[weather]
-interval=18000
-signal=5
-
-[memory]
-interval=30
-
-# [cpu]
-# interval=15
-
-[volume]
-interval=once
-signal=10
-
-[disk]
-interval=60
-command=disk /home
-
-[battery]
-command=battery BAT0
-interval=5
-
 [clock]
 label=📅
 interval=30
@@ -38,6 +9,36 @@ interval=30
 [internet]
 label=🌐
 interval=10
+
+[volume]
+interval=once
+signal=10
+
+# [pacpackages]
+# interval=once
+# signal=8
+
+[memory]
+label=🧠
+interval=30
+
+# [cpu]
+# interval=15
+
+[disk]
+interval=60
+command=disk /home
+
+[battery]
+command=battery BAT2
+interval=5
+
+[language]
+interval=10
+
+[weather]
+interval=18000
+signal=5
 
 # [record]
 # command=cat /tmp/recordingicon
