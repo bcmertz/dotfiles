@@ -6,6 +6,9 @@ markup=pango
 label=📅
 interval=30
 
+[language]
+interval=10
+
 [internet]
 label=🌐
 interval=10
@@ -18,23 +21,22 @@ signal=10
 # interval=once
 # signal=8
 
-[memory]
-label=🧠
-interval=30
-
-# [cpu]
-# interval=15
-
-[disk]
-interval=60
-command=disk /home
-
 [battery]
 command=battery BAT2
 interval=5
 
-[language]
-interval=10
+[memory]
+label=🧠
+interval=30
+
+[cpu]
+label=🖥
+interval=15
+
+
+[disk]
+interval=60
+command=disk / 📁
 
 [weather]
 interval=18000
