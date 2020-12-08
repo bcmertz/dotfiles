@@ -39,6 +39,7 @@
 !.config/newsboat/*
 !.config/i3blocks/*
 !.config/fontconfig/*
+!.config/transmission/*
 
 # emacs
 !.emacs.d/
