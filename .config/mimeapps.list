@@ -1,2 +1,15 @@
 [defaults]
-text/plain=emacs.desktop
+text/plain=text.desktop;
+text/x-shellscript=text.desktop;
+x-scheme-handler/lbry=lbry.desktop
+x-scheme-handler/mailto=mail.desktop;
+x-scheme-handler/magnet=torrent.desktop;
+application/pdf=pdf.desktop;
+application/rss+xml=rss.desktop
+application/postscript=pdf.desktop;
+application/x-bittorrent=torrent.desktop;
+image/png=img.desktop;
+image/gif=img.desktop;
+image/jpeg=img.desktop;
+inode/directory=file.desktop
+video/x-matroska=video.desktop

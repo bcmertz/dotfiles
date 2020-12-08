@@ -1,4 +1,4 @@
 [Desktop Entry]
 Type=Application
 Name=RSS feed addition
-Exec=/usr/bin/env rssadd %U
+Exec=emacs %u

@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=Torrent
+Exec=/usr/local/bin/st -e transmission-cli %u
