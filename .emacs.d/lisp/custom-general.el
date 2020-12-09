@@ -46,6 +46,7 @@
 ;; use y/n instead of yes or no
 (fset 'yes-or-no-p 'y-or-n-p)
 ;; terminal specific escape codes
+;; found with showkey -a
 (add-hook 'tty-setup-hook
           '(lambda ()
              (define-key input-decode-map "\e[1;3A" [M-up])
@@ -60,6 +61,10 @@
              (define-key input-decode-map "\e[1;5B" [(control down)])
              (define-key input-decode-map "\e[1;5C" [(control right)])
              (define-key input-decode-map "\e[1;5D" [(control left)])
+             (define-key input-decode-map "\e[1;7A" [(C-M-up)])
+             (define-key input-decode-map "\e[1;7B" [(C-M-down)])
+             (define-key input-decode-map "\e[1;7C" [(C-M-right)])
+             (define-key input-decode-map "\e[1;7D" [(C-M-left)])
              ))
 (if (equal "st-meta-256color" (tty-type))
         (define-key input-decode-map "\e[1;2A\" [S-up]))
