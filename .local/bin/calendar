@@ -2,4 +2,4 @@
 # notify-send calendar
 
 dt=$(date | cut -d ' ' -f 4)
-notify-send "This Month" "$(cal | sed "s/ $dt /<b><span color=\"red\">$dt<\/span><\/b>/")"
+notify-send "This Month" "$(cal | sed "s/ $dt /<b><span color=\"red\"> $dt <\/span><\/b>/")"
