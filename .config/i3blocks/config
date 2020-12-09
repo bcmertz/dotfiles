@@ -25,7 +25,7 @@ interval=5
 
 [memory]
 label=🧠
-interval=30
+interval=5
 
 [cpu]
 label=🖥
