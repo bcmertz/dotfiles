@@ -30,6 +30,8 @@
 !.config/i3/*
 !.config/git/*
 !.config/mpd/*
+!.config/gtk2/*
+!.config/gtk3/*
 !.config/bspwm/*
 !.config/sxhkd/*
 !.config/dunst/*
