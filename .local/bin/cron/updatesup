@@ -1,13 +1,14 @@
 #!/bin/sh
 #
 # Syncs repositories and downloads updates, meant to be run as a cronjob.
-# To be run as root level cron job
 
-ping -q -c 1 duckduckgo.com > /dev/null || exit
+notify-send "TESTESTSETSET"
+
+ping -q -c 1 8.8.8.8 > /dev/null || exit
 
 notify-send "📦 Repository Sync" "Checking for package updates..."
 
-sudo pacman -Syyuw --noconfirm || notify-send "Error downloading updates.
+pacman -Syyuw --noconfirm || notify-send "Error downloading updates.
 
 Check your internet connection, if pacman is already running, or run update manually to see errors."
 pkill -RTMIN+8 "${STATUSBAR:-dwmblocks}"
