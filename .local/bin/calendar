@@ -1,5 +1,5 @@
 #!/bin/bash
 # notify-send calendar
 
-dt=$(date | cut -d ' ' -f 4)
+dt=$(date | cut -d ' ' -f 3)
 notify-send "This Month" "$(cal | sed "s/ $dt /<b><span color=\"red\"> $dt <\/span><\/b>/")"
