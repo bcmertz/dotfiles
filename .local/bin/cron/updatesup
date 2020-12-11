@@ -1,8 +1,9 @@
 #!/bin/sh
-
+#
 # Syncs repositories and downloads updates, meant to be run as a cronjob.
+# To be run as root level cron job
 
-ping -q -c 1 example.org > /dev/null || exit
+ping -q -c 1 duckduckgo.com > /dev/null || exit
 
 notify-send "📦 Repository Sync" "Checking for package updates..."
 
