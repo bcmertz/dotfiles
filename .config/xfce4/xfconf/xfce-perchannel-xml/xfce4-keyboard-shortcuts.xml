@@ -35,6 +35,7 @@
       <property name="&lt;Super&gt;u" type="string" value="/home/bennett/.local/bin/dmenu/unicode_picker"/>
       <property name="&lt;Super&gt;q" type="string" value="xdotool getwindowfocus windowkill"/>
       <property name="&lt;Super&gt;b" type="string" value="firefox"/>
+      <property name="&lt;Shift&gt;&lt;Super&gt;e" type="string" value="xfce4-session-logout"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
