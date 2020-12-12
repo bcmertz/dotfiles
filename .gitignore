@@ -41,6 +41,10 @@
 !.config/fontconfig/*
 !.config/transmission/*
 
+# xfce
+!.config/xfce4/*
+!.config/xfce4/*/
+
 # emacs
 !.emacs.d/
 !.emacs.d/init.el
