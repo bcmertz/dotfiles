@@ -31,6 +31,10 @@
       <property name="&lt;Super&gt;Return" type="string" value="st"/>
       <property name="&lt;Super&gt;d" type="string" value="dmenu_exec"/>
       <property name="&lt;Super&gt;space" type="string" value="xfce4-popup-whiskermenu"/>
+      <property name="&lt;Super&gt;o" type="string" value="info_query"/>
+      <property name="&lt;Super&gt;u" type="string" value="/home/bennett/.local/bin/dmenu/unicode_picker"/>
+      <property name="&lt;Super&gt;q" type="string" value="xdotool getwindowfocus windowkill"/>
+      <property name="&lt;Super&gt;b" type="string" value="firefox"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
