@@ -64,6 +64,7 @@ emacs
 epdfview
 etcher
 exfat-utils
+exo
 f2fs-tools
 fakeroot
 feh
@@ -78,6 +79,7 @@ firefox-i18n-fa
 firewalld
 flac
 flex
+garcon
 gawk
 gcc
 gcc-libs
@@ -208,6 +210,7 @@ npm
 nss-mdns
 ntfs-3g
 ntp
+okular
 openresolv
 openssh
 os-prober
@@ -225,6 +228,7 @@ peek
 perl
 perl-file-mimeinfo
 pkgconf
+plank
 polkit-gnome
 polybar
 poppler-data
@@ -275,6 +279,8 @@ texlive-pstricks
 texlive-publishers
 texlive-science
 the_silver_searcher
+thunar
+thunar-volman
 tldr
 tlp
 torbrowser-launcher
@@ -288,6 +294,7 @@ ttf-droid
 ttf-indic-otf
 ttf-liberation
 ttf-roboto
+tumbler
 unclutter
 unzip
 upower
@@ -326,8 +333,17 @@ xf86-video-amdgpu
 xf86-video-ati
 xf86-video-intel
 xf86-video-nouveau
+xfce4-appfinder
+xfce4-panel
+xfce4-power-manager
+xfce4-session
+xfce4-settings
 xfce4-terminal
+xfce4-whiskermenu-plugin
+xfdesktop
 xfsprogs
+xfwm4
+xfwm4-themes
 xorg-server
 xorg-twm
 xorg-xbacklight

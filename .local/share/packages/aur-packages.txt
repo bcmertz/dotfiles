@@ -9,6 +9,7 @@ linux-surface
 linux-surface-headers
 mu
 multimarkdown
+pdfstudio-bin
 rar
 ttf-inconsolata-g
 ttf-symbola
