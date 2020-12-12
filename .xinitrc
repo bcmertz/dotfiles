@@ -1,9 +1,21 @@
 #!/bin/sh
 
-userresources=$HOME/.Xresources
-usermodmap=$HOME/.Xmodmap
+# do this to make plank / xfce happy
+if [ -d /etc/X11/xinit/xinitrc.d ]; then
+    for f in /etc/X11/xinit/xinitrc.d/*; do
+        [ -x "$f" ] && . "$f"
+    done
+    unset f
+fi
+
+# do this to make plank / xfce happy
+XDG_SESSION_TYPE=x11
+export XDG_SESSION_TYPE
+
 
 # merge in defaults and keymaps
+userresources=$HOME/.Xresources
+usermodmap=$HOME/.Xmodmap
 
 if [ -f "$userresources" ]; then
     xrdb -merge "$userresources"
