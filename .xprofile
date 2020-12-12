@@ -9,11 +9,6 @@ if [[ "$session" != "mint" && "$session" != "cinnamon" ]]; then
     picom -b -i 1 -I 1 -O 1 &
 fi
 
-# start plank if xfce
-if [[ "$session" == "xfce" ]]; then
-    plank &
-fi
-
 dunst &         # notifications
 redshift &      # reduce bluelight
 clipmenud &     # clipmenu daemon
