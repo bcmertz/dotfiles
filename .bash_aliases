@@ -59,7 +59,7 @@ alias fixwifi='sudo modprobe -r mwifiex_pcie && sudo modprobe mwifiex_pcie'
 # arduino
 alias fixarduino='sudo chmod a+rw /dev/ttyACM0'
 
-extract () {
+ex () {
      if [ -f "$1" ] ; then
          case "$1" in
              *.tar.bz2)   tar xjf "$1"     ;;
