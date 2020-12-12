@@ -35,6 +35,7 @@
 !.config/dunst/*
 !.config/dmenu/*
 !.config/picom/*
+!.config/plank/*
 !.config/polybar/*
 !.config/newsboat/*
 !.config/i3blocks/*
