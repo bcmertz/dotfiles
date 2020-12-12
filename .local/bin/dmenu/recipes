@@ -2,6 +2,6 @@
 #
 # Search recipes
 
-chosen=$(ls ~/Documents/recipes/ | dmenu -i -l 25 -fn Monospace-14)
+chosen=$(ls ~/Documents/recipes/ | dmenu -i -l 15)
 [ "$chosen" != "" ] || exit
 st -c 'Fullscreen st' -e bash -c "head -n -1 ~/Documents/recipes/$chosen; read"
