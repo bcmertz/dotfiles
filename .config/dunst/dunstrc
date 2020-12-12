@@ -1,5 +1,5 @@
 [global]
-   frame_width = 0
+    frame_width = 0
     font = FantasqueSansMono Nerd Font 10
     # font = OperatorMono 10
     follow = mouse
@@ -68,7 +68,7 @@
     # the top and down respectevly.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "350x10-10+45"
+    geometry = "350x10-10+52"
 
 
     # Shrink window if it's smaller than the width.  Will be ignored if
@@ -78,7 +78,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing windowmanager is
     # present (e.g. xcompmgr, compiz, etc.).
-    transparency = 0
+    transparency = 5
 
     # Don't remove messages, if the user is idle (no mouse or keyboard input)
     # for longer than idle_threshold seconds.
@@ -87,8 +87,7 @@
     idle_threshold = 120
 
     # Which monitor should the notifications be displayed on.
-    monitor = 0
-
+    monitor = keyboard
     # Display notification on focused monitor.  Possible modes are:
     #   mouse: follow mouse pointer
     #   keyboard: follow window with keyboard focus
