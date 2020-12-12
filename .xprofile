@@ -11,7 +11,6 @@ fi
 
 # start plank if xfce
 if [[ "$session" == "xfce" ]]; then
-    # -b daemon, -i no inactive opacity, -I no fading in or -O out
     plank &
 fi
 
