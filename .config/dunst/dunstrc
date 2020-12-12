@@ -1,5 +1,5 @@
 [global]
-    frame_width = 0
+    frame_width = 2
     font = FantasqueSansMono Nerd Font 10
     # font = OperatorMono 10
     follow = mouse
