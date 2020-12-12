@@ -1,1 +1,40 @@
 Xft.dpi: 180
+
+!! monokai
+! *.color0:       #48483e
+! *.color8:       #76715e
+! *.color1:       #dc2566
+! *.color9:       #fa2772
+! *.color2:       #8fc029
+! *.color10:      #a7e22e
+! *.color3:       #d4c96e
+! *.color11:      #e7db75
+! *.color4:       #55bcce
+! *.color12:      #66d9ee
+! *.color5:       #9358fe
+! *.color13:      #ae82ff
+! *.color6:       #56b7a5
+! *.color14:      #66efd5
+! *.color7:       #acada1
+! *.color15:      #cfd0c2
+
+!! pretty and pastel
+! *.foreground:   #888888
+! *.background:   #151515
+! *.cursorColor:  #888888
+! *.color0:       #292929
+! *.color8:       #525252
+! *.color1:       #cf6a4c
+! *.color9:       #ff9d80
+! *.color2:       #19cb00
+! *.color10:      #23fd00
+! *.color3:       #fad07a
+! *.color11:      #ffefbf
+! *.color4:       #8197bf
+! *.color12:      #accaff
+! *.color5:       #8787af
+! *.color13:      #c4c4ff
+! *.color6:       #668799
+! *.color14:      #80bfaf
+! *.color7:       #888888
+! *.color15:      #e8e8d3
