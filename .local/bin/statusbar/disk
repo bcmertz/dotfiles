@@ -11,7 +11,6 @@ icon="$2"
 
 case $BLOCK_BUTTON in
     1) pgrep -x dunst >/dev/null && notify-send "💽 Disk space" "$(df -h / --output=target,used,size && echo -e '\nFolders' && du -t 1M -sh .[!.]* * | sort -hr)" ;;
-    3) pgrep -x dunst >/dev/null && notify-send "💽 Disk module" "\- Shows used hard drive space. - Click to show all disk info." ;;
 esac
 
 printf "%s %s\n" "$icon" "$(df -h "$1" | awk ' /[0-9]/ {print $3 "/" $2}')"
