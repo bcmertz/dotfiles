@@ -1,15 +1,3 @@
-[colors]
-## gruvbox
-#    background	= "#282828"
-#    foreground 	= "#fbf2c7"
-#    frame_color = "#282828"
-
-# dracula
-    background	= "#29353B"
-    foreground = "#f8f8f2"
-    frame_color = "#282a36"
-
-
 [global]
    frame_width = 0
     font = FantasqueSansMono Nerd Font 10
