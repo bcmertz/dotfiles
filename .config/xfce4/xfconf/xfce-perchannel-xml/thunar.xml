@@ -7,4 +7,5 @@
   <property name="last-window-width" type="int" value="1314"/>
   <property name="last-window-height" type="int" value="840"/>
   <property name="last-window-maximized" type="bool" value="false"/>
+  <property name="misc-single-click" type="bool" value="false"/>
 </channel>

@@ -112,7 +112,6 @@
       <property name="&lt;Alt&gt;Tab" type="string" value="cycle_windows_key"/>
       <property name="&lt;Primary&gt;&lt;Shift&gt;&lt;Alt&gt;Right" type="string" value="move_window_right_key"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;Right" type="string" value="right_workspace_key"/>
-      <property name="&lt;Alt&gt;F10" type="string" value="maximize_window_key"/>
       <property name="&lt;Primary&gt;F11" type="string" value="workspace_11_key"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;KP_5" type="string" value="move_window_workspace_5_key"/>
       <property name="&lt;Alt&gt;F6" type="string" value="stick_window_key"/>
@@ -147,6 +146,7 @@
       <property name="&lt;Primary&gt;&lt;Alt&gt;KP_8" type="string" value="move_window_workspace_8_key"/>
       <property name="&lt;Alt&gt;Insert" type="string" value="add_workspace_key"/>
       <property name="override" type="bool" value="true"/>
+      <property name="&lt;Super&gt;f" type="string" value="maximize_window_key"/>
     </property>
   </property>
   <property name="providers" type="array">
