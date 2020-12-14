@@ -3,7 +3,7 @@
 <channel name="xsettings" version="1.0">
   <property name="Net" type="empty">
     <property name="ThemeName" type="string" value="Adapta-Nokto-Maia"/>
-    <property name="IconThemeName" type="string" value="Moka"/>
+    <property name="IconThemeName" type="string" value="ePapirus"/>
     <property name="DoubleClickTime" type="empty"/>
     <property name="DoubleClickDistance" type="empty"/>
     <property name="DndDragThreshold" type="empty"/>
@@ -27,7 +27,7 @@
     <property name="MonospaceFontName" type="empty"/>
     <property name="IconSizes" type="empty"/>
     <property name="KeyThemeName" type="empty"/>
-    <property name="ToolbarStyle" type="string" value="both"/>
+    <property name="ToolbarStyle" type="string" value="text"/>
     <property name="ToolbarIconSize" type="empty"/>
     <property name="MenuImages" type="bool" value="false"/>
     <property name="ButtonImages" type="bool" value="false"/>
