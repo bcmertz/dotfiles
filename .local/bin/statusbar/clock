@@ -4,5 +4,5 @@ date '+%I:%M%p  %b %d'
 
 case $BLOCK_BUTTON in
     1) calendar ;;
-    3) galendae ;;
+    3) gsimplecal ;;
 esac

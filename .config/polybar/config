@@ -84,7 +84,7 @@ exec = clock
 interval = 10
 format = <label>
 click-left = calendar
-click-right = galendae
+click-right = gsimplecal
 
 [module/weather]
 type = custom/script
