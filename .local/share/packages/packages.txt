@@ -100,6 +100,7 @@ grep
 grsync
 grub
 grub-theme-manjaro-dev
+gsimplecal
 gst-libav
 gst-plugins-bad
 gst-plugins-base
