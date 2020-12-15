@@ -9,7 +9,7 @@
 ;; code navigation
 (use-package avy
   :ensure t
-  :bind ("M-g" . avy-goto-char-2)    ;; go to char
+  :bind ("M-g" . avy-goto-char)    ;; go to char
   ("M-l" . avy-goto-line))           ;; go to line
 
 (use-package swiper
