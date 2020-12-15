@@ -6,8 +6,10 @@ if pgrep -x "redshift" > /dev/null
 then
     # turn off autolock and redshift
     killall -q redshift xautolock
+    notify-send "move mode ON"
 else
     # turn on autolock and redshift
     background redshift
     background xautolock -time 30 -locker slock
+    notify-send "movie mode OFF"
 fi
