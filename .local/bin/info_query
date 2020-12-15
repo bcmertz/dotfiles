@@ -2,7 +2,7 @@
 #
 # Search arch-wiki or english wikipedia for articles
 
-chosen=$(ls /usr/share/doc/arch-wiki/html/en | dmenu -i -l 25 -fn Monospace-14)
+chosen=$(ls /usr/share/doc/arch-wiki/html/en | dmenu -i -l 15)
 [ "$chosen" != "" ] || exit
 firefox /usr/share/doc/arch-wiki/html/en/$chosen
 
