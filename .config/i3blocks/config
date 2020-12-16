@@ -41,5 +41,6 @@ signal=5
 
 [updates]
 command=pacpackages
+label=📦
 interval=once
 signal=8
