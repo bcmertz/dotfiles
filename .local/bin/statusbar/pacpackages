@@ -15,8 +15,4 @@ case $BLOCK_BUTTON in
 esac
 
 
-number=$(pacman -Qu | grep -v "\[ignored\]" | wc -l | sed -e "s/^0$//g")
-
-if [[ "$number" != "" ]]; then
-   echo "📁$number"
-fi
+pacman -Qu | grep -v "\[ignored\]" | wc -l | sed -e "s/^0$//g"
