@@ -5,7 +5,9 @@
 if [ -d ~/.emacs.doom ]; then
     mv .emacs.d .emacs.dback
     mv .emacs.doom .emacs.d
+    notify-send "~dooooom~"
 else
     mv .emacs.d .emacs.doom
     mv .emacs.dback .emacs.d
+    notify-send "~custom"
 fi
