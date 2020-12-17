@@ -4,9 +4,9 @@
 
 uuid=0AC20AE631DA7219
 if lsblk -f | grep -wq $uuid; then
-    rsync -r -t -p -o -g -v --progress --delete -s \
+    rsync -n -r -t -p -o -g -v --progress --delete -s \
           --exclude={'go', '.cache'} \
-          /home/bennett /run/media/bennett/Backup Drive/linux
+          /home/bennett /run/media/bennett/Backup Drive/
 else
     echo "please connect backup drive"
 fi
