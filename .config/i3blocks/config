@@ -6,11 +6,6 @@ markup=pango
 label=📅
 interval=30
 
-[language]
-label=🗺
-interval=2
-#color=#f12711
-
 [internet]
 label=🌐
 interval=10
@@ -22,6 +17,11 @@ signal=10
 [battery]
 command=battery BAT2
 interval=5
+
+[language]
+label=🗺
+interval=2
+#color=#f12711
 
 [memory]
 label=🧠
