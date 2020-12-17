@@ -1,5 +1,0 @@
-#!/bin/bash
-#
-# find and replace in a directory
-
-find ./ -type f -exec sed -i -e 's/$1/$2/g' {} \;
