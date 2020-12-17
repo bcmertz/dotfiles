@@ -35,7 +35,6 @@
 !.config/bspwm/*
 !.config/sxhkd/*
 !.config/dunst/*
-!.config/dmenu/*
 !.config/picom/*
 !.config/plank/*
 !.config/polybar/*
