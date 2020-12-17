@@ -1,0 +1,12 @@
+.cache
+.npm
+go
+.gradle
+.mozilla
+.cfg
+.config
+.local
+.*
+node_modules
+Arduino
+arduino-*

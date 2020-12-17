@@ -2,11 +2,11 @@
 #
 # backup files to external storage
 
-uuid=0AC20AE631DA7219
+uuid=51f5ea69-1a7f-4baa-b349-dbc883a994ab
 if lsblk -f | grep -wq $uuid; then
-    rsync -n -r -t -p -o -g -v --progress --delete -s \
-          --exclude={'go', '.cache'} \
-          /home/bennett /run/media/bennett/Backup Drive/
+    rsync -n -s -r -t -p -o -g -v --progress --delete \
+          --exclude-from='/home/bennett/.local/bin/setup/exclude_list.txt' \
+          /home/bennett /run/media/bennett/backup/
 else
     echo "please connect backup drive"
 fi
