@@ -3,4 +3,4 @@
 # description
 
 file=$(find -type f | fzf -e --reverse --prompt="Enter string > " --header="ESC to quit ")
-xdg-open $file
+emacsclient $file
