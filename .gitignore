@@ -13,6 +13,7 @@
 !.bash_profile
 !.inputrc
 !.coderc
+!.vimrc
 
 # git
 !README.org
