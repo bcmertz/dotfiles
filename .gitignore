@@ -32,6 +32,7 @@
 !.config/mpd/*
 !.config/gtk2/*
 !.config/gtk3/*
+!.config/htop/*
 !.config/bspwm/*
 !.config/sxhkd/*
 !.config/dunst/*
