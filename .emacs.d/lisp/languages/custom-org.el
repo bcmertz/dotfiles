@@ -26,11 +26,11 @@
 ;; (setq org-publish-project-alist
 ;; '(("org-bcmertz"
 ;;    ;; Path to your org files.
-;;    :base-directory "~/Documents/bcmertz.github.io/"
+;;    :base-directory "~/docs/bcmertz.github.io/"
 ;;    :base-extension "org"
 
 ;;    ;; Path to your Jekyll project.
-;;    :publishing-directory "~/Documents/bcmertz.github.io/"
+;;    :publishing-directory "~/docs/bcmertz.github.io/"
 ;;    :recursive t
 ;;    :publishing-function org-publish-org-to-html
 ;;    :headline-levels 4
@@ -39,9 +39,9 @@
 ;;    )))
 ;; (setq org-publish-project-alist
 ;;       '(("org-portfolio"
-;;          :base-directory "~/Documents/bcmertz.github.io/"
+;;          :base-directory "~/docs/bcmertz.github.io/"
 ;;          :base-extendion "org"
-;;          :publishing-directory "~/Documents/bcmertz.github.io/"
+;;          :publishing-directory "~/docs/bcmertz.github.io/"
 ;;          :recursive t
 ;;          :makeindex t
 ;;          :html-preamble "This is just a test"
@@ -55,7 +55,7 @@
   :hook (org-mode . org-bullets-mode))
 
 (setq org-return-follows-link t)
-(setq org-agenda-files '("~/Documents/org/"))
+(setq org-agenda-files '("~/docs/org/"))
 
 
 ;; overwrite web mode binding for C-c C-l
