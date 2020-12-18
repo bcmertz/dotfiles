@@ -2,57 +2,57 @@
 
 *** Cloning
 
-To install you must have a clear $HOME dir
+    To install you must have a clear $HOME dir
 
-#+BEGIN_SRC bash
-git clone --bare https://github.com/bcmertz/dotfiles.git $HOME/.cfg
-#+END_SRC
+    #+BEGIN_SRC bash
+      git clone --bare https://github.com/bcmertz/dotfiles.git $HOME/.cfg
+    #+END_SRC
 
-Add some alias like
+    Add some alias like
 
-#+BEGIN_SRC bash
-alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-#+END_SRC
+    #+BEGIN_SRC bash
+      alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+    #+END_SRC
 
-See `~/.bash_aliases` cfg and git aliases, as well as `~/.local/bin/git_alias`
+    See `~/.bash_aliases` cfg and git aliases, as well as `~/.local/bin/git_alias`
 
 
-Install dependencies
+    Install dependencies
 
-#+BEGIN_SRC bash
-installpackagelist
-#+END_SRC
+    #+BEGIN_SRC bash
+      installpackagelist
+    #+END_SRC
 
-Setup GPG keys trust db and passwords from backup github
+    Setup GPG keys trust db and passwords from backup github
 
-#+BEGIN_SRC bash
-setuppass
-#+END_SRC
+    #+BEGIN_SRC bash
+      setuppass
+    #+END_SRC
 
 *** Backing up
 
-Document Dependencies
+    Document Dependencies
 
-#+BEGIN_SRC bash
-makepackagelist
-#+END_SRC
+    #+BEGIN_SRC bash
+      makepackagelist
+    #+END_SRC
 
-Backup GPG keys and trust db
+    Backup GPG keys and trust db
 
-#+BEGIN_SRC bash
-backuppass
-echo "now copy to some device like a thumbdrive and push to github @ ~/.password-store"
-#+END_SRC
+    #+BEGIN_SRC bash
+      backuppass
+      echo "now copy to some device like a thumbdrive and push to github @ ~/.password-store"
+    #+END_SRC
 
-Backup photos, documents, etc
+    Backup photos, documents, etc
 
-#+BEGIN_SRC bash
-backupfiles
-#+END_SRC
+    #+BEGIN_SRC bash
+      backupfiles
+    #+END_SRC
 
 ** References
 
-For more information on the git bare repo structure used here, and for references to what inspired the structure of this repo:
+   For more information on the git bare repo structure used here, and for references to what inspired the structure of this repo:
 
-- https://news.ycombinator.com/item?id=11071754
-- https://www.atlassian.com/git/tutorials/dotfiles
+   - https://news.ycombinator.com/item?id=11071754
+   - https://www.atlassian.com/git/tutorials/dotfiles
