@@ -1,6 +1,6 @@
-## Usage
+** Usage
 
-### Cloning
+*** Cloning
 
 To install you must have a clear $HOME dir
 ```
@@ -26,7 +26,7 @@ Setup GPG keys trust db and passwords from backup github
 setuppass
 ```
 
-### Backing up
+*** Backing up
 
 Document Dependencies
 ```
@@ -44,10 +44,9 @@ Backup photos, documents, etc
 backupfiles
 ```
 
-## References
+** References
 
 For more information on the git bare repo structure used here, and for references to what inspired the structure of this repo:
 
 - https://news.ycombinator.com/item?id=11071754
 - https://www.atlassian.com/git/tutorials/dotfiles
-

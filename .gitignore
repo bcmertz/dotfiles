@@ -15,7 +15,7 @@
 !.coderc
 
 # git
-!README.md
+!README.org
 !.gitconfig
 !.gitignore
 
