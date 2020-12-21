@@ -34,5 +34,7 @@ elif [ "$same" == "true" ]; then
     filename=$(echo $previous)
 fi
 
+# strip file path and just use basename
+filename=$(basename $filename)
 # set bg
 feh --bg-scale $HOME/.local/share/wallpaper/$filename # Set bg

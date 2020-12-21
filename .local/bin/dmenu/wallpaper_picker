@@ -2,7 +2,13 @@
 #
 # select wallpaper from list
 
-chosen=$(ls ~/.local/share/wallpaper/ | dmenu -i -l 15)
-[ "$chosen" = "" ] && setbg -s && exit
-echo $chosen
+# old dmenu script
+# chosen=$(ls ~/.local/share/wallpaper/ | dmenu -i -l 15)
+# [ "$chosen" = "" ] && setbg -s && exit
+# echo $chosen
+# setbg -f $chosen
+
+# graphical image chooser
+chosen=$(sxiv -f -t -r -q -o ~/.local/share/wallpaper/)
+[ "$chosen" != "" ] || exit
 setbg -f $chosen
