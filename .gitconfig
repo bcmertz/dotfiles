@@ -11,7 +11,7 @@
 	process = git-lfs filter-process
 	required = true
 [core]
-	excludesfile = /home/leila/.config/git/.gitignore_global
+	excludesfile = $HOME/.config/git/.gitignore_global
 [pull]
 	rebase = false
 [github]
