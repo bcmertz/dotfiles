@@ -1,5 +1,7 @@
 Xft.dpi: 180
 
+Sxiv.foreground: #ffffff
+Sxiv.background: #222222
 !! monokai
 ! *.color0:       #48483e
 ! *.color8:       #76715e
