@@ -80,3 +80,12 @@ ex () {
          echo "'$1' is not a valid file"
      fi
 }
+
+# combo cds ls
+cds() {
+    if [ -z "$1" ]; then
+        cd ~ && /usr/bin/ls --color=auto
+    else
+        cd "$1" && /usr/bin/ls --color=auto
+    fi
+}
