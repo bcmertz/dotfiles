@@ -1,6 +1,5 @@
 # Emacs config
 alias emacs='emacsclient -t --alternate-editor=""'   #default to terminal emacs
-alias emacsgui='emacsclient -create-frame --alternate-editor=""'
 
 # Go configuration
 export GOPATH=$HOME/go
