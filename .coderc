@@ -28,6 +28,3 @@ export ANDROID_SDK_HOME=$ANDROID_HOME
 export ANDROID_SDK_ROOT=$ANDROID_HOME
 export ANDROID_NDK_HOME=/opt/android-ndk
 export PATH=$PATH:$ANDROID_HOME:$ANDROID_SDK_HOME/tools:$ANDROID_SDK_HOME/tools/bin
-
-# Python
-export PYTHONPATH=$HOME/go/src/github.com/getlantern/lantern_aws/lib:$HOME/go/src/github.com/getlantern/secret_lib:$HOME/go/src/github.com/getlantern/config-server/etc
