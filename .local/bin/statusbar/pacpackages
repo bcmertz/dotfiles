@@ -15,4 +15,7 @@ case $BLOCK_BUTTON in
 esac
 
 
-pacman -Qu | grep -v "\[ignored\]" | wc -l | sed -e "s/^0$//g"
+number=$(pacman -Qu | grep -v "\[ignored\]" | wc -l)
+if [[ "$number" != "0" ]]; then
+    echo "📦 $number"
+fi
