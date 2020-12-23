@@ -52,14 +52,17 @@
 # emacs
 !.emacs.d/
 !.emacs.d/init.el
+!.emacs.d/custom.el
 !.emacs.d/README.md
 !.emacs.d/.mc-lists.el
+!.emacs.d/smartparens-config
 !.emacs.d/*/
 !.emacs.d/lisp/*
 !.emacs.d/lisp/languages/*
 !.emacs.d/snippets/*/
 !.emacs.d/snippets/js-mode/*
 !.emacs.d/snippets/go-mode/*
+!.emacs.d/snippets/web-mode/*
 !.dir-locals.el # eglot config for lsp servers
 
 # icons
