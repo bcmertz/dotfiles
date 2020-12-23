@@ -39,6 +39,9 @@ command=disk / 📁
 interval=18000
 signal=5
 
+[moonphase]
+interval=18000
+
 [updates]
 command=pacpackages
 interval=once
