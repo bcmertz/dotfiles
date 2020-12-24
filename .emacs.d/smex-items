@@ -1,0 +1,19 @@
+
+;; ----- smex-history -----
+(
+ projectile-add-known-project
+ package-install
+ emacs-init-time
+ revert-buffer
+ cd
+ 5x5
+ arp
+)
+
+;; ----- smex-data -----
+(
+ (package-install . 3)
+ (revert-buffer . 1)
+ (emacs-init-time . 1)
+ (projectile-add-known-project . 2)
+)

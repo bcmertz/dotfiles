@@ -1,0 +1,1 @@
+("~/.emacs.d/" "~/coding/st/" "~/coding/www/" "~/coding/website/" "~/coding/voidrice/" "~/coding/tracker/" "~/coding/surf/" "~/coding/steg/" "~/coding/slock/" "~/coding/ray-tracer-js/" "~/coding/ray-tracer/" "~/coding/progress-bar/" "~/coding/mutt-wizard/" "~/coding/go-download/" "~/coding/dt-dotfiles/" "~/coding/dmenu/" "~/coding/BluetoothConnectionTest/")
