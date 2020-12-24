@@ -26,6 +26,10 @@
      ,@body
      (message "%.06f" (float-time (time-since time)))))
 
+;; set customize config file location
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(load custom-file)
+
 ;; general configuration - toggle evil with M-SPC; SPC is leader key
 (measure-time(load "custom-general.el"))
 (measure-time(load "custom-evil-keymap.el"))
@@ -50,10 +54,6 @@
 (measure-time(load "custom-html.el"))
 (measure-time(load "custom-org.el"))
 (measure-time(load "custom-latex.el"))
-
-;; set customize config file location
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(load custom-file)
 
 ;; Return to normal gc value
 (setq gc-cons-threshold 800000)

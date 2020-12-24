@@ -19,6 +19,11 @@
 (add-to-list 'package-archives
 	     '("melpa-2" . "https://melpa.org/packages/") t)
 
+;; install the packages not installed via use-package/straight
+;; (unless package-archive-contents
+;;   (package-refresh-contents))
+;; (package-install-selected-packages)
+
 ;; see our todo
 (setq initial-buffer-choice "~/docs/org/todo.org")
 
