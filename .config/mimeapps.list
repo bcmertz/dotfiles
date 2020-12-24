@@ -1,9 +1,14 @@
-[defaults]
+[Default Applications]
+x-scheme-handler/http=browser.desktop
+x-scheme-handler/https=browser.desktop
 text/plain=text.desktop;
 text/x-shellscript=text.desktop;
 x-scheme-handler/lbry=lbry.desktop
 x-scheme-handler/mailto=mail.desktop;
 x-scheme-handler/magnet=torrent.desktop;
+x-scheme-handler/http=browser.desktop;
+x-scheme-handler/https=browser.desktop;
+text/html=browser.desktop;
 application/pdf=pdf.desktop;
 application/rss+xml=rss.desktop
 application/postscript=pdf.desktop;
