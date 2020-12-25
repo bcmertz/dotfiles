@@ -18,3 +18,4 @@ image/gif=img.desktop;
 image/jpeg=img.desktop;
 inode/directory=file.desktop
 video/x-matroska=video.desktop
+x-scheme-handler/etcher=balena-etcher-electron.desktop
