@@ -22,6 +22,7 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 source ~/.bashrc
 
 # (1) prompt user, and read command line argument for window manager
+# TODO: read available sessions from /usr/share/xsessions/ and parse startup commands
 read -p $'Which window manager? [default] i3 [1] emacs [2] bspwm [3] cinnamon [4] xfce\x0a' wm
 
 # (2) handle the command line argumen given for window manager
