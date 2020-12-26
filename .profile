@@ -23,6 +23,7 @@ source ~/.bashrc
 
 # (1) prompt user, and read command line argument for window manager
 # TODO: read available sessions from /usr/share/xsessions/ and parse startup commands
+# make separate bash script to do this
 read -p $'Which window manager? [default] i3 [1] emacs [2] bspwm [3] cinnamon [4] xfce\x0a' wm
 
 # (2) handle the command line argumen given for window manager
