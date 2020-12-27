@@ -2,18 +2,18 @@
 *
 .*
 
-# dotfiles
+# dots
+!.vimrc
+!.bashrc
+!.xinput
+!.coderc
 !.profile
 !.xinitrc
-!.xinput
+!.inputrc
 !.xprofile
 !.Xresources
-!.bashrc
 !.bash_aliases
 !.bash_profile
-!.inputrc
-!.coderc
-!.vimrc
 
 # git
 !README.org
@@ -48,6 +48,10 @@
 # xfce
 !.config/xfce4/*
 !.config/xfce4/*/
+
+# cinnamon
+!.cinnamon/*
+!.cinnamon/*/
 
 # emacs
 !.emacs.d/
