@@ -25,3 +25,6 @@ xset r rate 300 50 &                # faster repeating keys
 emacs --daemon &                    # emacs daemon
 lxpolkit &      # authentication agent
 setbg           # set background
+# nm-applet &
+# pasystray &
+# blueman-applet &
