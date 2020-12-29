@@ -25,7 +25,6 @@ bison
 blueman
 bluez-utils
 bmenu
-brave
 bspwm
 btrfs-progs
 bzip2
@@ -184,6 +183,7 @@ mesa-demos
 mesa-vdpau
 mhwd
 mhwd-db
+mint-themes
 mkinitcpio-openswap
 mlocate
 mobile-broadband-provider-info
@@ -230,6 +230,7 @@ pcmanfm
 peek
 perl
 perl-file-mimeinfo
+picom
 pkgconf
 plank
 polkit-gnome
@@ -261,6 +262,7 @@ speedtest-cli
 subversion
 sudo
 sxhkd
+sxiv
 sysfsutils
 syslog-ng
 systemd
@@ -306,7 +308,6 @@ util-linux
 vertex-maia-themes
 vi
 vibrancy-icons-teal
-viewnior
 vim
 virtualbox-host-dkms
 vlc
