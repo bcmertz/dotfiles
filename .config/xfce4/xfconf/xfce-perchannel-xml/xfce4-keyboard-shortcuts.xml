@@ -35,6 +35,7 @@
       <property name="&lt;Super&gt;q" type="string" value="xdotool getwindowfocus windowkill"/>
       <property name="&lt;Super&gt;b" type="string" value="firefox"/>
       <property name="&lt;Shift&gt;&lt;Super&gt;e" type="string" value="xfce4-session-logout"/>
+      <property name="&lt;Super&gt;Escape" type="string" value="xfce4-popup-whiskermenu"/>
       <property name="&lt;Super&gt;space" type="string" value="xfce4-popup-whiskermenu"/>
     </property>
   </property>
