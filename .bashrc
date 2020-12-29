@@ -5,14 +5,10 @@ case $- in
 esac
 
 # set aliases
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
+[ -f ~/.bash_aliases ] && . ~/.bash_aliases
 
 # set coding environment
-if [ -f ~/.coderc ]; then
-    . ~/.coderc
-fi
+[ -f ~/.coderc ] && . ~/.coderc
 
 # .bash_history
 HISTCONTROL=ignoreboth
