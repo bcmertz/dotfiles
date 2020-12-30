@@ -13,8 +13,8 @@ esac
 # .bash_history
 HISTCONTROL=ignoreboth
 shopt -s histappend
-HISTSIZE=100000
-HISTFILESIZE=200000
+HISTSIZE=-1
+HISTFILESIZE=-1
 
 # bash configuration
 shopt -s checkwinsize # update rows & columns
