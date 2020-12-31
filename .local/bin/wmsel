@@ -4,13 +4,6 @@
 # and pipe it out
 # to be used upon login to startx with
 
-# deprecated because you can't do defaults
-# wms=$(ls /usr/share/xsessions/ | cut -d '.' -f 1)
-# select wm in ${wms}
-# do wm="${wm}"; break;
-# done
-# echo $wm
-
 # https://stackoverflow.com/questions/42789273/bash-choose-default-from-case-when-enter-is-pressed-in-a-select-prompt
 # Custom `select` implementation that allows *empty* input.
 # Pass the choices as individual arguments.
@@ -41,6 +34,7 @@ selectWithDefault() {
 
 }
 
+# get sessions, remove .desktop from filenames
 wms=$(ls /usr/share/xsessions/ | cut -d '.' -f 1)
 
 # select from list
@@ -48,10 +42,13 @@ opt=$(selectWithDefault $wms)
 # select wm in ${wms}
 # do wm="${wm}"; break;
 # done
+# echo $wm
+
+# for empty input choose i3
+# for all others set wm to selected wm
 case $opt in
   '' ) wm='i3'; ;;
   *  ) wm=$opt; ;;
 esac
 
-# remove .desktop
 echo $wm
