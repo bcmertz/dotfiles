@@ -166,7 +166,7 @@
         "value": [
             "nemo.desktop",
             "libreoffice-writer.desktop",
-            "st.desktop",
+            "xfce4-terminal.desktop",
             "emacs.desktop",
             "firefox.desktop",
             "cinnamon-settings.desktop"
