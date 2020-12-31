@@ -41,6 +41,7 @@
       <property name="show-frame" type="bool" value="false"/>
       <property name="square-icons" type="bool" value="true"/>
       <property name="names-ordered" type="array">
+        <value type="string" value="firewall-applet"/>
         <value type="string" value="deadbeef"/>
         <value type="string" value="clementine"/>
         <value type="string" value="bluetooth enabled"/>
