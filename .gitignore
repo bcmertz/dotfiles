@@ -38,6 +38,7 @@
 !.config/sxhkd/*
 !.config/dunst/*
 !.config/picom/*
+!.config/dconf/*
 !.config/plank/*
 !.config/polybar/*
 !.config/newsboat/*
@@ -48,10 +49,6 @@
 # xfce
 !.config/xfce4/*
 !.config/xfce4/*/
-
-# cinnamon
-!.cinnamon/*
-!.cinnamon/*/
 
 # emacs
 !.emacs.d/
