@@ -168,7 +168,8 @@
             "libreoffice-writer.desktop",
             "st.desktop",
             "emacs.desktop",
-            "firefox.desktop"
+            "firefox.desktop",
+            "cinnamon-settings.desktop"
         ]
     },
     "group-apps": {
