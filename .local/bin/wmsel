@@ -1,0 +1,12 @@
+#!/bin/bash
+#
+# select window manager and pipe it out
+
+# (1) prompt user, and read command line argument for window manager
+wms=$(ls /usr/share/xsessions/)
+
+select wm in ${wms}
+do wm="/usr/share/xsessions/${wm}"; break;
+done
+
+echo $wm

@@ -21,36 +21,7 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 
 source ~/.bashrc
 
-# (1) prompt user, and read command line argument for window manager
-# TODO: read available sessions from /usr/share/xsessions/ and parse startup commands
-# make separate bash script to do this
-read -p $'Which window manager? [default] i3 [1] emacs [2] bspwm [3] cinnamon [4] xfce\x0a' wm
-
-# (2) handle the command line argumen given for window manager
-while true
-do
-  case $wm in
-   [1]* ) wm="emacs"
-           echo "Starting emacs"
-           break;;
-
-   [2]* ) wm="bspwm"
-          echo "starting bspwm"
-          break;;
-
-   [3]* ) wm="cinnamon"
-          echo "starting cinnamon"
-          break;;
-
-   [4]* ) wm="xfce"
-          echo "starting xfce"
-          break;;
-
-   * ) wm="i3"
-       echo "starting i3"
-       break ;;
-  esac
-done
+wm=$(wmsel)
 
 alias startx='startx ~/.xinitrc'
 

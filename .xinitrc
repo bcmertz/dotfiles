@@ -28,17 +28,17 @@ fi
 # configure trackpad and other X input
 [ -f ~/.xinput ] && . ~/.xinput
 
-# choose wm, default to i3
-session=${1:-i3}
-export SESSION=$session
+# default to i3
+default='/usr/share/xsessions/i3.desktop'
+# read in session
+session=${1:-$default}
+# get the name of the wm session and set it
+export SESSION=$(echo $session | xargs basename | cut -d '.' -f 1)
+
+# get line formatted like Exec=i3 for startup command
+startup_command=$(grep -w 'Exec' $session | cut -d '=' -f 2)
 
 # enable these programs at the start of X
 [ -f ~/.xprofile ] && . ~/.xprofile
 
-case $session in
-   emacs             ) exec emacs;;
-   i3                ) exec i3;;
-   bspwm             ) exec bspwm;;
-   xfce              ) exec startxfce4;;
-   cinnamon|mint     ) exec cinnamon-session;;
-esac
+exec $startup_command
