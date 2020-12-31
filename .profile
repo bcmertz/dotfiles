@@ -23,7 +23,7 @@ export GTK3_RC_FILES="$HOME/.config/gtk-3.0/gtkrc-3.0"
 # get bash defaults
 source ~/.bashrc
 
-# choose window manager
+# choose window manager, get basename, and remove .desktop
 wm=$(wmsel)
 
 # weird annoying thing that's necessary

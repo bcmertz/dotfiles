@@ -1,12 +1,13 @@
 #!/bin/bash
 #
-# select window manager and pipe it out
+# select window manager from list of installed
+# and pipe it out
+# to be used upon login to startx with
 
-# (1) prompt user, and read command line argument for window manager
 wms=$(ls /usr/share/xsessions/)
 
 select wm in ${wms}
-do wm="/usr/share/xsessions/${wm}"; break;
+do wm="${wm}"; break;
 done
 
-echo $wm
+echo $wm | cut -d '.' -f 1
