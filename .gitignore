@@ -57,7 +57,6 @@
 !.emacs.d/.projectile
 !.emacs.d/.mc-lists.el
 !.emacs.d/smartparens-config
-!.emacs.d/projectile-bookmarks.eld
 !.emacs.d/*/
 !.emacs.d/lisp/*
 !.emacs.d/lisp/languages/*
