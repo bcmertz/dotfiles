@@ -45,9 +45,9 @@
 (global-set-key (kbd "M-<down>") 'windmove-down)
 
 
-(global-set-key (kbd "M-+") 'enlarge-window)
+(global-set-key (kbd "C-M-=") 'enlarge-window)
 (global-set-key (kbd "M-=") 'enlarge-window-horizontally)
-(global-set-key (kbd "M-_") 'shrink-window)
+(global-set-key (kbd "C-M--") 'shrink-window)
 (global-set-key (kbd "M--") 'shrink-window-horizontally)
 
 (global-set-key (kbd "<M-C-up>")     'buf-move-up)
