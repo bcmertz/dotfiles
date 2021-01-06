@@ -1,7 +1,6 @@
 android-ndk
 android-sdk
 arch-wiki-docs
-brave
 getmail6
 heroku-cli
 lib32-libxft-bgra

@@ -8,6 +8,8 @@ android-tools
 ant
 apparmor
 arandr
+arduino
+arduino-cli
 artwork-i3
 aspell-en
 atom
@@ -33,6 +35,7 @@ cantarell-fonts
 cdrdao
 cdrtools
 cinnamon
+cinnamon-wallpapers
 clementine
 clipit
 clipmenu
@@ -318,6 +321,7 @@ w3m
 wallpapers-juhraya
 wget
 which
+wine
 wmutils
 wpa_supplicant
 xarchiver
