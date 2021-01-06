@@ -9,6 +9,7 @@ ant
 apparmor
 arandr
 arduino
+arduino-avr-core
 arduino-cli
 artwork-i3
 aspell-en
