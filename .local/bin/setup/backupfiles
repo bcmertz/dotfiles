@@ -2,12 +2,30 @@
 #
 # backup files to external storage
 
-uuid=51f5ea69-1a7f-4baa-b349-dbc883a994ab
-if lsblk -f | grep -wq $uuid; then
+testing='false'
+
+# parse testing flag
+while getopts 't' flag; do
+    case "${flag}" in
+        t) testing='true';;
+    esac
+done
+
+custom_backup() {
     # -n for testing
     rsync -s -r -t -p -o -g -v --progress --delete \
           --exclude-from='/home/bennett/.local/bin/setup/exclude_list.txt' \
-          /home/bennett /run/media/bennett/backup/
+          /home/bennett $1
+}
+
+if [[ "$testing" == "true" ]]; then
+    mkdir -p /tmp/backup/
+    custom_backup /tmp/backup/
 else
-    echo "please connect backup drive"
+    uuid=51f5ea69-1a7f-4baa-b349-dbc883a994ab
+    if lsblk -f | grep -wq $uuid; then
+        custom_backup /run/media/bennett/backup/
+    else
+        echo "please connect backup drive"
+    fi
 fi
