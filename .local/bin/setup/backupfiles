@@ -15,7 +15,7 @@ custom_backup() {
     # -n for testing
     rsync -s -r -t -p -o -g -v --progress --delete \
           --exclude-from='/home/bennett/.local/bin/setup/exclude_list.txt' \
-          /home/bennett $1
+          /home/bennett/ $1
 }
 
 if [[ "$testing" == "true" ]]; then
