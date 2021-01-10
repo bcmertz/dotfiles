@@ -1,0 +1,25 @@
+{
+  "database location dialog": "/home/bennett/docs/calibre",
+  "notified-version-updates": {
+    "__class__": "set",
+    "__value__": [
+      "5.9"
+    ]
+  },
+  "sort_history": [
+    [
+      "ondevice",
+      true
+    ],
+    [
+      "timestamp",
+      false
+    ],
+    [
+      "timestamp",
+      false
+    ]
+  ],
+  "welcome_wizard_device": "default",
+  "welcome_wizard_was_run": true
+}
