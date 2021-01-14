@@ -45,6 +45,7 @@
 !.config/i3blocks/*
 !.config/fontconfig/*
 !.config/transmission/*
+!.config/cinnamon_backup/*
 
 # xfce
 !.config/xfce4/*

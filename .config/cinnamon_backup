@@ -1,0 +1,120 @@
+[/]
+alttab-switcher-delay=100
+alttab-switcher-style='thumbnails'
+command-history=['fullscreen htop', 'firefox', 'st', 'pcmanfm', 'gkbd-keyboard-display -l ir']
+desklet-snap-interval=25
+enabled-applets=['panel1:left:0:menu@cinnamon.org:0', 'panel1:left:2:grouped-window-list@cinnamon.org:2', 'panel1:right:0:notifications@cinnamon.org:5', 'panel1:right:1:printers@cinnamon.org:6', 'panel1:right:2:removable-drives@cinnamon.org:7', 'panel1:right:4:keyboard@cinnamon.org:8', 'panel1:right:6:sound@cinnamon.org:10', 'panel1:right:7:power@cinnamon.org:11', 'panel1:right:8:calendar@cinnamon.org:12', 'panel1:right:5:network@cinnamon.org:13']
+enabled-desklets=@as []
+hotcorner-layout=['expo:false:0', 'scale:true:0', 'scale:false:0', 'desktop:true:0']
+next-applet-id=15
+panel-edit-mode=false
+panel-zone-symbolic-icon-sizes='[{"panelId": 1, "left": 28, "center": 28, "right": 16}]'
+panels-autohide=['1:false']
+panels-height=['1:35']
+
+[cinnamon-session]
+quit-time-delay=60
+
+[desktop/applications/terminal]
+exec='xfce4-terminal'
+
+[desktop/background]
+picture-options='stretched'
+picture-uri='file:///usr/share/backgrounds/wallpapers-juhraya/Albero_Del_Pepe_by_Harisont.jpg'
+
+[desktop/background/slideshow]
+delay=15
+image-source='xml:///usr/share/gnome-background-properties/Juhraya.xml'
+
+[desktop/interface]
+clock-show-date=true
+clock-show-seconds=false
+cursor-blink-time=1200
+cursor-size=24
+gtk-theme='Adapta-Nokto-Maia'
+icon-theme='Vibrancy-Full-Dark-Teal'
+scaling-factor=uint32 0
+
+[desktop/keybindings]
+custom-list=['custom3', 'custom0', 'custom1', '__dummy__', 'custom2']
+
+[desktop/keybindings/custom-keybindings/custom0]
+binding=['<Super>p']
+command='passmenu'
+name='passwords'
+
+[desktop/keybindings/custom-keybindings/custom1]
+binding=['<Super>a']
+command='emacs'
+name='Launch Text Editor'
+
+[desktop/keybindings/custom-keybindings/custom2]
+binding=['<Super>u']
+command='/home/bennett/.local/bin/dmenu/unicode_picker'
+name='unicode'
+
+[desktop/keybindings/custom-keybindings/custom3]
+binding=['<Super>x']
+command='pcmanfm'
+name='pcmanfm'
+
+[desktop/keybindings/media-keys]
+home=@as []
+logout=['<Shift><Super>e']
+terminal=['<Super>Return']
+video-outputs=['XF86Display']
+www=['<Super>b']
+
+[desktop/keybindings/wm]
+close=['<Super>q']
+maximize=@as []
+panel-run-dialog=['<Super>d']
+show-desktop=@as []
+switch-to-workspace-left=['<Primary><Alt>Left']
+switch-to-workspace-right=['<Primary><Alt>Right']
+toggle-fullscreen=['<Super>f']
+
+[desktop/media-handling]
+autorun-never=false
+
+[desktop/privacy]
+remember-recent-files=false
+
+[desktop/screensaver]
+layout-group=0
+
+[desktop/sound]
+event-sounds=false
+
+[desktop/wm/preferences]
+min-window-opacity=30
+theme='Adapta-Nokto-Eta-Maia'
+
+[muffin]
+resize-threshold=24
+tile-hud-threshold=25
+tile-maximize=true
+
+[settings-daemon/peripherals/keyboard]
+delay=uint32 500
+repeat-interval=uint32 30
+
+[settings-daemon/peripherals/mouse]
+double-click=400
+drag-threshold=8
+motion-threshold=1
+natural-scroll=false
+
+[settings-daemon/peripherals/touchpad]
+horizontal-scrolling=true
+motion-threshold=1
+natural-scroll=false
+
+[settings-daemon/peripherals/touchscreen]
+orientation-lock=true
+
+[settings-daemon/plugins/xsettings]
+menus-have-icons=false
+
+[theme]
+name='Adapta-Nokto-Maia'
