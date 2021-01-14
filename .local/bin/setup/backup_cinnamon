@@ -1,0 +1,5 @@
+#!/bin/bash
+#
+# backup cinnamon dconf settings
+
+dconf dump /org/cinnamon/ > .config/cinnamon_backup
