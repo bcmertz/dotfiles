@@ -3,4 +3,5 @@
 # description
 
 file=$(find -type f | fzf -e --reverse --prompt="Enter string > " --header="ESC to quit ")
+[ "$file" = "" ] && exit
 emacsclient $file
