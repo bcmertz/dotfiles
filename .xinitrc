@@ -35,10 +35,10 @@ session=${1:-$default}
 # set session
 export SESSION=$session
 
-# get line formatted like Exec=i3 for startup command
-startup_command=$(grep -w 'Exec' /usr/share/xsessions/$session.desktop | cut -d '=' -f 2)
-
 # enable these programs at the start of X
 [ -f ~/.xprofile ] && . ~/.xprofile
 
+# get line formatted like Exec=i3 for startup command
+startup_command=$(grep -w 'Exec' /usr/share/xsessions/$session.desktop | cut -d '=' -f 2)
+# start window manager
 exec $startup_command
