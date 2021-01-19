@@ -22,7 +22,6 @@
 
 # config
 !.config/
-!.config/weston.ini
 !.config/i3-scrot.conf
 !.config/mimeapps.list
 !.config/redshift.conf
