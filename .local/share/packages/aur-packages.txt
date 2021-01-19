@@ -5,8 +5,7 @@ getmail6
 heroku-cli
 lib32-libxft-bgra
 libxft-bgra
-linux-surface
-linux-surface-headers
+mokutil
 mu
 multimarkdown
 pdfstudio-bin

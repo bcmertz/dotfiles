@@ -128,6 +128,7 @@ inetutils
 intel-ucode
 inxi
 iproute2
+iptsd
 iputils
 java-environment-common
 jdk8-openjdk
@@ -152,6 +153,9 @@ libtool
 libva-mesa-driver
 libva-vdpau-driver
 licenses
+linux-surface
+linux-surface-headers
+linux-surface-secureboot-mok
 linux54
 linux54-virtualbox-host-modules
 logrotate
@@ -265,6 +269,7 @@ spectre-meltdown-checker
 speedtest-cli
 subversion
 sudo
+sway
 sxhkd
 sxiv
 sysfsutils
@@ -361,6 +366,7 @@ xorg-xhost
 xorg-xinit
 xorg-xkill
 xorg-xprop
+xorg-xwayland
 xz
 yarn
 yay
