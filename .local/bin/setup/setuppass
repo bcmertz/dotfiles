@@ -7,20 +7,34 @@ if [ ! -d "$HOME/.password-store/" ]; then
     git clone https://github.com/bcmertz/passwords.git ~/.password-store
 fi
 
+id="Bennett"
+
+# move to password store to get keys
 cd ~/.password-store/
 
 # add public keys
-gpg --import public.key
+if ! gpg --list-public-keys $id &>/dev/null; then
+    gpg --import public.key
+else
+    echo "already have $id public key, skipping"
+fi
 
+# add private key
+#
 # decrypt private key
+echo "Enter symmetric password to decrypt the backup private key"
 gpg --decrypt private.key.gpg > private.key
-
 # import private key
-gpg --allow-secret-key-import --import private.key
+if ! gpg --list-secret-keys $id &>/dev/null; then
+    echo "Enter gpg key password to import key"
+    gpg --allow-secret-key-import --import private.key
+else
+    echo "already have $id private key, skipping"
+fi
 
-
-# remove private key from passwords dir
+# remove unencrypted private key from passwords dir
 rm ~/.password-store/private.key
+
 
 # setup gpg trust db
 rm ~/.gnupg/trustdb.gpg
