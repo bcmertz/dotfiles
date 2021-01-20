@@ -9,11 +9,19 @@ fi
 
 cd ~/.password-store/
 
-# gpg keys from backup
+# add public keys
 gpg --import public.key
+
+# decrypt private key
 gpg --decrypt private.key.gpg > private.key
+
+# import private key
 gpg --allow-secret-key-import --import private.key
 
-# gpg trust db
+
+# remove private key from passwords dir
+rm ~/.password-store/private.key
+
+# setup gpg trust db
 rm ~/.gnupg/trustdb.gpg
 gpg --import-ownertrust bennett-ownertrust-gpg.txt

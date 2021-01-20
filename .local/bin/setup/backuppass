@@ -9,12 +9,10 @@ gpg --export -a "Bennett" > public.key
 # backup and encrypt with passphrase private key
 gpg --export-secret-key -a "Bennett" > private.key
 gpg -c private.key
+rm private.key # remove plaintext private key tmp file
 
 # backup trust db
 gpg --export-ownertrust > bennett-ownertrust-gpg.txt
 
-# remove plaintext private key tmp file
-rm private.key
-
-# passwords from github
+# backup passwords to github
 echo "go to ~/.password-store and backup via git"
