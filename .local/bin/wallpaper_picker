@@ -9,6 +9,6 @@
 # setbg -f $chosen
 
 # graphical image chooser
-chosen=$(sxiv -f -t -r -q -o ~/.local/share/wallpaper/)
+chosen=$(sxiv -t -r -q -o ~/.local/share/wallpaper/)
 [ "$chosen" != "" ] || exit
 setbg -f $chosen
