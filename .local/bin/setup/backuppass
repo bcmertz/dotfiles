@@ -2,12 +2,14 @@
 #
 # backup passwords and gpg keys
 
+id="Bennett"
+
 # backup public gpg key
 cd ~/.password-store/
-gpg --export -a "Bennett" > public.key
+gpg --export -a $id > public.key
 
 # backup and encrypt with passphrase private key
-gpg --export-secret-key -a "Bennett" > private.key
+gpg --export-secret-key -a $id > private.key
 gpg -c private.key
 rm private.key # remove plaintext private key tmp file
 
