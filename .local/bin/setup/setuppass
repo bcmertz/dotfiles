@@ -26,7 +26,7 @@ echo "Enter symmetric password to decrypt the backup private key"
 gpg --decrypt private.key.gpg > private.key
 # import private key
 if ! gpg --list-secret-keys $id &>/dev/null; then
-    echo "Enter system password to import key"
+    echo "Enter gpg key password to import secret key"
     gpg --allow-secret-key-import --import private.key
 else
     echo "already have $id private key, skipping"
