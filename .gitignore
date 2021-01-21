@@ -11,6 +11,7 @@
 !.xinitrc
 !.inputrc
 !.xprofile
+!.gtkrc-2.0
 !.Xresources
 !.bash_aliases
 !.bash_profile
@@ -31,7 +32,6 @@
 !.config/i3/*
 !.config/git/*
 !.config/mpd/*
-!.config/gtk2/*
 !.config/gtk3/*
 !.config/htop/*
 !.config/sway/*
