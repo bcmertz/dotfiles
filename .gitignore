@@ -46,7 +46,6 @@
 !.config/newsboat/*
 !.config/i3blocks/*
 !.config/fontconfig/*
-!.config/Clementine/*
 !.config/transmission/*
 !.config/cinnamon_backup/*
 
