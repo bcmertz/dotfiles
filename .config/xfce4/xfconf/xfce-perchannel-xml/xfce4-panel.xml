@@ -51,6 +51,15 @@
         <value type="string" value="pamac-tray"/>
         <value type="string" value="clipit"/>
       </property>
+      <property name="known-legacy-items" type="array">
+        <value type="string" value="pamac-tray"/>
+        <value type="string" value="networkmanager applet"/>
+      </property>
+      <property name="known-items" type="array">
+        <value type="string" value="Clementine"/>
+        <value type="string" value="firewall-applet"/>
+        <value type="string" value="blueman"/>
+      </property>
     </property>
     <property name="plugin-8" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
