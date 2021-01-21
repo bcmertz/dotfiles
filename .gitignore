@@ -35,6 +35,7 @@
 !.config/gtk3/*
 !.config/htop/*
 !.config/sway/*
+!.config/qt5ct/*
 !.config/bspwm/*
 !.config/sxhkd/*
 !.config/dunst/*
