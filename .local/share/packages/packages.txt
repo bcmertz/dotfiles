@@ -1,6 +1,7 @@
 accountsservice
 acpi
 acpid
+adwaita-qt
 alsa-firmware
 alsa-plugins
 alsa-utils
@@ -48,7 +49,6 @@ crda
 cronie
 cryptsetup
 ctags
-deadbeef
 device-mapper
 dfc
 dhclient
@@ -159,6 +159,7 @@ linux-surface-secureboot-mok
 linux54
 linux54-virtualbox-host-modules
 logrotate
+lollypop
 lsof
 lvm2
 lxappearance
@@ -250,7 +251,6 @@ psmisc
 pulseeffects
 pygtk
 python
-qt4
 qt5-styleplugins
 qt5ct
 ranger

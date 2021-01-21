@@ -9,6 +9,7 @@ mokutil
 mu
 multimarkdown
 pdfstudio-bin
+qt4
 rar
 ttf-inconsolata-g
 ttf-symbola
