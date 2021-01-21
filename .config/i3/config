@@ -31,8 +31,18 @@ client.background       #2f343f
 font pango:DejaVu Sans Mono 10
 
 for_window [class="^.*"] border pixel 2
-gaps inner 15
+
+gaps inner 50
 gaps outer 0
+
+bindsym $mod+plus        gaps inner all plus 5
+bindsym $mod+minus       gaps inner all minus 5
+
+bindsym $mod+Shift+plus  gaps outer all plus 5
+bindsym $mod+Shift+minus gaps outer all minus 5
+
+bindsym $mod+0           gaps inner all set 0
+bindsym $mod+Shift+0     gaps outer all set 0
 
 focus_follows_mouse no
 # Browser popups
@@ -227,20 +237,3 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
-bindsym $mod+plus        gaps inner all plus 5
-bindsym $mod+minus       gaps inner all minus 5
-
-bindsym $mod+Shift+plus  gaps outer all plus 5
-bindsym $mod+Shift+minus gaps outer all minus 5
-
-bindsym $mod+0           gaps inner all set 0
-bindsym $mod+Shift+0     gaps outer all set 0
-
-# bindsym $mod+plus  gaps inner current plus 5
-# bindsym $mod+minus gaps inner current minus 5
-# bindsym $mod+0     gaps inner current set 0
-
-# bindsym $mod+Shift+plus  gaps inner all plus 5
-# bindsym $mod+Shift+minus gaps inner all minus 5
-# bindsym $mod+Shift+0     gaps inner all set 0
