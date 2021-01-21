@@ -41,7 +41,7 @@ bindsym $mod+minus       gaps inner all minus 5
 bindsym $mod+Shift+plus  gaps outer all plus 5
 bindsym $mod+Shift+minus gaps outer all minus 5
 
-bindsym $mod+0           gaps inner all set 0
+bindsym $mod+0           gaps inner all set 50
 bindsym $mod+Shift+0     gaps outer all set 0
 
 focus_follows_mouse no
