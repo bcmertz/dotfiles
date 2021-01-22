@@ -13,7 +13,7 @@
     #+BEGIN_SRC bash
     alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
     #+END_SRC
-    See `~/.bash_aliases` cfg and git aliases, as well as `~/.local/bin/git_alias`
+    See =~/.bash_aliases= cfg and git aliases, as well as =~/.local/bin/git_alias=
 
     Then checkout the dotfiles
 
