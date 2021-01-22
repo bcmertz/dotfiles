@@ -197,7 +197,9 @@ With argument, do this that many times."
   (forward-word)
   (insert "]]")
   (backward-word)
-  (org-open-at-point))
+  (org-open-at-point)
+  (org-cycle)
+  )
 
 
 ;;; custom-funcs.el ends here
