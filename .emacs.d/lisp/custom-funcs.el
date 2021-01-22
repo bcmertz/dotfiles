@@ -181,4 +181,12 @@ With argument, do this that many times."
   (shell-script-mode))
 
 
+;; org mode follow text as if it were a link
+(defun org-open-at-point-plaintext ()
+  "Org mode follow text to header as if it were a link."
+  (interactive)
+  (message "AHHH")
+)
+
+
 ;;; custom-funcs.el ends here

@@ -19,8 +19,11 @@
 
 (use-package org
   :bind (:map org-mode-map
-         ("<M-return>" . org-return-newline-below)
-         ("C-c r" . github-start-review-at-link)))
+              ("<M-return>" . org-return-newline-below)
+              ("C-`" . org-open-at-point-plaintext)
+              ("<C-escape>" . org-mark-ring-goto)
+              ("C-c r" . github-start-review-at-link)
+              ))
 
 ;; failed attempts to add front matter to exported html doc
 ;; (setq org-publish-project-alist
