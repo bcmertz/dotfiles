@@ -27,7 +27,7 @@
     installpackagelist
     #+END_SRC
 
-    Setup GPG keys trust db and passwords from backup github
+    Setup GPG keys trust db and passwords from backup github, requires providing public key to github
 
     #+BEGIN_SRC bash
     setuppass
