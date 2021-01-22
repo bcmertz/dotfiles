@@ -19,6 +19,7 @@ autoconf
 automake
 avahi
 b43-fwcutter
+baobab
 bash
 bash-completion
 bauh
