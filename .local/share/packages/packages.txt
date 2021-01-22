@@ -96,7 +96,6 @@ gimp
 git
 git-lfs
 glibc
-gnome-disk-utility
 gnome-keyring
 gnome-screenshot
 gparted
@@ -117,10 +116,6 @@ gtksourceview-pkgbuild
 gucharmap
 gufw
 gvfs
-gvfs-afc
-gvfs-gphoto2
-gvfs-mtp
-gvfs-smb
 gzip
 hexchat
 htop
