@@ -188,7 +188,6 @@ With argument, do this that many times."
 (defun org-open-at-point-plaintext ()
   "Turn org text into link and follow it to corresponding header."
   (interactive)
-  (setq debug-on-error t)
   (if (string= " " (string (preceding-char)))
       (insert "[[")
     (progn
@@ -198,8 +197,7 @@ With argument, do this that many times."
   (forward-word)
   (insert "]]")
   (backward-word)
-  (org-open-at-point)
-)
+  (org-open-at-point))
 
 
 ;;; custom-funcs.el ends here
