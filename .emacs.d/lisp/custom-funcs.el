@@ -185,7 +185,12 @@ With argument, do this that many times."
 (defun org-open-at-point-plaintext ()
   "Org mode follow text to header as if it were a link."
   (interactive)
-  (message "AHHH")
+  (backward-word)
+  (insert "[[")
+  (forward-word)
+  (insert "]]")
+  (backward-word)
+  (org-open-at-point)
 )
 
 
