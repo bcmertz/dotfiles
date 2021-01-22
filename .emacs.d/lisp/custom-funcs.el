@@ -135,8 +135,10 @@ With argument, do this that many times."
 (defun rename-file-and-buffer (new-name)
   "Renames both current buffer and file it's visiting to NEW-NAME."
   (interactive "sNew name: ")
-  (let ((name (buffer-name))
-        (filename (buffer-file-name)))
+  (let (
+        (name (buffer-name))
+        (filename (buffer-file-name))
+        )
     (if (not filename)
         (message "Buffer '%s' is not visiting a file!" name)
       (if (get-buffer new-name)
@@ -176,17 +178,23 @@ With argument, do this that many times."
 
 ;; start bash script and enable shell mode
 (defun start-shell-script ()
+  "Start shell script by inserting header and entering shell mode."
   (interactive)
   (insert "#!/bin/bash\n#\n# description")
   (shell-script-mode))
 
 
-;; org mode follow text as if it were a link
+;; Turn org text into link and follow it to corresponding header
 (defun org-open-at-point-plaintext ()
-  "Org mode follow text to header as if it were a link."
+  "Turn org text into link and follow it to corresponding header."
   (interactive)
-  (backward-word)
-  (insert "[[")
+  (setq debug-on-error t)
+  (if (string= " " (string (preceding-char)))
+      (insert "[[")
+    (progn
+      (backward-word)
+      (insert "[["))
+    )
   (forward-word)
   (insert "]]")
   (backward-word)
