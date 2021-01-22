@@ -95,7 +95,6 @@ bindsym $mod+o exec info_query
 bindsym $mod+p exec passmenu
 bindsym $mod+Shift+p exec emacs -f password-store-insert
 bindsym $mod+i exec choose_keyboard
-bindsym $mod+Shift+i exec recipes
 bindsym $mod+w exec displayselect
 bindsym $mod+Shift+w exec wallpaper_picker
 

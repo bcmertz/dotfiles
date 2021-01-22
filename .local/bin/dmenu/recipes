@@ -4,4 +4,4 @@
 
 chosen=$(ls ~/docs/recipes/ | dmenu -i -l 15)
 [ "$chosen" != "" ] || exit
-st -c 'Fullscreen st' -e bash -c "head -n -1 ~/Documents/recipes/$chosen; read"
+st -c 'Fullscreen st' -e bash -c "head -n -1 $HOME/docs/recipes/$chosen; read"
