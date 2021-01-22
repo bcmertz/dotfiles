@@ -4,7 +4,7 @@
 
 # passwords and keys from github
 if [ ! -d "$HOME/.password-store/" ]; then
-    git clone https://github.com/bcmertz/passwords.git ~/.password-store
+    git clone https://github.com/bcmertz/passwords.git ~/.password-store || exit 1
 fi
 
 id="Bennett"

@@ -5,28 +5,32 @@
     To install you must have a clear $HOME dir
 
     #+BEGIN_SRC bash
-      git clone --bare https://github.com/bcmertz/dotfiles.git $HOME/.cfg
+    git clone --bare https://github.com/bcmertz/dotfiles.git $HOME/.cfg
     #+END_SRC
 
     Add some alias like
 
     #+BEGIN_SRC bash
-      alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+    alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
     #+END_SRC
-
     See `~/.bash_aliases` cfg and git aliases, as well as `~/.local/bin/git_alias`
 
+    Then checkout the dotfiles
+
+    #+BEGIN_SRC bash
+    cfg checkout
+    #+END_SRC
 
     Install dependencies
 
     #+BEGIN_SRC bash
-      installpackagelist
+    installpackagelist
     #+END_SRC
 
     Setup GPG keys trust db and passwords from backup github
 
     #+BEGIN_SRC bash
-      setuppass
+    setuppass
     #+END_SRC
 
 *** Backing up
