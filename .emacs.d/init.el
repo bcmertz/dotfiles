@@ -40,6 +40,7 @@
 (measure-time(load "custom-editing.el"))
 (measure-time(load "custom-windowing.el"))
 (measure-time(load "custom-flycheck.el"))
+(measure-time(load "custom-email.el"))
 (measure-time(load "custom-lsp.el"))
 (measure-time(load "custom-git.el"))
 (measure-time(load "custom-pdf.el"))
