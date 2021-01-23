@@ -56,10 +56,10 @@ for_window [class="Xarchiver"] floating enable
 for_window [class="Gpick"] floating enable
 for_window [class="Progress"] floating enable
 for_window [class="File Upload"] floating enable
-for_window [title="GIMP Startup"] move workspace $ws5
-for_window [class="Gimp"] move workspace $ws5
-for_window [class="Emacs"] move workspace $ws2
-#for_window [class="firefox"] move workspace $ws1
+# for_window [title="GIMP Startup"] move workspace $ws5
+# for_window [class="Gimp"] move workspace $ws5
+# for_window [class="Emacs"] move workspace $ws2
+# for_window [class="firefox"] move workspace $ws1
 
 # Screenshot
 bindsym $mod+Print exec i3-scrot
