@@ -201,6 +201,7 @@ mousepad
 mpc
 mpd
 mpv
+msmtp
 mutt
 nano
 ncdu
