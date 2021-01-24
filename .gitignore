@@ -28,6 +28,9 @@
 !.config/redshift.conf
 !.config/user-dirs.dirs
 !.config/user-dirs.locale
+!.config/Clementine/customiconset/
+!.config/Clementine/customiconset/*
+!.config/Clementine/Clementine.conf
 !.config/*/
 !.config/i3/*
 !.config/git/*
