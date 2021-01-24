@@ -35,6 +35,8 @@
 !.config/gtk3/*
 !.config/htop/*
 !.config/sway/*
+!.config/mu4e/*
+!.config/msmtp/*
 !.config/qt5ct/*
 !.config/bspwm/*
 !.config/sxhkd/*

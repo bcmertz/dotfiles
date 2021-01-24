@@ -1,0 +1,32 @@
+defaults
+auth	on
+tls	on
+tls_trust_file	/etc/ssl/certs/ca-certificates.crt
+logfile /home/bennett/.config/msmtp/msmtp.log
+
+account gmail
+host smtp.gmail.com
+port 587
+from bennett.mertz@gmail.com
+user bennett.mertz@gmail.com
+passwordeval "pass show mu-wizard-gmail"
+
+# End profile
+
+account protonmail
+host 127.0.0.1
+port 1025
+from bennett.mertz@protonmail.com
+user bennett.mertz@protonmail.com
+passwordeval "pass show mu-wizard-protonmail"
+
+# End profile
+
+account college
+host smtp.gmail.com
+port 587
+from bcmertz@email.wm.edu
+user bcmertz@email.wm.edu
+passwordeval "pass show mu-wizard-college"
+
+# End profile

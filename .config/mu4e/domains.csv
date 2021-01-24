@@ -1,0 +1,3 @@
+gmail.com,imap.gmail.com,993,smtp.gmail.com,587
+protonmail.com,127.0.0.1,1143,127.0.0.1,1025
+email.wm.edu,imap.gmail.com,993,smtp.gmail.com,587
