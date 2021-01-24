@@ -1,1 +1,0 @@
-Jan 23 20:35:45 host=smtp.gmail.com tls=on auth=on user=bennett.mertz@gmail.com from=bennett.mertz@gmail.com recipients=bennett.mertz@protonmail.com mailsize=267 smtpstatus=250 smtpmsg='250 2.0.0 OK  1611452145 m64sm9379351qkb.90 - gsmtp' exitcode=EX_OK
