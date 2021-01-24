@@ -95,6 +95,6 @@
     "upload-slots-per-torrent": 14,
     "user-has-given-informed-consent": true,
     "utp-enabled": true,
-    "watch-dir": "/home/bennett/downloads",
-    "watch-dir-enabled": false
+    "watch-dir": "/home/bennett/dl",
+    "watch-dir-enabled": true
 }
