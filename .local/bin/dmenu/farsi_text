@@ -1,0 +1,12 @@
+#!/bin/bash
+#
+# get farsi key mapping
+
+letters=$(cat ~/.local/share/dmenu/farsi_map | awk '{print $1,"  |  ",$2,"  ",$3}' | dmenu -h 60 -l 7 -c)
+[ "$letters" = "" ] && exit
+
+farsi_letter=$(echo "$letters" | awk '{print $3}')
+keyboard_location=$(echo ${letters^} | awk '{print $1}')
+echo "$farsi_letter" | tr -d '\n' | xclip  -selection clipboard
+notify-send "$farsi_letter copied
+ US key: $keyboard_location" &
