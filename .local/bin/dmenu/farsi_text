@@ -2,7 +2,7 @@
 #
 # get farsi key mapping
 
-letters=$(cat ~/.local/share/dmenu/farsi_map | awk '{print $1,"  |  ",$2,"  ",$3}' | dmenu -h 60 -l 7 -c)
+letters=$(cat ~/.local/share/dmenu/farsi_map | awk '{print $1, "  |  ", $2, "  ", $3}' | dmenu -p اب -h 60 -l 7 -c)
 [ "$letters" = "" ] && exit
 
 farsi_letter=$(echo "$letters" | awk '{print $3}')
