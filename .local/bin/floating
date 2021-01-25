@@ -1,0 +1,5 @@
+#!/bin/bash
+#
+# float terminal and run command
+
+st -c 'Floating st' -e bash -c "$@"
