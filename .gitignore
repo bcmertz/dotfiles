@@ -53,6 +53,7 @@
 !.config/msmtp/config
 !.config/transmission/*
 !.config/cinnamon_backup/*
+!.config/transmission-daemon/*
 
 # xfce
 !.config/xfce4/*
