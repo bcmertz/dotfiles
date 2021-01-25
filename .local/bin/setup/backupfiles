@@ -12,15 +12,14 @@ while getopts 't' flag; do
 done
 
 custom_backup() {
-    # -n for testing
-    rsync -s -r -t -p -o -g -v --progress --delete \
+    rsync $2 -s -r -t -p -o -g -v --progress --delete \
           --exclude-from='/home/bennett/.local/bin/setup/exclude_list.txt' \
           /home/bennett/ $1
 }
 
 if [[ "$testing" == "true" ]]; then
     mkdir -p /tmp/backup/
-    custom_backup /tmp/backup/
+    custom_backup /tmp/backup/ -n # -n for dry run
 else
     uuid=51f5ea69-1a7f-4baa-b349-dbc883a994ab
     if lsblk -f | grep -wq $uuid; then
