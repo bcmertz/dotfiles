@@ -46,3 +46,7 @@ interval=18000
 command=pacpackages
 interval=once
 signal=8
+
+[torrent]
+interval=60
+signal=7
