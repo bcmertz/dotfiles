@@ -31,6 +31,7 @@
 !.config/Clementine/customiconset/
 !.config/Clementine/customiconset/*
 !.config/Clementine/Clementine.conf
+!.config/transmission-daemon/settings.json
 !.config/*/
 !.config/i3/*
 !.config/git/*
@@ -51,9 +52,7 @@
 !.config/i3blocks/*
 !.config/fontconfig/*
 !.config/msmtp/config
-!.config/transmission/*
 !.config/cinnamon_backup/*
-!.config/transmission-daemon/*
 
 # xfce
 !.config/xfce4/*
