@@ -28,6 +28,6 @@ else
 fi
 
 case $BLOCK_BUTTON in
-    1) notify-send "Language" "Alt-Shift to toggle\n\nMod+i to select a new language";;
+    1) notify-send "Language" "Alt-Shift to toggle\n\nMod+i to select a new language\n\nMod+Shift+i to query keymap";;
     3) gkbd-keyboard-display -l ir;;
 esac
