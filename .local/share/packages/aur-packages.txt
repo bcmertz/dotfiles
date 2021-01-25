@@ -17,9 +17,12 @@ persian-hm-ftx-fonts
 qt4
 rar
 sahel-fonts
+tremc
 ttf-inconsolata-g
 ttf-symbola
 ttf-unifont
+vazir-code-fonts
+vazir-fonts
 vrms-arch
 xdg-su
 xkb-switch
