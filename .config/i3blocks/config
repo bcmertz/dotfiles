@@ -48,5 +48,5 @@ interval=once
 signal=8
 
 [torrent]
-interval=10
+interval=4
 signal=7
