@@ -1,8 +1,11 @@
 android-ndk
 android-sdk
 arch-wiki-docs
+behdad-fonts
 getmail6
 heroku-cli
+ir-standard-fonts
+iranian-fonts
 lib32-libxft-bgra
 libxft-bgra
 mokutil
@@ -10,8 +13,10 @@ mu
 mu-wizard-git
 multimarkdown
 pdfstudio-bin
+persian-hm-ftx-fonts
 qt4
 rar
+sahel-fonts
 ttf-inconsolata-g
 ttf-symbola
 ttf-unifont

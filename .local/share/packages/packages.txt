@@ -158,7 +158,6 @@ linux54-virtualbox-host-modules
 logrotate
 lollypop
 lsof
-lutris
 lvm2
 lxappearance
 lxinput
