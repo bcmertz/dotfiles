@@ -45,7 +45,6 @@
 
     #+BEGIN_SRC bash
       backuppass
-      echo "now copy to some device like a thumbdrive and push to github @ ~/.password-store"
     #+END_SRC
 
     Backup photos, documents, etc
