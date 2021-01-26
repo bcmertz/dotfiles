@@ -157,6 +157,7 @@ linux54
 linux54-virtualbox-host-modules
 logrotate
 lsof
+lutris
 lvm2
 lxappearance
 lxinput
@@ -264,6 +265,7 @@ signify
 snapd
 spectre-meltdown-checker
 speedtest-cli
+steam-manjaro
 subversion
 sudo
 sway

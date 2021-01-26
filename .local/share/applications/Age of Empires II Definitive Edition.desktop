@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Age of Empires II: Definitive Edition
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/813780
+Icon=steam_icon_813780
+Terminal=false
+Type=Application
+Categories=Game;
