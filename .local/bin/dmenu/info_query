@@ -1,20 +1,7 @@
 #!/bin/bash
 #
-# Search arch-wiki or english wikipedia for articles
+# Search arch-wiki offline
 
 chosen=$(ls /usr/share/doc/arch-wiki/html/en | dmenu -i -l 15)
 [ "$chosen" != "" ] || exit
 firefox /usr/share/doc/arch-wiki/html/en/$chosen
-
-# infoSource=$(printf "wiki\narch" | dmenu -i)
-# [ "$infoSource" != "" ] || exit
-
-# if [ "$infoSource" = "wiki" ]; then
-#     chosen=$(ls /usr/share/doc/wikipedia/docs/en | dmenu -i -l 25 -fn Monospace-14)
-#     [ "$chosen" != "" ] || exit
-#     firefox /usr/share/doc/arch-wiki/html/en/$chosen
-# else
-#     chosen=$(ls /usr/share/doc/arch-wiki/html/en | dmenu -i -l 25 -fn Monospace-14)
-#     [ "$chosen" != "" ] || exit
-#     firefox /usr/share/doc/arch-wiki/html/en/$chosen
-# fi
