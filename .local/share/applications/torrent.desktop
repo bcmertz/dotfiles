@@ -1,4 +1,4 @@
 [Desktop Entry]
 Type=Application
 Name=Torrent
-Exec=transmission-gtk %u
+Exec=/usr/bin/env transadd %U
