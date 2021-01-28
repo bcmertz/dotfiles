@@ -92,7 +92,7 @@ bindsym $mod+Shift+Return exec xfce4-terminal
 bindsym $mod+q kill
 
 # dmenu programs
-bindsym $mod+d exec dmenu_run_history -c -h 50 -l 10 -bw 3
+bindsym $mod+d exec dmenu_run_history -i -c -h 50 -l 10 -bw 3
 bindsym $mod+u exec unicode_picker
 bindsym $mod+y exec clipmenu
 bindsym $mod+o exec info_query
