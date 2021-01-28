@@ -234,6 +234,7 @@ patchutils
 pavucontrol
 pciutils
 pcmanfm
+pcsx2
 peek
 perl
 perl-file-mimeinfo
