@@ -32,8 +32,18 @@ client.background       #2f343f
 font pango:DejaVu Sans Mono 10
 
 for_window [class="^.*"] border pixel 2
-gaps inner 15
+
+gaps inner 50
 gaps outer 0
+
+bindsym $mod+plus        gaps inner all plus 5
+bindsym $mod+minus       gaps inner all minus 5
+
+bindsym $mod+Shift+plus  gaps outer all plus 5
+bindsym $mod+Shift+minus gaps outer all minus 5
+
+bindsym $mod+0           gaps inner all set 50
+bindsym $mod+Shift+0     gaps outer all set 0
 
 focus_follows_mouse no
 # Browser popups
@@ -42,15 +52,16 @@ for_window [window_role="pop-up"] floating enable
 # for_window [class="ranger"] floating enable # resize set 2400 1600, move position 100 100
 # Weather reports
 for_window [class="Fullscreen st"] floating enable fullscreen
+for_window [class="Floating st"] floating enable resize set 2400 750, move position 400 400
 # xarchiver
 for_window [class="Xarchiver"] floating enable
 for_window [class="Gpick"] floating enable
 for_window [class="Progress"] floating enable
 for_window [class="File Upload"] floating enable
-for_window [title="GIMP Startup"] move workspace $ws5
-for_window [class="Gimp"] move workspace $ws5
-for_window [class="Emacs"] move workspace $ws2
-#for_window [class="firefox"] move workspace $ws1
+# for_window [title="GIMP Startup"] move workspace $ws5
+# for_window [class="Gimp"] move workspace $ws5
+# for_window [class="Emacs"] move workspace $ws2
+# for_window [class="firefox"] move workspace $ws1
 
 # Screenshot
 bindsym $mod+Print exec i3-scrot
@@ -62,6 +73,8 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% &&
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% && pkill -SIGRTMIN+10 i3blocks
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -SIGRTMIN+10 i3blocks
 bindsym XF86AudioStop exec --no-startup-id mpc toggle
+bindsym <f5> --no-startup-id exec mpc next # eehhhhh
+bindsym <f6> --no-startup-id exec mpc prev # ehhhhhh
 
 
 # Sreen brightness controls
@@ -79,14 +92,14 @@ bindsym $mod+Shift+Return exec xfce4-terminal
 bindsym $mod+q kill
 
 # dmenu programs
-bindsym $mod+d exec dmenu_run_history -c -h 50 -l 10
+bindsym $mod+d exec dmenu_run_history -c -h 50 -l 10 -bw 3
 bindsym $mod+u exec unicode_picker
 bindsym $mod+y exec clipmenu
 bindsym $mod+o exec info_query
 bindsym $mod+p exec passmenu
 bindsym $mod+Shift+p exec emacs -f password-store-insert
 bindsym $mod+i exec choose_keyboard
-bindsym $mod+Shift+i exec recipes
+bindsym $mod+Shift+i exec farsi_text
 bindsym $mod+w exec displayselect
 bindsym $mod+Shift+w exec wallpaper_picker
 
@@ -166,16 +179,16 @@ bindsym $mod+space focus mode_toggle
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 1
-set $ws2 2
-set $ws3 3
-set $ws4 4
-set $ws5 5
-set $ws6 6
-set $ws7 7
-set $ws8 8
-set $ws9 9
-set $ws10 10
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -187,7 +200,7 @@ bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10
+# bindsym $mod+0 workspace number $ws10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -199,7 +212,7 @@ bindsym $mod+Shift+6 move container to workspace number $ws6
 bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
+# bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
