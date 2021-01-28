@@ -12,11 +12,13 @@ set $mod Mod4
 #exec_always --no-startup-id refreshpolybar
 
 bar {
-	font pango:mono 10
+	font pango:mono 16
 	status_command i3blocks
 	position top
 	mode dock
 }
+
+output eDP-1 scale 1.2
 
 # colour of border, background, text, indicator, and child_border
 client.focused          #bf616a #2f343f #d8dee8 #bf616a #d8dee8
