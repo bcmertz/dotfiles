@@ -34,9 +34,8 @@ selectWithDefault() {
 
 }
 
-# get wayland and X sessions, remove lines matchin /usr/*:
-# finally remove .desktop from filenames
-wms=$(ls /usr/share/*sessions/ | sed '/\/usr\/*/d' | cut -d '.' -f 1)
+# get sessions, remove .desktop from filenames
+wms=$(ls /usr/share/xsessions/ | cut -d '.' -f 1)
 
 # select from list
 opt=$(selectWithDefault $wms)
