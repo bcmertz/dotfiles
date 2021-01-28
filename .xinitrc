@@ -39,6 +39,7 @@ export SESSION=$session
 [ -f ~/.xprofile ] && . ~/.xprofile
 
 # get line formatted like Exec=i3 for startup command
-startup_command=$(grep -w 'Exec' /usr/share/xsessions/$session.desktop | cut -d '=' -f 2)
+startup_command=$(grep -w 'Exec' /usr/share/*sessions/$session.desktop | cut -d '=' -f 2)
+
 # start window manager
 exec $startup_command
