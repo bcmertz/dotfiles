@@ -2,5 +2,7 @@
 #
 # flatten nested directories files
 
+# https://unix.stackexchange.com/questions/52814/flattening-a-nested-directory
 find ./ -mindepth 2 -type f -exec cp -t ./ -i '{}' +
+# https://superuser.com/questions/713741/bash-remove-all-directories-and-contents-but-not-files-in-pwd
 echo 'try rm -r */ to delete dirs and !files, warning: deletes symbolic links too'
