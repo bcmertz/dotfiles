@@ -1,0 +1,6 @@
+#!/bin/bash
+#
+# flatten nested directories files
+
+find ./ -mindepth 2 -type f -exec cp -t ./ -i '{}' +
+echo 'try rm -r */ to delete dirs and !files'
