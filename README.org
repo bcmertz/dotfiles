@@ -2,7 +2,7 @@
 
 *** Cloning
 
-    To install you must have a clear $HOME dir
+    To install:
 
     #+BEGIN_SRC bash
     git clone --bare https://github.com/bcmertz/dotfiles.git $HOME/.cfg
@@ -15,8 +15,8 @@
     #+END_SRC
     See =~/.bash_aliases= cfg and git aliases, as well as =~/.local/bin/git_alias=
 
-    Then checkout the dotfiles
-
+    Then checkout the dotfiles, if $HOME isn't cleared there will likely be conflicts
+    
     #+BEGIN_SRC bash
     cfg checkout
     #+END_SRC
