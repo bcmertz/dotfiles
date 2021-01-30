@@ -2,6 +2,19 @@
 #
 # cycle through wallpapers
 
+# wayland!!
+#
+# check if we're not running Xorg
+if ! pgrep -x "Xorg" > /dev/null
+then
+    filename=$(ls ~/.local/share/wallpaper/ | shuf -n 1)
+    echo $filename
+    killall swaybg # not ideal, should do some swaymsg stuff
+    background swaybg -i $HOME/.local/share/wallpaper/$filename
+    exit 1
+    #swaymsg exec "swaybg -o $OUTPUT -i $HOME/.local/share/wallpaper/$filename -m fill"
+fi
+
 filename=''
 same='false'
 

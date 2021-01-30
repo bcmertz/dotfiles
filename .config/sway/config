@@ -10,6 +10,7 @@ set $mod Mod4
 
 # Startup polybar if it isn't running
 #exec_always --no-startup-id refreshpolybar
+exec_always --no-startup-id setbg
 
 bar {
 	font pango:mono 10
