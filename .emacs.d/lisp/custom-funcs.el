@@ -215,6 +215,22 @@ With argument, do this that many times."
           (apply 'delete-region remove)
           (insert description)))))
 
+(defun bcm/org-return ()
+  "Org return and if header is closed cycle it."
+  (interactive)
+  (org-return)
+  (if (org-folded-p)
+      (org-cycle)
+      )
+  )
+
+;; https://emacs.stackexchange.com/a/26840
+(defun org-folded-p ()
+  "Return non-nil if point is on a folded headline or plain list item."
+  (and (or (org-at-heading-p)
+           (org-at-item-p))
+       (invisible-p (point-at-eol))))
+
 ;; https://emacs.stackexchange.com/a/35072
 ;; mark whole word
 (defun mark-whole-word (&optional arg allow-extend)
