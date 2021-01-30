@@ -38,6 +38,7 @@
 (measure-time(load "custom-autocomplete.el"))
 (measure-time(load "custom-navigation.el"))
 (measure-time(load "custom-editing.el"))
+(measure-time(load "custom-bidi-text.el"))
 (measure-time(load "custom-windowing.el"))
 (measure-time(load "custom-flycheck.el"))
 (measure-time(load "custom-email.el"))

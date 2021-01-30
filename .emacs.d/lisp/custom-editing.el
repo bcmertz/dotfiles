@@ -26,8 +26,13 @@
 
 ;; smart parenthesis
 (require 'smartparens-config)
+
 (smartparens-global-mode t)
+(add-hook 'org-mode-hook (lambda () (setq-local smartparens-global-mode nil)))
+
 (show-smartparens-global-mode +1)
+(add-hook 'org-mode-hook (lambda () (setq-local show-smartparens-global-mode nil)))
+
 (global-set-key (kbd "C-c s e") 'sp-show-enclosing-pair)
 (global-set-key (kbd "C-c s u") 'sp-up-sexp)
 (global-set-key (kbd "C-c s d") 'sp-down-sexp)

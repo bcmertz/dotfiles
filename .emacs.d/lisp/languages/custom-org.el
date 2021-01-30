@@ -21,6 +21,7 @@
   :bind (:map org-mode-map
               ("<M-return>" . org-return-newline-below)
               ("C-`" . org-open-at-point-plaintext)
+              ("<C-delete>" . org-remove-link)
               ("<C-escape>" . org-mark-ring-goto)
               ("C-c r" . github-start-review-at-link)
               ))

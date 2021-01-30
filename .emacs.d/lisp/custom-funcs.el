@@ -201,6 +201,20 @@ With argument, do this that many times."
   (org-cycle)
   )
 
+;; https://emacs.stackexchange.com/a/10714
+(defun org-remove-link ()
+  "Replace an org link by its description or if empty its address."
+  (interactive)
+  (if (org-in-regexp org-link-bracket-re 1)
+      (save-excursion
+        (let ((remove (list (match-beginning 0) (match-end 0)))
+              (description
+               (if (match-end 2)
+                   (org-match-string-no-properties 2)
+                 (org-match-string-no-properties 1))))
+          (apply 'delete-region remove)
+          (insert description)))))
+
 ;; https://emacs.stackexchange.com/a/35072
 ;; mark whole word
 (defun mark-whole-word (&optional arg allow-extend)
