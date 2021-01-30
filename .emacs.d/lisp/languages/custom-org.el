@@ -26,6 +26,24 @@
               ("C-c r" . github-start-review-at-link)
               ))
 
+;; pretty bullets
+(use-package org-bullets
+  :defer t
+  :ensure t
+  :hook (org-mode . org-bullets-mode))
+
+(setq org-return-follows-link t)
+(setq org-agenda-files '("~/docs/org/"))
+
+;; overwrite web mode binding for C-c C-l
+(add-hook 'web-mode-hook
+      (lambda ()
+        (local-unset-key (kbd "C-c C-l"))))
+(global-set-key (kbd "C-c C-l") 'org-store-link)
+
+;; make images pretty
+(setq org-image-actual-width (/ (display-pixel-width) 3))
+
 ;; failed attempts to add front matter to exported html doc
 ;; (setq org-publish-project-alist
 ;; '(("org-bcmertz"
@@ -51,24 +69,5 @@
 ;;          :html-preamble "This is just a test"
 ;;          :publishing-function org-html-publish-to-html)
 ;;         ("org" :components ("org-notes"))))
-
-;; pretty bullets
-(use-package org-bullets
-  :defer t
-  :ensure t
-  :hook (org-mode . org-bullets-mode))
-
-(setq org-return-follows-link t)
-(setq org-agenda-files '("~/docs/org/"))
-
-
-;; overwrite web mode binding for C-c C-l
-(add-hook 'web-mode-hook
-      (lambda ()
-        (local-unset-key (kbd "C-c C-l"))))
-(global-set-key (kbd "C-c C-l") 'org-store-link)
-
-;; make images pretty
-(setq org-image-actual-width (/ (display-pixel-width) 3))
 
 ;;; custom-org.el ends here
