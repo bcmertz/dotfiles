@@ -27,7 +27,3 @@ export ANDROID_SDK_HOME=$ANDROID_HOME
 export ANDROID_SDK_ROOT=$ANDROID_HOME
 export ANDROID_NDK_HOME=/opt/android-ndk
 export PATH=$PATH:$ANDROID_HOME:$ANDROID_SDK_HOME/tools:$ANDROID_SDK_HOME/tools/bin
-
-# Old
-alias fl='cds ~/go/src/github.com/getlantern/flashlight'
-alias ui='cds ~/go/src/github.com/getlantern/lantern-desktop-ui'
