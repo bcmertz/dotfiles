@@ -54,7 +54,7 @@ alias rc='fc -s | copy'
 alias wcdir='wc -w *'
 alias reboot='shutdown -r now'
 alias ff='find_file'
-alias trl='transmission-remote -l'
+alias trl='watch -n 1 transmission-remote -l'
 
 # Hack to remove wifi driver from kernal space and put back in I think - hard restart
 alias fixwifi='sudo modprobe -r mwifiex_pcie && sudo modprobe mwifiex_pcie'
