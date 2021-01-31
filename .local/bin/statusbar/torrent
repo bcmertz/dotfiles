@@ -18,5 +18,5 @@ case $BLOCK_BUTTON in
 🔽: downloading
 ✅: done
 🌱: done and seeding" ;;
-        3) floating "transmission-remote -l | less";;
+        3) floating "watch -n 1 transmission-remote -l";;
 esac
