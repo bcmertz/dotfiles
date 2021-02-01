@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+# check if were in wayland or X
+
+if ! pgrep -x "Xorg" > /dev/null
+then
+    echo "🚄 WAYLAND"
+else
+    echo "🐎 Xorg"
+fi
