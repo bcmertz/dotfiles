@@ -88,8 +88,8 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec st
-bindsym $mod+Shift+Return exec xfce4-terminal
+bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Shift+Return exec st
 
 # kill focused window
 bindsym $mod+q kill
@@ -116,7 +116,7 @@ bindsym $mod+Shift+f exec fullscreen find_file
 bindsym $mod+x exec termview ranger
 bindsym $mod+Shift+x exec pcmanfm
 # browsers
-bindsym $mod+b exec MOZ_ENABLE_WAYLAND=1 firefox
+bindsym $mod+b exec MOZ_ENABLE_WAYLAND=1 firefox-nightly
 bindsym $mod+Shift+b exec torbrowser-launcher
 # text editors
 bindsym $mod+a exec emacs
