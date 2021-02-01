@@ -25,7 +25,7 @@ source ~/.bashrc
 # choose window manager
 wm=$(wmsel)
 
-wayland=$(echo $wm | grep '\-w' | sed 's/-w//g' )
+wayland_session=$(echo $wm | grep '\-w' | sed 's/-w//g' )
 
 # weird annoying thing that's necessary
 alias startx='startx ~/.xinitrc'
@@ -33,8 +33,9 @@ alias startx='startx ~/.xinitrc'
 # check if something was chosen
 if [[ "$wm" != "" ]]; then
     # if a wayland -w session was chosen, execute it
-    if [ -n "$wayland" ]; then
-        exec $wayland
+    if [[ ! -z "$wayland_session" ]]; then
+        export SESSION=$wayland_session
+        exec $wayland_session
     else
         # if a x session argument is chosen, startx appropriately
         startx $wm
