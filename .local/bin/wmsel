@@ -34,8 +34,9 @@ selectWithDefault() {
 
 }
 
-# get sessions, remove .desktop from filenames
-wms=$(ls /usr/share/xsessions/ | cut -d '.' -f 1)
+# get wayland and X sessions, remove /usr/share/* lines
+# remove .desktop from filenames
+wms=$(ls /usr/share/*sessions/ | sed '/\/usr\/share\/*/d' | cut -d '.' -f 1)
 
 # select from list
 opt=$(selectWithDefault $wms)
@@ -51,4 +52,8 @@ case $opt in
   *  ) wm=$opt; ;;
 esac
 
-echo $wm
+if ls /usr/share/wayland-sessions/ | grep $wm >/dev/null; then
+    echo "$wm -w"
+else
+    echo $wm
+fi

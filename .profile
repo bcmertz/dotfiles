@@ -25,11 +25,18 @@ source ~/.bashrc
 # choose window manager
 wm=$(wmsel)
 
+wayland=$(echo $wm | grep '\-w' | sed 's/-w//g' )
+
 # weird annoying thing that's necessary
 alias startx='startx ~/.xinitrc'
 
-# start Xorg
+# check if something was chosen
 if [[ "$wm" != "" ]]; then
-    # if a session argument is chosen, startx appropriately
-    startx $wm
+    # if a wayland -w session was chosen, execute it
+    if $wayland; then
+        exec $wayland
+    else
+        # if a x session argument is chosen, startx appropriately
+        startx $wm
+    fi
 fi
