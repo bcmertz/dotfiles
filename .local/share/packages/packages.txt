@@ -253,7 +253,6 @@ python
 qt5-styleplugins
 qt5ct
 ranger
-redshift
 reiserfsprogs
 rsync
 ruby

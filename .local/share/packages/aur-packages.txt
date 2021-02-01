@@ -16,6 +16,7 @@ pdfstudio-bin
 persian-hm-ftx-fonts
 qt4
 rar
+redshift-wayland-git
 sahel-fonts
 ttf-inconsolata-g
 ttf-symbola
