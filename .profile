@@ -33,7 +33,7 @@ alias startx='startx ~/.xinitrc'
 # check if something was chosen
 if [[ "$wm" != "" ]]; then
     # if a wayland -w session was chosen, execute it
-    if $wayland; then
+    if [ -n "$wayland" ]; then
         exec $wayland
     else
         # if a x session argument is chosen, startx appropriately
