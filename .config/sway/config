@@ -116,7 +116,7 @@ bindsym $mod+Shift+f exec fullscreen find_file
 bindsym $mod+x exec termview ranger
 bindsym $mod+Shift+x exec pcmanfm
 # browsers
-bindsym $mod+b exec firefox
+bindsym $mod+b exec MOZ_ENABLE_WAYLAND=1 firefox
 bindsym $mod+Shift+b exec torbrowser-launcher
 # text editors
 bindsym $mod+a exec emacs

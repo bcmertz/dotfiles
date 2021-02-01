@@ -6,5 +6,5 @@ if ! pgrep -x "Xorg" > /dev/null
 then
     echo "🚄 WAYLAND"
 else
-    echo "🐎 Xorg"
+    echo "🐎 Xorg - $SESSION"
 fi
