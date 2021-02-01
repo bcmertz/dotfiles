@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
-date '+%I:%M%p  %b %d'
+date '+%I:%M%p - %a %b %d'
 
 case $BLOCK_BUTTON in
-    1) calendar ;;
-    3) gsimplecal ;;
+    1) gsimplecal ;;
+    3) calendar ;;
 esac
