@@ -27,6 +27,10 @@
               ("C-c r" . github-start-review-at-link)
               ))
 
+;; brokne for some reason
+;; (add-to-list 'org-structure-template-alist
+;;              '("s" "#+BEGIN_SRC ?\n\n#+END_SRC"))
+
 ;; pretty bullets
 (use-package org-bullets
   :defer t
@@ -44,6 +48,26 @@
 
 ;; make images pretty
 (setq org-image-actual-width (/ (display-pixel-width) 3))
+
+(use-package ox-reveal :ensure ox-reveal)
+(custom-set-variables
+ '(org-export-html-postamble nil)
+ '(org-hide-leading-stars t)
+ '(org-startup-folded (quote overview))
+ '(org-startup-indented t)
+ '(org-confirm-babel-evaluate nil)
+ '(org-src-fontify-natively t)
+ '(org-export-with-toc nil))
+
+(setq org-reveal-root
+      ;; "https://cdnjs.com/libraries/reveal.js/3.6.0"
+      "reveal.js"
+      )
+(setq org-reveal-mathjax t)
+
+(use-package htmlize
+:ensure t)
+
 
 ;; failed attempts to add front matter to exported html doc
 ;; (setq org-publish-project-alist

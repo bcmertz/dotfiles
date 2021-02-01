@@ -25,6 +25,7 @@
   (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/js-mode")
   (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/go-mode")
   (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/web-mode")
+  (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/org-mode")
   (yas-global-mode 1)
   )
 
