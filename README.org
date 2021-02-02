@@ -16,7 +16,7 @@
     See =~/.bash_aliases= cfg and git aliases, as well as =~/.local/bin/git_alias=
 
     Then checkout the dotfiles, if $HOME isn't cleared there will likely be conflicts
-    
+
     #+BEGIN_SRC bash
     cfg checkout
     #+END_SRC
@@ -52,10 +52,3 @@
     #+BEGIN_SRC bash
       backupfiles
     #+END_SRC
-
-** References
-
-   For more information on the git bare repo structure used here, and for references to what inspired the structure of this repo:
-
-   - https://news.ycombinator.com/item?id=11071754
-   - https://www.atlassian.com/git/tutorials/dotfiles
