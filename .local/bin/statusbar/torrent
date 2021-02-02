@@ -11,12 +11,12 @@ transmission-remote -l | grep % |
 		sort -h | uniq -c | awk '{print $3 $1}' | paste -sd ' ' -
 
 case $BLOCK_BUTTON in
-	1) notify-send "Module shows number of torrents:
+	3) notify-send "Module shows number of torrents:
 🛑: paused
 🕰: idle (seeds needed)
 🔼: uploading (unfinished)
 🔽: downloading
 ✅: done
 🌱: done and seeding" ;;
-        3) floating "watch -n 1 transmission-remote -l";;
+        1) floating "watch -n 1 transmission-remote -l";;
 esac
