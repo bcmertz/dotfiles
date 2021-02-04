@@ -2,6 +2,7 @@ android-ndk
 android-sdk
 arch-wiki-docs
 behdad-fonts
+firefox-nightly
 getmail6
 heroku-cli
 ir-standard-fonts

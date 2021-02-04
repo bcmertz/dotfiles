@@ -14,7 +14,6 @@ arduino-avr-core
 arduino-cli
 artwork-i3
 aspell-en
-atom
 autoconf
 automake
 avahi
@@ -166,6 +165,7 @@ lynx
 m4
 maia-console
 make
+mako
 man-db
 man-pages
 manjaro-alsa
