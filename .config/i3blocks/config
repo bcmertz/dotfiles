@@ -2,8 +2,8 @@ command=~/.local/bin/statusbar/$BLOCK_NAME
 separator_block_width=50
 markup=pango
 
-[wayland]
-interval=once
+# [wayland]
+# interval=once
 
 [clock]
 label=📅
