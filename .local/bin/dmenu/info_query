@@ -2,6 +2,6 @@
 #
 # Search arch-wiki offline
 
-chosen=$(ls /usr/share/doc/arch-wiki/html/en | dmenu -i -l 15)
+chosen=$(ls /usr/share/doc/arch-wiki/html/en | dmenu -c -i -l 15)
 [ "$chosen" != "" ] || exit
 firefox /usr/share/doc/arch-wiki/html/en/$chosen
