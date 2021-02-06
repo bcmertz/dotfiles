@@ -5,8 +5,7 @@
 
 up=$(transmission-remote -l | grep Sum | awk '{print $4}')
 down=$(transmission-remote -l | grep Sum | awk '{print $5}')
-
-transmission-remote -l | grep % |
+stats=$(transmission-remote -l | grep % |
 	sed " # The letters are for sorting and will not appear.
 	s/.*Stopped.*/A 🛑/;
 	s/.*Seeding.*/Z 🌱/;
@@ -14,8 +13,13 @@ transmission-remote -l | grep % |
 	s/.*Idle.*/B 🕰️/;
 	s/.*Uploading.*/L ⬆️/;
 	s/.*%.*/M ⬇️/" |
-	sort -h | uniq -c | awk '{print $3 $1}' | paste -sd ' ' - |
-        xargs echo "Up: $up, Down: $down $@"
+	sort -h | uniq -c | awk '{print $3 $1}' | paste -sd ' ' -)
+
+if [[ $up == "0.0" && $down == "0.0" ]]; then
+    echo $stats
+else
+    echo "Up: $up, Down: $down $@"
+fi
 
 case $BLOCK_BUTTON in
 	3) notify-send "Module shows number of torrents:
