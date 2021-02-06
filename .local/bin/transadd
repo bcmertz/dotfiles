@@ -6,7 +6,7 @@
 
 pidof transmission-daemon >/dev/null || (transmission-daemon && notify-send "Starting transmission daemon..." && sleep 3 && pkill -SIGRTMIN+7 i3blocks)
 
-destination=$(printf '/home/bennett/dl/torrent\n/home/bennett/media/music\n/home/bennett/media/videos\n/home/bennett/coding/iso_store\n/home/bennett/coding/iso_store/roms' | dmenu -c -l 10 -p "Save torrent to:")
+destination=$(printf '/home/bennett/media/music\n/home/bennett/media/videos\n/home/bennett/dl/torrent\n/home/bennett/coding/iso_store\n/home/bennett/coding/iso_store/roms' | dmenu -c -l 10 -p "Save torrent to:")
 [ "$destination" = "" ] && exit
 d=$(echo $destination | cut -d '/' -f 4-5)
 
