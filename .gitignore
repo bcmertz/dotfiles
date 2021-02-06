@@ -52,6 +52,7 @@
 !.config/i3blocks/*
 !.config/fontconfig/*
 !.config/msmtp/config
+!.config/kphotoalbumrc
 !.config/cinnamon_backup/*
 
 # xfce

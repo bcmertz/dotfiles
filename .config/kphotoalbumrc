@@ -1,0 +1,23 @@
+[General]
+imageDBFile=/home/bennett/media/pictures/index.xml
+
+[MainWindow]
+RestorePositionForNextInstance=false
+State=AAAA/wAAAAD9AAAAAAAACvQAAAZIAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAMAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAEgBzAGUAYQByAGMAaABCAGEAcgEAAAPc/////wAAAAAAAAAAAAAAEgBmAGkAbAB0AGUAcgBCAGEAcgEAAAWu/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+eDP1 Height 2000=1762
+eDP1 Width 3000=2804
+eDP1 XPosition=98
+eDP1 YPosition=140
+
+[Privacy Settings - /home/bennett/media/pictures/]
+locked=false
+
+[Thumbnails - /home/bennett/media/pictures/]
+thumbSize=256
+
+[TipOfDay]
+RunOnStart=false
+
+[Window Geometry]
+MainWindow=98,140,2804,1762
