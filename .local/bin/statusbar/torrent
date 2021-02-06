@@ -1,4 +1,10 @@
 #!/bin/sh
+#
+# monitor torrent info
+# delete line 17 to remove Up: #, Down: # info
+
+up=$(transmission-remote -l | grep Sum | awk '{print $4}')
+down=$(transmission-remote -l | grep Sum | awk '{print $5}')
 
 transmission-remote -l | grep % |
 	sed " # The letters are for sorting and will not appear.
@@ -8,7 +14,8 @@ transmission-remote -l | grep % |
 	s/.*Idle.*/B 🕰️/;
 	s/.*Uploading.*/L ⬆️/;
 	s/.*%.*/M ⬇️/" |
-		sort -h | uniq -c | awk '{print $3 $1}' | paste -sd ' ' -
+	sort -h | uniq -c | awk '{print $3 $1}' | paste -sd ' ' - |
+        xargs echo "Up: $up, Down: $down $@"
 
 case $BLOCK_BUTTON in
 	3) notify-send "Module shows number of torrents:
