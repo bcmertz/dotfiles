@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+# get mail
+
+notify-send "Getting mail"
+imapfilter
+mbsync -c ~/.mbsyncrc -V -a
+pkill -2 -u 1000 mu
+sleep 1
+mu index
