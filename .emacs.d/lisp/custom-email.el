@@ -26,7 +26,7 @@
   (add-hook 'after-init-hook #'mu4e-alert-enable-mode-line-display)
   (setq mu4e-alert-email-notification-types '(count))
   (mu4e-alert-enable-mode-line-display)
-  (setq mu4e-change-filenames-when-moving t)
+  ;; (setq mu4e-change-filenames-when-moving t)
   ;; update script every two minutes
   (setq mu4e-update-interval 120
         mu4e-headers-auto-update t))
