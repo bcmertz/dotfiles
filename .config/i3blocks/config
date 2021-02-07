@@ -5,6 +5,10 @@ markup=pango
 # [wayland]
 # interval=once
 
+[torrent]
+interval=4
+signal=7
+
 [clock]
 label=📅
 interval=30
@@ -49,7 +53,3 @@ interval=18000
 command=pacpackages
 interval=once
 signal=8
-
-[torrent]
-interval=4
-signal=7
