@@ -19,6 +19,7 @@ qt4
 rar
 redshift-wayland-git
 sahel-fonts
+signal-desktop-beta-bin
 ttf-inconsolata-g
 ttf-symbola
 ttf-unifont
