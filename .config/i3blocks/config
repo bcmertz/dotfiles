@@ -42,12 +42,12 @@ interval=15
 interval=60
 command=disk / 📁
 
+[moonphase]
+interval=18000
+
 [weather]
 interval=18000
 signal=5
-
-[moonphase]
-interval=18000
 
 [updates]
 command=pacpackages
