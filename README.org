@@ -18,7 +18,7 @@
     Then checkout the dotfiles, if $HOME isn't cleared there will likely be conflicts
 
     #+BEGIN_SRC bash
-    cfg checkout
+    cfg checkout -f
     #+END_SRC
 
     Install dependencies
