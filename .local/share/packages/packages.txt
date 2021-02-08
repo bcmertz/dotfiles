@@ -298,7 +298,6 @@ tldr
 tlp
 torbrowser-launcher
 transmission-cli
-transmission-gtk
 tree
 ttf-anonymous-pro
 ttf-bitstream-vera
