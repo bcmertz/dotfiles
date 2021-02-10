@@ -1,6 +1,6 @@
-** Usage
+* Usage
 
-*** Cloning
+** Cloning
 
     To install:
 
@@ -33,7 +33,7 @@
     setuppass
     #+END_SRC
 
-*** Backing up
+** Backing up
 
     Document Dependencies
 
