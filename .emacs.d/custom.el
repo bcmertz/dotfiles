@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(org-confirm-babel-evaluate nil)
  '(org-export-html-postamble nil)
- '(org-export-with-toc nil)
+ '(org-export-with-toc t)
  '(org-hide-leading-stars t)
  '(org-src-fontify-natively t)
  '(org-startup-folded 'overview)
