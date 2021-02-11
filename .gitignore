@@ -36,6 +36,7 @@
 !.config/i3/*
 !.config/git/*
 !.config/mpd/*
+!.config/mpv/*
 !.config/gtk3/*
 !.config/htop/*
 !.config/sway/*
