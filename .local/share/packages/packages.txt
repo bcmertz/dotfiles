@@ -63,6 +63,7 @@ dosfstools
 downgrade
 dvd+rw-tools
 e2fsprogs
+easytag
 ecryptfs-utils
 efibootmgr
 emacs
