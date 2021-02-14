@@ -197,14 +197,11 @@ moc
 modemmanager
 morc_menu
 mousepad
-mpc
-mpd
 mpv
 msmtp
 mutt
 nano
 ncdu
-ncmpcpp
 neofetch
 netctl
 network-manager-applet
