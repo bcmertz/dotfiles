@@ -60,7 +60,9 @@ alias t='transmission-remote'
 
 # signal utils
 alias cont='pkill -18'
+# complete -F _pgrep cont
 alias stop='pkill -19'
+# complete -F _pgrep stop
 
 # Hack to remove wifi driver from kernal space and put back in I think - hard restart
 alias fixwifi='sudo modprobe -r mwifiex_pcie && sudo modprobe mwifiex_pcie'
