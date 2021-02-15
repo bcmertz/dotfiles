@@ -70,6 +70,11 @@ alias fixwifi='sudo modprobe -r mwifiex_pcie && sudo modprobe mwifiex_pcie'
 # arduino
 alias fixarduino='sudo chmod a+rw /dev/ttyACM0'
 
+# simple xev, hide unnecessary output
+sxev () {
+     xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
+}
+
 ex () {
      if [ -f "$1" ] ; then
          case "$1" in

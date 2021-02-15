@@ -30,8 +30,11 @@ bar {
 	mode dock
 }
 
+# X stuff
 output eDP-1 scale 2
 input 1118:1997:Microsoft_Surface_Keyboard_Touchpad tap enabled
+input * xkb_layout "us,ir"
+input * xkb_options "grp:alt_shift_toggle"
 
 # colour of border, background, text, indicator, and child_border
 client.focused          #bf616a #2f343f #d8dee8 #bf616a #d8dee8

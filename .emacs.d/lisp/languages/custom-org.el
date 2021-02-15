@@ -57,7 +57,8 @@
  '(org-startup-indented t)
  '(org-confirm-babel-evaluate nil)
  '(org-src-fontify-natively t)
- '(org-export-with-toc nil))
+ ;; '(org-export-with-toc nil)
+ )
 
 (setq org-reveal-root
       ;; "https://cdnjs.com/libraries/reveal.js/3.6.0"
