@@ -28,4 +28,8 @@ MiscNewTabAdjacent=FALSE
 MiscSearchDialogOpacity=100
 MiscShowUnsafePasteDialog=TRUE
 BackgroundDarkness=0.750000
+TitleInitial=
+TitleMode=TERMINAL_TITLE_HIDE
+ScrollingUnlimited=TRUE
+ScrollingBar=TERMINAL_SCROLLBAR_NONE
 
