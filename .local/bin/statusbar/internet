@@ -3,12 +3,18 @@
 # get wifi strength as percent
 
 signal=$(awk 'NR==3 {printf("%.0f%%\n",$3*10/7)}' /proc/net/wireless)
+protected=$(nmcli connection show --active | grep vpn)
 
 if [ "$signal" == "" ]; then
 	signal="not connected"
 fi
 
-echo $signal
+if [ "$protected" == "" ]; then
+    echo "🌐$signal"
+else
+    echo "🛡$signal"
+fi
+
 
 case $BLOCK_BUTTON in
 	1) fullscreen nmtui

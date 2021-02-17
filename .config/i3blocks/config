@@ -14,7 +14,6 @@ label=📅
 interval=30
 
 [internet]
-label=🌐
 interval=10
 
 [volume]
