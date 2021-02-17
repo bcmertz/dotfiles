@@ -9,10 +9,8 @@ if ! pgrep -x "Xorg" > /dev/null
 then
     filename=$(ls ~/.local/share/wallpaper/ | shuf -n 1)
     echo $filename
-    killall swaybg # not ideal, should do some swaymsg stuff
-    background swaybg -i $HOME/.local/share/wallpaper/$filename
+    swaymsg output "*" bg $HOME/.local/share/wallpaper/$filename fill
     exit 1
-    #swaymsg exec "swaybg -o $OUTPUT -i $HOME/.local/share/wallpaper/$filename -m fill"
 fi
 
 filename=''
