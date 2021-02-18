@@ -20,6 +20,7 @@ rar
 redshift-wayland-git
 sahel-fonts
 signal-desktop-beta-bin
+telegram-desktop-bin-dev
 ttf-inconsolata-g
 ttf-symbola
 ttf-unifont
