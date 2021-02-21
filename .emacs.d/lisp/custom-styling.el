@@ -5,11 +5,18 @@
 ;;; modeline, scrolling, theme, etc
 ;;;
 ;;; Code:
+
 ;; Themeing
-(if (display-graphic-p)
-    (add-hook 'after-init-hook (lambda ()
-                                 (load-theme 'atom-one-dark t)
-                                 )))
+(if (daemonp)
+  (add-hook 'after-make-frame-functions
+    (lambda (frame)
+      (select-frame frame)
+      (if (display-graphic-p frame)
+        (load-theme 'atom-one-dark t)
+      )
+    )
+  )
+)
 
 ;; Hide line numbering
 (global-display-line-numbers-mode -1)
