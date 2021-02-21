@@ -20,6 +20,11 @@ alias vlc='devour vlc'
 
 alias za='zathura'
 
+# Emacs config
+alias emacs='emacsclient --socket-name=term -t --alternate-editor=""'   #default to terminal emacs
+alias emcas='emacsclient --socket-name=term -t --alternate-editor=""'  # speeling mistake
+alias emasc='emacsclient --socket-name=term -t --alternate-editor=""'  # speeling mistake
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
