@@ -58,6 +58,7 @@
   :bind
   ;; hack to avoid conflict
   ("C-_" . text-scale-decrease)
+  ("C-+" . text-scale-increase)
   :config
   (global-undo-tree-mode))
 
