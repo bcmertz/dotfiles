@@ -5,6 +5,9 @@ markup=pango
 # [wayland]
 # interval=once
 
+# [title]
+# interval=1
+
 [torrent]
 interval=4
 signal=7
