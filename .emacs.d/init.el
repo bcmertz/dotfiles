@@ -53,6 +53,7 @@
 (measure-time(load "custom-typescript.el"))
 (measure-time(load "custom-markdown.el"))
 (measure-time(load "custom-css.el"))
+(measure-time(load "custom-bash.el"))
 (measure-time(load "custom-html.el"))
 (measure-time(load "custom-org.el"))
 (measure-time(load "custom-latex.el"))
