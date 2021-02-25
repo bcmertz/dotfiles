@@ -1,0 +1,23 @@
+#!/bin/bash -u
+#
+# scrollable watch command
+
+if [[ $# -lt 1 && $# -gt 2 ]]; then
+    echo "Usage: $0 <command> <delay>"
+    exit 1
+fi
+
+CMD=$1
+if [ $# -eq 2 ]; then
+    DELAY=$2
+else
+    DELAY=2 # default
+fi
+
+while : ; do
+    ( (echo -e "Every ${DELAY}s: $CMD\n"; $CMD) | less )
+    PID=$!
+    sleep $DELAY
+    kill -9 $PID &> /dev/null
+    clear
+done
