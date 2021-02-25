@@ -1,7 +1,6 @@
 #!/bin/sh
 #
 # monitor torrent info
-# delete line 17 to remove Up: #, Down: # info
 
 if ! pgrep -x "transmission-da" > /dev/null
 then
