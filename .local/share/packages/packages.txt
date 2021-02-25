@@ -132,6 +132,7 @@ jfsutils
 jre-openjdk
 k3b
 kcolorchooser
+kid3
 kphotoalbum
 kvantum-manjaro
 less
