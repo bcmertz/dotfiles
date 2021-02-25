@@ -62,6 +62,7 @@ alias ff='find_file'
 
 # transmission-remote
 alias t='transmission-remote'
+alias tl='transmission-remote -l | less'
 
 # signal utils
 alias cont='pkill -18'
