@@ -25,6 +25,13 @@ alias emacs='emacsclient --socket-name=term -t --alternate-editor=""'   #default
 alias emcas='emacsclient --socket-name=term -t --alternate-editor=""'  # speeling mistake
 alias emasc='emacsclient --socket-name=term -t --alternate-editor=""'  # speeling mistake
 
+alias cp="cp -iv"
+alias mv="mv -iv"
+alias rm="rm -vI"
+alias yt="youtube-dl --add-metadata -i"
+alias yta="yt -o '~/media/music/%(title)s.%(ext)s' -x --audio-format mp3 --prefer-ffmpeg"
+alias ffmpeg="ffmpeg -hide_banner"
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
