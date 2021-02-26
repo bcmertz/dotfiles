@@ -34,5 +34,5 @@ case $BLOCK_BUTTON in
 ✅: done
 🌱: done and seeding" ;;
         # 1) fullscreen "watch -n 1 transmission-remote -l";;
-        1) fullscreen "watchless \"transmission-remote -l\" 10"
+        1) fullscreen "watchless \"transmission-remote -l\" 3"
 esac
