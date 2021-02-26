@@ -42,9 +42,7 @@ if pgrep -x "Xorg" > /dev/null
 then
     # set bg for X
     feh --bg-scale $HOME/.local/share/wallpaper/$filename # Set bg
-    exit 1
 else
     # set bg for Sway
     swaymsg output "*" bg $HOME/.local/share/wallpaper/$filename fill
-    exit 1
 fi
