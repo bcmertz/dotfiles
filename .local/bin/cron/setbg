@@ -2,17 +2,6 @@
 #
 # cycle through wallpapers
 
-# wayland!!
-#
-# check if we're not running Xorg
-if ! pgrep -x "Xorg" > /dev/null
-then
-    filename=$(ls ~/.local/share/wallpaper/ | shuf -n 1)
-    echo $filename
-    swaymsg output "*" bg $HOME/.local/share/wallpaper/$filename fill
-    exit 1
-fi
-
 filename=''
 same='false'
 
@@ -47,5 +36,15 @@ fi
 
 # strip file path and just use basename
 filename=$(basename $filename)
-# set bg
-feh --bg-scale $HOME/.local/share/wallpaper/$filename # Set bg
+
+
+if pgrep -x "Xorg" > /dev/null
+then
+    # set bg for X
+    feh --bg-scale $HOME/.local/share/wallpaper/$filename # Set bg
+    exit 1
+else
+    # set bg for Sway
+    swaymsg output "*" bg $HOME/.local/share/wallpaper/$filename fill
+    exit 1
+fi
