@@ -27,7 +27,6 @@ alias emasc='emacsclient --socket-name=term -t --alternate-editor=""'  # speelin
 
 alias cp="cp -iv"
 alias mv="mv -iv"
-alias rm="rm -vI"
 alias yt="youtube-dl --add-metadata -i"
 alias yta="yt -o '~/media/music/%(title)s.%(ext)s' -x --audio-format mp3 --prefer-ffmpeg"
 alias ffmpeg="ffmpeg -hide_banner"
