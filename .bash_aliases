@@ -31,6 +31,7 @@ alias rm="rm -vI"
 alias yt="youtube-dl --add-metadata -i"
 alias yta="yt -o '~/media/music/%(title)s.%(ext)s' -x --audio-format mp3 --prefer-ffmpeg"
 alias ffmpeg="ffmpeg -hide_banner"
+alias syu="sudo pacman -Syu --noconfirm && alert 'upgrades done'"
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
