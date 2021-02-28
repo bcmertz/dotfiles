@@ -33,9 +33,9 @@ alias ffmpeg="ffmpeg -hide_banner"
 
 
 # pacman and yay
-alias pacsyu='sudo pacman -Syyu'                    # update only standard pkgs
-alias yaysua='yay -Sua --noconfirm'                 # update only AUR pkgs (yay)
-alias yaysyu='yay -Syu --noconfirm'                 # update standard pkgs and AUR pkgs (yay)
+alias pacsyu='sudo pacman -Syyu && alert "done"'    # update only standard pkgs
+alias yaysua='yay -Sua --noconfirm && alert "done"' # update only AUR pkgs (yay)
+alias yaysyu='yay -Syu --noconfirm && alert "done"' # update standard pkgs and AUR pkgs (yay)
 alias pacunlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
 alias paccleanup='sudo pacman -Rns (pacman -Qtdq)'  # remove orphaned packages
 
