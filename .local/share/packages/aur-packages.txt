@@ -13,7 +13,6 @@ mokutil
 mu
 mu-wizard-git
 multimarkdown
-pdfstudio-bin
 persian-hm-ftx-fonts
 qt4
 rar
