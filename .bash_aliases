@@ -31,7 +31,14 @@ alias rm="rm -vI"
 alias yt="youtube-dl --add-metadata -i"
 alias yta="yt -o '~/media/music/%(title)s.%(ext)s' -x --audio-format mp3 --prefer-ffmpeg"
 alias ffmpeg="ffmpeg -hide_banner"
-alias syu="sudo pacman -Syu --noconfirm && alert 'upgrades done'"
+
+
+# pacman and yay
+alias pacsyu='sudo pacman -Syyu'                    # update only standard pkgs
+alias yaysua='yay -Sua --noconfirm'                 # update only AUR pkgs (yay)
+alias yaysyu='yay -Syu --noconfirm'                 # update standard pkgs and AUR pkgs (yay)
+alias pacunlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
+alias paccleanup='sudo pacman -Rns (pacman -Qtdq)'  # remove orphaned packages
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
