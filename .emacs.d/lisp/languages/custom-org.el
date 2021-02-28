@@ -57,7 +57,7 @@
  '(org-startup-indented t)
  '(org-confirm-babel-evaluate nil)
  '(org-src-fontify-natively t)
- ;; '(org-export-with-toc nil)
+ '(org-export-with-toc t)
  )
 
 (setq org-reveal-root
