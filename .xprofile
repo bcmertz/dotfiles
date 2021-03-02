@@ -17,7 +17,8 @@ dunst &         # notifications
 redshift &      # reduce bluelight
 clipmenud &     # clipmenu daemon
 unclutter &     # get rid of mouse
-monero_mine     # mine monero
+monerod &       # start the monero daemon
+monero_mine &   # mine monero
 setxkbmap -layout us,ir -option grp:alt_shift_toggle & # set keyboards
 xautolock -time 30 -locker slock &  # autolock screen after half an hour
 start-pulseaudio-x11 &              # pulseaudio, should be automatic
