@@ -47,6 +47,7 @@
 !.config/dunst/*
 !.config/picom/*
 !.config/plank/*
+!.congig/ranger/*
 !.config/polybar/*
 !.config/calibre/*
 !.config/newsboat/*
