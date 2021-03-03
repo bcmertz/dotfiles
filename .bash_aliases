@@ -100,6 +100,7 @@ ex () {
          case "$1" in
              *.tar.bz2)   tar xjf "$1"     ;;
              *.tar.gz)    tar xzf "$1"     ;;
+             *.tar.xz)    tar -xf "$1"     ;;
              *.bz2)       bunzip2 "$1"     ;;
              *.rar)       rar x "$1"       ;;
              *.gz)        gunzip "$1"      ;;
