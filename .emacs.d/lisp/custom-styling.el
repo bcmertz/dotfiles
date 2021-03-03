@@ -7,16 +7,22 @@
 ;;; Code:
 
 ;; Themeing
+;; if running as daemon (usually is) check if the frame
+;; being created is graphical or terminal
 (if (daemonp)
-  (add-hook 'after-make-frame-functions
-    (lambda (frame)
-      (select-frame frame)
-      (if (display-graphic-p frame)
-        (load-theme 'atom-one-dark t)
-      )
+    (add-hook 'after-make-frame-functions
+              (lambda (frame)
+                (select-frame frame)
+                (if (display-graphic-p frame)
+                    (load-theme 'atom-one-dark t)
+                  )
+                )
+              )
+  ;; if not running as daemon check if the window is term or gui
+  (if (display-graphic-p)
+      (load-theme 'atom-one-dark t)
     )
   )
-)
 
 ;; Hide line numbering
 (global-display-line-numbers-mode -1)
@@ -56,23 +62,35 @@
 (set-fontset-font t 'symbol "Symbola" nil 'append)
 
 ;; Highlight current line in gui emacs
-(if (display-graphic-p)
-    (global-hl-line-mode 1))
+(if (daemonp)
+    (add-hook 'after-make-frame-functions
+              (lambda (frame)
+                (select-frame frame)
+                (if (display-graphic-p frame)
+                    (global-hl-line-mode 1)
+                  )
+                )
+              )
+  (if (display-graphic-p)
+      (global-hl-line-mode 1)
+    )
+  )
 
 (defun styling/turn-on-hl-line ()
+  "Turn on global hl line mode."
   (interactive)
   (global-hl-line-mode 1))
 
 (defun styling/turn-off-hl-line ()
+  "Turn off global hl line mode."
   (interactive)
   (global-hl-line-mode -1))
 
 ;; smooth scrolling
-(setq redisplay-dont-pause t
-  scroll-margin 1
-  scroll-step 1
-  scroll-conservatively 10000
-  scroll-preserve-screen-position 1)
+(setq scroll-margin 1
+      scroll-step 1
+      scroll-conservatively 10000
+      scroll-preserve-screen-position 1)
 
 ;; truncate long lines l/r horizontal scrolling
 (set-default 'truncate-lines t)
