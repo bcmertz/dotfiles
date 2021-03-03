@@ -34,15 +34,22 @@ elif [ "$same" == "true" ]; then
     filename=$(echo $previous)
 fi
 
-# strip file path and just use basename
-filename=$(basename $filename)
+default="$HOME/.local/share/wallpaper/"
+filepath=$filename
+if [ ! -f "$filename" ]; then
+    # strip file path and just use basename
+    # filename=$(basename $filename)
+
+    # if not a valid path, then use default path
+    filepath="$HOME/.local/share/wallpaper/$filename"
+fi
 
 
 if pgrep -x "Xorg" > /dev/null
 then
     # set bg for X
-    feh --bg-scale $HOME/.local/share/wallpaper/$filename # Set bg
+    feh --bg-scale $filepath
 else
     # set bg for Sway
-    swaymsg output "*" bg $HOME/.local/share/wallpaper/$filename fill
+    swaymsg output "*" bg $filepath fill
 fi
