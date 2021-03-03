@@ -19,6 +19,7 @@ image/jpeg=img.desktop;
 inode/directory=pcmanfm.desktop
 video/x-matroska=video.desktop
 x-scheme-handler/etcher=balena-etcher-electron.desktop
+text/x-arduino=arduino-arduinoide.desktop
 
 [Added Associations]
 inode/directory=pcmanfm.desktop;

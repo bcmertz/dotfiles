@@ -1,2 +1,4 @@
 [MIME Cache]
-x-scheme-handler/tg=appimagekit_3a48058ef277d45ae2228089429c0259-Telegram_Desktop.desktop;
+text/x-arduino=arduino-arduinoide.desktop;
+x-scheme-handler/monero=monero-gui.desktop;
+x-scheme-handler/moneroseed=monero-gui.desktop;
