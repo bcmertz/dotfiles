@@ -117,7 +117,7 @@ bindsym $mod+Shift+b exec torbrowser-launcher
 bindsym $mod+a exec emacsclient --socket-name=gui -c
 bindsym $mod+Shift+a exec mousepad
 # pass insert
-bindsym $mod+Shift+p exec emacsclient --socket-name=gui -e "(call-interactively 'password-store-insert)" && i3-msg "[class=Emacs] focus"
+bindsym $mod+Shift+p exec insert_password
 # scratchpad
 exec --no-startup-id st -n dropdown -e python3 -q
 for_window [instance="dropdown"] floating enable
