@@ -19,4 +19,7 @@ declare -a options=(
 chosen=$(printf '%s\n' "${options[@]}" | dmenu -i -l 20 -p 'Edit config:')
 [ "$chosen" = "" ] && exit
 cfg=$(printf '%s\n' "${chosen}" | awk '{print $NF}')
-emacsclient --socket-name=gui "$cfg" && i3-msg "[class=Emacs] focus"
+
+
+if_emacs_frame_exists "emacsclient --socket-name=gui $cfg" "emacsclient --socket-name=gui -c $cfg"
+i3-msg "[class=Emacs] focus"

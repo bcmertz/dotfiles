@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+# if emacs frame exists for gui socket do something, if not do something else
+
+exists=$(emacsclient --socket-name=gui -n -e "(if (> (length (frame-list)) 1) 't)")
+
+if [[ $exists == "t" ]]; then
+    $1
+else
+    $2
+fi
