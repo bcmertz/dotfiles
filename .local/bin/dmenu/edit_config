@@ -2,24 +2,35 @@
 #
 # edit configs
 
-# array of configs
-declare -a options=(
-    "aliases - $HOME/.bash_aliases"
-    "bash - $HOME/.bashrc"
-    "vim - $HOME/.vimrc"
-    "i3 - $HOME/.config/i3/config"
-    "bspwm - $HOME/.config/bspwm/bspwmrc"
-    "sxhkd - $HOME/.config/sxhkd/sxhkdrc"
-    "dunst - $HOME/.config/dunst/dunstrc"
-    "picom - $HOME/.config/picom/picom.conf"
-    "polybar - $HOME/.config/polybar/config"
-    "st - $HOME/coding/st/config.h"
-)
+# default dir
+dir="$HOME/"
 
-chosen=$(printf '%s\n' "${options[@]}" | dmenu -i -l 20 -p 'Edit config:')
+# configs
+configs=".config/
+.local/bin/
+.bashrc
+.bash_aliases
+coding/st/config.h
+.vimrc"
+
+chosen=$(printf "$configs" | dmenu -i -l 20 -p 'Edit config:')
 [ "$chosen" = "" ] && exit
-cfg=$(printf '%s\n' "${chosen}" | awk '{print $NF}')
+cfg=$(realpath $chosen)
 
+# while cfg is a directory
+while [ -d "$cfg" ]
+do
+    # set dir to cfg path
+    dir=$cfg
+    # ls dir with trailing / and pipe to dmenu
+    cfg=$(ls -p $cfg | dmenu -i -l 20 -p 'Edit config:')
+    # if nothing is selected exit
+    [ "$cfg" = "" ] && exit
+    # set cfg to the fullpath
+    cfg="$dir/$cfg"
+done
 
+# if there is an existing emacs frame open file in it, if not create a new frame
 if_emacs_frame_exists "emacsclient --socket-name=gui $cfg" "emacsclient --socket-name=gui -c $cfg"
+# focus emacs
 i3-msg "[class=Emacs] focus"
