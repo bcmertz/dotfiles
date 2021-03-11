@@ -7,9 +7,9 @@
 ;;; Code:
 
 ;; Themeing
-;; if running as daemon (usually is) check if the frame
-;; being created is graphical or terminal
+;; if running as daemon... (usually is)
 (if (daemonp)
+    ;; check if the frame being created is graphical or terminal
     (add-hook 'after-make-frame-functions
               (lambda (frame)
                 (select-frame frame)
