@@ -13,7 +13,7 @@ configs=".config/
 coding/st/config.h
 .vimrc"
 
-chosen=$(printf "$configs" | dmenu -i -l 20 -p 'Edit config:')
+chosen=$(printf "$configs" | dmenu -c -i -l 20 -p 'Edit config:')
 [ "$chosen" = "" ] && exit
 cfg=$(realpath $chosen)
 
@@ -23,7 +23,7 @@ do
     # set dir to cfg path
     dir=$cfg
     # ls dir with trailing / and pipe to dmenu
-    cfg=$(ls -Ap $cfg | dmenu -i -l 10 -p 'Edit config:')
+    cfg=$(ls -Ap $cfg | dmenu -c -i -l 10 -p 'Edit config:')
     # if nothing is selected exit
     [ "$cfg" = "" ] && exit
     # set cfg to the fullpath
