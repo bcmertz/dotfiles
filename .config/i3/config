@@ -108,7 +108,6 @@ bindsym $mod+s exec peek
 bindsym $mod+Shift+d exec fullscreen bmenu
 # file managers
 bindsym $mod+Shift+f exec fullscreen find_file
-# bindsym $mod+x exec termview ranger
 bindsym $mod+x exec edit_config
 bindsym $mod+Shift+x exec pcmanfm
 # browsers
