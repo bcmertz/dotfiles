@@ -23,7 +23,7 @@ do
     # set dir to cfg path
     dir=$cfg
     # ls dir with trailing / and pipe to dmenu
-    cfg=$(ls -ap $cfg | dmenu -i -l 10 -p 'Edit config:')
+    cfg=$(ls -Ap $cfg | dmenu -i -l 10 -p 'Edit config:')
     # if nothing is selected exit
     [ "$cfg" = "" ] && exit
     # set cfg to the fullpath
