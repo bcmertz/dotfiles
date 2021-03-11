@@ -2,20 +2,21 @@
 #
 # edit configs
 
+cfg="$HOME/"
 # default dir
-dir="$HOME/"
+# dir="$HOME/"
 
 # configs
-configs=".config/
-.local/bin/
-.bashrc
-.bash_aliases
-coding/st/config.h
-.vimrc"
+# configs=".config/
+# .local/bin/
+# .bashrc
+# .bash_aliases
+# coding/st/config.h
+# .vimrc"
 
-chosen=$(printf "$configs" | dmenu -i -l 20 -p 'Edit config:')
-[ "$chosen" = "" ] && exit
-cfg=$(realpath $chosen)
+# chosen=$(printf "$configs" | dmenu -i -l 20 -p 'Edit config:')
+# [ "$chosen" = "" ] && exit
+# cfg=$(realpath $chosen)
 
 # while cfg is a directory
 while [ -d "$cfg" ]
@@ -23,7 +24,7 @@ do
     # set dir to cfg path
     dir=$cfg
     # ls dir with trailing / and pipe to dmenu
-    cfg=$(ls -p $cfg | dmenu -i -l 20 -p 'Edit config:')
+    cfg=$(ls -ap $cfg | dmenu -i -l 20 -p 'Edit config:')
     # if nothing is selected exit
     [ "$cfg" = "" ] && exit
     # set cfg to the fullpath
