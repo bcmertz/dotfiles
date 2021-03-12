@@ -8,7 +8,6 @@
 
 (use-package flycheck
   :defer t
-  :diminish flycheck-mode
   :init
   (progn
     (add-hook 'after-init-hook #'global-flycheck-mode)
