@@ -39,4 +39,5 @@
 (add-hook 'js-mode-hook 'eglot-ensure)
 (add-hook 'typescript-mode-hook 'eglot-ensure)
 
+;; remove flymake dependency that hides flycheck info in modeline
 (add-hook 'eglot--managed-mode-hook (lambda () (flymake-mode -1)))

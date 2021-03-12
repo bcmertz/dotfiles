@@ -6,18 +6,30 @@
 ;;;
 ;;; Code:
 
-;; ;; Set up before-save hooks to format buffer and add/delete imports.
-;; ;; Make sure you don't have other gofmt/goimports hooks enabled.
+;; Set up before-save hooks to format buffer and add/delete imports.
+;; Make sure you don't have other gofmt/goimports hooks enabled.
 (defun lsp-go-save-hook ()
   (add-hook 'before-save-hook #'lsp-format-buffer t t)
   (add-hook 'before-save-hook #'lsp-organize-imports t t))
+
+(defun eglot-interactively-organize-imports ()
+  (call-interactively 'eglot-code-action-organize-imports))
+
+(defun eglot-go-save-hook ()
+  (add-hook 'before-save-hook #'eglot-format-buffer -30 t)
+  (add-hook 'before-save-hook #'eglot-interactively-organize-imports -20 t)
+  )
+
+(add-hook 'go-mode-hook #'eglot-go-save-hook)
 
 (use-package go-mode
   :defer t
   :mode "\\.go\\'"
   :init
   (progn
-    (add-hook 'go-mode-hook 'lsp-go-save-hook))
+    ;; (add-hook 'go-mode-hook #'lsp-go-save-hook)
+    )
+
   :config
   (local-set-key (kbd "C-c C-r") 'go-rename)
   (local-set-key (kbd "C-c C-p") 'godoc-at-point)
