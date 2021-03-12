@@ -10,6 +10,9 @@ configs=".config/
 .local/bin/
 .bashrc
 .bash_aliases
+.xprofile
+.xinitrc
+.bash_profile
 coding/st/config.h
 .vimrc"
 
