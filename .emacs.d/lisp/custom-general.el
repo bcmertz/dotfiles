@@ -10,12 +10,12 @@
 (require 'package)
 (add-to-list 'package-archives
 	     '("gnu" . "https://elpa.gnu.org/packages/") t)
-(add-to-list 'package-archives
-	     '("MELPA Stable" . "https://stable.melpa.org/packages/") t)
-(add-to-list 'package-archives
-	     '("marmalade" . "https://marmalade-repo.org/packages/") t)
-(add-to-list 'package-archives
-	     '("melpa-1" . "https://melpa.milkbox.net/packages/") t)
+;; (add-to-list 'package-archives
+	     ;; '("MELPA Stable" . "https://stable.melpa.org/packages/") t)
+;;(add-to-list 'package-archives
+;;	     '("marmalade" . "https://marmalade-repo.org/packages/") t)
+;; (add-to-list 'package-archives
+	     ;; '("melpa-1" . "https://melpa.milkbox.net/packages/") t)
 (add-to-list 'package-archives
 	     '("melpa-2" . "https://melpa.org/packages/") t)
 
