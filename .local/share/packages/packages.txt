@@ -197,6 +197,7 @@ mlocate
 mobile-broadband-provider-info
 moc
 modemmanager
+monero-gui
 morc_menu
 mousepad
 mpv
@@ -246,7 +247,6 @@ poppler-data
 powertop
 procps-ng
 psmisc
-pulseeffects
 pygtk
 python
 qt5-styleplugins
