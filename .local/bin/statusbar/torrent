@@ -2,7 +2,9 @@
 #
 # monitor torrent info
 
-if ! pgrep -x "transmission-da" > /dev/null
+# check if transmission daemon is running, if not exit, if yes...
+# check if transmission-remote hangs, if it does exit, if it doesn't continue
+if ! pgrep -x "transmission-da" > /dev/null || ! timeout 1 transmission-remote -l
 then
     exit 1
 fi
