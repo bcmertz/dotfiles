@@ -8,6 +8,7 @@ dir="$HOME/"
 # configs
 configs=".local/bin/
 .config/
+.emacs.d/
 .bashrc
 .coderc
 .bash_aliases
