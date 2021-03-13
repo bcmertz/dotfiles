@@ -6,15 +6,14 @@
 dir="$HOME/"
 
 # configs
-configs=".config/
-.local/bin/
+configs=".local/bin/
+.config/
 .bashrc
+.coderc
 .bash_aliases
 .xprofile
 .xinitrc
-.bash_profile
-coding/st/config.h
-.vimrc"
+.bash_profile"
 
 chosen=$(printf "$configs" | dmenu -c -i -l 20 -p 'Edit config:')
 [ "$chosen" = "" ] && exit
