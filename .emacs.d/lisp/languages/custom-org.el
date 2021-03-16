@@ -27,6 +27,10 @@
               ("C-c r" . github-start-review-at-link)
               ))
 
+(use-package org-drill
+  :ensure t
+  )
+
 ;; brokne for some reason
 ;; (add-to-list 'org-structure-template-alist
 ;;              '("s" "#+BEGIN_SRC ?\n\n#+END_SRC"))
