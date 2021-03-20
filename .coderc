@@ -1,5 +1,5 @@
 # Go configuration
-export GOPATH=$HOME/go
+export GOPATH=$HOME/coding/go
 export PATH=$PATH:/usr/local/go/bin
 export GOROOT=/usr/local/go
 export PATH=$PATH:$GOPATH/bin
