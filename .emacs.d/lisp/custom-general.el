@@ -8,16 +8,12 @@
 ;; Packages and repository management
 
 (require 'package)
-(add-to-list 'package-archives
-	     '("gnu" . "https://elpa.gnu.org/packages/") t)
-;; (add-to-list 'package-archives
-	     ;; '("MELPA Stable" . "https://stable.melpa.org/packages/") t)
-;;(add-to-list 'package-archives
-;;	     '("marmalade" . "https://marmalade-repo.org/packages/") t)
-;; (add-to-list 'package-archives
-	     ;; '("melpa-1" . "https://melpa.milkbox.net/packages/") t)
-(add-to-list 'package-archives
-	     '("melpa-2" . "https://melpa.org/packages/") t)
+
+
+(setq package-archives '(("melpa" . "https://melpa.org/packages/")
+                         ("melpa-stable" . "https://stable.melpa.org/packages/")
+                         ("org" . "https://orgmode.org/elpa/")
+                         ("elpa" . "https://elpa.gnu.org/packages/")))
 
 ;; install the packages not installed via use-package/straight
 ;; (unless package-archive-contents
