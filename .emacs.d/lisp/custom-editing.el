@@ -25,19 +25,31 @@
 (delete-selection-mode 1)
 
 ;; smart parenthesis
-(require 'smartparens-config)
+(use-package smartparens
+  :config
+  (require 'smartparens-config)
+  (smartparens-global-mode t)
+  (add-hook 'org-mode-hook (lambda () (setq-local smartparens-global-mode nil)))
 
-(smartparens-global-mode t)
-(add-hook 'org-mode-hook (lambda () (setq-local smartparens-global-mode nil)))
+  (show-smartparens-global-mode +1)
+  (add-hook 'org-mode-hook (lambda () (setq-local show-smartparens-global-mode nil)))
 
-(show-smartparens-global-mode +1)
-(add-hook 'org-mode-hook (lambda () (setq-local show-smartparens-global-mode nil)))
+  (global-set-key (kbd "C-c s e") 'sp-show-enclosing-pair)
+  (global-set-key (kbd "C-c s u") 'sp-up-sexp)
+  (global-set-key (kbd "C-c s d") 'sp-down-sexp)
+  (global-set-key (kbd "C-c s i") 'sp-change-enclosing)
+  (global-set-key (kbd "C-c s c") 'sp-rewrap-sexp)
+  )
 
-(global-set-key (kbd "C-c s e") 'sp-show-enclosing-pair)
-(global-set-key (kbd "C-c s u") 'sp-up-sexp)
-(global-set-key (kbd "C-c s d") 'sp-down-sexp)
-(global-set-key (kbd "C-c s i") 'sp-change-enclosing)
-(global-set-key (kbd "C-c s c") 'sp-rewrap-sexp)
+;; From smartparens documentation
+(sp-local-pair 'go-mode "{" nil :post-handlers '((my-create-newline-and-enter-sexp "RET")))
+
+(defun my-create-newline-and-enter-sexp (&rest _ignored)
+  "Open a new brace or bracket expression, with relevant newlines and indent."
+  (newline)
+  (indent-according-to-mode)
+  (forward-line -1)
+  (indent-according-to-mode))
 
 ;; code folding
 (require 'vimish-fold)
