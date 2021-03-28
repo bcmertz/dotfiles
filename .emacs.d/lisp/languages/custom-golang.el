@@ -20,13 +20,13 @@
   (add-hook 'before-save-hook #'eglot-interactively-organize-imports -20 t)
   )
 
-(add-hook 'go-mode-hook #'eglot-go-save-hook)
 
 (use-package go-mode
   :defer t
   :mode "\\.go\\'"
   :init
   (progn
+    (add-hook 'go-mode-hook #'eglot-go-save-hook)
     ;; (add-hook 'go-mode-hook #'lsp-go-save-hook)
     )
 
