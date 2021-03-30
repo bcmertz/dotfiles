@@ -17,7 +17,7 @@
 ;;          ))
 ;; (use-package lsp-ui
 ;;   :custom
-;;   (lsp-ui-sideline-enable t)
+;;   (lsp-ui-sideline-enable nil)
 ;;   )
 
 ;; (use-package company-lsp

@@ -22,7 +22,7 @@ unclutter &     # get rid of mouse
 setxkbmap -layout us,ir -option grp:alt_shift_toggle & # set keyboards
 xautolock -time 30 -locker slock &  # autolock screen after half an hour
 start-pulseaudio-x11 &              # pulseaudio, should be automatic
-transmission-daemon &               # transmission in background
+# transmission-daemon &               # transmission in background
 emacs --daemon=term &               # terminal emacs daemon
 emacs --daemon=gui &                # gui emacs daemon
 xset r rate 300 50 &                # faster repeating keys
