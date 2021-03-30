@@ -44,8 +44,10 @@
 
 ;; Follow symlinks
 (setq vc-follow-symlinks t)
+
 ;; use y/n instead of yes or no
 (fset 'yes-or-no-p 'y-or-n-p)
+
 ;; terminal specific escape codes
 ;; found with showkey -a
 (add-hook 'tty-setup-hook
