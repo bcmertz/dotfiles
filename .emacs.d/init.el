@@ -57,6 +57,7 @@
 (measure-time(load "custom-bash.el"))
 (measure-time(load "custom-html.el"))
 (measure-time(load "custom-org.el"))
+(measure-time(load "custom-arduino.el"))
 (measure-time(load "custom-latex.el"))
 
 ;; Return to normal gc value

@@ -13,7 +13,7 @@
  '(org-startup-folded 'overview)
  '(org-startup-indented t)
  '(package-selected-packages
-   '(org-drill go-eldoc lsp-mode mu4e-alert htmlize ox-reveal buffer-move go-mode desktop-environment exwm pass magit perspective flycheck yasnippet which-key web-mode vimish-fold use-package sublimity smex smartparens projectile pdf-tools org-bullets neotree multiple-cursors markdown-mode general evil eglot doom-modeline counsel company avy auctex atom-one-dark-theme)))
+   '(arduino arduino-mode org-drill go-eldoc lsp-mode mu4e-alert htmlize ox-reveal buffer-move go-mode desktop-environment exwm pass magit perspective flycheck yasnippet which-key web-mode vimish-fold use-package sublimity smex smartparens projectile pdf-tools org-bullets neotree multiple-cursors markdown-mode general evil eglot doom-modeline counsel company avy auctex atom-one-dark-theme)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

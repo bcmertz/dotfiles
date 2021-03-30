@@ -29,3 +29,8 @@ export ANDROID_SDK_HOME=$ANDROID_HOME
 export ANDROID_SDK_ROOT=$ANDROID_HOME
 export ANDROID_NDK_HOME=/opt/android-ndk
 export PATH=$PATH:$ANDROID_HOME:$ANDROID_SDK_HOME/tools:$ANDROID_SDK_HOME/tools/bin
+
+# arduino
+export ARDUINO_DIR=$HOME/arduino
+export ARDMK_DIR=$HOME//home/bennett/coding/Arduino
+export AVR_TOOLS_DIR=/usr/include
