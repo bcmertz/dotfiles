@@ -1,6 +1,7 @@
 android-ndk
 android-sdk
 arch-wiki-docs
+arduino-mk
 behdad-fonts
 firefox-nightly
 getmail6
