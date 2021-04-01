@@ -41,7 +41,7 @@
 (measure-time(load "custom-bidi-text.el"))
 (measure-time(load "custom-windowing.el"))
 (measure-time(load "custom-flycheck.el"))
-(measure-time(load "custom-email.el"))
+;; (measure-time(load "custom-email.el"))
 (measure-time(load "custom-pass.el"))
 (measure-time(load "custom-lsp.el"))
 (measure-time(load "custom-git.el"))
