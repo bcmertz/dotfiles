@@ -18,6 +18,8 @@
           (github-review-start plain-url)))))
 
 (use-package org
+  :config
+  (setq org-support-shift-select t)
   :bind (:map org-mode-map
               ("<M-return>" . org-return-newline-below)
               ("C-`" . org-open-at-point-plaintext)
