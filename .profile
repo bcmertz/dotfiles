@@ -32,7 +32,7 @@ alias startx='startx ~/.xinitrc'
 
 # check if something was chosen
 if [[ "$wm" != "" ]]; then
-    # if a wayland -w session was chosen, execute it
+    # if a wayland -w flag is passed in, execute it
     if [[ ! -z "$wayland_session" ]]; then
         export SESSION=$wayland_session
         startup_command=$(grep -w 'Exec' /usr/share/wayland-sessions/$wayland_session.desktop | cut -d '=' -f 2)
