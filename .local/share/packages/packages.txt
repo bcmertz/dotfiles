@@ -98,6 +98,7 @@ git-lfs
 glibc
 gnome-keyring
 gnome-screenshot
+gnome-shell
 gparted
 gpick
 gradle

@@ -10,6 +10,7 @@
 # Output is the chosen item, or "", if the user just pressed ENTER.
 # Example:
 #    choice=$(selectWithDefault 'one' 'two' 'three')
+
 selectWithDefault() {
 
   local item i=0 numItems=$#
@@ -43,7 +44,6 @@ opt=$(selectWithDefault $wms)
 # select wm in ${wms}
 # do wm="${wm}"; break;
 # done
-# echo $wm
 
 # for empty input choose i3
 # for all others set wm to selected wm

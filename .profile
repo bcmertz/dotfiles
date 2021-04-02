@@ -25,7 +25,7 @@ source ~/.bashrc
 # choose window manager
 wm=$(wmsel)
 
-wayland_session=$(echo $wm | grep '\-w' | sed 's/-w//g' )
+wayland_session=$(echo $wm | grep '\-w' | sed 's/ -w//g')
 
 # weird annoying thing that's necessary
 alias startx='startx ~/.xinitrc'
@@ -35,7 +35,9 @@ if [[ "$wm" != "" ]]; then
     # if a wayland -w session was chosen, execute it
     if [[ ! -z "$wayland_session" ]]; then
         export SESSION=$wayland_session
-        QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland exec dbus-run-session $wayland_session
+        startup_command=$(grep -w 'Exec' /usr/share/wayland-sessions/$wayland_session.desktop | cut -d '=' -f 2)
+        echo $startup_command >> out.txt
+        MOZ_ENABLE_WAYLAND=1 QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland exec dbus-run-session $startup_command
     else
         # if a x session argument is chosen, startx appropriately
         startx $wm
