@@ -1,24 +1,10 @@
-;;; custom-general.el --- general application configuration
+;;; custom-general.el --- general emacs configuration
 ;;;
 ;;; Commentary:
 ;;;
-;;; package management, settings, input/output
+;;; general settings, input/output
 ;;;
 ;;; Code:
-;; Packages and repository management
-
-(require 'package)
-
-
-(setq package-archives '(("melpa" . "https://melpa.org/packages/")
-                         ("melpa-stable" . "https://stable.melpa.org/packages/")
-                         ("org" . "https://orgmode.org/elpa/")
-                         ("elpa" . "https://elpa.gnu.org/packages/")))
-
-;; install the packages not installed via use-package
-(unless package-archive-contents
-  (package-refresh-contents))
-(package-install-selected-packages)
 
 ;; see our todo
 (setq initial-buffer-choice "~/docs/org/todo.org")

@@ -10,15 +10,6 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "lisp/languages" user-emacs-directory))
 
-;; emacs as window manager
-(setq session (getenv "SESSION"))
-(if (equal session "emacs")
-    (progn
-      (message "managing windows")
-      (load "custom-exwm-config.el")
-      )
-  )
-
 ;; debug startup performance / load time using (measure-time(load "custom-module.el"))
 (defmacro measure-time (&rest body)
   "Measure the time it takes to evaluate BODY."
@@ -28,7 +19,20 @@
 
 ;; set customize config file location
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(load custom-file)
+(measure-time(load custom-file))
+
+;; make sure we have use-package and the rest of our packages specified in custom file
+(measure-time(load "custom-packaging.el"))
+
+;; check if emacs is designated the window manager
+(setq session (getenv "SESSION"))
+(if (equal session "emacs")
+    (progn
+      (message "managing windows")
+      ;; load exwm config
+      (measure-time(load "custom-exwm-config.el"))
+      )
+  )
 
 ;; general configuration - toggle evil with M-SPC; SPC is leader key
 (measure-time(load "custom-general.el"))
