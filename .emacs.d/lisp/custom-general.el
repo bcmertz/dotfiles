@@ -15,10 +15,10 @@
                          ("org" . "https://orgmode.org/elpa/")
                          ("elpa" . "https://elpa.gnu.org/packages/")))
 
-;; install the packages not installed via use-package/straight
-;; (unless package-archive-contents
-;;   (package-refresh-contents))
-;; (package-install-selected-packages)
+;; install the packages not installed via use-package
+(unless package-archive-contents
+  (package-refresh-contents))
+(package-install-selected-packages)
 
 ;; see our todo
 (setq initial-buffer-choice "~/docs/org/todo.org")
