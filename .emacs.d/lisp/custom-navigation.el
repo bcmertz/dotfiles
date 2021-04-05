@@ -89,7 +89,7 @@
 ;; Buffer navigation
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
-(ido-mode 1)              ; Better C-x b
+(ido-mode 1)              ;; make projectile commands prettier, doesn't effect ivy C-x b
 
 (defalias 'list-buffers 'ibuffer)    ; better C-x C-b
 
