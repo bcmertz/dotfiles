@@ -17,42 +17,36 @@
      ,@body
      (message "%.06f" (float-time (time-since time)))))
 
-;; set customize config file location
+;; set customize config file location and load it
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (measure-time(load custom-file))
 
-;; make sure we have use-package and the rest of our packages specified in custom file
-(measure-time(load "custom-packaging.el"))
+(measure-time(load "custom-packaging.el"))     ;; repositories and package management
 
-;; check if emacs is designated the window manager
-(setq session (getenv "SESSION"))
+(setq session (getenv "SESSION"))              ;; emacs as window manager
 (if (equal session "emacs")
     (progn
       (message "managing windows")
-      ;; load exwm config
-      (measure-time(load "custom-exwm-config.el"))
-      )
-  )
+      (measure-time(load "custom-exwm-config.el"))))
 
-;; general configuration - toggle evil with M-SPC; SPC is leader key
-(measure-time(load "custom-general.el"))
-(measure-time(load "custom-evil-keymap.el"))
-(measure-time(load "custom-funcs.el"))
-(measure-time(load "custom-styling.el"))
-(measure-time(load "custom-autocomplete.el"))
-(measure-time(load "custom-navigation.el"))
-(measure-time(load "custom-editing.el"))
-(measure-time(load "custom-bidi-text.el"))
-(measure-time(load "custom-windowing.el"))
-(measure-time(load "custom-flycheck.el"))
-;; (measure-time(load "custom-email.el"))
-(measure-time(load "custom-pass.el"))
-(measure-time(load "custom-lsp.el"))
-(measure-time(load "custom-git.el"))
-(measure-time(load "custom-pdf.el"))
-(measure-time(load "custom-compile.el"))
+(measure-time(load "custom-general.el"))       ;; general configuration
+(measure-time(load "custom-funcs.el"))         ;; custom functions used throughout our configuration
+(measure-time(load "custom-evil-keymap.el"))   ;; vim emulation; toggle evil with M-SPC; SPC is leader key
+(measure-time(load "custom-styling.el"))       ;; appearance
+(measure-time(load "custom-autocomplete.el"))  ;; company autocompletion && snippets
+(measure-time(load "custom-navigation.el"))    ;; navigating projects and code
+(measure-time(load "custom-editing.el"))       ;; efficient text editing
+(measure-time(load "custom-bidi-text.el"))     ;; rtl and ltr language support
+(measure-time(load "custom-windowing.el"))     ;; buffer management
+(measure-time(load "custom-flycheck.el"))      ;; error checking
+(measure-time(load "custom-pass.el"))          ;; password management
+(measure-time(load "custom-email.el"))         ;; email - mu4e
+(measure-time(load "custom-lsp.el"))           ;; language server protocol
+(measure-time(load "custom-git.el"))           ;; version control
+(measure-time(load "custom-pdf.el"))           ;; pdf viewing/editing
+(measure-time(load "custom-compile.el"))       ;; compilation
 
-;; mode configurations
+;; languages
 (measure-time(load "custom-golang.el"))
 (measure-time(load "custom-js.el"))
 (measure-time(load "custom-typescript.el"))
@@ -64,9 +58,7 @@
 (measure-time(load "custom-arduino.el"))
 (measure-time(load "custom-latex.el"))
 
-;; Return to normal gc value
-(setq gc-cons-threshold 800000)
-;; garbage collect when emacs leaves focus
-(add-hook 'focus-out-hook 'garbage-collect)
+(setq gc-cons-threshold 800000)                ;; Return to normal gc value
+(add-hook 'focus-out-hook 'garbage-collect)    ;; garbage collect when emacs leaves focus
 
 ;;; init.el ends here
