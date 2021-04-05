@@ -9,29 +9,55 @@
 ;; code navigation
 (use-package avy
   :ensure t
-  :bind ("M-g" . avy-goto-char)    ;; go to char
-  ("M-l" . avy-goto-line))           ;; go to line
+  :bind (("M-g" . avy-goto-char)    ;; go to char
+         ("M-l" . avy-goto-line)))  ;; go to line
 
 (use-package swiper
+  :after ivy
   :ensure t
-  :bind ("C-s" . swiper)
-  ("C-r" . swiper))
+  :bind (("C-s" . swiper)
+         ("C-r" . swiper)))
 
-(ivy-mode 1)
-(setq ivy-count-format "(%d/%d) ")
+(use-package ivy
+  :ensure t
+  :defer 0.1
+  :diminish
+  :bind (("C-c C-r" . ivy-resume)
+         ("C-x b" . ivy-switch-buffer)
+         ("C-x B" . ivy-switch-buffer-other-window))
+  :custom
+  (ivy-count-format "(%d/%d) ")
+  (ivy-use-virtual-buffers t)
+  :config (ivy-mode))
+
+;; pretty but slows down switching bufffers too much
+;; (use-package ivy-rich
+;;   :ensure t
+;;   :after ivy
+;;   :init
+;;   (setq ivy-rich-path-style 'abbrev
+;;         ;; ivy-rich-switch-buffer-align-virtual-buffer t
+;;         ivy-virtual-abbreviate 'full)
+;;   :config (ivy-rich-mode 1))
 
 
 ;; project navigation
-(projectile-mode +1)
-(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
-(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-(setq projectile-project-search-path '("~/coding/"))
+(use-package projectile
+  :ensure t
+  :init
+  (projectile-mode +1)
+  :config
+  (setq projectile-project-search-path '("~/coding/"))
+  :bind (:map projectile-mode-map
+              ("s-p" . projectile-command-map)
+              ("C-c p" . projectile-command-map)))
+
 
 
 ;; perspective navigation
 (use-package perspective
   :bind (
-         ("C-x b" . persp-switch-to-buffer*)
+         ;; ("C-x b" . persp-switch-to-buffer*)
          ("C-x k" . persp-kill-buffer*)
          ("C-M-<left>" . persp-prev)
          ("C-M-<right>" . persp-next)
