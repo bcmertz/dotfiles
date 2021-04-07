@@ -25,6 +25,10 @@ source ~/.bashrc
 # choose window manager
 wm=$(wmsel)
 
+# weird annoying thing that is necessary to do here and nowhere else
+# if i move it to right before startx it tries to start xterm as the wm????
+alias startx='startx ~/.xinitrc'
+
 # check if something was chosen
 if [[ "$wm" != "" ]]; then
     # see if a wayland session was chosen
@@ -35,8 +39,6 @@ if [[ "$wm" != "" ]]; then
         startup_command=$(grep -w 'Exec' /usr/share/wayland-sessions/$wayland_session.desktop | cut -d '=' -f 2)
         MOZ_ENABLE_WAYLAND=1 QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland exec dbus-run-session $startup_command
     else
-        # weird annoying thing that's necessary
-        alias startx='startx ~/.xinitrc'
         # if a x session argument is chosen, startx appropriately
         startx $wm
     fi
