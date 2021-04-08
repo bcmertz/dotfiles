@@ -26,6 +26,7 @@ ttf-symbola
 ttf-unifont
 vazir-code-fonts
 vazir-fonts
+volctl
 vrms-arch
 xdg-su
 xkb-switch
