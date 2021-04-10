@@ -37,8 +37,8 @@ modules-right = network volume battery memory temp filesystem
 type = custom/script
 exec = language
 interval = 1
-click-left = notify-send "Language" "Alt-Shift to toggle"
-click-right = gkbd-keyboard-display -l ir
+click-left = notify-send "Language" "Alt-Shift to toggle\n\nMod+i to select a new language\n\nMod+Shift+i to query keymap";;
+click-right = gkbd-keyboard-display -l ir;;
 
 [module/memory]
 type = custom/script
@@ -81,15 +81,20 @@ type = custom/script
 exec = clock
 interval = 10
 format = <label>
-click-left = calendar
-click-right = gsimplecal
+click-left = gsimplecal
+click-right = calendar
 
 [module/weather]
 type = custom/script
 exec = weather
 interval = 120
 format = <label>
-click-left = fullscreen "head -n -1 $HOME/.local/share/weatherreport; read"
+click-left = fullscreen "head -n -1 $HOME/.local/share/weatherreport; read" ;;
+click-right = pgrep -x dunst >/dev/null && notify-send "🌈 Weather module" "\- Left click for full forecast.
+- Middle click to update forecast.
+☔: Chance of rain/snow
+❄: Daily low
+🌞: Daily high" ;;
 
 [module/filesystem]
 type = custom/script
@@ -97,7 +102,7 @@ exec = disk / 📁
 interval = 60
 format = <label>
 click-left = pgrep -x dunst >/dev/null && notify-send "💽 Disk space" "$(df -h / --output=target,used,size && echo -e '\nFolders' && du -t 1M -sh .[!.]* * | sort -hr)"
-click-right =  pgrep -x dunst >/dev/null && notify-send "💽 Disk module" "\- Shows used hard drive space. - Click to show all disk info."
+click-right =  baobab
 
 [module/i3]
 type = internal/i3

@@ -9,15 +9,15 @@
 set $mod Mod4
 
 # Startup polybar if it isn't running
-#exec_always --no-startup-id refreshpolybar
+exec_always --no-startup-id refreshpolybar
 
-bar {
-	font pango:mono 10
-	status_command i3blocks
-	position top
-	mode dock
-	modifier None
-}
+# bar {
+# 	font pango:mono 10
+# 	status_command i3blocks
+# 	position top
+# 	mode dock
+# 	modifier None
+# }
 
 # colour of border, background, text, indicator, and child_border
 client.focused          #bf616a #2f343f #d8dee8 #bf616a #d8dee8
