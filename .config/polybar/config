@@ -1,9 +1,7 @@
 [bar/i3]
 dpi = 133
-
 font-0 = Mono:pixelsize=16
 font-1 = NotoColorEmoji:scale=8
-
 foreground = #F7A6B7
 background = #50000000
 underline-size = 2
@@ -19,9 +17,8 @@ modules-right = network volume battery memory temp filesystem
 
 [bar/bspwm]
 dpi = 133
-font-0 = whatver:pixelsize=18:antialias=false;1
-font-1 = Unifont:style=Medium:antialias=false
-font-2 = Symbola:pixelsize=18:style=Regular:antialias=false
+font-0 = Mono:pixelsize=16
+font-1 = NotoColorEmoji:scale=8
 foreground = #F7A6B7
 background = #50000000
 underline-size = 2
