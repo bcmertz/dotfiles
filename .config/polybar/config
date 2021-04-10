@@ -2,7 +2,7 @@
 dpi = 133
 font-0 = Mono:pixelsize=16
 font-1 = NotoColorEmoji:scale=7
-foreground = #F7A6B7
+foreground = #ffffffff # pink - F7A6B7
 background = #50000000
 underline-size = 2
 tray-position = right
