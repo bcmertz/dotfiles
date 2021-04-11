@@ -148,6 +148,15 @@ format = <label>
 click-left = gsimplecal
 click-right = calendar
 
+[module/torrent]
+type = custom/script
+exec = torrent
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-padding = 1
+interval = 2
+format = <label>
+
 [module/weather]
 type = custom/script
 exec = weather
