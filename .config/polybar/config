@@ -182,26 +182,14 @@ fuzzy-match = true
 format = <label-state> <label-mode>
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-# label-mode = %mode%
-# label-mode-padding = 0
-# label-mode-background = #e60053
 label-focused = %index%
 label-focused-foreground = #e4e4e4
 label-focused-background = #222d32
 label-focused-underline = #16A085
 label-focused-padding = 1
-# label-unfocused = %index%
 label-unfocused-padding = 1
 label-unfocused-background = ${colors.background}
-# label-visible = %index%
-# label-visible-underline = #555555
 label-visible-padding = 1
-# label-urgent = %index%
-# label-urgent-foreground = #000000
-# label-urgent-background = #bd2c40
-# label-urgent-padding = 1
-# label-separator-padding = 0
-# label-separator-foreground = #ffb52a
 
 [module/bspwm]
 type = internal/bspwm
