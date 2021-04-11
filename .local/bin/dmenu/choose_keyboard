@@ -3,6 +3,6 @@
 # choose language keyboard from available options
 
 # ignore directories and pipe langauge options to dmenu
-chosen=$(ls -p /usr/share/X11/xkb/symbols/ | egrep -v /$ | dmenu -i -p "choose language:")
+chosen=$(ls -p /usr/share/X11/xkb/symbols/ | egrep -v /$ | dmenu -i -h 55 -p "choose language:")
 [ "$chosen" = "" ] && exit
 setxkbmap -layout us,$chosen -option grp:alt_shift_toggle
