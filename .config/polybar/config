@@ -192,6 +192,7 @@ label-focused-underline = #16A085
 label-focused-padding = 1
 # label-unfocused = %index%
 label-unfocused-padding = 1
+label-unfocused-background = ${colors.background}
 # label-visible = %index%
 # label-visible-underline = #555555
 label-visible-padding = 1
