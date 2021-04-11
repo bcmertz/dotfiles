@@ -24,7 +24,7 @@
     # Markup is allowed
     # format = "<u>%a</u>\n\n%s%p\n%b" # appname
     # format = "\n%s%p%b<u>\n</u>" # no appname and padding
-    format = "%s%p%b" # no appname and no padding
+    format = "%s\n%p%b" # no appname and no padding
 
     # Sort messages by urgency.
     sort = yes
