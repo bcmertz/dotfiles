@@ -1,41 +1,88 @@
-[bar/i3]
-dpi = 133
+################# colors ###################
+[colors]
+foreground = #ffffff
+background = #3f000000
+
+################ bars ######################
+
+[bar/root]
 font-0 = Mono:pixelsize=16
-font-1 = NotoColorEmoji:scale=7
-foreground = #ffffffff # pink - F7A6B7
-background = #50000000
-underline-size = 2
-tray-position = right
-height = 2.5%
-padding-left = 0
-padding-right = 2
+font-1 = NotoColorEmoji:scale=8
+font-2 = UbuntuMono Nerd Font:size=24;7
+
+border-top-size = 10
+border-right-size = 10
+border-left-size = 10
+foreground = #ffffffff
+fixed-center = true
+background = #00000000
+underline-size = 4
+dpi = 133
+
+radius = 15
+height = 45
 module-margin-left = 0
-module-margin-right = 2
-modules-left = i3 weather language
-modules-center = date
-modules-right = network volume battery memory temp filesystem
+module-margin-right = 0
+override-redirect = true
+
+
+[bar/i3]
+inherit = bar/root
+
+tray-position = right
+tray-detached = true
+tray-maxsize = 32
+tray-background = ${colors.background}
+tray-offset-x = -15
+tray-offset-y = 0
+tray-radius = 15
+tray-padding-left = 45
+tray-scale = 1.0
+
+modules-left = i3 weather language right1
+modules-center = left1 date right1
+modules-right = left1 network volume battery memory temp filesystem
+
 
 [bar/bspwm]
-dpi = 133
-font-0 = Mono:pixelsize=16
-font-1 = NotoColorEmoji:scale=7
-foreground = #F7A6B7
-background = #50000000
-underline-size = 2
-underline-color = #F7A6B7
+inherit = bar/root
+
 tray-position = right
-height = 2.5%
-padding-left = 0
-padding-right = 2
-module-margin-left = 0
-module-margin-right = 2
-modules-left = bspwm weather language
-modules-center = date
-modules-right = network volume battery memory temp filesystem
+tray-detached = true
+tray-maxsize = 32
+tray-background = ${colors.background}
+tray-offset-x = -15
+tray-offset-y = 0
+tray-radius = 15
+tray-padding-left = 45
+tray-scale = 1.0
+
+modules-left = bspwm weather language right1
+modules-center = left1 date right1
+modules-right = left1 network volume battery memory temp filesystem
+
+##################### modules ######################################
+
+[module/right1]
+type = custom/text
+content-background = "#00000000"
+content-foreground = "#3f000000"
+content = "%{T4}%{T-}"
+
+[module/left1]
+type = custom/text
+content-background = "#00000000"
+content-foreground = "#3f000000"
+content = "%{T3}%{T-}"
 
 [module/language]
 type = custom/script
 exec = language
+format-background = ${colors.background}
+format-foreground = ${colors.foreground}
+
+radius = 15
+format-padding = 1
 interval = 1
 click-left = notify-send "Language" "Alt-Shift to toggle\n\nMod+i to select a new language\n\nMod+Shift+i to query keymap";;
 click-right = gkbd-keyboard-display -l ir;;
@@ -43,6 +90,9 @@ click-right = gkbd-keyboard-display -l ir;;
 [module/memory]
 type = custom/script
 exec = memory
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-padding = 1
 interval = 1
 format = 🧠 <label>
 click-left = notify-send "🧠 Memory hogs" "$(ps axch -o cmd:15,%mem --sort=-%mem | head)"
@@ -51,6 +101,9 @@ click-right = fullscreen htop
 [module/battery]
 type = custom/script
 exec = battery BAT2
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-padding = 1
 click-left = notify-send "⚡ Full 🔌 Charging 🔋 Discharging"
 interval = 2
 format = <label>
@@ -59,6 +112,9 @@ format = <label>
 type = custom/script
 exec = cpu
 interval = 1
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-padding = 1
 format = 💻 <label>
 click-left = notify-send "🖥 CPU hogs" "$(ps axch -o cmd:15,%cpu --sort=-%cpu | head)"
 click-right = notify-send "🖥 CPU hogs" "$(ps axch -o cmd:15,%cpu --sort=-%cpu | head)"
@@ -67,18 +123,26 @@ click-right = notify-send "🖥 CPU hogs" "$(ps axch -o cmd:15,%cpu --sort=-%cpu
 type = custom/script
 exec = internet
 interval = 2
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-padding = 1
 format = <label>
 click-left = fullscreen nmtui
 
 [module/volume]
 type = custom/script
 exec = volume
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
 interval = 0.2
 format = <label>
 
 [module/date]
 type = custom/script
 exec = clock
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-padding = 1
 interval = 10
 format = <label>
 click-left = gsimplecal
@@ -87,18 +151,19 @@ click-right = calendar
 [module/weather]
 type = custom/script
 exec = weather
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-padding = 1
 interval = 120
 format = <label>
 click-left = fullscreen "head -n -1 $HOME/.local/share/weatherreport; read" ;;
-click-right = pgrep -x dunst >/dev/null && notify-send "🌈 Weather module" "\- Left click for full forecast.
-- Middle click to update forecast.
-☔: Chance of rain/snow
-❄: Daily low
-🌞: Daily high" ;;
 
 [module/filesystem]
 type = custom/script
 exec = disk / 📁
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-padding = 1
 interval = 60
 format = <label>
 click-left = pgrep -x dunst >/dev/null && notify-send "💽 Disk space" "$(df -h / --output=target,used,size && echo -e '\nFolders' && du -t 1M -sh .[!.]* * | sort -hr)"
@@ -115,25 +180,27 @@ wrapping-scroll = false
 reverse-scroll = false
 fuzzy-match = true
 format = <label-state> <label-mode>
-label-mode = %mode%
-label-mode-padding = 0
-label-mode-background = #e60053
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+# label-mode = %mode%
+# label-mode-padding = 0
+# label-mode-background = #e60053
 label-focused = %index%
-label-focused-foreground = #A0000000
-label-focused-background = #A7A6B7
-label-focused-underline = #F7A6B7
+label-focused-foreground = #e4e4e4
+label-focused-background = #222d32
+label-focused-underline = #16A085
 label-focused-padding = 1
-label-unfocused = %index%
+# label-unfocused = %index%
 label-unfocused-padding = 1
-label-visible = %index%
-label-visible-underline = #555555
+# label-visible = %index%
+# label-visible-underline = #555555
 label-visible-padding = 1
-label-urgent = %index%
-label-urgent-foreground = #000000
-label-urgent-background = #bd2c40
-label-urgent-padding = 1
-label-separator-padding = 0
-label-separator-foreground = #ffb52a
+# label-urgent = %index%
+# label-urgent-foreground = #000000
+# label-urgent-background = #bd2c40
+# label-urgent-padding = 1
+# label-separator-padding = 0
+# label-separator-foreground = #ffb52a
 
 [module/bspwm]
 type = internal/bspwm
@@ -146,6 +213,8 @@ wrapping-scroll = false
 reverse-scroll = false
 fuzzy-match = true
 format = <label-state> <label-mode>
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
 label-mode = %mode%
 label-mode-padding = 0
 label-mode-background = #e60053

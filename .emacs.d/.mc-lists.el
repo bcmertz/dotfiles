@@ -22,6 +22,7 @@
       '(
         counsel-find-file
         eval-buffer
+        handle-switch-frame
         help-for-help
         org-return
         swiper

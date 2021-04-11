@@ -15,5 +15,5 @@ fi
 
 if pgrep -x "bspwm" > /dev/null
 then
-    polybar bspwm >>/tmp/polybar.log 2>&1 &
+    polybar bspwm  >>/tmp/polybar.log 2>&1 &
 fi
