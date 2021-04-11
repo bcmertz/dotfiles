@@ -105,7 +105,7 @@ format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 format-padding = 1
 click-left = notify-send "⚡ Full 🔌 Charging 🔋 Discharging"
-interval = 2
+interval = 5
 format = <label>
 
 [module/temp]
