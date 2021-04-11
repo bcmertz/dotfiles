@@ -24,7 +24,7 @@ alias za='zathura'
 alias emacs='emacsclient --socket-name=term -t --alternate-editor=""'   #default to terminal emacs
 alias emcas='emacsclient --socket-name=term -t --alternate-editor=""'  # speeling mistake
 alias emasc='emacsclient --socket-name=term -t --alternate-editor=""'  # speeling mistake
-alais eamcs='emacsclient --socket-name=term -t --alternate-editor=""'  # speeling mistake
+alias eamcs='emacsclient --socket-name=term -t --alternate-editor=""'  # speeling mistake
 
 alias cp="cp -iv"
 alias mv="mv -iv"
