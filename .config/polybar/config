@@ -164,6 +164,7 @@ exec = disk / 📁
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 format-padding = 1
+label-padding-right = 6
 interval = 60
 format = <label>
 click-left = pgrep -x dunst >/dev/null && notify-send "💽 Disk space" "$(df -h / --output=target,used,size && echo -e '\nFolders' && du -t 1M -sh .[!.]* * | sort -hr)"
