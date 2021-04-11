@@ -23,7 +23,7 @@ radius = 15
 height = 45
 module-margin-left = 0
 module-margin-right = 0
-override-redirect = true
+override-redirect = false
 
 
 [bar/i3]
@@ -84,8 +84,8 @@ format-foreground = ${colors.foreground}
 radius = 15
 format-padding = 1
 interval = 1
-click-left = notify-send "Language" "Alt-Shift to toggle\n\nMod+i to select a new language\n\nMod+Shift+i to query keymap";;
-click-right = gkbd-keyboard-display -l ir;;
+click-left = notify-send "Language" "Alt-Shift to toggle\n\nMod+i to select a new language\n\nMod+Shift+i to query keymap"
+click-right = gkbd-keyboard-display -l ir
 
 [module/memory]
 type = custom/script
@@ -156,7 +156,7 @@ format-background = ${colors.background}
 format-padding = 1
 interval = 120
 format = <label>
-click-left = fullscreen "head -n -1 $HOME/.local/share/weatherreport; read" ;;
+click-left = fullscreen "head -n -1 $HOME/.local/share/weatherreport; read"
 
 [module/filesystem]
 type = custom/script
