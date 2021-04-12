@@ -96,9 +96,11 @@ gimp
 git
 git-lfs
 glibc
+gnome-control-center
 gnome-keyring
 gnome-screenshot
 gnome-shell
+gnome-tweaks
 gparted
 gpick
 gradle
