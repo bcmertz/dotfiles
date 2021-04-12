@@ -29,7 +29,7 @@ background = #00000000
 underline-size = 4
 dpi = 133
 
-radius = 15
+radius = 20
 height = 45
 module-margin-left = 0
 module-margin-right = 0
