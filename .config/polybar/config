@@ -10,6 +10,16 @@ font-0 = Mono:pixelsize=16
 font-1 = NotoColorEmoji:scale=8
 font-2 = UbuntuMono Nerd Font:size=24;7
 
+tray-position = right
+tray-detached = true
+tray-maxsize = 32
+tray-background = ${colors.background}
+tray-offset-x = -15
+tray-offset-y = 0
+tray-radius = 15
+tray-padding-left = 45
+tray-scale = 1.0
+
 border-top-size = 10
 border-right-size = 10
 border-left-size = 10
@@ -29,16 +39,6 @@ override-redirect = false
 [bar/i3]
 inherit = bar/root
 
-tray-position = right
-tray-detached = true
-tray-maxsize = 32
-tray-background = ${colors.background}
-tray-offset-x = -15
-tray-offset-y = 0
-tray-radius = 15
-tray-padding-left = 45
-tray-scale = 1.0
-
 modules-left = i3 weather language right1
 modules-center = left1 date right1
 modules-right = left1 network volume battery memory temp filesystem
@@ -46,16 +46,6 @@ modules-right = left1 network volume battery memory temp filesystem
 
 [bar/bspwm]
 inherit = bar/root
-
-tray-position = right
-tray-detached = true
-tray-maxsize = 32
-tray-background = ${colors.background}
-tray-offset-x = -15
-tray-offset-y = 0
-tray-radius = 15
-tray-padding-left = 45
-tray-scale = 1.0
 
 modules-left = bspwm weather language right1
 modules-center = left1 date right1
