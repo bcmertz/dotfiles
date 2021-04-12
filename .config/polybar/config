@@ -1,7 +1,7 @@
 ################# colors ###################
 [colors]
 foreground = #ffffff
-background = #1f000000
+background = #2f000000
 
 ################ bars ######################
 
