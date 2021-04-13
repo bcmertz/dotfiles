@@ -34,6 +34,9 @@
 ;; use y/n instead of yes or no
 (fset 'yes-or-no-p 'y-or-n-p)
 
+;; Bind keyboard-escape-quit to ESC instead of ESC ESC ESC
+(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+
 ;; terminal specific escape codes
 ;; found with showkey -a
 (add-hook 'tty-setup-hook
