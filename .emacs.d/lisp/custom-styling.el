@@ -9,20 +9,17 @@
 ;; Themeing
 ;; if running as daemon... (usually is)
 (if (daemonp)
-    ;; check if the frame being created is graphical or terminal
+    ;; check if the daemon frame being created is gui
+    ;; and if so load theme
     (add-hook 'after-make-frame-functions
               (lambda (frame)
                 (select-frame frame)
                 (if (display-graphic-p frame)
-                    (load-theme 'atom-one-dark t)
-                  )
-                )
-              )
-  ;; if not running as daemon check if the window is term or gui
+                    (load-theme 'atom-one-dark t))))
+  ;; if not running as daemon check if the window is gui
+  ;; and if so load theme
   (if (display-graphic-p)
-      (load-theme 'atom-one-dark t)
-    )
-  )
+      (load-theme 'atom-one-dark t)))
 
 ;; Hide line numbering
 (global-display-line-numbers-mode -1)
