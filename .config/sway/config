@@ -21,7 +21,6 @@ exec emacs --daemon=gui
 # not working
 # exec clipmenud
 # exec nm-applet
-# exec setxkbmap -layout us,ir -option grp:alt_shift_toggle & # set keyboards
 # exec unclutter
 
 bar {
