@@ -5,6 +5,7 @@ arduino-mk
 behdad-fonts
 firefox-nightly
 getmail6
+grub2-theme-preview
 heroku-cli
 ir-standard-fonts
 iranian-fonts
