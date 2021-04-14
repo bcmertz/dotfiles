@@ -19,6 +19,10 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export GTK3_RC_FILES="$HOME/.config/gtk-3.0/gtkrc-3.0"
 
+# gtk3 scaling
+export GDK_SCALE=2
+export GDK_DPI_SCALE=0.5
+
 # get bash defaults
 source ~/.bashrc
 
