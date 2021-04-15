@@ -5,11 +5,11 @@
 signal=$(awk 'NR==3 {printf("%.0f%%\n",$3*10/7)}' /proc/net/wireless)
 protected=$(nmcli connection show --active | grep vpn)
 
-if [ "$signal" == "" ]; then
+if [ "$signal" = "" ]; then
 	signal="not connected"
 fi
 
-if [ "$protected" == "" ]; then
+if [ "$protected" = "" ]; then
     echo "🌐$signal"
 else
     echo "🛡$signal"
