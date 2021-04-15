@@ -17,7 +17,7 @@ custom_backup() {
           /home/bennett/ $1
 }
 
-if [[ "$testing" == "true" ]]; then
+if [ "$testing" = "true" ]; then
     mkdir -p /tmp/backup/
     custom_backup /tmp/backup/ -n # -n for dry run
 else
