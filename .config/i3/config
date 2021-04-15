@@ -98,8 +98,8 @@ bindsym $mod+o exec info_query
 bindsym $mod+p exec passmenu
 bindsym $mod+i exec choose_keyboard
 bindsym $mod+Shift+i exec farsi_text
-bindsym $mod+w exec displayselect
-bindsym $mod+Shift+w exec wallpaper_picker
+bindsym $mod+Shift+w exec displayselect
+bindsym $mod+w exec wallpaper_picker
 
 # utils
 bindsym $mod+g exec gpick
