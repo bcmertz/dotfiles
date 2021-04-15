@@ -5,7 +5,7 @@
 
 exists=$(emacsclient --socket-name=gui -n -e "(if (> (length (frame-list)) 1) 't)")
 
-if [[ $exists == "t" ]]; then
+if [ $exists = "t" ]; then
     eval $1
 else
     eval $2
