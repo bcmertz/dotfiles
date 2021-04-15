@@ -18,7 +18,7 @@ done
 p=$(cat $HOME/.fehbg | cut -d'/' -f7)
 previous=${p::-2} # remove trailing '
 
-if [[ "$filename" == "" && "$same" == "false" ]]; then
+if [ "$filename" = "" -a "$same" = "false" ]; then
     # if image not exclicitly specified get different random image
     filename=$(ls ~/.local/share/wallpaper/ | shuf -n 1)
     # if we choose the previously used wallpaper
