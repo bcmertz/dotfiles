@@ -106,9 +106,11 @@
 
 ;; Keystroke Completion
 (use-package which-key
-         :ensure t
-         :config
-         (which-key-mode))
+  :ensure t
+  :config
+  ;; (setq which-key-paging-prefixes '("C-x"))
+  ;; (setq which-key-paging-key "")
+  (which-key-mode))
 
 (global-unset-key (kbd "M-<down-mouse-1>"))
 (global-set-key (kbd "M-<mouse-1>") 'mc/add-cursor-on-click)
