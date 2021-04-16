@@ -34,6 +34,7 @@
   (show-smartparens-global-mode +1)
   (add-hook 'org-mode-hook (lambda () (setq-local show-smartparens-global-mode nil)))
 
+  (which-key-add-key-based-replacements "C-c s" "smartparens")
   (global-set-key (kbd "C-c s e") 'sp-show-enclosing-pair)
   (global-set-key (kbd "C-c s u") 'sp-up-sexp)
   (global-set-key (kbd "C-c s d") 'sp-down-sexp)
@@ -54,6 +55,7 @@
 ;; code folding
 (require 'vimish-fold)
 (vimish-fold-global-mode 1)
+(which-key-add-key-based-replacements "C-c f" "vimish fold")
 (global-set-key (kbd "C-c f f") #'vimish-fold)
 (global-set-key (kbd "C-c f d") #'vimish-fold-delete)
 (global-set-key (kbd "C-c f l") #'vimish-fold-avy) ;; fold to line
