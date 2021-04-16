@@ -4,6 +4,7 @@ arch-wiki-docs
 arduino-mk
 behdad-fonts
 firefox-nightly
+fontpreview
 getmail6
 grub2-theme-preview
 heroku-cli
