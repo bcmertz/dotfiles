@@ -21,6 +21,8 @@
   (setq-default flycheck-check-syntax-automatically '(save))
   ;; disable documentation related emacs lisp checker
   (setq-default flycheck-disabled-checkers '(go-staticcheck))
-  (setq flycheck-mode-line-prefix "✔"))
+  (setq flycheck-mode-line-prefix "✔")
+
+  (which-key-add-key-based-replacements "C-c !" "flycheck"))
 
 ;;; custom-flycheck.el ends here
