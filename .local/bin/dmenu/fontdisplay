@@ -1,0 +1,6 @@
+#!/bin/bash
+#
+# display selected font from dmenu list of fonts
+
+choice=$(fc-list | awk '{print $1}' | sed 's/://g' | dmenu -l 20 -p "Fonts:" -c)
+display "$choice"
