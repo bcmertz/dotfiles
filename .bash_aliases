@@ -26,6 +26,7 @@ alias emcas='emacsclient --socket-name=term -t --alternate-editor=""'  # speelin
 alias emasc='emacsclient --socket-name=term -t --alternate-editor=""'  # speeling mistake
 alias eamcs='emacsclient --socket-name=term -t --alternate-editor=""'  # speeling mistake
 
+# utils
 alias cp="cp -iv"
 alias mv="mv -iv"
 alias yt="youtube-dl --add-metadata -i"
