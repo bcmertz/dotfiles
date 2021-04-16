@@ -53,10 +53,10 @@
 (menu-bar-mode -1)
 
 ;; Emoji: 😄, 🤦, 🏴󠁧󠁢󠁳󠁣󠁴󠁿
-(set-fontset-font t 'symbol "Apple Color Emoji")
+(set-face-attribute 'default nil :font "monospace")
+(set-fontset-font t 'symbol "Apple Color Emoji" nil 'append)
 (set-fontset-font t 'symbol "Noto Color Emoji" nil 'append)
 (set-fontset-font t 'symbol "Segoe UI Emoji" nil 'append)
-(set-fontset-font t 'symbol "Symbola" nil 'append)
 (set-fontset-font t 'symbol "UbuntuMono Nerd Font" nil 'append)
 
 ;; Highlight current line in gui emacs
