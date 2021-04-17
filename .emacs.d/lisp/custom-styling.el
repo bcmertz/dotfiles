@@ -53,12 +53,15 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
+(defun styling/set-fonts ()
+  (set-face-attribute 'default nil :font "monospace")
+  (set-fontset-font t 'symbol "Apple Color Emoji" nil 'append)
+  (set-fontset-font t 'symbol "Noto Color Emoji" nil 'append)
+  (set-fontset-font t 'symbol "Segoe UI Emoji" nil 'append)
+  (set-fontset-font t 'symbol "UbuntuMono Nerd Font" nil 'append))
+
 ;; Emoji: 😄, 🤦, 🏴󠁧󠁢󠁳󠁣󠁴󠁿
-(set-face-attribute 'default nil :font "monospace")
-(set-fontset-font t 'symbol "Apple Color Emoji" nil 'append)
-(set-fontset-font t 'symbol "Noto Color Emoji" nil 'append)
-(set-fontset-font t 'symbol "Segoe UI Emoji" nil 'append)
-(set-fontset-font t 'symbol "UbuntuMono Nerd Font" nil 'append)
+(styling/set-fonts)
 
 ;; Highlight current line in gui emacs
 (if (daemonp)
@@ -66,14 +69,9 @@
               (lambda (frame)
                 (select-frame frame)
                 (if (display-graphic-p frame)
-                    (global-hl-line-mode 1)
-                  )
-                )
-              )
+                    (global-hl-line-mode 1))))
   (if (display-graphic-p)
-      (global-hl-line-mode 1)
-    )
-  )
+      (global-hl-line-mode 1)))
 
 (defun styling/turn-on-hl-line ()
   "Turn on global hl line mode."
