@@ -6,9 +6,9 @@
 ;;;
 ;;; Code:
 
-;; Themeing
+;; default gui theme
+(setq custom-theme 'doom-one) ;; atom-one-dark
 ;; if running as daemon... (usually is)
-(setq custom-theme 'doom-one)
 (if (daemonp)
     ;; check if the daemon frame being created is gui
     ;; and if so load theme
