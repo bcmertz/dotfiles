@@ -57,8 +57,8 @@
 ;; (setq initial-frame-alist '((font . "Monospace")))
 ;; (setq default-frame-alist '((font . "Monospace")))
 
-;; Emoji: 😄, 🤦, 🏴󠁧󠁢󠁳󠁣󠁴󠁿
-(defun styling/set-fonts()
+;; Emoji: 😄, 🤦, 🏴
+(defun styling/set-backup-fonts()
   (set-fontset-font t 'symbol "Apple Color Emoji" nil 'append)
   (set-fontset-font t 'symbol "Noto Color Emoji" nil 'append)
   (set-fontset-font t 'symbol "Segoe UI Emoji" nil 'append)
@@ -70,10 +70,10 @@
               (lambda (frame)
                 (select-frame frame)
                 (if (display-graphic-p frame)
-                    (styling/set-fonts)))))
+                    (styling/set-backup-fonts)))))
 
 ;; for plain old non daemon gui
-(styling/set-fonts)
+(styling/set-backup-fonts)
 
 ;; Highlight current line in gui emacs
 (if (daemonp)
