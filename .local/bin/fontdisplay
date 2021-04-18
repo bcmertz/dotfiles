@@ -1,10 +1,15 @@
 #!/bin/bash
 #
-# diplay font from dmenu list
 # based on
 # Siddharth Dushantha 2020
 #
 # Dependencies: sxiv, imagemagick, xdotool, fzf
+
+export FZF_DEFAULT_OPTS='
+--height=70%
+--layout=reverse
+--prompt="Manual: "
+--preview="echo {1} {2}"'
 
 # Default values
 SEARCH_PROMPT="❯ "
@@ -83,9 +88,7 @@ main(){
         if [[ $FIRST_RUN == true ]]; then
             FIRST_RUN=false
 
-            # Display the font preview using sxiv
-            #sxiv -g "$SIZE$POSITION" "$FONT_PREVIEW" -N "fontpreview" -b &
-            sxiv -N "fontpreview" -b -g "$SIZE$POSITION" "$FONT_PREVIEW" &
+            preview $SIZE $POSITION $FONT_PREVIEW &
 
             # Change focus from sxiv, back to the terminal window
             # so that user can continue to search for fonts without
@@ -115,6 +118,12 @@ main(){
 
 	fi
     done
+}
+
+preview() {
+    # Display the font preview using sxiv
+    #sxiv -g "$SIZE$POSITION" "$FONT_PREVIEW" -N "fontpreview" -b &
+    sxiv -N "fontpreview" -b -g "$1$2" "$3"
 }
 
 # Disable CTRL-Z because if we allowed this key press,
