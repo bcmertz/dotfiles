@@ -53,14 +53,26 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
-(defun styling/set-fonts ()
-  (set-face-attribute 'default nil :font "monospace")
+;; Default font (cant be font with hyphen in the name like current default monospace Inconsolata-g)
+;; (setq initial-frame-alist '((font . "Monospace")))
+;; (setq default-frame-alist '((font . "Monospace")))
+
+;; Emoji: 😄, 🤦, 🏴󠁧󠁢󠁳󠁣󠁴󠁿
+(defun styling/set-fonts()
   (set-fontset-font t 'symbol "Apple Color Emoji" nil 'append)
   (set-fontset-font t 'symbol "Noto Color Emoji" nil 'append)
   (set-fontset-font t 'symbol "Segoe UI Emoji" nil 'append)
-  (set-fontset-font t 'symbol "UbuntuMono Nerd Font" nil 'append))
+  (set-fontset-font t 'symbol "UbuntuMono Nerd Font" nil 'append)
+  )
 
-;; Emoji: 😄, 🤦, 🏴󠁧󠁢󠁳󠁣󠁴󠁿
+(if (daemonp)
+    (add-hook 'after-make-frame-functions
+              (lambda (frame)
+                (select-frame frame)
+                (if (display-graphic-p frame)
+                    (styling/set-fonts)))))
+
+;; for plain old non daemon gui
 (styling/set-fonts)
 
 ;; Highlight current line in gui emacs
