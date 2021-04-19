@@ -47,6 +47,7 @@
 (measure-time(load "custom-compile.el"))       ;; compilation
 
 ;; languages
+(measure-time(load "custom-txt.el"))
 (measure-time(load "custom-golang.el"))
 (measure-time(load "custom-js.el"))
 (measure-time(load "custom-typescript.el"))
