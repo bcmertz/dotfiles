@@ -180,7 +180,7 @@ With argument, do this that many times."
 (defun start-shell-script ()
   "Start shell script by inserting header and entering shell mode."
   (interactive)
-  (insert "#!/bin/bash\n#\n# description")
+  (insert "#!/bin/sh\n#\n# description")
   (shell-script-mode))
 
 
