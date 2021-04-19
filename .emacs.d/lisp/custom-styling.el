@@ -57,7 +57,7 @@
 ;; (setq initial-frame-alist '((font . "Monospace")))
 ;; (setq default-frame-alist '((font . "Monospace")))
 
-;; Emoji: 😄, 🤦, 🏴
+;; Emoji: 😄, 🤦, 🏴, , 
 (defun styling/set-backup-fonts()
   "Set the emoji and glyph fonts."
   (set-fontset-font t 'symbol "Apple Color Emoji" nil 'append)
