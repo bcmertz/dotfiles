@@ -59,6 +59,7 @@
 
 ;; Emoji: 😄, 🤦, 🏴
 (defun styling/set-backup-fonts()
+  "Set the emoji and glyph fonts."
   (set-fontset-font t 'symbol "Apple Color Emoji" nil 'append)
   (set-fontset-font t 'symbol "Noto Color Emoji" nil 'append)
   (set-fontset-font t 'symbol "Segoe UI Emoji" nil 'append)
