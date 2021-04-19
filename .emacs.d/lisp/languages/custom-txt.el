@@ -9,9 +9,11 @@
   :mode "\\.txt\\'"
   :defer t
   :config
+  (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
   (add-hook 'text-mode-hook
       (lambda ()
-        (setq word-wrap t))
+        (setq word-wrap t)
+        )
       )
   )
 
