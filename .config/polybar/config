@@ -1,9 +1,10 @@
-################# colors ###################
+############### colors ###################
+
 [colors]
 foreground = #ffffff
 background = #2f000000
 
-################ bars ######################
+############### bars ######################
 
 [bar/root]
 font-0 = Mono:pixelsize=16
@@ -51,7 +52,7 @@ modules-left = bspwm weather language right1
 modules-center = left1 date right1
 modules-right = left1 network volume battery memory temp filesystem
 
-##################### modules ######################################
+############## modules ########################
 
 [module/right1]
 type = custom/text
