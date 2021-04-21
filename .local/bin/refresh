@@ -2,10 +2,28 @@
 #
 # kill and restart program
 
+process=$1
 killall -q $1
 
 # Wait until the processes have been shut down
-while pgrep -u $UID -x $1 >/dev/null; do sleep 1; done
+while pgrep -u $UID -x $process >/dev/null; do sleep 1; done
 
-# launch relevant program
-background $1
+
+case $process in
+    polybar)
+        # check if i3 or bspwm are running and launch relevant polybar config
+        if pgrep -x "i3" > /dev/null
+        then
+            polybar i3 >>/tmp/polybar.log 2>&1 &
+        fi
+
+        if pgrep -x "bspwm" > /dev/null
+        then
+            polybar bspwm  >>/tmp/polybar.log 2>&1 &
+        fi
+        ;;
+    *)
+        # launch relevant program
+        background $1
+        ;;
+esac
