@@ -4,6 +4,7 @@
 
 # dots
 !.vimrc
+!.zshrc
 !.bashrc
 !.xinput
 !.coderc
