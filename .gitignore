@@ -42,6 +42,7 @@
 !.config/htop/*
 !.config/sway/*
 !.config/mu4e/*
+!.config/mako/*
 !.config/qt5ct/*
 !.config/bspwm/*
 !.config/sxhkd/*
