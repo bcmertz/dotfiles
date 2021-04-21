@@ -9,7 +9,7 @@
 set $mod Mod4
 
 # Startup polybar if it isn't running
-#exec_always --no-startup-id refreshpolybar
+#exec_always --no-startup-id refresh polybar
 exec setbg
 exec redshift
 exec mako # exec dunst
