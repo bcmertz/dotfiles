@@ -1,5 +1,11 @@
 [global]
-    frame_width = 2
+    # Defines width in pixels of frame around the notification window.
+    # Set to 0 to disable.
+    frame_width = 3
+
+    # Defines color of the frame around the notification window.
+    # frame_color = "#aaaaaa"
+
     font = FantasqueSansMono Nerd Font 10
 
     # Allow a small subset of html markup:
@@ -120,10 +126,9 @@
     # Draw a line of "separator_height" pixel height between two
     # notifications.
     # Set to 0 to disable.
-    separator_height = 1
+    separator_height = 2
 
     # Padding between text and separator.
-    # padding = 8
     padding = 8
 
     # Horizontal padding.
@@ -152,10 +157,19 @@
     icon_position = left
 
     # Paths to default icons.
-    icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/:/usr/share/icons/Papirus-Dark/16x16/devices/:/usr/share/icons/Papirus-Dark/16x16/status/
+    # icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/:/usr/share/icons/Papirus-Dark/16x16/devices/:/usr/share/icons/Papirus-Dark/16x16/status/
+    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
     # Limit icons size.
-    max_icon_size=96
+    max_icon_size=32
+
+
+    # Define the corner radius of the notification window
+    # in pixel size. If the radius is 0, you have no rounded
+    # corners.
+    # The radius will be automatically lowered if it exceeds half of the
+    # notification height to avoid clipping text and/or icons.
+    corner_radius = 5
 
 [shortcuts]
     # Shortcuts are specified as [modifier+][modifier+]...key
@@ -174,12 +188,14 @@
     background = "#313D4A"
     foreground = "#F9FAF9"
     frame_color = "#9DB788"
+    icon = $HOME/.config/dunst/normal.png
     timeout = 5
 
 [urgency_normal]
     background = "#313D4A"
     foreground = "#F9FAF9"
     frame_color = "#2E2E2D"
+    icon = $HOME/.config/dunst/normal.png
     timeout = 5
 
 [urgency_critical]
@@ -187,7 +203,7 @@
     foreground = "#F9FAF9"
     frame_color = "#8C0000"
     timeout = 0
-
+    icon = $HOME/.config/dunst/critical.png
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.
