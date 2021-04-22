@@ -161,7 +161,7 @@
     icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
     # Limit icons size.
-    max_icon_size=32
+    max_icon_size=96
 
 
     # Define the corner radius of the notification window

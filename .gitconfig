@@ -16,3 +16,5 @@
 	rebase = false
 [github]
 	user = bcmertz
+[init]
+	defaultBranch = main
