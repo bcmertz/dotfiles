@@ -110,6 +110,7 @@
   :config
   ;; (setq which-key-paging-prefixes '("C-x"))
   ;; (setq which-key-paging-key "")
+  (setq which-key-popup-type 'minibuffer)
   (which-key-mode))
 
 (global-unset-key (kbd "M-<down-mouse-1>"))
