@@ -23,10 +23,10 @@
   :ensure t
   :defer 0.1
   :diminish
-  :bind (("C-c C-r" . ivy-resume)
-         ("C-x b" . ivy-switch-buffer)
+  :bind (("C-x b" . ivy-switch-buffer)
          ("C-x B" . ivy-switch-buffer-other-window)
          (:map ivy-minibuffer-map
+               ("C-c C-r" . ivy-resume)
                ("<M-return>" . ivy-immediate-done)) ;; ignore suggestion and return current entry
          )
   :custom
