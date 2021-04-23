@@ -15,6 +15,8 @@ done
 
 
 # get filename of current wallpaper
+# TODO: parse non ~/.local/share/wallpaper/ directory images
+# example - /usr/share/backgrounds/
 p=$(cat $HOME/.fehbg | cut -d'/' -f7)
 previous=${p::-2} # remove trailing '
 
@@ -34,10 +36,15 @@ elif [ "$same" == "true" ]; then
     filename=$(echo $previous)
 fi
 
+# default to user wallpaper dir
 default="$HOME/.local/share/wallpaper/"
+# there are two possibilities
+# 1 - a full path is given and we just use the filename given which is really the entire path
+# 2 - a filename but no path is given so we default to the wallpaper dir
 filepath=$filename
 if [ ! -f "$filename" ]; then
     # strip file path and just use basename
+    # we dont use this anymore so we can set non local/share/wallpaper wallpapers
     # filename=$(basename $filename)
 
     # if not a valid path, then use default path
