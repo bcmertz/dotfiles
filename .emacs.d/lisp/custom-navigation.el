@@ -25,7 +25,7 @@
   :bind (("C-c C-r" . ivy-resume)
          ("C-x b" . ivy-switch-buffer)
          ("C-x B" . ivy-switch-buffer-other-window)
-         (:map projectile-mode-map
+         (:map ivy-minibuffer-map
                ("<M-return>" . ivy-immediate-done))
          )
   :custom
