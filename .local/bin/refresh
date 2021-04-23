@@ -22,6 +22,13 @@ case $process in
             polybar bspwm  >>/tmp/polybar.log 2>&1 &
         fi
         ;;
+
+    emacs)
+        # restart emacs gui server
+        background emacsclient --socket-name=gui -c
+        background emacsclient --socket-name=term -c
+        ;;
+
     *)
         # launch relevant program
         background $1
