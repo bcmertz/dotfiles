@@ -18,6 +18,7 @@
   :bind (("C-s" . swiper)
          ("C-r" . swiper)))
 
+;; generic completion frontend
 (use-package ivy
   :ensure t
   :defer 0.1
@@ -26,23 +27,24 @@
          ("C-x b" . ivy-switch-buffer)
          ("C-x B" . ivy-switch-buffer-other-window)
          (:map ivy-minibuffer-map
-               ("<M-return>" . ivy-immediate-done))
+               ("<M-return>" . ivy-immediate-done)) ;; ignore suggestion and return current entry
          )
   :custom
   (ivy-count-format "(%d/%d) ")
   (ivy-use-virtual-buffers t)
   :config (ivy-mode))
 
+;; beautify ivy
 ;; pretty but slows down switching bufffers too much
-;; (use-package ivy-rich
-;;   :ensure t
-;;   :after ivy
-;;   :init
-;;   (setq ivy-rich-path-style 'abbrev
-;;         ;; ivy-rich-switch-buffer-align-virtual-buffer t
-;;         ivy-virtual-abbreviate 'full)
-;;   :config (ivy-rich-mode 1))
-
+(use-package ivy-rich
+  :ensure t
+  :after ivy
+  :init
+  (setq ivy-rich-path-style 'abbrev
+        ;; ivy-rich-switch-buffer-align-virtual-buffer t
+        ivy-virtual-abbreviate 'full)
+  :config
+  (ivy-rich-mode 1))
 
 ;; project navigation
 (use-package projectile
@@ -85,16 +87,8 @@
 ;;       '((".*" (display-buffer-reuse-window display-buffer-same-window))))
 ;; (setq display-buffer-reuse-frames t)         ; reuse windows in other frames
 ;; (setq even-window-sizes nil)                 ; display-buffer: avoid resizing
-
 ;; stateful window managemnt
 (winner-mode 1)
-
-;; Buffer navigation
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
-(ido-mode 1)              ;; make projectile commands prettier, doesn't effect ivy C-x b
-
-(defalias 'list-buffers 'ibuffer)    ; better C-x C-b
 
 ;; Sidebar File navigation
 (use-package neotree ;; C-c C-c makes the focused directory the new root view
@@ -107,24 +101,17 @@
   (setq neo-window-fixed-size ())
   :bind("C-\\" . neotree-project-dir-toggle))
 
-;; (use-package treemacs
-;;   :ensure t
-;;   :defer t
-;;   :bind("C-\\" . treemacs)
-;;   )
-
-;; (use-package treemacs-projectile
-;;   :after treemacs projectile
-;;   :ensure t)
-
-;; (use-package treemacs-magit
-;;   :after treemacs magit
-;;   :ensure t)
-
-
 ;; Better File Searching
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
-(global-set-key (kbd "M-s") 'counsel-ag)    ;;;;; C-c C-o 'ivy-occur "Search All Results"
+(global-set-key (kbd "M-s") 'counsel-ag)    ;; C-c C-o 'ivy-occur "Search All Results"
+
+;; better C-x C-b
+(defalias 'list-buffers 'ibuffer)
+
+;; make projectile commands prettier, doesn't effect ivy C-x b
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
 
 ;; Ido like M-x command completion
 (use-package smex
