@@ -24,7 +24,10 @@
   :diminish
   :bind (("C-c C-r" . ivy-resume)
          ("C-x b" . ivy-switch-buffer)
-         ("C-x B" . ivy-switch-buffer-other-window))
+         ("C-x B" . ivy-switch-buffer-other-window)
+         (:map projectile-mode-map
+               ("<M-return>" . ivy-immediate-done))
+         )
   :custom
   (ivy-count-format "(%d/%d) ")
   (ivy-use-virtual-buffers t)
