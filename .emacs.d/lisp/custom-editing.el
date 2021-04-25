@@ -110,9 +110,11 @@
 (use-package which-key
   :ensure t
   :config
-  ;; (setq which-key-paging-prefixes '("C-x"))
-  ;; (setq which-key-paging-key "")
-  (setq which-key-popup-type 'minibuffer)
+  ;; (setq which-key-paging-prefixes '(""))
+  ;; (setq which-key-paging-key "<mouse-5>") ;; scroll down
+  ;; (setq which-key-paging-key "<mouse-4>") ;; scroll up
+  ;; (setq which-key-popup-type 'side-window)
+  ;; (setq which-key-side-window-max-height 0.66)
   (which-key-mode))
 
 (global-unset-key (kbd "M-<down-mouse-1>"))
