@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: ife
+# key: ife
+# uuid: ife
+# --
+if ${1:condition}; then
+    `%`${2:# code}
+else
+     $0
+fi

@@ -1,0 +1,13 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: getopts
+# key: getopts
+# uuid: getopts
+# --
+while getopts "${1:s:h:}" o; do
+      case "$o" in
+           ${2:X}) `(doom-snippets-format "%n%s")`$0
+              ;;
+           *) usage
+              ;;
+      esac
+done

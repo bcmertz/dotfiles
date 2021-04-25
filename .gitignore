@@ -74,10 +74,7 @@
 !.emacs.d/*/
 !.emacs.d/lisp/*
 !.emacs.d/lisp/languages/*
-!.emacs.d/snippets/*/
-!.emacs.d/snippets/js-mode/*
-!.emacs.d/snippets/go-mode/*
-!.emacs.d/snippets/web-mode/*
+!.emacs.d/snippets/**/*
 !.dir-locals.el # eglot config for lsp servers
 
 # scripts
