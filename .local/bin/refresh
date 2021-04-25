@@ -26,7 +26,6 @@ case $process in
     emacs)
         # restart emacs servers
         background emacsclient --socket-name=gui -c
-        background emacsclient --socket-name=term -c
         ;;
 
     *)
