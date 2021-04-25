@@ -50,10 +50,10 @@
 (global-set-key (kbd "C-M--") 'shrink-window)
 (global-set-key (kbd "M--") 'shrink-window-horizontally)
 
-(global-set-key (kbd "<M-C-up>")     'buf-move-up)
-(global-set-key (kbd "<M-C-down>")   'buf-move-down)
-(global-set-key (kbd "<M-C-left>")   'buf-move-left)
-(global-set-key (kbd "<M-C-right>")  'buf-move-right)
+(global-set-key (kbd "<M-s-up>")     'buf-move-up)
+(global-set-key (kbd "<M-s-down>")   'buf-move-down)
+(global-set-key (kbd "<M-s-left>")   'buf-move-left)
+(global-set-key (kbd "<M-s-right>")  'buf-move-right)
 
 (global-set-key (kbd "C-x |") 'toggle-window-split)
 
