@@ -1,6 +1,8 @@
-# -*- mode: snippet; require-final-newline: nil -*-
-# name: src
+# -*- mode: snippet -*-
+# name: #+begin_src
+# uuid: src
+# key: src
 # --
-#+BEGIN_SRC $1
-  $0
-#+END_SRC
+#+begin_src $1
+`%`$0
+#+end_src

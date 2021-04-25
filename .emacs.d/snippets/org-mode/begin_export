@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: #+begin_export ... block
+# key: <E
+# type: command
+# --
+(doom-snippets-expand :uuid "export")
