@@ -7,7 +7,7 @@
 
 # text to display, mix of characters and numbers and glyphs
 text="
-Emoji: 👩🏴🐢\n
+Emoji: 👩🏴🐢\n
 Lookalikes: 0 O q p l I\n
 Alphabet: abcdefghijklmnopqrstuvwxyz\n
 Numbers: 0123456789\n
@@ -34,7 +34,7 @@ while true; do
 
     # https://unix.stackexchange.com/a/629096
     # convert text into image with font chosen
-    convert -font $font -size $size -pointsize $font_size label:"$text" /tmp/$font.png
+    convert -font $font -size $size -pointsize $font_size label:"$text" /tmp/$font.png || continue
 
     # display the image of the text
     sxiv /tmp/$font.png
