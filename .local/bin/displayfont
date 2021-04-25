@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# display selected font
+
+# text to display, mix of characters and numbers and glyphs
+text="Emoji: 👩🏴🐢\n\nAlphabet: abcdefghijklmnopqrstuvwxyz\n\nNumbers: 0123456789\n\nFarsi: سلام حال شما چطور\n"
+size=1032x565
+font_size=46
+font=/usr/share/fonts/TTF/ttf-inconsolata-g.ttf
+# https://unix.stackexchange.com/a/629096
+# convert text into image with font chosen
+convert -font $font -size $size  -pointsize $font_size label:"$text" /tmp/font.png
+
+# display the image of the text
+sxiv /tmp/font.png
