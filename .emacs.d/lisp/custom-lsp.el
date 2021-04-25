@@ -8,36 +8,39 @@
 
 ;;; custom-lsp.el ends here
 
-;; (use-package lsp-mode
-;;   :hook ((go-mode . lsp)
-;;          (js-mode . lsp)
-;;          (typescript-mode . lsp)
-;;          ;; (lsp-mode . flycheck-mode)
-;;          ;; (lsp-mode . lsp-enable-which-key-integration)
-;;          ))
-;; (use-package lsp-ui
-;;   :custom
-;;   (lsp-ui-sideline-enable nil)
-;;   )
+(use-package lsp-mode
+  :hook ((go-mode . lsp)
+         (js-mode . lsp)
+         (typescript-mode . lsp)
+         ;; (lsp-mode . flycheck-mode)
+         ;; (lsp-mode . lsp-enable-which-key-integration)
+         ))
 
-;; (use-package company-lsp
-;;   :commands company-lsp
-;;   )
-;; (push 'company-lsp company-backends)
+(setq lsp-headerline-breadcrumb-enable nil)
 
-(use-package eglot
-  :defer t
-  :ensure t
+(use-package lsp-ui
+  :custom
+  (lsp-ui-sideline-enable nil)
   )
 
-;; (add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd-10"))
+(use-package company-lsp
+  :commands company-lsp
+  )
+(push 'company-lsp company-backends)
 
-;; gopls
-(add-hook 'go-mode-hook 'eglot-ensure)
+;; (use-package eglot
+;;   :defer t
+;;   :ensure t
+;;   )
 
-;; javascript-typescript-langserver
-(add-hook 'js-mode-hook 'eglot-ensure)
-(add-hook 'typescript-mode-hook 'eglot-ensure)
+;; ;; (add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd-10"))
 
-;; remove flymake dependency that hides flycheck info in modeline
-(add-hook 'eglot--managed-mode-hook (lambda () (flymake-mode -1)))
+;; ;; gopls
+;; (add-hook 'go-mode-hook 'eglot-ensure)
+
+;; ;; javascript-typescript-langserver
+;; (add-hook 'js-mode-hook 'eglot-ensure)
+;; (add-hook 'typescript-mode-hook 'eglot-ensure)
+
+;; ;; remove flymake dependency that hides flycheck info in modeline
+;; (add-hook 'eglot--managed-mode-hook (lambda () (flymake-mode -1)))
