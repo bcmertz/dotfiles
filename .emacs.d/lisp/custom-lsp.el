@@ -9,6 +9,9 @@
 ;;; custom-lsp.el ends here
 
 (use-package lsp-mode
+  :ensure t
+  :init
+  (setq lsp-keymap-prefix "C-c l")
   :hook ((go-mode . lsp)
          (js-mode . lsp)
          (typescript-mode . lsp)
@@ -18,15 +21,18 @@
   :config
   (setq lsp-headerline-breadcrumb-enable nil)
   (setq lsp-enable-symbol-highlighting nil)
+  (lsp-enable-which-key-integration)
   )
 
 
 (use-package lsp-ui
+  :ensure t
   :custom
   (lsp-ui-sideline-enable nil)
   )
 
 (use-package company-lsp
+  :ensure t
   :commands company-lsp
   )
 (push 'company-lsp company-backends)
