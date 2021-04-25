@@ -22,6 +22,7 @@
   :defer t
   :ensure t
   :config
+  (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/sh-mode")
   (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/js-mode")
   (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/go-mode")
   (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/web-mode")
