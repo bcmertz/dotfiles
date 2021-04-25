@@ -71,7 +71,7 @@
          ("C-M-<backspace>" . persp-state-load)
          )
   :init
-  (setq persp-initial-frame-name "emacs")
+  (setq persp-initial-frame-name "main")
   (setq persp-sort 'created)
   (persp-mode)
   :config
