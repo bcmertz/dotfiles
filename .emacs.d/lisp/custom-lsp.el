@@ -14,9 +14,12 @@
          (typescript-mode . lsp)
          ;; (lsp-mode . flycheck-mode)
          ;; (lsp-mode . lsp-enable-which-key-integration)
-         ))
+         )
+  :config
+  (setq lsp-headerline-breadcrumb-enable nil)
+  (setq lsp-enable-symbol-highlighting nil)
+  )
 
-(setq lsp-headerline-breadcrumb-enable nil)
 
 (use-package lsp-ui
   :custom
