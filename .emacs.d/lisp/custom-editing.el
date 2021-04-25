@@ -64,11 +64,13 @@
 
 ;; text selection
 (use-package expand-region
+  :ensure t
   :bind("C-;" . er/expand-region)
   )
 
 ;; Undo tree
 (use-package undo-tree
+  :ensure t
   :bind
   ;; hack to avoid conflict
   ("C-_" . text-scale-decrease)

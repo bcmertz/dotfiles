@@ -31,11 +31,11 @@
   (lsp-ui-sideline-enable nil)
   )
 
-(use-package company-lsp
-  :ensure t
-  :commands company-lsp
-  )
-(push 'company-lsp company-backends)
+;; (use-package company-lsp
+;;   :ensure t
+;;   :commands company-lsp
+;;   )
+;; (push 'company-lsp company-backends)
 
 ;; (use-package eglot
 ;;   :defer t
