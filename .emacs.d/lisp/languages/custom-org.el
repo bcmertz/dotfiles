@@ -18,6 +18,7 @@
           (github-review-start plain-url)))))
 
 (use-package org
+  :defer t
   :config
   (setq org-support-shift-select t)
   :bind (:map org-mode-map
@@ -30,6 +31,7 @@
               ))
 
 (use-package org-drill
+  :defer t
   :ensure t
   )
 
@@ -55,7 +57,11 @@
 ;; make images pretty
 (setq org-image-actual-width (/ (display-pixel-width) 3))
 
-(use-package ox-reveal :ensure ox-reveal)
+(use-package ox-reveal
+  :defer t
+  :ensure ox-reveal
+  )
+
 (custom-set-variables
  '(org-export-html-postamble nil)
  '(org-hide-leading-stars t)
@@ -73,7 +79,9 @@
 (setq org-reveal-mathjax t)
 
 (use-package htmlize
-:ensure t)
+  :defer t
+  :ensure t
+  )
 
 
 ;; failed attempts to add front matter to exported html doc

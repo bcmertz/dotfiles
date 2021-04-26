@@ -9,6 +9,7 @@
 ;;; custom-lsp.el ends here
 
 (use-package lsp-mode
+  :defer t
   :ensure t
   :init
   (setq lsp-keymap-prefix "C-c l")
@@ -26,6 +27,7 @@
 
 
 (use-package lsp-ui
+  :defer t
   :ensure t
   :custom
   (lsp-ui-sideline-enable nil)
