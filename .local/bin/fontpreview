@@ -26,7 +26,7 @@ while true; do
     # select font with fzf
     font=$(convert -list font |
                awk -F: '/^[ ]*Font: /{print substr($NF,2)}' |
-               fzf --prompt=">"
+               fzf
         )
 
     # if we exit fzf with escape dont do anything
