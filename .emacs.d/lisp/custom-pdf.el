@@ -10,6 +10,7 @@
   :ensure t
   :defer t
   :bind
+  ;; TODO l/r pdf scrolling
   ;; ("<left>" . image-backward-hscroll)
   ;; ("<right>" . image-forward-hscroll)
   ("C-s" . pdf-occur)
