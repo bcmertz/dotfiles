@@ -7,7 +7,9 @@
 ;;; Code:
 
 (defun compile-comint ()
-  "Compile but force interactive comint mode."
+  "Compile but force interactive comint mode.
+This allows us to enter sudo password.
+https://stackoverflow.com/a/3612017"
   (interactive)
   (setq current-prefix-arg '(4))
   (call-interactively 'compile)
