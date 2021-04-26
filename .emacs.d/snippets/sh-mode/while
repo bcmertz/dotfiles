@@ -1,0 +1,8 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: while
+# key: while
+# uuid: while
+# --
+while ${1:condition}; do
+    $0
+done
