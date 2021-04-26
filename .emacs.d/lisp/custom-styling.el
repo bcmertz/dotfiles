@@ -53,6 +53,7 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
+;; TODO find a good monospace font
 ;; Default font (cant be font with hyphen in the name like current default monospace Inconsolata-g)
 ;; (setq initial-frame-alist '((font . "Monospace")))
 ;; (setq default-frame-alist '((font . "Monospace")))
