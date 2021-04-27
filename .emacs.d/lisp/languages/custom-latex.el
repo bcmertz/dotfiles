@@ -6,9 +6,8 @@
 ;;; Code:
 
 ;;(add-to-list 'auto-mode-alist '("\\.tex$" . LaTeX-mode))
-(use-package auctex
-  :defer t
-  :ensure t)
+(use-package tex
+  :ensure auctex)
 
 ;; to use pdfview with tex
 (setq TeX-view-program-selection '((output-pdf "PDF Tools"))
