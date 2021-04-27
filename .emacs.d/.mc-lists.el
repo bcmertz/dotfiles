@@ -22,6 +22,7 @@
       '(
         counsel-find-file
         eval-buffer
+        evil-mode
         handle-switch-frame
         help-for-help
         org-return
