@@ -18,18 +18,14 @@
 
 (global-company-mode)
 
-(use-package yasnippet
-  :defer t
+(use-package company-box
   :ensure t
-  :config
-  (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/sh-mode")
-  (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/js-mode")
-  (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/go-mode")
-  (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/web-mode")
-  (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/org-mode")
-  (which-key-add-key-based-replacements "C-c &" "yasnippet")
-  (yas-global-mode 1)
-  )
+  :defer t
+  :hook
+  (company-mode . company-box-mode))
+
+;; (global-set-key [tab] 'tab-indent-or-complete)
+(global-set-key [backtab] 'company-complete-common) ;; backtab triggers autocomplete
 
 ;; https://www.emacswiki.org/emacs/CompanyMode#toc11
 ;; (defun check-expansion ()
@@ -54,8 +50,17 @@
 ;;             (company-complete-common)
 ;;           (indent-for-tab-command)))))
 
-;; (global-set-key [tab] 'tab-indent-or-complete)
-
-(global-set-key [backtab] 'company-complete-common) ;; backtab triggers autocomplete
+(use-package yasnippet
+  :defer t
+  :ensure t
+  :config
+  (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/sh-mode")
+  (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/js-mode")
+  (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/go-mode")
+  (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/web-mode")
+  (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/org-mode")
+  (which-key-add-key-based-replacements "C-c &" "yasnippet")
+  (yas-global-mode 1)
+  )
 
 ;;; custom-autocomplete.el ends here
