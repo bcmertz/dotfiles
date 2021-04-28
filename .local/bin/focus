@@ -3,14 +3,18 @@
 # focus class name distro agnostically
 
 class_name=$1
+id=$(xdotool search --name $1)
 
 case ${SESSION} in
     i3)
         i3-msg "[class=$1] focus"
         ;;
 
+    bspwm)
+        bspc node -f $id
+        ;;
+
     *)
-        pid=$(xdotool search --class $1 getwindowpid)
-        xdotool windowfocus $pid
+        xdotool windowfocus $id
         ;;
 esac
