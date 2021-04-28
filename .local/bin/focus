@@ -13,9 +13,11 @@ case ${SESSION} in
         i3-msg "[class=$1] focus"
         ;;
 
-    bspwm)
-        bspc node -f $id
-        ;;
+    # bspwm)
+    #     # TODO find a method that works
+    #     bspc node -f $id # fails
+    #     xdo activate -n $class_name #fails
+    #     ;;
 
     *)
         xdotool windowactivate "$id"
