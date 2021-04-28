@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# focus class name distro agnostically
+
+class_name=$1
+
+case ${SESSION} in
+    i3)
+        i3-msg "[class=$1] focus"
+        ;;
+
+    *)
+        pid=$(xdotool search --class $1 getwindowpid)
+        xdotool windowfocus $pid
+        ;;
+esac
