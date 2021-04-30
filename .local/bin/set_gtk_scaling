@@ -21,6 +21,6 @@ case ${SESSION} in
         ;;
 
     *)
-        exit
+        continue
         ;;
 esac
