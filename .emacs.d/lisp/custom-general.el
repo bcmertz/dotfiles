@@ -37,6 +37,17 @@
 ;; Bind keyboard-escape-quit to ESC instead of ESC ESC ESC
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
+;; display-time-world command provides a nice display of the time at a specified list of timezones.
+;; Nice for working in a team with remote members.
+(setq display-time-world-list
+  '(("Etc/UTC" "UTC")
+    ("America/Los_Angeles" "Seattle")
+    ("America/New_York" "New York")
+    ("Europe/Athens" "Athens")
+    ("Pacific/Auckland" "Auckland")
+    ("Asia/Shanghai" "Shanghai")))
+(setq display-time-world-time-format "%a, %d %b %I:%M %p %Z")
+
 ;; terminal specific escape codes
 ;; found with showkey -a
 (add-hook 'tty-setup-hook
