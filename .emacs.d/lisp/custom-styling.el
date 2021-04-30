@@ -99,15 +99,17 @@
   (interactive)
   (global-hl-line-mode -1))
 
+
+;; truncate long lines l/r horizontal scrolling
+(set-default 'truncate-lines t)
+(add-hook 'text-mode-hook (lambda () (setq truncate-lines nil)))
+
+
 ;; smooth scrolling
 (setq scroll-margin 1
       scroll-step 1
       scroll-conservatively 10000
       scroll-preserve-screen-position 1)
-
-;; truncate long lines l/r horizontal scrolling
-(set-default 'truncate-lines t)
-(add-hook 'text-mode-hook (lambda () (setq truncate-lines nil)))
 
 ;; nil disables automatic horizontal scrolling
 (setq auto-hscroll-mode t
@@ -119,7 +121,6 @@
       ;; floating point: fraction of windows width to scroll by
       hscroll-step 1
       )
-
 
 
 (global-set-key (kbd "<mouse-6>") (lambda () (interactive)
