@@ -2,7 +2,7 @@
 #
 # set gtk scaling once we know the session value
 # this is because volctl in polybar systray needs hi dpi scaling
-# but this breaks the scaling on cinnamon
+# but this breaks the scaling on cinnamon / xfce4 and other DEs
 
 # remove last sessions values
 unset GDK_DPI_SCALE
