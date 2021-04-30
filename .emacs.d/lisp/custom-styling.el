@@ -43,10 +43,12 @@
 
 
 ;; center 1 buffer
-(require 'sublimity)
-(require 'sublimity-attractive)
-(sublimity-mode 1)
-(setq sublimity-attractive-centering-width 130)
+(use-package centered-window
+  :ensure t
+  :config
+  (setq cwm-centered-window-width 130)
+  (centered-window-mode t))
+
 
 ;; Hide Scroll bar,menu bar, tool bar
 (scroll-bar-mode -1)
@@ -107,7 +109,18 @@
 (set-default 'truncate-lines t)
 (add-hook 'text-mode-hook (lambda () (setq truncate-lines nil)))
 
-(setq auto-hscroll-mode nil)
+;; nil disables automatic horizontal scrolling
+(setq auto-hscroll-mode t
+      ;; how close to the edge of the window before the window is scrolled
+      hscroll-margin 2
+      ;; how many columns to scroll the window
+      ;; 0 horiz scrolling centers point horizontally within the window
+      ;; positive integer: # of cols to scroll by
+      ;; floating point: fraction of windows width to scroll by
+      hscroll-step 1
+      )
+
+
 
 (global-set-key (kbd "<mouse-6>") (lambda () (interactive)
                                     (if truncate-lines (scroll-right 5))))
