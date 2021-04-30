@@ -19,10 +19,6 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export GTK3_RC_FILES="$HOME/.config/gtk-3.0/gtkrc-3.0"
 
-# gtk3 scaling
-export GDK_SCALE=2
-export GDK_DPI_SCALE=0.5
-
 # get bash defaults
 source ~/.bashrc
 
@@ -40,6 +36,8 @@ if [[ "$wm" != "" ]]; then
     # if a wayland -w flag is passed in, execute it
     if [[ ! -z "$wayland_session" ]]; then
         export SESSION=$wayland_session
+        # set gtk3 scaling once we know the session
+        set_gtk_scaling
         startup_command=$(grep -w 'Exec' /usr/share/wayland-sessions/$wayland_session.desktop | cut -d '=' -f 2)
         MOZ_ENABLE_WAYLAND=1 QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland exec dbus-run-session $startup_command
     else
