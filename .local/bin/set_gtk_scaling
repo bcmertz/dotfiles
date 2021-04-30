@@ -7,15 +7,15 @@
 # get selected session
 session="${SESSION}"
 
+# remove last sessions values
+unset GDK_DPI_SCALE
+unset GDK_SCALE
+
 set_scaling () {
     # gtk3 scaling
     export GDK_SCALE=2
     export GDK_DPI_SCALE=0.5
 }
-
-# remove last sessions values
-unset GDK_DPI_SCALE
-unset GDK_SCALE
 
 if [[ "$session" == "i3" ]]; then
     set_scaling
