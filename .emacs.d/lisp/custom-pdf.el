@@ -12,8 +12,6 @@
   :bind
   ((:map pdf-view-mode-map
          ( "C-s" . pdf-occur)
-         ("<left>" . image-backward-hscroll)
-         ("<right>" . image-forward-hscroll)
          ( "D" . pdf-annot-delete)
          ( "A" . pdf-annot-list-annotations)
          ( "t" . pdf-annot-add-text-annotation)
