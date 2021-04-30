@@ -4,9 +4,6 @@
 # this is because volctl in polybar systray needs hi dpi scaling
 # but this breaks the scaling on cinnamon
 
-# get selected session
-session="${SESSION}"
-
 # remove last sessions values
 unset GDK_DPI_SCALE
 unset GDK_SCALE
@@ -17,6 +14,12 @@ set_scaling () {
     export GDK_DPI_SCALE=0.5
 }
 
-if [[ "$session" == "i3" ]]; then
-    set_scaling
-fi
+case ${SESSION} in
+    i3 | bspwm)
+        set_scaling
+        ;;
+
+    *)
+        exit 1
+        ;;
+esac
