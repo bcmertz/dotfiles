@@ -8,7 +8,7 @@
 
 ;; default gui theme
 (setq custom-theme 'doom-one) ;; atom-one-dark
-(util/apply-if-gui 'load-theme custom-theme t)
+(util/if-gui 'load-theme custom-theme t)
 
 ;; Hide line numbering
 (global-display-line-numbers-mode -1)
@@ -57,14 +57,13 @@
   (set-fontset-font t 'symbol "UbuntuMono Nerd Font" nil 'append)
   )
 
-;; if were in a gui daemon set the fonts appropriately
-(util/apply-if-gui-daemon 'styling/set-backup-fonts)
-;; for plain old non daemon gui, for some reason this has to be
-;; called outside of util/apply-if-gui
-(styling/set-backup-fonts)
+;; respect default terminal fonts
+;; if we're in a gui set the fonts appropriately
+;; for daemon sessions and and nondaemons
+(util/if-gui 'styling/set-backup-fonts)
 
 ;; Highlight current line in gui emacs
-(util/apply-if-gui 'global-hl-line-mode 1)
+(util/if-gui 'global-hl-line-mode 1)
 
 (defun styling/turn-on-hl-line ()
   "Turn on global hl line mode."

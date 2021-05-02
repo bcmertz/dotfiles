@@ -1,3 +1,4 @@
+;; -*- lexical-binding:t -*-
 ;;; custom-funcs.el --- utilities and custom defined functions
 ;;;
 ;;; Commentary:
@@ -7,7 +8,7 @@
 ;;; Code:
 
 ;; if gui do something in whatver type of emacs instance we are using
-(defun util/apply-if-gui (&rest action)
+(defun util/if-gui (&rest action)
   "Do specified ACTION if we're in a gui regardless of daemon or not."
   (if (daemonp)
       (add-hook 'after-make-frame-functions
@@ -19,7 +20,7 @@
         (apply action))))
 
 ;; if gui && daemon do something
-(defun util/apply-if-gui-daemon (&rest action)
+(defun util/if-gui-daemon (&rest action)
   "Do specified ACTION if we're in both gui and daemon."
   (if (daemonp)
       (add-hook 'after-make-frame-functions
