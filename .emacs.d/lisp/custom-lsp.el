@@ -6,8 +6,6 @@
 ;;;
 ;;; Code:
 
-;;; custom-lsp.el ends here
-
 (use-package lsp-mode
   :defer t
   :ensure t
@@ -58,3 +56,5 @@
 
 ;; ;; remove flymake dependency that hides flycheck info in modeline
 ;; (add-hook 'eglot--managed-mode-hook (lambda () (flymake-mode -1)))
+
+;;; custom-lsp.el ends here
