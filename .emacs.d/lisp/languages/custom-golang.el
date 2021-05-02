@@ -26,8 +26,8 @@
   :mode "\\.go\\'"
   :init
   (progn
-    (add-hook 'go-mode-hook #'eglot-go-save-hook)
-    ;; (add-hook 'go-mode-hook #'lsp-go-save-hook)
+    ;; (add-hook 'go-mode-hook #'eglot-go-save-hook)
+    (add-hook 'go-mode-hook #'lsp-go-save-hook)
     )
 
   :config
