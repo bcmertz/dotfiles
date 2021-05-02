@@ -26,8 +26,12 @@
   :mode "\\.go\\'"
   :init
   (progn
-    ;; (add-hook 'go-mode-hook #'eglot-go-save-hook)
-    (add-hook 'go-mode-hook #'lsp-go-save-hook)
+    (if (equal lsp-tool "lsp")
+        (add-hook 'go-mode-hook #'lsp-go-save-hook)
+      (if (equal lsp-tool "eglot")
+          (add-hook 'go-mode-hook #'eglot-go-save-hook)
+        )
+      )
     )
 
   :config

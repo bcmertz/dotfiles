@@ -12,6 +12,7 @@
   :defer t
   :ensure t
   :init
+  (defvar lsp-tool "lsp")
   (setq lsp-keymap-prefix "C-c l")
   :hook ((go-mode . lsp)
          (js-mode . lsp)
@@ -42,6 +43,8 @@
 ;; (use-package eglot
 ;;   :defer t
 ;;   :ensure t
+;;   :init
+;;   (defvar lsp-tool "eglot")
 ;;   )
 
 ;; ;; (add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd-10"))
