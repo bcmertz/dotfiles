@@ -66,6 +66,7 @@ e2fsprogs
 easytag
 ecryptfs-utils
 efibootmgr
+emacs
 epdfview
 etcher
 exfat-utils
