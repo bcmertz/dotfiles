@@ -5,6 +5,19 @@
 ;;; custom funcs
 ;;;
 ;;; Code:
+
+;; if gui do something in whatver type of emacs instance we are using
+(defun util/apply-if-gui (&rest action)
+  "Do specified ACTION if we're in a gui regardless of daemon or not."
+  (if (daemonp)
+      (add-hook 'after-make-frame-functions
+                (lambda (frame)
+                  (select-frame frame)
+                  (if (display-graphic-p frame)
+                      (apply action))))
+    (if (display-graphic-p)
+        (apply action))))
+
 ;; select current line
 (defun mark-entire-line ()
   "mark the whole line from the indent to the end"

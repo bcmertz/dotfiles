@@ -8,19 +8,7 @@
 
 ;; default gui theme
 (setq custom-theme 'doom-one) ;; atom-one-dark
-;; if running as daemon... (usually is)
-(if (daemonp)
-    ;; check if the daemon frame being created is gui
-    ;; and if so load theme
-    (add-hook 'after-make-frame-functions
-              (lambda (frame)
-                (select-frame frame)
-                (if (display-graphic-p frame)
-                    (load-theme custom-theme t))))
-  ;; if not running as daemon check if the window is gui
-  ;; and if so load theme
-  (if (display-graphic-p)
-      (load-theme custom-theme t)))
+(util/apply-if-gui 'load-theme custom-theme t)
 
 ;; Hide line numbering
 (global-display-line-numbers-mode -1)
@@ -80,14 +68,7 @@
 (styling/set-backup-fonts)
 
 ;; Highlight current line in gui emacs
-(if (daemonp)
-    (add-hook 'after-make-frame-functions
-              (lambda (frame)
-                (select-frame frame)
-                (if (display-graphic-p frame)
-                    (global-hl-line-mode 1))))
-  (if (display-graphic-p)
-      (global-hl-line-mode 1)))
+(util/apply-if-gui 'global-hl-line-mode 1)
 
 (defun styling/turn-on-hl-line ()
   "Turn on global hl line mode."
