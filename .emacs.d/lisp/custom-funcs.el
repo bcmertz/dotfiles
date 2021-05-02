@@ -18,6 +18,16 @@
     (if (display-graphic-p)
         (apply action))))
 
+;; if gui && daemon do something
+(defun util/apply-if-gui-daemon (&rest action)
+  "Do specified ACTION if we're in both gui and daemon."
+  (if (daemonp)
+      (add-hook 'after-make-frame-functions
+                (lambda (frame)
+                  (select-frame frame)
+                  (if (display-graphic-p frame)
+                      (apply action))))))
+
 ;; select current line
 (defun mark-entire-line ()
   "mark the whole line from the indent to the end"

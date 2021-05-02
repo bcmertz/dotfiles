@@ -57,14 +57,10 @@
   (set-fontset-font t 'symbol "UbuntuMono Nerd Font" nil 'append)
   )
 
-(if (daemonp)
-    (add-hook 'after-make-frame-functions
-              (lambda (frame)
-                (select-frame frame)
-                (if (display-graphic-p frame)
-                    (styling/set-backup-fonts)))))
-
-;; for plain old non daemon gui
+;; if were in a gui daemon set the fonts appropriately
+(util/apply-if-gui-daemon 'styling/set-backup-fonts)
+;; for plain old non daemon gui, for some reason this has to be
+;; called outside of util/apply-if-gui
 (styling/set-backup-fonts)
 
 ;; Highlight current line in gui emacs
