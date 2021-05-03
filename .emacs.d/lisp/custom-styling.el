@@ -17,6 +17,10 @@
 (setq-default left-margin-width 2 right-margin-width 1)
 (set-window-buffer nil (current-buffer))
 
+;; transparency
+;; (set-frame-parameter (selected-frame) 'alpha '(100 . 85))
+;; (add-to-list 'default-frame-alist '(alpha . (100 . 85)))
+
 ;; modeline
 (use-package doom-modeline
   :ensure t
