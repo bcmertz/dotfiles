@@ -180,7 +180,7 @@ enable-scroll = false
 wrapping-scroll = false
 reverse-scroll = false
 fuzzy-match = true
-format = <label-state> <label-mode>
+format = <label-state><label-mode>
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 label-focused = %index%
@@ -191,6 +191,9 @@ label-focused-padding = 1
 label-unfocused-padding = 1
 label-unfocused-background = ${colors.background}
 label-visible-padding = 1
+label-mode-background = ${colors.background}
+label-mode-foreground = ${colors.foreground}
+label-mode-padding = 1
 
 [module/bspwm]
 type = internal/bspwm
