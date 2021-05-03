@@ -10,7 +10,7 @@ set $mod Mod4
 
 # Startup polybar if it isn't running
 # exec_always --no-startup-id refresh polybar
-exec_always --no-startup-id setbg
+exec_always --no-startup-id setbg -s
 exec redshift
 exec mako # exec dunst
 exec transmission-daemon
@@ -52,7 +52,9 @@ client.background       #2f343f
 # Font for window titles
 font pango:DejaVu Sans Mono 10
 
-for_window [class="^.*"] border pixel 2
+# no border for now because it does some weird stuff
+default_border none
+# for_window [class="^.*"] border pixel 2
 
 gaps inner 50
 gaps outer 0
