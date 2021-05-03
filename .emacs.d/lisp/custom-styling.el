@@ -66,6 +66,11 @@
 ;; for daemon sessions and and nondaemons
 (apply-if-gui 'styling/set-backup-fonts)
 
+(use-package all-the-icons
+  :defer t
+  :ensure t
+  )
+
 ;; Highlight current line in gui emacs
 (apply-if-gui 'global-hl-line-mode 1)
 
