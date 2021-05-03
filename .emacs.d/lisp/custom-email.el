@@ -10,6 +10,7 @@
 ;;; Code:
 
 (defun startup-email ()
+  "Utility function to configure mu4e."
   (use-package mu4e
     :load-path "~/.emacs.d/elpa/mu4e" ;; requires moving /usr/share/emacs/site-lisp/mu4e
     )
