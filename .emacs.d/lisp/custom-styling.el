@@ -18,8 +18,20 @@
 (set-window-buffer nil (current-buffer))
 
 ;; transparency (focused . unfocused)
-;; (set-frame-parameter (selected-frame) 'alpha '(100 . 85))
-;; (add-to-list 'default-frame-alist '(alpha . (100 . 85)))
+(set-frame-parameter (selected-frame) 'alpha '(100 . 100))
+(add-to-list 'default-frame-alist '(alpha . (100 . 100)))
+(defun toggle-transparency ()
+  (interactive)
+  (let ((alpha (frame-parameter nil 'alpha)))
+    (set-frame-parameter
+     nil 'alpha
+     (if (eql (cond ((numberp alpha) alpha)
+                    ((numberp (cdr alpha)) (cdr alpha))
+                    ;; Also handle undocumented (<active> <inactive>) form.
+                    ((numberp (cadr alpha)) (cadr alpha)))
+              100)
+         '(100 . 90) '(100 . 100)))))
+(global-set-key (kbd "C-c t") 'toggle-transparency)
 
 ;; modeline
 (use-package doom-modeline
