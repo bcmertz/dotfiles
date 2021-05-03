@@ -28,108 +28,88 @@
     "sway/mode": {
         "format": "<span>{}</span>"
     },
-    "module/language": {
-        "type": custom/script
-        "exec": language
-        "format-background": ${colors.background}
-        "format-foreground": ${colors.foreground}
-        "radius": 15
-        "format-padding": 1
-        "interval": 1
-        "click-left": notify-send "Language" "Alt-Shift to toggle\n\nMod+i to select a new language\n\nMod+Shift+i to query keymap"
-        "click-right": gkbd-keyboard-display -l ir
+    "custom/language": {
+        "exec": "language",
+        "radius": "15",
+        "format-padding": "1",
+        "interval": "1",
+        "click-left": "notify-send \"Language\" \"Alt-Shift to toggle\\n\\nMod+i to select a new language\\n\\nMod+Shift+i to query keymap\"",
+        "click-right": "gkbd-keyboard-display -l ir",
     },
 
-[module/memory]
-type = custom/script
-exec = memory
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-format-padding = 1
-interval = 1
-format = 🧠 <label>
-click-left = notify-send "🧠 Memory hogs" "$(ps axch -o cmd:15,%mem --sort=-%mem | head)"
-click-right = fullscreen htop
+    "custom/memory": {
+        "exec": "memory",
+        "format-padding": "1",
+        "interval": "1",
+        "format": "🧠 <label>",
+        "click-left": "notify-send \"🧠 Memory hogs\" \"$(ps axch -o cmd:15,%mem --sort:-%mem | head)\"",
+        "click-right": "fullscreen htop",
+    },
 
-[module/battery]
-type = custom/script
-exec = battery BAT2
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-format-padding = 1
-click-left = notify-send "⚡ Full 🔌 Charging 🔋 Discharging"
-interval = 5
-format = <label>
+    "custom/battery": {
+        "exec": "battery BAT2",
+        "format-padding": "1",
+        "click-left": "notify-send \"⚡ Full 🔌 Charging 🔋 Discharging\"",
+        "interval": "5",
+        "format": "<label>",
+    },
 
-[module/temp]
-type = custom/script
-exec = cpu
-interval = 1
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-format-padding = 1
-format = 💻 <label>
-click-left = notify-send "🖥 CPU hogs" "$(ps axch -o cmd:15,%cpu --sort=-%cpu | head)"
-click-right = notify-send "🖥 CPU hogs" "$(ps axch -o cmd:15,%cpu --sort=-%cpu | head)"
+    "custom/temp": {
+        "exec": "cpu",
+        "interval": "1",
+        "format-padding": "1",
+        "format": "💻 <label>",
+        "click-left": "notify-send \"🖥 CPU hogs\" \"$(ps axch -o cmd:15,%cpu --sort:-%cpu | head)\"",
+        "click-right": "notify-send \"🖥 CPU hogs\" \"$(ps axch -o cmd:15,%cpu --sort:-%cpu | head)\"",
+    },
 
-[module/network]
-type = custom/script
-exec = internet
-interval = 2
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-format-padding = 1
-format = <label>
-click-left = fullscreen nmtui
+    "custom/network": {
+        "exec": "internet",
+        "interval": "2",
+        "format-padding": "1",
+        "format": "<label>",
+        "click-left": "fullscreen nmtui",
+    },
 
-[module/volume]
-type = custom/script
-exec = volume
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-interval = 0.2
-format = <label>
+    "custom/volume": {
+        exec : volume
+        interval : 0.2
+        format : <label>
+    },
 
-[module/date]
-type = custom/script
-exec = clock
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-format-padding = 1
-interval = 10
-format = <label>
-click-left = gsimplecal
-click-right = calendar
+    "custom/date": {
 
-[module/torrent]
-type = custom/script
-exec = torrent
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-format-padding = 1
-interval = 2
-format = <label>
+exec : clock
+format-padding : 1
+interval : 10
+format : <label>
+\"click-left\" : gsimplecal
+click-right : calendar
+}
 
-[module/weather]
-type = custom/script
-exec = weather
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-format-padding = 1
-interval = 120
-format = <label>
-click-left = fullscreen "head -n -1 $HOME/.local/share/weatherreport; read"
+"custom/torrent""
 
-[module/filesystem]
-type = custom/script
-exec = disk / 📁
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-format-padding = 1
-label-padding-right = 6
-interval = 60
-format = <label>
-click-left = pgrep -x dunst >/dev/null && notify-send "💽 Disk space" "$(df -h / --output=target,used,size && echo -e '\nFolders' && du -t 1M -sh .[!.]* * | sort -hr)"
-click-right =  baobab
+exec : torrent
+format-padding : 1
+interval : 2
+format : <label>
+
+"custom/weather\"
+
+exec : weather
+format-padding : 1
+interval : 120
+format : <label>
+\"click-left\" : fullscreen "head -n -1 $HOME/.local/share/weatherreport; read"
+
+"custom/filesystem""
+
+exec : disk / 📁
+format-padding : 1
+label-padding-right : 6
+interval : 60
+format : <label>
+"click-left" : pgrep -x dunst >/dev/null && notify-send "💽 Disk space" "$(df -h / --output:target,used,size && echo -e '\nFolders' && du -t 1M -sh .[!.]* * | sort -hr)"
+click-right :  baobab
 
 }
