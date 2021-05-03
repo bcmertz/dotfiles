@@ -50,6 +50,7 @@
 !.config/picom/*
 !.config/plank/*
 !.congig/ranger/*
+!.config/waybar/*
 !.config/polybar/*
 !.config/calibre/*
 !.config/newsboat/*

@@ -23,11 +23,15 @@ exec emacs --daemon=gui
 # exec nm-applet
 # exec unclutter
 
+# bar {
+# 	font pango:mono 10
+# 	status_command i3blocks
+# 	position top
+# 	mode dock
+# }
+
 bar {
-	font pango:mono 10
-	status_command i3blocks
-	position top
-	mode dock
+    swaybar_command waybar
 }
 
 # formerly X stuff
