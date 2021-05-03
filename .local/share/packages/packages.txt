@@ -327,6 +327,7 @@ vulkan-intel
 vulkan-radeon
 w3m
 wallpapers-juhraya
+waybar
 wget
 which
 wine
