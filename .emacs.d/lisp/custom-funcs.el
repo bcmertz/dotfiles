@@ -8,7 +8,7 @@
 ;;; Code:
 
 ;; if gui do something in whatver type of emacs instance we are using
-(defun util/if-gui (&rest action)
+(defun apply-if-gui (&rest action)
   "Do specified ACTION if we're in a gui regardless of daemon or not."
   (if (daemonp)
       (add-hook 'after-make-frame-functions

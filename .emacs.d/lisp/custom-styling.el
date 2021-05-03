@@ -8,7 +8,7 @@
 
 ;; default gui theme
 (setq custom-theme 'doom-one) ;; atom-one-dark
-(util/if-gui 'load-theme custom-theme t)
+(apply-if-gui 'load-theme custom-theme t)
 
 ;; Hide line numbering
 (global-display-line-numbers-mode -1)
@@ -64,10 +64,10 @@
 ;; respect default terminal fonts
 ;; if we're in a gui set the fonts appropriately
 ;; for daemon sessions and and nondaemons
-(util/if-gui 'styling/set-backup-fonts)
+(apply-if-gui 'styling/set-backup-fonts)
 
 ;; Highlight current line in gui emacs
-(util/if-gui 'global-hl-line-mode 1)
+(apply-if-gui 'global-hl-line-mode 1)
 
 (defun styling/turn-on-hl-line ()
   "Turn on global hl line mode."
