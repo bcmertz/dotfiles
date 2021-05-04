@@ -22,6 +22,7 @@ exec emacs --daemon=gui
 # exec clipmenud
 # exec nm-applet
 # exec unclutter
+xwayland disable
 
 bar {
 	font pango:mono 10
