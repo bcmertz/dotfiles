@@ -7,8 +7,9 @@
 ;;; Code:
 
 (defun bcm/theme ()
-  "Dynamic themeing."
+  "Dynamic themeing. C-M-m to preview theme without exiting."
   (interactive)
+  (ivy-toggle-calling)
   (setq theme (ivy-read
                   "theme: "
                   (custom-available-themes)
