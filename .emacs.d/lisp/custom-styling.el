@@ -7,9 +7,21 @@
 ;;; Code:
 
 (defun bcm/theme ()
+  "Dynamic themeing."
   (interactive)
-  (setq bcm/test (ivy-completing-read "theme: " (custom-available-themes)))
-  (message "ahhhh %s" bcm/test)
+  (setq theme (ivy-read
+                  "theme: "
+                  (custom-available-themes)
+                  :action '(1
+                            ("t"
+                             (lambda (theme)
+                               (dolist (theme custom-enabled-themes)
+                                 (disable-theme theme))
+                               (load-theme (intern theme) t))
+                             "switch theme"
+                             )))
+        )
+  (load-theme (intern theme) t)
   )
 
 ;; stop asking if my themes are trusted
