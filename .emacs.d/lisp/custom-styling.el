@@ -8,7 +8,7 @@
 
 (defun bcm/theme ()
   (interactive)
-  (setq bcm/test (ivy-completing-read "theme" (custom-available-themes)))
+  (setq bcm/test (ivy-completing-read "theme: " (custom-available-themes)))
   (message "ahhhh %s" bcm/test)
   )
 
@@ -30,6 +30,7 @@
 (set-frame-parameter (selected-frame) 'alpha '(100 . 100))
 (add-to-list 'default-frame-alist '(alpha . (100 . 100)))
 (defun toggle-transparency ()
+  "Toggle transparency."
   (interactive)
   (let ((alpha (frame-parameter nil 'alpha)))
     (set-frame-parameter
