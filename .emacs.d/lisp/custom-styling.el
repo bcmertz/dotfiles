@@ -6,6 +6,9 @@
 ;;;
 ;;; Code:
 
+;; stop asking if my themes are trusted
+(setq custom-safe-themes t)
+
 ;; default gui theme
 (setq custom-theme 'doom-one) ;; atom-one-dark
 (apply-if-gui 'load-theme custom-theme t)
