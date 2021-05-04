@@ -3,6 +3,7 @@ android-sdk
 arch-wiki-docs
 arduino-mk
 behdad-fonts
+emacs-native-comp-git-enhanced
 firefox-nightly
 getmail6
 grub2-theme-preview
