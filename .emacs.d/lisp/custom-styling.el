@@ -6,6 +6,12 @@
 ;;;
 ;;; Code:
 
+(defun bcm/theme ()
+  (interactive)
+  (setq bcm/test (ivy-completing-read "theme" (custom-available-themes)))
+  (message bcm/test)
+  )
+
 ;; stop asking if my themes are trusted
 (setq custom-safe-themes t)
 
