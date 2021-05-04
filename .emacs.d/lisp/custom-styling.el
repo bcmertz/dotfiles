@@ -9,7 +9,7 @@
 (defun bcm/theme ()
   (interactive)
   (setq bcm/test (ivy-completing-read "theme" (custom-available-themes)))
-  (message bcm/test)
+  (message "ahhhh %s" bcm/test)
   )
 
 ;; stop asking if my themes are trusted
