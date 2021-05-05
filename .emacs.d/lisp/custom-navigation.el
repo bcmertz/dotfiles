@@ -18,11 +18,6 @@
   :bind (("C-s" . swiper)
          ("C-r" . swiper)))
 
-(defun pipe-out-selection ()
-  "Return the highlighted string and continue ivy minibuffer completion."
-  (interactive)
-  )
-
 ;; generic completion frontend
 (use-package ivy
   :ensure t
