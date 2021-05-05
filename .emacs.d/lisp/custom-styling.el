@@ -137,7 +137,9 @@
 (setq scroll-margin 1
       scroll-step 1
       scroll-conservatively 10000
+      ;; mouse-wheel-scroll-amount '(1 ((shift) . 1)) ;; one line at a time
       scroll-preserve-screen-position 1)
+
 
 ;; nil disables automatic horizontal scrolling
 (setq auto-hscroll-mode t
