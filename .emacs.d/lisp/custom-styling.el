@@ -26,7 +26,9 @@
             )
   )
 
-(global-set-key (kbd "C-c C-t t") 'change-theme)
+(which-key-add-key-based-replacements "C-c t" "theming")
+
+(global-set-key (kbd "C-c t t") 'change-theme)
 
 ;; stop asking if my themes are trusted
 (setq custom-safe-themes t)
@@ -59,7 +61,7 @@
               100)
          '(100 . 90) '(100 . 100)))))
 
-(global-set-key (kbd "C-c C-t r") 'toggle-transparency)
+(global-set-key (kbd "C-c t r") 'toggle-transparency)
 
 ;; modeline
 (use-package doom-modeline
