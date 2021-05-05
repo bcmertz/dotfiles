@@ -9,7 +9,7 @@
 (defun change-theme ()
   "Dynamic theming. C-M-m to preview theme without exiting."
   (interactive)
-  (ivy-read "dynamic theming C-M-m: " (custom-available-themes)
+  (ivy-read "dynamic theming <C-M-m>: " (custom-available-themes)
             :preselect (symbol-name (car custom-enabled-themes))
             :action (lambda (theme)
                       (dolist (theme custom-enabled-themes)
