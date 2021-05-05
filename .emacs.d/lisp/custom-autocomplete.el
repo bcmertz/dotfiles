@@ -60,6 +60,7 @@
   (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/go-mode")
   (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/web-mode")
   (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/org-mode")
+  (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/emacs-lisp-mode")
   (which-key-add-key-based-replacements "C-c &" "yasnippet")
   (yas-global-mode 1)
   )

@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: provide
+# --
+(provide '`(file-name-base buffer-file-name)`)

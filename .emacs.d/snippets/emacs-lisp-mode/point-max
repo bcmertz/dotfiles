@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: point-max
+# uuid: point-max
+# key: pma
+# --
+(point-max)

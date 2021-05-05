@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: add-hook!
+# --
+(add-hook! ${0:hook} ${1:`(doom-snippets-format "function")`})`(doom-snippets-newline-or-eol)`

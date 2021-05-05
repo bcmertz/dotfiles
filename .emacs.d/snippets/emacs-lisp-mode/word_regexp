@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: word_regexp
+# key: <
+# uuid: <
+# --
+"\\_<${1:word}\\_>"

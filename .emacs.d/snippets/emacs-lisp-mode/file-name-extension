@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: file-name-extension
+# --
+(file-name-extension $0)

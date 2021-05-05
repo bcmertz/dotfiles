@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: looking-at
+# --
+(looking-at $0)
