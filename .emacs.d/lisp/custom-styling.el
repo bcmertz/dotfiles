@@ -7,7 +7,7 @@
 ;;; Code:
 
 (defun change-theme ()
-  "Dynamic theming. C-M-m to preview theme without exiting."
+  "Choose theme from installed list."
   (interactive)
   (ivy-read "dynamic theming <C-M-m>: " (custom-available-themes)
             :preselect (symbol-name (car custom-enabled-themes))
