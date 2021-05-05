@@ -6,24 +6,27 @@
 ;;;
 ;;; Code:
 
-(defun bcm/theme ()
-  "Dynamic themeing. C-M-m to preview theme without exiting."
+(defun change-theme ()
+  "Dynamic theming. C-M-m to preview theme without exiting."
   (interactive)
-  ;; (ivy-toggle-calling)
-  (setq theme (ivy-read
-                  "theme: "
-                  (custom-available-themes)
-                  :action '(1
-                            ("t"
-                             (lambda (theme)
-                               (dolist (theme custom-enabled-themes)
-                                 (disable-theme theme))
-                               (load-theme (intern theme) t))
-                             "switch theme"
-                             )))
-        )
-  (load-theme (intern theme) t)
+  (ivy-read "dynamic theming C-M-m: " (custom-available-themes)
+            :preselect (symbol-name (car custom-enabled-themes))
+            :action (lambda (theme)
+                      (dolist (theme custom-enabled-themes)
+                        (disable-theme theme))
+                      (load-theme (intern theme) t))
+            ;; slowww automatic theme switching
+            ;; :update-fn
+            ;; (lambda()
+            ;;   ;; basically do this https://github.com/abo-abo/swiper/blob/master/counsel.el#L1082
+            ;;   ;; (counsel-load-theme-action (ivy-state-current ivy-last)))
+            ;;   (mapc #'disable-theme custom-enabled-themes)
+            ;;   (load-theme (intern (ivy-state-current ivy-last)) t)
+            ;;   )
+            )
   )
+
+(global-set-key (kbd "C-c C-t t") 'change-theme)
 
 ;; stop asking if my themes are trusted
 (setq custom-safe-themes t)
@@ -42,6 +45,7 @@
 ;; transparency (focused . unfocused)
 (set-frame-parameter (selected-frame) 'alpha '(100 . 100))
 (add-to-list 'default-frame-alist '(alpha . (100 . 100)))
+
 (defun toggle-transparency ()
   "Toggle transparency."
   (interactive)
@@ -54,7 +58,8 @@
                     ((numberp (cadr alpha)) (cadr alpha)))
               100)
          '(100 . 90) '(100 . 100)))))
-(global-set-key (kbd "C-c t") 'toggle-transparency)
+
+(global-set-key (kbd "C-c C-t r") 'toggle-transparency)
 
 ;; modeline
 (use-package doom-modeline
