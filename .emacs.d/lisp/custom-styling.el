@@ -6,6 +6,14 @@
 ;;;
 ;;; Code:
 
+;; stop asking if my themes are trusted
+(setq custom-safe-themes t)
+
+;; default gui theme
+(setq custom-theme 'doom-one) ;; atom-one-dark
+(apply-if-gui 'load-theme custom-theme t)
+
+;; change theme utility
 (defun change-theme ()
   "Choose theme from installed list."
   (interactive)
@@ -26,23 +34,9 @@
             )
   )
 
+;; which key prefix for styling related keybindings
 (which-key-add-key-based-replacements "C-c t" "theming")
-
 (global-set-key (kbd "C-c t t") 'change-theme)
-
-;; stop asking if my themes are trusted
-(setq custom-safe-themes t)
-
-;; default gui theme
-(setq custom-theme 'doom-one) ;; atom-one-dark
-(apply-if-gui 'load-theme custom-theme t)
-
-;; Hide line numbering
-(global-display-line-numbers-mode -1)
-
-;; margins
-(setq-default left-margin-width 2 right-margin-width 1)
-(set-window-buffer nil (current-buffer))
 
 ;; transparency (focused . unfocused)
 (set-frame-parameter (selected-frame) 'alpha '(100 . 100))
@@ -62,6 +56,13 @@
          '(100 . 90) '(100 . 100)))))
 
 (global-set-key (kbd "C-c t r") 'toggle-transparency)
+
+;; Hide line numbering
+(global-display-line-numbers-mode -1)
+
+;; margins
+(setq-default left-margin-width 2 right-margin-width 1)
+(set-window-buffer nil (current-buffer))
 
 ;; modeline
 (use-package doom-modeline
