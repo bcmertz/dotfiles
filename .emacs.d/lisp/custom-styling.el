@@ -117,15 +117,17 @@
 ;; Highlight current line in gui emacs
 (apply-if-gui 'global-hl-line-mode 1)
 
-(defun styling/turn-on-hl-line ()
-  "Turn on global hl line mode."
+;; toggle hl line mode globally
+(defun toggle-hl-line ()
+  "Toggle global hl line mode."
   (interactive)
-  (global-hl-line-mode 1))
+  (if (eq global-hl-line-mode t)
+      (global-hl-line-mode -1)
+    (global-hl-line-mode 1))
+  )
 
-(defun styling/turn-off-hl-line ()
-  "Turn off global hl line mode."
-  (interactive)
-  (global-hl-line-mode -1))
+;; toggle hl line mode
+(global-set-key (kbd "C-c t h") 'toggle-hl-line)
 
 
 ;; truncate long lines l/r horizontal scrolling
