@@ -28,7 +28,6 @@
          (:map ivy-minibuffer-map
                ("C-c C-r" . ivy-resume)
                ("C-c C-o" . ivy-occur) ;; open list in buffer
-               ("<C-return>" . pipe-out-selection)
                ("<M-return>" . ivy-immediate-done)) ;; ignore suggestion and return current entry
          )
   :custom
