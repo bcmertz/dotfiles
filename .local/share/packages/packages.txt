@@ -101,7 +101,6 @@ gnome-screenshot
 gnome-shell
 gnome-tweaks
 gnuplot
-go
 gparted
 gpick
 gradle
