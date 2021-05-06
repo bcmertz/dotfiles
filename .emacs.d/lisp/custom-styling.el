@@ -66,6 +66,7 @@
 
 ;; modeline
 (use-package doom-modeline
+  ;; :load-path "~/coding/doom-modeline"
   :ensure t
   :config
   (setq doom-modeline-vcs-max-length 100)
