@@ -52,11 +52,12 @@ if [ ! -f "$filename" ]; then
 fi
 
 
-if pgrep -x "Xorg" > /dev/null
-then
-    # set bg for X
-    feh --bg-scale $filepath
-else
-    # set bg for Sway
-    swaymsg output "*" bg $filepath fill
-fi
+case ${SESSION} in
+    sway)
+        swaymsg output "*" bg $filepath fill
+        ;;
+
+    *)
+        feh --bg-scale $filepath
+        ;;
+esac
