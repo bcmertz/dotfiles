@@ -11,7 +11,7 @@
   :ensure t
   :init
   (defvar lsp-tool "lsp")
-  (setq lsp-keymap-prefix "C-c l")
+  ;; (setq lsp-keymap-prefix "C-c l")
   :hook ((go-mode . lsp)
          (js-mode . lsp)
          (typescript-mode . lsp)
