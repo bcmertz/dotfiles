@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: else
+# key: else
+# description: if else snippet
+# --
+else {
+	$0
+}
