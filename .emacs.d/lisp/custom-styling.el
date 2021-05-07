@@ -159,10 +159,10 @@
 (global-set-key (kbd "<mouse-6>") (lambda () (interactive)
                                     (if truncate-lines (scroll-right 5))))
 (global-set-key (kbd "<mouse-7>") (lambda () (interactive)
-                                        (if truncate-lines (scroll-left 5))))
+                                    (if truncate-lines (scroll-left 5))))
 (global-set-key (kbd "<S-mouse-5>") (lambda () (interactive)
-                                        (if truncate-lines (scroll-left 10))))
+                                      (if truncate-lines (scroll-left 10))))
 (global-set-key (kbd "<S-mouse-4>") (lambda () (interactive)
-                                        (if truncate-lines (scroll-right 10))))
+                                      (if truncate-lines (scroll-right 10))))
 
 ;;; custom-styling.el ends here
