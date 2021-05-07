@@ -28,6 +28,11 @@
                                (when (not (or (derived-mode-p 'markdown-mode)))
                                  (delete-trailing-whitespace))))
 
+;; unbind C-z suspend unless were in a terminal where it's useful
+(defun unbind-suspend ()
+  (global-unset-key (kbd "C-z")))
+(apply-if-gui 'unbind-suspend)
+
 ;; Follow symlinks
 (setq vc-follow-symlinks t)
 

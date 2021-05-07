@@ -29,8 +29,8 @@
       (message "managing windows")
       (measure-time(load "custom-exwm-config.el"))))
 
-(measure-time(load "custom-general.el"))       ;; general configuration
 (measure-time(load "custom-funcs.el"))         ;; custom functions used throughout our configuration
+(measure-time(load "custom-general.el"))       ;; general configuration
 (measure-time(load "custom-evil-keymap.el"))   ;; vim emulation; toggle evil with M-SPC; SPC is leader key
 (measure-time(load "custom-styling.el"))       ;; appearance
 (measure-time(load "custom-autocomplete.el"))  ;; company autocompletion && snippets
