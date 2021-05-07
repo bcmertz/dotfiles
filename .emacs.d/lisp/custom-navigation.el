@@ -109,6 +109,13 @@
   (setq neo-window-fixed-size ())
   :bind("C-\\" . neotree-project-dir-toggle))
 
+(add-hook 'neotree-mode-hook (lambda ()
+    (setq buffer-face-mode-face `(:background "#21252B"))
+    (setq right-fringe-width 0)
+    (setq left-fringe-width 0)
+    (setq mode-line-format nil)
+    (buffer-face-mode 1)))
+
 ;; Better File Searching
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "M-s") 'counsel-ag)    ;; C-c C-o 'ivy-occur "Search All Results"
