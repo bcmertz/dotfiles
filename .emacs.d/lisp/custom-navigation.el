@@ -109,27 +109,31 @@
   (setq neo-window-fixed-size ())
   :bind("C-\\" . neotree-project-dir-toggle))
 
-;; neotree pretty
-(add-hook 'neotree-mode-hook
-          (lambda ()
-            ;; locally change the buffer background color
-            (setq buffer-face-mode-face `(:background "#21252B"))
-            ;; no fringes
-            ;; (setq right-fringe-width 0)
-            ;; (setq left-fringe-width 0)
+(defun set-neotree-styling ()
+  "Function to style neotree buffer locally."
+  (add-hook 'neotree-mode-hook
+	    (lambda ()
+	      ;; locally change the buffer background color
+	      (setq buffer-face-mode-face `(:background "#21252B"))
+	      ;; no fringes
+	      ;; (setq right-fringe-width 0)
+	      ;; (setq left-fringe-width 0)
 
-            ;; if we want a fringe set it to a nice color
-            ;; but only do it locally in neotree buffers
-            (face-remap-add-relative 'fringe nil
-                                     '(:background "#21252B"))
-            ;; title on neotree
-            (set-face-attribute 'neo-root-dir-face nil
-                                :box nil
-                                ;; (:line-width 4 :color #21252B) doesn't work for some reason
-                                :background "#21252B")
-            ;; no modeline
-            (setq mode-line-format nil)
-            (buffer-face-mode 1)))
+	      ;; if we want a fringe set it to a nice color
+	      ;; but only do it locally in neotree buffers
+	      (face-remap-add-relative 'fringe nil
+				       '(:background "#21252B"))
+	      ;; title on neotree
+	      (set-face-attribute 'neo-root-dir-face nil
+			          :box nil
+			          ;; (:line-width 4 :color #21252B) doesn't work for some reason
+			          :background "#21252B")
+	      ;; no modeline
+	      (setq mode-line-format nil)
+	      (buffer-face-mode 1))))
+
+;; apply if gui our neotree styling
+(apply-if-gui 'set-neotree-styling)
 
 ;; Better File Searching
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
