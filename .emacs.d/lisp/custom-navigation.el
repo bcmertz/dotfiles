@@ -112,11 +112,15 @@
 ;; neotree pretty
 (add-hook 'neotree-mode-hook (lambda ()
     (setq buffer-face-mode-face `(:background "#21252B"))
+    ;; no fringes
     ;; (setq right-fringe-width 0)
     ;; (setq left-fringe-width 0)
+
     ;; if we want a fringe set it to a nice color
-    (set-face-attribute 'fringe nil
-                        :background "#21252B")
+    ;; but only do it locally in neotree buffers
+    (face-remap-add-relative 'fringe nil
+                             '(:background "#21252B"))
+
     ;; title on neotree
     (set-face-attribute 'neo-root-dir-face nil
                         :box nil
