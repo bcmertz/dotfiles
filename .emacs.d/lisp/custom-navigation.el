@@ -119,6 +119,8 @@
                         :background "#21252B")
     ;; title on neotree
     (set-face-attribute 'neo-root-dir-face nil
+                        :box nil
+                        ;; (:line-width 4 :color #21252B) doesn't work for some reason
                         :background "#21252B")
     ;; no modeline
     (setq mode-line-format nil)
