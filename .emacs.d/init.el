@@ -21,30 +21,27 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (measure-time(load custom-file))
 
-(measure-time(load "custom-packaging.el"))     ;; repositories and package management
+(measure-time(load "custom-packaging.el"))        ;; repositories and package management
+(measure-time(load "custom-funcs.el"))            ;; custom functions used throughout our configuration
 
-(setq session (getenv "SESSION"))              ;; emacs as window manager
-(if (equal session "emacs")
-    (progn
-      (message "managing windows")
-      (measure-time(load "custom-exwm-config.el"))))
+(if (equal (getenv "SESSION") "emacs")            ;; see if SESSION env var is emacs
+    (measure-time(load "custom-exwm-config.el"))) ;; emacs as window manager
 
-(measure-time(load "custom-funcs.el"))         ;; custom functions used throughout our configuration
-(measure-time(load "custom-general.el"))       ;; general configuration
-(measure-time(load "custom-evil-keymap.el"))   ;; vim emulation; toggle evil with M-SPC; SPC is leader key
-(measure-time(load "custom-styling.el"))       ;; appearance
-(measure-time(load "custom-autocomplete.el"))  ;; company autocompletion && snippets
-(measure-time(load "custom-navigation.el"))    ;; navigating projects and code
-(measure-time(load "custom-editing.el"))       ;; efficient text editing
-(measure-time(load "custom-bidi-text.el"))     ;; rtl and ltr language support
-(measure-time(load "custom-windowing.el"))     ;; buffer management
-(measure-time(load "custom-flycheck.el"))      ;; error checking
-(measure-time(load "custom-pass.el"))          ;; password management
+(measure-time(load "custom-general.el"))          ;; general configuration
+(measure-time(load "custom-evil-keymap.el"))      ;; vim emulation; toggle evil with M-SPC; SPC is leader key
+(measure-time(load "custom-styling.el"))          ;; appearance
+(measure-time(load "custom-autocomplete.el"))     ;; company autocompletion && snippets
+(measure-time(load "custom-navigation.el"))       ;; navigating projects and code
+(measure-time(load "custom-editing.el"))          ;; efficient text editing
+(measure-time(load "custom-bidi-text.el"))        ;; rtl and ltr language support
+(measure-time(load "custom-windowing.el"))        ;; buffer management
+(measure-time(load "custom-flycheck.el"))         ;; error checking
+(measure-time(load "custom-pass.el"))             ;; password management
 ;; (measure-time(load "custom-email.el"))         ;; email - mu4e
-(measure-time(load "custom-lsp.el"))           ;; language server protocol
-(measure-time(load "custom-git.el"))           ;; version control
-(measure-time(load "custom-pdf.el"))           ;; pdf viewing/editing
-(measure-time(load "custom-compile.el"))       ;; compilation
+(measure-time(load "custom-lsp.el"))              ;; language server protocol
+(measure-time(load "custom-git.el"))              ;; version control
+(measure-time(load "custom-pdf.el"))              ;; pdf viewing/editing
+(measure-time(load "custom-compile.el"))          ;; compilation
 
 ;; languages
 (measure-time(load "custom-txt.el"))
