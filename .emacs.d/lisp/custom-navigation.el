@@ -117,6 +117,10 @@
     ;; if we want a fringe set it to a nice color
     (set-face-attribute 'fringe nil
                         :background "#21252B")
+    ;; title on neotree
+    (set-face-attribute 'neo-root-dir-face nil
+                        :background "#21252B")
+
     (setq mode-line-format nil)
     (buffer-face-mode 1)))
 
