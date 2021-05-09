@@ -154,4 +154,4 @@
   :bind ("M-x" . smex)
   )
 
-;;; custom-navigaton.el ends here
+;;; custom-navigation.el ends here
