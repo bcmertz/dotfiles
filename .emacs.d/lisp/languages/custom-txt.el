@@ -22,6 +22,25 @@
             )
   )
 
+;; (use-package flyspell ;; built-in package
+;;   :after (ispell)
+;;   :hook
+;;   (
+;;    ;; (prog-mode . flyspell-prog-mode)
+;;    (text-mode . flyspell-mode))
+;;   :bind
+;;   :config
+;;   ;; remove annoying tab
+;;   )
+
+(define-key flyspell-mode-map [(tab)] nil)
+
+
+(global-set-key (kbd "C-i") 'ispell-word)
+(global-set-key (kbd "M-i") 'ispell-buffer)
+
+
+
 ;; TODO fix this pls
 ;; check spelling on the fly
 ;; this isn't working for some reason and is enabling itself in every file type including text files
@@ -29,10 +48,6 @@
 ;;   (add-hook hook (lambda () (flyspell-mode 1))))
 ;; (dolist (hook '(change-log-mode-hook log-edit-mode-hook))
 ;;   (add-hook hook (lambda () (flyspell-mode -1))))
-
-;; should these be ispell commnads?
-(global-set-key (kbd "C-i") 'ispell-word)
-(global-set-key (kbd "M-i") 'ispell-buffer)
 
 
 (use-package define-word
