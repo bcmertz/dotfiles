@@ -9,14 +9,20 @@
   :mode "\\.txt\\'"
   :defer t
   :config
-  ;; C-e goes to the end of the visual line not the logical line
-  (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
-  ;; dont have super long lines, break them
   (add-hook 'text-mode-hook
-      (lambda ()
-        (setq word-wrap t)
-        )
-      )
+            (lambda ()
+              ;; C-e goes to the end of the visual line not the logical line
+              (turn-on-visual-line-mode)
+              ;; check spelling on the fly
+              (flyspell-mode 1)
+              ;; dont have super long lines, break them
+              (setq word-wrap t)
+              )
+            )
   )
+
+(global-set-key (kbd "C-i") 'ispell-word)
+(global-set-key (kbd "M-i") 'ispell-buffer)
+
 
 ;;; custom-txt.el ends here
