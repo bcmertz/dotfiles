@@ -21,13 +21,13 @@
   )
 
 ;; spell checking on the fly
-(use-package flyspell ;; built-in package
+(use-package flyspell
   :after (ispell)
   :defer t
   )
 
 ;; check spelling on the fly
-;; check buffer and turn on flyspell mode in all text files
+;; turn on flyspell mode in text files and check entire buffer
 (dolist (hook '(text-mode-hook))
   (add-hook hook (lambda ()
                    (flyspell-mode 1)
