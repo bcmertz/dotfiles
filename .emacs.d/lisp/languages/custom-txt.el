@@ -51,7 +51,7 @@
 
 (use-package define-word
   :defer t
-  :bind
-  ("C-M-i" . define-word-at-point))
+  )
+
 
 ;;; custom-txt.el ends here
