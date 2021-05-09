@@ -20,7 +20,7 @@
  '(org-startup-folded 'overview)
  '(org-startup-indented t)
  '(package-selected-packages
-   '(define-word undo-tree expand-region company-box counsel ivy-hydra centered-window company-lsp lsp-ui ivy-rich doom-themes avy-zap transmission arduino arduino-mode org-drill go-eldoc lsp-mode mu4e-alert htmlize ox-reveal buffer-move go-mode desktop-environment exwm pass magit perspective flycheck yasnippet which-key web-mode vimish-fold use-package smex smartparens projectile pdf-tools org-bullets neotree multiple-cursors markdown-mode general evil eglot doom-modeline company avy auctex atom-one-dark-theme))
+   '(wucuo define-word undo-tree expand-region company-box counsel ivy-hydra centered-window company-lsp lsp-ui ivy-rich doom-themes avy-zap transmission arduino arduino-mode org-drill go-eldoc lsp-mode mu4e-alert htmlize ox-reveal buffer-move go-mode desktop-environment exwm pass magit perspective flycheck yasnippet which-key web-mode vimish-fold use-package smex smartparens projectile pdf-tools org-bullets neotree multiple-cursors markdown-mode general evil eglot doom-modeline company avy auctex atom-one-dark-theme))
  '(pdf-view-midnight-colors (cons "#0F1019" "#F5F5F9"))
  '(rustic-ansi-faces
    ["#F5F5F9" "#D70000" "#005F00" "#AF8700" "#1F55A0" "#AF005F" "#007687" "#0F1019"])
