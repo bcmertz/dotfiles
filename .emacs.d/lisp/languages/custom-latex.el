@@ -6,6 +6,7 @@
 ;;; Code:
 
 ;;(add-to-list 'auto-mode-alist '("\\.tex$" . LaTeX-mode))
+;; C-c C-a to compile and view directly
 (use-package tex
   :defer t
   :ensure auctex)
