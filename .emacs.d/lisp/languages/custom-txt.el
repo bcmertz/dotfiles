@@ -26,19 +26,24 @@
   :defer t
   )
 
-;; check spelling on the fly
-;; turn on flyspell mode in text files and check entire buffer
-(dolist (hook '(text-mode-hook))
-  (add-hook hook (lambda ()
-                   (flyspell-mode 1)
-                   (flyspell-buffer)
-                   )))
-;; no flyspell in change log and log edit modes
-(dolist (hook '(org-mode-hook change-log-mode-hook log-edit-mode-hook))
-  (add-hook hook (lambda () (flyspell-mode -1))))
-;; only spellcheck comments in program files
-(dolist (hook '(prog-mode-hook))
-  (add-hook hook (lambda () (flyspell-prog-mode))))
+
+(defun setup-flyspell ()
+  "Setup spell checking on the fly."
+  ;; turn on flyspell mode in text files and check entire buffer
+  (dolist (hook '(text-mode-hook))
+    (add-hook hook (lambda ()
+                     (flyspell-mode 1)
+                     (flyspell-buffer)
+                     )))
+  ;; no flyspell in change log and log edit modes
+  (dolist (hook '(org-mode-hook change-log-mode-hook log-edit-mode-hook))
+    (add-hook hook (lambda () (flyspell-mode -1))))
+  ;; only spellcheck comments in program files
+  (dolist (hook '(prog-mode-hook))
+    (add-hook hook (lambda () (flyspell-prog-mode))))
+  )
+
+(apply-if-gui 'setup-flyspell)
 
 (defun set-C-i ()
   "C+i and tab are by default treated as the same, so rebind it to Hyper+i."
