@@ -196,6 +196,7 @@ label-mode-foreground = ${colors.foreground}
 label-mode-padding = 1
 label-urgent-foreground = ${colors.foreground}
 label-urgent-background = ${colors.background}
+label-urgent-underline = #D5A5AC
 label-urgent-padding = 1
 
 
