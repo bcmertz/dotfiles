@@ -194,6 +194,10 @@ label-visible-padding = 1
 label-mode-background = ${colors.background}
 label-mode-foreground = ${colors.foreground}
 label-mode-padding = 1
+label-urgent-foreground = ${colors.foreground}
+label-urgent-background = ${colors.background}
+label-urgent-padding = 1
+
 
 [module/bspwm]
 type = internal/bspwm
