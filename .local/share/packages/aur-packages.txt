@@ -3,6 +3,7 @@ android-sdk
 arch-wiki-docs
 arduino-mk
 behdad-fonts
+dracula-gtk-theme
 emacs-native-comp-git-enhanced
 firefox-nightly
 getmail6
