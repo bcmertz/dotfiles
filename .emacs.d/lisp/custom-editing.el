@@ -42,6 +42,18 @@
   (global-set-key (kbd "C-c s c") 'sp-rewrap-sexp)
   )
 
+(defun set-sp-face ()
+  "Customize matching sp face."
+  (add-hook 'smartparens-mode-hook
+	    (lambda ()
+              (set-face-attribute 'sp-show-pair-match-face nil
+                                  :foreground "green"
+                                  :background nil
+                                  :weight 'normal
+                                  :underline nil ;; "#16A085"
+                                  ))))
+(apply-if-gui 'set-sp-face)
+
 ;; From smartparens documentation
 (sp-local-pair 'go-mode "{" nil :post-handlers '((my-create-newline-and-enter-sexp "RET")))
 
