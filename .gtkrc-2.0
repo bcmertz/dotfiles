@@ -2,7 +2,7 @@
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
 include "/home/bennett/.gtkrc-2.0.mine"
-gtk-theme-name="Adapta-Nokto-Eta-Maia"
+gtk-theme-name="Dracula"
 gtk-icon-theme-name="Papirus-Adapta-Nokto-Maia"
 gtk-font-name="Manrope 10"
 gtk-cursor-theme-name="xcursor-breeze"
