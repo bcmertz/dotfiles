@@ -5,7 +5,7 @@ Sxiv.foreground: #ffffff
 Sxiv.background: #222222
 
 
-! Dracula Xresources palette
+!! Dracula
 ! *.foreground: #F8F8F2
 ! *.background: #282A36
 ! *.color0:     #000000
