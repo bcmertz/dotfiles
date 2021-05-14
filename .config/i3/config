@@ -217,25 +217,25 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-msg exit"
+# choose action
+bindsym $mod+Shift+e exec exit_menu
 
 set $Locker slock && sleep 1
 
-set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
-mode "$mode_system" {
-bindsym --release l exec --no-startup-id $Locker, mode "default"
-bindsym e exec --no-startup-id i3-msg exit, mode "default"
-bindsym h exec --no-startup-id hibernate, mode "default"
-bindsym r exec --no-startup-id systemctl reboot, mode "default"
-bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+# set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+# mode "$mode_system" {
+# bindsym --release l exec --no-startup-id $Locker, mode "default"
+# bindsym e exec --no-startup-id i3-msg exit, mode "default"
+# bindsym h exec --no-startup-id hibernate, mode "default"
+# bindsym r exec --no-startup-id systemctl reboot, mode "default"
+# bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
-# back to normal: Enter or Escape
-bindsym Return mode "default"
-bindsym Escape mode "default"
-}
+# # back to normal: Enter or Escape
+# bindsym Return mode "default"
+# bindsym Escape mode "default"
+# }
 
-bindsym $mod+Shift+q mode "$mode_system"
+# bindsym $mod+Shift+q mode "$mode_system"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

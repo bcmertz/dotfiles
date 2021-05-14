@@ -1,0 +1,34 @@
+#!/bin/sh
+#
+# exit menu
+
+locker() {
+    slock && sleep 1
+}
+
+options="logout
+lock
+shutdown
+reboot"
+
+chosen=$(printf "$options" | dmenu -c -i -l 20 -p '👋:')
+[ "$chosen" = "" ] && exit
+
+case $chosen in
+    logout)
+        i3-msg exit
+        ;;
+
+    shutdown)
+        shutdown now
+        ;;
+
+    lock)
+        locker
+        ;;
+
+    reboot)
+        shutdown -r now
+    ;;
+
+esac
