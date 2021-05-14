@@ -65,4 +65,8 @@
   (yas-global-mode 1)
   )
 
+(use-package doom-snippets
+  :load-path "~/coding/doom-snippets"
+  :after yasnippet)
+
 ;;; custom-autocomplete.el ends here
