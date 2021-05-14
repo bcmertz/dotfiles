@@ -1,5 +1,6 @@
 # -*- mode: snippet -*-
-# name: y-or-n-p
-# key: yesno
+# contributor: Xah Lee (XahLee.org)
+# name: yes-or-no-p
+# key: yonp
 # --
-(yes-or-no-p "$1")
+(yes-or-no-p "${1:prompt} ")

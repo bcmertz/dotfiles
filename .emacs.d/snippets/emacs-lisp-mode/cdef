@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: cl-defun
-# uuid: cdef
-# type: command
-# --
-(doom-snippets-expand :uuid "cl-defun")

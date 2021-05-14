@@ -1,4 +1,6 @@
 # -*- mode: snippet -*-
+# contributor: Xah Lee (XahLee.org)
 # name: autoload
+# key: autoload
 # --
-(autoload '${1:fn} "${2:file}"${3:"`%`${4:doc}" ${5:t} ${6:type}})
+(autoload ${1:function} "${2:filename}"${3: "docstring"}${4: interactive}${5: type})

@@ -1,6 +1,7 @@
 # -*- mode: snippet -*-
+# contributor: Xah Lee (XahLee.org)
 # name: define-key
+# key: define-key
 # key: dk
-# uuid: dk
 # --
-(define-key ${1:keymap} ${2:key} ${0:fn})
+(define-key ${1:mode}-map (kbd "${2:key}") $0)

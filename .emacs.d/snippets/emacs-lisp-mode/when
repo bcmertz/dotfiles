@@ -1,4 +1,6 @@
 # -*- mode: snippet -*-
+# contributor: Xah Lee (XahLee.org)
 # name: when
+# key: w
 # --
-(when ${1:t} `(doom-snippets-format "%n%s")`$0)`(doom-snippets-newline-or-eol)`
+(when $0)

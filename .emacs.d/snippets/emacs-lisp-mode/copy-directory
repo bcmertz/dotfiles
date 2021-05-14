@@ -2,7 +2,6 @@
 # contributor: Xah Lee (XahLee.org)
 # name: copy-directory
 # key: copy-directory
-# uuid: copy-directory
 # key: cd
 # --
-(copy-directory $0 NEWNAME &optional KEEP-TIME PARENTS)
+(copy-directory ${1:directory} {2:target}${3: keep-time}${4: parents})

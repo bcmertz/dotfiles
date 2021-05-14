@@ -2,7 +2,6 @@
 # contributor: Xah Lee (XahLee.org)
 # name: re-search-backward
 # key: re-search-backward
-# uuid: re-search-backward
 # key: rsb
 # --
-(re-search-backward REGEXP$0 &optional BOUND NOERROR COUNT)
+(re-search-backward ${1:regexp}${2: bound}${3: noerror}${4: count})

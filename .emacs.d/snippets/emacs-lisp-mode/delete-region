@@ -2,7 +2,6 @@
 # contributor: Xah Lee (XahLee.org)
 # name: delete-region
 # key: delete-region
-# uuid: delete-region
 # key: dr
 # --
-(delete-region $0 )
+(delete-region $0)

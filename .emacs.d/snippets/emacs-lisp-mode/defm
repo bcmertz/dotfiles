@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: defmacro
-# uuid: defm
-# type: command
-# --
-(doom-snippets-expand :uuid "defmacro")

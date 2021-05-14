@@ -1,4 +1,6 @@
 # -*- mode: snippet -*-
+# contributor: Xah Lee (XahLee.org)
 # name: mapc
+# key: mapc
 # --
-(mapc ${1:fn} ${0:list})
+(mapc ${1:function} $0)

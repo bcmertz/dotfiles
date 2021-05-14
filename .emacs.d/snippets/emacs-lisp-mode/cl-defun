@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: cl-defun
-# uuid: cl-defun
-# --
-(cl-defun ${1:name} ($2) `(doom-snippets-format "%n%s")`$0)`(doom-snippets-newline-or-eol)`

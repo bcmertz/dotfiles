@@ -1,8 +1,7 @@
 # -*- mode: snippet -*-
+# contributor: Daniel Hitzel
 # name: use-package
 # key: up
-# uuid: up
 # --
-(use-package ${1:package}
-  :${2:config}
-  `%`$0)
+(use-package ${1:package-name}
+:ensure t$0)

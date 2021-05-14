@@ -1,4 +1,6 @@
 # -*- mode: snippet -*-
+# contributor: Xah Lee (XahLee.org)
 # name: aref
+# key: aref
 # --
-(aref ${1:array} ${0:index})
+(aref ${1:array} ${2:index})

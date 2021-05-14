@@ -2,6 +2,5 @@
 # contributor: Xah Lee (XahLee.org)
 # name: error
 # key: error
-# uuid: error
 # --
-(error "$0" &optional ARGS)
+(error "${1:message}"${2: format-args})

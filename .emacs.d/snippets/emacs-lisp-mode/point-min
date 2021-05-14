@@ -1,6 +1,7 @@
 # -*- mode: snippet -*-
+# contributor: Xah Lee (XahLee.org)
 # name: point-min
-# uuid: point-min
-# key: pmi
+# key: point-min
+# key: pm
 # --
 (point-min)

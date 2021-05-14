@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
+# contributor: Xah Lee (XahLee.org)
 # name: string=
 # key: string=
-# uuid: string=
 # --
-(string= ${1:`%`} ${2:str})
+(string= $0)

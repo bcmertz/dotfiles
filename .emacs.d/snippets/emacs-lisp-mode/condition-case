@@ -1,8 +1,7 @@
 # -*- mode: snippet -*-
+# contributor: Xah Lee (XahLee.org)
 # name: condition-case
+# key: condition-case
 # key: cc
-# uuid: cc
 # --
-(condition-case ex
-    $>${0:`%`}
-  (error $0))
+(condition-case $0)

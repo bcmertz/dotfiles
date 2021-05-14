@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: &optional ...
-# uuid: opt
-# type: command
-# --
-(doom-snippets-expand :uuid "optional")
