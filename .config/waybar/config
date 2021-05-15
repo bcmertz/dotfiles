@@ -72,42 +72,42 @@
     },
 
     "custom/volume": {
-        "exec" : "volume",
-        "interval" : "0.2",
-        "format" : "<label>",
+        "exec": "volume",
+        "interval": "0.2",
+        "format": "<label>",
     },
 
     "custom/date": {
-        exec : clock
-        format-padding : 1
-        interval : 10
-        format : <label>
-        "click-left" : gsimplecal
-        click-right : calendar
+        "exec": "clock",
+        "format-padding": "1",
+        "interval": "10",
+        "format": "<label>",
+        "click-left": "gsimplecal",
+        "click-right": "calendar",
     }
 
     "custom/torrent": {
-        exec : torrent
-        format-padding : 1
-        interval : 2
-        format : <label>
+        "exec": "torrent",
+        "format-padding": "1",
+        "interval": "2",
+        "format": "<label>",
     },
 
     "custom/weather": {
-        exec : weather
-        format-padding : 1
-        interval : 120
-        format : <label>
-        click-left : fullscreen "head -n -1 $HOME/.local/share/weatherreport; read"
+        "exec" : "weather",
+        "format-padding" : "1",
+        "interval" : "120",
+        "format" : "<label>",
+        "click-left" : "fullscreen 'head -n -1 $HOME/.local/share/weatherreport; read'",
     },
 
     "custom/filesystem": {
-        exec : disk / 📁
-        format-padding : 1
-        label-padding-right : 6
-        interval : 60
-        format : <label>
-        "click-left" : pgrep -x dunst >/dev/null && notify-send "💽 Disk space" "$(df -h / --output:target,used,size && echo -e '\nFolders' && du -t 1M -sh .[!.]* * | sort -hr)"
-        click-right :  baobab
+        "exec" : "disk / 📁",
+        "format-padding" : "1",
+        "label-padding-right" : "6",
+        "interval" : "60",
+        "format" : "<label>",
+        "click-left" : "pgrep -x dunst >/dev/null && notify-send '💽 Disk space" "$(df -h / --output:target,used,size && echo -e '\nFolders' && du -t 1M -sh .[!.]* * | sort -hr)'",
+        "click-right" :  "baobab",
     },
 }
