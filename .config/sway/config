@@ -24,16 +24,16 @@ exec emacs --daemon=gui
 # exec unclutter
 xwayland disable
 
-bar {
-	font pango:mono 10
-	status_command i3blocks
-	position top
-	mode dock
-}
-
 # bar {
-#     swaybar_command waybar
+# 	font pango:mono 10
+# 	status_command i3blocks
+# 	position top
+# 	mode dock
 # }
+
+bar {
+    swaybar_command waybar
+}
 
 # formerly X stuff
 output eDP-1 scale 2
