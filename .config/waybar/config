@@ -84,7 +84,7 @@
         "format": "<label>",
         "click-left": "gsimplecal",
         "click-right": "calendar",
-    }
+    },
 
     "custom/torrent": {
         "exec": "torrent",
@@ -107,7 +107,7 @@
         "label-padding-right" : "6",
         "interval" : "60",
         "format" : "<label>",
-        "click-left" : "pgrep -x dunst >/dev/null && notify-send '💽 Disk space" "$(df -h / --output:target,used,size && echo -e '\nFolders' && du -t 1M -sh .[!.]* * | sort -hr)'",
+        "click-left" : "pgrep -x dunst >/dev/null && notify-send '💽 Disk space' '$(df -h / --output:target,used,size && echo -e '\nFolders' && du -t 1M -sh .[!.]* * | sort -hr)'",
         "click-right" :  "baobab",
     },
 }
