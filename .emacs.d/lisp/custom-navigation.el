@@ -128,6 +128,10 @@
 			          :box nil
 			          ;; (:line-width 4 :color #21252B) doesn't work for some reason
 			          :background "#21252B")
+              ;; hl line background locally
+	      (face-remap-add-relative 'hl-line nil
+			          :background "#353645") ;; #353645 gray ;; #4C77CB blue
+
 	      ;; no modeline
 	      (setq mode-line-format nil)
 	      (buffer-face-mode 1))))
