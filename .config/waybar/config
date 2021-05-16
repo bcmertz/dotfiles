@@ -1,4 +1,4 @@
-[{
+{
     "layer": "bottom",
     "position": "top",
     // "layer": "top", // Waybar at top layer
@@ -8,6 +8,9 @@
     // Choose the order of the modules
 
     "modules-left": ["sway/workspaces", "sway/mode", "custom/weather", "custom/language"],
+    "modules-center": ["custom/date"],
+    "modules-right": ["custom/network", "custom/volume", "custom/battery", "custom/memory", "custom/temp", "custom/filesystem"],
+
 
     // Modules configuration
     // "sway/workspaces": {
@@ -36,11 +39,6 @@
         "click-left": "notify-send \"Language\" \"Alt-Shift to toggle\\n\\nMod+i to select a new language\\n\\nMod+Shift+i to query keymap\"",
         "click-right": "gkbd-keyboard-display -l ir",
     },
-},
-{
-    "layer": "bottom",
-    "position": "top",
-    "modules-center": ["custom/date"],
 
     "custom/date": {
         "exec": "clock",
@@ -50,12 +48,6 @@
         "click-left": "gsimplecal",
         "click-right": "calendar",
     },
-
-},
-{
-    "layer": "bottom",
-    "position": "top",
-    "modules-right": ["custom/network", "custom/volume", "custom/battery", "custom/memory", "custom/temp", "custom/filesystem"],
 
     "custom/memory": {
         "exec": "memory",
@@ -122,4 +114,3 @@
         "click-right" :  "baobab",
     },
 }
-]
