@@ -51,7 +51,7 @@ for_window [window_role="pop-up"] floating enable
 
 # for_window [class="ranger"] floating enable # resize set 2400 1600, move position 100 100
 for_window [class="Fullscreen st"] floating enable fullscreen
-for_window [class="Sxiv"] floating enable resize set 750 1000, move position 1100 500
+for_window [class="Sxiv"] floating enable resize set 850 1000, move position 1100 500
 for_window [class="Floating st"] floating enable resize set 2400 750, move position 400 400
 for_window [class="Gsimplecal"] move position 1250 50
 for_window [class="Xarchiver"] floating enable
