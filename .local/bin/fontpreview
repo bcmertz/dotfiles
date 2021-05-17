@@ -20,27 +20,26 @@ font_size=46
 # This is so that when we open up sxiv, we can change the focus back to
 # the terminal window, so that the user can search for the fonts without
 # having to manualy change the focus back to the terminal.
-# TERMWIN_ID=$(xdotool getactivewindow)
+TERMWIN_ID=$(xdotool getactivewindow)
 
-while true; do
-    # select font with fzf
-    font=$(convert -list font |
-               awk -F: '/^[ ]*Font: /{print substr($NF,2)}' |
-               fzf
-        )
+# select font with fzf
+font=$(convert -list font |
+           awk -F: '/^[ ]*Font: /{print substr($NF,2)}' |
+           fzf --preview "
+                   convert -font {} -size $size -pointsize $font_size label:'$text' /tmp/{}.png;
+                   background sxiv /tmp/{}.png;
+                   xdotool windowfocus \"$TERMWIN_ID\""
+    )
 
-    # if we exit fzf with escape dont do anything
-    [[ -z $font ]] && exit
+# if we exit fzf with escape kill sxiv and dont do anything else
+[[ -z $font ]] && killall sxiv && exit
 
-    # https://unix.stackexchange.com/a/629096
-    # convert text into image with font chosen
-    convert -font $font -size $size -pointsize $font_size label:"$text" /tmp/$font.png || continue
+# kill images
+killall sxiv
 
-    # display the image of the text
-    sxiv /tmp/$font.png
+# https://unix.stackexchange.com/a/629096
+# convert text into image with font chosen
+convert -font $font -size $size -pointsize $font_size label:"$text" /tmp/$font.png
 
-    # Change focus from sxiv, back to the terminal window
-    # so that user can continue to search for fonts without
-    # having to manually change focus back to the terminal window
-    # xdotool windowfocus "$TERMWIN_ID"
-done
+# display the image of the text
+sxiv /tmp/$font.png
