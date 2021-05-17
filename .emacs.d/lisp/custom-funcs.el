@@ -1,5 +1,4 @@
-;; -*- lexical-binding:t -*-
-;;; custom-funcs.el --- utilities and custom defined functions
+;;; custom-funcs.el --- utilities and custom defined functions -*- lexical-binding:t -*-
 ;;;
 ;;; Commentary:
 ;;;
