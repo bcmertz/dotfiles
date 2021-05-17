@@ -21,7 +21,7 @@
 
 ;; select current line
 (defun mark-entire-line ()
-  "mark the whole line from the indent to the end"
+  "Mark the whole line from the indent to the end."
   (interactive)
   (beginning-of-line-text)
   (set-mark-command nil)
@@ -59,7 +59,7 @@ or the current buffer directory."
   )
 
 (defun org-return-newline-below ()
-  "Go to end of line and org-meta-return"
+  "Go to end of line and org-meta-return."
   (interactive)
   (end-of-line)
   (if (string= major-mode "org-mode")
@@ -100,12 +100,12 @@ or the current buffer directory."
               deactivate-mark nil))))
 
 (defun move-lines-up (n)
-  "move the line(s) spanned by the active region up by N lines."
+  "Move the line(s) spanned by the active region up by N lines."
   (interactive "*p")
   (move-lines (- (or n 1))))
 
 (defun move-lines-down (n)
-  "move the line(s) spanned by the active region down by N lines."
+  "Move the line(s) spanned by the active region down by N lines."
   (interactive "*p")
   (move-lines (or n 1)))
 
@@ -165,6 +165,7 @@ With argument, do this that many times."
 
 ;; source https://emacs.stackexchange.com/questions/46664/switch-between-horizontal-and-vertical-splitting
 (defun toggle-window-split ()
+  "Toggle window split orientation."
   (interactive)
   (if (= (count-windows) 2)
       (let* ((this-win-buffer (window-buffer))
