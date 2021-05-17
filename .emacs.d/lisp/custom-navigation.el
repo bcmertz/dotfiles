@@ -109,10 +109,6 @@
 	    (lambda ()
 	      ;; locally change the buffer background color
 	      (setq buffer-face-mode-face `(:background "#21252B"))
-	      ;; no fringes
-	      ;; (setq right-fringe-width 0)
-	      ;; (setq left-fringe-width 0)
-
 	      ;; if we want a fringe set it to a nice color
 	      ;; but only do it locally in neotree buffers
 	      (face-remap-add-relative 'fringe nil
@@ -125,7 +121,6 @@
               ;; hl line background locally
 	      (face-remap-add-relative 'hl-line nil
 			          :background "#353645") ;; #353645 gray ;; #4C77CB blue
-
 	      ;; no modeline
 	      (setq mode-line-format nil)
 	      (buffer-face-mode 1))))
