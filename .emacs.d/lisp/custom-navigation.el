@@ -88,14 +88,7 @@
   (add-hook 'kill-emacs-hook #'persp-state-save)
   )
 
-;; https://github.com/nex3/perspective-el#some-musings-on-emacs-window-layouts
-;; basically reuse display buffers that have been previously opened
-;; break neotree
-;; (setq display-buffer-alist
-;;       '((".*" (display-buffer-reuse-window display-buffer-same-window))))
-;; (setq display-buffer-reuse-frames t)         ; reuse windows in other frames
-;; (setq even-window-sizes nil)                 ; display-buffer: avoid resizing
-;; stateful window managemnt
+;; stateful window management
 (winner-mode 1)
 
 ;; Sidebar File navigation
