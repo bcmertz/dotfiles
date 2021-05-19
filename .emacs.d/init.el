@@ -38,6 +38,7 @@
 (measure-time(load "custom-flycheck.el"))         ;; error checking
 (measure-time(load "custom-pass.el"))             ;; password management
 ;; (measure-time(load "custom-email.el"))         ;; email - mu4e
+;; (measure-time(load "custom-music.el"))         ;; music - emms
 (measure-time(load "custom-lsp.el"))              ;; language server protocol
 (measure-time(load "custom-git.el"))              ;; version control
 (measure-time(load "custom-pdf.el"))              ;; pdf viewing/editing
