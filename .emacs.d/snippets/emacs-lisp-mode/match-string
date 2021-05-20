@@ -2,6 +2,5 @@
 # contributor: Xah Lee (XahLee.org)
 # name: match-string
 # key: match-string
-# key: ms
 # --
 (match-string $0)

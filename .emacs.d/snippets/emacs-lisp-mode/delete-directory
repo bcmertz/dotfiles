@@ -2,6 +2,5 @@
 # contributor: Xah Lee (XahLee.org)
 # name: delete-directory
 # key: delete-directory
-# key: dd
 # --
 (delete-directory ${1:directory}${2: recursive})
