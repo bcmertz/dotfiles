@@ -98,7 +98,7 @@
   ;; Type H to toggle hidden files
   (setq-default neo-show-hidden-files t)
   (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
-  (setq neo-autorefresh t)
+  (setq neo-autorefresh nil)
   (setq neo-window-width 30)
   (setq neo-window-fixed-size ())
   :bind("C-\\" . neotree-project-dir-toggle))
