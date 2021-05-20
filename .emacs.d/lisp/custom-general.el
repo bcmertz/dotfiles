@@ -40,12 +40,12 @@
 ;; display-time-world command provides a nice display of the time at a specified list of timezones.
 ;; Nice for working in a team with remote members.
 (setq display-time-world-list
-  '(("Etc/UTC" "UTC")
-    ("America/Los_Angeles" "Seattle")
-    ("America/New_York" "New York")
-    ("Europe/Athens" "Athens")
-    ("Pacific/Auckland" "Auckland")
-    ("Asia/Shanghai" "Shanghai")))
+      '(("Etc/UTC" "UTC")
+        ("America/Los_Angeles" "Seattle")
+        ("America/New_York" "New York")
+        ("Europe/Athens" "Athens")
+        ("Pacific/Auckland" "Auckland")
+        ("Asia/Shanghai" "Shanghai")))
 (setq display-time-world-time-format "%a, %d %b %I:%M %p %Z")
 
 ;; terminal specific escape codes
@@ -72,7 +72,7 @@
              (global-set-key (kbd "C-_") 'undo)
              ))
 (if (equal "st-meta-256color" (tty-type))
-        (define-key input-decode-map "\e[1;2A\" [S-up]))
+    (define-key input-decode-map "\e[1;2A\" [S-up]))
 (defadvice terminal-init-xterm (after select-shift-up activate)
   (define-key input-decode-map \"\e[1;2A\" [S-up]))]))]"))
 
