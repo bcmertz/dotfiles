@@ -21,6 +21,10 @@
 ;; use spaces instead of tabs
 (setq-default indent-tabs-mode nil)
 
+;; untabify on save
+;; (add-hook 'before-save-hook '(lambda()
+;;                                (untabify (point-min) (point-max))))
+
 ;; delete trailing whitespace on save
 (add-hook 'before-save-hook '(lambda()
                                (when (not (or (derived-mode-p 'markdown-mode)))
