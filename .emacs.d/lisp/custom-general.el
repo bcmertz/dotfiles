@@ -23,11 +23,6 @@
 ;; save place in files
 (save-place-mode 1)
 
-;; delete trailing whitespace
-(add-hook 'before-save-hook '(lambda()
-                               (when (not (or (derived-mode-p 'markdown-mode)))
-                                 (delete-trailing-whitespace))))
-
 ;; unbind C-z suspend unless were in a terminal where it's useful
 (defun unbind-suspend ()
   (global-unset-key (kbd "C-z")))

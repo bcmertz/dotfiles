@@ -21,6 +21,11 @@
 ;; use spaces instead of tabs
 (setq-default indent-tabs-mode nil)
 
+;; delete trailing whitespace on save
+(add-hook 'before-save-hook '(lambda()
+                               (when (not (or (derived-mode-p 'markdown-mode)))
+                                 (delete-trailing-whitespace))))
+
 ;; replace highlighted sections
 (delete-selection-mode 1)
 
