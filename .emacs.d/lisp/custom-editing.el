@@ -14,8 +14,8 @@
 ;; in a region like comment-line does
 ;; also get rid of annoying web mode binding
 (add-hook 'web-mode-hook
-      (lambda ()
-        (local-unset-key (kbd "M-;"))))
+          (lambda ()
+            (local-unset-key (kbd "M-;"))))
 (global-set-key (kbd "M-;") 'comment-line)
 
 ;; use spaces instead of tabs
