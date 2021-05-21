@@ -11,7 +11,7 @@ lock
 shutdown
 reboot"
 
-chosen=$(printf "$options" | dmenu -c -i -l 20 -p '👋:')
+chosen=$(printf "$options" | dmenu -c -i -l 20 -p '👋:' -bw 3)
 [ "$chosen" = "" ] && exit
 
 case $chosen in
