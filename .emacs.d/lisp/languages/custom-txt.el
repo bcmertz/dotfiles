@@ -14,6 +14,10 @@
             (lambda ()
               ;; C-e goes to the end of the visual line not the logical line
               (turn-on-visual-line-mode)
+
+              ;; shorter lines
+              (set (make-local-variable 'cwm-centered-window-width) 80)
+
               ;; dont have super long lines, break them
               (setq word-wrap t)
               )

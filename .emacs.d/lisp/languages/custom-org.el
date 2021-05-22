@@ -21,6 +21,10 @@
   :defer t
   :config
   (setq org-support-shift-select t)
+  (add-hook 'org-mode-hook
+            (lambda ()
+              ;; override txt file setting
+              (set (make-local-variable 'cwm-centered-window-width) 130)))
   :bind (:map org-mode-map
               ("<M-return>" . org-return-newline-below)
               ("C-`" . org-open-at-point-plaintext)
