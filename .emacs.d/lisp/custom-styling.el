@@ -38,6 +38,9 @@
 (which-key-add-key-based-replacements "C-c t" "theming")
 (global-set-key (kbd "C-c t t") 'change-theme)
 
+;; remove ugly change in bg color in fringes
+(set-face-attribute 'fringe nil :background nil)
+
 ;; transparency (focused . unfocused)
 (set-frame-parameter (selected-frame) 'alpha '(100 . 100))
 (add-to-list 'default-frame-alist '(alpha . (100 . 100)))
