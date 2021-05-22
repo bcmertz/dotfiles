@@ -38,8 +38,6 @@
 (which-key-add-key-based-replacements "C-c t" "theming")
 (global-set-key (kbd "C-c t t") 'change-theme)
 
-;; remove ugly change in bg color in fringes
-(set-face-attribute 'fringe nil :background nil)
 
 ;; transparency (focused . unfocused)
 (set-frame-parameter (selected-frame) 'alpha '(100 . 100))
@@ -88,6 +86,8 @@
   (setq cwm-centered-window-width 130)
   (centered-window-mode t))
 
+;; remove ugly change in bg color in fringes
+(set-face-attribute 'fringe nil :background nil)
 
 ;; Hide Scroll bar,menu bar, tool bar
 (scroll-bar-mode -1)
