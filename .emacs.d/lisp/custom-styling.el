@@ -10,7 +10,7 @@
 (setq custom-safe-themes t)
 
 ;; default gui theme
-(setq custom-theme 'doom-dracula) ;; atom-one-dark ;; doom-one
+(setq custom-theme 'doom-gruvbox) ;; atom-one-dark doom-one doom-dracula
 (apply-if-gui 'load-theme custom-theme t)
 
 ;; change theme utility
