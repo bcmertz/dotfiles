@@ -27,7 +27,7 @@
 
 ;; delete trailing whitespace on save
 (add-hook 'before-save-hook '(lambda()
-                               (when (not (or (derived-mode-p 'markdown-mode)))
+                               (when (not (or (derived-mode-p 'markdown-mode 'org-mode)))
                                  (delete-trailing-whitespace))))
 
 ;; replace highlighted sections
