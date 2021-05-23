@@ -18,6 +18,7 @@ mu-wizard-git
 multimarkdown
 nerd-fonts-ubuntu-mono
 persian-hm-ftx-fonts
+pywal-git
 qt4
 rar
 redshift-wayland-git
