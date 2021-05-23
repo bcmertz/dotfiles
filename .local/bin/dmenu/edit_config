@@ -14,7 +14,9 @@ configs=".local/bin/
 .bash_aliases
 .xprofile
 .xinitrc
-.bash_profile"
+.bash_profile
+.Xresources
+"
 
 chosen=$(printf "$configs" | dmenu -bw 3 -c -i -l 20 -p 'Edit config:')
 [ "$chosen" = "" ] && exit

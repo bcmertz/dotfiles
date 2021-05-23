@@ -38,3 +38,5 @@ parse_git_branch() {
 }
 
 PS1='\[\033[01;32m\]leila\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;35m\]$(parse_git_branch)\[\033[00m\]\$ ' ### ONE LINE, WITH $ AT END
+
+wal --preview | tail -n 3

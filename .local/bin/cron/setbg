@@ -58,6 +58,7 @@ case ${SESSION} in
         ;;
 
     *)
-        feh --bg-scale $filepath
+        # feh --bg-scale $filepath
+        wal -i $filepath
         ;;
 esac
