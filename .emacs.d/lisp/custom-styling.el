@@ -6,12 +6,7 @@
 ;;;
 ;;; Code:
 
-(use-package ewal
-  ;; :init
-  ;; (setq ewal-use-built-in-always-p nil
-  ;;             ewal-use-built-in-on-failure-p t
-  ;;             ewal-built-in-palette "sexy-material")
-  )
+(use-package ewal)
 
 ;; stop asking if my themes are trusted
 (setq custom-safe-themes t)
