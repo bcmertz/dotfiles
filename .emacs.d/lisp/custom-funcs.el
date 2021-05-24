@@ -6,6 +6,13 @@
 ;;;
 ;;; Code:
 
+;; refresh ewal theme
+(defun refresh-theme ()
+  "Refresh the theme if we're using ewal"
+  (interactive)
+  (load-theme 'ewal-doom-one)
+  )
+
 ;; if gui do something in whatver type of emacs instance we are using
 (defun apply-if-gui (&rest action)
   "Do specified ACTION if we're in a gui regardless of daemon or not."

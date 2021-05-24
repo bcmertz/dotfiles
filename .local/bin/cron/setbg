@@ -62,3 +62,6 @@ case ${SESSION} in
         wal -i $filepath
         ;;
 esac
+
+# refresh emacs theme
+emacsclient --socket-name=gui -e '(refresh-theme)\'

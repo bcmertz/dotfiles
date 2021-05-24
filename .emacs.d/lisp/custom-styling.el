@@ -6,11 +6,18 @@
 ;;;
 ;;; Code:
 
+(use-package ewal
+  ;; :init
+  ;; (setq ewal-use-built-in-always-p nil
+  ;;             ewal-use-built-in-on-failure-p t
+  ;;             ewal-built-in-palette "sexy-material")
+  )
+
 ;; stop asking if my themes are trusted
 (setq custom-safe-themes t)
 
 ;; default gui theme
-(setq custom-theme 'doom-gruvbox) ;; atom-one-dark doom-one doom-dracula
+(setq custom-theme 'ewal-doom-one) ;; atom-one-dark doom-one doom-dracula doom-gruvbox
 (apply-if-gui 'load-theme custom-theme t)
 
 ;; change theme utility
