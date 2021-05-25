@@ -19,13 +19,19 @@ exec_always --no-startup-id refresh polybar
 # 	modifier None
 # }
 
-# colour of border, background, text, indicator, and child_border
-client.focused          #bf616a #2f343f #d8dee8 #bf616a #d8dee8
-client.focused_inactive #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.unfocused        #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.urgent           #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.placeholder      #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.background       #2f343f
+
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
+set_from_resource $unfocused i3wm.color4 #f0f0f0
+
+# class                 border  backgr. text indicator child_border
+client.focused          $bg          $bg            $fg  $bg              $bg
+client.focused_inactive $unfocused   $unfocused     $fg  $unfocused       $unfocused
+client.unfocused        $unfocused   $unfocused     $fg  $unfocused       $unfocused
+client.urgent           $bg          $bg            $fg  $bg              $bg
+client.placeholder      $bg          $bg            $fg  $bg              $bg
+
+client.background       $bg
 
 # Font for window titles
 font pango:DejaVu Sans Mono 10
