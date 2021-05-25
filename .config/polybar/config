@@ -4,7 +4,7 @@
 foreground = #ffffff
 background = #2f000000
 highlight = ${xrdb:color10:#222}
-
+# highlight = #16A085
 
 ############### bars ######################
 
@@ -189,7 +189,6 @@ label-focused = %index%
 label-focused-foreground = #e4e4e4
 label-focused-background = #222d32
 label-focused-underline = ${colors.highlight}
-# label-focused-underline = #16A085
 label-focused-padding = 1
 label-unfocused-padding = 1
 label-unfocused-background = ${colors.background}
