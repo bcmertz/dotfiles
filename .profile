@@ -2,8 +2,8 @@
 #
 # on login
 
-# Adds `~/.local/bin/` and all subdirectories to $PATH and $Home/bin for appimages
-export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//'):$HOME/bin"
+# Adds `~/.local/bin/` and all subdirectories to $PATH
+export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 export TERMINAL="st-meta-256color"
 export BROWSER="firefox"
 export READER="zathura"
