@@ -4,8 +4,10 @@ arch-wiki-docs
 arduino-mk
 behdad-fonts
 dracula-gtk-theme
+emacs-git
 firefox-nightly
 getmail6
+gnome-screensaver
 grub2-theme-preview
 heroku-cli
 ir-standard-fonts
