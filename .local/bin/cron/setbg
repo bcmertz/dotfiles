@@ -63,5 +63,11 @@ case ${SESSION} in
         ;;
 esac
 
+# if we're running gnome screensaver update the lock screen
+if pgrep -x "gnome-screensav" > /dev/null
+then
+    gsettings set org.gnome.desktop.screensaver picture-uri "file://$filepath"
+fi
+
 # refresh emacs theme
 emacsclient --socket-name=gui -e '(refresh-theme)\'

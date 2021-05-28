@@ -2,8 +2,15 @@
 #
 # exit menu
 
+
 locker() {
-    slock && sleep 1
+    # if we're running gnome screensaver use it if not use slock
+    if pgrep -x "gnome-screensav" > /dev/null
+    then
+        gnome-screensaver-command -l
+    else
+        slock && sleep 1
+    fi
 }
 
 options="logout
