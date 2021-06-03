@@ -6,13 +6,13 @@
 ;;;
 ;;; Code:
 
-(use-package ewal)
+;; (use-package ewal)
 
 ;; stop asking if my themes are trusted
 (setq custom-safe-themes t)
 
 ;; default gui theme
-(setq custom-theme 'ewal-doom-one) ;; atom-one-dark doom-one doom-dracula doom-gruvbox
+(setq custom-theme 'doom-one) ;; atom-one-dark doom-one doom-dracula doom-gruvbox ewal-doom-one
 (apply-if-gui 'load-theme custom-theme t)
 
 ;; change theme utility
