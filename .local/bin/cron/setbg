@@ -58,8 +58,16 @@ case ${SESSION} in
         ;;
 
     *)
-        # feh --bg-scale $filepath
-        wal -i $filepath
+        if [ "true" = $(global_cfg pywal_terminal) ]
+        then
+            # set wallpaper and set xresources colorscheme
+            wal -i $filepath
+            # refresh emacs theme
+            emacsclient --socket-name=gui -e '(refresh-theme)\'
+        else
+            feh --bg-scale $filepath
+        fi
+
         ;;
 esac
 
@@ -68,6 +76,3 @@ if pgrep -x "gnome-screensav" > /dev/null
 then
     gsettings set org.gnome.desktop.screensaver picture-uri "file://$filepath"
 fi
-
-# refresh emacs theme
-emacsclient --socket-name=gui -e '(refresh-theme)\'
