@@ -7,7 +7,7 @@ dir="$HOME/"
 
 # configs
 configs=".local/bin/
-.config/global.cfg
+.config/
 .emacs.d/lisp/
 .bashrc
 .coderc
