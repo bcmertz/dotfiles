@@ -13,8 +13,11 @@
   (if (string= (shell-command-to-string "global_cfg pywal_emacs") "true")
       (setq custom-theme 'ewal-doom-one)
     (setq custom-theme default-theme))
-  (load-theme custom-theme)
-  )
+  ;; disable all enabled themes
+  (dolist (i custom-enabled-themes)
+    (disable-theme i))
+  ;; load theme
+  (load-theme custom-theme))
 
 ;; if gui do something in whatver type of emacs instance we are using
 (defun apply-if-gui (&rest action)

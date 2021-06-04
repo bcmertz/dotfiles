@@ -30,8 +30,10 @@
   (ivy-read "dynamic theming <C-M-m>: " (custom-available-themes)
             :preselect (symbol-name (car custom-enabled-themes))
             :action (lambda (theme)
-                      (dolist (theme custom-enabled-themes)
-                        (disable-theme theme))
+                      ;; disable enabled themes
+                      (dolist (i custom-enabled-themes)
+                        (disable-theme i))
+                      ;; load new theme
                       (load-theme (intern theme) t))))
 
 ;; which key prefix for styling related keybindings

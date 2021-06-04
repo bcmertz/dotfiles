@@ -1,0 +1,9 @@
+#!/bin/bash
+#
+# focus emacs & insert pass password through emacs
+
+focus Emacs
+
+if_emacs_frame_exists \
+    "emacsclient --socket-name=gui ~/.config/global.cfg" \
+    "emacsclient --socket-name=gui -c ~/.config/global.cfg"
