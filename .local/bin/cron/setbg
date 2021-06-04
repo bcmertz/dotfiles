@@ -73,11 +73,11 @@ esac
 if pgrep -x "gnome-screensav" > /dev/null
 then
     # blur lockscreen
-    convert $filepath -filter Gaussian -blur 0x8 /tmp/lock_screen.png
-    gsettings set org.gnome.desktop.screensaver picture-uri "file:///tmp/lock_screen.png"
+    # convert $filepath -filter Gaussian -blur 0x8 /tmp/lock_screen.png
+    # gsettings set org.gnome.desktop.screensaver picture-uri "file:///tmp/lock_screen.png"
 
     # dont blur
-    # gsettings set org.gnome.desktop.screensaver picture-uri "file://$filepath"
+    gsettings set org.gnome.desktop.screensaver picture-uri "file://$filepath"
 fi
 
 # refresh emacs theme
