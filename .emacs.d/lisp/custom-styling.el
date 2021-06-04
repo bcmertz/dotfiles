@@ -1,4 +1,4 @@
-;;; custom-styling.el --- custom styling  -*- lexical-binding:t -*-
+;;; custom-styling.el --- custom styling
 ;;;
 ;;; Commentary:
 ;;;
@@ -10,7 +10,8 @@
 (setq custom-safe-themes t)
 
 ;; default theme
-(setq custom-theme 'doom-one) ;; atom-one-dark doom-one doom-dracula doom-gruvbox ewal-doom-one
+(setq custom-theme 'doom-one)     ;; atom-one-dark doom-one doom-dracula doom-gruvbox ewal-doom-one
+(setq default-theme custom-theme) ;; default theme to be used by refresh-theme in custom-funcs.el
 
 ;; check if we're using pywal to set emacs colorscheme
 (if (string= (shell-command-to-string "global_cfg pywal_emacs") "true")

@@ -8,9 +8,12 @@
 
 ;; refresh ewal theme
 (defun refresh-theme ()
-  "Refresh the theme if we're using ewal"
+  "Refresh the theme based on global config of whether to use pywal colors for Emacs."
   (interactive)
-  (load-theme 'ewal-doom-one)
+  (if (string= (shell-command-to-string "global_cfg pywal_emacs") "true")
+      (setq custom-theme 'ewal-doom-one)
+    (setq custom-theme default-theme))
+  (load-theme custom-theme)
   )
 
 ;; if gui do something in whatver type of emacs instance we are using
