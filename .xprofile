@@ -16,7 +16,7 @@ fi
 # autolock screen after half an hour
 time=30
 case $(global_cfg screen_locker) in
-    "gnome-screenlocker")
+    "gnome-screensaver")
         gnome-screensaver & # gnome autolock daemon
         xautolock -time $time -locker 'gnome-screensaver-command -l' &
         ;;

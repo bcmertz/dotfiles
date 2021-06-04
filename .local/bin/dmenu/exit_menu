@@ -5,7 +5,7 @@
 
 locker() {
     # if we're running gnome screensaver use it if not use slock
-    if pgrep -x "gnome-screensaver" > /dev/null
+    if pgrep -x "gnome-screensav" > /dev/null
     then
         gnome-screensaver-command -l
     else
@@ -13,8 +13,8 @@ locker() {
     fi
 }
 
-options="logout
-lock
+options="lock
+logout
 shutdown
 reboot"
 
