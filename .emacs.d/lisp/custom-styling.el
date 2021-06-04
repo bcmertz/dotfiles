@@ -1,4 +1,4 @@
-;;; custom-styling.el --- custom styling
+;;; custom-styling.el --- custom styling  -*- lexical-binding:t -*-
 ;;;
 ;;; Commentary:
 ;;;
@@ -6,13 +6,20 @@
 ;;;
 ;;; Code:
 
-;; (use-package ewal)
-
 ;; stop asking if my themes are trusted
 (setq custom-safe-themes t)
 
-;; default gui theme
+;; default theme
 (setq custom-theme 'doom-one) ;; atom-one-dark doom-one doom-dracula doom-gruvbox ewal-doom-one
+
+;; check if we're using pywal to set emacs colorscheme
+(if (string= (shell-command-to-string "global_cfg pywal_emacs") "true")
+    (progn
+      (use-package ewal)
+      (setq custom-theme 'ewal-doom-one)))
+
+
+;; default gui theme
 (apply-if-gui 'load-theme custom-theme t)
 
 ;; change theme utility
