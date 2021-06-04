@@ -24,17 +24,7 @@
             :action (lambda (theme)
                       (dolist (theme custom-enabled-themes)
                         (disable-theme theme))
-                      (load-theme (intern theme) t))
-            ;; slowww automatic theme switching
-            ;; :update-fn
-            ;; (lambda()
-            ;;   ;; basically do this https://github.com/abo-abo/swiper/blob/master/counsel.el#L1082
-            ;;   ;; (counsel-load-theme-action (ivy-state-current ivy-last)))
-            ;;   (mapc #'disable-theme custom-enabled-themes)
-            ;;   (load-theme (intern (ivy-state-current ivy-last)) t)
-            ;;   )
-            )
-  )
+                      (load-theme (intern theme) t))))
 
 ;; which key prefix for styling related keybindings
 (which-key-add-key-based-replacements "C-c t" "theming")
