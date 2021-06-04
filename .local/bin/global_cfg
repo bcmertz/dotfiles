@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# global configuration
+
+config="$HOME/.config/global_cfg"
+
+grep -i $1 $config  | awk '{print $2}'

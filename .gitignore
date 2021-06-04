@@ -24,6 +24,7 @@
 
 # config
 !.config/
+!.config/global_cfg
 !.config/i3-scrot.conf
 !.config/mimeapps.list
 !.config/redshift.conf
