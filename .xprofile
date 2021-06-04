@@ -13,6 +13,20 @@ if [[ "$session" == "xfce" ]]; then
     plank &
 fi
 
+# autolock screen after half an hour
+time=30
+case $(global_cfg screen_locker) in
+    "gnome-screenlocker")
+        gnome-screensaver & # gnome autolock daemon
+        xautolock -time $time -locker 'gnome-screensaver-command -l' &
+        ;;
+
+    *)
+        xautolock -time $time -locker slock &
+        ;;
+esac
+
+
 dunst &         # notifications
 redshift &      # reduce bluelight
 clipmenud &     # clipmenu daemon
@@ -20,8 +34,6 @@ unclutter &     # get rid of mouse
 # monerod &       # start the monero daemon
 # monero_mine &   # mine monero
 setxkbmap -layout us,ir -option grp:alt_shift_toggle & # set keyboards
-# xautolock -time 30 -locker slock &  # autolock screen after half an hour
-xautolock -time 30 -locker 'gnome-screensaver-command -l' &  # autolock screen after half an hour
 start-pulseaudio-x11 &              # pulseaudio, should be automatic
 transmission-daemon &               # transmission in background
 emacs --daemon=term &               # terminal emacs daemon
