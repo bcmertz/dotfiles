@@ -3,7 +3,7 @@
 # global configuration
 
 key=$1
-config="$HOME/.config/global_cfg"
+config="$HOME/.config/global.cfg"
 
 # get the value of the key provided
 test=$(grep -i $key $config  | awk '{print $2}')
