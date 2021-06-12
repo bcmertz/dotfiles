@@ -12,6 +12,7 @@ highlight = ${xrdb:color10:#222}
 font-0 = Mono:pixelsize=16
 font-1 = NotoColorEmoji:scale=8
 font-2 = UbuntuMono Nerd Font:size=24;7
+font-3 = UbuntuMono Nerd Font:size=18;7
 
 tray-position = right
 tray-detached = true
@@ -60,7 +61,7 @@ modules-right = left1 network volume battery memory temp filesystem
 type = custom/text
 content-background = "#00000000"
 content-foreground = ${colors.background}
-content = "%{T4}%{T-}"
+content = "%{T3}%{T-}"
 
 [module/left1]
 type = custom/text
@@ -182,15 +183,15 @@ ws-icon-3 = 4; 
 # https://github.com/polybar/polybar/issues/991
 # https://github.com/ryanoasis/nerd-fonts/issues/442
 # should be fixed in nerd fonts 2.2.0
-#
-# label-focused = %icon%
-# label-unfocused = %icon%
-# label-visible = %icon%
+# wrapped in font 4 (1 indexed)
+label-focused = "%{T4}%icon%%{T-}"
+label-unfocused = "%{T4}%icon%%{T-}"
+label-visible = "%{T4}%icon%%{T-}"
 
 # plain workspace indeces
-label-focused = %index%
-label-unfocused = %index%
-label-visible = %index%
+# label-focused = %index%
+# label-unfocused = %index%
+# label-visible = %index%
 
 [module/i3]
 type = internal/i3
