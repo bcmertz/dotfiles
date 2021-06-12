@@ -183,15 +183,15 @@ ws-icon-3 = 4; 
 # https://github.com/polybar/polybar/issues/991
 # https://github.com/ryanoasis/nerd-fonts/issues/442
 # should be fixed in nerd fonts 2.2.0
-# wrapped in font 4 (1 indexed)
-label-focused = "%{T4}%icon%%{T-}"
-label-unfocused = "%{T4}%icon%%{T-}"
-label-visible = "%{T4}%icon%%{T-}"
+# wrapped in font 4 (1 indexed) to make it slightly smaller
+# label-focused = "%{T4}%icon%%{T-}"
+# label-unfocused = "%{T4}%icon%%{T-}"
+# label-visible = "%{T4}%icon%%{T-}"
 
 # plain workspace indeces
-# label-focused = %index%
-# label-unfocused = %index%
-# label-visible = %index%
+label-focused = %index%
+label-unfocused = %index%
+label-visible = %index%
 
 [module/i3]
 type = internal/i3
