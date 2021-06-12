@@ -179,13 +179,15 @@ ws-icon-2 = 3; 
 ws-icon-3 = 4; 
 
 # nerdy workspace icons
+# https://github.com/polybar/polybar/issues/991
+# https://github.com/ryanoasis/nerd-fonts/issues/442
+# should be fixed in nerd fonts 2.2.0
 #
 # label-focused = %icon%
 # label-unfocused = %icon%
 # label-visible = %icon%
 
 # plain workspace indeces
-#
 label-focused = %index%
 label-unfocused = %index%
 label-visible = %index%
