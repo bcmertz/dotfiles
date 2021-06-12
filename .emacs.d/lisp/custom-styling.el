@@ -104,10 +104,10 @@
 ;; Emoji: 😄, 🤦, 🏴, ,  ;; should render as 3 color emojis and 2 glyphs
 (defun styling/set-backup-fonts()
   "Set the emoji and glyph fonts."
-  (set-fontset-font t 'symbol "Apple Color Emoji" nil 'append)
-  (set-fontset-font t 'symbol "Noto Color Emoji" nil 'append)
-  (set-fontset-font t 'symbol "Segoe UI Emoji" nil 'append)
-  (set-fontset-font t 'symbol "UbuntuMono Nerd Font" nil 'append)
+  (set-fontset-font t 'symbol "Apple Color Emoji" nil 'prepend)
+  (set-fontset-font t 'symbol "Noto Color Emoji" nil 'prepend)
+  (set-fontset-font t 'symbol "Segoe UI Emoji" nil 'prepend)
+  (set-fontset-font t 'symbol "UbuntuMono Nerd Font" nil 'prepend)
   )
 
 ;; respect default terminal fonts
