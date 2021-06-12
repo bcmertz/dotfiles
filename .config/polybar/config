@@ -172,8 +172,27 @@ format = <label>
 click-left = pgrep -x dunst >/dev/null && notify-send "💽 Disk space" "$(df -h / --output=target,used,size && echo -e '\nFolders' && du -t 1M -sh .[!.]* * | sort -hr)"
 click-right =  baobab
 
+[module/workspaces]
+ws-icon-0 = 1; 
+ws-icon-1 = 2; 
+ws-icon-2 = 3; 
+ws-icon-3 = 4; 
+
+# nerdy workspace icons
+#
+# label-focused = %icon%
+# label-unfocused = %icon%
+# label-visible = %icon%
+
+# plain workspace indeces
+#
+label-focused = %index%
+label-unfocused = %index%
+label-visible = %index%
+
 [module/i3]
 type = internal/i3
+inherit = module/workspaces
 pin-workspaces = true
 strip-wsnumbers = true
 index-sort = true
@@ -185,7 +204,7 @@ fuzzy-match = true
 format = <label-state><label-mode>
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-label-focused = %index%
+
 label-focused-foreground = #e4e4e4
 label-focused-background = #222d32
 label-focused-underline = ${colors.highlight}
@@ -202,8 +221,10 @@ label-urgent-underline = #D5A5AC
 label-urgent-padding = 1
 
 
+
 [module/bspwm]
 type = internal/bspwm
+inherit = module/workspaces
 pin-workspaces = true
 strip-wsnumbers = true
 index-sort = true
