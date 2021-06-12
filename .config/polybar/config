@@ -238,7 +238,6 @@ fuzzy-match = true
 format = <label-state> <label-mode>
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-label-focused = %index%
 label-focused-foreground = #e4e4e4
 label-focused-background = #222d32
 label-focused-underline = ${colors.highlight}
