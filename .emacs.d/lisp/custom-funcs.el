@@ -44,10 +44,13 @@
     "Open NeoTree using the project root, using find-file-in-project,
 or the current buffer directory."
     (interactive)
+    (defvar project-dir)
+    (defvar file-name)
+    (defvar neo-smart-open)
     (let ((project-dir (ignore-errors   ;;; Pick one: projectile or find-file-in-project
-           ; (projectile-project-root)
-             (ffip-project-root)
-             ))
+                         (ffip-project-root)
+                         ;; (projectile-project-root)
+                         ))
           (file-name (buffer-file-name))
           (neo-smart-open t))
       (if (and (fboundp 'neo-global--window-exists-p)
