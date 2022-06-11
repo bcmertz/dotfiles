@@ -42,7 +42,7 @@ xset r rate 300 50 &                # faster repeating keys
 lxpolkit &      # authentication agent
 setbg &         # set background
 nmcli connection up client & # connect to vpn on login
-nm-applet &
-volctl &
+# nm-applet &
+# volctl &
 # pasystray &
 # blueman-applet &
