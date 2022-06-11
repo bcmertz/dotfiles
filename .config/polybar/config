@@ -9,12 +9,12 @@ highlight = ${xrdb:color10:#222}
 ############### bars ######################
 
 [bar/root]
-font-0 = Mono:pixelsize=16
+font-0 = Mono:pixelsize=12
 font-1 = NotoColorEmoji:scale=8
 font-2 = UbuntuMono Nerd Font:size=24;7
 font-3 = UbuntuMono Nerd Font:size=18;7
 
-tray-position = right
+tray-position = none
 tray-detached = true
 tray-maxsize = 32
 tray-background = ${colors.background}
@@ -31,10 +31,10 @@ foreground = #ffffffff
 fixed-center = true
 background = #00000000
 underline-size = 4
-dpi = 133
+dpi = 130
 
 radius = 20
-height = 45
+height = 40
 module-margin-left = 0
 module-margin-right = 0
 override-redirect = false
@@ -94,7 +94,7 @@ click-right = fullscreen htop
 
 [module/battery]
 type = custom/script
-exec = battery BAT2
+exec = battery BAT0
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 format-padding = 1
@@ -167,7 +167,7 @@ exec = disk / 📁
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 format-padding = 1
-label-padding-right = 6
+# label-padding-right = 6
 interval = 60
 format = <label>
 click-left = pgrep -x dunst >/dev/null && notify-send "💽 Disk space" "$(df -h / --output=target,used,size && echo -e '\nFolders' && du -t 1M -sh .[!.]* * | sort -hr)"
