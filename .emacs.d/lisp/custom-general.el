@@ -7,7 +7,7 @@
 ;;; Code:
 
 ;; see our todo
-(setq initial-buffer-choice "~/docs/org/notes.org")
+;; (setq initial-buffer-choice "~/docs/org/notes.org")
 
 (yas-minor-mode)
 ;; backup and tmp files

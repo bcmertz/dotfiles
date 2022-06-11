@@ -46,7 +46,7 @@
   :hook (org-mode . org-bullets-mode))
 
 (setq org-return-follows-link t)
-(setq org-agenda-files '("~/docs/org/"))
+;;(setq org-agenda-files '("~/docs/org/"))
 
 ;; overwrite web mode binding for C-c C-l
 (add-hook 'web-mode-hook
