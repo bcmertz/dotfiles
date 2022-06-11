@@ -101,7 +101,8 @@
   (setq neo-autorefresh nil)
   (setq neo-window-width 30)
   (setq neo-window-fixed-size ())
-  :bind("C-\\" . neotree-project-dir-toggle))
+  :bind ("C-\\" . neotree-project-dir-toggle)
+  )
 
 (defun set-neotree-styling ()
   "Function to style neotree buffer locally."
