@@ -118,6 +118,8 @@
 (use-package all-the-icons
   :defer t
   :ensure t
+  :config
+  (if (not (file-exists-p "~/.local/share/fonts/all-the-icons.ttf"))  (all-the-icons-install-fonts t))
   )
 
 ;; Highlight current line in gui emacs
