@@ -36,7 +36,7 @@ session=${1:-$default}
 export SESSION=$session
 
 # set gtk3 scaling once we know the session
-. set_gtk_scaling
+# . set_gtk_scaling
 
 # enable these programs at the start of X
 [ -f ~/.xprofile ] && . ~/.xprofile
