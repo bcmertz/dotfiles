@@ -37,7 +37,7 @@ if [[ "$wm" != "" ]]; then
     if [[ ! -z "$wayland_session" ]]; then
         export SESSION=$wayland_session
         # set gtk3 scaling once we know the session
-        . set_gtk_scaling
+        # . set_gtk_scaling
         startup_command=$(grep -w 'Exec' /usr/share/wayland-sessions/$wayland_session.desktop | cut -d '=' -f 2)
         MOZ_ENABLE_WAYLAND=1 QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland exec dbus-run-session $startup_command
     else
