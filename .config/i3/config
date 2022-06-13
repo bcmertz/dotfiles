@@ -77,9 +77,9 @@ bindsym $mod+Print exec i3-scrot
 bindsym Print exec gnome-screenshot -i
 
 # Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% && pkill -SIGRTMIN+10 i3blocks
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% && pkill -SIGRTMIN+10 i3blocks
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -SIGRTMIN+10 i3blocks
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -SIGRTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && pkill -SIGRTMIN+10 i3blocks
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -SIGRTMIN+10 i3blocks
 bindsym XF86AudioStop exec --no-startup-id clementine --play-pause
 
 # Sreen brightness controls
