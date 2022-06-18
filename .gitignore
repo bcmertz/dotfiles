@@ -54,6 +54,7 @@
 !.config/waybar/*
 !.config/polybar/*
 !.config/calibre/*
+!.config/touchegg/*
 !.config/newsboat/*
 !.config/i3blocks/*
 !.config/fontconfig/*
