@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# move to the i3 workspace to the "right"
+
+current=$(i3-msg -t get_workspaces \
+  | jq '.[] | select(.focused==true).name' \
+  | cut -d"\"" -f2)
+
+if [ "$current" == "9" ]; then
+    exit
+fi
+
+current=$((current+1))
+
+i3-msg workspace number $current
