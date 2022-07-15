@@ -62,8 +62,12 @@ case ${SESSION} in
         then
             # set wallpaper and set xresources colorscheme
             wal -i $filepath
+        elif [ "true" $(global_cfg pywal_gtk)]
+        then
+            # do all that and set gtk scheme
+            wpg -s $filepath
         else
-            # setbg
+            # just set wallpaper
             feh --bg-scale $filepath
         fi
         ;;
