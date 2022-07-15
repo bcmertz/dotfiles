@@ -1,11 +1,11 @@
 # DO NOT EDIT! This file will be overwritten by LXAppearance.
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
-include "/home/bennett/.gtkrc-2.0.mine"
+include "/home/leah/.gtkrc-2.0.mine"
 gtk-theme-name="Dracula"
 gtk-icon-theme-name="Papirus-Adapta-Nokto-Maia"
 gtk-font-name="Manrope 10"
-gtk-cursor-theme-name="xcursor-breeze"
+gtk-cursor-theme-name="Breeze"
 gtk-cursor-theme-size=0
 gtk-toolbar-style=GTK_TOOLBAR_BOTH
 gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
