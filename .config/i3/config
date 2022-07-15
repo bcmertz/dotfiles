@@ -38,7 +38,8 @@ font pango:DejaVu Sans Mono 10
 
 for_window [class="^.*"] border pixel 2
 
-gaps inner 25
+set $default_inner_gap 25
+gaps inner $default_inner_gap
 gaps outer 0
 
 bindsym $mod+plus        gaps inner all plus 5
@@ -47,7 +48,7 @@ bindsym $mod+minus       gaps inner all minus 5
 bindsym $mod+Shift+plus  gaps outer all plus 5
 bindsym $mod+Shift+minus gaps outer all minus 5
 
-bindsym $mod+0           gaps inner all set 50
+bindsym $mod+0           gaps inner all set $default_inner_gap
 bindsym $mod+Shift+0     gaps outer all set 0
 
 focus_follows_mouse no
