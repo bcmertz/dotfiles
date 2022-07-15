@@ -47,3 +47,4 @@ nmcli connection up client & # connect to vpn on login
 # volctl &
 # pasystray &
 # blueman-applet &
+touchegg & # gestures
