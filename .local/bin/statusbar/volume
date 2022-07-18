@@ -3,14 +3,14 @@
 # Prints the current volume or 🔇 if muted. Uses PulseAudio by default,
 # uncomment the ALSA lines if you remove PulseAudio.
 
-volstat="$(pactl list sinks)"
-# volstat="$(amixer get Master)" # ALSA only equivalent.
+# volstat="$(pactl list sinks)"
+volstat="$(amixer get Master)" # ALSA only equivalent.
 
-echo "$volstat" | grep -q "Mute: yes" && printf "🔇\\n" && exit
-# echo "$volstat" | grep "\[off\]" >/dev/null && printf "🔇\\n" && exit # ALSA
+# echo "$volstat" | grep -q "Mute: yes" && printf "🔇\\n" && exit
+echo "$volstat" | grep "\[off\]" >/dev/null && printf "🔇\\n" && exit # ALSA
 
-vol="$(echo "$volstat" | grep '^[[:space:]]Volume:' | sed "s,.* \([0-9]\+\)%.*,\1,;1q")"
-# vol=$(echo "$volstat" | grep -o "\[[0-9]\+%\]" | sed "s/[^0-9]*//g;1q") # ALSA
+# vol="$(echo "$volstat" | grep '^[[:space:]]Volume:' | sed "s,.* \([0-9]\+\)%.*,\1,;1q")"
+vol=$(echo "$volstat" | grep -o "\[[0-9]\+%\]" | sed "s/[^0-9]*//g;1q") # ALSA
 
 if [ "$vol" -gt "70" ]; then
 	icon="🔊"
