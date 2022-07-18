@@ -37,6 +37,9 @@
 ;; Bind keyboard-escape-quit to ESC instead of ESC ESC ESC
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
+;; stop noises
+(setq ring-bell-function 'ignore)
+
 ;; display-time-world command provides a nice display of the time at a specified list of timezones.
 ;; Nice for working in a team with remote members.
 (setq display-time-world-list
