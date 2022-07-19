@@ -3,6 +3,9 @@
 # `~/.time` for each day
 # stolen from @lukesmithxyz
 
+if [ ! -d ~/.time ]; then
+    mkdir ~/.time
+fi
+
 date=`date '+%y-%m-%d'`
 echo $((`cat ~/.time/"$date"`+1)) > ~/.time/"$date"
-
