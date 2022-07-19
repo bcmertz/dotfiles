@@ -40,6 +40,9 @@
 ;; stop noises
 (setq ring-bell-function 'ignore)
 
+;; stop server client instructions
+(setq server-client-instructions nil)
+
 ;; display-time-world command provides a nice display of the time at a specified list of timezones.
 ;; Nice for working in a team with remote members.
 (setq display-time-world-list
