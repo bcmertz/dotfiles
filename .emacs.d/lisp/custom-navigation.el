@@ -61,6 +61,8 @@
   (projectile-mode +1)
   :config
   (setq projectile-project-search-path '("~/coding/"))
+  ;; (setq projectile-enable-caching t)
+  (setq projectile-indexing-method 'native)
   :bind (:map projectile-mode-map
               ("s-p" . projectile-command-map)
               ("C-c p" . projectile-command-map)))
