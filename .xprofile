@@ -34,7 +34,7 @@ unclutter &     # get rid of mouse
 # monerod &       # start the monero daemon
 # monero_mine &   # mine monero
 setxkbmap -layout us,ir -option grp:alt_shift_toggle & # set keyboards
-oled-linux &                        # ugh
+# oled-linux &                        # ugh
 start-pulseaudio-x11 &              # pulseaudio, should be automatic
 transmission-daemon &               # transmission in background
 emacs --daemon=term &               # terminal emacs daemon
@@ -42,7 +42,7 @@ emacs --daemon=gui &                # gui emacs daemon
 xset r rate 300 50 &                # faster repeating keys
 lxpolkit &      # authentication agent
 setbg &         # set background
-nmcli connection up client & # connect to vpn on login
+# nmcli connection up client & # connect to vpn on login
 # nm-applet &
 # volctl &
 # pasystray &
