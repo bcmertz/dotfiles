@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# copy URL of active firefox tab, then start new google search of that site
+
+id=$(xdotool getactivewindow)
+class_name=$(xdotool getwindowclassname $id)
+
+if [ $class_name != "firefox" ]; then
+    notify-send "not in firefox"
+    exit
+fi
+
+xdotool windowactivate --sync $id key --window $id --clearmodifiers F6 Ctrl+c F6
+
+url=$(xclip -o -selection clipboard)
+xsel -bc; xsel -c # clear clipboard
+
+case "$url" in
+    *reddit*)
+        # just search on the subreddit name
+        url=$(echo $url | grep -o '.*reddit.com\/r\/[^\/]*')
+        ;;
+    *)
+        url=$(echo $url | grep -o '.*.com\/')
+        echo $url
+        ;;
+esac
+
+search="site:$url"
+
+xdotool key --window $id --clearmodifiers Ctrl+t
+xdotool type --window $id --clearmodifiers $search
+xdotool key --window $id --clearmodifiers Enter
