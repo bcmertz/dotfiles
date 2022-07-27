@@ -111,7 +111,7 @@ bindsym $mod+w exec wallpaper_picker
 # utils
 bindsym $mod+g exec gpick
 bindsym $mod+s exec peek
-bindsym --release $mod+Shift+s exec /home/leah/test.sh
+bindsym --release $mod+Shift+s exec searchsite
 # global config
 bindsym $mod+t exec edit_global_config
 bindsym $mod+Shift+t exec edit_config
