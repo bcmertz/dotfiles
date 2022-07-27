@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# copy URL of active firefox tab, then start new google search of that site
+# copy URL of active firefox tab, then start new search of that site
 
 id=$(xdotool getactivewindow)
 class_name=$(xdotool getwindowclassname $id)
@@ -18,6 +18,7 @@ xsel -bc; xsel -c # clear clipboard
 case "$url" in
     *reddit*)
         # just search on the subreddit name
+        # last bit matches everything except forward slash /
         url=$(echo $url | grep -o '.*reddit.com\/r\/[^\/]*')
         ;;
     *)
