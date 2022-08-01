@@ -113,14 +113,14 @@ bindsym $mod+g exec gpick
 bindsym $mod+s exec peek
 bindsym --release $mod+Shift+s exec searchsite
 # global config
-bindsym $mod+t exec edit_global_config
-bindsym $mod+Shift+t exec edit_config
+bindsym $mod+t exec edit_config
+bindsym $mod+Shift+t exec edit_global_config
 # bmenu
 bindsym $mod+Shift+d exec fullscreen bmenu
 # file managers
 bindsym $mod+Shift+f exec fullscreen find_file
-bindsym $mod++Shift+x exec st -e ranger
-bindsym $mod+x exec pcmanfm
+bindsym $mod+x exec st -e ranger
+bindsym $mod+Shift+x exec pcmanfm
 # browsers
 bindsym $mod+b exec firefox
 bindsym $mod+Shift+b exec torbrowser-launcher
