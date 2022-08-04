@@ -106,8 +106,6 @@
               ("s-p" . projectile-command-map)
               ("C-c p" . projectile-command-map)))
 
-
-
 ;; perspective navigation
 (use-package perspective
   :bind (
@@ -183,6 +181,7 @@
 (global-set-key [(control x) (control r)] 'find-file-root)
 (global-set-key (kbd "M-s") 'counsel-ag)    ;; C-c C-o 'ivy-occur "Search All Results"
 (global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-h k") 'counsel-descbinds)
 
 
 (use-package dired-subtree
