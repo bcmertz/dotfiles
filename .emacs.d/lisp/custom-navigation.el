@@ -50,6 +50,26 @@
   (ivy-rich-mode 1)
   )
 
+(require 'ivy-posframe)
+(setq ivy-posframe-display-functions-alist
+      '((counsel-M-x     . ivy-posframe-display-at-frame-top-center)
+        ;; (swiper          . ivy-display-function-fallback)
+        ;; (complete-symbol . ivy-posframe-display-at-point)
+        (t               . ivy-display-function-fallback)))
+;; https://github.com/tumashu/ivy-posframe/issues/105#issuecomment-750370286
+(defun my-ivy-posframe-get-size ()
+  "Set the ivy-posframe size according to the current frame."
+    (let* ((height (or ivy-posframe-height (or ivy-height 10)))
+           (min-height (min height (+ 1 (length ivy--old-cands))))
+           (width (min (or ivy-posframe-width 200) (round (* .75 (frame-width))))))
+      (list
+       :height height
+       :width width
+       :min-height min-height
+       :min-width width)))
+(setq ivy-posframe-size-function 'my-ivy-posframe-get-size)
+(ivy-posframe-mode 1)
+
 ;; slooooow
 ;; (use-package all-the-icons-ivy-rich
 ;;   :ensure t
