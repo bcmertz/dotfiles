@@ -96,8 +96,15 @@
   ;; hack to avoid conflict
   ("C-_" . text-scale-decrease)
   ("C-+" . text-scale-increase)
-  :config
-  (global-undo-tree-mode))
+  :init
+  (global-undo-tree-mode)
+  :custom
+  (undo-tree-auto-save-history t)
+  (undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
+  ;; (undo-tree-visualizer-diff t)
+  ;; (undo-tree-visualizer-timestamps t)
+  )
+
 
 ;; Utilities
 (global-set-key (kbd "M-/") 'comment-or-uncomment-region)
@@ -146,5 +153,16 @@
 ;; rename file and buffer
 (global-unset-key (kbd "C-x C-r"))
 (global-set-key (kbd "C-x C-r") 'rename-file-and-buffer)
+
+
+;; might be useful for autoreverting like tail for system logs
+;; (use-package autorevert
+;;   :ensure nil
+;;   :config
+;;   (setq auto-revert-interval 2)
+;;   (setq auto-revert-check-vc-info t)
+;;   (setq global-auto-revert-non-file-buffers nil)
+;;   (setq auto-revert-verbose nil)
+;;   (global-auto-revert-mode +1))
 
 ;;; custom-editing.el ends here
