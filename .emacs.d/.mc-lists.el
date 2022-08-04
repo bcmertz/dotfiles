@@ -20,6 +20,7 @@
 
 (setq mc/cmds-to-run-once
       '(
+        counsel-M-x
         counsel-find-file
         eval-buffer
         evil-mode
