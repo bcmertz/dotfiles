@@ -127,6 +127,8 @@
   ;; TODO figure out why restoring expects a directory
   (setq persp-state-default-file "~/.emacs.d/save-perspective")
   (add-hook 'kill-emacs-hook #'persp-state-save)
+  :custom
+  (persp-mode-prefix-key (kbd "C-c M-p"))
   )
 
 ;; stateful window management
