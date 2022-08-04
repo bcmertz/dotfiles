@@ -7,16 +7,27 @@
 ;;; Code:
 ;; emacs window management
 
-;; (use-package centaur-tabs
-;;   :demand
-;;   :config
-;;   (centaur-tabs-mode t)
-;;   (setq centaur-tabs-height 32)
-;;   (setq centaur-tabs-set-icons t)
-;;   (setq centaur-tabs-set-bar 'left)
-;;   :bind
-;;   ("C-M-<left>" . centaur-tabs-backward)
-;;   ("C-M-<right>" . centaur-tabs-forward))
+(use-package centaur-tabs
+  :demand
+  :config
+  (centaur-tabs-mode -1)
+  (setq centaur-tabs-height 32)
+  (setq centaur-tabs-set-icons t)
+;;  (setq centaur-tabs-set-bar 'left)
+  :bind
+  ("C-M-<left>" . centaur-tabs-backward)
+  ("C-M-<right>" . centaur-tabs-forward))
+
+(defun toggle-centaur-tabs ()
+  "Toggle centaur tabs mode."
+  (interactive)
+  (if (eq centaur-tabs-mode t)
+      (centaur-tabs-mode -1)
+    (centaur-tabs-mode 1))
+  )
+
+;; toggle hl line mode
+(global-set-key (kbd "C-c t b") 'toggle-centaur-tabs)
 
 
 (use-package windmove
