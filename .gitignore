@@ -38,6 +38,7 @@
 !.config/i3/*
 !.config/git/*
 !.config/mpd/*
+!.config/eww/*
 !.config/mpv/*
 !.config/gtk3/*
 !.config/htop/*
