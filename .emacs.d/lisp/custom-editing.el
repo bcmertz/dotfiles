@@ -26,7 +26,7 @@
 ;;                                (untabify (point-min) (point-max))))
 
 ;; delete trailing whitespace on save
-(add-hook 'before-save-hook '(lambda()
+(add-hook 'before-save-hook (lambda()
                                (when (not (or (derived-mode-p 'markdown-mode 'org-mode)))
                                  (delete-trailing-whitespace))))
 

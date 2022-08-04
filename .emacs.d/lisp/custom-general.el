@@ -57,7 +57,7 @@
 ;; terminal specific escape codes
 ;; found with showkey -a
 (add-hook 'tty-setup-hook
-          '(lambda ()
+          (lambda ()
              (define-key input-decode-map "\e[1;3A" [M-up])
              (define-key input-decode-map "\e[1;3B" [(meta down)])
              (define-key input-decode-map "\e[1;3C" [(meta right)])
