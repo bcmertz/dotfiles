@@ -6,6 +6,21 @@
 ;;;
 ;;; Code:
 
+;; "Open a file as the root user.
+;; from https://github.com/ianyepan/.wsl-emacs.d/blob/master/init.el#L121
+(defun find-file-root ()
+  (interactive)
+  (require 'tramp)
+  (let* ((name (or buffer-file-name default-directory))
+         (tramp (and (tramp-tramp-file-p name)
+                     (tramp-dissect-file-name name)))
+         path dir file)
+    (when tramp ; If called from a "root" file, we need to fix up the path.
+      (setq path (tramp-file-name-localname tramp)
+            dir (file-name-directory path)))
+    (when (setq file (read-file-name "Find file (sudo): " dir path))
+      (find-file (concat "/sudo:root@localhost:" file)))))
+
 ;; refresh ewal theme
 (defun refresh-theme ()
   "Refresh the theme based on global config of whether to use pywal colors for Emacs."
