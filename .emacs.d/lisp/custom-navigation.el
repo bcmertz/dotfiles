@@ -123,6 +123,12 @@
   (setq neo-window-width 30)
   (setq neo-window-fixed-size ())
   :bind ("C-\\" . neotree-project-dir-toggle)
+  :custom-face
+  (neo-dir-link-face  ((t (:inherit variable-pitch))))
+  (neo-header-face    ((t (:inherit variable-pitch))))
+  (neo-banner-face    ((t (:inherit variable-pitch))))
+  (neo-root-dir-face  ((t (:inherit variable-pitch))))
+  (neo-file-link-face ((t (:inherit variable-pitch))))
   )
 
 (defun set-neotree-styling ()
