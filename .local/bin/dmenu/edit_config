@@ -16,6 +16,8 @@ configs=".local/bin/
 .xinitrc
 .bash_profile
 .Xresources
+.gitignore
+.gitconfig
 "
 
 chosen=$(printf "$configs" | dmenu -bw 3 -c -i -l 20 -p 'Edit config:')
