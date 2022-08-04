@@ -105,6 +105,14 @@
   ;; (undo-tree-visualizer-timestamps t)
   )
 
+(defun my-undo-tree-save-history (undo-tree-save-history &rest args)
+  (let ((message-log-max nil)
+        (inhibit-message t))
+    (apply undo-tree-save-history args)))
+
+(advice-add 'undo-tree-save-history :around 'my-undo-tree-save-history)
+
+
 
 ;; Utilities
 (global-set-key (kbd "M-/") 'comment-or-uncomment-region)
