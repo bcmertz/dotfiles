@@ -25,6 +25,7 @@
   :diminish
   :bind (("C-x b" . ivy-switch-buffer)
          ("C-x B" . ivy-switch-buffer-other-window)
+
          (:map ivy-minibuffer-map
                ("C-c C-r" . ivy-resume)
                ("C-c C-o" . ivy-occur) ;; open list in buffer
@@ -44,8 +45,10 @@
   (setq ivy-rich-path-style 'abbrev
         ;; ivy-rich-switch-buffer-align-virtual-buffer t
         ivy-virtual-abbreviate 'full)
+  (setcdr (assq t ivy-format-functions-alist) #'ivy-format-function-line)
   :config
-  (ivy-rich-mode 1))
+  (ivy-rich-mode 1)
+  )
 
 ;; slooooow
 ;; (use-package all-the-icons-ivy-rich
@@ -54,12 +57,28 @@
 ;;   :init (all-the-icons-ivy-rich-mode 1)
 ;;   )
 
+;; nice to have in the future for cleaning up recent file suggestions
+;; (use-package recentf
+;;   :ensure nil
+;;   :config
+;;   (add-to-list 'recentf-exclude (format "%s/\\.emacs.d/early-init.el" (getenv "HOME")))
+;;   (add-to-list 'recentf-exclude (format "%s/\\.emacs.d/init.el" (getenv "HOME")))
+;;   (add-to-list 'recentf-exclude (format "%s/\\.emacs.d/elpa/.*" (getenv "HOME")))
+;;   (add-to-list 'recentf-exclude (format "%s/\\.emacs.d/workspace/.*" (getenv "HOME")))
+;;   (add-to-list 'recentf-exclude (format "%s/\\.local/lib/python3.9/site-packages/.*" (getenv "HOME")))
+;;   (add-to-list 'recentf-exclude "/usr/lib/.*")
+;;   (recentf-mode +1))
+
 ;; project navigation
 (use-package projectile
   :ensure t
   :init
   (projectile-mode +1)
   :config
+  (setq projectile-sort-order 'recentf)
+  (setq projectile-completion-system 'ivy)
+  ;; (setq projectile-indexing-method 'hybrid)
+  (setq projectile-mode-line-prefix " ")
   (setq projectile-project-search-path '("~/coding/"))
   ;; (setq projectile-enable-caching t)
   (setq projectile-indexing-method 'native)
@@ -135,6 +154,7 @@
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key [(control x) (control r)] 'find-file-root)
 (global-set-key (kbd "M-s") 'counsel-ag)    ;; C-c C-o 'ivy-occur "Search All Results"
+(global-set-key (kbd "M-x") 'counsel-M-x)
 
 ;; better C-x C-b
 (defalias 'list-buffers 'ibuffer)
@@ -143,12 +163,5 @@
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (ido-mode 1)
-
-;; Ido like M-x command completion
-(use-package smex
-  :ensure t
-  :init (smex-initialize)
-  :bind ("M-x" . smex)
-  )
 
 ;;; custom-navigation.el ends here
