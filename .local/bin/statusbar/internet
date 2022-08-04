@@ -10,7 +10,7 @@ if [ "$signal" = "" ]; then
 fi
 
 if [ "$protected" = "" ]; then
-    echo "🌐$signal"
+    echo "🌏$signal"
 else
     echo "🛡$signal"
 fi
