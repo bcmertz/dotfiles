@@ -11,6 +11,7 @@
  '(jdee-db-active-breakpoint-face-colors (cons "#D0D0E3" "#009B7C"))
  '(jdee-db-requested-breakpoint-face-colors (cons "#D0D0E3" "#005F00"))
  '(jdee-db-spec-breakpoint-face-colors (cons "#D0D0E3" "#4E4E4E"))
+ '(mini-frame-show-parameters '((top . 10) (width . 0.7) (left . 0.5)))
  '(objed-cursor-color "#D70000")
  '(org-confirm-babel-evaluate nil)
  '(org-export-html-postamble nil)
@@ -20,7 +21,7 @@
  '(org-startup-folded 'overview)
  '(org-startup-indented t)
  '(package-selected-packages
-   '(dired-subtree ewal-doom-themes ewal emms bongo define-word undo-tree expand-region company-box counsel ivy-hydra centered-window company-lsp lsp-ui ivy-rich doom-themes avy-zap transmission arduino arduino-mode org-drill go-eldoc lsp-mode mu4e-alert htmlize ox-reveal buffer-move go-mode desktop-environment exwm pass magit perspective flycheck yasnippet which-key web-mode vimish-fold use-package smartparens projectile pdf-tools org-bullets neotree multiple-cursors markdown-mode general evil eglot doom-modeline company avy auctex atom-one-dark-theme))
+   '(ivy-posframe dired-subtree ewal-doom-themes ewal emms bongo define-word undo-tree expand-region company-box counsel ivy-hydra centered-window company-lsp lsp-ui ivy-rich doom-themes avy-zap transmission arduino arduino-mode org-drill go-eldoc lsp-mode mu4e-alert htmlize ox-reveal buffer-move go-mode desktop-environment exwm pass magit perspective flycheck yasnippet which-key web-mode vimish-fold use-package smartparens projectile pdf-tools org-bullets neotree multiple-cursors markdown-mode general evil eglot doom-modeline company avy auctex atom-one-dark-theme))
  '(pdf-view-midnight-colors (cons "#0F1019" "#F5F5F9"))
  '(rustic-ansi-faces
    ["#F5F5F9" "#D70000" "#005F00" "#AF8700" "#1F55A0" "#AF005F" "#007687" "#0F1019"])
@@ -62,4 +63,9 @@
  '(doom-modeline-buffer-modified ((t (:inherit (error bold) :foreground "#599DD5"))))
  '(fringe ((t (:background "#282c34"))))
  '(mode-line ((t (:foreground "#D8DEE8" :background "#353645"))))
- '(mode-line-inactive ((t (:background "#181A1F")))))
+ '(mode-line-inactive ((t (:background "#181A1F"))))
+ '(neo-banner-face ((t (:inherit variable-pitch))))
+ '(neo-dir-link-face ((t (:inherit variable-pitch))))
+ '(neo-file-link-face ((t (:inherit variable-pitch))))
+ '(neo-header-face ((t (:inherit variable-pitch))))
+ '(neo-root-dir-face ((t (:inherit variable-pitch)))))
