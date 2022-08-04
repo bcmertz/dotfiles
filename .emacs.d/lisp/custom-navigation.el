@@ -156,6 +156,15 @@
 (global-set-key (kbd "M-s") 'counsel-ag)    ;; C-c C-o 'ivy-occur "Search All Results"
 (global-set-key (kbd "M-x") 'counsel-M-x)
 
+
+(use-package dired-subtree
+  :ensure t
+  :after dired
+  :config
+  (setq dired-subtree-use-backgrounds nil)
+  :bind (:map dired-mode-map ("<tab>" . dired-subtree-toggle)))
+
+
 ;; better C-x C-b
 (defalias 'list-buffers 'ibuffer)
 
