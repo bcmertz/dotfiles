@@ -1,0 +1,238 @@
+#!/bin/bash
+export XAUTHORITY=/home/$(whoami)/.Xauthority
+RED='\e[41m'
+BLUE='\e[44m'
+ORANGE='\e[46m'
+NC='\e[0m'
+
+connected_monitors=$(xrandr -q | awk '/ connected/ {print $1}')
+all_monitors=$(xrandr -q | awk '/connected/ {print $1}')
+current_resolution=$(xrandr -q | awk '/*/ {print $1}')
+
+in_array() {
+    local haystack=${1}[@]
+    local needle=${2}
+    for i in ${!haystack}; do
+        if [[ ${i} == ${needle} ]]; then
+            return 0
+        fi
+    done
+    return 1
+}
+
+function save_settings {
+	echo -e "What should the new profile be called?"
+	read profile
+	autorandr.sh --save $profile
+	echo -e "Current settings were save under the name $profile"
+}
+
+function choose_monitor {
+xrandr -q | awk '/connected/ {print $1}' | fzf-tmux --reverse -e --prompt='Choose monitor to operate on >'
+}
+
+function choose_connected_monitor {
+PS3="Choose monitor to operate on: "
+# Gather the results in an array.
+monitors=($connected_monitors "proceed" "cancel")
+xrandr -q | awk '/ connected/ {print $1}' | fzf-tmux --reverse -e --prompt='Choose monitor to operate on >'
+}
+
+function choose_second_monitor {
+xrandr -q | awk '/connected/ {print $1}' | fzf-tmux --reverse -e --prompt='Relative to which monitor? >'
+}
+
+function choose_resolution {
+PS3="Choose new resolution: "
+# Gather the results in an array.
+chosen_monitor=$(choose_connected_monitor)
+next_monitor=$(xrandr -q | awk '/connected/ {print $1}' | sed -n "/$chosen_monitor/{n;p;}")
+resolutions=($(xrandr -q | sed -n -e "/$chosen_monitor/,/$next_monitor/ p" | awk '{print $1}' | sed -e '1d;$d') "cancel")
+
+select pick in "${resolutions[@]}"
+do
+	case $pick in
+		cancel)
+			break
+			;;		
+		*)	
+			picks+=("$pick")
+			break
+			;;		
+	esac
+done
+
+if [[ $picks ]]; then
+    printf 'Setting resolution to %s\n' "${picks[*]}"
+    xrandr --output $chosen_monitor --mode "${picks[@]}"
+    picks=()
+fi
+}
+
+
+function rotate_monitor {
+PS3="Choose rotation: "
+# Gather the results in an array.
+chosen_monitor=$(choose_monitor)
+action=("left" "right" "inverted" "normal" "cancel")
+
+select pick in "${action[@]}"
+do
+	case $pick in
+		cancel)
+			break
+			;;
+		*)	
+			picks+=("$pick")
+			break
+			;;		
+	esac
+done
+
+if [[ $picks ]]; then
+    printf 'Setting orientation to %s\n' "${picks[*]}"
+    xrandr --output "$chosen_monitor" --rotate "${picks[@]}"
+    picks=()
+fi
+}
+
+
+function connect_monitor {
+PS3="Choose monitor to connect or disconnect: "
+# Gather the results in an array.
+active_monitors=$(xrandr | awk '/\ connected/ && /[[:digit:]]x[[:digit:]].*+/{print $1}')
+chosen_monitor=$(choose_monitor)
+
+if in_array active_monitors $chosen_monitor; then
+		xrandr --output $chosen_monitor --off	
+	else
+		xrandr --output $chosen_monitor --auto  
+fi
+}
+
+function choose_position {
+positions=("left-of" "right-of" "above" "below" "same-as" "cancel")
+PS3="Where to place this monitor?: "
+select pick in "${positions[@]}"
+do
+	case $pick in
+		*)	
+			picks+=("$pick")
+			echo "${picks[@]}"
+			break
+			;;		
+	esac
+done
+}
+
+function move_monitor {
+# Gather the results in an array.
+chosen_monitor=$(choose_connected_monitor)
+position=$(choose_position)
+other_monitor=$(choose_second_monitor)
+if ! [[ $position == cancel ]]; then
+	xrandr --output $chosen_monitor --$position $other_monitor
+else 
+	echo -e "Procedure cancelled"
+fi
+}
+
+function set_primary {
+	mon=$(choose_connected_monitor)
+	xrandr --output $mon --primary
+}
+
+function main {
+    while true; do
+    clear
+    echo ""
+    echo -e "                             $NC ::Monitor:: $NC "
+    echo -e " ┌───────────────────────────────────────────────────────────────────────┐"
+    echo -e " │    1   List monitors                    2   Set resolution            │"
+    echo -e " │    3   Set primary monitor              4   Position monitors         │"
+    echo -e " │    5   Connect/disconnect monitor       6   Rotate monitor            │"
+    echo -e " │    7   Save display settings            8   Dynamic monitor detection │"    
+    echo -e " └───────────────────────────────────────────────────────────────────────┘"
+    echo -e "          Select a number         -        0 Exit"
+    echo ""
+    read -s -n1 choix
+    case $choix in
+        1)
+            echo
+            xrandr -q
+            echo ""
+            echo -e "$NC Operation complete. To return to menu press [Enter] $NC"
+            read
+            ;;
+        2)
+            echo
+            choose_resolution
+            echo ""
+            echo -e "$NC Operation complete. To return to menu press [Enter] $NC"
+            read
+            ;;
+        3)
+            echo
+            set_primary
+            echo ""
+            echo -e "$NC Operation complete. To return to menu press [Enter] $NC"
+            read
+            ;;
+        4)
+            echo
+            move_monitor
+            echo ""
+            echo -e "$NC Operation complete. To return to menu press [Enter] $NC"
+            read
+            ;;
+        5)
+            echo
+            connect_monitor
+            echo ""
+            echo -e "$NC Operation complete. To return to menu press [Enter] $NC"
+            read
+            ;;
+        6)
+            echo
+            rotate_monitor
+            echo ""
+            echo -e "$NC Operation complete. To return to menu press [Enter] $NC"
+            read
+            ;;
+        7)
+            echo
+            save_settings
+            echo ""
+	    echo 'Add "autorandr --change --default" to your autostart file' 
+	    echo 'to automatically choose profile on startup'
+            echo -e "$NC Operation complete. To return to menu press [Enter] $NC"
+            echo ""
+            read
+            ;;
+        8)
+            echo
+            sudo pacman -S srandrd
+            echo ""
+            echo 'Add "sranrdrd autorandr --change --default" to your autostart file' 
+	    echo 'to load settings when monitor is plugged in. Use option 7 '
+	    echo 'to save your settings for different monitor configurations.'
+            echo -e "$NC Operation complete. To return to menu press [Enter] $NC"
+            echo ""
+            read
+            ;;
+        0)
+            clear && exit
+            read
+            ;;
+        *)
+            echo -e "$RED Unknown option $NC"
+            echo "Wait and try again later..."
+            echo ""
+            sleep 3
+            clear
+            ;;
+    esac
+    done
+}
+
+main
