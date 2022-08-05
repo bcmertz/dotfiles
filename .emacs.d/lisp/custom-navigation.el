@@ -34,7 +34,11 @@
   :custom
   (ivy-count-format "(%d/%d) ")
   (ivy-use-virtual-buffers t)
-  :config (ivy-mode))
+  :config
+  (setq ivy-re-builders-alist
+      '((t . ivy--regex-ignore-order)))
+  (ivy-mode)
+  )
 
 ;; beautify ivy
 ;; pretty but slows down switching bufffers too much
