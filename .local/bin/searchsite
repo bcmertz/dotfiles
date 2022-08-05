@@ -43,7 +43,7 @@ search="site:${url} ${query}"
 # new tab
 xdotool key --window $id --clearmodifiers Ctrl+t
 # type in query
-xdotool type -- window $id --clearmodifiers "$search"
+xdotool type --window $id --clearmodifiers "$search"
 # search
 xdotool key --window $id --clearmodifiers Enter
 # release all modifiers
