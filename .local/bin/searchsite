@@ -10,12 +10,17 @@ if [ $class_name != "firefox" ]; then
     exit
 fi
 
+# copy url
 xdotool windowactivate --sync $id key --window $id --clearmodifiers F6 Ctrl+c F6
 
+# get url
 url=$(xclip -o -selection clipboard)
-xsel -bc
-xsel -c # clear clipboard
 
+# clear clipboard
+xsel -bc
+xsel -c
+
+# specific search scheme for subreddits
 case "$url" in
     *reddit*)
         # just search on the subreddit name
@@ -28,13 +33,18 @@ case "$url" in
         ;;
 esac
 
-# prevent modifier keys from not being released
+# release all modifiers
 xdotool keyup Shift_L Shift_R Control_L Control_R Meta_L Meta_R Alt_L Alt_R Super_L Super_R Hyper_L Hyper_R ISO_Level2_Latch ISO_Level3_Shift ISO_Level3_Latch ISO_Level3_Lock ISO_Level5_Shift ISO_Level5_Latch ISO_Level5_Lock
 
+# give search terms for given domain
 query=$(printf "" | dmenu -c -i -l 20 -p 'search:' -bw 3)
 search="site:${url} ${query}"
 
+# new tab
 xdotool key --window $id --clearmodifiers Ctrl+t
-xdotool type --window $id --clearmodifiers "$search"
+# type in query
+xdotool type -- window $id --clearmodifiers "$search"
+# search
 xdotool key --window $id --clearmodifiers Enter
+# release all modifiers
 xdotool keyup Shift_L Shift_R Control_L Control_R Meta_L Meta_R Alt_L Alt_R Super_L Super_R Hyper_L Hyper_R ISO_Level2_Latch ISO_Level3_Shift ISO_Level3_Latch ISO_Level3_Lock ISO_Level5_Shift ISO_Level5_Latch ISO_Level5_Lock
