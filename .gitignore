@@ -29,6 +29,7 @@
 !.config/mimeapps.list
 !.config/redshift.conf
 !.config/user-dirs.dirs
+!.config/oled-linux.conf
 !.config/user-dirs.locale
 !.config/Clementine/customiconset/
 !.config/Clementine/customiconset/*
