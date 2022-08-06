@@ -119,9 +119,6 @@
     (undo-tree-draw-tree infoo)
     (run-with-local-idle-timer 2 t 'kill-buffer-and-its-windows temp-buf)
     )
-  ;; (with-timeout 1
-  ;;   (kill-buffer-and-its-windows temp-buf)
-  ;;   )
   )
 
 ;; Undo tree
