@@ -106,8 +106,6 @@
     )
   )
 
-;; test test test
-
 (defun custom-redo ()
   "Custom redo."
   (interactive "")
