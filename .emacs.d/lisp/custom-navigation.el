@@ -99,7 +99,7 @@
   ;; (setq projectile-indexing-method 'hybrid)
   (setq projectile-mode-line-prefix " ")
   (setq projectile-project-search-path '("~/coding/"))
-  ;; (setq projectile-enable-caching t)
+  (setq projectile-enable-caching t)
   (setq projectile-indexing-method 'native)
   :bind (:map projectile-mode-map
               ("s-p" . projectile-command-map)
