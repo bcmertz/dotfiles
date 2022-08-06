@@ -82,16 +82,11 @@
 ;;   )
 
 ;; nice to have in the future for cleaning up recent file suggestions
-;; (use-package recentf
-;;   :ensure nil
-;;   :config
-;;   (add-to-list 'recentf-exclude (format "%s/\\.emacs.d/early-init.el" (getenv "HOME")))
-;;   (add-to-list 'recentf-exclude (format "%s/\\.emacs.d/init.el" (getenv "HOME")))
-;;   (add-to-list 'recentf-exclude (format "%s/\\.emacs.d/elpa/.*" (getenv "HOME")))
-;;   (add-to-list 'recentf-exclude (format "%s/\\.emacs.d/workspace/.*" (getenv "HOME")))
-;;   (add-to-list 'recentf-exclude (format "%s/\\.local/lib/python3.9/site-packages/.*" (getenv "HOME")))
-;;   (add-to-list 'recentf-exclude "/usr/lib/.*")
-;;   (recentf-mode +1))
+(use-package recentf
+  :ensure nil
+  :config
+  (add-to-list 'recentf-exclude (format "%s/\\.emacs.d/elpa/.*" (getenv "HOME")))
+  (recentf-mode +1))
 
 ;; project navigation
 (use-package projectile
