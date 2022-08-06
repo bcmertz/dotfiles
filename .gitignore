@@ -78,6 +78,7 @@
 !.emacs.d/smartparens-config
 !.emacs.d/*/
 !.emacs.d/lisp/*
+!.emacs.d/lisp/themes/*
 !.emacs.d/lisp/languages/*
 !.emacs.d/snippets/**/*
 !.dir-locals.el # eglot config for lsp servers
