@@ -6,9 +6,43 @@
 ;;;
 ;;; Code:
 
-;; "Open a file as the root user.
-;; from https://github.com/ianyepan/.wsl-emacs.d/blob/master/init.el#L121
+;; https://www.emacswiki.org/emacs/misc-cmds.el
+(defun kill-buffer-and-its-windows (buffer &optional msgp)
+  "Kill BUFFER and delete its windows.  Default is `current-buffer'.
+BUFFER may be either a buffer or its name (a string)."
+  (interactive (list (read-buffer "Kill buffer: " (current-buffer) 'existing) 'MSGP))
+  (setq buffer  (get-buffer buffer))
+  (if (buffer-live-p buffer)            ; Kill live buffer only.
+      (let ((wins  (get-buffer-window-list buffer nil t))) ; On all frames.
+        (when (and (buffer-modified-p buffer)
+                   (fboundp '1on1-flash-ding-minibuffer-frame))
+          (1on1-flash-ding-minibuffer-frame t)) ; Defined in `oneonone.el'.
+        (when (kill-buffer buffer)      ; Only delete windows if buffer killed.
+          (dolist (win  wins)           ; (User might keep buffer if modified.)
+            (when (window-live-p win)
+              ;; Ignore error, in particular,
+              ;; "Attempt to delete the sole visible or iconified frame".
+              (condition-case nil (delete-window win) (error nil))))))
+    (when msgp (error "Cannot kill buffer.  Not a live buffer: `%s'" buffer))))
+
+;; https://emacs.stackexchange.com/a/13275
+(defun run-with-local-idle-timer (secs repeat function &rest args)
+  "Like `run-with-idle-timer', but always runs in the `current-buffer'.
+Cancels itself, if this buffer was killed."
+  (let* (;; Chicken and egg problem.
+         (fns (make-symbol "local-idle-timer"))
+         (timer (apply 'run-with-idle-timer secs repeat fns args))
+         (fn `(lambda (&rest args)
+                (if (not (buffer-live-p ,(current-buffer)))
+                    (cancel-timer ,timer)
+                  (with-current-buffer ,(current-buffer)
+                    (apply (function ,function) args))))))
+    (fset fns fn)
+    fn))
+
+;; https://github.com/ianyepan/.wsl-emacs.d/blob/master/init.el#L121
 (defun find-file-root ()
+  "Open a file as the root user."
   (interactive)
   (require 'tramp)
   (let* ((name (or buffer-file-name default-directory))
