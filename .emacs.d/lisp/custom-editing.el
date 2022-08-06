@@ -101,9 +101,12 @@
     (switch-to-buffer-other-window temp-buf)
     (help-mode)
     (undo-tree-draw-tree infoo)
-    (run-with-local-idle-timer 2 t 'kill-buffer-and-its-windows temp-buf)
+    (undo-tree-clear-visualizer-data infoo)
+    (run-with-local-idle-timer 1 t 'kill-buffer-and-its-windows temp-buf)
     )
   )
+
+;; test test test
 
 (defun custom-redo ()
   "Custom redo."
@@ -117,7 +120,8 @@
     (switch-to-buffer-other-window temp-buf)
     (help-mode)
     (undo-tree-draw-tree infoo)
-    (run-with-local-idle-timer 2 t 'kill-buffer-and-its-windows temp-buf)
+    (undo-tree-clear-visualizer-data infoo)
+    (run-with-local-idle-timer 1 t 'kill-buffer-and-its-windows temp-buf)
     )
   )
 
