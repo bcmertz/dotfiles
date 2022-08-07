@@ -99,6 +99,7 @@
   (save-selected-window
     (set-buffer temp-buf)
     (switch-to-buffer-other-window temp-buf)
+    (shrink-window ( / (window-body-height) 2))
     (help-mode)
     (undo-tree-draw-tree infoo)
     (undo-tree-clear-visualizer-data infoo) ;; prevent undo-tree save data corruption
@@ -116,12 +117,28 @@
   (save-selected-window
     (set-buffer temp-buf)
     (switch-to-buffer-other-window temp-buf)
+    (shrink-window ( / (window-body-height) 2))
     (help-mode)
     (undo-tree-draw-tree infoo)
     (undo-tree-clear-visualizer-data infoo) ;; prevent undo-tree save data corruption
     (run-with-local-idle-timer 1 t 'kill-buffer-and-its-windows temp-buf)
     )
   )
+
+;; ;; idk could be nice but isn't really necessary / might not work
+;; (defun undo-tree-temp-buffer-visualizer (buffer)
+;;   "Put BUFFER something here."
+;;   (switch-to-buffer-other-window temp-buf)
+;;   (shrink-window ( / (window-body-height) 2))
+;;   (help-mode)
+
+;;   ;; (display-buffer-pop-up-window buffer alist)
+;;   )
+
+;; ;;
+;; (add-to-list 'display-buffer-alist
+;;              '("*tmpy*" undo-tree-temp-buffer-visualizer))
+
 
 ;; Undo tree
 (use-package undo-tree
@@ -141,9 +158,8 @@
 
 (global-set-key [remap undo-tree-undo] 'custom-undo)
 (global-set-key [remap undo-tree-redo] 'custom-redo)
-;; this is a test this is another test
 
-
+;; prevent undo-tree from messaging when it's saving the undo-tree history
 (defun my-undo-tree-save-history (undo-tree-save-history &rest args)
   (let ((message-log-max nil)
         (inhibit-message t))
