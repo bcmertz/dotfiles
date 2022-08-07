@@ -1,1 +1,1 @@
-("~/.emacs.d/" "~/coding/dt-dotfiles/" "~/coding/dmenu/" "~/coding/progress-bar/" "~/docs/career/" "~/coding/voidrice/" "~/coding/st/" "~/coding/www/" "~/coding/website/" "~/coding/tracker/" "~/coding/surf/" "~/coding/steg/" "~/coding/slock/" "~/coding/ray-tracer-js/" "~/coding/ray-tracer/" "~/coding/mutt-wizard/" "~/coding/go-download/" "~/coding/BluetoothConnectionTest/")
+("~/.emacs.d/" "~/coding/doomemacs/" "~/coding/xinput_tui/" "~/coding/oled-linux/" "~/coding/mhwd-tui/" "~/coding/dotfiles/" "~/coding/brandr/" "~/coding/bmenu/" "~/coding/dmenu/" "~/coding/st/")

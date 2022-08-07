@@ -135,20 +135,22 @@
 (use-package neotree ;; C-c C-c makes the focused directory the new root view
   :ensure t
   :config
-  ;; Type H to toggle hidden files
-  (setq-default neo-show-hidden-files t)
-  (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
-  (setq neo-autorefresh nil)
-  (setq neo-window-width 30)
-  (setq neo-window-fixed-size ())
+  (setq-default neo-show-hidden-files t) ;; Type H to toggle hidden files
+  (setq neo-create-file-auto-open nil
+        neo-auto-indent-point nil
+        neo-mode-line-type 'none
+        neo-show-updir-line nil
+        neo-autorefresh nil
+        neo-theme (if (display-graphic-p) 'icons 'arrow)
+        neo-window-width 30
+        neo-window-fixed-size ())
   :bind ("C-\\" . neotree-project-dir-toggle)
   :custom-face
   (neo-dir-link-face  ((t (:inherit variable-pitch))))
   (neo-header-face    ((t (:inherit variable-pitch))))
   (neo-banner-face    ((t (:inherit variable-pitch))))
   (neo-root-dir-face  ((t (:inherit variable-pitch))))
-  (neo-file-link-face ((t (:inherit variable-pitch))))
-  )
+  (neo-file-link-face ((t (:inherit variable-pitch)))))
 
 (defun set-neotree-styling ()
   "Function to style neotree buffer locally."
@@ -174,6 +176,23 @@
 
 ;; apply if gui our neotree styling
 (apply-if-gui 'set-neotree-styling)
+
+;; from doom-emacs
+;;
+;; The cursor always sits at bol. `+neotree--fix-cursor-h' and
+;; `+neotree--indent-cursor-a' change that behavior so that the cursor is
+;; always on the first non-blank character on the line, in the neo buffer.
+(add-hook! 'neo-enter-hook
+           (defun +neotree-fix-cursor-h (&rest _)
+             (with-current-buffer neo-global--buffer
+               (+neotree--indent-cursor-a))))
+
+(defadvice! +neotree--indent-cursor-a (&rest _)
+  :after '(neotree-next-line neotree-previous-line)
+  (beginning-of-line)
+  (skip-chars-forward " \t\r"))
+
+
 
 ;; Better File Searching
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
