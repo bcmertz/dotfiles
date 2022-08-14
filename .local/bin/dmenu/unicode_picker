@@ -11,10 +11,7 @@ chosen=$(grep -v "#" ~/.local/share/dmenu/emoji | dmenu -i -l 20)
 
 [ "$chosen" != "" ] || exit
 
-s=$(echo "$chosen" | sed "s/.*; //" | awk '{print $1}')
-echo "$s" | tr -d '\n' | xclip
-notify-send "'$s' copied to primary." &
-
 c=$(echo "$chosen" | sed "s/ .*//")
 echo "$c" | tr -d '\n' | xclip  -selection clipboard
+echo "$c" | tr -d '\n' | xclip
 notify-send "'$c' copied to clipboard." &
