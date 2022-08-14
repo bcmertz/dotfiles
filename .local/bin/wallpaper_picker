@@ -3,6 +3,6 @@
 # select wallpaper from list
 
 # graphical image chooser
-chosen=$(sxiv -N "Floating sxiv" -t -r -q -o ~/.local/share/wallpaper/)
+chosen=$(nsxiv -N "Floating nsxiv" -t -r -q -o ~/.local/share/wallpaper/)
 [ "$chosen" != "" ] || exit
 setbg -f $chosen
