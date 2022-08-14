@@ -14,6 +14,7 @@ alias gch='git_alias checkout'
 # devour opened files
 alias zathura='devour zathura'
 alias sxiv='devour sxiv'
+alias nsxiv='devour nsxiv'
 alias feh='devour feh'
 alias mpv='devour mpv'
 alias vlc='devour vlc'
