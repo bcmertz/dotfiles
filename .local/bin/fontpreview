@@ -4,6 +4,7 @@
 # based off of https://github.com/sdushantha/fontpreview
 # with fewer features
 
+#BUG : focus is lost on terminal if the script is used twice in a row 🤷
 
 # text to display, mix of characters and numbers and glyphs
 text="
@@ -15,31 +16,57 @@ Farsi: سلام حال شما چطور\n"
 size=1032x565
 font_size=46
 
-
 # Save the window ID of the terminal window fontpreview is executed in.
-# This is so that when we open up sxiv, we can change the focus back to
+# This is so that when we open up nsxiv, we can change the focus back to
 # the terminal window, so that the user can search for the fonts without
 # having to manualy change the focus back to the terminal.
-TERMWIN_ID=$(xdotool getactivewindow)
+term_id=$(xdotool getactivewindow)
+
+# make variables available to fzf --preview
+export size font_size term_id text
+
+_display_font () {
+    nsxiv_id=$(xdotool search --classname "Floating nsxiv")
+    position=""
+    if [ ! -z "$nsxiv_id" ]; then
+        position="$(xdotool getwindowgeometry $nsxiv_id | grep -i "position" | cut -d ' ' -f 4)"
+        position_x=$(echo $position | cut -d ',' -f 1)
+        position_y=$(echo $position | cut -d ',' -f 2)
+    fi
+
+    convert -font "$1" -size "$size" -pointsize "$font_size" label:"$text" /tmp/"$1".png;
+    killall nsxiv > /dev/null 2>&1;
+    background nsxiv -N "Floating nsxiv" /tmp/$1.png
+    sleep 0.1  # annoying hack to keep focus on the terminal once we switch back, probably a better way
+
+    if [ ! -z $position ]; then
+        nsxiv_id=$(xdotool search --classname "Floating nsxiv")
+        xdotool windowmove $nsxiv_id $position_x $position_y
+    fi
+
+    xdotool windowfocus $term_id;
+}
+
+export -f _display_font
 
 # select font with fzf
 font=$(convert -list font |
            awk -F: '/^[ ]*Font: /{print substr($NF,2)}' |
-           fzf --preview "
-                   convert -font {} -size $size -pointsize $font_size label:'$text' /tmp/{}.png;
-                   background sxiv /tmp/{}.png;
-                   xdotool windowfocus \"$TERMWIN_ID\""
+           fzf --preview "_display_font {}"
     )
 
-# if we exit fzf with escape kill sxiv and dont do anything else
-[[ -z $font ]] && killall sxiv && exit
+# if we exit fzf with escape kill nsxiv and dont do anything else
+[[ -z $font ]] && killall nsxiv > /dev/null 2>&1 && exit
+[[ -z $font ]] && exit
 
 # kill images
-killall sxiv
+killall nsxiv > /dev/null 2>&1
 
 # https://unix.stackexchange.com/a/629096
 # convert text into image with font chosen
-convert -font $font -size $size -pointsize $font_size label:"$text" /tmp/$font.png
+convert -font $font -size $size -pointsize $font_size label:"$text" /tmp/$font.png 2>/dev/null
 
 # display the image of the text
-sxiv /tmp/$font.png
+background nsxiv /tmp/$font.png
+echo "Selected Font: $font"
+xdotool windowfocus $term_id;
