@@ -156,8 +156,12 @@
   ;; (undo-tree-visualizer-timestamps t)
   )
 
-(global-set-key [remap undo-tree-undo] 'custom-undo)
-(global-set-key [remap undo-tree-redo] 'custom-redo)
+(defun set-custom-undo ()
+  "Set custom undo keys to show tmp undo tree."
+  (global-set-key [remap undo-tree-undo] 'custom-undo)
+  (global-set-key [remap undo-tree-redo] 'custom-redo))
+(apply-if-gui 'set-custom-undo)
+
 
 ;; prevent undo-tree from messaging when it's saving the undo-tree history
 (defun my-undo-tree-save-history (undo-tree-save-history &rest args)
