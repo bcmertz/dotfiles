@@ -1,1 +1,0 @@
-("~/.emacs.d/" "~/coding/doomemacs/" "~/coding/xinput_tui/" "~/coding/oled-linux/" "~/coding/mhwd-tui/" "~/coding/brandr/" "~/coding/bmenu/" "~/coding/dmenu/" "~/coding/st/")
