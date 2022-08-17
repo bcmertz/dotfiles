@@ -1,5 +1,5 @@
-Xft.dpi: 130
-*dpi: 130
+Xft.dpi: 120
+*dpi: 120
 
 Sxiv.foreground: #ffffff
 Sxiv.background: #222222
