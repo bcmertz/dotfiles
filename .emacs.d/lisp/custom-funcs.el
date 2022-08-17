@@ -52,7 +52,8 @@ Cancels itself, if this buffer was killed."
     (when tramp ; If called from a "root" file, we need to fix up the path.
       (setq path (tramp-file-name-localname tramp)
             dir (file-name-directory path)))
-    (when (setq file (read-file-name "Find file (sudo): " dir path))
+    (when (setq file (counsel-find-file dir path))
+    ;; (when (setq file (read-file-name "Find file (sudo): " dir path))
       (find-file (concat "/sudo:root@localhost:" file)))))
 
 ;; refresh ewal theme
