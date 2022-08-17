@@ -196,7 +196,7 @@
 
 ;; Better File Searching
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
-(global-set-key [(control x) (control r)] 'find-file-root)
+(global-set-key (kbd "C-x /") 'find-file-root)
 (global-set-key (kbd "M-s") 'counsel-ag)    ;; C-c C-o 'ivy-occur "Search All Results"
 (global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "C-h k") 'counsel-descbinds)
