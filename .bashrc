@@ -12,9 +12,15 @@ esac
 
 # .bash_history
 HISTCONTROL=ignoreboth
-shopt -s histappend
 HISTSIZE=-1
 HISTFILESIZE=-1
+shopt -s histappend
+# dont save on history on exit to prevent race condition if multiple sessions are killed simultaneously
+trap 'unset HISTFILE; exit' SIGHUP
+# append entered command to history after running it
+PROMPT_COMMAND="history -a"
+# append, then read in the history file to get other terminals input
+# PROMPT_COMMAND="history -a;history -n"
 
 # bash configuration
 shopt -s checkwinsize # update rows & columns
