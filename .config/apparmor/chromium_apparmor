@@ -1,0 +1,8 @@
+owner @{HOME}/ rw,
+owner @{HOME}/* rw,
+owner @{HOME}/**/ rw,
+owner @{HOME}/**/* rw,
+owner /usr/share/doc/arch-wiki/html/ r,
+owner /usr/share/doc/arch-wiki/html/* r,
+owner /usr/share/doc/arch-wiki/html/**/ r,
+owner /usr/share/doc/arch-wiki/html/**/* r,

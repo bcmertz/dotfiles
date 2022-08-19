@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# move overrides
+
+#abstractions
+sudo cp ~/.config/apparmor/*_abstraction /etc/apparmor.d/abstractions/
+sudo rename "_abstraction" "" /etc/apparmor.d/abstractions/*
+
+# tunables
+sudo cp ~/.config/apparmor/*_tunable /etc/apparmor.d/tunables/
+sudo rename "_tunable" "" /etc/apparmor.d/tunables/*
+
+# profiles
+sudo cp ~/.config/apparmor/*_profile /etc/apparmor.d/
+sudo rename "_profile" "" /etc/apparmor.d/*
+
+# overrides
+sudo cp ~/.config/apparmor/*_apparmor /etc/apparmor.d/local/
+sudo rename "_apparmor" "" /etc/apparmor.d/local/*

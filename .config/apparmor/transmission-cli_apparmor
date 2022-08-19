@@ -1,0 +1,4 @@
+owner @{HOME}/dl/torrent/ rw,
+owner @{HOME}/dl/torrent/* rw,
+owner @{HOME}/dl/torrent/**/ rw,
+owner @{HOME}/dl/torrent/**/* rw,
