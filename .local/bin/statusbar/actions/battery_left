@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# battery left
+
+notify-send "⚡ Full 🔌 Charging 🔋 Discharging"

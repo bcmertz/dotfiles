@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# language right
+
+gkbd-keyboard-display -l ir

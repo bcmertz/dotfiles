@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# weather left
+
+fullscreen "head -n -1 $HOME/.local/share/weatherreport; read"

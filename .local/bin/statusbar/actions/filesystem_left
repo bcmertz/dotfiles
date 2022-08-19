@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# filesystem left
+
+pgrep -x dunst >/dev/null && notify-send "💽 Disk space" "$(df -h / --output=target,used,size && echo -e '\\nFolders' && du -t 1M -sh .[!.]* * | sort -hr)"
