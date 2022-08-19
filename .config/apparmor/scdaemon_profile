@@ -1,0 +1,32 @@
+# apparmor.d - Full set of apparmor profiles
+# Copyright (C) 2017-2022 Mikhail Morfikov
+# Copyright (C) 2021-2022 Alexandre Pujol <alexandre@pujol.io>
+# SPDX-License-Identifier: GPL-2.0-only
+
+abi <abi/3.0>,
+
+include <tunables/global>
+
+@{exec_path} = /{usr/,}lib/gnupg/scdaemon
+profile scdaemon @{exec_path} {
+  include <abstractions/base>
+  include <abstractions/devices-usb>
+
+  network netlink raw,
+
+  signal (send) peer=gpg-agent,
+
+  @{exec_path} mr,
+
+  owner @{HOME}/@{XDG_GPG_DIR}/scdaemon.conf r,
+  owner @{HOME}/@{XDG_GPG_DIR}/reader_0.status rw,
+
+  owner @{run}/user/@{uid}/gnupg/S.scdaemon rw,
+  owner @{run}/user/@{uid}/gnupg/d.*/S.scdaemon rw,
+
+  @{PROC}/@{pid}/task/@{tid}/comm rw,
+
+  @{sys}/devices/pci[0-9]*/**/bConfigurationValue r,
+
+  include if exists <local/scdaemon>
+}

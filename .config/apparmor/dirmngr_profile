@@ -1,0 +1,45 @@
+# apparmor.d - Full set of apparmor profiles
+# Copyright (C) 2017-2022 Mikhail Morfikov
+# Copyright (C) 2021-2022 Alexandre Pujol <alexandre@pujol.io>
+# SPDX-License-Identifier: GPL-2.0-only
+
+abi <abi/3.0>,
+
+include <tunables/global>
+
+@{exec_path} = /{usr/,}bin/dirmngr
+profile dirmngr @{exec_path} {
+  include <abstractions/base>
+  include <abstractions/nameservice-strict>
+  include <abstractions/p11-kit>
+  include <abstractions/ssl_certs>
+
+  network inet dgram,
+  network inet6 dgram,
+  network inet stream,
+  network inet6 stream,
+
+  @{exec_path} mr,
+
+  /usr/share/gnupg/sks-keyservers.netCA.pem r,
+
+  owner @{HOME}/@{XDG_GPG_DIR}/ rw,
+  owner @{HOME}/@{XDG_GPG_DIR}/dirmngr.conf r,
+  owner @{HOME}/@{XDG_GPG_DIR}/dirmngr_ldapservers.conf r,
+  owner @{HOME}/@{XDG_GPG_DIR}/crls.d/ rw,
+  owner @{HOME}/@{XDG_GPG_DIR}/crls.d/DIR.txt rw,
+
+  owner @{MOUNTS}/{,/*}/@{XDG_GPG_DIR}/ rw,
+  owner @{MOUNTS}/{,/*}/@{XDG_GPG_DIR}/dirmngr.conf r,
+  owner @{MOUNTS}/{,/*}/@{XDG_GPG_DIR}/dirmngr_ldapservers.conf r,
+  owner @{MOUNTS}/{,/*}/@{XDG_GPG_DIR}/crls.d/ rw,
+  owner @{MOUNTS}/{,/*}/@{XDG_GPG_DIR}/crls.d/DIR.txt rw,
+
+  owner @{run}/user/@{uid}/gnupg/ rw,
+  owner @{run}/user/@{uid}/gnupg/S.dirmngr rw,
+  owner @{run}/user/@{uid}/gnupg/d.*/S.dirmngr rw,
+
+  owner @{PROC}/@{pid}/task/@{tid}/comm rw,
+
+  include if exists <local/dirmngr>
+}
