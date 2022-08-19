@@ -193,14 +193,57 @@
   (skip-chars-forward " \t\r"))
 
 
-
 ;; Better File Searching
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "C-x C-<S-F>") 'counsel-locate)
 (global-set-key (kbd "C-x /") 'find-file-root)
 (global-set-key (kbd "M-s") 'counsel-ag)    ;; C-c C-o 'ivy-occur "Search All Results"
 (global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "C-h k") 'counsel-descbinds)
 
+(define-key dired-mode-map (kbd "M-s") 'counsel-ag)
+
+(use-package dired-narrow
+  :ensure t
+  :bind (:map dired-mode-map
+              ("/ /" . dired-narrow)
+              ("/ f" . dired-narrow-fuzzy)
+              ("/ r" . dired-narrow-regexp)))
+
+(use-package all-the-icons-dired
+  :ensure t
+  :diminish
+  :hook (dired-mode . all-the-icons-dired-mode)
+  :config
+  ;; from centaur-emacs https://github.com/seagle0128/.emacs.d/blob/334d9afaedd67bc10f207ca72d6daff5ac6469cf/lisp/init-dired.el
+  ;; BROKEN - work in progress
+  (with-no-warnings
+    (defun my-all-the-icons-dired--refresh ()
+      "Display the icons of files in a dired buffer."
+      (all-the-icons-dired--remove-all-overlays)
+      ;; NOTE: don't display icons in remote folders or the folder has too many items
+      (if (and (not (file-remote-p default-directory))
+               ;; (not (string-match-p "sudo\:root\@localhost" (buffer-file-name)))
+               (string-match "localhost" (buffer-file-name))
+               (<= (count-lines (point-min) (point-max)) 300))
+          (save-excursion
+            (goto-char (point-min))
+            (while (not (eobp))
+              (when (dired-move-to-filename nil)
+                (let ((file (dired-get-filename 'relative 'noerror)))
+                  (when file
+                    (let ((icon (if (file-directory-p file)
+                                    (all-the-icons-icon-for-dir file
+                                                                :face 'all-the-icons-dired-dir-face
+                                                                :height 0.9
+                                                                :v-adjust all-the-icons-dired-v-adjust)
+                                  (all-the-icons-icon-for-file file :height 0.9 :v-adjust all-the-icons-dired-v-adjust))))
+                      (if (member file '("." ".."))
+                          (all-the-icons-dired--add-overlay (point) "  \t")
+                        (all-the-icons-dired--add-overlay (point) (concat icon "\t")))))))
+              (forward-line 1)))
+        (message "Remote folder or too many items.")))
+    (advice-add #'all-the-icons-dired--refresh :override #'my-all-the-icons-dired--refresh)))
 
 (use-package dired-subtree
   :ensure t
