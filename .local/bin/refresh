@@ -3,15 +3,19 @@
 # kill and restart program
 
 process=$1
-killall -q $1
 
-# Wait until the processes have been shut down
-while pgrep -u $UID -x $process >/dev/null; do sleep 1; done
+function kill_process {
+    killall -q $process
 
+    # Wait until the processes have been shut down
+    while pgrep -u $UID -x $process >/dev/null; do sleep 1; done
+}
 
 case $process in
     polybar)
         # check if i3 or bspwm are running and launch relevant polybar config
+        kill_process
+
         if pgrep -x "i3" > /dev/null
         then
             polybar i3 >>/tmp/polybar.log 2>&1 &
@@ -23,13 +27,24 @@ case $process in
         fi
         ;;
 
+    emacs-gui)
+        # restart gui emacs
+        # id = ps ax | grep "emacsclient --socket-name=gui -c" | head -n 1 | cut -d ' ' -f 1
+        emacsclient --socket-name=gui -e "(save-buffers-kill-terminal)"
+        background emacsclient --socket-name=gui -c
+        ;;
+
     emacs)
-        # restart emacs servers
+        # restart all emacs clients
+        emacsclient --socket-name=term -e "(save-buffers-kill-terminal)"
+        emacsclient --socket-name=gui -e "(save-buffers-kill-terminal)"
+        background emacsclient --socket-name=term -t
         background emacsclient --socket-name=gui -c
         ;;
 
     *)
         # launch relevant program
+        kill_process
         background $1
         ;;
 esac
