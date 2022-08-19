@@ -13,6 +13,10 @@ if [[ "$session" == "xfce" ]]; then
     plank &
 fi
 
+if [[ "$session" == "i3" ]]; then
+   polybar i3 &
+fi
+
 # autolock screen after half an hour
 time=30
 case $(global_cfg screen_locker) in
@@ -28,23 +32,25 @@ esac
 
 
 dunst &         # notifications
-# redshift &      # reduce bluelight
 clipmenud &     # clipmenu daemon
 unclutter &     # get rid of mouse
-# monerod &       # start the monero daemon
-# monero_mine &   # mine monero
 setxkbmap -layout us,ir -option grp:alt_shift_toggle & # set keyboards
 oled-linux &                        # ugh
-start-pulseaudio-x11 &              # pulseaudio, should be automatic
-transmission-daemon &               # transmission in background
-emacs --daemon=term &               # terminal emacs daemon
-emacs --daemon=gui &                # gui emacs daemon
+/usr/bin/emacs --daemon=term &               # terminal emacs daemon
+/usr/bin/emacs --daemon=gui &                # gui emacs daemon
 xset r rate 300 50 &                # faster repeating keys
 lxpolkit &      # authentication agent
 setbg &         # set background
+touchegg & # gestures
+# monerod &       # start the monero daemon
+# monero_mine &   # mine monero
 # nmcli connection up client & # connect to vpn on login
 # nm-applet &
 # volctl &
 # pasystray &
 # blueman-applet &
-touchegg & # gestures
+# transmission-daemon &               # transmission in background
+
+# not relevant
+# redshift &      # reduce bluelight
+# start-pulseaudio-x11 &              # pulseaudio, should be automatic
