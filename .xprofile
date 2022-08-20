@@ -39,7 +39,6 @@ oled-linux &                        # ugh
 /usr/bin/emacs --daemon=term &               # terminal emacs daemon
 /usr/bin/emacs --daemon=gui &                # gui emacs daemon
 xset r rate 300 50 &                # faster repeating keys
-auditd &        # see what apparmor is denying
 lxpolkit &      # authentication agent
 setbg &         # set background
 touchegg & # gestures
