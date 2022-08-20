@@ -36,8 +36,9 @@ case $process in
 
     emacs)
         # restart all emacs clients
-        emacsclient --socket-name=term -e "(save-buffers-kill-terminal)"
-        emacsclient --socket-name=gui -e "(save-buffers-kill-terminal)"
+        emacsclient --socket-name=term -e "(save-buffers-kill-terminal)" -a ":"
+        emacsclient --socket-name=gui -e "(save-buffers-kill-terminal)" -a ":"
+
         background emacsclient --socket-name=term -t
         background emacsclient --socket-name=gui -c
         ;;
