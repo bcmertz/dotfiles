@@ -144,7 +144,6 @@
 (use-package undo-tree
   :ensure t
   :bind
-  ;; hack to avoid conflict
   ("C-_" . text-scale-decrease)
   ("C-+" . text-scale-increase)
   :init
@@ -161,6 +160,16 @@
   (global-set-key [remap undo-tree-undo] 'custom-undo)
   (global-set-key [remap undo-tree-redo] 'custom-redo))
 (apply-if-gui 'set-custom-undo)
+
+(defun fix-undo-trickery ()
+  "Fix undo trickery."
+  ;; doesn't seem necessary but is probably good to remember these patterns
+  ;; (add-hook 'undo-tree-mode-hook
+  ;;           (lambda () (define-key undo-tree-map (kbd "C-_") 'text-scale-decrease)))
+  ;; (global-set-key (kbd "C-_") 'text-scale-decrease)
+  (with-eval-after-load "undo-tree"
+    (define-key undo-tree-map (kbd "C-_") 'text-scale-decrease)))
+(apply-if-gui 'fix-undo-trickery)
 
 
 ;; prevent undo-tree from messaging when it's saving the undo-tree history
