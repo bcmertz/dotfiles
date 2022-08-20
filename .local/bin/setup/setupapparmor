@@ -17,3 +17,5 @@ sudo rename "_profile" "" /etc/apparmor.d/*
 # overrides
 sudo cp ~/.config/apparmor/*_apparmor /etc/apparmor.d/local/
 sudo rename "_apparmor" "" /etc/apparmor.d/local/*
+
+sudo systemctl enable --now apparmor.service auditd.service
