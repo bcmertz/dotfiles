@@ -33,6 +33,12 @@ Setup GPG keys trust db and passwords from backup github, requires ssh key being
 setuppass
 #+END_SRC
 
+Setup Apparmor and auditd
+
+#+BEGIN_SRC bash
+setupapparmor
+#+END_SRC
+
 ** Backing up
 
 Document Dependencies
