@@ -1,3 +1,6 @@
 @{HOME}/.local/bin/* ux,
 @{HOME}/.local/bin/statusbar/* ux,
 @{HOME}/.local/bin/statusbar/actions/* ux,
+
+/usr/bin/sh rix,
+/dev/tty rw,
