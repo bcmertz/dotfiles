@@ -16,6 +16,6 @@ profile pinentry @{exec_path} {
   /{usr/,}bin/pinentry-*        rPx,
 
   /etc/pinentry/preexec r,
-
+  /usr/bin/bash r,
   include if exists <local/pinentry>
 }
