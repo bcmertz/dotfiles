@@ -28,24 +28,45 @@ case $process in
         ;;
 
     emacs-gui)
-        # restart gui emacs
-        # id = ps ax | grep "emacsclient --socket-name=gui -c" | head -n 1 | cut -d ' ' -f 1
-        emacsclient --socket-name=gui -e "(save-buffers-kill-terminal)"
-        background emacsclient --socket-name=gui -c
+        # GUI PID
+        id=$(ps aux | grep "emacs --daemon=gui" | grep -v grep | awk '{print $2}')
+        # don't launch new emacs client if none exist
+        [ ! -z $id ] && emacsclient --socket-name=gui -e "(save-buffers-kill-terminal)" -a ":"
+        # kill proper id
+        kill $id
+        # wait for it to die
+        while ps -aux | grep $id | grep -v grep >/dev/null; do sleep 0.1; done
+        # create new server and client and frame
+        background emacsclient --socket-name=gui -c;
         ;;
 
     emacs)
-        # restart all emacs clients
-        emacsclient --socket-name=term -e "(save-buffers-kill-terminal)" -a ":"
-        emacsclient --socket-name=gui -e "(save-buffers-kill-terminal)" -a ":"
+        # id_gui=$(ps aux | grep "emacs --daemon=gui" | grep -v grep | awk '{print $2}')
+        # id_term=$(ps aux | grep "emacs --daemon=term" | grep -v grep | awk '{print $2}')
+        # [ ! -z $id_gui ] && notify-send "gui" && emacsclient --socket-name=gui -e "(save-buffers-kill-terminal)" -a ":"
+        # [ ! -z $id_term ] && notify-send "term" && emacsclient --socket-name=term -e "(save-buffer)" -a ":"
+        # [ ! -z $id_gui ] && kill -n 9 $id_gui
+        # [ ! -z $id_term ] && kill -n 9 $id_term
+        # [ ! -z $id_gui ] && while ps -aux | grep $id_gui | grep -v grep >/dev/null; do sleep 0.3; done
+        # [ ! -z $id_term ] && while ps -aux | grep $id_term | grep -v grep >/dev/null; do sleep 0.3; done
 
-        background emacsclient --socket-name=term -t
-        background emacsclient --socket-name=gui -c
+        # brutally kill
+        # maybe kill more gracefully https://www.emacswiki.org/emacs/EmacsAsDaemon#h5o-10
+        id_gui=$(ps aux | grep "emacs --daemon=gui" | grep -v grep | awk '{print $2}' | head -n 1)
+        id_term=$(ps aux | grep "emacs --daemon=term" | grep -v grep | awk '{print $2}' | head -n 1)
+
+        [ ! -z $id_gui ] && emacsclient --socket-name=gui -e "(kill-emacs)" -a ":";
+        [ ! -z $id_term ]  && emacsclient --socket-name=term -e "(kill-emacs)" -a ":";
+
+        kill_process
+
+        background emacsclient --socket-name=gui -c;    # we want frame
+        background /usr/bin/emacs --daemon=term;        # we dont want frame just daemon
         ;;
 
     *)
         # launch relevant program
         kill_process
-        background $1
+        background $1;
         ;;
 esac
