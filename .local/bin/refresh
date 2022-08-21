@@ -55,6 +55,9 @@ case $process in
         id_gui=$(ps aux | grep "emacs --daemon=gui" | grep -v grep | awk '{print $2}' | head -n 1)
         id_term=$(ps aux | grep "emacs --daemon=term" | grep -v grep | awk '{print $2}' | head -n 1)
 
+        # [ ! -z $id_gui ] && emacsclient --socket-name=gui -e "(client-save-kill-emacs)" -a ":";
+        # [ ! -z $id_term ]  && emacsclient --socket-name=term -e "(client-save-kill-emacs)" -a ":";
+
         [ ! -z $id_gui ] && emacsclient --socket-name=gui -e "(kill-emacs)" -a ":";
         [ ! -z $id_term ]  && emacsclient --socket-name=term -e "(kill-emacs)" -a ":";
 
