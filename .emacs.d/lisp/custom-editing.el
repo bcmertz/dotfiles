@@ -224,6 +224,8 @@
 (global-set-key (kbd "M-<mouse-1>") 'mc/add-cursor-on-click)
 
 (global-set-key (read-kbd-macro "<M-DEL>") 'backward-delete-word)
+(global-set-key [C-backspace] 'backward-delete-word)
+(global-set-key [C-delete] 'forward-delete-word)
 
 ;; rename file and buffer
 (global-unset-key (kbd "C-x C-r"))

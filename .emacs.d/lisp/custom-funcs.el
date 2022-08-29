@@ -259,6 +259,17 @@ With argument, do this that many times."
     (interactive "p")
     (delete-word (- arg)))
 
+;; http://xahlee.info/emacs/emacs/emacs_kill-ring.html
+(defun forward-delete-word (arg)
+  "Delete characters forward until encountering the end of a word.
+With argument, do this that many times."
+  (interactive "p")
+  (delete-region
+   (point)
+   (progn
+     (forward-word arg)
+     (point))))
+
 (defun move-file (new-location)
   "Write this file to NEW-LOCATION, and delete the old one."
   (interactive (list (expand-file-name
