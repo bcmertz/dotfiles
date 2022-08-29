@@ -260,9 +260,4 @@
 ;; better C-x C-b
 (defalias 'list-buffers 'ibuffer)
 
-;; make projectile commands prettier, doesn't effect ivy C-x b
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
-(ido-mode 1)
-
 ;;; custom-navigation.el ends here
