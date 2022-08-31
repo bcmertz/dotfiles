@@ -26,6 +26,7 @@
         evil-mode
         handle-switch-frame
         help-for-help
+        keyboard-escape-quit
         org-return
         swiper
         ))
