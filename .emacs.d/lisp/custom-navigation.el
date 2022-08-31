@@ -23,8 +23,8 @@
   :ensure t
   :defer 0.1
   :diminish
-  :bind (("C-x b" . ivy-switch-buffer)
-         ("C-x B" . ivy-switch-buffer-other-window)
+  :bind (("C-x B" . ivy-switch-buffer-other-window)
+         ;; ("C-x b" . ivy-switch-buffer)
 
          (:map ivy-minibuffer-map
                ("C-c C-r" . ivy-resume)
@@ -112,7 +112,7 @@
 ;; perspective navigation
 (use-package perspective
   :bind (
-         ;; ("C-x b" . persp-switch-to-buffer*)
+         ("C-x b" . persp-counsel-switch-buffer)
          ("C-x k" . persp-kill-buffer*)
          ("C-M-<left>" . persp-prev)
          ("C-M-<right>" . persp-next)
