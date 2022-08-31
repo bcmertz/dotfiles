@@ -99,6 +99,31 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
+;; toggle tool bar mode
+(defun toggle-tool-bar ()
+  "Toggle tool-bar-mode."
+  (interactive)
+  (if (eq tool-bar-mode t)
+      (tool-bar-mode -1)
+    (tool-bar-mode 1))
+  )
+
+;; toggle tool
+(global-set-key (kbd "C-c t l") 'toggle-tool-bar)
+
+
+;; toggle menu bar mode
+(defun toggle-menu-bar ()
+  "Toggle menu-bar-mode."
+  (interactive)
+  (if (eq menu-bar-mode t)
+      (menu-bar-mode -1)
+    (menu-bar-mode 1))
+  )
+
+;; toggle menu
+(global-set-key (kbd "C-c t m") 'toggle-menu-bar)
+
 ;; TODO find a good monospace font
 ;; Default font (cant be font with hyphen in the name like current default monospace Inconsolata-g)
 ;; (setq initial-frame-alist '((font . "Monospace")))
