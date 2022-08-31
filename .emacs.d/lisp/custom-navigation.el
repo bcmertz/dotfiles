@@ -203,7 +203,8 @@
 (global-set-key (kbd "C-x /") 'find-file-root)
 (global-set-key (kbd "M-s") 'counsel-ag)    ;; C-c C-o 'ivy-occur "Search All Results"
 (global-set-key (kbd "M-x") 'counsel-M-x)
-(global-set-key (kbd "C-h k") 'counsel-descbinds)
+(global-set-key (kbd "C-h k") 'describe-key)
+(global-set-key (kbd "C-h K") 'counsel-descbinds)
 
 (define-key dired-mode-map (kbd "M-s") 'counsel-ag)
 
