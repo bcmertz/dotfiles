@@ -103,7 +103,7 @@
     (help-mode)
     (undo-tree-draw-tree infoo)
     (undo-tree-clear-visualizer-data infoo) ;; prevent undo-tree save data corruption
-    (run-with-local-idle-timer 1 t 'kill-buffer-and-its-windows temp-buf)
+    (run-with-local-idle-timer 0.5 t 'kill-buffer-and-its-windows temp-buf)
     )
   )
 
@@ -121,7 +121,7 @@
     (help-mode)
     (undo-tree-draw-tree infoo)
     (undo-tree-clear-visualizer-data infoo) ;; prevent undo-tree save data corruption
-    (run-with-local-idle-timer 1 t 'kill-buffer-and-its-windows temp-buf)
+    (run-with-local-idle-timer 0.5 t 'kill-buffer-and-its-windows temp-buf)
     )
   )
 
