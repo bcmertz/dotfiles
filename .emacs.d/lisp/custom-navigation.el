@@ -130,7 +130,9 @@
   (add-hook 'kill-emacs-hook #'persp-state-save)
   :custom
   (persp-mode-prefix-key (kbd "C-c M-p"))
+  (persp-add-buffer-to-frame-global "*Messages*")
   )
+
 
 ;; stateful window management
 (winner-mode 1)

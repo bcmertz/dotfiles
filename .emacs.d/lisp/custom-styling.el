@@ -45,6 +45,7 @@
 
 
 ;; transparency (focused . unfocused)
+;; (setq default-transparency (list 100 100))
 (set-frame-parameter (selected-frame) 'alpha '(100 . 100))
 (add-to-list 'default-frame-alist '(alpha . (100 . 100)))
 
@@ -59,7 +60,7 @@
                     ;; Also handle undocumented (<active> <inactive>) form.
                     ((numberp (cadr alpha)) (cadr alpha)))
               100)
-         '(100 . 90) '(100 . 100)))))
+         '(97 . 92) '(100 . 100)))))
 
 (global-set-key (kbd "C-c t r") 'toggle-transparency)
 
@@ -137,6 +138,9 @@
   (set-fontset-font t 'symbol "Segoe UI Emoji" nil 'prepend)
   (set-fontset-font t 'symbol "UbuntuMono Nerd Font" nil 'prepend)
   )
+
+;; switch font
+(global-set-key (kbd "C-c t f") 'set-face-font)
 
 ;; respect default terminal fonts
 ;; if we're in a gui set the fonts appropriately
