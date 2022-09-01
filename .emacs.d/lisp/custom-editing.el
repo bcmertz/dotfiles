@@ -151,6 +151,7 @@
   :custom
   (undo-tree-auto-save-history t)
   (undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
+  ;; (undo-tree-enable-undo-in-region t)
   ;; (undo-tree-visualizer-diff t)
   ;; (undo-tree-visualizer-timestamps t)
   )
