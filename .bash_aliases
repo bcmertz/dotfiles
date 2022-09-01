@@ -129,3 +129,5 @@ cds() {
         cd "$1" && /usr/bin/ls --color=auto
     fi
 }
+
+alias lsd='ls -d */'
