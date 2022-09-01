@@ -7,6 +7,7 @@
         c-electric-brace
         c-electric-semi&comma
         c-indent-line-or-region
+        end-of-visual-line
         indent-for-tab-command
         kill-region
         move-line-down
@@ -22,6 +23,8 @@
       '(
         counsel-M-x
         counsel-find-file
+        custom-undo
+        describe-key
         eval-buffer
         evil-mode
         handle-switch-frame

@@ -206,8 +206,13 @@
   ("M-." . mc/mark-next-like-this)
   ("M-," . mc/mark-previous-like-this)
   ("C-c M-." . mc/mark-all-like-this)
-  ("C-c C-e" . mc/edit-lines)
-  )
+  ("C-c C-e" . mc/edit-lines))
+
+(use-package multiple-cursors-core
+  :bind
+  (:map mc/keymap
+        ("<return>" . nil)
+        ("C-<return>" . multiple-cursors-mode)))
 
 ;; Keystroke Completion
 (use-package which-key
