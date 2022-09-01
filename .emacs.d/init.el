@@ -44,6 +44,7 @@
 (measure-time(load "custom-git.el"))              ;; version control
 (measure-time(load "custom-pdf.el"))              ;; pdf viewing/editing
 (measure-time(load "custom-compile.el"))          ;; compilation
+(measure-time(load "custom-menus.el"))            ;; mouse interaction and menus
 
 ;; languages
 (measure-time(load "custom-txt.el"))
