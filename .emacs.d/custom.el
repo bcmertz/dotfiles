@@ -13,13 +13,6 @@
  '(jdee-db-spec-breakpoint-face-colors (cons "#D0D0E3" "#4E4E4E"))
  '(mini-frame-show-parameters '((top . 10) (width . 0.7) (left . 0.5)))
  '(objed-cursor-color "#D70000")
- '(org-confirm-babel-evaluate nil)
- '(org-export-html-postamble nil)
- '(org-export-with-toc t)
- '(org-hide-leading-stars t)
- '(org-src-fontify-natively t)
- '(org-startup-folded 'overview)
- '(org-startup-indented t)
  '(package-selected-packages
    '(ag dired all-the-icons-dired dired-narrow org-modern org-roam undo-tree centaur-tabs ivy-posframe dired-subtree ewal-doom-themes ewal emms bongo define-word expand-region company-box counsel ivy-hydra centered-window company-lsp lsp-ui ivy-rich doom-themes avy-zap transmission arduino arduino-mode org-drill go-eldoc lsp-mode mu4e-alert htmlize ox-reveal buffer-move go-mode desktop-environment exwm pass magit perspective flycheck yasnippet which-key web-mode vimish-fold use-package smartparens projectile pdf-tools org-bullets neotree multiple-cursors markdown-mode general evil eglot doom-modeline company avy auctex atom-one-dark-theme))
  '(pdf-view-midnight-colors (cons "#0F1019" "#F5F5F9"))

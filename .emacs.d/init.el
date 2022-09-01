@@ -41,6 +41,7 @@
 ;; (measure-time(load "custom-email.el"))         ;; email - mu4e
 ;; (measure-time(load "custom-music.el"))         ;; music - emms
 (measure-time(load "custom-lsp.el"))              ;; language server protocol
+(measure-time(load "custom-org.el"))              ;; org mode
 (measure-time(load "custom-git.el"))              ;; version control
 (measure-time(load "custom-pdf.el"))              ;; pdf viewing/editing
 (measure-time(load "custom-compile.el"))          ;; compilation
@@ -55,7 +56,6 @@
 (measure-time(load "custom-css.el"))
 (measure-time(load "custom-bash.el"))
 (measure-time(load "custom-html.el"))
-(measure-time(load "custom-org.el"))
 (measure-time(load "custom-arduino.el"))
 (measure-time(load "custom-latex.el"))
 
