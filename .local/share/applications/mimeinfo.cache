@@ -2,3 +2,4 @@
 text/x-arduino=arduino-arduinoide.desktop;
 x-scheme-handler/monero=monero-gui.desktop;
 x-scheme-handler/moneroseed=monero-gui.desktop;
+x-scheme-handler/org-protocol=org-protocol.desktop;
