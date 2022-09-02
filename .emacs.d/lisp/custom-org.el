@@ -49,7 +49,6 @@
          "* %? \nSource: %:link, \n\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\nCaptured On: %U")
         ))
 
-(require 'org-roam-protocol)
 
 ;; overwrite web mode binding for C-c C-l
 (global-set-key (kbd "C-c C-l") 'org-store-link)
@@ -62,8 +61,6 @@
     (if plain-url
         (progn
           (github-review-start plain-url)))))
-
-
 
 
 (use-package org-roam
@@ -81,6 +78,7 @@
   (org-roam-setup)
   )
 
+(require 'org-roam-protocol)
 
 
 ;; pretty bullets
