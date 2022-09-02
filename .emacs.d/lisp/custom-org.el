@@ -46,7 +46,7 @@
         ("l" "Link" entry (file+headline "~/docs/org/links.org" "Links")
         "* %? \n[[%:link][%:description]] \nCaptured On: %U")
         ("L" "Quote Link" entry (file+headline "~/docs/org/links.org" "Links")
-         "* %? \nSource: %:link, \n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n")
+         "* %? \nSource: %:link, \n\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\nCaptured On: %U")
         ))
 
 (require 'org-roam-protocol)
