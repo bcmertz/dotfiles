@@ -1,5 +1,5 @@
 * Taxonomy
-Family - %^{Family|Asteraceae|Apiaeceae}
+Family - %^{Family|Asteraceae|Apiaceae}
 Genus - %^{Genus}
 Species - %^{Species}
 
