@@ -15,7 +15,7 @@
   (setq org-todo-keywords
         '((sequence "TODO(t)" "STARTED(s)" "WAITING(w)" "|" "DONE(d)" "CANCELED(c)")))
   (setq org-export-html-postamble nil)
-  (setq org-hide-leading-stars t)
+  (setq org-hide-leading-stars nil)
   (setq org-startup-folded (quote overview))
   (setq org-startup-indented t)
   (setq org-confirm-babel-evaluate nil)
@@ -31,15 +31,6 @@
               ("<return>" . bcm/org-return)
               ("C-c r" . github-start-review-at-link)))
 
-;; (custom-set-variables
-;;  '(org-export-html-postamble nil)
-;;  '(org-hide-leading-stars t)
-;;  '(org-startup-folded (quote overview))
-;;  '(org-startup-indented t)
-;;  '(org-confirm-babel-evaluate nil)
-;;  '(org-src-fontify-natively t)
-;;  '(org-export-with-toc t)
-;;  )
 
 ;; overwrite web mode binding for C-c C-l
 (global-set-key (kbd "C-c C-l") 'org-store-link)
