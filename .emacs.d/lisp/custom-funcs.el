@@ -328,7 +328,9 @@ With argument, do this that many times."
           (rename-file filename new-name 1)
           (rename-buffer new-name)
           (set-visited-file-name new-name)
-          (set-buffer-modified-p nil))))))
+          (set-buffer-modified-p nil)
+          (setq recentf-list (delete filename recentf-list))
+          )))))
 
 ;; source https://emacs.stackexchange.com/questions/46664/switch-between-horizontal-and-vertical-splitting
 (defun toggle-window-split ()
