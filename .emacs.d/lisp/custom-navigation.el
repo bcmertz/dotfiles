@@ -24,7 +24,7 @@
   :defer 0.1
   :diminish
   :bind (("C-x B" . ivy-switch-buffer-other-window)
-         ;; ("C-x b" . ivy-switch-buffer)
+         ("C-x b" . ivy-switch-buffer)
 
          (:map ivy-minibuffer-map
                ("C-c C-r" . ivy-resume)
@@ -38,11 +38,10 @@
   (setq ivy-re-builders-alist
       '((t . ivy--regex-ignore-order)))
   (ivy-mode)
+  ;; ignore org roam buffers, use C-c n f
+  ;; https://org-roam.discourse.group/t/can-buffer-names-match-note-titles/350/13
+  (add-to-list 'ivy-ignore-buffers "^[0-9]\\{14\\}.+\\.org$")
   )
-
-;; ignore org roam buffers, use C-c n f
-;; https://org-roam.discourse.group/t/can-buffer-names-match-note-titles/350/13
-(add-to-list 'ivy-ignore-buffers "^[0-9]\\{14\\}.+\\.org$")
 
 
 ;; beautify ivy
@@ -117,7 +116,7 @@
 ;; perspective navigation
 (use-package perspective
   :bind (
-         ("C-x b" . persp-counsel-switch-buffer)
+         ;; ("C-x b" . persp-counsel-switch-buffer)
          ;; ("C-x k" . persp-kill-buffer*)
          ("C-M-<left>" . persp-prev)
          ("C-M-<right>" . persp-next)

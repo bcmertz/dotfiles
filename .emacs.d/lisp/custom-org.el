@@ -21,17 +21,35 @@
   (setq org-confirm-babel-evaluate nil)
   (setq org-src-fontify-natively t)
   (setq org-export-with-toc t)
+  (setq org-directory "~/docs/org/")
   ;; make images pretty
   (setq org-image-actual-width (/ (display-pixel-width) 3))
-  :bind (:map org-mode-map
-              ("<M-return>" . org-return-newline-below)
-              ("C-`" . org-open-at-point-plaintext)
-              ("<C-delete>" . org-remove-link)
-              ("<C-escape>" . org-mark-ring-goto)
-              ("<return>" . bcm/org-return)
-              ("C-c C-e" . mc/edit-lines)
-              ("C-c r" . github-start-review-at-link)))
+  :bind
+  ("C-c C-c" . org-capture)
+  (:map org-mode-map
+        ("<M-return>" . org-return-newline-below)
+        ("C-`" . org-open-at-point-plaintext)
+        ("<C-delete>" . org-remove-link)
+        ("<C-escape>" . org-mark-ring-goto)
+        ("<return>" . bcm/org-return)
+        ("C-c C-c" . mc/edit-lines)
+        ("C-c r" . github-start-review-at-link)))
 
+;; https://orgmode.org/worg/org-contrib/org-protocol.html#org9e2e3ac
+(setq org-capture-templates
+      `(("t" "To Do" entry (file+headline "~/docs/org/todo.org" "Unfiled")
+         "* %?\n%T" :prepend t)
+        ("n" "Note" entry (file+headline "~/docs/org/notes.org" "Notes")
+         "* %?\n%T" :prepend t)
+        ("j" "Journal Entry" entry (file+olp+datetree "~/docs/org/journal.org")
+         "* %?\nTime: %U\n" :prepend t)
+        ("l" "Link" entry (file+headline "~/docs/org/links.org" "Links")
+        "* %? \n[[%:link][%:description]] \nCaptured On: %U")
+        ("L" "Quote Link" entry (file+headline "~/docs/org/links.org" "Links")
+         "* %? \nSource: %:link, \n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n")
+        ))
+
+(require 'org-roam-protocol)
 
 ;; overwrite web mode binding for C-c C-l
 (global-set-key (kbd "C-c C-l") 'org-store-link)
@@ -46,16 +64,12 @@
           (github-review-start plain-url)))))
 
 
-;; brokne for some reason
-;; (add-to-list 'org-structure-template-alist
-;;              '("s" "#+BEGIN_SRC ?\n\n#+END_SRC"))
-
 
 
 (use-package org-roam
   :ensure t
   :custom
-  (org-roam-directory "~/kb")
+  (org-roam-directory "~/kb/")
   (org-roam-completion-everywhere t)
   :bind(("C-c n f" . org-roam-node-find)
         ("C-c n i" . org-roam-node-insert)
@@ -66,7 +80,6 @@
   :config
   (org-roam-setup)
   )
-
 
 
 
