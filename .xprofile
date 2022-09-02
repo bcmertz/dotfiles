@@ -34,7 +34,7 @@ esac
 dunst &         # notifications
 clipmenud &     # clipmenu daemon
 unclutter &     # get rid of mouse
-setxkbmap -layout us,ir -option grp:alt_shift_toggle & # set keyboards
+setxkbmap -layout us,ir -option grp:alts_toggle & # set keyboards
 oled-linux &                        # ugh
 /usr/bin/emacs --daemon=term &               # terminal emacs daemon
 /usr/bin/emacs --daemon=gui &                # gui emacs daemon
