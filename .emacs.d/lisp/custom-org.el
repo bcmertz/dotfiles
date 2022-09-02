@@ -75,13 +75,13 @@
   (org-roam-completion-everywhere t)
   (org-roam-capture-templates
    '(("d" "default" plain
-      "%?"
+      (file "~/.emacs.d/org-templates/default.org")
       :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}") :unnarrowed t)
      ("f" "fungi" plain
-      "%?"
+      (file "~/.emacs.d/org-templates/fungi.org")
       :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}") :unnarrowed t)
      ("p" "plant" plain
-      "%?"
+      (file "~/.emacs.d/org-templates/plant.org")
       :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}") :unnarrowed t)
      ))
   :bind(("C-c n f" . org-roam-node-find)
@@ -95,11 +95,6 @@
   )
 
 (require 'org-roam-protocol)
-
-
-
-
-
 
 
 

@@ -78,6 +78,7 @@
 !.emacs.d/.mc-lists.el
 !.emacs.d/smartparens-config
 !.emacs.d/*/
+!.emacs.d/org-templates/*
 !.emacs.d/lisp/*
 !.emacs.d/lisp/themes/*
 !.emacs.d/lisp/languages/*
