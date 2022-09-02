@@ -2,9 +2,14 @@
 ;;;
 ;;; Commentary:
 ;;;
-;;; autocompletion with company mode
+;;; autocompletion with builtin completion (completion-at-point)
+;;; company mode and yasnippet
 ;;;
 ;;; Code:
+
+(setq completion-ignore-case t)
+
+
 (use-package company
   :defer t
   :after eldoc
