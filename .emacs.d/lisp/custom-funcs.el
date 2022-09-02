@@ -330,7 +330,11 @@ With argument, do this that many times."
           (set-visited-file-name new-name)
           (set-buffer-modified-p nil)
           (setq recentf-list (delete filename recentf-list))
-          )))))
+          (if-in-project
+           (progn
+             (projectile-cache-current-file)
+             (delete-file-projectile-remove-from-cache filename))))))))
+
 
 ;; source https://emacs.stackexchange.com/questions/46664/switch-between-horizontal-and-vertical-splitting
 (defun toggle-window-split ()
