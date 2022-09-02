@@ -15,9 +15,9 @@
   (setq org-todo-keywords
         '((sequence "TODO(t)" "STARTED(s)" "WAITING(w)" "|" "DONE(d)" "CANCELED(c)")))
   (setq org-export-html-postamble nil)
-  (setq org-hide-leading-stars t)
   (setq org-startup-folded (quote overview))
   (setq org-startup-indented t)
+  (setq org-hide-leading-stars t)
   (setq org-confirm-babel-evaluate nil)
   (setq org-src-fontify-natively t)
   (setq org-export-with-toc t)
@@ -49,7 +49,6 @@
          "* %? \nSource: %:link, \n\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\nCaptured On: %U")
         ))
 
-
 ;; overwrite web mode binding for C-c C-l
 (global-set-key (kbd "C-c C-l") 'org-store-link)
 
@@ -62,12 +61,29 @@
         (progn
           (github-review-start plain-url)))))
 
+;; (use-package org-modern
+;;   :ensure t)
+
+
+
+
 
 (use-package org-roam
   :ensure t
   :custom
   (org-roam-directory "~/kb/")
   (org-roam-completion-everywhere t)
+  (org-roam-capture-templates
+   '(("d" "default" plain
+      "%?"
+      :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}") :unnarrowed t)
+     ("f" "fungi" plain
+      "%?"
+      :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}") :unnarrowed t)
+     ("p" "plant" plain
+      "%?"
+      :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}") :unnarrowed t)
+     ))
   :bind(("C-c n f" . org-roam-node-find)
         ("C-c n i" . org-roam-node-insert)
         ("C-c n l" . org-roam-buffer-toggle)
@@ -79,6 +95,15 @@
   )
 
 (require 'org-roam-protocol)
+
+
+
+
+
+
+
+
+
 
 
 ;; pretty bullets
