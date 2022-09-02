@@ -6,6 +6,23 @@
 ;;;
 ;;; Code:
 
+(defun current-project ()
+  "Return project-dir or nil."
+  (ignore-errors   ;;; Pick one: projectile or find-file-in-project
+    (ffip-project-root)
+    ;; (projectile-project-root)
+    )
+  )
+
+(defun if-in-project (action_1 &optional action_2)
+  "If in a project, do ACTION_1 else ACTION_2."
+  (let ((project-dir (current-project)))
+    (if project-dir
+        (apply action_1)
+      (if action_2
+          (apply action_2)
+        ))))
+
 ;; https://www.emacswiki.org/emacs/EmacsAsDaemon#h5o-10
 (defun client-save-kill-emacs(&optional display)
   " This is a function that can bu used to save buffers and
@@ -18,7 +35,7 @@ be prompted."
     ; Check if there are modified buffers, active clients or frames.
     (setq modified-buffers (modified-buffers-exist))
     (setq active-clients-or-frames ( or (> (length server-clients) 1)
-					(> (length (frame-list)) 1)))
+				     (> (length (frame-list)) 1)))
 
     ; Create a new frame if prompts are needed.
     (when (or modified-buffers active-clients-or-frames)
@@ -167,10 +184,7 @@ or the current buffer directory."
     (defvar project-dir)
     (defvar file-name)
     (defvar neo-smart-open)
-    (let ((project-dir (ignore-errors   ;;; Pick one: projectile or find-file-in-project
-                         (ffip-project-root)
-                         ;; (projectile-project-root)
-                         ))
+    (let ((project-dir (current-project))
           (file-name (buffer-file-name))
           (neo-smart-open t))
       (if (and (fboundp 'neo-global--window-exists-p)
@@ -280,16 +294,23 @@ With argument, do this that many times."
                                         (expand-file-name (file-name-nondirectory (buffer-name))
                                                           default-directory))))))
   (when (file-exists-p new-location)
-    (delete-file new-location))
+    (if (y-or-n-p "File exists in destination, overwrite?")
+        (delete-file new-location)
+      (progn
+        (message "Move file canceled")
+        (return-from move-file))))
   (let ((old-location (expand-file-name (buffer-file-name))))
-    (message "old file is %s and new file is %s"
+    (message "Old file is %s and new file is %s"
              old-location
              new-location)
     (write-file new-location t)
+    (if-in-project
+     (projectile-cache-current-file))
     (when (and old-location
                (file-exists-p new-location)
                (not (string-equal old-location new-location)))
-            (delete-file old-location))))
+      (delete-file old-location) ;; removes from cache
+      (setq recentf-list (delete old-location recentf-list)))))
 
 ;; source: http://steve.yegge.googlepages.com/my-dot-emacs-file
 (defun rename-file-and-buffer (new-name)
