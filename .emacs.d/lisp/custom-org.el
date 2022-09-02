@@ -15,7 +15,7 @@
   (setq org-todo-keywords
         '((sequence "TODO(t)" "STARTED(s)" "WAITING(w)" "|" "DONE(d)" "CANCELED(c)")))
   (setq org-export-html-postamble nil)
-  (setq org-hide-leading-stars nil)
+  (setq org-hide-leading-stars t)
   (setq org-startup-folded (quote overview))
   (setq org-startup-indented t)
   (setq org-confirm-babel-evaluate nil)
