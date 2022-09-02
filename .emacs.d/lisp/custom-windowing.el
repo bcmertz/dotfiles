@@ -36,18 +36,19 @@
   ;; wrap around at edges
   ;; (setq windmove-wrap-around t)
   (windmove-default-keybindings 'meta) ;; M-arrows to move
-  :bind
-  ((:map org-mode-map
-         ("M-<left>" . windmove-left)
-         ("M-<right>" . windmove-right)
-         ("M-<up>" . windmove-up)
-         ("M-<down>" . windmove-down)
+  ;; :bind
+  ;; ((:map org-mode-map
+         ;; ("M-<left>" . windmove-left)
+         ;; ("M-<right>" . windmove-right)
+         ;; ("M-<up>" . windmove-up)
+         ;; ("M-<down>" . windmove-down)
 
-         ("M-S-<up>" . org-metaup)
-         ("M-S-<down>" . org-metadown)
-         ("M-S-<left>" . org-metaleft)
-         ("M-S-<right>" . org-metaright)
-         )))
+         ;; ("M-S-<up>" . org-metaup)
+         ;; ("M-S-<down>" . org-metadown)
+         ;; ("M-S-<left>" . org-metaleft)
+         ;; ("M-S-<right>" . org-metaright)
+         ;; ))
+  )
 
 
 (global-set-key (kbd "M-<left>") 'windmove-left)

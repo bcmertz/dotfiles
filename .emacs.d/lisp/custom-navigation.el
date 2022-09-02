@@ -40,6 +40,11 @@
   (ivy-mode)
   )
 
+;; ignore org roam buffers, use C-c n f
+;; https://org-roam.discourse.group/t/can-buffer-names-match-note-titles/350/13
+(add-to-list 'ivy-ignore-buffers "^[0-9]\\{14\\}.+\\.org$")
+
+
 ;; beautify ivy
 ;; pretty but slows down switching bufffers too much
 (use-package ivy-rich

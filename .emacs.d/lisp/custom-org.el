@@ -29,6 +29,7 @@
               ("<C-delete>" . org-remove-link)
               ("<C-escape>" . org-mark-ring-goto)
               ("<return>" . bcm/org-return)
+              ("C-c C-e" . mc/edit-lines)
               ("C-c r" . github-start-review-at-link)))
 
 
@@ -51,11 +52,29 @@
 
 
 
-;; pretty bullets
-(use-package org-bullets
-  :defer t
+(use-package org-roam
   :ensure t
-  :hook (org-mode . org-bullets-mode))
+  :custom
+  (org-roam-directory "~/kb")
+  (org-roam-completion-everywhere t)
+  :bind(("C-c n f" . org-roam-node-find)
+        ("C-c n i" . org-roam-node-insert)
+        ("C-c n l" . org-roam-buffer-toggle)
+        :map org-mode-map
+        ("<backtab>" . completion-at-point)
+        )
+  :config
+  (org-roam-setup)
+  )
+
+
+
+
+;; pretty bullets
+;; (use-package org-bullets
+;;   :defer t
+;;   :ensure t
+;;   :hook (org-mode . org-bullets-mode))
 
 
 (use-package ox-reveal

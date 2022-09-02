@@ -12,6 +12,7 @@
         kill-region
         move-line-down
         move-line-up
+        org-beginning-of-line
         org-kill-line
         org-self-insert-command
         smex

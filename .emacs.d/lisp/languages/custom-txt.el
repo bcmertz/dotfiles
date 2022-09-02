@@ -37,7 +37,7 @@
                      (flyspell-buffer)
                      )))
   ;; no flyspell in change log and log edit modes
-  (dolist (hook '(org-mode-hook change-log-mode-hook log-edit-mode-hook))
+  (dolist (hook '(change-log-mode-hook log-edit-mode-hook))
     (add-hook hook (lambda () (flyspell-mode -1))))
   ;; only spellcheck comments in program files
   (dolist (hook '(prog-mode-hook))
