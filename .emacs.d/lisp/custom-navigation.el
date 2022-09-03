@@ -139,7 +139,12 @@
 
 
 ;; stateful window management
-(winner-mode 1)
+(use-package winner
+  :config
+  (winner-mode)
+  (global-set-key (kbd "C-c <right>") 'winner-redo)
+  (global-set-key (kbd "C-c <left>") 'winner-undo)
+  )
 
 ;; Sidebar File navigation
 (use-package neotree ;; C-c C-c makes the focused directory the new root view
