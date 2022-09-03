@@ -169,11 +169,12 @@
         neo-window-fixed-size ())
   :bind ("C-\\" . neotree-project-dir-toggle)
   :custom-face
-  (neo-dir-link-face  ((t (:inherit variable-pitch))))
-  (neo-header-face    ((t (:inherit variable-pitch))))
-  (neo-banner-face    ((t (:inherit variable-pitch))))
-  (neo-root-dir-face  ((t (:inherit variable-pitch))))
-  (neo-file-link-face ((t (:inherit variable-pitch)))))
+  (neo-dir-link-face  ((t (:inherit fixed-pitch))))
+  (neo-header-face    ((t (:inherit fixed-pitch))))
+  (neo-banner-face    ((t (:inherit fixed-pitch))))
+  (neo-root-dir-face  ((t (:inherit fixed-pitch))))
+  (neo-file-link-face ((t (:inherit fixed-pitch))))
+  )
 
 (defun set-neotree-styling ()
   "Function to style neotree buffer locally."
@@ -190,6 +191,11 @@
 			          :box nil
 			          ;; (:line-width 4 :color #21252B) doesn't work for some reason
 			          :background "#21252B")
+              ;; remove fringes
+              ;; (set-window-fringes neo-global--window 0 0)
+              ;; (set-display-table-slot standard-display-table 0 ?\ )
+              ;; (set-face-attribute 'fringe nil :background nil)
+              ;; (fringe-mode 0)
               ;; hl line background locally
 	      (face-remap-add-relative 'hl-line nil
 			          :background "#353645") ;; #353645 gray ;; #4C77CB blue
