@@ -31,6 +31,8 @@
         handle-switch-frame
         help-for-help
         keyboard-escape-quit
+        mouse-buffer-menu
+        mouse-set-secondary
         org-return
         swiper
         ))
