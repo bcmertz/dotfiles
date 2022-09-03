@@ -18,10 +18,12 @@
   (setq org-startup-folded (quote overview))
   (setq org-startup-indented t)
   (setq org-hide-leading-stars t)
+  (setq org-hide-emphasis-markers t)
   (setq org-confirm-babel-evaluate nil)
   (setq org-src-fontify-natively t)
   (setq org-export-with-toc t)
   (setq org-directory "~/docs/org/")
+  ;; (add-hook 'org-mode-hook 'variable-pitch-mode)
   ;; make images pretty
   (setq org-image-actual-width (/ (display-pixel-width) 3))
   :bind
@@ -61,6 +63,69 @@
         (progn
           (github-review-start plain-url)))))
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; STYLING ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;; pretty bullets
+(use-package org-bullets
+  :defer t
+  :ensure t
+  :hook (org-mode . org-bullets-mode))
+
+
+(add-hook 'org-mode-hook 'variable-pitch-mode)
+
+;; make org preeeetty
+(eval-after-load "org"
+  '(add-hook 'org-mode-hook
+             (lambda ()
+               ;; https://github.com/zzamboni/dot-emacs/blob/master/init.org
+               (font-lock-add-keywords 'org-mode
+                                       '(("^ *\\([-]\\) "
+                                          (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+
+               (custom-theme-set-faces
+                'user
+                '(org-block ((t (:inherit fixed-pitch))))
+                '(org-code ((t (:inherit (shadow fixed-pitch)))))
+                '(org-document-info ((t (:foreground "dark orange"))))
+                '(org-document-info-keyword ((t (:inherit (shadow fixed-pitch)))))
+                '(org-indent ((t (:inherit (org-hide fixed-pitch)))))
+                '(org-link ((t (:foreground "royal blue" :underline t))))
+                '(org-meta-line ((t (:inherit (font-lock-comment-face fixed-pitch)))))
+                '(org-property-value ((t (:inherit fixed-pitch))) t)
+                '(org-special-keyword ((t (:inherit (font-lock-comment-face fixed-pitch)))))
+                '(org-table ((t (:inherit fixed-pitch :foreground "#83a598"))))
+                '(org-tag ((t (:inherit (shadow fixed-pitch) :weight bold :height 0.8))))
+                '(org-verbatim ((t (:inherit (shadow fixed-pitch))))))
+               ;; ;; Increase the size of various headings
+               (set-face-attribute 'org-document-title nil :weight 'bold :height 1.3)
+               (dolist (face '((org-level-1 . 1.25)
+                               (org-level-2 . 1.1)
+                               (org-level-3 . 1.05)
+                               (org-level-4 . 1.0)
+                               (org-level-5 . 1.1)
+                               (org-level-6 . 1.1)
+                               (org-level-7 . 1.1)
+                               (org-level-8 . 1.1)))
+                 (set-face-attribute (car face) nil :weight 'medium :height (cdr face)))
+
+               ;; ;; Ensure that anything that should be fixed-pitch in Org files appears that way
+               ;; (set-face-attribute 'org-block nil :foreground nil :inherit 'fixed-pitch)
+               ;; (set-face-attribute 'org-table nil  :inherit 'fixed-pitch)
+               ;; (set-face-attribute 'org-formula nil  :inherit 'fixed-pitch)
+               ;; (set-face-attribute 'org-code nil   :inherit '(shadow fixed-pitch))
+               ;; (set-face-attribute 'org-verbatim nil :inherit '(shadow fixed-pitch))
+               ;; (set-face-attribute 'org-special-keyword nil :inherit '(font-lock-comment-face fixed-pitch))
+               ;; (set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
+               ;; (set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch)
+
+               ;; ;; Get rid of the background on column views
+               ;; (set-face-attribute 'org-column nil :background nil)
+               ;; (set-face-attribute 'org-column-title nil :background nil)
+               )))
+
 ;; ;; styling modern
 ;; (use-package org-modern
 ;;   :ensure t)
@@ -69,6 +134,8 @@
 ;; (use-package org-make-toc
 ;;   :hook (org-mode . org-make-toc-mode))
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ORG ROAM ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
 (use-package org-roam
@@ -100,15 +167,7 @@
 (require 'org-roam-protocol)
 
 
-
-
-
-
-;; pretty bullets
-;; (use-package org-bullets
-;;   :defer t
-;;   :ensure t
-;;   :hook (org-mode . org-bullets-mode))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; PRESENTATIONS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
 (use-package org-present :ensure t)
@@ -117,7 +176,7 @@
   '(progn
      (add-hook 'org-present-mode-hook
                (lambda ()
-                 ;; (org-present-hide-cursor)
+                 (org-present-hide-cursor)
                  ;; (org-present-read-only)
                  ;; (org-present-big)
                  (setq-local face-remapping-alist '(
@@ -137,7 +196,7 @@
                  (org-show-children)))
      (add-hook 'org-present-mode-quit-hook
                (lambda ()
-                 ;; (org-present-show-cursor)
+                 (org-present-show-cursor)
                  ;; (org-present-read-write)
                  ;; (org-present-small)
                  (setq-local face-remapping-alist '((default default default)))
@@ -156,6 +215,7 @@
 ;;       "file:///home/leah/coding/reveal.js"
 ;;       )
 ;; (setq org-reveal-mathjax t)
+
 
 (use-package htmlize
   :defer t
