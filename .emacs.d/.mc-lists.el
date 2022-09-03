@@ -13,6 +13,7 @@
         move-line-down
         move-line-up
         org-beginning-of-line
+        org-end-of-line
         org-kill-line
         org-self-insert-command
         smex
@@ -30,6 +31,7 @@
         evil-mode
         handle-switch-frame
         help-for-help
+        ivy-switch-buffer
         keyboard-escape-quit
         mouse-buffer-menu
         mouse-set-secondary
