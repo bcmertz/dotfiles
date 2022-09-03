@@ -61,10 +61,13 @@
         (progn
           (github-review-start plain-url)))))
 
+;; ;; styling modern
 ;; (use-package org-modern
 ;;   :ensure t)
 
-
+;; ;; table of contents - maybe add save hook in org mode
+;; (use-package org-make-toc
+;;   :hook (org-mode . org-make-toc-mode))
 
 
 
@@ -108,17 +111,51 @@
 ;;   :hook (org-mode . org-bullets-mode))
 
 
-(use-package ox-reveal
-  :defer t
-  :ensure ox-reveal
-  )
+(use-package org-present :ensure t)
 
+(eval-after-load "org-present"
+  '(progn
+     (add-hook 'org-present-mode-hook
+               (lambda ()
+                 ;; (org-present-hide-cursor)
+                 ;; (org-present-read-only)
+                 ;; (org-present-big)
+                 (setq-local face-remapping-alist '(
+                                                    (default (:height 1.5) variable-pitch)
+                                                    (header-line (:height 4.0) variable-pitch)
+                                                    (org-document-title (:height 1.75) org-document-title)
+                                                    (org-code (:height 1.55) org-code)
+                                                    (org-verbatim (:height 1.55) org-verbatim)
+                                                    (org-block (:height 1.25) org-block)
+                                                    (org-block-begin-line (:height 0.7) org-block)))
+                 (global-hl-line-mode -1)
+                 (turn-on-hide-mode-line-mode)
+                 (setq header-line-format " ")
+                 (org-display-inline-images)
+                 (org-overview)
+                 (org-show-entry)
+                 (org-show-children)))
+     (add-hook 'org-present-mode-quit-hook
+               (lambda ()
+                 ;; (org-present-show-cursor)
+                 ;; (org-present-read-write)
+                 ;; (org-present-small)
+                 (setq-local face-remapping-alist '((default default default)))
+                 (turn-off-hide-mode-line-mode)
+                 (setq header-line-format nil)
+                 (setq buffer-face-mode-face nil)
+                 (org-remove-inline-images)))))
 
-(setq org-reveal-root
-      ;; "https://cdnjs.com/libraries/reveal.js/3.6.0"
-      "file:///home/leah/coding/reveal.js"
-      )
-(setq org-reveal-mathjax t)
+;; ;; use org-present instead
+;; (use-package ox-reveal
+;;   :defer t
+;;   :ensure ox-reveal
+;;   )
+;; (setq org-reveal-root
+;;       ;; "https://cdnjs.com/libraries/reveal.js/3.6.0"
+;;       "file:///home/leah/coding/reveal.js"
+;;       )
+;; (setq org-reveal-mathjax t)
 
 (use-package htmlize
   :defer t

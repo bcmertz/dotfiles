@@ -8,7 +8,7 @@
 
 ;; load local themes
 (add-to-list 'custom-theme-load-path (concat user-emacs-directory "lisp/themes/"))
-
+;; TtLl
 ;; stop asking if my themes are trusted
 (setq custom-safe-themes t)
 
@@ -84,6 +84,8 @@
   (doom-modeline-buffer-modified ((t (:inherit (error bold) :foreground "#599DD5"))))
   :init (doom-modeline-mode 1))
 
+(use-package hide-mode-line
+  :ensure t)
 
 ;; center 1 buffer
 (use-package centered-window
@@ -125,27 +127,32 @@
 ;; toggle menu
 (global-set-key (kbd "C-c t m") 'toggle-menu-bar)
 
-;; TODO find a good monospace font
 ;; Default font (cant be font with hyphen in the name like current default monospace Inconsolata-g)
-;; (setq initial-frame-alist '((font . "Monospace")))
-;; (setq default-frame-alist '((font . "Monospace")))
+(setq initial-frame-alist '((font . "Monospace")))
+(setq default-frame-alist '((font . "Monospace")))
+
+
+
 
 ;; Emoji: 😄, 🤦, 🏴, ,  ;; should render as 3 color emojis and 2 glyphs
-(defun styling/set-backup-fonts()
+(defun styling/set-fonts()
   "Set the emoji and glyph fonts."
   (set-fontset-font t 'symbol "Apple Color Emoji" nil 'prepend)
   (set-fontset-font t 'symbol "Noto Color Emoji" nil 'prepend)
   (set-fontset-font t 'symbol "Segoe UI Emoji" nil 'prepend)
   (set-fontset-font t 'symbol "UbuntuMono Nerd Font" nil 'prepend)
+  (set-face-attribute 'default nil :font "Monospace" :weight 'light :height 110)
+  (set-face-attribute 'fixed-pitch nil :font "Monospace" :weight 'light :height 120)
+  (set-face-attribute 'variable-pitch nil :font "ETBembo" :weight 'thin :height 120)
   )
-
-;; switch font
-(global-set-key (kbd "C-c t f") 'set-face-font)
 
 ;; respect default terminal fonts
 ;; if we're in a gui set the fonts appropriately
 ;; for daemon sessions and and nondaemons
-(apply-if-gui 'styling/set-backup-fonts)
+(apply-if-gui 'styling/set-fonts)
+
+;; switch font
+(global-set-key (kbd "C-c t f") 'set-frame-font)
 
 (use-package all-the-icons
   :defer t
