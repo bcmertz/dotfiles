@@ -146,6 +146,14 @@
   (global-set-key (kbd "C-c <left>") 'winner-undo)
   )
 
+;; https://config.daviwil.com/emacs#control-buffer-placement
+(setq display-buffer-base-action
+      '(display-buffer-reuse-mode-window
+        display-buffer-reuse-window
+        display-buffer-same-window))
+;; If a popup does happen, don't resize windows to be equal-sized
+(setq even-window-sizes nil)
+
 ;; Sidebar File navigation
 (use-package neotree ;; C-c C-c makes the focused directory the new root view
   :ensure t
