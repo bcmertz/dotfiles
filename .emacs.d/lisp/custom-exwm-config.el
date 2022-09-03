@@ -4,6 +4,13 @@
 ;;;
 ;;; Code:
 
+(use-package alert
+  :ensure t
+  :commands alert
+  :config
+  (setq alert-default-style 'notifications))
+
+
 (defun efs/run-in-background (command)
   (let ((command-parts (split-string command "[ ]+")))
     (apply #'call-process `(,(car command-parts) nil 0 nil ,@(cdr command-parts)))))
