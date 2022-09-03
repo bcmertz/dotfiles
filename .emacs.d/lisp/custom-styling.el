@@ -132,8 +132,7 @@
 (setq default-frame-alist '((font . "Monospace")))
 
 
-
-
+;; cool fonts to try - ETBembo, Source Sans Pro, Lucida Grande, Verdana
 ;; Emoji: 😄, 🤦, 🏴, ,  ;; should render as 3 color emojis and 2 glyphs
 (defun styling/set-fonts()
   "Set the emoji and glyph fonts."
