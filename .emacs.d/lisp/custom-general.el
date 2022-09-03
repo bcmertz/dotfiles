@@ -67,15 +67,19 @@
                "mpv"
                '(file))
          (list (openwith-make-extension-regexp
-                '("xbm" "pbm" "pgm" "ppm" "pnm"
-                  "png" "gif" "bmp" "tif" "jpeg")) ;; Removed jpg because Telega was
-               ;; causing feh to be opened...
-               "nsxiv"
+                '("doc" "xls" "ppt" "odt" "ods" "odg" "odp"))
+               "libreoffice"
                '(file))
-         (list (openwith-make-extension-regexp
-                '("pdf"))
-               "zathura"
-               '(file)))))
+         ;; (list (openwith-make-extension-regexp
+         ;;        '("xbm" "pbm" "pgm" "ppm" "pnm"
+         ;;          "png" "gif" "bmp" "tif" "jpeg")) ;; Removed jpg because Telega was
+         ;;       "nsxiv"
+         ;;       '(file))
+         ;; (list (openwith-make-extension-regexp
+         ;;        '("pdf"))
+         ;;       "zathura"
+         ;;       '(file))
+         )))
 
 
 ;; terminal specific escape codes
