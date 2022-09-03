@@ -8,7 +8,7 @@
 
 ;; load local themes
 (add-to-list 'custom-theme-load-path (concat user-emacs-directory "lisp/themes/"))
-;; TtLl
+
 ;; stop asking if my themes are trusted
 (setq custom-safe-themes t)
 
