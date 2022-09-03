@@ -191,11 +191,10 @@
 			          :box nil
 			          ;; (:line-width 4 :color #21252B) doesn't work for some reason
 			          :background "#21252B")
-              ;; remove fringes
-              ;; (set-window-fringes neo-global--window 0 0)
-              ;; (set-display-table-slot standard-display-table 0 ?\ )
-              ;; (set-face-attribute 'fringe nil :background nil)
-              ;; (fringe-mode 0)
+              ;; margins
+              (setq-local left-margin-width 0 right-margin-width 0)
+              (set-window-buffer nil (current-buffer))
+
               ;; hl line background locally
 	      (face-remap-add-relative 'hl-line nil
 			          :background "#353645") ;; #353645 gray ;; #4C77CB blue
@@ -206,11 +205,9 @@
 ;; apply if gui our neotree styling
 (apply-if-gui 'set-neotree-styling)
 
-;; from doom-emacs
-;;
 ;; The cursor always sits at bol. `+neotree--fix-cursor-h' and
 ;; `+neotree--indent-cursor-a' change that behavior so that the cursor is
-;; always on the first non-blank character on the line, in the neo buffer.
+;; always on the first non-blank character on the line, in the neo buffer. (src - doom-emacs)
 (add-hook! 'neo-enter-hook
            (defun +neotree-fix-cursor-h (&rest _)
              (with-current-buffer neo-global--buffer
