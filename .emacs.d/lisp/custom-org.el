@@ -96,7 +96,7 @@
                (set-face-attribute 'org-level-7 nil :weight 'medium :height 1.1)
                (set-face-attribute 'org-level-8 nil :weight 'medium :height 1.1)
                (set-face-attribute 'org-default nil :inherit 'fixed-pitch :height 1.05)
-               (set-face-attribute 'org-indent nil :inherit '(org-hide fixed-pitch) :height 1.5)
+               (set-face-attribute 'org-indent nil :inherit '(org-hide fixed-pitch) :height 1.0)
                (set-face-attribute 'org-code nil :inherit '(shadow fixed-pitch) :height 1.0)
                (set-face-attribute 'org-block nil :inherit '(shadow fixed-pitch) :height 0.95)
                (set-face-attribute 'org-document-title nil :foreground "dark orange" :weight 'bold :height 1.85)
