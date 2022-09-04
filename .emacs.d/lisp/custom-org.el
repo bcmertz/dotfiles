@@ -84,7 +84,9 @@
                (font-lock-add-keywords 'org-mode
                                        '(("^ *\\([-]\\) "
                                           (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
-
+               ;; should be enabled by default, buffer-face-mode allows changing
+               ;; the values of various face - see (describe-face) or (counsel-describe-face)
+               ;; or type C-u C-x = to see what faces the selected text has
                ;; (buffer-face-mode t)
 
                (set-face-attribute 'org-level-1 nil :weight 'medium :height 1.4)
