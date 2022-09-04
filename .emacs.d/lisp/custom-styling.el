@@ -43,6 +43,14 @@
 (which-key-add-key-based-replacements "C-c t" "theming")
 (global-set-key (kbd "C-c t t") 'change-theme)
 
+;; normally there is no load theme hook, create one here
+;; https://www.reddit.com/r/emacs/comments/4v7tcj/does_emacs_have_a_hook_for_when_the_theme_changes/d5wyu1r/
+(defvar after-load-theme-hook nil
+  "Hook run after a color theme is loaded using `load-theme'.")
+(defadvice load-theme (after run-after-load-theme-hook activate)
+  "Run `after-load-theme-hook'."
+  (run-hooks 'after-load-theme-hook))
+
 
 ;; transparency (focused . unfocused)
 ;; (setq default-transparency (list 100 100))
@@ -85,8 +93,8 @@
   (setq doom-modeline-vcs-max-length 100)
   (setq doom-modeline-persp-icon t)
   :custom-face
-  (mode-line ((t (:foreground "#D8DEE8" :background "#353645"))))
-  (mode-line-inactive ((t (:background "#181A1F"))))
+  ;; (mode-line ((t (:foreground "#D8DEE8" :background "#353645"))))
+  ;; (mode-line-inactive ((t (:background "#181A1F"))))
   (doom-modeline-buffer-modified ((t (:inherit (error bold) :foreground "#599DD5"))))
   :init (doom-modeline-mode 1))
 
@@ -103,10 +111,22 @@
 ;; remove ugly change in bg color in fringes
 ;; (set-face-attribute 'fringe nil :background nil)
 
-;; Hide Scroll bar,menu bar, tool bar
-(scroll-bar-mode -1)
-(tool-bar-mode -1)
-(menu-bar-mode -1)
+(defun hide-ui-elements ()
+  "Hide Scroll bar,menu bar, tool bar."
+  (scroll-bar-mode -1)
+  (tool-bar-mode -1)
+  (menu-bar-mode -1))
+(apply-gui-and-term 'hide-ui-elements)
+
+;; toggle tool bar mode
+(defun toggle-scroll-bar ()
+  "Toggle scroll-bar-mode."
+  (interactive)
+  (if (eq scroll-bar-mode nil)
+      (scroll-bar-mode 1)
+    (scroll-bar-mode -1))
+  )
+(global-set-key (kbd "C-c t s") 'toggle-scroll-bar)
 
 ;; toggle tool bar mode
 (defun toggle-tool-bar ()
@@ -116,10 +136,7 @@
       (tool-bar-mode -1)
     (tool-bar-mode 1))
   )
-
-;; toggle tool
 (global-set-key (kbd "C-c t l") 'toggle-tool-bar)
-
 
 ;; toggle menu bar mode
 (defun toggle-menu-bar ()
@@ -129,8 +146,6 @@
       (menu-bar-mode -1)
     (menu-bar-mode 1))
   )
-
-;; toggle menu
 (global-set-key (kbd "C-c t m") 'toggle-menu-bar)
 
 ;; Default font (cant be font with hyphen in the name like current default monospace Inconsolata-g)
