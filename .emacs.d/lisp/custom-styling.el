@@ -145,8 +145,8 @@
   (set-fontset-font t 'symbol "Noto Color Emoji" nil 'prepend)
   (set-fontset-font t 'symbol "Segoe UI Emoji" nil 'prepend)
   (set-fontset-font t 'symbol "UbuntuMono Nerd Font" nil 'prepend)
-  (set-face-attribute 'default nil :font "Monospace" :weight 'light)
-  (set-face-attribute 'fixed-pitch nil :font "Monospace" :weight 'light)
+  (set-face-attribute 'default nil :font "Monospace" :weight 'light :height 110)
+  (set-face-attribute 'fixed-pitch nil :font "Monospace" :weight 'light :height 110)
   (set-face-attribute 'variable-pitch nil :font "ETBembo" :weight 'thin)
   )
 
