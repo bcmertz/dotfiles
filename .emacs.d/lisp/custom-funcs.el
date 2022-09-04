@@ -195,6 +195,18 @@ Cancels itself, if this buffer was killed."
     (if (display-graphic-p)
         (apply action))))
 
+;; do for both gui and term, useful if an action gets messed up my emacsclient
+;; in gui, as happens for styling / faces / fonts
+(defun apply-gui-and-term (&rest action)
+  "Do specified ACTION for gui and term with correct daemon support."
+  (if (daemonp)
+      (add-hook 'after-make-frame-functions
+                (lambda (frame)
+                  (select-frame frame)
+                  (if (display-graphic-p frame)
+                      (apply action))))
+    (apply action)))
+
 ;; select current line
 (defun mark-entire-line ()
   "Mark the whole line from the indent to the end."
