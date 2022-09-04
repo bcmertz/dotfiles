@@ -4,6 +4,7 @@
 (setq mc/cmds-to-run-for-all
       '(
         backward-delete-word
+        beginning-of-visual-line
         c-electric-brace
         c-electric-semi&comma
         c-indent-line-or-region
