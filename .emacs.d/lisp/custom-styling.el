@@ -68,8 +68,14 @@
 (global-display-line-numbers-mode -1)
 
 ;; margins
-(setq-default left-margin-width 2 right-margin-width 1)
+(setq-default left-margin-width 1 right-margin-width 1)
 (set-window-buffer nil (current-buffer))
+
+;; remove fringes
+;; (set-window-fringes neo-global--window 0 0)
+;; (set-display-table-slot standard-display-table 0 ?\ )
+;; (set-face-attribute 'fringe nil :background nil)
+;; (fringe-mode 0)
 
 ;; modeline
 (use-package doom-modeline
@@ -95,7 +101,7 @@
   (centered-window-mode t))
 
 ;; remove ugly change in bg color in fringes
-(set-face-attribute 'fringe nil :background nil)
+;; (set-face-attribute 'fringe nil :background nil)
 
 ;; Hide Scroll bar,menu bar, tool bar
 (scroll-bar-mode -1)
@@ -131,7 +137,6 @@
 (setq initial-frame-alist '((font . "Monospace")))
 (setq default-frame-alist '((font . "Monospace")))
 
-
 ;; cool fonts to try - ETBembo, Source Sans Pro, Lucida Grande, Verdana
 ;; Emoji: 😄, 🤦, 🏴, ,  ;; should render as 3 color emojis and 2 glyphs
 (defun styling/set-fonts()
@@ -140,9 +145,9 @@
   (set-fontset-font t 'symbol "Noto Color Emoji" nil 'prepend)
   (set-fontset-font t 'symbol "Segoe UI Emoji" nil 'prepend)
   (set-fontset-font t 'symbol "UbuntuMono Nerd Font" nil 'prepend)
-  (set-face-attribute 'default nil :font "Monospace" :weight 'light :height 110)
-  (set-face-attribute 'fixed-pitch nil :font "Monospace" :weight 'light :height 120)
-  (set-face-attribute 'variable-pitch nil :font "ETBembo" :weight 'thin :height 120)
+  (set-face-attribute 'default nil :font "Monospace" :weight 'light)
+  (set-face-attribute 'fixed-pitch nil :font "Monospace" :weight 'light)
+  (set-face-attribute 'variable-pitch nil :font "ETBembo" :weight 'thin)
   )
 
 ;; respect default terminal fonts
