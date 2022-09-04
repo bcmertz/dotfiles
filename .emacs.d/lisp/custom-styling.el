@@ -147,7 +147,7 @@
   (set-fontset-font t 'symbol "UbuntuMono Nerd Font" nil 'prepend)
   (set-face-attribute 'default nil :font "Monospace" :weight 'light :height 110)
   (set-face-attribute 'fixed-pitch nil :font "Monospace" :weight 'light :height 110)
-  (set-face-attribute 'variable-pitch nil :font "ETBembo" :weight 'thin)
+  (set-face-attribute 'variable-pitch nil :font "ETBembo" :weight 'thin :height 125)
   )
 
 ;; respect default terminal fonts
