@@ -180,27 +180,32 @@
   "Function to style neotree buffer locally."
   (add-hook 'neotree-mode-hook
 	    (lambda ()
-	      ;; locally change the buffer background color
-	      (setq buffer-face-mode-face `(:background "#21252B"))
-	      ;; if we want a fringe set it to a nice color
-	      ;; but only do it locally in neotree buffers
-	      (face-remap-add-relative 'fringe nil
-				       '(:background "#21252B"))
-	      ;; title on neotree
-	      (set-face-attribute 'neo-root-dir-face nil
-			          :box nil
-			          ;; (:line-width 4 :color #21252B) doesn't work for some reason
-			          :background "#21252B")
-              ;; margins
+              ;; remove margins
               (setq-local left-margin-width 0 right-margin-width 0)
               (set-window-buffer nil (current-buffer))
 
-              ;; hl line background locally
-	      (face-remap-add-relative 'hl-line nil
-			          :background "#353645") ;; #353645 gray ;; #4C77CB blue
-	      ;; no modeline
+              ;; no modeline
 	      (setq mode-line-format nil)
-	      (buffer-face-mode 1))))
+
+              ;; enable variable pitch fonts
+	      (buffer-face-mode 1)
+
+	      ;; ;; locally change the buffer background color
+	      ;; (setq buffer-face-mode-face `(:background "#21252B"))
+	      ;; ;; if we want a fringe set it to a nice color
+	      ;; ;; but only do it locally in neotree buffers
+	      ;; (face-remap-add-relative 'fringe nil
+	      ;;   		       '(:background "#21252B"))
+	      ;; ;; title on neotree
+	      ;; (set-face-attribute 'neo-root-dir-face nil
+	      ;;   	          :box nil
+	      ;;   	          ;; (:line-width 4 :color #21252B) doesn't work for some reason
+	      ;;   	          :background "#21252B")
+
+              ;; hl line background locally
+	      ;; (face-remap-add-relative 'hl-line nil
+	      ;;   	          :background "#353645") ;; #353645 gray ;; #4C77CB blue
+              )))
 
 ;; apply if gui our neotree styling
 (apply-if-gui 'set-neotree-styling)
