@@ -4,5 +4,5 @@
 # uuid: latex
 # --
 #+begin_latex
-`%`$0
+`(yas-selected-text)`$0
 #+end_latex

@@ -6,6 +6,33 @@
 ;;;
 ;;; Code:
 
+;; just use C-c y i (yas-insert-snippet)
+;; (defun sourcify-code-block ()
+;;   "Make the marked area a source code block, including whole lines."
+;;   (interactive)
+;;   (let (beg end)
+;;     (if (region-active-p)
+;;         (progn
+;;           (setq beg (region-beginning) end (region-end))
+;;           (goto-char beg)
+;;           (move-beginning-of-line nil)
+;;           (setq new-beg (point))
+;;           (goto-char end)
+;;           (move-end-of-line nil)
+;;           (setq new-end (point))
+;;           )
+;;       (setq beg (line-beginning-position) end (line-end-position)))
+;;     (goto-char new-beg)
+;;     (insert "#+begin_src ")
+;;     (setq destination (point))
+;;     (newline)
+;;     (goto-char new-end)
+;;     (forward-char (+ 2 (length "#+begin_src")))
+;;     (newline)
+;;     (insert "#+end_src")
+;;     (goto-char destination)
+;;     ))
+
 (defun current-project ()
   "Return project-dir or nil."
   (ignore-errors   ;;; Pick one: projectile or find-file-in-project
