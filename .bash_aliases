@@ -59,6 +59,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='/usr/bin/ls --color=auto'
+alias lsd='ls -d */'
 
 # less annoying tree
 alias tree="tree -a -I 'node_modules|.git'"
@@ -74,9 +75,12 @@ alias ag='ag --hidden --ignore node_modules --ignore .git'
 alias copy='xclip -sel clip'
 alias r='fc -s'
 alias rc='fc -s | copy'
-alias wcdir='wc -w *'
 alias reboot='shutdown -r now'
 alias ff='find_file'
+alias wcdir='wc -w *'
+alias wcdir_rec='wc -w **/*'
+alias lcdir='wc -l *'
+alias lcdir_rec='wc -l **/*'
 
 # transmission-remote
 alias t='transmission-remote'
@@ -129,5 +133,3 @@ cds() {
         cd "$1" && /usr/bin/ls --color=auto
     fi
 }
-
-alias lsd='ls -d */'
