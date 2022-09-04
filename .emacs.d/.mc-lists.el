@@ -11,6 +11,7 @@
         end-of-visual-line
         indent-for-tab-command
         kill-region
+        markdown-enter-key
         move-line-down
         move-line-up
         org-beginning-of-line
