@@ -6,49 +6,81 @@
 ;;;
 ;;; Code:
 
-;; just use C-c y i (yas-insert-snippet)
-;; (defun sourcify-code-block ()
-;;   "Make the marked area a source code block, including whole lines."
-;;   (interactive)
-;;   (let (beg end)
-;;     (if (region-active-p)
-;;         (progn
-;;           (setq beg (region-beginning) end (region-end))
-;;           (goto-char beg)
-;;           (move-beginning-of-line nil)
-;;           (setq new-beg (point))
-;;           (goto-char end)
-;;           (move-end-of-line nil)
-;;           (setq new-end (point))
-;;           )
-;;       (setq beg (line-beginning-position) end (line-end-position)))
-;;     (goto-char new-beg)
-;;     (insert "#+begin_src ")
-;;     (setq destination (point))
-;;     (newline)
-;;     (goto-char new-end)
-;;     (forward-char (+ 2 (length "#+begin_src")))
-;;     (newline)
-;;     (insert "#+end_src")
-;;     (goto-char destination)
-;;     ))
+;; if gui do something in whatver type of emacs instance we are using
+(defun apply-if-gui (&rest action)
+  "Do specified ACTION if we're in a gui regardless of daemon or not."
+  (if (daemonp)
+      (add-hook 'after-make-frame-functions
+                (lambda (frame)
+                  (select-frame frame)
+                  (if (display-graphic-p frame)
+                      (apply action))))
+    (if (display-graphic-p)
+        (apply action))))
 
-(defun current-project ()
-  "Return project-dir or nil."
-  (ignore-errors   ;;; Pick one: projectile or find-file-in-project
-    (ffip-project-root)
-    ;; (projectile-project-root)
-    )
+;; do for both gui and term, useful if an action gets messed up my emacsclient
+;; in gui, as happens for styling / faces / fonts
+(defun apply-gui-and-term (&rest action)
+  "Do specified ACTION for gui and term with correct daemon support."
+  (if (daemonp)
+      (add-hook 'after-make-frame-functions
+                (lambda (frame)
+                  (select-frame frame)
+                  (if (display-graphic-p frame)
+                      (apply action))))
+    (apply action)))
+
+;; select current line
+(defun mark-entire-line ()
+  "Mark the whole line from the indent to the end."
+  (interactive)
+  (beginning-of-line-text)
+  (set-mark-command nil)
+  (end-of-line))
+
+
+(defun neotree-project-dir-toggle ()
+    "Open NeoTree using the project root, using find-file-in-project,
+or the current buffer directory."
+    (interactive)
+    (defvar project-dir)
+    (defvar file-name)
+    (defvar neo-smart-open)
+    (let ((project-dir (current-project))
+          (file-name (buffer-file-name))
+          (neo-smart-open t))
+      (if (and (fboundp 'neo-global--window-exists-p)
+               (neo-global--window-exists-p))
+          (neotree-hide)
+        (progn
+          (neotree-show)
+          (if project-dir
+              (neotree-dir project-dir))
+          (if file-name
+              (neotree-find file-name))))))
+
+(defun return-newline-below ()
+  "Go to end of line and return bc in TTy C-m and RET is weird."
+  (interactive)
+  (end-of-line)
+  (newline-and-indent)
+  ;; (if (string= major-mode "web-mode")
+  ;;     (indent-relative)
+  ;;     )
   )
 
-(defun if-in-project (action_1 &optional action_2)
-  "If in a project, do ACTION_1 else ACTION_2."
-  (let ((project-dir (current-project)))
-    (if project-dir
-        (apply action_1)
-      (if action_2
-          (apply action_2)
-        ))))
+(defun org-return-newline-below ()
+  "Go to end of line and org-meta-return."
+  (interactive)
+  (end-of-line)
+  (if (string= major-mode "org-mode")
+      (org-meta-return)
+      (progn
+        (newline-and-indent)
+        (indent-relative)
+        )
+      )
+  )
 
 ;; https://www.emacswiki.org/emacs/EmacsAsDaemon#h5o-10
 (defun client-save-kill-emacs(&optional display)
@@ -183,82 +215,22 @@ Cancels itself, if this buffer was killed."
   ;; load theme
   (load-theme custom-theme))
 
-;; if gui do something in whatver type of emacs instance we are using
-(defun apply-if-gui (&rest action)
-  "Do specified ACTION if we're in a gui regardless of daemon or not."
-  (if (daemonp)
-      (add-hook 'after-make-frame-functions
-                (lambda (frame)
-                  (select-frame frame)
-                  (if (display-graphic-p frame)
-                      (apply action))))
-    (if (display-graphic-p)
-        (apply action))))
-
-;; do for both gui and term, useful if an action gets messed up my emacsclient
-;; in gui, as happens for styling / faces / fonts
-(defun apply-gui-and-term (&rest action)
-  "Do specified ACTION for gui and term with correct daemon support."
-  (if (daemonp)
-      (add-hook 'after-make-frame-functions
-                (lambda (frame)
-                  (select-frame frame)
-                  (if (display-graphic-p frame)
-                      (apply action))))
-    (apply action)))
-
-;; select current line
-(defun mark-entire-line ()
-  "Mark the whole line from the indent to the end."
-  (interactive)
-  (beginning-of-line-text)
-  (set-mark-command nil)
-  (end-of-line))
-
-
-(defun neotree-project-dir-toggle ()
-    "Open NeoTree using the project root, using find-file-in-project,
-or the current buffer directory."
-    (interactive)
-    (defvar project-dir)
-    (defvar file-name)
-    (defvar neo-smart-open)
-    (let ((project-dir (current-project))
-          (file-name (buffer-file-name))
-          (neo-smart-open t))
-      (if (and (fboundp 'neo-global--window-exists-p)
-               (neo-global--window-exists-p))
-          (neotree-hide)
-        (progn
-          (neotree-show)
-          (if project-dir
-              (neotree-dir project-dir))
-          (if file-name
-              (neotree-find file-name))))))
-
-(defun return-newline-below ()
-  "Go to end of line and return bc in TTy C-m and RET is weird."
-  (interactive)
-  (end-of-line)
-  (newline-and-indent)
-  ;; (if (string= major-mode "web-mode")
-  ;;     (indent-relative)
-  ;;     )
+(defun current-project ()
+  "Return project-dir or nil."
+  (ignore-errors   ;;; Pick one: projectile or find-file-in-project
+    (ffip-project-root)
+    ;; (projectile-project-root)
+    )
   )
 
-(defun org-return-newline-below ()
-  "Go to end of line and org-meta-return."
-  (interactive)
-  (end-of-line)
-  (if (string= major-mode "org-mode")
-      (org-meta-return)
-      (progn
-        (newline-and-indent)
-        (indent-relative)
-        )
-      )
-  )
-
+(defun if-in-project (action_1 &optional action_2)
+  "If in a project, do ACTION_1 else ACTION_2."
+  (let ((project-dir (current-project)))
+    (if project-dir
+        (apply action_1)
+      (if action_2
+          (apply action_2)
+        ))))
 
 (defun move-lines (n)
   (let ((beg) (end) (keep))
