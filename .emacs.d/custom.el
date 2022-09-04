@@ -14,7 +14,7 @@
  '(mini-frame-show-parameters '((top . 10) (width . 0.7) (left . 0.5)))
  '(objed-cursor-color "#D70000")
  '(package-selected-packages
-   '(deft hide-mode-line org-variable-pitch org-present openwith pinentry org-roam-ui ag dired all-the-icons-dired dired-narrow org-modern org-roam undo-tree centaur-tabs ivy-posframe dired-subtree ewal-doom-themes ewal emms bongo define-word expand-region company-box counsel ivy-hydra centered-window company-lsp lsp-ui ivy-rich doom-themes avy-zap transmission arduino arduino-mode org-drill go-eldoc lsp-mode mu4e-alert htmlize ox-reveal buffer-move go-mode desktop-environment exwm pass magit perspective flycheck yasnippet which-key web-mode vimish-fold use-package smartparens projectile pdf-tools org-bullets neotree multiple-cursors markdown-mode general evil eglot doom-modeline company avy auctex atom-one-dark-theme))
+   '(spacemacs-theme deft hide-mode-line org-variable-pitch org-present openwith pinentry org-roam-ui ag dired all-the-icons-dired dired-narrow org-modern org-roam undo-tree centaur-tabs ivy-posframe dired-subtree ewal-doom-themes ewal emms bongo define-word expand-region company-box counsel ivy-hydra centered-window company-lsp lsp-ui ivy-rich doom-themes avy-zap transmission arduino arduino-mode org-drill go-eldoc lsp-mode mu4e-alert htmlize ox-reveal buffer-move go-mode desktop-environment exwm pass magit perspective flycheck yasnippet which-key web-mode vimish-fold use-package smartparens projectile pdf-tools org-bullets neotree multiple-cursors markdown-mode general evil eglot doom-modeline company avy auctex atom-one-dark-theme))
  '(pdf-view-midnight-colors (cons "#0F1019" "#F5F5F9"))
  '(rustic-ansi-faces
    ["#F5F5F9" "#D70000" "#005F00" "#AF8700" "#1F55A0" "#AF005F" "#007687" "#0F1019"])
@@ -53,10 +53,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(doom-modeline-buffer-modified ((t (:inherit (error bold) :foreground "#599DD5"))))
- '(fringe ((t (:background "#282c34"))))
- '(mode-line ((t (:foreground "#D8DEE8" :background "#353645"))))
- '(mode-line-inactive ((t (:background "#181A1F"))))
  '(neo-banner-face ((t (:inherit variable-pitch))))
  '(neo-dir-link-face ((t (:inherit variable-pitch))))
  '(neo-file-link-face ((t (:inherit variable-pitch))))
