@@ -24,6 +24,7 @@
 
 # config
 !.config/
+!.config/.projectile
 !.config/global.cfg
 !.config/i3-scrot.conf
 !.config/mimeapps.list
