@@ -42,12 +42,10 @@ for process in $processes; do
         redshift)
             if grep 'use_redshift=true' ~/.config/oled-linux.conf >/dev/null; then
                 sed -i "/use_redshift/s/use_redshift=true/use_redshift=false/" ~/.config/oled-linux.conf
-                xbacklight -dec 5
-                xbacklight -inc 5
+                xbacklight -dec 5 && xbacklight -inc 5
             else
                 sed -i "/use_redshift/s/use_redshift=false/use_redshift=true/" ~/.config/oled-linux.conf
-                xbacklight -dec 5
-                xbacklight -inc 5
+                xbacklight -dec 5 && xbacklight -inc 5
             fi
             ;;
         xautolock)
