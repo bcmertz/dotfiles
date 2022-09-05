@@ -111,7 +111,7 @@ if $use_redshift; then
             fi
 
             while true; do
-                inotifywait -e close_write $HOME/.cache/.file-pipes/current-location.txt
+                inotifywait -e modify $HOME/.cache/.file-pipes/current-location.txt
                 if ! diff $HOME/.cache/.file-pipes/location.txt $HOME/.cache/.file-pipes/current-location.txt
                 then
                     cp $HOME/.cache/.file-pipes/current-location.txt $HOME/.cache/.file-pipes/location.txt
@@ -129,7 +129,7 @@ if $use_redshift; then
         # Make sure the location.txt exists before calling sunwait
         if ! test -f $HOME/.cache/.file-pipes/location.txt; then
             touch $HOME/.cache/.file-pipes/location.txt
-            inotifywait -e close_write $HOME/.cache/.file-pipes/location.txt
+            inotifywait -e modify $HOME/.cache/.file-pipes/location.txt
         fi
 
         while true
@@ -146,6 +146,9 @@ target_shift=$daylight_temperature
 current_shift=$daylight_temperature
 
 while true; do
+    # Reload configuration file to make sure redshift hasn't been toggled in config
+    source $HOME/.config/oled-linux.conf
+
     target_brightness=$(cat "$backlight_dir/brightness")
 
     if test -f $HOME/.cache/.file-pipes/day-night.txt; then
@@ -164,10 +167,11 @@ while true; do
 
     if [ $current_brightness -eq $target_brightness ] && [ $current_shift -eq $target_shift ]
     then
-        inotifywait -e close_write $backlight_dir/brightness -e close_write "./$HOME/.cache/.file-pipes/day-night.txt" -e close_write oled-linux.conf > /dev/null
+        inotifywait -e modify $backlight_dir/brightness -e modify "$HOME/.cache/.file-pipes/day-night.txt" -e modify $HOME/.config/oled-linux.conf > /dev/null
         # Auto-reloads the following list of variables
         eval $(
           source $HOME/.config/oled-linux.conf;
+          echo use_redshift="$use_redshift";
           echo backlight_dir="$backlight_dir";
           echo brightness_step_size_factor="$brightness_step_size_factor";
           echo daylight_temperature="$daylight_temperature";

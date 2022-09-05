@@ -1,0 +1,60 @@
+#!/bin/sh
+#
+# toggle process
+# try to hide but kill if needed
+
+processes=$@
+
+# no argument, exit
+if [ -z $processes ]; then
+    exit
+fi
+
+function do_toggle {
+    process=$1
+    action_on=${2:-""}
+    action_off=${3:-""}
+
+    if pgrep -x $process >/dev/null; then
+        $action_off;
+        echo "$process off"
+    else
+        $action_on;
+        echo "$process on"
+    fi
+}
+
+
+
+for process in $processes; do
+    function kill_command {
+        killall $process
+    }
+
+    function start_command {
+        background $process
+    }
+
+    case $process in
+        polybar)
+            do_toggle $process 'refresh polybar' kill_command
+            ;;
+        redshift)
+            if grep 'use_redshift=true' ~/.config/oled-linux.conf >/dev/null; then
+                sed -i "/use_redshift/s/use_redshift=true/use_redshift=false/" ~/.config/oled-linux.conf
+                xbacklight -dec 5
+                xbacklight -inc 5
+            else
+                sed -i "/use_redshift/s/use_redshift=false/use_redshift=true/" ~/.config/oled-linux.conf
+                xbacklight -dec 5
+                xbacklight -inc 5
+            fi
+            ;;
+        xautolock)
+            do_toggle $process 'background xautolock -time 30 -locker slock' kill_command
+            ;;
+        *)
+            do_toggle $process start_command kill_command
+            ;;
+    esac
+done
