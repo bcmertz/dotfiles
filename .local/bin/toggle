@@ -17,14 +17,33 @@ function do_toggle {
 
     if pgrep -x $process >/dev/null; then
         $action_off;
-        echo "$process off"
+        notify-send "$process off"
     else
         $action_on;
-        echo "$process on"
+        notify-send "$process on"
     fi
 }
 
-
+# Not actually using redshift but oled-linux, and we don't want to turn it off.
+# Instead we just change the config. Also handle is another toggle command is
+# provided. This is used for ~movie mode~ :]
+function redshift_toggle {
+    if grep 'use_redshift=true' ~/.config/oled-linux.conf >/dev/null; then
+        sed -i "/use_redshift/s/use_redshift=true/use_redshift=false/" ~/.config/oled-linux.conf
+        xbacklight -dec 5 && xbacklight -inc 5
+        notify-send "redshift off"
+        if [ $# > 0 ]; then
+            $1
+        fi
+    else
+        sed -i "/use_redshift/s/use_redshift=false/use_redshift=true/" ~/.config/oled-linux.conf
+        xbacklight -dec 5 && xbacklight -inc 5
+        notify-send "redshift on"
+        if [ $# > 0 ]; then
+            $1
+        fi
+    fi
+}
 
 for process in $processes; do
     function kill_command {
@@ -35,21 +54,22 @@ for process in $processes; do
         background $process
     }
 
+    function xautolock_command {
+        do_toggle "xautolock" 'background xautolock -time 30 -locker slock' kill_command
+    }
+
     case $process in
         polybar)
             do_toggle $process 'refresh polybar' kill_command
             ;;
         redshift)
-            if grep 'use_redshift=true' ~/.config/oled-linux.conf >/dev/null; then
-                sed -i "/use_redshift/s/use_redshift=true/use_redshift=false/" ~/.config/oled-linux.conf
-                xbacklight -dec 5 && xbacklight -inc 5
-            else
-                sed -i "/use_redshift/s/use_redshift=false/use_redshift=true/" ~/.config/oled-linux.conf
-                xbacklight -dec 5 && xbacklight -inc 5
-            fi
+            redshift_toggle
+            ;;
+        movie)
+            redshift_toggle xautolock_command
             ;;
         xautolock)
-            do_toggle $process 'background xautolock -time 30 -locker slock' kill_command
+            xautolock_command
             ;;
         *)
             do_toggle $process start_command kill_command
