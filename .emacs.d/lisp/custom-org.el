@@ -123,9 +123,34 @@
   ;; (set-face-attribute 'org-column-title nil :background nil)
   )
 
-;; ;; styling modern
-;; (use-package org-modern
-;;   :ensure t)
+;; styling modern
+(use-package org-modern
+  :config
+  (setq org-modern-block t)
+  (setq org-modern-tag t)
+  (setq org-modern-horizontal-rule t)
+  (setq org-modern-keyword t)
+  (setq org-modern-list ())
+
+  (setq org-modern-timestamp t)
+  (setq org-modern-todo t)
+  (setq org-modern-priority t)
+
+  (setq org-modern-radio-target nil)
+  (setq org-modern-table-vertical nil)
+  (setq org-modern-internal-target nil)
+  (setq org-modern-star nil)
+  (setq org-modern-label-border nil)
+  (setq org-modern-checkbox nil)
+  (setq org-modern-variable-pitch nil)
+  (setq org-modern-hide-stars nil)
+  (setq org-modern-progress nil)
+  (setq org-modern-table nil)
+  (setq org-modern-table-horizontal nil)
+  (setq org-modern-statistics nil)
+  :ensure t)
+
+(global-org-modern-mode)
 
 ;; ;; table of contents - maybe add save hook in org mode
 ;; (use-package org-make-toc
