@@ -49,7 +49,7 @@
         ("j" "Journal Entry" entry (file+olp+datetree "~/docs/org/journal.org")
          "* %?\nTime: %U\n" :prepend t)
         ("l" "Link" entry (file+headline "~/docs/org/links.org" "Links")
-        "* %? \n[[%:link][%:description]] \nCaptured On: %U")
+         "* %? \n[[%:link][%:description]] \nCaptured On: %U")
         ("L" "Quote Link" entry (file+headline "~/docs/org/links.org" "Links")
          "* %? \nSource: %:link, \n\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\nCaptured On: %U")
         ))
@@ -180,13 +180,13 @@
       (file "~/.emacs.d/org-templates/plant.org")
       :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: Plant") :unnarrowed t)
      ))
-    (org-roam-node-display-template
-        (concat "${title:*} "
-                (propertize "${tags:10}" 'face 'org-tag)))
-  :bind(("C-c n f" . org-roam-node-find)
-        ("C-c n i" . org-roam-node-insert)
-        ("C-c n F" . org-roam-node-find-immediate)
-        ("C-c n I" . org-roam-node-insert-immediate)
+  (org-roam-node-display-template
+   (concat "${title:*} "
+           (propertize "${tags:10}" 'face 'org-tag)))
+  :bind(("C-c n i" . org-roam-node-find-immediate)
+        ("C-c n f" . org-roam-node-insert-immediate)
+        ("C-c n F" . org-roam-node-find)
+        ("C-c n I" . org-roam-node-insert)
         ("C-c n l" . org-roam-buffer-toggle)
         :map org-mode-map
         ("<backtab>" . completion-at-point)
