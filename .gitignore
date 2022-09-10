@@ -81,6 +81,7 @@
 !.emacs.d/*/
 !.emacs.d/org-templates/*
 !.emacs.d/lisp/*
+!.emacs.d/lisp/lib/*
 !.emacs.d/lisp/themes/*
 !.emacs.d/lisp/languages/*
 !.emacs.d/snippets/**/*

@@ -56,7 +56,7 @@
 
 (use-package openwith
   :ensure t
-  :load-path "~/.emacs.d/list/openwith.el" ;; TODO add org specific handler
+  :load-path "~/.emacs.d/lisp/lib/openwith.el" ;; TODO add org specific handler
   :config
   (openwith-mode)
   (setq openwith-associations
