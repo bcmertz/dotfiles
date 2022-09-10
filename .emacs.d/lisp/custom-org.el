@@ -168,6 +168,7 @@
   :custom
   (org-roam-directory "~/kb/")
   (org-roam-completion-everywhere t)
+  (org-roam-completion-system 'ivy)
   (org-roam-capture-templates
    '(("d" "default" plain
       (file "~/.emacs.d/org-templates/default.org")
