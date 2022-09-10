@@ -75,13 +75,15 @@
   (org-roam-directory "~/kb/")
   (org-roam-completion-everywhere t)
   (org-roam-completion-system 'ivy)
+  ;; more info on template syntax
+  ;; https://orgmode.org/manual/Template-expansion.html#Template-expansion
   (org-roam-capture-templates
    '(("d" "default" plain
       (file "~/.emacs.d/org-templates/default.org")
       :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}") :unnarrowed t)
-     ("f" "fungi" plain
       (file "~/.emacs.d/org-templates/fungi.org")
-      :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}#+filetags: Fungus") :unnarrowed t)
+     ("f" "fungi" plain
+      :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: Fungus") :unnarrowed t)
      ("p" "plant" plain
       (file "~/.emacs.d/org-templates/plant.org")
       :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: Plant") :unnarrowed t)
