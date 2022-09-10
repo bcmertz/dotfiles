@@ -71,8 +71,8 @@
 
 
 (use-package org-roam
-  :defer t
   :ensure t
+  :defer t
   :custom
   (org-roam-directory "~/kb/")
   (org-roam-completion-everywhere t)
@@ -115,8 +115,7 @@
                  (window-height . fit-window-to-buffer)))
   )
 
-(use-package org-roam-protocol
-  :defer t)
+(use-package org-roam-protocol)
 
 (defun org-roam-node-insert-immediate (arg &rest args)
   "Create and insert roam node without switching to it."
