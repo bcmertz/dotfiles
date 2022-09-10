@@ -19,6 +19,7 @@
   (setq org-startup-indented t)
   (setq org-hide-leading-stars t)
   (setq org-hide-emphasis-markers t)
+  (setq org-capture-bookmark nil)
   (setq org-confirm-babel-evaluate nil)
   (setq org-src-fontify-natively t)
   (setq org-export-with-toc t)
