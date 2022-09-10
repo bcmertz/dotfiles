@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# show scratchpad in i3
+
+
+if  [ "_$(xdotool search --classname "Scratchpad" | head -n 1)"  = "_" ]; then
+    notify-send "not exists"
+    st -n Scratchpad &
+    sleep 1
+    # Set the instance to identify the scratchpad.
+    st_id=$(xdotool search --classname "Scratchpad")
+    xdotool set_window $st_id --classname "Scratchpad"
+    i3-msg "[instance=\"Scratchpad\"] move scratchpad"
+    i3-msg "[instance=\"Scratchpad\"] scratchpad show"
+else
+    notify-send "exists"
+    i3-msg "[instance=\"Scratchpad\"] scratchpad show"
+fi
