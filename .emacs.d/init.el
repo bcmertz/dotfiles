@@ -22,7 +22,7 @@
 (measure-time(load custom-file))
 
 (measure-time(load "custom-packaging.el"))        ;; repositories and package management
-(measure-time(load "custom-doom-lib.el"))         ;; useful funcs from doom-emacs
+(measure-time(load "doom-lib.el"))                ;; useful funcs from doom-emacs
 (measure-time(load "custom-funcs.el"))            ;; custom functions used throughout our configuration
 
 (if (equal (getenv "SESSION") "emacs")            ;; see if SESSION env var is emacs
