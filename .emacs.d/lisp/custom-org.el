@@ -91,8 +91,8 @@
   (org-roam-node-display-template
    (concat "${title:*} "
            (propertize "${tags:10}" 'face 'org-tag)))
-  :bind(("C-c n i" . org-roam-node-find-immediate)
-        ("C-c n f" . org-roam-node-insert-immediate)
+  :bind(("C-c n f" . org-roam-node-find-immediate)
+        ("C-c n i" . org-roam-node-insert-immediate)
         ("C-c n F" . org-roam-node-find)
         ("C-c n I" . org-roam-node-insert)
         ("C-c n l" . org-roam-buffer-toggle)
