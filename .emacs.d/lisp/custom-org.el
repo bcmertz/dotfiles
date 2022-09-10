@@ -177,6 +177,7 @@
       :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}") :unnarrowed t)
      ))
   :bind(("C-c n f" . org-roam-node-find)
+        ("C-c n I" . org-roam-node-insert-immediate)
         ("C-c n i" . org-roam-node-insert)
         ("C-c n l" . org-roam-buffer-toggle)
         :map org-mode-map
@@ -187,6 +188,14 @@
   )
 
 (require 'org-roam-protocol)
+
+;; https://systemcrafters.net/build-a-second-brain-in-emacs/5-org-roam-hacks/
+(defun org-roam-node-insert-immediate (arg &rest args)
+  (interactive "P")
+  (let ((args (cons arg args))
+        (org-roam-capture-templates (list (append (car org-roam-capture-templates)
+                                                  '(:immediate-finish t)))))
+    (apply #'org-roam-node-insert args)))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; PRESENTATIONS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
