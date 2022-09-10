@@ -37,7 +37,8 @@
         ("C-c C-c" . mc/edit-lines)
         ("C-c r" . github-start-review-at-link)))
 
-(require 'org-indent)
+(use-package org-indent
+  :defer t)
 
 ;; https://orgmode.org/worg/org-contrib/org-protocol.html#org9e2e3ac
 (setq org-capture-templates
@@ -70,6 +71,7 @@
 
 
 (use-package org-roam
+  :defer t
   :ensure t
   :custom
   (org-roam-directory "~/kb/")
@@ -113,7 +115,8 @@
                  (window-height . fit-window-to-buffer)))
   )
 
-(require 'org-roam-protocol)
+(use-package org-roam-protocol
+  :defer t)
 
 (defun org-roam-node-insert-immediate (arg &rest args)
   "Create and insert roam node without switching to it."
@@ -210,6 +213,8 @@
 
 ;; styling modern
 (use-package org-modern
+  :ensure t
+  :defer t
   :config
   (setq org-modern-block t)
   (setq org-modern-tag t)
@@ -233,9 +238,9 @@
   (setq org-modern-table nil)
   (setq org-modern-table-horizontal nil)
   (setq org-modern-statistics nil)
-  :ensure t)
-
-(global-org-modern-mode)
+  :init
+  (global-org-modern-mode)
+  )
 
 ;; ;; table of contents - maybe add save hook in org mode
 ;; (use-package org-make-toc
@@ -245,7 +250,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; PRESENTATIONS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
-(use-package org-present :ensure t)
+(use-package org-present
+  :ensure t
+  :defer t)
 
 (eval-after-load "org-present"
   '(progn
