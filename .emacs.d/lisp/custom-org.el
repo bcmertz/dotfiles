@@ -184,8 +184,9 @@
         (concat "${title:*} "
                 (propertize "${tags:10}" 'face 'org-tag)))
   :bind(("C-c n f" . org-roam-node-find)
-        ("C-c n I" . org-roam-node-insert-immediate)
         ("C-c n i" . org-roam-node-insert)
+        ("C-c n F" . org-roam-node-find-immediate)
+        ("C-c n I" . org-roam-node-insert-immediate)
         ("C-c n l" . org-roam-buffer-toggle)
         :map org-mode-map
         ("<backtab>" . completion-at-point)
@@ -205,14 +206,25 @@
 
 (require 'org-roam-protocol)
 
-;; https://systemcrafters.net/build-a-second-brain-in-emacs/5-org-roam-hacks/
 (defun org-roam-node-insert-immediate (arg &rest args)
+  "Create and insert roam node without switching to it."
   (interactive "P")
   (let ((args (cons arg args))
-        (org-roam-capture-templates (list (append (car org-roam-capture-templates)
-                                                  '(:immediate-finish t)))))
+        (org-roam-capture-templates (mapcar (lambda (elem)
+                                              (append elem '(:kill-buffer)))
+                                            org-roam-capture-templates
+                                            )))
     (apply #'org-roam-node-insert args)))
 
+(defun org-roam-node-find-immediate (arg &rest args)
+  "Create and insert roam node without switching to it."
+  (interactive "P")
+  (let ((args (cons arg args))
+        (org-roam-capture-templates (mapcar (lambda (elem)
+                                              (append elem '(:kill-buffer)))
+                                            org-roam-capture-templates
+                                            )))
+    (apply #'org-roam-node-find args)))
 
 (defun org-roam-filter-by-tag (tag-name)
   "Filter nodes by TAG-NAME."
