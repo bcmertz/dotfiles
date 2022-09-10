@@ -24,7 +24,6 @@
   (setq org-src-fontify-natively t)
   (setq org-export-with-toc t)
   (setq org-directory "~/docs/org/")
-  ;; (add-hook 'org-mode-hook 'variable-pitch-mode)
   ;; make images pretty
   (setq org-image-actual-width (/ (display-pixel-width) 3))
   :bind
@@ -65,6 +64,86 @@
     (if plain-url
         (progn
           (github-review-start plain-url)))))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ORG ROAM ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+(use-package org-roam
+  :ensure t
+  :custom
+  (org-roam-directory "~/kb/")
+  (org-roam-completion-everywhere t)
+  (org-roam-completion-system 'ivy)
+  (org-roam-capture-templates
+   '(("d" "default" plain
+      (file "~/.emacs.d/org-templates/default.org")
+      :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}") :unnarrowed t)
+     ("f" "fungi" plain
+      (file "~/.emacs.d/org-templates/fungi.org")
+      :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}#+filetags: Fungus") :unnarrowed t)
+     ("p" "plant" plain
+      (file "~/.emacs.d/org-templates/plant.org")
+      :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: Plant") :unnarrowed t)
+     ))
+  (org-roam-node-display-template
+   (concat "${title:*} "
+           (propertize "${tags:10}" 'face 'org-tag)))
+  :bind(("C-c n i" . org-roam-node-find-immediate)
+        ("C-c n f" . org-roam-node-insert-immediate)
+        ("C-c n F" . org-roam-node-find)
+        ("C-c n I" . org-roam-node-insert)
+        ("C-c n l" . org-roam-buffer-toggle)
+        :map org-mode-map
+        ("<backtab>" . completion-at-point)
+        )
+  :config
+  (org-roam-setup)
+  ;; display tag info in ivy completion
+  (setq org-roam-node-display-template
+        (concat "${title:*} "
+                (propertize "${tags:10}" 'face 'org-tag)))
+  ;; fit org select buffer to the height of all the options
+  (add-to-list 'display-buffer-alist
+               '("^\\*Org Select*"
+                 (display-buffer-in-direction)
+                 (window-height . fit-window-to-buffer)))
+  )
+
+(require 'org-roam-protocol)
+
+(defun org-roam-node-insert-immediate (arg &rest args)
+  "Create and insert roam node without switching to it."
+  (interactive "P")
+  (let ((args (cons arg args))
+        (org-roam-capture-templates (mapcar (lambda (elem)
+                                              (append elem '(:kill-buffer)))
+                                            org-roam-capture-templates
+                                            )))
+    (apply #'org-roam-node-insert args)))
+
+(defun org-roam-node-find-immediate (arg &rest args)
+  "Create and insert roam node without switching to it."
+  (interactive "P")
+  (let ((args (cons arg args))
+        (org-roam-capture-templates (mapcar (lambda (elem)
+                                              (append elem '(:kill-buffer)))
+                                            org-roam-capture-templates
+                                            )))
+    (apply #'org-roam-node-find args)))
+
+(defun org-roam-filter-by-tag (tag-name)
+  "Filter nodes by TAG-NAME."
+  (lambda (node)
+    (member tag-name (org-roam-node-tags node))))
+
+(defun org-roam-list-notes-by-tag (tag-name)
+  "List nodes with given TAG-NAME."
+  (mapcar #'org-roam-node-file
+          (seq-filter
+           (org-roam-filter-by-tag tag-name)
+           (org-roam-node-list))))
+
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; STYLING ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -159,84 +238,6 @@
 ;; (use-package org-make-toc
 ;;   :hook (org-mode . org-make-toc-mode))
 
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ORG ROAM ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-
-(use-package org-roam
-  :ensure t
-  :custom
-  (org-roam-directory "~/kb/")
-  (org-roam-completion-everywhere t)
-  (org-roam-completion-system 'ivy)
-  (org-roam-capture-templates
-   '(("d" "default" plain
-      (file "~/.emacs.d/org-templates/default.org")
-      :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}") :unnarrowed t)
-     ("f" "fungi" plain
-      (file "~/.emacs.d/org-templates/fungi.org")
-      :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}#+filetags: Fungus") :unnarrowed t)
-     ("p" "plant" plain
-      (file "~/.emacs.d/org-templates/plant.org")
-      :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: Plant") :unnarrowed t)
-     ))
-  (org-roam-node-display-template
-   (concat "${title:*} "
-           (propertize "${tags:10}" 'face 'org-tag)))
-  :bind(("C-c n i" . org-roam-node-find-immediate)
-        ("C-c n f" . org-roam-node-insert-immediate)
-        ("C-c n F" . org-roam-node-find)
-        ("C-c n I" . org-roam-node-insert)
-        ("C-c n l" . org-roam-buffer-toggle)
-        :map org-mode-map
-        ("<backtab>" . completion-at-point)
-        )
-  :config
-  (org-roam-setup)
-  ;; display tag info in ivy completion
-  (setq org-roam-node-display-template
-        (concat "${title:*} "
-                (propertize "${tags:10}" 'face 'org-tag)))
-  ;; fit org select buffer to the height of all the options
-  (add-to-list 'display-buffer-alist
-               '("^\\*Org Select*"
-                 (display-buffer-in-direction)
-                 (window-height . fit-window-to-buffer)))
-  )
-
-(require 'org-roam-protocol)
-
-(defun org-roam-node-insert-immediate (arg &rest args)
-  "Create and insert roam node without switching to it."
-  (interactive "P")
-  (let ((args (cons arg args))
-        (org-roam-capture-templates (mapcar (lambda (elem)
-                                              (append elem '(:kill-buffer)))
-                                            org-roam-capture-templates
-                                            )))
-    (apply #'org-roam-node-insert args)))
-
-(defun org-roam-node-find-immediate (arg &rest args)
-  "Create and insert roam node without switching to it."
-  (interactive "P")
-  (let ((args (cons arg args))
-        (org-roam-capture-templates (mapcar (lambda (elem)
-                                              (append elem '(:kill-buffer)))
-                                            org-roam-capture-templates
-                                            )))
-    (apply #'org-roam-node-find args)))
-
-(defun org-roam-filter-by-tag (tag-name)
-  "Filter nodes by TAG-NAME."
-  (lambda (node)
-    (member tag-name (org-roam-node-tags node))))
-
-(defun org-roam-list-notes-by-tag (tag-name)
-  "List nodes with given TAG-NAME."
-  (mapcar #'org-roam-node-file
-          (seq-filter
-           (org-roam-filter-by-tag tag-name)
-           (org-roam-node-list))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; PRESENTATIONS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
