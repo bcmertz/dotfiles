@@ -175,11 +175,14 @@
       :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}") :unnarrowed t)
      ("f" "fungi" plain
       (file "~/.emacs.d/org-templates/fungi.org")
-      :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}") :unnarrowed t)
+      :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}#+filetags: Fungus") :unnarrowed t)
      ("p" "plant" plain
       (file "~/.emacs.d/org-templates/plant.org")
-      :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}") :unnarrowed t)
+      :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: Plant") :unnarrowed t)
      ))
+    (org-roam-node-display-template
+        (concat "${title:*} "
+                (propertize "${tags:10}" 'face 'org-tag)))
   :bind(("C-c n f" . org-roam-node-find)
         ("C-c n I" . org-roam-node-insert-immediate)
         ("C-c n i" . org-roam-node-insert)
@@ -189,6 +192,15 @@
         )
   :config
   (org-roam-setup)
+  ;; display tag info in ivy completion
+  (setq org-roam-node-display-template
+        (concat "${title:*} "
+                (propertize "${tags:10}" 'face 'org-tag)))
+  ;; fit org select buffer to the height of all the options
+  (add-to-list 'display-buffer-alist
+               '("^\\*Org Select*"
+                 (display-buffer-in-direction)
+                 (window-height . fit-window-to-buffer)))
   )
 
 (require 'org-roam-protocol)
@@ -201,6 +213,18 @@
                                                   '(:immediate-finish t)))))
     (apply #'org-roam-node-insert args)))
 
+
+(defun org-roam-filter-by-tag (tag-name)
+  "Filter nodes by TAG-NAME."
+  (lambda (node)
+    (member tag-name (org-roam-node-tags node))))
+
+(defun org-roam-list-notes-by-tag (tag-name)
+  "List nodes with given TAG-NAME."
+  (mapcar #'org-roam-node-file
+          (seq-filter
+           (org-roam-filter-by-tag tag-name)
+           (org-roam-node-list))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; PRESENTATIONS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
