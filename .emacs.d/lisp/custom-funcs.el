@@ -6,6 +6,10 @@
 ;;;
 ;;; Code:
 
+;; useful funcs from doom-emacs used elsewhere in config
+(add-to-list 'load-path (expand-file-name "lisp/lib" user-emacs-directory))
+(load "doom-lib.el")
+
 ;; if gui do something in whatver type of emacs instance we are using
 (defun apply-if-gui (&rest action)
   "Do specified ACTION if we're in a gui regardless of daemon or not."
