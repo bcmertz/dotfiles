@@ -101,10 +101,11 @@
         )
   :config
   (org-roam-setup)
-  ;; display tag info in ivy completion
-  (setq org-roam-node-display-template
-        (concat "${title:*} "
-                (propertize "${tags:10}" 'face 'org-tag)))
+
+  ;; display tags in search results
+  ;; (setq org-roam-node-display-template (concat "${title:40 " (propertize "${tags:*}" 'face 'org-tag)))
+  (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:40}" 'face 'org-tag)))
+
   ;; fit org select buffer to the height of all the options
   (add-to-list 'display-buffer-alist
                '("^\\*Org Select*"
