@@ -38,6 +38,8 @@
         ("C-c C-c" . mc/edit-lines)
         ("C-c r" . github-start-review-at-link)))
 
+(require 'org-indent)
+
 ;; https://orgmode.org/worg/org-contrib/org-protocol.html#org9e2e3ac
 (setq org-capture-templates
       `(("t" "To Do" entry (file+headline "~/docs/org/todo.org" "Unfiled")
