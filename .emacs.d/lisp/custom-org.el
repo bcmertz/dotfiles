@@ -83,8 +83,8 @@
    '(("d" "default" plain
       (file "~/.emacs.d/org-templates/default.org")
       :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}") :unnarrowed t)
-      (file "~/.emacs.d/org-templates/fungi.org")
      ("f" "fungi" plain
+      (file "~/.emacs.d/org-templates/fungi.org")
       :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: Fungus") :unnarrowed t)
      ("p" "plant" plain
       (file "~/.emacs.d/org-templates/plant.org")
