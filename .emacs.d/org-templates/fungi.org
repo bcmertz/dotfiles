@@ -1,1 +1,18 @@
-%?
+:ROAM_ALIASES: %?
+
+* Taxonomy
+Genus - %^{Genus}
+Species - %^{Species}
+Common Names -
+
+* Summary
+
+* Identification
+
+* Uses / Edibility
+
+* Species
+
+* Related Species
+
+* Resources
