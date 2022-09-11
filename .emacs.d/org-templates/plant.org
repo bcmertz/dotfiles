@@ -1,5 +1,5 @@
 * Taxonomy
-Family - %^{Family|Asteraceae|Apiaceae}
+Family - %^{Family|Asteraceae - Composite Daisy / Sunflower|Apiaceae - Celery / Carrot|Urticaceae - Nettles|Anacardiaceae - Pistachio / Cashew}
 Genus - %^{Genus}
 Species - %^{Species}
 

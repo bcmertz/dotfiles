@@ -89,6 +89,9 @@
      ("p" "plant" plain
       (file "~/.emacs.d/org-templates/plant.org")
       :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: Plant") :unnarrowed t)
+     ("r" "Food" plain
+      (file "~/.emacs.d/org-templates/food.org")
+      :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: Food") :unnarrowed t)
      ))
   (org-roam-node-display-template
    (concat "${title:*} "
