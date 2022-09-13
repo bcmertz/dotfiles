@@ -5,9 +5,9 @@
 options="matrix
 lock
 logout
-exit i3
+reboot
 shutdown
-reboot"
+exit i3"
 
 chosen=$(printf "$options" | dmenu -c -i -l 20 -p '👋:' -bw 3)
 [ "$chosen" = "" ] && exit
