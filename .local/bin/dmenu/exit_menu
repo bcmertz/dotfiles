@@ -13,7 +13,8 @@ locker() {
     fi
 }
 
-options="lock
+options="matrix
+lock
 logout
 shutdown
 reboot"
@@ -22,6 +23,10 @@ chosen=$(printf "$options" | dmenu -c -i -l 20 -p '👋:' -bw 3)
 [ "$chosen" = "" ] && exit
 
 case $chosen in
+    matrix)
+        fullscreen "cmatrix"
+    ;;
+
     logout)
         i3-msg exit
         ;;
