@@ -92,10 +92,10 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec st
+bindsym $mod+Shift+Return exec st
 # bindsym $mod+Shift+Return exec xfce4-terminal
 
-bindsym $mod+Shift+Return exec show_scratchpad
+bindsym $mod+Return exec show_scratchpad
 for_window [instance="Scratchpad"] floating enable resize set 950 650 move position center scratchpad border pixel 5
 
 
