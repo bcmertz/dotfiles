@@ -2,20 +2,10 @@
 #
 # exit menu
 
-
-locker() {
-    # if we're running gnome screensaver use it if not use slock
-    if pgrep -x "gnome-screensav" > /dev/null
-    then
-        gnome-screensaver-command -l
-    else
-        slock && sleep 1
-    fi
-}
-
 options="matrix
 lock
 logout
+exit i3
 shutdown
 reboot"
 
@@ -27,8 +17,12 @@ case $chosen in
         fullscreen "cmatrix"
     ;;
 
-    logout)
+    "exit i3")
         i3-msg exit
+        ;;
+
+    logout)
+        pkill -9 -u leah
         ;;
 
     shutdown)
@@ -36,7 +30,7 @@ case $chosen in
         ;;
 
     lock)
-        locker
+        screenlock
         ;;
 
     reboot)
