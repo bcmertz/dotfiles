@@ -55,7 +55,7 @@ for process in $processes; do
     }
 
     function xautolock_command {
-        do_toggle "xautolock" 'background xautolock -time 30 -locker slock' kill_command
+        do_toggle "xautolock" 'screenlock start' kill_command
     }
 
     case $process in

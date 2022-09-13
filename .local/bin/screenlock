@@ -1,0 +1,44 @@
+#!/bin/sh
+#
+# start xautolock given the global config
+
+# autolock screen after half an hour
+time=$(global_cfg screen_locker_time)
+locker=$(global_cfg screen_locker)
+cmd=$1
+
+
+cmatrix_cmd='fullscreen cmatrix'
+gnome_screensaver_cmd='gnome-screensaver-command -l'
+slock_cmd='slock'
+
+if [ "$cmd" == "start" ]; then
+    case $locker in
+        "cmatrix")
+            xautolock -time $time -locker "$cmatrix_cmd" &
+            ;;
+
+        "gnome-screensaver")
+            background gnome-screensaver # gnome autolock daemon
+            xautolock -time $time -locker "$gnome_screensaver_cmd" &
+            ;;
+
+        *)
+            xautolock -time $time -locker "$slock_cmd" &
+            ;;
+    esac
+else
+    case $locker in
+        "cmatrix")
+            $cmatrix_cmd
+            ;;
+
+        "gnome-screensaver")
+            $gnome_screensaver_cmd
+            ;;
+
+        *)
+            $slock_cmd && sleep 1
+            ;;
+    esac
+fi

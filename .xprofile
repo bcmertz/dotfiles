@@ -17,19 +17,8 @@ if [[ "$session" == "i3" ]]; then
    polybar i3 &
 fi
 
-# autolock screen after half an hour
-time=30
-case $(global_cfg screen_locker) in
-    "gnome-screensaver")
-        gnome-screensaver & # gnome autolock daemon
-        xautolock -time $time -locker 'gnome-screensaver-command -l' &
-        ;;
-
-    *)
-        xautolock -time $time -locker slock &
-        ;;
-esac
-
+# start xautolock screen locker
+screenlock "start"
 
 dunst &         # notifications
 clipmenud &     # clipmenu daemon
