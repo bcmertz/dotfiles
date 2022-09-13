@@ -95,7 +95,9 @@ alias stop='pkill -19'
 # Hack to remove wifi driver from kernal space and put back in I think - hard restart
 alias fixwifi='sudo modprobe -r mwifiex_pcie && sudo modprobe mwifiex_pcie'
 
-# arduino
+# hacky fix to make arduino serial connection permissions work
+# alternative permanent solution
+# sudo usermod -aG uucp <username>
 alias fixarduino='sudo chmod a+rw /dev/ttyACM0'
 
 # simple xev, hide unnecessary output
