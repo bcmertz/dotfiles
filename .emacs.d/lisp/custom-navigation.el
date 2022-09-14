@@ -36,7 +36,7 @@
   (ivy-use-virtual-buffers t)
   :config
   (setq ivy-re-builders-alist
-      '((t . ivy--regex-ignore-order)))
+        '((t . ivy--regex-ignore-order)))
   (ivy-mode)
   ;; ignore org roam buffers, use C-c n f
   ;; https://org-roam.discourse.group/t/can-buffer-names-match-note-titles/350/13
@@ -78,14 +78,14 @@
 ;; https://github.com/tumashu/ivy-posframe/issues/105#issuecomment-750370286
 (defun my-ivy-posframe-get-size ()
   "Set the ivy-posframe size according to the current frame."
-    (let* ((height (or ivy-posframe-height (or ivy-height 10)))
-           (min-height (min height (+ 1 (length ivy--old-cands))))
-           (width (min (or ivy-posframe-width 200) (round (* .75 (frame-width))))))
-      (list
-       :height height
-       :width width
-       :min-height min-height
-       :min-width width)))
+  (let* ((height (or ivy-posframe-height (or ivy-height 10)))
+         (min-height (min height (+ 1 (length ivy--old-cands))))
+         (width (min (or ivy-posframe-width 200) (round (* .75 (frame-width))))))
+    (list
+     :height height
+     :width width
+     :min-height min-height
+     :min-width width)))
 
 ;; slooooow
 ;; (use-package all-the-icons-ivy-rich
@@ -220,9 +220,9 @@
 ;; `+neotree--indent-cursor-a' change that behavior so that the cursor is
 ;; always on the first non-blank character on the line, in the neo buffer. (src - doom-emacs)
 (add-hook! 'neo-enter-hook
-           (defun +neotree-fix-cursor-h (&rest _)
-             (with-current-buffer neo-global--buffer
-               (+neotree--indent-cursor-a))))
+  (defun +neotree-fix-cursor-h (&rest _)
+    (with-current-buffer neo-global--buffer
+      (+neotree--indent-cursor-a))))
 
 (defadvice! +neotree--indent-cursor-a (&rest _)
   :after '(neotree-next-line neotree-previous-line)
