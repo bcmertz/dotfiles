@@ -238,14 +238,14 @@
 (global-set-key (kbd "C-x C-r") 'rename-file-and-buffer)
 
 
-;; might be useful for autoreverting like tail for system logs
-;; (use-package autorevert
-;;   :ensure nil
-;;   :config
-;;   (setq auto-revert-interval 2)
-;;   (setq auto-revert-check-vc-info t)
-;;   (setq global-auto-revert-non-file-buffers nil)
-;;   (setq auto-revert-verbose nil)
-;;   (global-auto-revert-mode +1))
+;; builtin autoreverting
+(use-package autorevert
+  :ensure nil
+  :config
+  (setq auto-revert-interval 2)
+  (setq auto-revert-check-vc-info t)
+  (setq global-auto-revert-non-file-buffers t)
+  (setq auto-revert-verbose t)
+  (global-auto-revert-mode +1))
 
 ;;; custom-editing.el ends here
