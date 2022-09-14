@@ -63,7 +63,7 @@
   :init
   (setq ivy-posframe-display-functions-alist
         '(
-          (counsel-ag          . ivy-display-function-fallback)
+          ;; (counsel-ag          . ivy-display-function-fallback)
           (swiper          . ivy-display-function-fallback)
           ;; (counsel-M-x     . ivy-posframe-display-at-frame-top-center)
           ;; (complete-symbol . ivy-posframe-display-at-point)
@@ -229,15 +229,33 @@
   (beginning-of-line)
   (skip-chars-forward " \t\r"))
 
+(defun my-counsel-find-directory (&optional start-dir)
+  "Return a directory chosen by the user.
+The user is prompted to choose a directory starting with START-DIR."
+  (let ((ivy-read-prompt "Choose directory: ")
+        (counsel--find-file-predicate #'file-directory-p)
+        (default-directory (or start-dir default-directory)))
+    (ivy-read
+     ivy-read-prompt
+     #'read-file-name-internal
+     :matcher #'counsel--find-file-matcher)))
+
 
 ;; Better File Searching
+;; C-c C-o 'ivy-occur "Search All Results"
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "C-x C-<S-F>") 'counsel-locate)
 (global-set-key (kbd "C-x /") 'find-file-root)
-(global-set-key (kbd "M-s") 'counsel-ag)    ;; C-c C-o 'ivy-occur "Search All Results"
 (global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "C-h k") 'describe-key)
 (global-set-key (kbd "C-h K") 'counsel-descbinds)
+(global-set-key (kbd "M-s") 'restricted-counsel-ag)
+(global-set-key (kbd "M-s") #'(lambda () (interactive "")
+                                (counsel-ag nil (my-counsel-find-directory) "--ignore elpa/*")
+                                ))
+(global-set-key [(meta shift s)] #'(lambda () (interactive "")
+                                     (counsel-ag nil (my-counsel-find-directory))))
+
 
 (define-key dired-mode-map (kbd "M-s") 'counsel-ag)
 
