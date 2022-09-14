@@ -197,6 +197,7 @@
 
 (global-set-key (kbd "<M-RET>") 'return-newline-below)     ;; return new line below
 
+;; use 'transpose-regions for region marking
 (global-set-key [(control up)] 'move-lines-up)
 (global-set-key [(control down)] 'move-lines-down)
 
