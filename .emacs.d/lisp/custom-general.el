@@ -27,6 +27,9 @@
 (setq history-length 100)
 (savehist-mode 1)
 
+;; Don't pop up UI dialogs when prompting
+(setq use-dialog-box nil)
+
 ;; unbind C-z suspend unless were in a terminal where it's useful
 (defun unbind-suspend ()
   (global-unset-key (kbd "C-z")))
