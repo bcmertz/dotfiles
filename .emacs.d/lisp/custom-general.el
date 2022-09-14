@@ -23,6 +23,9 @@
 ;; save place in files
 (save-place-mode 1)
 
+;; save history of minibuffer prompts
+(savehist-mode 1)
+
 ;; unbind C-z suspend unless were in a terminal where it's useful
 (defun unbind-suspend ()
   (global-unset-key (kbd "C-z")))
