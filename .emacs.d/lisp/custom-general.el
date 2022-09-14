@@ -24,6 +24,7 @@
 (save-place-mode 1)
 
 ;; save history of minibuffer prompts
+(setq history-length 100)
 (savehist-mode 1)
 
 ;; unbind C-z suspend unless were in a terminal where it's useful
