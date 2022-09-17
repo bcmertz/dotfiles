@@ -60,6 +60,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='/usr/bin/ls --color=auto'
 alias lsd='ls -d */'
+alias lsdir='ls -d */'
 
 # less annoying tree
 alias tree="tree -a -I 'node_modules|.git'"
@@ -102,29 +103,31 @@ alias fixarduino='sudo chmod a+rw /dev/ttyACM0'
 
 # simple xev, hide unnecessary output
 sxev () {
-     xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
+    xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
 }
 
 ex () {
-     if [ -f "$1" ] ; then
-         case "$1" in
-             *.tar.bz2)   tar xjf "$1"     ;;
-             *.tar.gz)    tar xzf "$1"     ;;
-             *.tar.xz)    tar -xf "$1"     ;;
-             *.bz2)       bunzip2 "$1"     ;;
-             *.rar)       rar x "$1"       ;;
-             *.gz)        gunzip "$1"      ;;
-             *.tar)       tar xf "$1"      ;;
-             *.tbz2)      tar xjf "$1"     ;;
-             *.tgz)       tar xzf "$1"     ;;
-             *.zip)       unzip "$1"       ;;
-             *.Z)         uncompress "$1"  ;;
-             *.7z)        7z x "$1"    ;;
-             *)           echo "'$1' cannot be extracted via extract()" ;;
-         esac
-     else
-         echo "'$1' is not a valid file"
-     fi
+    if [ -f "$1" ] ; then
+        dest=$(echo $1 | sed 's/.zip//')
+        mkdir $dest
+        case "$1" in
+            *.tar.bz2)   tar xjf "$1" --directory=$dist     ;;
+            *.tar.gz)    tar xzf "$1" --directory=$dist     ;;
+            *.tbz2)      tar xjf "$1" --directory=$dist     ;;
+            *.tgz)       tar xzf "$1" --directory=$dist     ;;
+            *.tar.xz)    tar xf "$1" --directory=$dist      ;;
+            *.tar)       tar xf "$1" --directory=$dist      ;;
+            *.rar)       rar x "$1" $dest                   ;;
+            *.zip)       unzip "$1" -d $dest                ;;
+            *.7z)        7z x "$1" -o $dest                 ;;
+            *.bz2)       bunzip2 "$1"                       ;;
+            *.gz)        gunzip "$1"                        ;;
+            *.Z)         uncompress "$1"                    ;;
+            *)           echo "'$1' cannot be extracted via extract()" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
 }
 
 # combo cds ls
