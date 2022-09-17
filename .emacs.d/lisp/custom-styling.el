@@ -155,6 +155,8 @@
 (setq initial-frame-alist '((font . "Monospace")))
 (setq default-frame-alist '((font . "Monospace")))
 
+;; (add-to-list 'default-frame-alist '(font-backend . "ftcrhb")) ; default i think... https://www.gnu.org/software/emacs/manual/html_node/elisp/Font-and-Color-Parameters.html
+
 ;; cool fonts to try - ETBembo, Source Sans Pro, Lucida Grande, Verdana
 ;; Emoji: 😄, 🤦, 🏴, ,  ;; should render as 3 color emojis and 2 glyphs
 (defun styling/set-fonts()
