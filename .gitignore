@@ -96,7 +96,7 @@
 !.local/share/
 !.local/share/*/
 !.local/share/dmenu/*
-!.local/share/fonts/*
+!.local/share/fonts/**/*
 !.local/share/packages/*
 !.local/share/wallpaper/*
 !.local/share/applications/*
