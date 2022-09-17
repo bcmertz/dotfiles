@@ -26,6 +26,10 @@
 ;; default gui theme
 (apply-if-gui 'load-theme custom-theme t)
 
+(defun disable-all-themes ()
+  (dolist (i custom-enabled-themes)
+    (disable-theme i)))
+
 ;; change theme utility
 (defun change-theme ()
   "Choose theme from installed list."
@@ -34,8 +38,7 @@
             :preselect (symbol-name (car custom-enabled-themes))
             :action (lambda (theme)
                       ;; disable enabled themes
-                      (dolist (i custom-enabled-themes)
-                        (disable-theme i))
+                      (disable-all-themes)
                       ;; load new theme
                       (load-theme (intern theme) t))))
 
