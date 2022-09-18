@@ -6,6 +6,7 @@
         backward-delete-word
         beginning-of-visual-line
         c-electric-brace
+        c-electric-paren
         c-electric-semi&comma
         c-indent-line-or-region
         end-of-visual-line
