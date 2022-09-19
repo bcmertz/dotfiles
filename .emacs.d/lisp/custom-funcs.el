@@ -190,7 +190,7 @@ Cancels itself, if this buffer was killed."
     (fset fns fn)
     fn))
 
-;; https://github.com/ianyepan/.wsl-emacs.d/blob/master/init.el#L121
+;; modified https://github.com/ianyepan/.wsl-emacs.d/blob/master/init.el#L121
 (defun find-file-root ()
   "Open a file as the root user."
   (interactive)
@@ -202,8 +202,10 @@ Cancels itself, if this buffer was killed."
     (when tramp ; If called from a "root" file, we need to fix up the path.
       (setq path (tramp-file-name-localname tramp)
             dir (file-name-directory path)))
-    (when (setq file (counsel-find-file dir path))
-    ;; (when (setq file (read-file-name "Find file (sudo): " dir path))
+    (when (setq file (ivy-read
+                      "Find file (sudo): "
+                      #'read-file-name-internal
+                      :matcher #'counsel--find-file-matcher))
       (find-file (concat "/sudo:root@localhost:" file)))))
 
 ;; refresh ewal theme
