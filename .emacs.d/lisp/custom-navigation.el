@@ -273,6 +273,9 @@ The user is prompted to choose a directory starting with START-DIR."
   :config
   ;; from centaur-emacs https://github.com/seagle0128/.emacs.d/blob/334d9afaedd67bc10f207ca72d6daff5ac6469cf/lisp/init-dired.el
   ;; BROKEN - work in progress
+   (with-no-warnings
+      (advice-add 'dired :around #'all-the-icons-dired--refresh-advice))
+
   (with-no-warnings
     (defun my-all-the-icons-dired--refresh ()
       "Display the icons of files in a dired buffer."
