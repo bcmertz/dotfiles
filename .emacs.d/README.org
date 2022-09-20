@@ -21,6 +21,9 @@ Modification of the default Arch nativecomp [[https://github.com/archlinux/svnto
  --with-json
 #+end_src
 
+#+begin_src sh
+make -j$(nproc) NATIVE_FULL_AOT=1 bootstrap
+#+end_src
 
 * Inluenced by 
 
