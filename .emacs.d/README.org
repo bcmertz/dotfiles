@@ -1,8 +1,32 @@
 # .emacs.d
 
-Influenced by sam217pa, zamansky, clarete, xahlee
+* Building from source [9/19/2022]
 
-Other sources:
+Modification of the default Arch nativecomp [[https://github.com/archlinux/svntogit-packages/blob/packages/emacs/trunk/PKGBUILD][PKGBUILD]]
+
+#+begin_src sh
+./configure --sysconfdir=/etc \
+ --prefix=/usr \
+ --libexecdir=/usr/lib \
+ --localstatedir=/var \
+ --with-cairo \
+ --with-harfbuzz \
+ --with-libsystemd \
+ --with-modules \
+ --with-x-toolkit=gtk3 \
+ --with-native-compilation \
+ --with-xwidgets \
+ --with-json \
+ --with-mailutils \
+ --with-json
+#+end_src
+
+
+* Inluenced by 
+
+sam217pa, zamansky, clarete, xahlee
+
+** Other sources:
 
 https://www.youtube.com/watch?v=LxuNmeCNnqU
 
