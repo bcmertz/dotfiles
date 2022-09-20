@@ -6,12 +6,18 @@
 ;;;
 ;;; Code:
 
-;; Native compilation
-(setq comp-async-report-warnings-errors nil) ;; silence warnings
+;; EXPERIMENTAL - NOT WORKING
+;; handle errors on nil faces, too heavy handed and should be done another way
+;; (setq warning-suppress-log-types '((set-face-attribute)))
+(setq warning-minimum-log-level :error)
+(setq warning-suppress-log-types '((Warning: setting attribute)))
 
+;; EXPERIMENTAL - NOT WORKING
+;; Native compilation
+(setq native-comp-async-report-warnings-errors nil) ;; silence warnings
 (when (fboundp 'native-compile-async) ;; compile in deferred/async manner
-  (setq comp-deferred-compilation t
-        comp-deferred-compilation-black-list '("/mu4e.*\\.el$")))
+  (setq native-comp-deferred-compilation-black-list '("/cl-loaddefs.*\\.el$"))
+  (setq native-comp-deferred-compilation t))
 
 ;; "Pure" gtk
 ;; (when (eq window-system 'pgtk)
