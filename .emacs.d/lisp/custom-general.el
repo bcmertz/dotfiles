@@ -6,7 +6,18 @@
 ;;;
 ;;; Code:
 
-;; see our todo
+;; Native compilation
+(setq comp-async-report-warnings-errors nil) ;; silence warnings
+
+(when (fboundp 'native-compile-async) ;; compile in deferred/async manner
+  (setq comp-deferred-compilation t
+        comp-deferred-compilation-black-list '("/mu4e.*\\.el$")))
+
+;; "Pure" gtk
+;; (when (eq window-system 'pgtk)
+;;   (pgtk-use-im-context t))
+
+;; Inital buffer - todo
 ;; (setq initial-buffer-choice "~/docs/org/notes.org")
 
 (yas-minor-mode)
