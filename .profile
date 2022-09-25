@@ -10,6 +10,7 @@ export READER="zathura"
 export FILE="pcmanfm"
 export ALTERNATE_EDITOR=""
 export EDITOR="emacsclient -t --socket-name=term"
+export sudoedit="SUDO_EDITOR=\"emacsclient -nw -a ''\" sudoedit"
 export VISUAL="emacsclient --socket-name=gui"
 export XDG_CONFIG_HOME="$HOME/.config"
 
