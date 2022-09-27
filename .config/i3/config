@@ -95,8 +95,12 @@ floating_modifier $mod
 bindsym $mod+Shift+Return exec st
 # bindsym $mod+Shift+Return exec xfce4-terminal
 
-bindsym $mod+Return exec show_scratchpad
-for_window [instance="Scratchpad"] floating enable resize set 950 650 move position center scratchpad border pixel 5
+for_window [instance="Scratchpad-term"] floating enable resize set 950 650 move position center scratchpad border pixel 5
+for_window [instance="Scratchpad-calc"] floating enable resize set 950 650 move position center scratchpad border pixel 5
+# terminal scratchpad
+bindsym $mod+Return exec show_scratchpad 'term'
+# calculator scratchpad
+bindsym $mod+c exec show_scratchpad 'calc'
 
 
 # kill focused window
@@ -134,10 +138,6 @@ bindsym $mod+a exec emacsclient --socket-name=gui -c
 bindsym $mod+Shift+a exec mousepad
 # pass insert
 bindsym $mod+Shift+p exec insert_password
-# scratchpad
-exec --no-startup-id st -n dropdown -e python3 -q
-for_window [instance="dropdown"] floating enable resize set 950 650 move scratchpad border pixel 5
-bindsym $mod+Shift+u [instance="dropdown"] scratchpad show [instance="dropdown"] move position center
 
 # change focus
 bindsym $mod+j focus left
