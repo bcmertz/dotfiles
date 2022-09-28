@@ -16,7 +16,7 @@ else
 	[ "$status" = "Discharging" ] && notify-send "Battery Very Low $capacity%"
 fi
 
-[ -z $warn ] && warn=" "
+# [ -z $warn ] && warn=" "
 
 [ "$status" = "Charging" ] && color="#ffffff"
 
