@@ -111,6 +111,7 @@ bindsym $mod+d exec dmenu_run_history -i -c -h 35 -l 10 -bw 3
 bindsym $mod+u exec unicode_picker
 bindsym $mod+y exec clipmenu
 bindsym $mod+o exec info_query
+bindsym --release $mod+Shift+o exec searchsite
 bindsym $mod+p exec passmenu
 bindsym $mod+i exec choose_keyboard
 bindsym $mod+Shift+i exec farsi_text
@@ -120,7 +121,6 @@ bindsym $mod+w exec wallpaper_picker
 # utils
 bindsym $mod+g exec gpick
 bindsym $mod+s exec peek
-bindsym --release $mod+Shift+s exec searchsite
 # global config
 bindsym $mod+t exec edit_config
 bindsym $mod+Shift+t exec edit_global_config
