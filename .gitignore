@@ -58,7 +58,7 @@
 !.config/polybar/*
 !.config/calibre/*
 !.config/apparmor/*
-!.config/touchegg/*
+!.config/touchegg/touchegg.conf
 !.config/newsboat/*
 !.config/i3blocks/*
 !.config/fontconfig/*
