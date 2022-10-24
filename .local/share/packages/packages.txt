@@ -113,6 +113,7 @@ git-lfs
 glances
 gnome-control-center
 gnome-keyring
+gnome-maps
 gnome-screensaver
 gnome-screenshot
 gnome-shell
@@ -147,6 +148,7 @@ i3-gaps
 i3-scrot
 i3blocks
 inetutils
+inkscape
 inotify-tools
 intel-ucode
 inxi
@@ -159,6 +161,7 @@ jq
 jre-openjdk
 k3b
 kcolorchooser
+kicad
 kid3
 kphotoalbum
 kvantum
@@ -301,6 +304,7 @@ sbxkb
 scrot
 sed
 sg3_utils
+signal-desktop
 signify
 smartmontools
 sof-firmware
@@ -339,6 +343,7 @@ torbrowser-launcher
 touche
 touchegg
 transmission-cli
+transmission-gtk
 ttf-anonymous-pro
 ttf-bitstream-vera
 ttf-dejavu
@@ -367,6 +372,7 @@ w3m
 waybar
 welcome
 wget
+whatsdesk-bin
 which
 whois
 wine
