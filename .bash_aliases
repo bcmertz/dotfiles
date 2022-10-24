@@ -109,14 +109,14 @@ sxev () {
 ex () {
     if [ -f "$1" ] ; then
         dest=$(echo $1 | sed 's/.zip//')
-        mkdir $dest
+        mkdir -p $dest
         case "$1" in
-            *.tar.bz2)   tar xjf "$1" --directory=$dist     ;;
-            *.tar.gz)    tar xzf "$1" --directory=$dist     ;;
-            *.tbz2)      tar xjf "$1" --directory=$dist     ;;
-            *.tgz)       tar xzf "$1" --directory=$dist     ;;
-            *.tar.xz)    tar xf "$1" --directory=$dist      ;;
-            *.tar)       tar xf "$1" --directory=$dist      ;;
+            *.tar.bz2)   tar xjf "$1" --directory=$dest     ;;
+            *.tar.gz)    tar xzf "$1" --directory=$dest     ;;
+            *.tbz2)      tar xjf "$1" --directory=$dest     ;;
+            *.tgz)       tar xzf "$1" --directory=$dest     ;;
+            *.tar.xz)    tar xf "$1" --directory=$dest      ;;
+            *.tar)       tar xf "$1" --directory=$dest      ;;
             *.rar)       rar x "$1" $dest                   ;;
             *.zip)       unzip "$1" -d $dest                ;;
             *.7z)        7z x "$1" -o $dest                 ;;
