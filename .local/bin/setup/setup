@@ -11,7 +11,7 @@ cd $HOME
 rm -rf $HOME/* || warn "failed to clear out home directory"
 
 # setup home filesystem
-mkdir $HOME/{coding/iso_store,dl/torrent,docs/org,kb,media/{music,pictures,videos}} || warn "failed to create home directories"
+mkdir $HOME/{coding/iso_store,dl/torrent,docs/org,kb,media/{music,pictures/{screenshots},videos}} || warn "failed to create home directories"
 
 # clone dotfiles
 git clone --bare https://github.com/bcmertz/dotfiles.git $HOME/.cfg || die "failed to clone dotfiles"
