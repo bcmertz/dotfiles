@@ -1,0 +1,65 @@
+#!/bin/sh
+#
+# experimental setup script
+
+cd $HOME
+
+# clear out home
+rm -rf $HOME/*
+
+# setup home filesystem
+mkdir $HOME/{coding/iso_store,dl/torrent,docs/org,kb,media/{music,pictures,videos}}
+
+# clone dotfiles
+git clone --bare https://github.com/bcmertz/dotfiles.git $HOME/.cfg
+
+# alias git commands and checkout files
+alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+cfg checkout -f
+
+# install packages
+sudo pacman -S --needed - < $HOME/.local/share/packages/packages.txt
+yay -S --needed - < $HOME/.local/share/packages/aur-packages.txt
+
+# suckless utilities
+git clone https://github.com/bcmertz/dmenu.git $HOME/coding/dmenu
+cd $HOME/coding/dmenu
+sudo make clean install
+cd $HOME
+
+git clone https://github.com/bcmertz/st.git $HOME/coding/st
+cd $HOME/coding/st
+sudo make clean install
+cd $HOME
+
+# setup passwords
+ssh-keygen -t rsa -C "bennett.mertz@gmail.com"
+cat .ssh/id_rsa.pub
+echo "Upload ssh public key to github. Press any key to continue"
+while [ true ] ; do
+    read -t 3 -n 1
+    if [ $? = 0 ] ; then
+        exit
+    fi
+done
+git clone https://github.com/bcmertz/passwords.git
+
+# use our local passmenu
+sudo rm /usr/bin/passenu
+
+# setup crons
+crontab $HOME/.local/bin/cron/crontabbackup.txt
+sudo systemctl enable --now cronie.service
+
+# TODO: setupUFW
+
+# TODO: config grub?
+
+# touchegg gestures
+sudo systemctl enable --now touchegg.service
+
+# printing
+sudo systemctl enable --now cups.socket
+
+# fonts
+fc-cache -f -v
