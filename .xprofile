@@ -30,7 +30,6 @@ oled-linux &                        # ugh
 xset r rate 300 50 &                # faster repeating keys
 lxpolkit &      # authentication agent
 setbg &         # set background
-touchegg & # gestures
 # monerod &       # start the monero daemon
 # monero_mine &   # mine monero
 # nmcli connection up client & # connect to vpn on login
