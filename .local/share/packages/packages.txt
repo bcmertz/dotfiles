@@ -144,6 +144,7 @@ htop
 hwdetect
 hwinfo
 i3-gaps
+i3-scrot
 i3blocks
 inetutils
 inotify-tools
@@ -297,6 +298,7 @@ ruby
 rust
 s-nail
 sbxkb
+scrot
 sed
 sg3_utils
 signify
