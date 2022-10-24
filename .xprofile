@@ -37,7 +37,7 @@ setbg &         # set background
 # volctl &
 # pasystray &
 # blueman-applet &
-# transmission-daemon &               # transmission in background
+transmission-daemon &               # transmission in background
 
 # not relevant
 # redshift &      # reduce bluelight
