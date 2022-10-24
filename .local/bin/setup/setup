@@ -67,3 +67,7 @@ sudo systemctl enable --now cups.socket || warn "failed to setup printing servic
 
 # fonts
 fc-cache -f -v || warn "failed to regenerate font cache"
+
+# transmission
+sudo chmod 770 $HOME/{media/{music,videos},dl/torrent,coding/iso_store,coding/iso_store/roms}
+sudo usermod -a -G transmission leah
