@@ -1,5 +1,4 @@
 #!/bin/bash
 # install packages from lists
 
-sudo pacman -S --needed - < ~/.local/share/packages/packages.txt
-yay -S --needed - < ~/.local/share/packages/aur-packages.txt
+yay -S --needed - < ~/.local/share/packages/packages.txt

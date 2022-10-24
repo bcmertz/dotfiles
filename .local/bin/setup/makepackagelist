@@ -1,5 +1,4 @@
 #!/bin/bash
 # create new installed package files
 
-pacman -Qqen > ~/.local/share/packages/packages.txt
-pacman -Qqem > ~/.local/share/packages/aur-packages.txt
+pacman -Qqe > ~/.local/share/packages/packages.txt
