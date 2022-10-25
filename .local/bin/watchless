@@ -15,7 +15,7 @@ else
 fi
 
 while : ; do
-    ( (echo -e "Every ${DELAY}s: $CMD\n"; $CMD) | less )
+    ( (echo -e "Every ${DELAY}s: $CMD\n"; $CMD) | less )&
     PID=$!
     sleep $DELAY
     kill -9 $PID &> /dev/null
