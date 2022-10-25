@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# torrent right
+
+firefox http://localhost:9091/transmission/web/

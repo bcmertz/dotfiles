@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# torrent left
+
+fullscreen "watchless \"transmission-remote -l\" 3"
