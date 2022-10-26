@@ -11,18 +11,7 @@ cd $HOME
 rm -rf $HOME/* || warn "failed to clear out home directory"
 
 # setup home filesystem
-mkdir $HOME/{coding/iso_store/roms,dl/torrent,docs/org,kb,media/{music,pictures/{screenshots},videos}} || warn "failed to create home directories"
-
-# clone dotfiles
-git clone --bare https://github.com/bcmertz/dotfiles.git $HOME/.cfg || die "failed to clone dotfiles"
-
-# alias git commands and checkout files
-alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-cfg checkout -f || die "failed to checkout local dotfiles"
-
-# install packages
-sudo pacman -Syu yay || die "please manually install yay" # in endeavour os repos
-yay -S --needed - < $HOME/.local/share/packages/packages.txt || warn "failed to install packages"
+mkdir -p $HOME/{coding/iso_store/roms,dl/torrent,docs/org,kb,media/{music,pictures/{screenshots},videos}} || warn "failed to create home directories"
 
 # suckless utilities
 git clone https://github.com/bcmertz/dmenu.git $HOME/coding/dmenu || warn "failed to clone dmenu"
@@ -35,6 +24,18 @@ cd $HOME/coding/st
 sudo make clean install || warn "failed to install st"
 cd $HOME
 
+# clone dotfiles
+git clone --bare https://github.com/bcmertz/dotfiles.git $HOME/.cfg || die "failed to clone dotfiles"
+
+# alias git commands and checkout files
+alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+cfg checkout -f || die "failed to checkout local dotfiles"
+
+# install packages
+sudo pacman -Syu yay || die "please manually install yay" # in endeavour os repos
+# TODO install aur and pacman (just pacman packages hit by this rn)
+yay -S --needed - < $HOME/.local/share/packages/packages.txt || warn "failed to install packages"
+
 # setup passwords
 ssh-keygen -t rsa -C "bennett.mertz@gmail.com"
 cat .ssh/id_rsa.pub
@@ -45,11 +46,11 @@ while [ true ] ; do
         exit
     fi
 done
-git clone https://github.com/bcmertz/passwords.git || warn "failed to download passwords"
+
 setuppass || warn "failed to setup gpg / passwords"
 
 # use our local passmenu
-sudo rm /usr/bin/passenu
+sudo rm /usr/bin/passmenu
 
 # setup crons
 crontab $HOME/.local/bin/cron/crontabbackup.txt || warn "failed to create setup cron"
@@ -71,3 +72,9 @@ fc-cache -f -v || warn "failed to regenerate font cache"
 # transmission
 sudo chmod 770 $HOME/{media/{music,videos},dl/torrent,coding/iso_store,coding/iso_store/roms}
 sudo usermod -a -G transmission $USER
+
+# source bashrc etc
+# source ~/.profile is needed for full functionality but that can happen later
+source ~/.bashrc
+
+echo "Please reboot for all changes to take effect"
