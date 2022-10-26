@@ -10,7 +10,6 @@ alsa-utils
 android-tools
 ant
 apparmor
-apparmor.d
 arandr
 arch-wiki-docs
 archlinux-keyring
@@ -112,7 +111,6 @@ git
 git-lfs
 glances
 gnome-control-center
-gnome-keyring
 gnome-maps
 gnome-screensaver
 gnome-screenshot
