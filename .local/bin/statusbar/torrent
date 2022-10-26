@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # monitor torrent info
 
@@ -21,7 +21,7 @@ stats=$(transmission-remote -l | grep % |
 	s/.*%.*/M ⬇️/" |
 	sort -h | uniq -c | awk '{print $3 $1}' | paste -sd ' ' -)
 
-if [ $up = "0.0" -a $down = "0.0" ]; then
+if [[ $up = "0.0" && $down = "0.0" ]]; then
     echo $stats
 else
     echo "Up: $up, Down: $down $stats"
