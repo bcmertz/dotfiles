@@ -36,6 +36,9 @@ sudo pacman -Syu yay || die "please manually install yay" # in endeavour os repo
 # TODO install aur and pacman (just pacman packages hit by this rn)
 yay -S --needed - < $HOME/.local/share/packages/packages.txt || warn "failed to install packages"
 
+# install godoc
+go install golang.org/x/tools/cmd/godoc@latest
+
 # setup passwords
 ssh-keygen -t rsa -C "bennett.mertz@gmail.com"
 cat .ssh/id_rsa.pub
