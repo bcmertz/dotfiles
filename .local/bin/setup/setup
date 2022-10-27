@@ -65,6 +65,10 @@ sudo systemctl enable --now cronie.service  || warn "failed to enable cron servi
 
 # touchegg gestures
 sudo systemctl enable --now touchegg.service || warn "failed to setup touchegg service"
+sudo ln -s ~/.config/X11/40-libinput.conf /etc/X11/xorg.conf.d/
+
+# libinput gestures - add user to input group
+sudo gpasswd -a $USER input
 
 # printing
 sudo systemctl enable --now cups.socket || warn "failed to setup printing service"
