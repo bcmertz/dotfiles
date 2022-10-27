@@ -39,6 +39,7 @@
 !.config/*/
 !.config/i3/*
 !.config/git/*
+!.config/X11/*
 !.config/mpd/*
 !.config/eww/*
 !.config/mpv/*
