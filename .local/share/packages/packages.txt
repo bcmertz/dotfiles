@@ -126,6 +126,7 @@ grep
 groff
 grsync
 grub
+grub-customizer
 gsimplecal
 gst-libav
 gst-plugin-pipewire
@@ -174,7 +175,6 @@ lib32-vulkan-radeon
 libdvdcss
 libgpod
 libgsf
-libinput-gestures
 libopenraw
 libreoffice-still
 libtool
@@ -358,6 +358,7 @@ unzip
 upower
 usb_modeswitch
 usbutils
+ventoy-bin
 vi
 vim
 virtualbox-host-dkms
