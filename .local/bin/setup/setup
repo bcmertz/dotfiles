@@ -72,10 +72,9 @@ else
 fi
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
-
 # touchegg gestures
-sudo systemctl enable --now touchegg.service || warn "failed to setup touchegg service"
 sudo ln -s ~/.config/X11/40-libinput.conf /etc/X11/xorg.conf.d/
+sudo systemctl enable --now touchegg.service || warn "failed to setup touchegg service"
 
 # libinput gestures - add user to input group
 sudo gpasswd -a $USER input
