@@ -6,8 +6,8 @@
 
 pidof transmission-daemon >/dev/null || (transmission-daemon && notify-send "Starting transmission daemon..." && sleep 3 && pkill -SIGRTMIN+7 i3blocks)
 
-destination=$(printf '$HOME/media/music\n$HOME/media/videos\n$HOME/dl/torrent\n$HOME/coding/iso_store\n$HOME/coding/iso_store/roms' | dmenu -c -l 10 -p "Save torrent to:")
+destination=$(printf '/home/leah/media/music\n/home/leah/media/videos\n/home/leah/dl/torrent\n/home/leah/coding/iso_store\n/home/leah/coding/iso_store/roms' | dmenu -c -l 10 -p "Save torrent to:")
 [ "$destination" = "" ] && exit
 d=$(echo $destination | cut -d '/' -f 4-5)
 
-transmission-remote -a "$@" -w $destination && notify-send "🔽 Torrent added to ~/$d"
+transmission-remote -a "$@" -w $destination && notify-send "🔽 Torrent added to /home/leah/$d"
