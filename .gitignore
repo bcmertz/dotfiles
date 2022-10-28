@@ -22,7 +22,7 @@
 !.gitconfig
 !.gitignore
 
-# config
+# configs
 !.config/
 !.config/.projectile
 !.config/global.cfg
@@ -46,7 +46,6 @@
 !.config/gtk3/*
 !.config/htop/*
 !.config/sway/*
-!.config/grub/**/*
 !.config/mu4e/*
 !.config/mako/*
 !.config/qt5ct/*
@@ -71,6 +70,9 @@
 # xfce
 !.config/xfce4/*
 !.config/xfce4/*/
+
+# grub
+!.config/grub/**/*
 
 # emacs
 !.emacs.d/
