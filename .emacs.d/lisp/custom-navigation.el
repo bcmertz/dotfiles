@@ -315,4 +315,6 @@ The user is prompted to choose a directory starting with START-DIR."
 ;; better C-x C-b
 (defalias 'list-buffers 'ibuffer)
 
+(use-package smex :ensure t)
+
 ;;; custom-navigation.el ends here
