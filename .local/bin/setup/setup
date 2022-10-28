@@ -61,7 +61,15 @@ sudo systemctl enable --now cronie.service  || warn "failed to enable cron servi
 
 # TODO: setupUFW
 
-# TODO: config grub?
+# config grub?
+sudo cp -r ~/.config/grub/virtuaverse/ /boot/grub/themes/
+if grep -q "GRUB_THEME" /etc/default/grub; then
+    sudo sed -i 's/find/replace/g' filename
+else
+    sudo echo "GRUB_THEME=\"/boot/grub/themes/virtuaverse/theme.txt\"" >> /etc/default/grub
+fi
+
+
 
 # touchegg gestures
 sudo systemctl enable --now touchegg.service || warn "failed to setup touchegg service"
