@@ -2,4 +2,4 @@
 #
 # torrent left
 
-fullscreen "watchless \"transmission-remote -l\" 3"
+fullscreen "watchless \"transmission-remote -l\" 1"
