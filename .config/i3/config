@@ -54,7 +54,8 @@ bindsym $mod+Shift+0     gaps outer all set 0
 focus_follows_mouse no
 
 # Browser popups
-for_window [window_role="pop-up"] floating enable
+for_window [window_role="pop-up"] floating enable floating enable resize set 970 610, move position 500 300
+for_window [window_role="GtkFileChooserDialog"] floating enable resize set 970 610, move position 500 300
 
 # for_window [class="ranger"] floating enable # resize set 2400 1600, move position 100 100
 for_window [class="Fullscreen st"] floating enable fullscreen
