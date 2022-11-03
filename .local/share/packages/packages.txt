@@ -41,7 +41,6 @@ cantarell-fonts
 cdrdao
 cdrtools
 cinnamon
-clementine
 clipmenu
 cmatrix
 cowsay
@@ -52,6 +51,7 @@ ctags
 cups
 cups-pdf
 debugedit
+deepin-music
 device-mapper
 dfc
 dhclient
