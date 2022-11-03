@@ -38,6 +38,7 @@ bspwm
 btrfs-progs
 calibre
 cantarell-fonts
+cbonsai
 cdrdao
 cdrtools
 cinnamon
@@ -163,7 +164,6 @@ kcolorchooser
 kicad
 kid3
 kphotoalbum
-kvantum
 less
 lib32-flex
 lib32-libva-vdpau-driver

@@ -7,12 +7,17 @@ lock
 logout
 reboot
 shutdown
-exit i3"
+exit i3
+bonsai"
 
 chosen=$(printf "$options" | dmenu -c -i -l 20 -p '👋:' -bw 3)
 [ "$chosen" = "" ] && exit
 
 case $chosen in
+    bonsai)
+        fullscreen "cbonsai -lt 0.1 -i -w 2.0 -L 60"
+    ;;
+
     matrix)
         fullscreen "cmatrix"
     ;;
