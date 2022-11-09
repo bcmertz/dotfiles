@@ -9,6 +9,7 @@
         c-electric-paren
         c-electric-semi&comma
         c-indent-line-or-region
+        comment-line
         end-of-visual-line
         indent-for-tab-command
         kill-region
