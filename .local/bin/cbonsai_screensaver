@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# cbonsai screensaver
+
+fullscreen -D "cbonsai -l"

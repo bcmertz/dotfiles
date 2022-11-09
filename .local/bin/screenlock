@@ -18,6 +18,10 @@ if [ "$cmd" == "start" ]; then
             xautolock -time $time -locker "$cmatrix_cmd" &
             ;;
 
+        "cbonsai")
+            xautolock -time $time -locker "cbonsai_screensaver" &
+            ;;
+
         "gnome-screensaver")
             background gnome-screensaver # gnome autolock daemon
             xautolock -time $time -locker "$gnome_screensaver_cmd" &
@@ -31,6 +35,10 @@ else
     case $locker in
         "cmatrix")
             $cmatrix_cmd
+            ;;
+
+        "cbonsai")
+            cbonsai_screensaver
             ;;
 
         "gnome-screensaver")
