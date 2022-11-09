@@ -2,4 +2,26 @@
 #
 # open terminal application in fullscreen st terminal
 
-st -c 'Fullscreen st' -e bash -c "$@"
+# -D use default terminal colors in x11
+# -C specify custom term color scheme
+term_colors=""
+
+# parse flags
+while getopts "DC:" flag; do
+    case "${flag}" in
+        D)
+            term_colors="black@0 red3@1 green3@2 yellow3@3 blue2@4 magenta3@5 cyan3@6 gray90@7 gray50@8 red@9 green@10 yellow@11 #5c5cff@12 magenta@13 cyan@14 white@15"
+            shift 1 # remove -D from arg list
+            ;;
+        C)
+            term_colors=${OPTARG}
+            shift 2 # remove -C and OPTARG from arg list - wont work if arg not supplied
+            ;;
+    esac
+done
+
+if [ "$term_colors" != "" ] ; then
+    st -c 'Fullscreen st' -C "$term_colors" -e bash -c "$@"
+else
+    st -c 'Fullscreen st' -e bash -c "$@"
+fi
