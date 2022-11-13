@@ -285,6 +285,7 @@ python-packaging
 python-pip
 python-pyqt5
 python-pywal
+python2
 qt5ct
 ranger
 rebuild-detector
@@ -379,6 +380,7 @@ wireless-regdb
 wireless_tools
 wireplumber
 wpa_supplicant
+wpgtk
 xarchiver
 xautolock
 xclip
