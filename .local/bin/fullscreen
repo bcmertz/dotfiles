@@ -8,7 +8,7 @@
 term_colors=""
 
 # parse flags
-while getopts "DXC:" flag; do
+while getopts "XDC:" flag; do
     case "${flag}" in
         X)
             xfce="true"
