@@ -8,12 +8,17 @@ logout
 reboot
 shutdown
 exit i3
-bonsai"
+bonsai
+pipes"
 
 chosen=$(printf "$options" | dmenu -c -i -l 20 -p '👋:' -bw 3)
 [ "$chosen" = "" ] && exit
 
 case $chosen in
+    pipes)
+        pipes_screensaver
+    ;;
+
     bonsai)
         fullscreen -D "cbonsai -lt 0.15 -i -w 2.0 -L 60"
     ;;

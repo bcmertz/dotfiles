@@ -13,7 +13,7 @@
 t="1"  # bendy pipes
 f="50" # 20 - 100, default 75
 p=$(($RANDOM%25+1)) # random pipe number -> 25
-r=$((p*200)) # let each pipe make 200 segments
+r=$((p*1000)) # let each pipe make 200 segments
 if [ $(($RANDOM%2)) == 1 ]; then R="-R"; fi # randomize random start
 if [ $(($RANDOM%2)) == 1 ]; then K="-K"; fi # randomize preserve color
 

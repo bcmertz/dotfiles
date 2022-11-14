@@ -7,7 +7,6 @@ time=$(global_cfg screen_locker_time)
 locker=$(global_cfg screen_locker)
 cmd=$1
 
-
 cmatrix_cmd='fullscreen cmatrix'
 gnome_screensaver_cmd='gnome-screensaver-command -l'
 slock_cmd='slock'
@@ -16,6 +15,10 @@ if [ "$cmd" == "start" ]; then
     case $locker in
         "cmatrix")
             xautolock -time $time -locker "$cmatrix_cmd" &
+            ;;
+
+        "pipes")
+            xautolock -time $time -locker "pipes_screensaver" &
             ;;
 
         "cbonsai")
@@ -39,6 +42,10 @@ else
 
         "cbonsai")
             cbonsai_screensaver
+            ;;
+
+        "pipes")
+            pipes_screensaver
             ;;
 
         "gnome-screensaver")
