@@ -46,7 +46,7 @@ alias paccleanup='sudo pacman -Rns (pacman -Qtdq)'  # remove orphaned packages
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls -a --color=auto'
+    alias ls='ls -a --color=auto --group-directories-first'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -133,8 +133,8 @@ ex () {
 # combo cds ls
 cds() {
     if [ -z "$1" ]; then
-        cd ~ && /usr/bin/ls --color=auto
+        cd ~ && /usr/bin/ls --color=auto --group-directories-first
     else
-        cd "$1" && /usr/bin/ls --color=auto
+        cd "$1" && /usr/bin/ls --color=auto --group-directories-first
     fi
 }
