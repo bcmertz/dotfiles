@@ -265,6 +265,7 @@ peek
 perl
 perl-file-mimeinfo
 picom
+pipes.sh
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
