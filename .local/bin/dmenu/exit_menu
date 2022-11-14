@@ -2,12 +2,12 @@
 #
 # exit menu
 
-options="matrix
-lock
+options="lock
 logout
 reboot
 shutdown
 exit i3
+matrix
 bonsai
 pipes"
 
