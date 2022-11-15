@@ -11,7 +11,8 @@ cd $HOME
 rm -rf $HOME/* || warn "failed to clear out home directory"
 
 # setup home filesystem
-mkdir -p $HOME/{coding/iso_store/roms,dl/torrent,docs/org,kb,media/{music,pictures/{screenshots},videos}} || warn "failed to create home directories"
+mkdir -p $HOME/{coding/iso_store/roms,dl/torrent,docs/org,kb,media/{music,pictures/{screenshots},videos}} \
+    || warn "failed to create home directories"
 
 # suckless utilities
 git clone https://github.com/bcmertz/dmenu.git $HOME/coding/dmenu || warn "failed to clone dmenu"
