@@ -40,5 +40,6 @@ setbg &         # set background
 transmission-daemon &               # transmission in background
 
 # not relevant
+# touchegg &
 # redshift &      # reduce bluelight
 # start-pulseaudio-x11 &              # pulseaudio, should be automatic
