@@ -156,11 +156,11 @@
   ;; (undo-tree-visualizer-timestamps t)
   )
 
-(defun set-custom-undo ()
-  "Set custom undo keys to show tmp undo tree."
-  (global-set-key [remap undo-tree-undo] 'custom-undo)
-  (global-set-key [remap undo-tree-redo] 'custom-redo))
-(apply-if-gui 'set-custom-undo)
+;; (defun set-custom-undo ()
+;;   "Set custom undo keys to show tmp undo tree."
+;;   (global-set-key [remap undo-tree-undo] 'custom-undo)
+;;   (global-set-key [remap undo-tree-redo] 'custom-redo))
+;; (apply-if-gui 'set-custom-undo)
 
 (defun fix-undo-trickery ()
   "Fix undo trickery."
