@@ -175,6 +175,7 @@ lib32-vulkan-radeon
 libdvdcss
 libgpod
 libgsf
+libinput-gestures
 libopenraw
 libreoffice-still
 libtool
