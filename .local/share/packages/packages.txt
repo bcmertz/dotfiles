@@ -10,6 +10,7 @@ alsa-utils
 android-tools
 ant
 apparmor
+apparmor.d-git
 arandr
 arch-wiki-docs
 archlinux-keyring
@@ -41,6 +42,7 @@ cantarell-fonts
 cbonsai
 cdrdao
 cdrtools
+chromium
 cinnamon
 clipmenu
 cmatrix
