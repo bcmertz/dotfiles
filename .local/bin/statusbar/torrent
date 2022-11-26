@@ -24,7 +24,8 @@ stats=$(transmission-remote -l | grep % |
 if [[ $up = "0.0" && $down = "0.0" ]]; then
     echo $stats
 else
-    echo "Up: $up, Down: $down $stats"
+    # echo "Up: $up, Down: $down $stats"
+    echo "$stats"
 fi
 
 case $BLOCK_BUTTON in
