@@ -42,6 +42,7 @@ cantarell-fonts
 cbonsai
 cdrdao
 cdrtools
+cheese
 chromium
 cinnamon
 clipmenu
