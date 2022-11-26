@@ -59,8 +59,8 @@ fi
 alias ll='ls -alFh'
 alias la='ls -A'
 alias l='/usr/bin/ls -p --color=auto --group-directories-first'
-alias lsd='ls -d */'
-alias lsdir='ls -d */'
+alias lsd='/usr/bin/ls -a --color=auto -d */'
+alias lsdir='/usr/bin/ls -a --color=auto -d */'
 
 # less annoying tree
 alias tree="tree -a -I 'node_modules|.git'"
