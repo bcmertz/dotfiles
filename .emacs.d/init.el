@@ -51,6 +51,7 @@
 (measure-time(load "custom-golang.el"))
 (measure-time(load "custom-js.el"))
 (measure-time(load "custom-typescript.el"))
+(measure-time(load "custom-python.el"))
 (measure-time(load "custom-markdown.el"))
 (measure-time(load "custom-css.el"))
 (measure-time(load "custom-bash.el"))
