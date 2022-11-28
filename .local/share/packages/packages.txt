@@ -124,6 +124,7 @@ gnome-tweaks
 gnu-netcat
 gnuplot
 go
+gopls
 gparted
 gpick
 gradle
