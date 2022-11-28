@@ -9,8 +9,8 @@
 (use-package eglot
   :defer t
   :ensure t
-  ;; :init
-  ;; (defvar lsp-tool "eglot")
+  :init
+  (defvar lsp-tool "eglot")
   )
 
 (add-hook 'python-mode-hook 'eglot-ensure)
