@@ -25,6 +25,7 @@ b43-fwcutter
 baobab
 base
 bash-completion
+bash-language-server
 bc
 beep
 bind
@@ -283,6 +284,7 @@ powertop
 ppp
 pptpclient
 pv
+pyright
 python
 python-capng
 python-defusedxml
