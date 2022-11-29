@@ -54,24 +54,36 @@
   "Run `after-load-theme-hook'."
   (run-hooks 'after-load-theme-hook))
 
-
+;; outdated alpha code which also transparencies the text
+;;
 ;; transparency (focused . unfocused)
 ;; (setq default-transparency (list 100 100))
-(set-frame-parameter (selected-frame) 'alpha '(100 . 100))
-(add-to-list 'default-frame-alist '(alpha . (100 . 100)))
+;; (set-frame-parameter (selected-frame) 'alpha '(100 . 100))
+;; (add-to-list 'default-frame-alist '(alpha . (100 . 100)))
+;;
+;; (defun toggle-transparency ()
+;;   "Toggle transparency."
+;;   (interactive)
+;;   (let ((alpha (frame-parameter nil 'alpha)))
+;;     (set-frame-parameter
+;;      nil 'alpha
+;;      (if (eql (cond ((numberp alpha) alpha)
+;;                     ((numberp (cdr alpha)) (cdr alpha))
+;;                     ;; Also handle undocumented (<active> <inactive>) form.
+;;                     ((numberp (cadr alpha)) (cadr alpha)))
+;;               100)
+;;          '(97 . 92) '(100 . 100)))))
+
+(set-frame-parameter nil 'alpha-background 100) ; For current frame
+(add-to-list 'default-frame-alist '(alpha-background . 100)) ; For all new frames henceforth
 
 (defun toggle-transparency ()
   "Toggle transparency."
   (interactive)
-  (let ((alpha (frame-parameter nil 'alpha)))
-    (set-frame-parameter
-     nil 'alpha
-     (if (eql (cond ((numberp alpha) alpha)
-                    ((numberp (cdr alpha)) (cdr alpha))
-                    ;; Also handle undocumented (<active> <inactive>) form.
-                    ((numberp (cadr alpha)) (cadr alpha)))
-              100)
-         '(97 . 92) '(100 . 100)))))
+  (let ((alpha-transparency 75))
+    (pcase (frame-parameter nil 'alpha-background)
+      (alpha-transparency (set-frame-parameter nil 'alpha-background 100))
+      (t (set-frame-parameter nil 'alpha-background alpha-transparency)))))
 
 (global-set-key (kbd "C-c t r") 'toggle-transparency)
 
