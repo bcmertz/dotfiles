@@ -42,6 +42,7 @@
   ;; https://org-roam.discourse.group/t/can-buffer-names-match-note-titles/350/13
   (add-to-list 'ivy-ignore-buffers "^[0-9]\\{14\\}.+\\.org$")
   (add-to-list 'ivy-ignore-buffers "EGLOT*")
+  (add-to-list 'ivy-ignore-buffers "\*Async-native-compile-log\*")
   )
 
 
