@@ -5,6 +5,9 @@
 ;;; snippets, formatting, docs, autocompletion, etc
 ;;;
 ;;; Code:
+;;;
+;;; TODO - eglot save hook add/remove imports, currently broken
+
 
 (use-package go-mode
   :defer t
