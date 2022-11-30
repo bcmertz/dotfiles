@@ -74,14 +74,21 @@
   (indent-according-to-mode))
 
 ;; code folding
-(require 'vimish-fold)
-(vimish-fold-global-mode 1)
-(which-key-add-key-based-replacements "C-c f" "vimish fold")
-(global-set-key (kbd "C-c f f") #'vimish-fold)
-(global-set-key (kbd "C-c f d") #'vimish-fold-delete)
-(global-set-key (kbd "C-c f l") #'vimish-fold-avy) ;; fold to line
-(global-set-key (kbd "C-c f t") #'vimish-fold-toggle) ;; fold to line
-(global-set-key (kbd "M-`") #'vimish-fold-delete-all)
+(use-package vimish-fold
+  :defer t
+  :ensure t
+  :init
+  (vimish-fold-global-mode 1)
+  :config
+  (which-key-add-key-based-replacements "C-c f" "vimish fold")
+  :bind
+  ("C-c f f" . vimish-fold)
+  ("C-c f d" . vimish-fold-delete)
+  ("C-c f l" . vimish-fold-avy) ;; fold to line
+  ("C-c f t" . vimish-fold-toggle) ;; fold to line
+  ("M-`" . vimish-fold-delete-all)
+  )
+
 
 ;; text selection
 (use-package expand-region
