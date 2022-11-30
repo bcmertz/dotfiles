@@ -46,6 +46,7 @@
   (add-to-list 'ivy-ignore-buffers "^[0-9]\\{14\\}.+\\.org$")
   (add-to-list 'ivy-ignore-buffers "EGLOT*")
   (add-to-list 'ivy-ignore-buffers "\*Async-native-compile-log\*")
+  (add-to-list 'ivy-ignore-buffers "\*Compile-Log\*")
   )
 
 
