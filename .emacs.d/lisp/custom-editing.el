@@ -35,8 +35,10 @@
 
 ;; smart parenthesis
 (use-package smartparens
-  :config
+  :defer t
+  :init
   (require 'smartparens-config)
+  :config
   (smartparens-global-mode t)
   (add-hook 'org-mode-hook (lambda () (setq-local smartparens-global-mode nil)))
 
@@ -93,6 +95,7 @@
 ;; text selection
 (use-package expand-region
   :ensure t
+  :defer t
   :bind("C-;" . er/expand-region)
   )
 
@@ -149,6 +152,7 @@
 
 ;; Undo tree
 (use-package undo-tree
+  :defer t
   :ensure t
   :bind
   ("C-_" . text-scale-decrease)
@@ -210,6 +214,7 @@
 
 ;; Multiple Cursors
 (use-package multiple-cursors
+  :defer t
   :ensure t
   :bind
   ("M-." . mc/mark-next-like-this)
@@ -218,6 +223,7 @@
   ("C-c C-e" . mc/edit-lines))
 
 (use-package multiple-cursors-core
+  :defer t
   :bind
   (:map mc/keymap
         ("<return>" . nil)
@@ -225,6 +231,7 @@
 
 ;; Keystroke Completion
 (use-package which-key
+  :defer t
   :ensure t
   :config
   ;; (setq which-key-paging-prefixes '(""))
