@@ -35,7 +35,7 @@
 (measure-time(load "custom-editing.el"))          ;; efficient text editing
 (measure-time(load "custom-bidi-text.el"))        ;; rtl and ltr language support
 (measure-time(load "custom-windowing.el"))        ;; buffer management
-(measure-time(load "custom-errorcheck.el"))       ;; error checking
+(measure-time(load "custom-error-check.el"))      ;; error checking
 (measure-time(load "custom-pass.el"))             ;; password management
 ;; (measure-time(load "custom-email.el"))         ;; email - mu4e
 ;; (measure-time(load "custom-music.el"))         ;; music - emms
