@@ -7,7 +7,7 @@
 ;;; Code:
 
 (with-eval-after-load 'python
-  (define-key python-mode-map (kbd "<backtab>") #'company-complete))
+  (define-key python-mode-map (kbd "<backtab>") #'completion-at-point))
 
 ;; (use-package lsp-pyright
 ;;   :ensure t
