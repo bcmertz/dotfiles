@@ -37,6 +37,9 @@
   :config
   (setq ivy-re-builders-alist
         '((t . ivy--regex-ignore-order)))
+  ;; orderless completion
+  ;; (setq ivy-re-builders-alist '((t . orderless-ivy-re-builder)))
+  ;; (add-to-list 'ivy-highlight-functions-alist '(orderless-ivy-re-builder . orderless-ivy-highlight))
   (ivy-mode)
   ;; ignore org roam buffers, use C-c n f
   ;; https://org-roam.discourse.group/t/can-buffer-names-match-note-titles/350/13
