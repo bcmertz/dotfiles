@@ -25,6 +25,9 @@
 (use-package flyspell
   :after (ispell)
   :defer t
+  :bind (:map flyspell-mode-map
+              ("C-;" . nil)
+              )
   )
 
 
