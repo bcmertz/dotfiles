@@ -105,6 +105,7 @@
         ("<backtab>" . completion-at-point)
         )
   :config
+  (which-key-add-key-based-replacements "C-c n" "org-roam")
   (org-roam-setup)
 
   ;; display tags in search results
