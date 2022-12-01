@@ -21,7 +21,7 @@
   (global-set-key (kbd "C-c ! n") 'flymake-goto-next-error)
   (global-set-key (kbd "C-c ! p") 'flymake-goto-prev-error)
   (global-set-key (kbd "C-c ! s") 'flymake-start)
-  (global-set-key (kbd "C-c ! l") 'flymake-show-diagnostic)
+  (global-set-key (kbd "C-c ! l") 'flymake-show-buffer-diagnostics)
   (global-set-key (kbd "C-c ! m") 'flymake-mode)
   )
 
