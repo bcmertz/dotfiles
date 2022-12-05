@@ -66,10 +66,9 @@
      nil 'alpha-background
      (if (eql (cond ((numberp alpha-background) alpha-background)
                     ((numberp (cdr alpha-background)) (cdr alpha-background))
-                    ;; Also handle undocumented (<active> <inactive>) form.
-                    ((numberp (cadr alpha-background)) (cadr alpha-background)))
+                    )
               100)
-         '60 '100))))
+         '96 '100))))
 
 (global-set-key (kbd "C-c t r") 'toggle-transparency)
 
