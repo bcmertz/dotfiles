@@ -20,4 +20,8 @@ fi
 
 [ "$status" = "Charging" ] && color="#ffffff"
 
-printf "%s%s%s\n" "$(echo "$status" | sed -e "s/,//;s/Discharging/🔋/;s/Not Charging/🛑/;s/Charging/🔌/;s/Unknown/♻️/;s/Full/⚡/;s/ 0*/ /g;s/ :/ /g")" "$warn" "$(echo "$capacity" | sed -e 's/$/%/')"
+if [ "$2" = '-n' ]; then
+    printf "%s%s%s\n" "$(echo "$capacity" | sed -e 's/$/%/')"
+else
+    printf "%s%s%s\n" "$(echo "$status" | sed -e "s/,//;s/Discharging/🔋/;s/Not Charging/🛑/;s/Charging/🔌/;s/Unknown/♻️/;s/Full/⚡/;s/ 0*/ /g;s/ :/ /g")" "$warn" "$(echo "$capacity" | sed -e 's/$/%/')"
+fi

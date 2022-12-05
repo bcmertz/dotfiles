@@ -3,7 +3,10 @@
 # brightness
 
 brightness=$(xbacklight -get | cut -d '.' -f 1)
-
 icon="🔆"
 
-printf "  %s%s%%\\n" "$icon" "$brightness"
+if [ "$1" == "-n" ]; then
+    printf "%s%s%%\\n" "$brightness"
+else
+    printf "  %s%s%%\\n" "$icon" "$brightness"
+fi
