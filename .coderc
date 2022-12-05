@@ -33,3 +33,10 @@ export PATH=$PATH:$ANDROID_HOME:$ANDROID_SDK_HOME/tools:$ANDROID_SDK_HOME/tools/
 export ARDUINO_DIR=$HOME/coding/arduino
 export ARDMK_DIR=/usr/share/arduino
 export AVR_TOOLS_DIR=/usr/share/arduino/hardware/archlinux-arduino/avr
+
+# perl
+PATH="/home/leah/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/leah/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/leah/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/leah/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/leah/perl5"; export PERL_MM_OPT;
