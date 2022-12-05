@@ -4,7 +4,7 @@
 # based off of https://github.com/sdushantha/fontpreview
 # with fewer features
 
-#BUG : focus is lost on terminal if the script is used twice in a row 🤷
+# BUG: focus is lost on terminal if the script is used twice in a row 🤷
 
 # text to display, mix of characters and numbers and glyphs
 text="
