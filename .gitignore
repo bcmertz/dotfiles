@@ -56,7 +56,6 @@
 !.config/plank/*
 !.congig/ranger/*
 !.config/waybar/*
-!.config/polybar/*
 !.config/calibre/*
 !.config/apparmor/*
 !.config/touchegg/touchegg.conf
@@ -70,6 +69,9 @@
 # xfce
 !.config/xfce4/*
 !.config/xfce4/*/
+
+# polybar
+!.config/polybar/**/*
 
 # grub
 !.config/grub/**/*
