@@ -11,6 +11,7 @@
 (setq tab-always-indent t)
 (global-set-key [backtab] 'completion-at-point) ;; backtab triggers autocomplete
 
+;;;;;;;;;;;;;; completion ;;;;;;;;;;;;;;;
 
 (use-package corfu
   :ensure t
@@ -27,8 +28,6 @@
   (corfu-history-mode)
   (eldoc-add-command #'corfu-insert)
   )
-
-
 
 
 ;;;;;;;;;;;; builtin arglist and variable docstrings info in echo area ;;;;;;;;;;;;;;
