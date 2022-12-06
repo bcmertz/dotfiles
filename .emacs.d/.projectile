@@ -3,3 +3,11 @@
 -/undo
 -ido.last
 -/eln-cache
+-/multisession
+-/vimish-fold
+-/transient
+-tramp
+-.lsp-session-v1
+-history
+-org-roam.db
+-save-perspective
