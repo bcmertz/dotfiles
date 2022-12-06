@@ -94,28 +94,28 @@
 
 ;; builtin code folding
 ;; https://www.emacswiki.org/emacs/HideShow
-;; (use-package hs-minor-mode
-;;   :defer t
-;;   :init
-;;   (add-hook 'prog-mode-hook #'hs-minor-mode)
-;;   (which-key-add-key-based-replacements "C-c f" "folding")
-;;   (assq-delete-all 'hs-minor-mode minor-mode-map-alist)
-;;   :config
-;;   (setq hs-hide-comments nil)
-;;   :bind
-;;   ("C-c f f" . hs-hide-block)
-;;   ("C-c f t" . hs-toggle-hiding)
-;;   ("C-c f d" . hs-show-block)
-;;   ("C-c f a" . hs-show-all)
-;;   ("M-`" . hs-show-all)
-;;   )
+(use-package hs-minor-mode
+  :defer t
+  :init
+  (add-hook 'prog-mode-hook #'hs-minor-mode)
+  (which-key-add-key-based-replacements "C-c f" "folding")
+  (assq-delete-all 'hs-minor-mode minor-mode-map-alist)
+  :config
+  (setq hs-hide-comments nil)
+  :bind
+  ("C-c f f" . hs-hide-block)
+  ("C-c f t" . hs-toggle-hiding)
+  ("C-c f d" . hs-show-block)
+  ("C-c f a" . hs-show-all)
+  ("M-`" . hs-show-all)
+  )
 
 ;; WIP tree sitter code folding implementation
-(use-package ts-fold
-  :load-path "~/coding/ts-fold")
+;; (use-package ts-fold
+;;   :load-path "~/coding/ts-fold")
 
-(use-package ts-fold-indicators
-   :load-path "~/coding/ts-fold/ts-fold-indicators.el")
+;; (use-package ts-fold-indicators
+;;    :load-path "~/coding/ts-fold/ts-fold-indicators.el")
 
 
 ;; text selection
