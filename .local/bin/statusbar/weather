@@ -27,7 +27,7 @@ case $BLOCK_BUTTON in
 esac
 
 if [ "$1" == "-t" ]; then
-    showtemperature
+    getforecast && showtemperature
 elif [ "$(stat -c %y "$HOME/.local/share/weatherreport" >/dev/null 2>&1 | awk '{print $1}')" != "$(date '+%Y-%m-%d')" ]; then
     getforecast && showweather
 else
