@@ -6,7 +6,7 @@
 ;;;
 ;;; Code:
 
-;;; NOTE: doesn't play nicely with eglot, so just flymake instead
+;;; NOTE: flycheck doesn't play nicely with eglot, so just flymake instead
 ;;; can check back later if eglot likes flycheck or maybe just
 ;;; use builtin flymake if there's not a compelling reason to use
 ;;; a non-builtin front-end for error checking
