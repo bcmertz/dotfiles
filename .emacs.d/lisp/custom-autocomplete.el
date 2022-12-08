@@ -76,6 +76,8 @@
 (use-package yasnippet
   :defer t
   :ensure t
+  :init
+  (yas-minor-mode)
   :bind
   (:map yas-minor-mode-map
         ("C-c &" . nil)

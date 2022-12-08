@@ -26,7 +26,6 @@
 ;; Inital buffer - todo
 ;; (setq initial-buffer-choice "~/docs/org/notes.org")
 
-(yas-minor-mode)
 ;; backup and tmp files
 (setq make-backup-files nil)
 (setq backup-directory-alist
