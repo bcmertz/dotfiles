@@ -40,8 +40,11 @@
 (save-place-mode 1)
 
 ;; save history of minibuffer prompts
-(setq history-length 100)
 (savehist-mode 1)
+(setq history-length 200)
+(setq history-delete-duplicates t)
+(setq savehist-save-minibuffer-history 1)
+(setq savehist-additional-variables '(kill-ring search-ring regexp-search-ring))
 
 ;; Don't pop up UI dialogs when prompting
 (setq use-dialog-box nil)
