@@ -118,7 +118,72 @@
 ;;    :load-path "~/coding/ts-fold/ts-fold-indicators.el")
 
 
-;; text selection
+;;;;;;;;;;;;;;;; text selection ;;;;;;;;;;;;;;;
+
+(defun move-to-region-beginning ()
+  "Move cursor to end of active region if there is one."
+  (interactive "")
+  (if (use-region-p)
+      (goto-char (region-beginning))))
+
+(defun move-to-region-end ()
+  "Move cursor to end of active region if there is one."
+  (interactive "")
+  (if (use-region-p)
+      (goto-char (region-end))))
+
+(advice-add 'er/prepare-for-more-expansions-internal :override #'er-custom/prepare-for-more-expansions-internal)
+
+(defun er-custom/prepare-for-more-expansions-internal (repeat-key-str)
+  "CUSTOM Return bindings and a message to inform user about them given REPEAT-KEY-STR."
+  (let ((msg (format "Type %s to expand again" repeat-key-str))
+        (bindings (list (cons repeat-key-str '(er/expand-region 1)))))
+    ;; If contract and expand are on the same binding, ignore contract
+    (unless (string-equal repeat-key-str expand-region-contract-fast-key)
+      (setq msg (concat msg (format ", %s to contract" expand-region-contract-fast-key)))
+      (push (cons expand-region-contract-fast-key '(er/contract-region 1)) bindings))
+    ;; If reset and either expand or contract are on the same binding, ignore reset
+    (unless (or (string-equal repeat-key-str expand-region-reset-fast-key)
+                (string-equal expand-region-contract-fast-key expand-region-reset-fast-key))
+      (setq msg (concat msg (format ", %s to reset" expand-region-reset-fast-key)))
+      (push (cons expand-region-reset-fast-key '(er/expand-region 0)) bindings))
+    (setq msg (concat msg (format ", > to jump end" expand-region-eor-fast-key)))
+    (push (cons expand-region-eor-fast-key '(move-to-region-end)) bindings)
+    (setq msg (concat msg (format ", < to jump beginning" expand-region-bor-fast-key)))
+    (push (cons expand-region-bor-fast-key '(move-to-region-beginning)) bindings)
+    (cons msg bindings)))
+
+(advice-add 'er/expand-region :override #'er-custom/expand-region)
+
+(defun er-custom/expand-region (arg)
+  "Increase selected region by semantic units.
+
+With prefix argument expands the region that many times.
+If prefix argument is negative calls `er/contract-region'.
+If prefix argument is 0 it resets point and mark to their state
+before calling `er/expand-region' for the first time ARG."
+  (interactive "p")
+  (if (< arg 1)
+      (er/contract-region (- arg))
+    (er--prepare-expanding)
+    (while (>= arg 1)
+      (setq arg (- arg 1))
+      (when (eq 'early-exit (er--expand-region-1))
+        (setq arg 0)))
+    (when (and expand-region-fast-keys-enabled
+               (not (memq last-command '(er/expand-region er/contract-region move-to-region-end move-to-region-beginning))))
+      (er/prepare-for-more-expansions))))
+
+(defcustom expand-region-eor-fast-key "."
+  "Key to use after an initial expand/contract to go to end of region."
+  :group 'expand-region
+  :type 'string)
+
+(defcustom expand-region-bor-fast-key ","
+  "Key to use after an initial expand/contract to go to end of region."
+  :group 'expand-region
+  :type 'string)
+
 (use-package expand-region
   :ensure t
   :defer t
@@ -212,6 +277,7 @@
 
 ;; prevent undo-tree from messaging when it's saving the undo-tree history
 (defun my-undo-tree-save-history (undo-tree-save-history &rest args)
+  "Prevent undo-tree from messaging save alerts given UNDO-TREE-SAVE-HISTORY ARGS."
   (let ((message-log-max nil)
         (inhibit-message t))
     (apply undo-tree-save-history args)))
