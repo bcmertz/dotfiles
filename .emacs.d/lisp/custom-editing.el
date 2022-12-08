@@ -31,7 +31,8 @@
                                  (delete-trailing-whitespace))))
 
 ;; replace highlighted sections
-(delete-selection-mode 1)
+(delete-selection-mode t)		; By default emacs will not delete selection text when typing on it, let's fix it
+(setq kill-whole-line t) 			; kills the entire line plus the newline whenever you invoke kill-line (i.e. via C-k).
 
 ;; smart parenthesis
 (use-package smartparens
