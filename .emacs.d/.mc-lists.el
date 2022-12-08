@@ -35,6 +35,7 @@
         evil-mode
         handle-switch-frame
         help-for-help
+        hs-show-all
         ivy-switch-buffer
         keyboard-escape-quit
         mouse-buffer-menu
