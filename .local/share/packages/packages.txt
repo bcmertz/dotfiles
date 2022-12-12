@@ -49,6 +49,7 @@ cinnamon
 clipmenu
 cmatrix
 cowsay
+cozette-otb
 cpupower
 cronie
 cryptsetup
@@ -68,6 +69,7 @@ dmidecode
 dmraid
 dnsmasq
 docker
+docker-compose
 dosfstools
 downgrade
 dracula-gtk-theme
@@ -79,7 +81,7 @@ easytag
 ecryptfs-utils
 efibootmgr
 efitools
-emacs
+emacs-git
 endeavouros-keyring
 endeavouros-mirrorlist
 endeavouros-theming
@@ -234,6 +236,7 @@ nbd
 ncdu
 ndisc6
 neofetch
+nerd-fonts-cozette-ttf
 netctl
 networkmanager
 networkmanager-openconnect
@@ -434,4 +437,5 @@ yay
 youtube-dl
 zathura
 zathura-pdf-mupdf
+zoom
 zsh
