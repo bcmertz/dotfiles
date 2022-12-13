@@ -96,6 +96,7 @@ epdfview
 ethtool
 exfat-utils
 exo
+expect
 f2fs-tools
 fakeroot
 feh
