@@ -287,6 +287,7 @@ poppler-glib
 powertop
 ppp
 pptpclient
+pulsar-bin
 pv
 pyright
 python
@@ -358,10 +359,12 @@ ttf-anonymous-pro
 ttf-bitstream-vera
 ttf-dejavu
 ttf-droid
+ttf-fira-code
 ttf-indic-otf
 ttf-liberation
 ttf-opensans
 ttf-roboto
+ttf-roboto-mono
 ttf-ubuntumono-nerd
 tumbler
 unclutter
