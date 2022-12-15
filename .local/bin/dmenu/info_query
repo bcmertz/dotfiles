@@ -2,6 +2,6 @@
 #
 # Search arch-wiki offline
 
-chosen=$(ls /usr/share/doc/arch-wiki/html/en | dmenu -c -i -l 15 -bw 3)
+chosen=$(ls /usr/share/doc/arch-wiki/html/en | grep -E -v '[a-zA-Z0-9]{32}.html$' | dmenu -c -i -l 15 -bw 3)
 [ "$chosen" != "" ] || exit
 firefox /usr/share/doc/arch-wiki/html/en/$chosen
