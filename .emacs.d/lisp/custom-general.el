@@ -25,6 +25,12 @@
 
 ;; Inital buffer - todo
 ;; (setq initial-buffer-choice "~/docs/org/notes.org")
+(setq initial-scratch-message (format ";; Welcome, %s
+;; This buffer is for text that is not saved, and for Lisp evaluation.
+;; To execute lisp, type C-x C-e
+
+" user-full-name))
+
 
 ;; backup and tmp files
 (setq make-backup-files nil)
