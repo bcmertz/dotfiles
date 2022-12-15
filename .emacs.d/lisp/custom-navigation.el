@@ -109,6 +109,12 @@
   (recentf-mode +1))
 
 ;; project navigation
+(defun projectile-find-file-refresh-cache ()
+  "Projectile find file and invalidate cache."
+  (interactive "")
+  (projectile-find-file t)
+  )
+
 (use-package projectile
   :ensure t
   :init
@@ -123,7 +129,9 @@
   (setq projectile-indexing-method 'native)
   :bind (:map projectile-mode-map
               ("s-p" . projectile-command-map)
-              ("C-c p" . projectile-command-map)))
+              ("C-c p" . projectile-command-map)
+              ("C-c p F" . projectile-find-file-refresh-cache)
+              ))
 
 ;; perspective navigation
 (use-package perspective
