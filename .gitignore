@@ -85,6 +85,7 @@
 !.emacs.d/.mc-lists.el
 !.emacs.d/smartparens-config
 !.emacs.d/*/
+!.emacs.d/etc/*
 !.emacs.d/org-templates/*
 !.emacs.d/lisp/*
 !.emacs.d/lisp/lib/*
