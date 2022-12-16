@@ -23,9 +23,47 @@
 ;; (when (eq window-system 'pgtk)
 ;;   (pgtk-use-im-context t))
 
-;; Inital buffer - todo
-;; (setq initial-buffer-choice "~/docs/org/notes.org")
-(setq initial-scratch-message (format ";; Welcome, %s
+;; Inital buffer
+(setq inhibit-startup-screen t)  ;; inhibit startup screen
+(setq initial-buffer-choice t)   ;; scratch instead
+
+;; customize scratch buffer
+(advice-add 'get-scratch-buffer-create :override #'custom-get-scratch-buffer-create)
+(defun custom-get-scratch-buffer-create ()
+  "Return the *scratch* buffer, creating a new one if needed."
+  (let ((scratch (get-buffer-create "*scratch*")))
+    ;; Don't touch the buffer contents or mode unless we know that
+    ;; we just created it.
+    (with-current-buffer "*scratch*"
+      ;; setup scratch to have hook for recreation
+      ;; (make-local-variable 'kill-buffer-query-functions)
+      ;; (add-hook 'kill-buffer-query-functions 'kill-scratch-buffer)
+      (delete-region (point-min) (point-max))
+      (insert-image (create-image "~/.emacs.d/img/ue-colorful.png"))
+      (when initial-scratch-message
+        (insert (substitute-command-keys initial-scratch-message))
+        (set-buffer-modified-p nil))
+      (funcall initial-major-mode))
+    scratch))
+
+;; (defun kill-scratch-buffer ()
+;;   ;; The next line is just in case someone calls this manually
+;;   (set-buffer (get-buffer-create "*scratch*"))
+;;   ;; Kill the current (*scratch*) buffer
+;;   (remove-hook 'kill-buffer-query-functions 'kill-scratch-buffer)
+;;   (kill-buffer (current-buffer))
+;;   ;; Make a brand new *scratch* buffer
+;;   (set-buffer (get-buffer-create "*scratch*"))
+;;   (lisp-interaction-mode)
+;;   (make-local-variable 'kill-buffer-query-functions)
+;;   (add-hook 'kill-buffer-query-functions 'kill-scratch-buffer)
+;;   ;; Since we killed it, don't let caller do that.
+;;   nil
+;;   )
+
+(setq initial-scratch-message (format "
+
+;; Welcome, %s
 ;; This buffer is for text that is not saved, and for Lisp evaluation.
 ;; To execute lisp, type C-x C-e
 
