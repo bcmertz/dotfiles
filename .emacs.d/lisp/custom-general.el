@@ -29,7 +29,8 @@
 ;; This buffer is for text that is not saved, and for Lisp evaluation.
 ;; To execute lisp, type C-x C-e
 
-" user-full-name))
+" (capitalize (user-full-name))))
+
 
 
 ;; backup and tmp files
