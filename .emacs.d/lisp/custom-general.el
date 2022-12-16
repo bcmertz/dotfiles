@@ -39,7 +39,7 @@
       ;; (make-local-variable 'kill-buffer-query-functions)
       ;; (add-hook 'kill-buffer-query-functions 'kill-scratch-buffer)
       (delete-region (point-min) (point-max))
-      (insert-image (create-image "~/.emacs.d/img/ue-colorful.png"))
+      (insert-image (create-image "~/.emacs.d/etc/ue-colorful.png"))
       (when initial-scratch-message
         (insert (substitute-command-keys initial-scratch-message))
         (set-buffer-modified-p nil))
