@@ -436,7 +436,7 @@ xorg-xkill
 xorg-xrandr
 xorg-xwayland
 xterm
-yad-eos
+yad
 yarn
 yay
 youtube-dl
