@@ -12,16 +12,10 @@
 
 ;; customize scratch buffer
 (defun custom-get-scratch-buffer-create ()
-  "Return the *scratch* buffer, creating a new one if needed."
+  "Create the *scratch* buffer."
   (let ((scratch (get-buffer-create "*scratch*")))
-    ;; Don't touch the buffer contents or mode unless we know that
-    ;; we just created it.
     (with-current-buffer "*scratch*"
-      ;; setup scratch to have hook for recreation
-      ;; (make-local-variable 'kill-buffer-query-functions)
-      ;; (add-hook 'kill-buffer-query-functions 'kill-scratch-buffer)
       (delete-region (point-min) (point-max))
-
       (setq-local imgs (directory-files "~/.emacs.d/etc/" t directory-files-no-dot-files-regexp))
       (insert-image (create-image (nth (random (length imgs)) imgs)))
       (when initial-scratch-message

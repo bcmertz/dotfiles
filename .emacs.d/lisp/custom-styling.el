@@ -6,6 +6,11 @@
 ;;;
 ;;; Code:
 
+;; cursor behavior
+(setq cursor-type 'box)
+(setq visible-cursor t)
+(blink-cursor-mode 1)
+
 ;; load local themes
 (add-to-list 'custom-theme-load-path (concat user-emacs-directory "lisp/themes/"))
 
