@@ -48,14 +48,27 @@
       (funcall initial-major-mode))
     scratch))
 
+(defun return-greeting ()
+  "Return time based greeting."
+  (let ((str "")
+        (hour (string-to-number (nth 0 (split-string (nth 3 (split-string (current-time-string))) ":")))))
+    (if (< hour 12)
+        (setq str "Good morning")
+      (if (< hour 5)
+          (setq str "Good afternoon")
+        (setq str "Good evening")
+        )
+      )
+    )
+  )
+
 (setq initial-scratch-message (format "
 
-;; Welcome, %s
+;; %s, %s
 ;; This buffer is for text that is not saved, and for Lisp evaluation.
 ;; To execute lisp, type C-x C-e
 
-" (capitalize (user-full-name))))
-
+" (return-greeting) (capitalize (user-full-name))))
 
 
 ;; backup and tmp files
