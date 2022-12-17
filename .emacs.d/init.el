@@ -27,6 +27,7 @@
 (if (equal (getenv "SESSION") "emacs")            ;; see if SESSION env var is emacs
     (measure-time(load "custom-exwm-config.el"))) ;; emacs as window manager
 
+(measure-time(load "custom-splashscreen.el"))     ;; splash-screen
 (measure-time(load "custom-general.el"))          ;; general configuration
 (measure-time(load "custom-evil-keymap.el"))      ;; vim emulation; toggle evil with M-SPC; SPC is leader key
 (measure-time(load "custom-styling.el"))          ;; appearance

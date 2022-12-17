@@ -23,54 +23,6 @@
 ;; (when (eq window-system 'pgtk)
 ;;   (pgtk-use-im-context t))
 
-;; Inital buffer
-(setq inhibit-startup-screen t)  ;; inhibit startup screen
-(setq initial-buffer-choice t)   ;; scratch instead
-
-;; customize scratch buffer
-(advice-add 'get-scratch-buffer-create :override #'custom-get-scratch-buffer-create)
-(defun custom-get-scratch-buffer-create ()
-  "Return the *scratch* buffer, creating a new one if needed."
-  (let ((scratch (get-buffer-create "*scratch*")))
-    ;; Don't touch the buffer contents or mode unless we know that
-    ;; we just created it.
-    (with-current-buffer "*scratch*"
-      ;; setup scratch to have hook for recreation
-      ;; (make-local-variable 'kill-buffer-query-functions)
-      ;; (add-hook 'kill-buffer-query-functions 'kill-scratch-buffer)
-      (delete-region (point-min) (point-max))
-
-      (setq-local imgs (directory-files "~/.emacs.d/etc/" t directory-files-no-dot-files-regexp))
-      (insert-image (create-image (nth (random (length imgs)) imgs)))
-      (when initial-scratch-message
-        (insert (substitute-command-keys initial-scratch-message))
-        (set-buffer-modified-p nil))
-      (funcall initial-major-mode))
-    scratch))
-
-(defun return-greeting ()
-  "Return time based greeting."
-  (let ((str "")
-        (hour (string-to-number (nth 0 (split-string (nth 3 (split-string (current-time-string))) ":")))))
-    (if (< hour 12)
-        (setq str "Good morning")
-      (if (< hour 5)
-          (setq str "Good afternoon")
-        (setq str "Good evening")
-        )
-      )
-    )
-  )
-
-(setq initial-scratch-message (format "
-
-;; %s, %s
-;; This buffer is for text that is not saved, and for Lisp evaluation.
-;; To execute lisp, type C-x C-e
-
-" (return-greeting) (capitalize (user-full-name))))
-
-
 ;; backup and tmp files
 (setq make-backup-files nil)
 (setq backup-directory-alist
