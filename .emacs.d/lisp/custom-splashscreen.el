@@ -35,7 +35,7 @@
         (hour (string-to-number (nth 0 (split-string (nth 3 (split-string (current-time-string))) ":")))))
     (if (< hour 12)
         (setq str "Good morning")
-      (if (< hour 5)
+      (if (< hour 17)
           (setq str "Good afternoon")
         (setq str "Good evening")))))
 
