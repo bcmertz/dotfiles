@@ -10,7 +10,6 @@
   (define-key python-mode-map (kbd "<backtab>") #'completion-at-point))
 
 ;; (use-package lsp-pyright
-;;   :ensure t
 ;;   :hook (python-mode . (lambda ()
 ;;                           (require 'lsp-pyright)
 ;;                           (lsp))))  ; or lsp-deferred

@@ -6,21 +6,21 @@
 ;;;
 ;;; Code:
 
+;; counsel
+(use-package counsel :defer t)
+
 ;; code navigation
 (use-package avy
-  :ensure t
   :bind (("M-g" . avy-goto-char)    ;; go to char
          ("M-l" . avy-goto-line)))  ;; go to line
 
 (use-package swiper
   :after ivy
-  :ensure t
   :bind (("C-s" . swiper)
          ("C-r" . swiper)))
 
 ;; generic completion frontend
 (use-package ivy
-  :ensure t
   :defer 0.1
   :diminish
   :bind (("C-x b" . ivy-switch-buffer)
@@ -53,7 +53,6 @@
 ;; beautify ivy
 ;; pretty but slows down switching bufffers too much
 (use-package ivy-rich
-  :ensure t
   :after ivy
   :init
   (setq ivy-rich-path-style 'abbrev
@@ -95,7 +94,6 @@
 
 ;; slooooow
 ;; (use-package all-the-icons-ivy-rich
-;;   :ensure t
 ;;   :defer t
 ;;   :init (all-the-icons-ivy-rich-mode 1)
 ;;   )
@@ -116,7 +114,6 @@
   )
 
 (use-package projectile
-  :ensure t
   :init
   (projectile-mode +1)
   :config
@@ -177,7 +174,6 @@
 
 ;; Sidebar File navigation
 (use-package neotree ;; C-c C-c makes the focused directory the new root view
-  :ensure t
   :config
   (setq-default neo-show-hidden-files t) ;; Type H to toggle hidden files
   (setq neo-create-file-auto-open nil
@@ -275,14 +271,12 @@ The user is prompted to choose a directory starting with START-DIR."
 (define-key dired-mode-map (kbd "M-s") 'counsel-ag)
 
 (use-package dired-narrow
-  :ensure t
   :bind (:map dired-mode-map
               ("/ /" . dired-narrow)
               ("/ f" . dired-narrow-fuzzy)
               ("/ r" . dired-narrow-regexp)))
 
 (use-package all-the-icons-dired
-  :ensure t
   :diminish
   :hook (dired-mode . all-the-icons-dired-mode)
   :config
@@ -320,7 +314,6 @@ The user is prompted to choose a directory starting with START-DIR."
     (advice-add #'all-the-icons-dired--refresh :override #'my-all-the-icons-dired--refresh)))
 
 (use-package dired-subtree
-  :ensure t
   :after dired
   :config
   (setq dired-subtree-use-backgrounds nil)
@@ -330,6 +323,6 @@ The user is prompted to choose a directory starting with START-DIR."
 ;; better C-x C-b
 (defalias 'list-buffers 'ibuffer)
 
-(use-package smex :ensure t)
+(use-package smex)
 
 ;;; custom-navigation.el ends here

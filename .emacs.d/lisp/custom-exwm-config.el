@@ -5,7 +5,6 @@
 ;;; Code:
 
 (use-package alert
-  :ensure t
   :commands alert
   :config
   (setq alert-default-style 'notifications))

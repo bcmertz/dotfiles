@@ -7,7 +7,6 @@
 
 (use-package pdf-tools
   :mode ("\\.pdf\\'" . pdf-view-mode)
-  :ensure t
   :defer t
   :bind
   ((:map pdf-view-mode-map

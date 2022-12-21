@@ -20,7 +20,6 @@
     :load-path "~/.config/mu4e")
 
   (use-package mu4e-alert
-    :ensure t
     :after mu4e
     :init
     (mu4e-alert-set-default-style 'libnotify)

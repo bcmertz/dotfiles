@@ -11,6 +11,7 @@
 (setq visible-cursor t)
 (blink-cursor-mode 1)
 
+(use-package doom-themes :defer t)
 ;; load local themes
 (add-to-list 'custom-theme-load-path (concat user-emacs-directory "lisp/themes/"))
 
@@ -93,7 +94,6 @@
 ;; modeline
 (use-package doom-modeline
   ;; :load-path "~/coding/doom-modeline"
-  :ensure t
   :config
   (setq doom-modeline-vcs-max-length 100)
   (setq doom-modeline-persp-icon t)
@@ -103,12 +103,10 @@
   (doom-modeline-buffer-modified ((t (:inherit (error bold) :foreground "#599DD5"))))
   :init (doom-modeline-mode 1))
 
-(use-package hide-mode-line
-  :ensure t)
+(use-package hide-mode-line :defer t)
 
 ;; center 1 buffer
 (use-package centered-window
-  :ensure t
   :config
   (setq cwm-centered-window-width 130)
   (centered-window-mode t))
@@ -182,7 +180,6 @@
 
 (use-package all-the-icons
   :defer t
-  :ensure t
   :config
   (if (not (file-exists-p "~/.local/share/fonts/all-the-icons.ttf"))  (all-the-icons-install-fonts t))
   )

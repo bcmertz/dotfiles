@@ -8,7 +8,7 @@
 (use-package arduino-mode
   :mode "\\.ino\\'"
   :defer t
-  :ensure t)
+  )
 
 ;; make useful keys work in serial terminal
 (eval-after-load 'term

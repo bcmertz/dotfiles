@@ -14,7 +14,6 @@
 ;;;;;;;;;;;;;; completion ;;;;;;;;;;;;;;;
 
 (use-package corfu
-  :ensure t
   :after eldoc
   :config
   (setq corfu-separator ?\s)             ;; Orderless field separator - space
@@ -44,7 +43,6 @@
 
 ;; orderless completion style - allow space separated `search terms'
 (use-package orderless
-  :ensure t
   :init
   ;; Configure a custom style dispatcher (see the Consult wiki)
   ;; (setq orderless-style-dispatchers '(+orderless-dispatch)
@@ -58,7 +56,6 @@
 ;;;;;;;;;;;;;;;;;;;;; syntax highlighting ;;;;;;;;;;;;;;;;;;;;;
 
 (use-package tree-sitter
-  :ensure t
   :config
   ;; activate tree-sitter on any buffer containing code for which it has a parser available
   (global-tree-sitter-mode)
@@ -67,15 +64,12 @@
   (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
 
 (use-package tree-sitter-langs
-  :defer t
-  :ensure t)
-
+  :defer t)
 
 ;;;;;;;;;;;;;;; snippets ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package yasnippet
   :defer t
-  :ensure t
   :init
   (yas-minor-mode)
   :bind
@@ -114,7 +108,6 @@
 
 
 ;; (use-package company-box
-;;   :ensure t
 ;;   :defer t
 ;;   :hook
 ;;   (company-mode . company-box-mode))

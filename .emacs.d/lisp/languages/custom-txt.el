@@ -7,6 +7,7 @@
 ;;; Code:
 
 (use-package text-mode
+  :ensure nil
   :mode "\\.txt\\'"
   :defer t
   :config

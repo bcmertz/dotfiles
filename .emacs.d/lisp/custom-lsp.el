@@ -8,7 +8,6 @@
 
 (use-package eglot
   :defer t
-  :ensure t
   :init
   (defvar lsp-tool "eglot")
   )
@@ -19,7 +18,6 @@
 
 ;; (use-package lsp-mode
 ;;   :defer t
-;;   :ensure t
 ;;   :init
 ;;   (defvar lsp-tool "lsp")
 ;;   ;; (setq lsp-keymap-prefix "C-c l")
@@ -38,13 +36,11 @@
 
 ;; (use-package lsp-ui
 ;;   :defer t
-;;   :ensure t
 ;;   :custom
 ;;   (lsp-ui-sideline-enable nil)
 ;;   )
 
 ;; (use-package company-lsp
-;;   :ensure t
 ;;   :commands company-lsp
 ;;   )
 ;; (push 'company-lsp company-backends)

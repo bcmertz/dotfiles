@@ -5,13 +5,23 @@
 ;;; toggle with M-SPC; leader key is SPC
 ;;;
 ;;; Code:
+
+;; Keystroke Completion
+(use-package which-key
+  :defer t
+  :config
+  ;; (setq which-key-paging-prefixes '(""))
+  ;; (setq which-key-paging-key "<mouse-5>") ;; scroll down
+  ;; (setq which-key-paging-key "<mouse-4>") ;; scroll up
+  ;; (setq which-key-popup-type 'side-window)
+  ;; (setq which-key-side-window-max-height 0.66)
+  (which-key-mode))
+
 (use-package evil
-  :ensure t
   :defer t
   )
 
 (use-package general
-  :ensure t
   :config
   (general-override-mode 1)
   (general-create-definer tyrant-def

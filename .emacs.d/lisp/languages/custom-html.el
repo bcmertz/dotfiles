@@ -8,7 +8,6 @@
 
 (use-package web-mode
   :defer t
-  :ensure t
   :config
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
   (setq web-mode-engines-alist

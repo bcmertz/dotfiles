@@ -5,7 +5,9 @@
 ;;; code folding, syntax based packages, multiple cursors, etc
 ;;;
 ;;; Code:
+
 ;; zap to char using avy
+(use-package avy-zap :defer t)
 (global-set-key (kbd "M-z") 'avy-zap-to-char-dwim)
 
 ;; run comment-line instead of comment-dwim
@@ -80,7 +82,6 @@
 
 ;; (use-package vimish-fold
 ;;   :defer t
-;;   :ensure t
 ;;   :init
 ;;   (vimish-fold-global-mode 1)
 ;;   :config
@@ -96,6 +97,7 @@
 ;; builtin code folding
 ;; https://www.emacswiki.org/emacs/HideShow
 (use-package hs-minor-mode
+  :ensure nil
   :defer t
   :init
   (add-hook 'prog-mode-hook #'hs-minor-mode)
@@ -186,7 +188,6 @@ before calling `er/expand-region' for the first time ARG."
   :type 'string)
 
 (use-package expand-region
-  :ensure t
   :defer t
   :bind("C-;" . er/expand-region)
   )
@@ -245,7 +246,6 @@ before calling `er/expand-region' for the first time ARG."
 ;; Undo tree
 (use-package undo-tree
   :defer t
-  :ensure t
   :bind
   ("C-_" . text-scale-decrease)
   ("C-+" . text-scale-increase)
@@ -308,7 +308,6 @@ before calling `er/expand-region' for the first time ARG."
 ;; Multiple Cursors
 (use-package multiple-cursors
   :defer t
-  :ensure t
   :bind
   ("M-." . mc/mark-next-like-this)
   ("M-," . mc/mark-previous-like-this)
@@ -316,23 +315,12 @@ before calling `er/expand-region' for the first time ARG."
   ("C-c C-e" . mc/edit-lines))
 
 (use-package multiple-cursors-core
+  :ensure nil
   :defer t
   :bind
   (:map mc/keymap
         ("<return>" . nil)
         ("C-<return>" . multiple-cursors-mode)))
-
-;; Keystroke Completion
-(use-package which-key
-  :defer t
-  :ensure t
-  :config
-  ;; (setq which-key-paging-prefixes '(""))
-  ;; (setq which-key-paging-key "<mouse-5>") ;; scroll down
-  ;; (setq which-key-paging-key "<mouse-4>") ;; scroll up
-  ;; (setq which-key-popup-type 'side-window)
-  ;; (setq which-key-side-window-max-height 0.66)
-  (which-key-mode))
 
 (global-unset-key (kbd "M-<down-mouse-1>"))
 (global-set-key (kbd "M-<mouse-1>") 'mc/add-cursor-on-click)

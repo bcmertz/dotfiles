@@ -38,6 +38,7 @@
         ("C-c r" . github-start-review-at-link)))
 
 (use-package org-indent
+  :ensure nil
   :defer t)
 
 ;; https://orgmode.org/worg/org-contrib/org-protocol.html#org9e2e3ac
@@ -71,7 +72,6 @@
 
 
 (use-package org-roam
-  :ensure t
   :defer t
   :custom
   (org-roam-directory "~/kb/")
@@ -119,7 +119,7 @@
                  (window-height . fit-window-to-buffer)))
   )
 
-(use-package org-roam-protocol)
+(use-package org-roam-protocol :ensure nil)
 
 (defun org-roam-node-insert-immediate (arg &rest args)
   "Create and insert roam node without switching to it."
@@ -161,7 +161,6 @@
 ;; pretty bullets
 (use-package org-bullets
   :defer t
-  :ensure t
   :hook (org-mode . org-bullets-mode))
 
 
@@ -216,7 +215,6 @@
 
 ;; styling modern
 (use-package org-modern
-  :ensure t
   :defer t
   :config
   (setq org-modern-block t)
@@ -254,7 +252,6 @@
 
 
 (use-package org-present
-  :ensure t
   :defer t)
 
 (eval-after-load "org-present"
@@ -304,7 +301,6 @@
 
 (use-package htmlize
   :defer t
-  :ensure t
   )
 
 
