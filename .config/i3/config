@@ -65,6 +65,7 @@ for_window [class="Floating st"] floating enable resize set 2400 750, move posit
 for_window [class="Gsimplecal"] move position 1250 50
 for_window [class="Xarchiver"] floating enable
 for_window [class="Gpick"] floating enable
+for_window [class="Pavucontrol"] floating enable resize set 1170 610
 for_window [class="Progress"] floating enable
 for_window [class="File Upload"] floating enable
 for_window [class="PCSX2"] floating enable
