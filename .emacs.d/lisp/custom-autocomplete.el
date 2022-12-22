@@ -1,15 +1,14 @@
-;;; custom-autocomplete.el --- autocomplete configuration
+;;; custom-completion.el --- completion configuration
 ;;;
 ;;; Commentary:
 ;;;
-;;; autocompletion with builtin completion (completion-at-point)
-;;; company mode and yasnippet
+;;; completion, documentation, and yasnippet
 ;;;
 ;;; Code:
 
 (setq completion-ignore-case t)
 (setq tab-always-indent t)
-(global-set-key [backtab] 'completion-at-point) ;; backtab triggers autocomplete
+(global-set-key [backtab] 'completion-at-point) ;; backtab triggers completion
 
 ;;;;;;;;;;;;;; completion ;;;;;;;;;;;;;;;
 
@@ -100,10 +99,10 @@
 ;;   (progn
 ;;     (global-company-mode)
 ;;     (setq company-tooltip-limit 20)                         ; bigger popup window
-;;     (setq company-idle-delay nil)                           ; don't autocomplete on typing, backtab instead
-;;     ;; (setq company-idle-delay .3)  			     ; decrease delay before autocompletion popup shows
+;;     (setq company-idle-delay nil)                           ; don't completion on typing, backtab instead
+;;     ;; (setq company-idle-delay .3)  			     ; decrease delay before completion popup shows
 ;;     ;;(setq company-echo-delay 0)                           ; remove annoying blinking
-;;     ;;(setq company-begin-commands '(self-insert-command))  ; start autocompletion after typing, if we want to ignore our special tab key we bind below
+;;     ;;(setq company-begin-commands '(self-insert-command))  ; start completion after typing, if we want to ignore our special tab key we bind below
 ;;     ))
 
 
@@ -113,9 +112,9 @@
 ;;   (company-mode . company-box-mode))
 
 ;; ;; (global-set-key [tab] 'tab-indent-or-complete)
-;; (global-set-key [backtab] 'company-complete-common) ;; backtab triggers autocomplete
+;; (global-set-key [backtab] 'company-complete-common) ;; backtab triggers completion
 
-;; useful if using tab for expanding autocomplete and indent
+;; useful if using tab for expanding completion and indent
 ;; https://www.emacswiki.org/emacs/CompanyMode#toc11
 ;; (defun check-expansion ()
 ;;   (save-excursion
@@ -142,4 +141,4 @@
 
 
 
-;;; custom-autocomplete.el ends here
+;;; custom-completion.el ends here
