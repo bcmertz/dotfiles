@@ -124,11 +124,14 @@
   (setq projectile-project-search-path '("~/coding/"))
   (setq projectile-enable-caching t)
   (setq projectile-indexing-method 'native)
+  (which-key-add-key-based-replacements "C-c p P" "Projectile rediscover projects")
   :bind (:map projectile-mode-map
               ("s-p" . projectile-command-map)
               ("C-c p" . projectile-command-map)
               ("C-c p F" . projectile-find-file-refresh-cache)
-              ))
+              ("C-c p P" . (lambda () (interactive)
+                           (projectile-cleanup-known-projects)
+                           (projectile-discover-projects-in-search-path)))))
 
 ;; perspective navigation
 (use-package perspective
