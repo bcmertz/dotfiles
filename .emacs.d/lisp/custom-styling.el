@@ -200,6 +200,20 @@
 (global-set-key (kbd "C-c t h") 'toggle-hl-line)
 
 
+;; describe char face at mouse click
+;; from https://emacs.stackexchange.com/a/35449
+;; based on: https://emacs.stackexchange.com/a/19585/13444
+(defun my-describe-char-at-mouse-click (click-event)
+  "`describe-char' at CLICK-EVENT's position, CLICK-EVENT should be a mouse-click event."
+  (interactive "e")
+  (run-hooks 'mouse-leave-buffer-hook)
+  (let ((pos (cadr (event-start click-event))))
+    (describe-char pos)))
+
+(global-set-key (kbd "C-h <down-mouse-1>")
+                #'my-describe-char-at-mouse-click)
+
+
 ;; truncate long lines l/r horizontal scrolling
 (set-default 'truncate-lines t)
 (add-hook 'text-mode-hook (lambda () (setq truncate-lines nil)))
