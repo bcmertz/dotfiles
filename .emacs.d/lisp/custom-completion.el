@@ -21,6 +21,12 @@
   ;; Configure SPC for separator insertion, plays nicely with orderless for completion
   (:map corfu-map ("SPC" . corfu-insert-separator))
   :init
+  (add-to-list 'load-path
+               (expand-file-name "straight/build/corfu/extensions"
+                                 straight-base-dir))
+  (require 'corfu-popupinfo)
+  (require 'corfu-history)
+
   (global-corfu-mode)
   (corfu-popupinfo-mode)
   (corfu-history-mode)
