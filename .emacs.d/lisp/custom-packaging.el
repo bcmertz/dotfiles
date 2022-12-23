@@ -1,12 +1,18 @@
-;;; custom-packaging.el --- configure libraries and packages
+;;; custom-packaging.el --- configure package management
 ;;;
 ;;; Commentary:
 ;;;
-;;; package management
+;;; package management with straight and use-package
 ;;;
 ;;; Code:
 
+;; setup lib path
+(add-to-list 'load-path (expand-file-name "lisp/lib" user-emacs-directory))
 
+;; don't create *straight-process* buffer
+(setq straight--process-log nil)
+
+;; bootstrap straight
 (defvar bootstrap-version)
 (let ((bootstrap-file
        (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
@@ -20,10 +26,13 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
+;; use use-package
 (straight-use-package 'use-package)
+;; automatically ensure every package exists (like :ensure or :straight)
 (setq straight-use-package-by-default t)
 
-;; Packages and repository management
+
+;; DEPRECATED Packages and repository management
 ;; (require 'package)
 
 ;; (setq package-archives '(("melpa" . "https://melpa.org/packages/")
