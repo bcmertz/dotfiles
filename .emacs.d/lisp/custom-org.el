@@ -38,7 +38,7 @@
         ("C-c r" . github-start-review-at-link)))
 
 (use-package org-indent
-  :ensure nil
+  :straight nil
   :defer t)
 
 ;; https://orgmode.org/worg/org-contrib/org-protocol.html#org9e2e3ac
@@ -119,7 +119,7 @@
                  (window-height . fit-window-to-buffer)))
   )
 
-(use-package org-roam-protocol :ensure nil)
+(use-package org-roam-protocol :straight nil)
 
 (defun org-roam-node-insert-immediate (arg &rest args)
   "Create and insert roam node without switching to it."
@@ -290,7 +290,7 @@
 ;; ;; use org-present instead
 ;; (use-package ox-reveal
 ;;   :defer t
-;;   :ensure ox-reveal
+;;   :straight ox-reveal
 ;;   )
 ;; (setq org-reveal-root
 ;;       ;; "https://cdnjs.com/libraries/reveal.js/3.6.0"

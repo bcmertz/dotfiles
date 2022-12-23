@@ -97,7 +97,7 @@
 ;; builtin code folding
 ;; https://www.emacswiki.org/emacs/HideShow
 (use-package hs-minor-mode
-  :ensure nil
+  :straight nil
   :defer t
   :init
   (add-hook 'prog-mode-hook #'hs-minor-mode)
@@ -315,7 +315,7 @@ before calling `er/expand-region' for the first time ARG."
   ("C-c C-e" . mc/edit-lines))
 
 (use-package multiple-cursors-core
-  :ensure nil
+  :straight nil
   :defer t
   :bind
   (:map mc/keymap
@@ -336,7 +336,7 @@ before calling `er/expand-region' for the first time ARG."
 
 ;; builtin autoreverting
 (use-package autorevert
-  :ensure nil
+  :straight nil
   :config
   (setq auto-revert-interval 2)
   (setq auto-revert-check-vc-info t)
