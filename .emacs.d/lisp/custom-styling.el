@@ -96,7 +96,8 @@
   ;; :load-path "~/coding/doom-modeline"
   :config
   (setq doom-modeline-vcs-max-length 100)
-  (setq doom-modeline-persp-icon t)
+  ;; lsp
+  (setq doom-modeline-lsp nil)
   :custom-face
   ;; (mode-line ((t (:foreground "#D8DEE8" :background "#353645"))))
   ;; (mode-line-inactive ((t (:background "#181A1F"))))
