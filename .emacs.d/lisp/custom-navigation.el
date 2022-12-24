@@ -151,6 +151,8 @@
   (setq persp-sort 'created)
   (persp-mode)
   :config
+  ;; dont show modeline string
+  (setq persp-show-modestring nil)
   ;; TODO figure out why restoring expects a directory
   (setq persp-state-default-file "~/.emacs.d/save-perspective")
   (add-hook 'kill-emacs-hook #'persp-state-save)
@@ -159,6 +161,16 @@
   (persp-add-buffer-to-frame-global "*Messages*")
   )
 
+(defun my-show-persp-modestring ()
+  "Show persp modestring."
+  (if (< 1 (length (persp-names)))
+      (setq persp-show-modestring t)
+    (setq persp-show-modestring nil)
+    )
+  )
+
+(add-hook 'persp-created-hook #'my-show-persp-modestring)
+(add-hook 'persp-killed-hook #'my-show-persp-modestring)
 
 ;; stateful window management
 (use-package winner
