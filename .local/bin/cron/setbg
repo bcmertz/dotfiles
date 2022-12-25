@@ -4,55 +4,38 @@
 
 global_cfg=$HOME/.local/bin/global_cfg
 
-filename=''
+filepath=''
 same='false'
 
-# parse flags and or filename
+# parse flags and or filepath
 while getopts 'sf:' flag; do
     case "${flag}" in
         s) same='true';;
-        f) filename="${OPTARG}";;
+        f) filepath="${OPTARG}";;
     esac
 done
 
 
-# get filename of current wallpaper
+# get filepath of current wallpaper
 # TODO: parse non ~/.local/share/wallpaper/ directory images
 # example - /usr/share/backgrounds/
-p=$(cat $HOME/.fehbg | cut -d'/' -f7)
-previous=${p::-2} # remove trailing '
+previous=$(cat $HOME/.fehbg | awk '{print $4}' | cut -d"'" -f2)
 
-if [ "$filename" = "" -a "$same" = "false" ]; then
+if [ "$filepath" = "" -a "$same" = "false" ]; then
     # if image not exclicitly specified get different random image
-    filename=$(ls ~/.local/share/wallpaper/ | shuf -n 1)
+    filepath=$(find ~/.local/share/wallpaper/ -type f | shuf -n 1)
     # if we choose the previously used wallpaper
-    while [ $filename = $previous ]
+    while [ $filepath = $previous ]
     do
-        filename=$(ls ~/.local/share/wallpaper/ | shuf -n 1)
+        filepath=$(find ~/.local/share/wallpaper/ -type f | shuf -n 1)
     done
 elif [ "$same" == "true" ]; then
     # if same flag is passed in dont change the wallpaper
     #
     # idk why this hack is necessary for feh to properly set the correct file but it is
-    # filename=$previous would be desireable but it fails for some reason
-    filename=$(echo $previous)
+    # filepath=$previous would be desireable but it fails for some reason
+    filepath=$(echo $previous)
 fi
-
-# default to user wallpaper dir
-default="$HOME/.local/share/wallpaper/"
-# there are two possibilities
-# 1 - a full path is given and we just use the filename given which is really the entire path
-# 2 - a filename but no path is given so we default to the wallpaper dir
-filepath=$filename
-if [ ! -f "$filename" ]; then
-    # strip file path and just use basename
-    # we dont use this anymore so we can set non local/share/wallpaper wallpapers
-    # filename=$(basename $filename)
-
-    # if not a valid path, then use default path
-    filepath="$HOME/.local/share/wallpaper/$filename"
-fi
-
 
 case ${SESSION} in
     sway)
