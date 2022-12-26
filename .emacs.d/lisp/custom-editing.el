@@ -123,17 +123,23 @@
 
 ;;;;;;;;;;;;;;;; text selection ;;;;;;;;;;;;;;;
 
-(defun move-to-region-beginning ()
+(defun jump-to-region-beginning ()
   "Move cursor to end of active region if there is one."
   (interactive "")
   (if (use-region-p)
-      (goto-char (region-beginning))))
+      (progn
+        (goto-char (region-beginning))
+        (keyboard-quit))
+    ))
 
-(defun move-to-region-end ()
+(defun jump-to-region-end ()
   "Move cursor to end of active region if there is one."
   (interactive "")
   (if (use-region-p)
-      (goto-char (region-end))))
+      (progn
+        (goto-char (region-end))
+        (keyboard-quit))
+    ))
 
 (advice-add 'er/prepare-for-more-expansions-internal :override #'er-custom/prepare-for-more-expansions-internal)
 
@@ -151,9 +157,9 @@
       (setq msg (concat msg (format ", %s to reset" expand-region-reset-fast-key)))
       (push (cons expand-region-reset-fast-key '(er/expand-region 0)) bindings))
     (setq msg (concat msg (format ", > to jump end" expand-region-eor-fast-key)))
-    (push (cons expand-region-eor-fast-key '(move-to-region-end)) bindings)
+    (push (cons expand-region-eor-fast-key '(jump-to-region-end)) bindings)
     (setq msg (concat msg (format ", < to jump beginning" expand-region-bor-fast-key)))
-    (push (cons expand-region-bor-fast-key '(move-to-region-beginning)) bindings)
+    (push (cons expand-region-bor-fast-key '(jump-to-region-beginning)) bindings)
     (cons msg bindings)))
 
 (advice-add 'er/expand-region :override #'er-custom/expand-region)
@@ -174,7 +180,7 @@ before calling `er/expand-region' for the first time ARG."
       (when (eq 'early-exit (er--expand-region-1))
         (setq arg 0)))
     (when (and expand-region-fast-keys-enabled
-               (not (memq last-command '(er/expand-region er/contract-region move-to-region-end move-to-region-beginning))))
+               (not (memq last-command '(er/expand-region er/contract-region jump-to-region-end jump-to-region-beginning))))
       (er/prepare-for-more-expansions))))
 
 (defcustom expand-region-eor-fast-key "."
