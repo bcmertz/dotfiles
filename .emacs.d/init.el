@@ -29,7 +29,7 @@
 
 (measure-time(load "custom-splashscreen.el"))     ;; splash-screen
 (measure-time(load "custom-general.el"))          ;; general configuration
-(measure-time(load "custom-evil-keymap.el"))      ;; vim emulation; toggle evil with M-SPC; SPC is leader key
+(measure-time(load "custom-keybindings.el"))      ;; evil, suggestions
 (measure-time(load "custom-styling.el"))          ;; appearance
 (measure-time(load "custom-completion.el"))       ;; completion && snippets
 (measure-time(load "custom-navigation.el"))       ;; navigating projects and code
