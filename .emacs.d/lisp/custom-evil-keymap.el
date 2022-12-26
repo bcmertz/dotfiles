@@ -6,6 +6,9 @@
 ;;;
 ;;; Code:
 
+;; bind-key
+(use-package bind-key)
+
 ;; Keystroke Completion
 (use-package which-key
   :defer t

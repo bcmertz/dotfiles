@@ -305,22 +305,13 @@ before calling `er/expand-region' for the first time ARG."
 (global-set-key [(control up)] 'move-lines-up)
 (global-set-key [(control down)] 'move-lines-down)
 
-;; unbind all xref keys
 ;; TODO figure out what to use xref with
-;; (global-set-key (kbd "M-.") nil)
-;; (global-set-key (kbd "M-,") nil)
-;; (global-set-key (kbd "C-M-,") nil)
-;; (global-set-key (kbd "C-M-.") nil)
-;; (global-set-key (kbd "M-?") nil)
-;; (global-set-key (kbd "C-x 5 .") nil)
-;; (global-set-key (kbd "C-x 4 .") nil)
-;; (setq xref--transient-buffer-mode-map nil)
-;; (setq xref--xref-buffer-mode-map nil)
+;; xref-idk lol
 
 ;; Multiple Cursors
 (use-package multiple-cursors
   :defer t
-  :bind
+  :bind*
   ("M-." . mc/mark-next-like-this)
   ("M-," . mc/mark-previous-like-this)
   ("C-c M-." . mc/mark-all-like-this)
