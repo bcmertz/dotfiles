@@ -6,7 +6,7 @@
 ;;;
 ;;; Code:
 
-;; bind-key
+;; bind-key - comes with use-package
 (use-package bind-key)
 
 ;; Keystroke Completion
