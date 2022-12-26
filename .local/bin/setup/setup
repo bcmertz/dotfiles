@@ -56,6 +56,9 @@ setuppass || warn "failed to setup gpg / passwords"
 # use our local passmenu
 sudo rm /usr/bin/passmenu
 
+# setup power management
+sudo systemctl enable --new tlp.service
+
 # setup crons
 crontab $HOME/.local/bin/cron/crontabbackup.txt || warn "failed to create setup cron"
 sudo systemctl enable --now cronie.service  || warn "failed to enable cron service"
