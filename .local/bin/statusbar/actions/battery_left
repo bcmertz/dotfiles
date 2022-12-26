@@ -2,4 +2,4 @@
 #
 # battery left
 
-notify-send "⚡ Full 🔌 Charging 🔋 Discharging"
+xfce4-power-manager-settings
