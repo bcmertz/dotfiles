@@ -23,7 +23,7 @@ screenlock "start"
 dunst &                # notifications
 clipmenud &            # clipmenu daemon
 unclutter &            # get rid of mouse
-xfce4-power-manager &  # power management
+xfce4-power-manager --daemon &  # power management
 setxkbmap -layout us,ir -option grp:alts_toggle & # set keyboards
 oled-linux &                        # ugh
 /usr/bin/emacs --daemon=term &               # terminal emacs daemon
