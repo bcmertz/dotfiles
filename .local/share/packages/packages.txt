@@ -353,6 +353,7 @@ thunar
 thunar-volman
 tldr
 tlp
+tlpui
 torbrowser-launcher
 touche
 touchegg
