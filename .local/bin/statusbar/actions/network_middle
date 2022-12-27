@@ -2,4 +2,10 @@
 #
 # network middle
 
-sudo netstat --continuous -atupn | grep -E 'recv|ESTABLISHED'
+function _list_stats {
+    sudo netstat --continuous -atupn  | grep -P 'Recv|ESTABLISHED'
+}
+
+export -f _list_stats
+
+fullscreen _list_stats
