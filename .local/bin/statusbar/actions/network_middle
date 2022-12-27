@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# network middle
+
+sudo netstat --continuous -atupn | grep -E 'recv|ESTABLISHED'

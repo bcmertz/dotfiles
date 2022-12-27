@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# network left
+
+nm-connection-editor
