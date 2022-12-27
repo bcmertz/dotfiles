@@ -9,8 +9,7 @@
 (use-package vterm
   :defer t
   :bind*
-  (("C-<return>" . vterm)
-   ("C-S-<return>" . vterm-other-window)))
+  (("C-<return>" . vterm)))
 
 
 ;;; custom-terminal.el ends here
