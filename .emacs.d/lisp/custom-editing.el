@@ -6,6 +6,9 @@
 ;;;
 ;;; Code:
 
+;; reopen root files with sudo-edit
+(reopen-as-root-mode)
+
 ;; zap to char using avy
 (use-package avy-zap :defer t)
 (global-set-key (kbd "M-z") 'avy-zap-to-char-dwim)

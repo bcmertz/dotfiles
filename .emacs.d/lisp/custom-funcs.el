@@ -207,6 +207,86 @@ Cancels itself, if this buffer was killed."
                       :matcher #'counsel--find-file-matcher))
       (find-file (concat "/sudo:root@localhost:" file)))))
 
+(defun already-root-p ()
+  (let ((remote-method (file-remote-p default-directory 'method))
+        (remote-user (file-remote-p default-directory 'user)))
+    (and remote-method
+         (or (member remote-method '("sudo" "su" "ksu" "doas"))
+             (string= remote-user "root")))))
+
+(defun find-alternate-file-as-root (filename)
+  "Wraps `find-alternate-file' with opening FILENAME as root."
+  (let ((remote-method (file-remote-p default-directory 'method))
+        (remote-host (file-remote-p default-directory 'host))
+        (remote-localname (file-remote-p filename 'localname)))
+    (find-alternate-file (format "/%s:root@%s:%s"
+                                 (or remote-method (if (executable-find "doas")
+						       "doas"
+						     "sudo"))
+                                 (or remote-host "localhost")
+                                 (or remote-localname filename)))))
+
+;; from crux.el
+(defun file-owner-uid (filename)
+  "Return the UID of the FILENAME as an integer.
+See `file-attributes' for more info."
+  (nth 2 (file-attributes filename 'integer)))
+
+;; from crux.el
+(defun file-owned-by-user-p (filename)
+  "Return t if file FILENAME is owned by the currently logged in user."
+  (equal (file-owner-uid filename)
+         (user-uid)))
+
+;; from crux.el
+(defun reopen-as-root ()
+  "Find file as root if necessary.
+
+Meant to be used as `find-file-hook'.
+See also `reopen-as-root-mode'."
+  (unless (or (tramp-tramp-file-p buffer-file-name)
+              (derived-mode-p 'dired-mode)
+              (not (file-exists-p (file-name-directory buffer-file-name)))
+              (file-writable-p buffer-file-name)
+              (file-owned-by-user-p buffer-file-name))
+    (find-alternate-file-as-root buffer-file-name)))
+
+;; from crux.el
+(define-minor-mode reopen-as-root-mode
+  "Automatically reopen files as root if we can't write to them
+as the current user."
+  :global t
+  (if reopen-as-root-mode
+      (add-hook 'find-file-hook #'reopen-as-root)
+    (remove-hook 'find-file-hook #'reopen-as-root)))
+
+;; from crux.el
+(defun sudo-edit (&optional arg)
+  "Edit currently visited file as root.
+
+With a prefix ARG prompt for a file to visit.
+Will also prompt for a file to visit if current
+buffer is not visiting a file."
+  (interactive "P")
+  (if (or arg (not buffer-file-name))
+      (let ((remote-method (file-remote-p default-directory 'method))
+            (remote-host (file-remote-p default-directory 'host))
+            (remote-localname (file-remote-p default-directory 'localname)))
+        (find-file (format "/%s:root@%s:%s"
+                           (or remote-method (if (executable-find "doas")
+						       "doas"
+						     "sudo"))
+                           (or remote-host "localhost")
+                           (or remote-localname
+                               (read-file-name "Find file (as root): ")))))
+
+    (if (already-root-p)
+        (message "Already editing this file as root.")
+      (let ((place (point)))
+        (find-alternate-file-as-root buffer-file-name)
+        (goto-char place)))))
+
+
 ;; refresh ewal theme
 (defun refresh-theme ()
   "Refresh the theme based on global config of whether to use pywal colors for Emacs."
@@ -328,6 +408,20 @@ With argument, do this that many times."
       (delete-file old-location) ;; removes from cache
       (setq recentf-list (delete old-location recentf-list)))))
 
+;; from crux.el
+(defun delete-file-and-buffer ()
+  "Kill the current buffer and deletes the file it is visiting."
+  (interactive)
+  (let ((filename (buffer-file-name)))
+    (when filename
+      (if (vc-backend filename)
+          (vc-delete-file filename)
+        (when (y-or-n-p (format "Are you sure you want to delete %s? " filename))
+          (delete-file filename delete-by-moving-to-trash)
+          (message "Deleted file %s" filename)
+          (kill-buffer))))))
+
+
 ;; source: http://steve.yegge.googlepages.com/my-dot-emacs-file
 (defun rename-file-and-buffer (new-name)
   "Renames both current buffer and file it's visiting to NEW-NAME."
@@ -350,6 +444,31 @@ With argument, do this that many times."
            (progn
              (projectile-cache-current-file)
              (delete-file-projectile-remove-from-cache filename))))))))
+
+;; (defun rename-file-and-buffer ()
+;;   "Rename current buffer and if the buffer is visiting a file, rename it too."
+;;   (interactive)
+;;   (when-let* ((filename (buffer-file-name))
+;;               (new-name (or (read-file-name "New name: " (file-name-directory filename) nil 'confirm)))
+;;               (containing-dir (file-name-directory new-name)))
+;;     ;; make sure the current buffer is saved and backed by some file
+;;     (when (or (buffer-modified-p) (not (file-exists-p filename)))
+;;       (if (y-or-n-p "Can't move file before saving it.  Would you like to save it now?")
+;;           (save-buffer)))
+;;     (if (get-file-buffer new-name)
+;;         (message "There already exists a buffer named %s" new-name)
+;;       (progn
+;;         (make-directory containing-dir t)
+;;         (cond
+;;          ((vc-backend filename)
+;;           ;; vc-rename-file seems not able to cope with remote filenames?
+;;           (let ((vc-filename (if (tramp-tramp-file-p filename) (tramp-file-local-name filename) filename))
+;;                 (vc-new-name (if (tramp-tramp-file-p new-name) (tramp-file-local-name filename) new-name)))
+;;             (vc-rename-file vc-filename vc-new-name)))
+;;          (t
+;;           (rename-file filename new-name t)
+;;           (set-visited-file-name new-name t t)))))))
+
 
 
 ;; source https://emacs.stackexchange.com/questions/46664/switch-between-horizontal-and-vertical-splitting
