@@ -114,6 +114,8 @@
   ("C-c f d" . hs-show-block)
   ("C-c f a" . hs-show-all)
   ("M-`" . hs-show-all)
+  (:map hs-minor-mode-map
+        ("C-c @" . nil))
   )
 
 ;; WIP tree sitter code folding implementation
