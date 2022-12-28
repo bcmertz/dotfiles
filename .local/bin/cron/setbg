@@ -15,10 +15,7 @@ while getopts 'sf:' flag; do
     esac
 done
 
-
 # get filepath of current wallpaper
-# TODO: parse non ~/.local/share/wallpaper/ directory images
-# example - /usr/share/backgrounds/
 previous=$(cat $HOME/.fehbg | awk '{print $4}' | cut -d"'" -f2)
 
 if [ "$filepath" = "" -a "$same" = "false" ]; then
