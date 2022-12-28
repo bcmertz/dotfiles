@@ -53,6 +53,7 @@
   )
 
 
+
 ;; beautify ivy
 ;; pretty but slows down switching bufffers too much
 (use-package ivy-rich
