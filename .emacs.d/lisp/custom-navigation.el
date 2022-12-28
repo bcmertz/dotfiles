@@ -47,6 +47,7 @@
   (add-to-list 'ivy-ignore-buffers "EGLOT*")
   (add-to-list 'ivy-ignore-buffers "\*Async-native-compile-log\*")
   (add-to-list 'ivy-ignore-buffers "\*Compile-Log\*")
+  (add-to-list 'ivy-ignore-buffers "magit-diff*")
   (add-to-list 'ivy-ignore-buffers "\*straight-process\*")
   )
 
