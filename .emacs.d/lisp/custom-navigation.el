@@ -105,6 +105,7 @@
   :ensure nil
   :config
   (add-to-list 'recentf-exclude (format "%s/\\.emacs.d/elpa/.*" (getenv "HOME")))
+  (add-to-list 'recentf-exclude (format "%s/\\.emacs.d/straight/.*" (getenv "HOME")))
   (recentf-mode +1))
 
 ;; project navigation
