@@ -73,7 +73,7 @@
 (defun flyspell-correct-buffer ()
   "Interactively (ivy) correct buffer."
   (interactive "")
-  (flyspell-correct-move 0 t nil))
+  (flyspell-correct-move 0 t t))
 
 (defun flyspell-correct-region ()
   "Interactively (ivy) correct region."
