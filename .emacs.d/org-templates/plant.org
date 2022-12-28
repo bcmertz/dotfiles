@@ -10,7 +10,11 @@ Common Names  -
 
 * Identification
 
+* Role in Environment
+
 * Uses / Edibility
+
+* Misc.
 
 * Species
 
