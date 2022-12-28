@@ -52,8 +52,6 @@
   (add-to-list 'ivy-ignore-buffers "\*straight-process\*")
   )
 
-
-
 ;; beautify ivy
 ;; pretty but slows down switching bufffers too much
 (use-package ivy-rich
