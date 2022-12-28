@@ -7,7 +7,12 @@
 ;;; Code:
 
 ;; reopen root files with sudo-edit
-(reopen-as-root-mode)
+(use-package reopen-as-root
+  :after tramp
+  :straight nil
+  :defer t
+  :load-path "~/.emacs.d/lisp/lib/reopen-as-root.el"
+  :config (reopen-as-root-mode))
 
 ;; zap to char using avy
 (use-package avy-zap :defer t)
