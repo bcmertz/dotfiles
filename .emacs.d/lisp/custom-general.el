@@ -78,6 +78,7 @@
 (setq display-time-world-time-format "%a, %d %b %I:%M %p %Z")
 
 (use-package openwith
+  :straight nil
   :load-path "~/.emacs.d/lisp/lib/openwith.el" ;; TODO add org specific handler
   :config
   (openwith-mode)
