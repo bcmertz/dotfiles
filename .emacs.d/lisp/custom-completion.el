@@ -35,16 +35,6 @@
   )
 
 
-;;;;;;;;;;;; builtin arglist and variable docstrings info in echo area ;;;;;;;;;;;;;;
-
-(use-package eldoc
-  :config
-  (setq eldoc-idle-delay 0.2)
-  :init
-  (global-eldoc-mode)
-  )
-
-
 ;;;;;;;;;;;;;;;;;;;; Completion styling ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; orderless completion style - allow space separated `search terms'
@@ -54,6 +44,15 @@
         completion-category-defaults nil
         completion-category-overrides '((file (styles . (partial-completion))))))
 
+
+;;;;;;;;;;;; builtin arglist and variable docstrings info in echo area ;;;;;;;;;;;;;;
+
+(use-package eldoc
+  :config
+  (setq eldoc-idle-delay 0.2)
+  :init
+  (global-eldoc-mode)
+  )
 
 
 ;;;;;;;;;;;;;;;;;;;;; syntax highlighting ;;;;;;;;;;;;;;;;;;;;;
