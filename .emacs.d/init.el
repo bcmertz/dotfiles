@@ -32,7 +32,8 @@
 (measure-time(load "custom-keybindings.el"))      ;; evil, suggestions
 (measure-time(load "custom-styling.el"))          ;; appearance
 (measure-time(load "custom-completion.el"))       ;; completion && snippets
-(measure-time(load "custom-navigation2.el"))       ;; navigating projects and code
+(measure-time(load "custom-navigation2.el"))      ;; navigating projects and code
+(measure-time(load "custom-sidebar.el"))          ;; sidebar
 (measure-time(load "custom-editing.el"))          ;; efficient text editing
 (measure-time(load "custom-bidi-text.el"))        ;; rtl and ltr language support
 (measure-time(load "custom-windowing.el"))        ;; buffer management
