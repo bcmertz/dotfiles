@@ -19,6 +19,11 @@
   :bind (("C-s" . swiper)
          ("C-r" . swiper)))
 
+(defun ivy-occur-no-read-only ()
+  "Ignore attempts to make ivy-occur read-only by default."
+  (setq-local inhibit-read-only t))
+(add-hook 'ivy-occur-mode-hook 'ivy-occur-no-read-only)
+
 ;; generic completion frontend
 (use-package ivy
   :defer 0.1
