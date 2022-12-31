@@ -17,6 +17,7 @@
   :config
   (setq corfu-separator ?\s)             ;; Orderless field separator - space
   (setq corfu-popupinfo-delay 0.2)
+  (setq corfu-preview-current nil)       ;; don't fill in selection cursor is on until enter
   :bind
   ;; Configure SPC for separator insertion, plays nicely with orderless for completion
   (:map corfu-map ("SPC" . corfu-insert-separator))
