@@ -23,6 +23,7 @@
   "Ignore attempts to make ivy-occur read-only by default."
   (setq-local inhibit-read-only t))
 (add-hook 'ivy-occur-mode-hook 'ivy-occur-no-read-only)
+(add-hook 'ivy-occur-grep-mode-hook 'ivy-occur-no-read-only)
 
 ;; generic completion frontend
 (use-package ivy
