@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# https://www.thinkwiki.org/wiki/Table_of_thinkpad-acpi_LEDs
+# https://www.shellhacks.com/sudo-echo-to-file-permission-denied/
+#
+# turn off thinkpad leds
+
+
+sudo modprobe -r ec_sys
+sudo modprobe ec_sys write_support=1
+
+# need to use tee to avoid permission issues
+echo 0 | sudo tee /sys/devices/platform/thinkpad_acpi/leds/tpacpi\:\:lid_logo_dot/brightness
+echo 0 | sudo tee /sys/devices/platform/thinkpad_acpi/leds/tpacpi\:\:power/brightness
