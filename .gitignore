@@ -57,6 +57,7 @@
 !.congig/ranger/*
 !.config/waybar/*
 !.config/calibre/*
+!.config/systemd/*
 !.config/apparmor/*
 !.config/touchegg/touchegg.conf
 !.config/newsboat/*

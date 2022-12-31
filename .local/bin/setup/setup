@@ -80,6 +80,10 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 sudo ln -s ~/.config/X11/40-libinput.conf /etc/X11/xorg.conf.d/
 sudo systemctl enable --now touchegg.service || warn "failed to setup touchegg service"
 
+# turn off annoying thinkpad leds
+sudo ln -s ~/.config/systemd/toggle-leds.service /etc/systemd/system/toggle-leds.service
+sudo systemctl enable --now toggle-leds.service
+
 # libinput gestures - add user to input group
 sudo gpasswd -a $USER input
 

@@ -1,0 +1,8 @@
+[Unit]
+Description=toggles off annoying thinkpad leds
+
+[Service]
+ExecStart=/home/leah/.local/bin/thinkpad-leds
+
+[Install]
+WantedBy=multi-user.target
