@@ -29,8 +29,8 @@
   :defer 0.1
   :diminish
   :bind (("C-x b" . ivy-switch-buffer)
+         ;; "M-o" . Additional actions when using ivy-posframe
          ;; ("C-x B" . ivy-switch-buffer-other-window)
-
          (:map ivy-minibuffer-map
                ("C-c C-r" . ivy-resume)
                ("C-c C-o" . ivy-occur) ;; open list in buffer
