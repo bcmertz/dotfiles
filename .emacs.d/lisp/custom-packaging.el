@@ -6,9 +6,6 @@
 ;;;
 ;;; Code:
 
-;; setup lib path
-(add-to-list 'load-path (expand-file-name "lisp/lib" user-emacs-directory))
-
 ;; don't create *straight-process* buffer
 (setq straight--process-log nil)
 
