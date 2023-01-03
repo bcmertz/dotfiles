@@ -7,9 +7,10 @@
 ;;; Code:
 (setq gc-cons-threshold most-positive-fixnum) ; Don't gc on startup
 
+;; load paths
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "lisp/languages" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "lisp/lib" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "lisp/languages" user-emacs-directory))
 
 ;; debug startup performance / load time using (measure-time(load "custom-module.el"))
 (defmacro measure-time (&rest body)
