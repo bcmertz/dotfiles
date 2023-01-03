@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# volume left
+
+volume=volume
+
+notify-send "$(volume)"
