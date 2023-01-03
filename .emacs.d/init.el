@@ -5,7 +5,6 @@
 ;;; This is my personal config, based heavily on clarete, spacemacs, zamanksy, sam217pa
 ;;;
 ;;; Code:
-(setq gc-cons-threshold most-positive-fixnum) ; Don't gc on startup
 
 ;; load paths
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
