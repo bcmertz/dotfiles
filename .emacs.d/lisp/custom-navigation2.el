@@ -27,8 +27,8 @@
   ;; Tidy shadowed file names
   :hook (rfn-eshadow-update-overlay . vertico-directory-tidy))
 
-;; Sort directories before files
 (defun sort-directories-first (files)
+  "Sort directories before FILES."
   (setq files (vertico-sort-history-length-alpha files))
   (nconc (seq-filter (lambda (x) (string-suffix-p "/" x)) files)
          (seq-remove (lambda (x) (string-suffix-p "/" x)) files)))
