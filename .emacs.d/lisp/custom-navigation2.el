@@ -259,4 +259,7 @@
                            (projectile-cleanup-known-projects)
                            (projectile-discover-projects-in-search-path)))))
 
+;; better C-x C-b
+(defalias 'list-buffers 'ibuffer)
+
 ;;; custom-navigation2.el ends here
