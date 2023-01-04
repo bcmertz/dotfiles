@@ -30,6 +30,12 @@
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 
+(use-package minibuffer
+  :straight nil
+  :config
+  (setq enable-recursive-minibuffers t)    ;; Use the minibuffer whilst in the minibuffer
+  )
+
 ;; confirm we want to exit the garden
 ;; (setq confirm-kill-emacs 'y-or-n-p)
 
