@@ -11,7 +11,7 @@
 (setq visible-cursor t)
 (blink-cursor-mode 1)
 
-(use-package doom-themes :defer t)
+(use-package doom-themes)
 ;; load local themes
 (add-to-list 'custom-theme-load-path (concat user-emacs-directory "lisp/themes/"))
 
