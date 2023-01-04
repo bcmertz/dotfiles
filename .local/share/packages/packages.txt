@@ -231,6 +231,7 @@ mousepad
 mpv
 msmtp
 mtools
+multimarkdown
 mutt
 nano
 nano-syntax-highlighting
