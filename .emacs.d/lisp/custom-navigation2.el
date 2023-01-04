@@ -34,10 +34,11 @@
 (use-package vertico-multiform
   :after vertico
   :straight nil
-  :config
-  ;; Turn off vertico-posframe for C-s / C-r
-  (setq vertico-multiform-commands
-        '((consult-line posframe)))
+  :init (vertico-multiform-mode)
+  ;; :config
+  ;; ;; Turn off vertico-posframe for C-s / C-r
+  ;; (setq vertico-multiform-command
+  ;;       '((consult-line posframe)))
   )
 
 (defun my-vertico-posframe-get-size (buffer)
