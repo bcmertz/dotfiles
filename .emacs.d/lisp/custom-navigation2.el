@@ -226,7 +226,7 @@
 ;; nice to have in the future for cleaning up recent file suggestions
 (use-package recentf
   :defer 1
-  :ensure nil
+  :straight nil
   :config
   (add-to-list 'recentf-exclude (format "%s/\\.emacs.d/elpa/.*" (getenv "HOME")))
   (add-to-list 'recentf-exclude (format "%s/\\.emacs.d/straight/.*" (getenv "HOME")))
