@@ -8,7 +8,69 @@
 
 (use-package vertico
   :init
-  (vertico-mode))
+  (vertico-mode)
+  (add-to-list 'load-path
+               (expand-file-name "straight/build/vertico/extensions"
+                                 straight-base-dir))
+  (require 'vertico-multiform)
+  (require 'vertico-directory)
+  :bind (:map vertico-map
+         ("<next>" . vertico-scroll-up)
+         ("<prior>" . vertico-scroll-down)
+         )
+  )
+
+
+(use-package vertico-directory
+  :after vertico
+  :straight nil
+  ;; More convenient directory navigation commands
+  :bind (:map vertico-map
+              ("/" . vertico-directory-enter)
+              ("DEL" . vertico-directory-delete-char)
+              ("M-DEL" . vertico-directory-delete-word))
+  ;; Tidy shadowed file names
+  :hook (rfn-eshadow-update-overlay . vertico-directory-tidy))
+
+(use-package vertico-multiform
+  :after vertico
+  :straight nil
+  :config
+  ;; Turn off vertico-posframe for C-s / C-r
+  (setq vertico-multiform-commands
+        '((consult-line posframe)))
+  )
+
+(defun my-vertico-posframe-get-size (buffer)
+  "Set the vertico-posframe size according to the current frame."
+  (let* ((height (or vertico-posframe-height 10))
+         (min-height (min height (+ 1 (length vertico--candidates))))
+         (width (min (or vertico-posframe-width 200) (round (* .75 (frame-width))))))
+    (list
+     :height height
+     :width width
+     :min-height min-height
+     :min-width width)))
+
+(use-package vertico-posframe
+  :after vertico
+  :init
+  (defun start-vertico-posframe ()
+    "Start vertico-posframe."
+    (vertico-posframe-mode)
+    )
+  (apply-if-gui 'start-vertico-posframe)
+  :config
+  (setq vertico-posframe-size-function 'my-vertico-posframe-get-size)
+  )
+
+;; apply differential styling
+(defun my-vertico-posframe-styling ()
+  "Custom vertico posframe styling."
+  (set-face-attribute 'vertico-posframe nil :background (doom-darken (doom-color 'bg-alt) 0.05))
+  ;; (set-face-attribute 'vertico-posframe nil :background "#FFFFFF")
+  )
+(apply-if-gui 'my-vertico-posframe-styling)
 
 (use-package consult
   :bind (;; C-c bindings (mode-specific-map)
