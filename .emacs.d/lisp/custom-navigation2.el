@@ -196,7 +196,7 @@
   (marginalia-mode))
 
 (use-package embark
-  :ensure t
+  :straight t
 
   :bind
   (("C-." . embark-act)         ;; pick some comfortable binding
