@@ -64,13 +64,18 @@
   (setq vertico-posframe-size-function 'my-vertico-posframe-get-size)
   )
 
-;; apply differential styling
-(defun my-vertico-posframe-styling ()
-  "Custom vertico posframe styling."
+;; apply contrast styling
+(defun my-posframe-tweaks (&optional frame)
+  "My posframe tweaks."
+  (unless frame
+    (setq frame (selected-frame)))
   (set-face-attribute 'vertico-posframe nil :background (doom-darken (doom-color 'bg-alt) 0.05))
-  ;; (set-face-attribute 'vertico-posframe nil :background "#FFFFFF")
   )
-(apply-if-gui 'my-vertico-posframe-styling)
+
+(add-hook 'after-make-frame-functions #'my-posframe-tweaks t)
+(my-posframe-tweaks)
+
+
 
 (use-package consult
   :bind (;; C-c bindings (mode-specific-map)
@@ -107,6 +112,7 @@
          ;; ("M-s G" . consult-git-grep)
          ;; ("M-s r" . consult-ripgrep)
          ("C-s" . consult-line)
+         ("C-r" . consult-line)
          ;; ("M-s L" . consult-line-multi)
          ;; ("M-s k" . consult-keep-lines)
          ;; ("M-s u" . consult-focus-lines)
@@ -116,6 +122,7 @@
          ("M-e" . consult-isearch-history)         ;; orig. isearch-edit-string
          ;; ("M-s e" . consult-isearch-history)       ;; orig. isearch-edit-string
          ("C-s" . consult-line)                  ;; needed by consult-line to detect isearch
+         ("C-r" . consult-line)
          ;; ("M-s L" . consult-line-multi)            ;; needed by consult-line to detect isearch
          ;; Minibuffer history
          :map minibuffer-local-map
