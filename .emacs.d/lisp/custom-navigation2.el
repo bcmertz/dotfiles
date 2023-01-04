@@ -10,15 +10,11 @@
   :straight (vertico :files (:defaults "extensions/*")
                      :includes (vertico-multiform
                                 vertico-directory))
-
   :init
   (vertico-mode)
   :bind (:map vertico-map
          ("<next>" . vertico-scroll-up)
-         ("<prior>" . vertico-scroll-down)
-         )
-  )
-
+         ("<prior>" . vertico-scroll-down)))
 
 (use-package vertico-directory
   :after vertico
