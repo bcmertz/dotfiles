@@ -124,7 +124,7 @@
 
   ;; Enable automatic preview at point in the *Completions* buffer. This is
   ;; relevant when you use the default completion UI.
-  :hook (completion-list-mode . consult-preview-at-point-mode)
+  ;; :hook (completion-list-mode . consult-preview-at-point-mode)
 
   ;; The :init configuration is always executed (Not lazy)
   :init
@@ -132,8 +132,8 @@
   ;; Optionally configure the register formatting. This improves the register
   ;; preview for `consult-register', `consult-register-load',
   ;; `consult-register-store' and the Emacs built-ins.
-  (setq register-preview-delay 0.5
-        register-preview-function #'consult-register-format)
+  ;; (setq register-preview-delay 0.5
+        ;; register-preview-function #'consult-register-format)
 
   ;; Optionally tweak the register preview window.
   ;; This adds thin lines, sorting and hides the mode line of the window.
@@ -149,19 +149,19 @@
 
   ;; Optionally configure preview. The default value
   ;; is 'any, such that any key triggers the preview.
-  ;; (setq consult-preview-key 'any)
+  (setq consult-preview-key nil)
   ;; (setq consult-preview-key (kbd "M-."))
   ;; (setq consult-preview-key (list (kbd "<S-down>") (kbd "<S-up>")))
   ;; For some commands and buffer sources it is useful to configure the
   ;; :preview-key on a per-command basis using the `consult-customize' macro.
-  (consult-customize
-   consult-theme :preview-key '(:debounce 0.2 any)
-   consult-ripgrep consult-git-grep consult-grep
-   consult-bookmark consult-recent-file consult-xref
-   consult--source-bookmark consult--source-file-register
-   consult--source-recent-file consult--source-project-recent-file
-   ;; :preview-key (kbd "M-.")
-   :preview-key '(:debounce 0.4 any))
+  ;; (consult-customize
+  ;;  consult-theme :preview-key '(:debounce 0.2 any)
+  ;;  consult-ripgrep consult-git-grep consult-grep
+  ;;  consult-bookmark consult-recent-file consult-xref
+  ;;  consult--source-bookmark consult--source-file-register
+  ;;  consult--source-recent-file consult--source-project-recent-file
+  ;;  ;; :preview-key (kbd "M-.")
+  ;;  :preview-key '(:debounce 0.4 any))
 
   ;; Optionally configure the narrowing key.
   ;; Both < and C-+ work reasonably well.
@@ -181,11 +181,6 @@
                  #'completion--in-region)
                args)))
 
-(use-package vertico-posframe)
-(defun start-vertico-posframe ()
-  "Start vertico-posframe."
-  (vertico-posframe-mode))
-(apply-if-gui 'start-vertico-posframe)
 
 (use-package marginalia
   ;; Either bind `marginalia-cycle' globally or only in the minibuffer
