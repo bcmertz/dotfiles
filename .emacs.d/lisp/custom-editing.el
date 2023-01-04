@@ -69,7 +69,7 @@
 	    (lambda ()
               (set-face-attribute 'sp-show-pair-match-face nil
                                   :foreground "green"
-                                  :background nil
+                                  :background 'unspecified
                                   :weight 'normal
                                   :underline nil ;; "#16A085"
                                   ))))
