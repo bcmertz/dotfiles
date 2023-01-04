@@ -14,6 +14,9 @@
 
 (use-package corfu
   :after eldoc
+  :straight (corfu :files (:defaults "extensions/*")
+                   :includes (corfu-popupinfo
+                              corfu-history))
   :config
   (setq corfu-separator ?\s)             ;; Orderless field separator - space
   (setq corfu-popupinfo-delay 0.2)
@@ -22,12 +25,6 @@
   ;; Configure SPC for separator insertion, plays nicely with orderless for completion
   (:map corfu-map ("SPC" . corfu-insert-separator))
   :init
-  (add-to-list 'load-path
-               (expand-file-name "straight/build/corfu/extensions"
-                                 straight-base-dir))
-  (require 'corfu-popupinfo)
-  (require 'corfu-history)
-
   (global-corfu-mode)
   (corfu-popupinfo-mode)
   (corfu-history-mode)

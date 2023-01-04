@@ -7,13 +7,12 @@
 ;;; Code:
 
 (use-package vertico
+  :straight (vertico :files (:defaults "extensions/*")
+                     :includes (vertico-multiform
+                                vertico-directory))
+
   :init
   (vertico-mode)
-  (add-to-list 'load-path
-               (expand-file-name "straight/build/vertico/extensions"
-                                 straight-base-dir))
-  (require 'vertico-multiform)
-  (require 'vertico-directory)
   :bind (:map vertico-map
          ("<next>" . vertico-scroll-up)
          ("<prior>" . vertico-scroll-down)
