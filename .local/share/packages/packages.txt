@@ -153,8 +153,8 @@ hplip
 htop
 hwdetect
 hwinfo
-i3-gaps
 i3-scrot
+i3-wm
 i3blocks
 inetutils
 inkscape
