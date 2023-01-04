@@ -39,19 +39,18 @@
   :init (vertico-multiform-mode)
   :config
   (setq vertico-multiform-commands
-        '(
-          (consult-line (:not posframe))
+        '((consult-line (:not posframe))
           (t posframe)
           ))
+
+  ;; sort directories first
+  (setq vertico-sort-override-function 'sort-directories-first)
+
+  ;; posframe positioning
   ;; (setq vertico-multiform-commands
   ;;       '((consult-line posframe (vertico-posframe-poshandler . posframe-poshandler-frame-bottom-center))
   ;;         (consult-buffer posframe (vertico-posframe-poshandler . posframe-poshandler-frame-bottom-center))
   ;;         (t posframe (vertico-posframe-poshandler . posframe-poshandler-point-bottom-left-corner))))
-
-  (setq vertico-multiform-categories
-        '(
-          (file (vertico-sort-function . sort-directories-first))
-          ))
   )
 
 (defun my-vertico-posframe-get-size (buffer)
