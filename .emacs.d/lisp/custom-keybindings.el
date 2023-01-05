@@ -41,6 +41,8 @@
              (define-key input-decode-map "\e[1;7B" [(C-M-down)])
              (define-key input-decode-map "\e[1;7C" [(C-M-right)])
              (define-key input-decode-map "\e[1;7D" [(C-M-left)])
+             (define-key input-decode-map "\e[5~" (kbd "<prior>"))
+             (define-key input-decode-map "\e[6~" (kbd "<next>"))
              ;; quick and dirty way to bind C-/ to undo in terminal
              (global-set-key (kbd "C-_") 'undo)
              ))
