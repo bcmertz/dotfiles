@@ -14,7 +14,10 @@
   (vertico-mode)
   :bind (:map vertico-map
          ("<next>" . vertico-scroll-up)
-         ("<prior>" . vertico-scroll-down)))
+         ("<prior>" . vertico-scroll-down))
+  :config
+  (setq vertico-preselect t)
+  )
 
 (use-package vertico-directory
   :after vertico
