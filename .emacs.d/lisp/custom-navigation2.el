@@ -1,4 +1,4 @@
-;;; custom-navigation2.el --- navigation2 configuration
+;;; custom-navigation2.el --- navigation2 configuration -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;
