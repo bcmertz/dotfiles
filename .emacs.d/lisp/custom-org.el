@@ -294,7 +294,7 @@
 ;;   )
 ;; (setq org-reveal-root
 ;;       ;; "https://cdnjs.com/libraries/reveal.js/3.6.0"
-;;       "file:///home/leah/coding/reveal.js"
+;;       "file:///home/reya/coding/reveal.js"
 ;;       )
 ;; (setq org-reveal-mathjax t)
 

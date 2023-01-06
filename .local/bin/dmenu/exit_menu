@@ -32,7 +32,7 @@ case $chosen in
         ;;
 
     logout)
-        pkill -9 -u leah
+        pkill -9 -u reya
         ;;
 
     shutdown)
