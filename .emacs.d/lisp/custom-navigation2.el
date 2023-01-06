@@ -31,18 +31,17 @@
   :init (vertico-multiform-mode)
   :config
   (setq vertico-multiform-commands
-        '(
-	  (password-store-insert posframe grid)
+        '(;; magit should not preselect so we can by default select directory
           (magit-status posframe (vertico-preselect . prompt) (:not grid))
+          ;; no posframe for isearch equivalent so we dont hide text
           (consult-line (:not posframe) (:not grid))
-          (t posframe (:not grid))
-          ;; (file (vertico-map . (("/" . vertico-directory-enter)
-          ;;                       ("DEL" . vertico-directory-delete-char)
-          ;;                       ("M-DEL" . vertico-directory-delete-word))))
+          ;; find file bind / to directory awareness
+          (find-file (lambda (_) (define-key vertico-map "/" #'vertico-directory-enter)) (:not grid) posframe)
+          ;; default posframe, with / unbound
+          (t posframe (lambda (_) (define-key vertico-map "/" #'self-insert-command)) (:not grid))
           ))
 
-  ;; sort directories first
-  (setq vertico-sort-override-function 'sort-directories-first)
+  (setq vertico-sort-override-function 'sort-directories-first)  ;; sort directories first
 
   ;; posframe positioning
   ;; (setq vertico-multiform-commands
@@ -56,7 +55,6 @@
   :straight nil
   ;; More convenient directory navigation commands
   :bind (:map vertico-map
-              ("/" . vertico-directory-enter)
               ("DEL" . vertico-directory-delete-char)
               ("M-DEL" . vertico-directory-delete-word))
   ;; Tidy shadowed file names
