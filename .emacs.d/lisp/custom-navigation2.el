@@ -28,17 +28,16 @@
   :straight nil
   :init (vertico-multiform-mode)
   :config
+  ;; magit should not preselect so we can by default select directory
+  ;; no posframe for isearch equivalent so we dont hide text
   (setq vertico-multiform-commands
-        '(;; magit should not preselect so we can by default select directory
-          (magit-status posframe (vertico-preselect . prompt))
-          ;; no posframe for isearch equivalent so we dont hide text
+        '((magit-status posframe (vertico-preselect . prompt))
           (consult-line (:not posframe))))
+  ;; find file bind / to directory awareness
+  ;; default posframe, with / unbound
   (setq vertico-multiform-categories
-        '(;; find file bind / to directory awareness
-          (file (lambda (_) (define-key vertico-map "/" #'vertico-directory-enter)) posframe)
-          ;; default posframe, with / unbound
-          (t posframe (lambda (_) (define-key vertico-map "/" #'self-insert-command)))
-          ))
+        '((file (lambda (_) (define-key vertico-map "/" #'vertico-directory-enter)) posframe)
+          (t posframe (lambda (_) (define-key vertico-map "/" #'self-insert-command)))))
   ;; sort directories first
   (setq vertico-sort-override-function 'sort-directories-first))
 
