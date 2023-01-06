@@ -45,6 +45,24 @@
   ;;         (t posframe (vertico-posframe-poshandler . posframe-poshandler-point-bottom-left-corner))))
   )
 
+(use-package vertico-directory
+  :after vertico
+  :straight nil
+  ;; More convenient directory navigation commands
+  :bind (:map vertico-map
+              ("/" . vertico-directory-enter)
+              ("DEL" . vertico-directory-delete-char)
+              ("M-DEL" . vertico-directory-delete-word))
+  ;; Tidy shadowed file names
+  :hook (rfn-eshadow-update-overlay . vertico-directory-tidy))
+
+(use-package vertico-grid
+  :after vertico
+  :straight nil
+  :init (vertico-grid-mode)
+  :bind (:map vertico-grid-map (("/" . self-insert-command))
+  ))
+
 (defun my-vertico-posframe-get-size (buffer)
   "Set the vertico-posframe size according to the current frame."
   (let* ((height (or vertico-posframe-height 10))
