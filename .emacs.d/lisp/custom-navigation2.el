@@ -296,11 +296,11 @@ targets."
   :config
   (setq projectile-sort-order 'recentf)
   (setq projectile-completion-system 'auto)
-  ;; (setq projectile-indexing-method 'hybrid)
   (setq projectile-mode-line-prefix " ")
   (setq projectile-project-search-path '("~/coding/"))
   (setq projectile-enable-caching t)
-  (setq projectile-indexing-method 'native)
+  ;; (setq projectile-indexing-method 'hybrid)
+  ;; (setq projectile-indexing-method 'native)
   (which-key-add-key-based-replacements "C-c p P" "Projectile rediscover projects")
   :bind (:map projectile-mode-map
               ("s-p" . projectile-command-map)
@@ -308,16 +308,18 @@ targets."
               ("C-c p F" . projectile-find-file-refresh-cache)
               ("C-c p P" . (lambda () (interactive)
                            (projectile-cleanup-known-projects)
-                           (projectile-discover-projects-in-search-path)))))
-
-(use-package consult-projectile
-  :straight (consult-projectile :type git :host gitlab :repo "OlMon/consult-projectile" :branch "master")
-  :bind (:map projectile-mode-map
-              ("s-p" . projectile-command-map)
-              ("C-c p" . projectile-command-map)
+                           (projectile-discover-projects-in-search-path)))
               ("C-c p p" . consult-projectile-switch-project)
               ("C-c p b" . consult-projectile-switch-to-buffer)
               ("C-c p f" . consult-projectile-find-file)))
+
+(use-package consult-projectile
+  :after consult
+  :after projectile
+  :config
+  (setq consult-projectile-use-projectile-switch-project nil)
+  )
+
 
 ;; better C-x C-b
 (defalias 'list-buffers 'ibuffer)
