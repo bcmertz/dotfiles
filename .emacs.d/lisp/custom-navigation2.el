@@ -66,23 +66,17 @@
 (use-package vertico-posframe
   :after vertico
   :init
-  (defun start-vertico-posframe ()
-    "Start vertico-posframe."
-    (vertico-posframe-mode)
-    )
-  (apply-if-gui 'start-vertico-posframe)
+  (apply-if-gui 'vertico-posframe-mode)
   :config
   (add-hook 'vertico-posframe-mode-hook 'vertico-posframe-cleanup)
-  (setq vertico-posframe-size-function 'my-vertico-posframe-get-size)
-  )
+  (setq vertico-posframe-size-function 'my-vertico-posframe-get-size))
 
 ;; apply contrast styling
 (defun my-posframe-tweaks (&optional frame)
   "My posframe tweaks."
   (unless frame
     (setq frame (selected-frame)))
-  (set-face-attribute 'vertico-posframe nil :background (doom-darken (doom-color 'bg-alt) 0.05))
-  )
+  (set-face-attribute 'vertico-posframe nil :background (doom-darken (doom-color 'bg-alt) 0.05)))
 
 (add-hook 'after-make-frame-functions #'my-posframe-tweaks t)
 (my-posframe-tweaks)
