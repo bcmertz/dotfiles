@@ -12,6 +12,8 @@
 (blink-cursor-mode 1)
 
 (use-package doom-themes)
+(use-package ef-themes)
+
 ;; load local themes
 (add-to-list 'custom-theme-load-path (concat user-emacs-directory "lisp/themes/"))
 
