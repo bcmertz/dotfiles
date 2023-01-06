@@ -32,13 +32,17 @@
   :config
   (setq vertico-multiform-commands
         '(;; magit should not preselect so we can by default select directory
-          (magit-status posframe (vertico-preselect . prompt) (:not grid))
+          (magit-status posframe (vertico-preselect . prompt))
           ;; no posframe for isearch equivalent so we dont hide text
-          (consult-line (:not posframe) (:not grid))
+          (consult-line (:not posframe))
+          ))
+
+  (setq vertico-multiform-categories
+        '(
           ;; find file bind / to directory awareness
-          (find-file (lambda (_) (define-key vertico-map "/" #'vertico-directory-enter)) (:not grid) posframe)
+          (file (lambda (_) (define-key vertico-map "/" #'vertico-directory-enter)) posframe)
           ;; default posframe, with / unbound
-          (t posframe (lambda (_) (define-key vertico-map "/" #'self-insert-command)) (:not grid))
+          (t posframe (lambda (_) (define-key vertico-map "/" #'self-insert-command)))
           ))
 
   (setq vertico-sort-override-function 'sort-directories-first)  ;; sort directories first
@@ -59,13 +63,6 @@
               ("M-DEL" . vertico-directory-delete-word))
   ;; Tidy shadowed file names
   :hook (rfn-eshadow-update-overlay . vertico-directory-tidy))
-
-(use-package vertico-grid
-  :after vertico
-  :straight nil
-  :init (vertico-grid-mode)
-  :bind (:map vertico-grid-map (("/" . self-insert-command))
-  ))
 
 (defun my-vertico-posframe-get-size (buffer)
   "Set the vertico-posframe size according to the current frame."
