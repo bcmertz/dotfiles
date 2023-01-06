@@ -85,6 +85,19 @@ or the current buffer directory."
       )
   )
 
+(defun get-theme-variable-from-palette (var)
+  "Get theme VAR from palette."
+  (let (color)
+    (if (string-match-p (regexp-quote "doom") (format "%s" (car custom-enabled-themes)))
+        (setq color (doom-darken (doom-color var) 0.05))
+      (if (string-match-p (regexp-quote "ef-") (format "%s" (car custom-enabled-themes)))
+          (setq color (car (cdr (assoc var (ef-themes--palette-value (car custom-enabled-themes))))))
+        (setq color 'unspecified)
+        )
+      )
+    color)
+  )
+
 ;; https://www.emacswiki.org/emacs/EmacsAsDaemon#h5o-10
 (defun client-save-kill-emacs(&optional display)
   " This is a function that can bu used to save buffers and
