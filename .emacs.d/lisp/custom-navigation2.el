@@ -16,19 +16,8 @@
          ("<next>" . vertico-scroll-up)
          ("<prior>" . vertico-scroll-down))
   :config
-  (setq vertico-preselect t)
+  (setq vertico-preselect 'first)
   )
-
-(use-package vertico-directory
-  :after vertico
-  :straight nil
-  ;; More convenient directory navigation commands
-  :bind (:map vertico-map
-              ("/" . vertico-directory-enter)
-              ("DEL" . vertico-directory-delete-char)
-              ("M-DEL" . vertico-directory-delete-word))
-  ;; Tidy shadowed file names
-  :hook (rfn-eshadow-update-overlay . vertico-directory-tidy))
 
 (defun sort-directories-first (files)
   "Sort directories before FILES."
