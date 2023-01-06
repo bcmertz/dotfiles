@@ -50,7 +50,7 @@
   (setq initial-scratch-message (format "
 
 ;; %s, %s
-;; This buffer is for text that is not saved, and for Lisp evaluation.
+;;
 ;; To execute lisp, type C-x C-e
 
 " (return-greeting) (capitalize (user-full-name)))))
