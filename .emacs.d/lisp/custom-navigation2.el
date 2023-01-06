@@ -76,9 +76,18 @@
   "My posframe tweaks."
   (unless frame
     (setq frame (selected-frame)))
-  (set-face-attribute 'vertico-posframe nil :background (doom-darken (doom-color 'bg-alt) 0.05)))
+  (if (string-match-p (regexp-quote "doom") (format "%s" (car custom-enabled-themes)))
+      (set-face-attribute 'vertico-posframe nil :background (doom-darken (doom-color 'bg-alt) 0.05))
+    (if (string-match-p (regexp-quote "ef-") (format "%s" (car custom-enabled-themes)))
+          (set-face-attribute 'vertico-posframe nil :background
+                              (car (cdr (assoc 'bg-alt (ef-themes--palette-value (car custom-enabled-themes))))))
+      (set-face-attribute 'vertico-posframe nil :background 'unspecified)
+      )
+    )
+  )
 
 (add-hook 'after-make-frame-functions #'my-posframe-tweaks t)
+(add-hook 'after-load-theme-hook #'my-posframe-tweaks t)
 (my-posframe-tweaks)
 
 
