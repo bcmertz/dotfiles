@@ -27,8 +27,8 @@
   (neo-file-link-face ((t (:inherit fixed-pitch))))
   )
 
-(defun set-neotree-styling ()
-  "Function to style neotree buffer locally."
+(defun set-neotree-settings ()
+  "Function to set neotree settings buffer locally."
   (add-hook 'neotree-mode-hook
 	    (lambda ()
               ;; remove margins
@@ -37,29 +37,24 @@
 
               ;; no modeline
 	      (setq mode-line-format nil)
+              (buffer-face-mode 1))))
 
-              ;; enable variable pitch fonts
-	      (buffer-face-mode 1)
+;; apply if gui our neotree settings
+(apply-if-gui 'set-neotree-settings)
 
-	      ;; ;; locally change the buffer background color
-	      ;; (setq buffer-face-mode-face `(:background "#21252B"))
-	      ;; ;; if we want a fringe set it to a nice color
-	      ;; ;; but only do it locally in neotree buffers
-	      ;; (face-remap-add-relative 'fringe nil
-	      ;;   		       '(:background "#21252B"))
-	      ;; ;; title on neotree
-	      ;; (set-face-attribute 'neo-root-dir-face nil
-	      ;;   	          :box nil
-	      ;;   	          ;; (:line-width 4 :color #21252B) doesn't work for some reason
-	      ;;   	          :background "#21252B")
+(defun set-neotree-styling ()
+  "Set neotree styling."
+  (face-remap-add-relative 'fringe nil :background (get-theme-variable-from-palette 'bg-alt))
+  (buffer-face-set :background (get-theme-variable-from-palette 'bg-alt))
+  (buffer-face-mode 1)
+  (set-face-attribute 'neo-root-dir-face nil :box nil :background (get-theme-variable-from-palette 'bg-alt))
+  (face-remap-add-relative 'hl-line nil :background (get-theme-variable-from-palette 'bg-hl-line))
+  )
 
-              ;; hl line background locally
-	      ;; (face-remap-add-relative 'hl-line nil
-	      ;;   	          :background "#353645") ;; #353645 gray ;; #4C77CB blue
-              )))
+(advice-add 'neotree-show :after #'set-neotree-styling)
 
-;; apply if gui our neotree styling
-(apply-if-gui 'set-neotree-styling)
+
+
 
 ;; The cursor always sits at bol. `+neotree--fix-cursor-h' and
 ;; `+neotree--indent-cursor-a' change that behavior so that the cursor is
