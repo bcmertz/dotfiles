@@ -16,8 +16,7 @@
          ("<next>" . vertico-scroll-up)
          ("<prior>" . vertico-scroll-down))
   :config
-  (setq vertico-preselect 'first)
-  )
+  (setq vertico-preselect 'first))
 
 (defun sort-directories-first (files)
   "Sort directories before FILES."
@@ -34,25 +33,15 @@
         '(;; magit should not preselect so we can by default select directory
           (magit-status posframe (vertico-preselect . prompt))
           ;; no posframe for isearch equivalent so we dont hide text
-          (consult-line (:not posframe))
-          ))
-
+          (consult-line (:not posframe))))
   (setq vertico-multiform-categories
-        '(
-          ;; find file bind / to directory awareness
+        '(;; find file bind / to directory awareness
           (file (lambda (_) (define-key vertico-map "/" #'vertico-directory-enter)) posframe)
           ;; default posframe, with / unbound
           (t posframe (lambda (_) (define-key vertico-map "/" #'self-insert-command)))
           ))
-
-  (setq vertico-sort-override-function 'sort-directories-first)  ;; sort directories first
-
-  ;; posframe positioning
-  ;; (setq vertico-multiform-commands
-  ;;       '((consult-line posframe (vertico-posframe-poshandler . posframe-poshandler-frame-bottom-center))
-  ;;         (consult-buffer posframe (vertico-posframe-poshandler . posframe-poshandler-frame-bottom-center))
-  ;;         (t posframe (vertico-posframe-poshandler . posframe-poshandler-point-bottom-left-corner))))
-  )
+  ;; sort directories first
+  (setq vertico-sort-override-function 'sort-directories-first))
 
 (use-package vertico-directory
   :after vertico
