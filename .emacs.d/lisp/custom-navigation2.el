@@ -31,8 +31,14 @@
   :init (vertico-multiform-mode)
   :config
   (setq vertico-multiform-commands
-        '((consult-line (:not posframe))
-          (t posframe)
+        '(
+	  (password-store-insert posframe grid)
+          (magit-status posframe (vertico-preselect . prompt) (:not grid))
+          (consult-line (:not posframe) (:not grid))
+          (t posframe (:not grid))
+          ;; (file (vertico-map . (("/" . vertico-directory-enter)
+          ;;                       ("DEL" . vertico-directory-delete-char)
+          ;;                       ("M-DEL" . vertico-directory-delete-word))))
           ))
 
   ;; sort directories first
