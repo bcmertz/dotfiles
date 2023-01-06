@@ -271,6 +271,15 @@
                            (projectile-cleanup-known-projects)
                            (projectile-discover-projects-in-search-path)))))
 
+(use-package consult-projectile
+  :straight (consult-projectile :type git :host gitlab :repo "OlMon/consult-projectile" :branch "master")
+  :bind (:map projectile-mode-map
+              ("s-p" . projectile-command-map)
+              ("C-c p" . projectile-command-map)
+              ("C-c p p" . consult-projectile-switch-project)
+              ("C-c p b" . consult-projectile-switch-to-buffer)
+              ("C-c p f" . consult-projectile-find-file)))
+
 ;; better C-x C-b
 (defalias 'list-buffers 'ibuffer)
 
