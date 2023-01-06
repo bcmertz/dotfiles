@@ -37,6 +37,7 @@
   ;; default posframe, with / unbound
   (setq vertico-multiform-categories
         '((file (lambda (_) (define-key vertico-map "/" #'vertico-directory-enter)) posframe)
+          (consult-grep buffer)
           (t posframe (lambda (_) (define-key vertico-map "/" #'self-insert-command)))))
   ;; sort directories first
   (setq vertico-sort-override-function 'sort-directories-first))
@@ -111,11 +112,11 @@
          ("M-g i" . consult-imenu)
          ("M-g I" . consult-imenu-multi)
          ;; M-s bindings (search-map)
-         ;; ("M-s d" . consult-find)
-         ;; ("M-s D" . consult-locate)
-         ;; ("M-s g" . consult-grep)
-         ;; ("M-s G" . consult-git-grep)
-         ;; ("M-s r" . consult-ripgrep)
+         ("M-s d" . consult-find)
+         ("M-s D" . consult-locate)
+         ("M-s g" . consult-grep)
+         ("M-s G" . consult-git-grep)
+         ("M-s s" . consult-ripgrep)
          ("C-s" . consult-line)
          ("C-r" . consult-line)
          ;; ("M-s L" . consult-line-multi)
@@ -181,9 +182,9 @@
   (setq consult-narrow-key "<") ;; (kbd "C-+")
   )
 
-(use-package consult-ag
-  :bind
-  ("M-s" . consult-ag))
+;; (use-package consult-ag
+;;   :bind
+;;   ("M-s" . consult-ag))
 
 ;; Use `consult-completion-in-region' if Vertico is enabled.
 ;; Otherwise use the default `completion--in-region' function.
