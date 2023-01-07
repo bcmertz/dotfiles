@@ -11,7 +11,6 @@
   :config
   (define-key js-mode-map (kbd "M-.") nil)
   (define-key js-mode-map (kbd "C-c C-f") 'js-find-symbol)
-  (company-mode)
   :general
   (tyrant-def js-mode-map
     "mf"  'js-find-symbol)
