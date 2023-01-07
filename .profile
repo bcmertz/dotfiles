@@ -26,6 +26,9 @@ export GTK3_RC_FILES="$HOME/.config/gtk-3.0/gtkrc-3.0"
 # get bash defaults
 source ~/.bashrc
 
+# set coding environment
+[ -f ~/.coderc ] && . ~/.coderc
+
 # choose window manager
 wm=$(wmsel)
 
