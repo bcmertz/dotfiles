@@ -1,3 +1,7 @@
+#!/bin/bash
+#
+# on login
+
 # Go configuration
 export GOPATH=$HOME/coding/go
 export PATH=$PATH:/usr/local/go/bin
