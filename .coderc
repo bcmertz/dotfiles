@@ -43,8 +43,8 @@ export ARDMK_DIR=/usr/share/arduino
 export AVR_TOOLS_DIR=/usr/share/arduino/hardware/archlinux-arduino/avr
 
 # perl
-PATH="~/coding/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="~/coding/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="~/coding/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"~/coding/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=~/coding/perl5"; export PERL_MM_OPT;
+PATH="$HOME/coding/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="$HOME/coding/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="$HOME/coding/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"$HOME/coding/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=$HOME/coding/perl5"; export PERL_MM_OPT;
