@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/leah/.local/share/wallpaper/ivan_car.png",
+    "alpha": "100",
+    "special": {
+        "background": "#0F1F23",
+        "foreground": "#e4e9ef",
+        "cursor": "#e4e9ef"
+    },
+    "colors": {
+        "color0": "#0F1F23",
+        "color1": "#7389A0",
+        "color2": "#92A2B1",
+        "color3": "#B3C5B7",
+        "color4": "#A6B8C5",
+        "color5": "#B7C6D1",
+        "color6": "#CCD7E3",
+        "color7": "#e4e9ef",
+        "color8": "#9fa3a7",
+        "color9": "#7389A0",
+        "color10": "#92A2B1",
+        "color11": "#B3C5B7",
+        "color12": "#A6B8C5",
+        "color13": "#B7C6D1",
+        "color14": "#CCD7E3",
+        "color15": "#e4e9ef"
+    }
+}

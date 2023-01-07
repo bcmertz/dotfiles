@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/leah/.local/share/wallpaper/csh_htlt_red.png",
+    "alpha": "100",
+    "special": {
+        "background": "#121011",
+        "foreground": "#c4b8b5",
+        "cursor": "#c4b8b5"
+    },
+    "colors": {
+        "color0": "#121011",
+        "color1": "#665856",
+        "color2": "#893D31",
+        "color3": "#984234",
+        "color4": "#AE4838",
+        "color5": "#C14E3B",
+        "color6": "#8D6E69",
+        "color7": "#c4b8b5",
+        "color8": "#89807e",
+        "color9": "#665856",
+        "color10": "#893D31",
+        "color11": "#984234",
+        "color12": "#AE4838",
+        "color13": "#C14E3B",
+        "color14": "#8D6E69",
+        "color15": "#c4b8b5"
+    }
+}

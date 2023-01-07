@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/leah/.local/share/wallpaper/ivan_hill.png",
+    "alpha": "100",
+    "special": {
+        "background": "#131618",
+        "foreground": "#e3e8ec",
+        "cursor": "#e3e8ec"
+    },
+    "colors": {
+        "color0": "#131618",
+        "color1": "#757888",
+        "color2": "#7F8186",
+        "color3": "#919192",
+        "color4": "#A1A99B",
+        "color5": "#C3BCBA",
+        "color6": "#AEC68C",
+        "color7": "#e3e8ec",
+        "color8": "#9ea2a5",
+        "color9": "#757888",
+        "color10": "#7F8186",
+        "color11": "#919192",
+        "color12": "#A1A99B",
+        "color13": "#C3BCBA",
+        "color14": "#AEC68C",
+        "color15": "#e3e8ec"
+    }
+}

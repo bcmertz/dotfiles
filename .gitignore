@@ -71,6 +71,10 @@
 !.config/xfce4/*
 !.config/xfce4/*/
 
+# wal
+!.config/wal/**/*
+!.config/wpg/**/*
+
 # polybar
 !.config/polybar/**/*
 

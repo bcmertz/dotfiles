@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/leah/.local/share/wallpaper/ivan_road_to_los_angeles.png",
+    "alpha": "100",
+    "special": {
+        "background": "#120e12",
+        "foreground": "#e0e2e9",
+        "cursor": "#e0e2e9"
+    },
+    "colors": {
+        "color0": "#120e12",
+        "color1": "#CFAEB4",
+        "color2": "#A6ACCE",
+        "color3": "#CCB9C9",
+        "color4": "#CDC7D1",
+        "color5": "#D2C8D7",
+        "color6": "#ECDAD9",
+        "color7": "#e0e2e9",
+        "color8": "#9c9ea3",
+        "color9": "#CFAEB4",
+        "color10": "#A6ACCE",
+        "color11": "#CCB9C9",
+        "color12": "#CDC7D1",
+        "color13": "#D2C8D7",
+        "color14": "#ECDAD9",
+        "color15": "#e0e2e9"
+    }
+}

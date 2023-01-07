@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/leah/.local/share/wallpaper/cyberpunk_skyline.png",
+    "alpha": "100",
+    "special": {
+        "background": "#000C14",
+        "foreground": "#c89599",
+        "cursor": "#c89599"
+    },
+    "colors": {
+        "color0": "#000C14",
+        "color1": "#0B1F45",
+        "color2": "#082442",
+        "color3": "#2E2944",
+        "color4": "#542C42",
+        "color5": "#6A2D49",
+        "color6": "#484F5A",
+        "color7": "#c89599",
+        "color8": "#8c686b",
+        "color9": "#0B1F45",
+        "color10": "#082442",
+        "color11": "#2E2944",
+        "color12": "#542C42",
+        "color13": "#6A2D49",
+        "color14": "#484F5A",
+        "color15": "#c89599"
+    }
+}

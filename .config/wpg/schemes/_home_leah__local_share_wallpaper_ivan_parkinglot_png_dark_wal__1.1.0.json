@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/leah/.local/share/wallpaper/ivan_parkinglot.png",
+    "alpha": "100",
+    "special": {
+        "background": "#1e222b",
+        "foreground": "#e4e9ec",
+        "cursor": "#e4e9ec"
+    },
+    "colors": {
+        "color0": "#1e222b",
+        "color1": "#97AFC6",
+        "color2": "#AEBAC5",
+        "color3": "#B8C6CF",
+        "color4": "#B4CEE3",
+        "color5": "#C9D0D4",
+        "color6": "#D0DBE5",
+        "color7": "#e4e9ec",
+        "color8": "#9fa3a5",
+        "color9": "#97AFC6",
+        "color10": "#AEBAC5",
+        "color11": "#B8C6CF",
+        "color12": "#B4CEE3",
+        "color13": "#C9D0D4",
+        "color14": "#D0DBE5",
+        "color15": "#e4e9ec"
+    }
+}

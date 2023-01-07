@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/leah/.local/share/wallpaper/ivan_stone_cliff.png",
+    "alpha": "100",
+    "special": {
+        "background": "#3f362f",
+        "foreground": "#dfe1df",
+        "cursor": "#dfe1df"
+    },
+    "colors": {
+        "color0": "#3f362f",
+        "color1": "#C3B79B",
+        "color2": "#C3BDA8",
+        "color3": "#B7C3B6",
+        "color4": "#CDC9B5",
+        "color5": "#DCD1B6",
+        "color6": "#BCC6C6",
+        "color7": "#dfe1df",
+        "color8": "#9c9d9c",
+        "color9": "#C3B79B",
+        "color10": "#C3BDA8",
+        "color11": "#B7C3B6",
+        "color12": "#CDC9B5",
+        "color13": "#DCD1B6",
+        "color14": "#BCC6C6",
+        "color15": "#dfe1df"
+    }
+}

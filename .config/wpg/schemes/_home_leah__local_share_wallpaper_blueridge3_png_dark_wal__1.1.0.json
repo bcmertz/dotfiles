@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/leah/.local/share/wallpaper/blueridge3.png",
+    "alpha": "100",
+    "special": {
+        "background": "#0d1022",
+        "foreground": "#9ca3ba",
+        "cursor": "#9ca3ba"
+    },
+    "colors": {
+        "color0": "#0d1022",
+        "color1": "#F36B31",
+        "color2": "#C25A57",
+        "color3": "#F39D2D",
+        "color4": "#EFBB46",
+        "color5": "#ECC957",
+        "color6": "#3E4F82",
+        "color7": "#9ca3ba",
+        "color8": "#6d7282",
+        "color9": "#F36B31",
+        "color10": "#C25A57",
+        "color11": "#F39D2D",
+        "color12": "#EFBB46",
+        "color13": "#ECC957",
+        "color14": "#3E4F82",
+        "color15": "#9ca3ba"
+    }
+}

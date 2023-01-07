@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/leah/.local/share/wallpaper/ivan_windswept_tree.png",
+    "alpha": "100",
+    "special": {
+        "background": "#11120f",
+        "foreground": "#e3eaf1",
+        "cursor": "#e3eaf1"
+    },
+    "colors": {
+        "color0": "#11120f",
+        "color1": "#B2A591",
+        "color2": "#C5B99B",
+        "color3": "#D5D5A3",
+        "color4": "#D8D7AC",
+        "color5": "#E2E3B9",
+        "color6": "#DADFD6",
+        "color7": "#e3eaf1",
+        "color8": "#9ea3a8",
+        "color9": "#B2A591",
+        "color10": "#C5B99B",
+        "color11": "#D5D5A3",
+        "color12": "#D8D7AC",
+        "color13": "#E2E3B9",
+        "color14": "#DADFD6",
+        "color15": "#e3eaf1"
+    }
+}

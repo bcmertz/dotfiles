@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/leah/.local/share/wallpaper/ivan_train_in_front_of_rocky_mountain_highway.png",
+    "alpha": "100",
+    "special": {
+        "background": "#12131c",
+        "foreground": "#e1e9f3",
+        "cursor": "#e1e9f3"
+    },
+    "colors": {
+        "color0": "#12131c",
+        "color1": "#CDABA4",
+        "color2": "#9BB0D8",
+        "color3": "#96B7E7",
+        "color4": "#A3C1E8",
+        "color5": "#AFCCF1",
+        "color6": "#D4D9E7",
+        "color7": "#e1e9f3",
+        "color8": "#9da3aa",
+        "color9": "#CDABA4",
+        "color10": "#9BB0D8",
+        "color11": "#96B7E7",
+        "color12": "#A3C1E8",
+        "color13": "#AFCCF1",
+        "color14": "#D4D9E7",
+        "color15": "#e1e9f3"
+    }
+}

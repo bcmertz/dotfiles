@@ -43,7 +43,7 @@ case ${SESSION} in
         if [[ "true" = $($global_cfg "pywal_terminal") ]]
         then
             # set wallpaper and set xresources colorscheme
-            wal -i $filepath
+            wal -i $filepath -o ~/.config/wal/done.sh
         elif [[ "true" = $($global_cfg "pywal_gtk") ]]; then
             # do all that and set gtk scheme
             wpg -s $filepath

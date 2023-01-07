@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/leah/.local/share/wallpaper/ivan_smoke_stack.png",
+    "alpha": "100",
+    "special": {
+        "background": "#1b221e",
+        "foreground": "#e4e8ee",
+        "cursor": "#e4e8ee"
+    },
+    "colors": {
+        "color0": "#1b221e",
+        "color1": "#707E89",
+        "color2": "#9CA39F",
+        "color3": "#ABB289",
+        "color4": "#C0C6B6",
+        "color5": "#CFD0D4",
+        "color6": "#D0DAEA",
+        "color7": "#e4e8ee",
+        "color8": "#9fa2a6",
+        "color9": "#707E89",
+        "color10": "#9CA39F",
+        "color11": "#ABB289",
+        "color12": "#C0C6B6",
+        "color13": "#CFD0D4",
+        "color14": "#D0DAEA",
+        "color15": "#e4e8ee"
+    }
+}

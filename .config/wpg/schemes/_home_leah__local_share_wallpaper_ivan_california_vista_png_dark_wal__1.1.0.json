@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/leah/.local/share/wallpaper/ivan_california_vista.png",
+    "alpha": "100",
+    "special": {
+        "background": "#161410",
+        "foreground": "#e4e4e3",
+        "cursor": "#e4e4e3"
+    },
+    "colors": {
+        "color0": "#161410",
+        "color1": "#537497",
+        "color2": "#6D8AA3",
+        "color3": "#A1A99A",
+        "color4": "#B4C98E",
+        "color5": "#BBCBA7",
+        "color6": "#C1CBB3",
+        "color7": "#e4e4e3",
+        "color8": "#9f9f9e",
+        "color9": "#537497",
+        "color10": "#6D8AA3",
+        "color11": "#A1A99A",
+        "color12": "#B4C98E",
+        "color13": "#BBCBA7",
+        "color14": "#C1CBB3",
+        "color15": "#e4e4e3"
+    }
+}

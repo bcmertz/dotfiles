@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/leah/.local/share/wallpaper/cyberpunk_night_taxi.png",
+    "alpha": "100",
+    "special": {
+        "background": "#0c0c06",
+        "foreground": "#d1ca9c",
+        "cursor": "#d1ca9c"
+    },
+    "colors": {
+        "color0": "#0c0c06",
+        "color1": "#6B5228",
+        "color2": "#3B504E",
+        "color3": "#5D634F",
+        "color4": "#945C23",
+        "color5": "#9E6645",
+        "color6": "#698975",
+        "color7": "#d1ca9c",
+        "color8": "#928d6d",
+        "color9": "#6B5228",
+        "color10": "#3B504E",
+        "color11": "#5D634F",
+        "color12": "#945C23",
+        "color13": "#9E6645",
+        "color14": "#698975",
+        "color15": "#d1ca9c"
+    }
+}

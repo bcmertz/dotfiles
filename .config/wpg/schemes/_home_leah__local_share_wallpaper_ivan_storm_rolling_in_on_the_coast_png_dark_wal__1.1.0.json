@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/leah/.local/share/wallpaper/ivan_storm_rolling_in_on_the_coast.png",
+    "alpha": "100",
+    "special": {
+        "background": "#0D110A",
+        "foreground": "#c9ced0",
+        "cursor": "#c9ced0"
+    },
+    "colors": {
+        "color0": "#0D110A",
+        "color1": "#6A798B",
+        "color2": "#788896",
+        "color3": "#788EA3",
+        "color4": "#86929B",
+        "color5": "#8C99A4",
+        "color6": "#99A4AB",
+        "color7": "#c9ced0",
+        "color8": "#8c9091",
+        "color9": "#6A798B",
+        "color10": "#788896",
+        "color11": "#788EA3",
+        "color12": "#86929B",
+        "color13": "#8C99A4",
+        "color14": "#99A4AB",
+        "color15": "#c9ced0"
+    }
+}

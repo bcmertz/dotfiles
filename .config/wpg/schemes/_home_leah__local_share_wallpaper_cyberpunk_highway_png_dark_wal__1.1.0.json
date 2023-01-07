@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/leah/.local/share/wallpaper/cyberpunk_highway.png",
+    "alpha": "100",
+    "special": {
+        "background": "#08080A",
+        "foreground": "#a6c3d3",
+        "cursor": "#a6c3d3"
+    },
+    "colors": {
+        "color0": "#08080A",
+        "color1": "#36486A",
+        "color2": "#555760",
+        "color3": "#A65B4C",
+        "color4": "#A68F6A",
+        "color5": "#335399",
+        "color6": "#576B95",
+        "color7": "#a6c3d3",
+        "color8": "#748893",
+        "color9": "#36486A",
+        "color10": "#555760",
+        "color11": "#A65B4C",
+        "color12": "#A68F6A",
+        "color13": "#335399",
+        "color14": "#576B95",
+        "color15": "#a6c3d3"
+    }
+}

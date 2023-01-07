@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/leah/.local/share/wallpaper/ivan_truck.png",
+    "alpha": "100",
+    "special": {
+        "background": "#331f21",
+        "foreground": "#e6e6e6",
+        "cursor": "#e6e6e6"
+    },
+    "colors": {
+        "color0": "#331f21",
+        "color1": "#8C7586",
+        "color2": "#91878F",
+        "color3": "#A6999E",
+        "color4": "#CFAEA6",
+        "color5": "#D2C1BC",
+        "color6": "#B4DBF8",
+        "color7": "#e6e6e6",
+        "color8": "#a1a1a1",
+        "color9": "#8C7586",
+        "color10": "#91878F",
+        "color11": "#A6999E",
+        "color12": "#CFAEA6",
+        "color13": "#D2C1BC",
+        "color14": "#B4DBF8",
+        "color15": "#e6e6e6"
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/leah/.local/share/wallpaper/ivan_bridge_to_newport_news.png",
+    "alpha": "100",
+    "special": {
+        "background": "#110c0a",
+        "foreground": "#e9e4ea",
+        "cursor": "#e9e4ea"
+    },
+    "colors": {
+        "color0": "#110c0a",
+        "color1": "#B8B3CF",
+        "color2": "#C6BAC6",
+        "color3": "#C4BCD5",
+        "color4": "#CDC6DC",
+        "color5": "#EAD7D7",
+        "color6": "#D9D2E2",
+        "color7": "#e9e4ea",
+        "color8": "#a39fa3",
+        "color9": "#B8B3CF",
+        "color10": "#C6BAC6",
+        "color11": "#C4BCD5",
+        "color12": "#CDC6DC",
+        "color13": "#EAD7D7",
+        "color14": "#D9D2E2",
+        "color15": "#e9e4ea"
+    }
+}

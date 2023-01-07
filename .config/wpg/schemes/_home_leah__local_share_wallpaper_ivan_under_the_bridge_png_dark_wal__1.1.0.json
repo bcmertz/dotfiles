@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/leah/.local/share/wallpaper/ivan_under_the_bridge.png",
+    "alpha": "100",
+    "special": {
+        "background": "#141313",
+        "foreground": "#dfe2e3",
+        "cursor": "#dfe2e3"
+    },
+    "colors": {
+        "color0": "#141313",
+        "color1": "#9FA09A",
+        "color2": "#AEA798",
+        "color3": "#B0B3AD",
+        "color4": "#BDBCB1",
+        "color5": "#CEC6B3",
+        "color6": "#B8C6C9",
+        "color7": "#dfe2e3",
+        "color8": "#9c9e9e",
+        "color9": "#9FA09A",
+        "color10": "#AEA798",
+        "color11": "#B0B3AD",
+        "color12": "#BDBCB1",
+        "color13": "#CEC6B3",
+        "color14": "#B8C6C9",
+        "color15": "#dfe2e3"
+    }
+}

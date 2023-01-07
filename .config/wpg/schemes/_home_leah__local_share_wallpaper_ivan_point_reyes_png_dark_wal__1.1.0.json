@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/leah/.local/share/wallpaper/ivan_point_reyes.png",
+    "alpha": "100",
+    "special": {
+        "background": "#161005",
+        "foreground": "#d0dbe4",
+        "cursor": "#d0dbe4"
+    },
+    "colors": {
+        "color0": "#161005",
+        "color1": "#5E6C97",
+        "color2": "#817E85",
+        "color3": "#7986A6",
+        "color4": "#7094CE",
+        "color5": "#949BB0",
+        "color6": "#96B1D6",
+        "color7": "#d0dbe4",
+        "color8": "#91999f",
+        "color9": "#5E6C97",
+        "color10": "#817E85",
+        "color11": "#7986A6",
+        "color12": "#7094CE",
+        "color13": "#949BB0",
+        "color14": "#96B1D6",
+        "color15": "#d0dbe4"
+    }
+}

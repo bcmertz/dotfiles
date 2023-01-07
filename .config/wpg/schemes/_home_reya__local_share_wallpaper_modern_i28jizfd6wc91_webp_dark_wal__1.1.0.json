@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/reya/.local/share/wallpaper/modern/i28jizfd6wc91.webp",
+    "alpha": "100",
+    "special": {
+        "background": "#280c40",
+        "foreground": "#e4d9f1",
+        "cursor": "#e4d9f1"
+    },
+    "colors": {
+        "color0": "#280c40",
+        "color1": "#3983D6",
+        "color2": "#6393E1",
+        "color3": "#9DA1EC",
+        "color4": "#E390DB",
+        "color5": "#CCB4EE",
+        "color6": "#A6C7FF",
+        "color7": "#e4d9f1",
+        "color8": "#9f97a8",
+        "color9": "#3983D6",
+        "color10": "#6393E1",
+        "color11": "#9DA1EC",
+        "color12": "#E390DB",
+        "color13": "#CCB4EE",
+        "color14": "#A6C7FF",
+        "color15": "#e4d9f1"
+    }
+}

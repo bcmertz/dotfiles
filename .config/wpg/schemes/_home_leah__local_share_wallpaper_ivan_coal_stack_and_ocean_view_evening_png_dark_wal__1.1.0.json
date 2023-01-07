@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/leah/.local/share/wallpaper/ivan_coal_stack_and_ocean_view_evening.png",
+    "alpha": "100",
+    "special": {
+        "background": "#1c1610",
+        "foreground": "#efebe3",
+        "cursor": "#efebe3"
+    },
+    "colors": {
+        "color0": "#1c1610",
+        "color1": "#766B8A",
+        "color2": "#88788D",
+        "color3": "#A195A3",
+        "color4": "#C4BCC5",
+        "color5": "#D2CFD5",
+        "color6": "#EAD9CE",
+        "color7": "#efebe3",
+        "color8": "#a7a49e",
+        "color9": "#766B8A",
+        "color10": "#88788D",
+        "color11": "#A195A3",
+        "color12": "#C4BCC5",
+        "color13": "#D2CFD5",
+        "color14": "#EAD9CE",
+        "color15": "#efebe3"
+    }
+}
