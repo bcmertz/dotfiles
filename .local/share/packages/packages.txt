@@ -119,6 +119,7 @@ gimp
 git
 git-lfs
 glances
+gnome-clocks
 gnome-control-center
 gnome-maps
 gnome-screensaver
