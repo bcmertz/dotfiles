@@ -292,7 +292,6 @@ ppp
 pptpclient
 pulsar-bin
 pv
-pyright
 python
 python-capng
 python-defusedxml
