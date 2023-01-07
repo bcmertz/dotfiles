@@ -50,7 +50,6 @@
   (setq initial-scratch-message (format "
 
 ;; %s, %s
-;;
 ;; To execute lisp, type C-x C-e
 
 " (return-greeting) (capitalize (user-full-name)))))
