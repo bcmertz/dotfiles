@@ -104,6 +104,11 @@ pip install --user virtualenv
 echo "pacman installs latest node version, might want to use nvm \
 to set the node version to lts"
 
+# sudoers timeout
+echo "please `sudoedit /etc/sudoers` and \
+add `Defaults        timestamp_timeout=-1` to prevent \
+sudo timeouts"
+
 # transmission
 sudo chmod 770 $HOME/{media/{music,videos},dl/torrent,coding/iso_store,coding/iso_store/roms}
 sudo usermod -a -G transmission $USER
