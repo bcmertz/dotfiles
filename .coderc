@@ -16,7 +16,7 @@ export PATH=$PATH:~/.npm-global/bin
 export PATH=$PATH:$HOME/.local/share/gem/ruby/2.7.0/bin
 
 # python
-export PYTHONUSERBASE=~/.local/lib/python3.10
+export PYTHONUSERBASE=$HOME/.local/lib/python3.10
 export PATH=$PATH:$PYTHONUSERBASE/bin
 
 # if not running start go docs and disown
