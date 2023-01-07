@@ -147,17 +147,18 @@
     background = "{background}"
     foreground = "{foreground}"
     icon = $HOME/.config/dunst/normal.png
-    timeout = 5
+    timeout = 1
 
 [urgency_normal]
     background = "{background}"
     foreground = "{foreground}"
     icon = $HOME/.config/dunst/normal.png
-    timeout = 5
+    timeout = 3
 
 [urgency_critical]
-    background = "#313D4A"
-    foreground = "{foreground}"
+    format = "<b><u>%a</u>\n\n%s%p\n%b</b>" # appname
+    background = "{background}"
+    foreground = "#E51A1A"
     timeout = 0
     icon = $HOME/.config/dunst/critical.png
 
