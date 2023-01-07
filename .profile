@@ -32,9 +32,6 @@ wm=$(wmsel)
 # firefox smooth scrolling
 export MOZ_USE_XINPUT2=1
 
-# set coding environment
-[ -f ~/.coderc ] && . ~/.coderc
-
 # weird annoying thing that is necessary to do here and nowhere else
 # if i move it to right before startx it tries to start xterm as the wm????
 alias startx='startx ~/.xinitrc'

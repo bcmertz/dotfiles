@@ -7,6 +7,9 @@ esac
 # set aliases
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
 
+# set coding environment
+[ -f ~/.coderc ] && . ~/.coderc
+
 # .bash_history
 HISTCONTROL=ignoreboth
 HISTSIZE=-1
