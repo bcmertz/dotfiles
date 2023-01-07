@@ -11,6 +11,10 @@ export PATH=$PATH:~/.npm-global/bin
 # ruby
 export PATH=$PATH:~/.local/share/gem/ruby/2.7.0/bin
 
+# python
+export PYTHONUSERBASE=~/.local/lib/python3.10
+export PATH=$PATH:$PYTHONUSERBASE
+
 # if not running start go docs and disown
 if type godoc > /dev/null; then
     if ! pgrep -x "godoc" > /dev/null
