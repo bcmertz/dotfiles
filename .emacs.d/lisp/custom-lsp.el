@@ -10,6 +10,8 @@
   :defer t
   :init
   (defvar lsp-tool "eglot")
+  :config
+  (add-to-list 'eglot-server-programs '(python-mode . ("pylsp")))
   )
 
 (add-hook 'python-mode-hook 'eglot-ensure)
