@@ -26,6 +26,7 @@ baobab
 base
 bash-completion
 bash-language-server
+battery-stats-git
 bc
 beep
 bind
