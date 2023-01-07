@@ -10,7 +10,10 @@ export PATH=$PATH:$GOPATH/bin
 alias gotest='go test ./...'
 
 # npm
-export PATH=$PATH:~/.npm-global/bin
+export npm_config_prefix="$HOME/.local/npm"
+export PATH=$npm_config_prefix:$HOME/.npm-global/bin:$PATH
+# nvm
+source /usr/share/nvm/init-nvm.sh
 
 # ruby
 export PATH=$PATH:$HOME/.local/share/gem/ruby/2.7.0/bin
