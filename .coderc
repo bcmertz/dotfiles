@@ -21,6 +21,11 @@ export PATH=$PATH:$HOME/.local/share/gem/ruby/2.7.0/bin
 # python
 export PYTHONUSERBASE=$HOME/.local/lib/python3.10
 export PATH=$PATH:$PYTHONUSERBASE/bin
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 # if not running start go docs and disown
 if type godoc > /dev/null; then
