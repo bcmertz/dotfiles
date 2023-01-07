@@ -66,6 +66,7 @@ for_window [class="Gsimplecal"] move position 1250 50
 for_window [class="Xarchiver"] floating enable
 for_window [class="Gpick"] floating enable
 for_window [class="Pavucontrol"] floating enable resize set 1170 610
+for_window [class="org.gnome.clocks"] floating enable resize set 936 592, move position 460 300
 for_window [class="Wpg"] floating enable resize set 1170 610, move position 400 300
 for_window [class="Progress"] floating enable
 for_window [class="File Upload"] floating enable
