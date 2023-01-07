@@ -1,8 +1,13 @@
 #!/bin/sh
 #
-# select wallpaper from list
+# select background from wallpapers
 
-# graphical image chooser
-chosen=$(nsxiv -N "Floating nsxiv" -t -r -q -o ~/.local/share/wallpaper/)
+# get wallpapers shuffled
+files=$(find .local/share/wallpaper -type f | shuf)
+
+# choose image
+chosen=$(nsxiv -N "Floating nsxiv" -t -q -o $files)
 [ "$chosen" != "" ] || exit
+
+# set background
 setbg -f $chosen
