@@ -259,6 +259,7 @@ nss-mdns
 nsxiv
 ntfs-3g
 ntp
+nvm
 okular
 openconnect
 openvpn
@@ -300,6 +301,7 @@ python-lsp-black
 python-lsp-server
 python-packaging
 python-pip
+python-psycopg2
 python-pyqt5
 python-pywal
 python2
