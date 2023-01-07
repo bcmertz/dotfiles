@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# battery middle
+
+xfce4-power-manager-settings
