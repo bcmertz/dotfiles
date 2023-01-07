@@ -13,7 +13,7 @@ alias gotest='go test ./...'
 export PATH=$PATH:~/.npm-global/bin
 
 # ruby
-export PATH=$PATH:~/.local/share/gem/ruby/2.7.0/bin
+export PATH=$PATH:$HOME/.local/share/gem/ruby/2.7.0/bin
 
 # python
 export PYTHONUSERBASE=~/.local/lib/python3.10
