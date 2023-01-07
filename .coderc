@@ -10,7 +10,7 @@ export PATH=$PATH:$GOPATH/bin
 alias gotest='go test ./...'
 
 # npm
-export npm_config_prefix="$HOME/.local/npm"
+# export npm_config_prefix="$HOME/.local/npm" # breaks nvm
 export PATH=$npm_config_prefix:$HOME/.npm-global/bin:$PATH
 # nvm
 source /usr/share/nvm/init-nvm.sh

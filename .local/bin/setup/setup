@@ -96,6 +96,14 @@ sudo systemctl enable --now paccache.timer
 # fonts
 fc-cache -f -v || warn "failed to regenerate font cache"
 
+# python / pyenv / venv
+curl https://pyenv.run | bash
+pip install --user virtualenv
+
+# node npm yarn nvm [from repos/aur]
+echo "pacman installs latest node version, might want to use nvm \
+to set the node version to lts"
+
 # transmission
 sudo chmod 770 $HOME/{media/{music,videos},dl/torrent,coding/iso_store,coding/iso_store/roms}
 sudo usermod -a -G transmission $USER
