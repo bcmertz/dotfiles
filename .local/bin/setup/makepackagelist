@@ -1,4 +1,8 @@
 #!/bin/bash
 # create new installed package files
 
-pacman -Qqe > /home/reya/.local/share/packages/packages.txt
+if [ -z $SUDO_USER ]; then
+    pacman -Qqe > ~/.local/share/packages/packages.txt
+else
+    pacman -Qqe > /home/$SUDO_USER/.local/share/packages/packages.txt
+fi
