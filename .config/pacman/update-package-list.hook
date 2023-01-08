@@ -1,0 +1,11 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Type = Package
+Target = *
+
+[Action]
+Description = Updating local package list...
+When = PostTransaction
+Exec = /home/reya/.local/bin/pacman-makepackagelist

@@ -37,6 +37,10 @@ sudo pacman -Syu yay || die "please manually install yay" # in endeavour os repo
 # TODO install aur and pacman (just pacman packages hit by this rn)
 yay -S --needed - < $HOME/.local/share/packages/packages.txt || warn "failed to install packages"
 
+# pacman makepackagelist hook
+sudo ln -s ~/.config/pacman/update-package-list.hook /etc/pacman.d/hooks/update-package-list.hook
+makepackagelist
+
 # install godoc
 go install golang.org/x/tools/cmd/godoc@latest
 

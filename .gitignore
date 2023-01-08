@@ -55,6 +55,7 @@
 !.config/picom/*
 !.config/plank/*
 !.congig/ranger/*
+!.config/pacman/*
 !.config/waybar/*
 !.config/calibre/*
 !.config/systemd/*
