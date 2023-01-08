@@ -45,6 +45,10 @@
 
 " (return-greeting) (capitalize (user-full-name))))
 
+;; cowsay example (close but not there, figure it out later if you want)
+;; (message "%s" (shell-command "cowsay hi" (current-buffer))) ____
+
+
 (defun set-gui-scratch-greeting ()
   "Set GUI scratch greeting."
   (setq initial-scratch-message (format "
