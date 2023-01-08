@@ -8,4 +8,4 @@ Target = *
 [Action]
 Description = Updating local package list...
 When = PostTransaction
-Exec = /home/reya/.local/bin/setup/makepackagelist
+Exec = /bin/sh -c './home/$SUDO_USER/.local/bin/setup/makepackagelist'
