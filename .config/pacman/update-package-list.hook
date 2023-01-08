@@ -8,4 +8,4 @@ Target = *
 [Action]
 Description = Updating local package list...
 When = PostTransaction
-Exec = /home/reya/.local/bin/pacman-makepackagelist
+Exec = /home/reya/.local/bin/setup/makepackagelist

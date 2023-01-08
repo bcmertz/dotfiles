@@ -1,4 +1,4 @@
 #!/bin/bash
 # create new installed package files
 
-pacman -Qqe > ~/.local/share/packages/packages.txt
+pacman -Qqe > /home/reya/.local/share/packages/packages.txt
