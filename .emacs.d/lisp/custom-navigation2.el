@@ -325,5 +325,6 @@ targets."
 
 ;; better C-x C-b
 (defalias 'list-buffers 'ibuffer)
+(bind-key "q" 'kill-current-buffer 'ibuffer-mode-map)
 
 ;;; custom-navigation2.el ends here
