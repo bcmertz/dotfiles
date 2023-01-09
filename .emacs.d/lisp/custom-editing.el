@@ -6,8 +6,13 @@
 ;;;
 ;;; Code:
 
+(use-package tramp
+  :straight nil
+  :)
+
 ;; reopen root files with sudo-edit
 (use-package reopen-as-root
+  :after tramp
   :straight nil
   :load-path "~/.emacs.d/lisp/lib/reopen-as-root.el"
   :config (reopen-as-root-mode))
