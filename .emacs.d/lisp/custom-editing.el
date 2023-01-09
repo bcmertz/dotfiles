@@ -8,7 +8,7 @@
 
 (use-package tramp
   :straight nil
-  :)
+  )
 
 ;; reopen root files with sudo-edit
 (use-package reopen-as-root
