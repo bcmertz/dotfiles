@@ -41,6 +41,9 @@ yay -S --needed - < $HOME/.local/share/packages/packages.txt || warn "failed to 
 sudo ln -s ~/.config/pacman/update-package-list.hook /etc/pacman.d/hooks/update-package-list.hook
 makepackagelist
 
+# reflector timer - update mirrorlists periodically
+sudo systemctl enable --now reflector.timer
+
 # install godoc
 go install golang.org/x/tools/cmd/godoc@latest
 
