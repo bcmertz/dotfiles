@@ -14,7 +14,7 @@ if [[ "$session" == "xfce" ]]; then
 fi
 
 if [[ "$session" == "i3" ]]; then
-   refresh polybar &
+   refresh polybar
 fi
 
 # start xautolock screen locker
