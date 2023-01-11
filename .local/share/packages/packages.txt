@@ -37,6 +37,7 @@ bluez
 bluez-utils
 breeze
 breeze-gtk
+brother-hll2395dw
 bspwm
 btrfs-progs
 calibre
