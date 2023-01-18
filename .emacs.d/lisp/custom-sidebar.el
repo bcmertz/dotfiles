@@ -51,9 +51,10 @@
   (face-remap-add-relative 'fringe nil :background (get-theme-variable-from-palette 'bg-alt))
   (buffer-face-set :background (get-theme-variable-from-palette 'bg-alt))
   (buffer-face-mode 1)
-  (set-face-attribute 'neo-root-dir-face nil nil :background (get-theme-variable-from-palette 'bg-alt))
-  (face-remap-add-relative 'hl-line nil :background (get-theme-variable-from-palette 'bg-hl-line))
-  )
+  (set-face-attribute 'neo-root-dir-face nil :extend t :box nil :background (get-theme-variable-from-palette 'bg-alt))
+  (if (string= 'unspecified (get-theme-variable-from-palette 'bg-hl-line))
+      (set-face-attribute 'hl-line :background (get-theme-variable-from-palette 'bg-alt))
+    (set-face-attribute 'hl-line :background (get-theme-variable-from-palette 'bg-hl-line))))
 
 (advice-add 'neotree-show :after #'set-neotree-styling)
 
