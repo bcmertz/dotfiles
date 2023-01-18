@@ -126,13 +126,6 @@
         ("C-c @" . nil))
   )
 
-;; WIP tree sitter code folding implementation
-;; (use-package ts-fold
-;;   :load-path "~/coding/ts-fold")
-
-;; (use-package ts-fold-indicators
-;;    :load-path "~/coding/ts-fold/ts-fold-indicators.el")
-
 
 ;;;;;;;;;;;;;;;; text selection ;;;;;;;;;;;;;;;
 

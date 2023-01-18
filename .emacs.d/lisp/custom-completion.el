@@ -52,34 +52,6 @@
   )
 
 
-;;;;;;;;;;;;;;;;;;;;; syntax highlighting ;;;;;;;;;;;;;;;;;;;;;
-
-(straight-use-package 'tree-sitter)
-(straight-use-package 'tree-sitter-langs)
-
-;; ;; turn on tree-sitter only for programming modes - breaks for some reason
-;; (defun my-turn-on-tree-sitter ()
-;;   "Turn on tree-sitter."
-;;   (tree-sitter-mode 1)
-;;   )
-;; (add-hook 'prog-mode-hook #'my-turn-on-tree-sitter)
-;; ;; maybe try below instead
-;; (defun my-add-to-multiple-hooks (function hooks)
-;;   (mapc (lambda (hook)
-;;           (add-hook hook function))
-;;         hooks))
-;; (my-add-to-multiple-hooks
-;;  'my-turn-on-tree-sitter
-;;  'tree-sitter-major-mode-language-alist)
-;; ;; nope i guess just
-(global-tree-sitter-mode)
-
-;; always turn on tree-sitter-hl-mode
-(add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
-
-;; prevent bolding function calls when the cursor isn't on them
-(set-face-attribute 'tree-sitter-hl-face:function.call nil :weight 'normal)
-
 
 ;;;;;;;;;;;;;;; snippets ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

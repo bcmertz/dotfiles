@@ -33,6 +33,7 @@
 (measure-time(load "custom-keybindings.el"))      ;; evil, suggestions
 (measure-time(load "custom-styling.el"))          ;; appearance
 (measure-time(load "custom-completion.el"))       ;; completion && snippets
+(measure-time(load "custom-treesitter.el"))       ;; tree-sitter
 ;; (measure-time(load "custom-navigation.el"))       ;; navigating projects and code
 (measure-time(load "custom-navigation2.el"))      ;; navigating projects and code
 (measure-time(load "custom-sidebar.el"))          ;; sidebar
