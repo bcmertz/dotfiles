@@ -42,12 +42,16 @@
 ;; apply if gui our neotree settings
 (apply-if-gui 'set-neotree-settings)
 
+  ;; (defvar-local neotree-hl-line-cookie nil "cookie for setting neotree hl-line face remap")
+  ;; (defvar-local neotree-fringe-cookie nil "cookie for setting neotree fringe face remap")
 (defun set-neotree-styling ()
   "Set neotree styling."
+  ;; (face-remap-remove-relative (cons 'hl-line (get-theme-variable-from-palette 'bg-hl-line)))
+  ;; (face-remap-remove-relative (cons 'fringe (get-theme-variable-from-palette 'bg-alt)))
   (face-remap-add-relative 'fringe nil :background (get-theme-variable-from-palette 'bg-alt))
   (buffer-face-set :background (get-theme-variable-from-palette 'bg-alt))
   (buffer-face-mode 1)
-  (set-face-attribute 'neo-root-dir-face nil :box nil :background (get-theme-variable-from-palette 'bg-alt))
+  (set-face-attribute 'neo-root-dir-face nil nil :background (get-theme-variable-from-palette 'bg-alt))
   (face-remap-add-relative 'hl-line nil :background (get-theme-variable-from-palette 'bg-hl-line))
   )
 
