@@ -39,8 +39,31 @@
     (disable-theme i)))
 
 ;; change theme utility
-(defun change-theme ()
-  "Choose theme from installed list."
+(defun my-change-theme ()
+  "Choose theme from installed list using completing-read."
+  (interactive)
+  (let ((theme (completing-read "Choose theme : " (custom-available-themes)
+                                nil nil nil nil (symbol-name (car custom-enabled-themes)))))
+    (disable-all-themes)
+    (load-theme (intern theme) t)))
+
+;; TODO add dynamic themeing
+(defun my-consult-change-theme ()
+  "Choose theme from installed list using consult--read."
+  (interactive)
+  (let* ((candidates (mapcar #'symbol-name (custom-available-themes)))
+         (theme (consult--read
+                 candidates
+                 :prompt "dynamic theming <C-M-m>: "
+                 :default (symbol-name (car custom-enabled-themes))
+                 :preview-key (kbd "C-M-m")
+                 )))
+    (disable-all-themes)
+    (load-theme (intern theme) t)
+    ))
+
+(defun my-ivy-change-theme ()
+  "Choose theme from installed list using ivy-read."
   (interactive)
   (ivy-read "dynamic theming <C-M-m>: " (custom-available-themes)
             :preselect (symbol-name (car custom-enabled-themes))
@@ -50,9 +73,11 @@
                       ;; load new theme
                       (load-theme (intern theme) t))))
 
+
+
 ;; which key prefix for styling related keybindings
 (which-key-add-key-based-replacements "C-c t" "theming")
-(global-set-key (kbd "C-c t t") 'change-theme)
+(global-set-key (kbd "C-c t t") 'my-ivy-change-theme)
 
 ;; normally there is no load theme hook, create one here
 ;; https://www.reddit.com/r/emacs/comments/4v7tcj/does_emacs_have_a_hook_for_when_the_theme_changes/d5wyu1r/
