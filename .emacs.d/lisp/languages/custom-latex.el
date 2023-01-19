@@ -6,9 +6,9 @@
 ;;; Code:
 
 ;; M-x prettify-symbols-mode to display pretty math
+;; C-c C-a to compile and view
 (use-package tex
-  :defer t
-  :ensure auctex)
+  :straight auctex)
 
 ;; to use pdfview with tex
 (setq TeX-view-program-selection '((output-pdf "PDF Tools"))
