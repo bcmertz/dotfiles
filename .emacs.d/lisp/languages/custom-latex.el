@@ -5,7 +5,6 @@
 ;;;
 ;;; Code:
 
-;; C-c C-a to compile and view directly
 ;; M-x prettify-symbols-mode to display pretty math
 (use-package tex
   :defer t
