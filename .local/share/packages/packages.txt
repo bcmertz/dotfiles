@@ -376,7 +376,7 @@ ttf-liberation
 ttf-opensans
 ttf-roboto
 ttf-roboto-mono
-ttf-ubuntumono-nerd
+ttf-ubuntu-mono-nerd
 tumbler
 unclutter
 unrar
