@@ -337,6 +337,43 @@ targets."
   ;; (setq consult-projectile-use-projectile-switch-project t)
   ;; )
 
+;; perspective navigation
+;; (use-package perspective
+;;   :bind (
+;;          ("C-x B" . persp-counsel-switch-buffer)
+;;          ;; ("C-x k" . persp-kill-buffer*)
+;;          ("C-M-<left>" . persp-prev)
+;;          ("C-M-<right>" . persp-next)
+;;          ("C-M-<return>" . persp-switch)
+;;          ("C-M-<delete>" . persp-state-save)
+;;          ("C-M-<backspace>" . persp-state-load)
+;;          )
+;;   :init
+;;   (setq persp-initial-frame-name "main")
+;;   (setq persp-sort 'created)
+;;   (persp-mode)
+;;   :config
+;;   ;; dont show modeline string
+;;   (setq persp-show-modestring nil)
+;;   ;; TODO figure out why restoring expects a directory
+;;   (setq persp-state-default-file "~/.emacs.d/save-perspective")
+;;   (add-hook 'kill-emacs-hook #'persp-state-save)
+;;   :custom
+;;   (persp-mode-prefix-key (kbd "C-c M-p"))
+;;   (persp-add-buffer-to-frame-global "*Messages*")
+;;   )
+
+;; (defun my-show-persp-modestring ()
+;;   "Show persp modestring."
+;;   (if (< 1 (length (persp-names)))
+;;       (setq persp-show-modestring t)
+;;     (setq persp-show-modestring nil)
+;;     )
+;;   )
+
+;; (add-hook 'persp-created-hook #'my-show-persp-modestring)
+;; (add-hook 'persp-killed-hook #'my-show-persp-modestring)
+
 
 ;; better C-x C-b
 (defalias 'list-buffers 'ibuffer)
