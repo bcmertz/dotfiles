@@ -15,8 +15,8 @@
   (setq centaur-tabs-set-icons t)
 ;;  (setq centaur-tabs-set-bar 'left)
   :bind
-  ("C-M-<left>" . centaur-tabs-backward)
-  ("C-M-<right>" . centaur-tabs-forward))
+  ("C-<tab>" . centaur-tabs-backward)
+  ("C-<iso-lefttab>" . centaur-tabs-forward))
 
 (defun toggle-centaur-tabs ()
   "Toggle centaur tabs mode."
