@@ -167,6 +167,16 @@
   (consult-customize consult-line :preview-key 'any)
   (consult-customize consult-theme :preview-key (kbd "M-<return>"))
   (consult-customize my-consult-change-theme :preview-key (kbd "M-<return>"))
+
+  ;; TODO figure out ordering error on startup putting recent files first
+  (setq consult-buffer-sources '(consult--source-hidden-buffer
+                                 consult--source-modified-buffer
+                                 consult--source-buffer
+                                 consult--source-recent-file
+                                 consult--source-file-register
+                                 consult--source-bookmark
+                                 consult--source-project-buffer
+                                 consult--source-project-recent-file))
   ;; (setq consult-preview-key (kbd "M-."))
   ;; (setq consult-preview-key (list (kbd "<S-down>") (kbd "<S-up>")))
   ;; For some commands and buffer sources it is useful to configure the
