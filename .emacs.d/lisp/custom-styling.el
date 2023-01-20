@@ -21,7 +21,7 @@
 (setq custom-safe-themes t)
 
 ;; default theme; DONT CHANGE to get pywal effects, it is modified in .config/global.cfg
-(setq custom-theme 'ef-cherie)    ;; atom-one-dark doom-one doom-dracula doom-gruvbox ewal-doom-one
+(setq custom-theme 'doom-dracula)    ;; atom-one-dark doom-one ef-cherie doom-gruvbox ewal-doom-one
 (setq default-theme custom-theme) ;; default theme to be used by refresh-theme in custom-funcs.el
 
 ;; check if we're using pywal to set emacs colorscheme
