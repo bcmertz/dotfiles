@@ -38,34 +38,36 @@
   (windmove-default-keybindings 'meta) ;; M-arrows to move
   ;; :bind
   ;; ((:map org-mode-map
-         ;; ("M-<left>" . windmove-left)
-         ;; ("M-<right>" . windmove-right)
-         ;; ("M-<up>" . windmove-up)
-         ;; ("M-<down>" . windmove-down)
+  ;; ("M-<left>" . windmove-left)
+  ;; ("M-<right>" . windmove-right)
+  ;; ("M-<up>" . windmove-up)
+  ;; ("M-<down>" . windmove-down)
 
-         ;; ("M-S-<up>" . org-metaup)
-         ;; ("M-S-<down>" . org-metadown)
-         ;; ("M-S-<left>" . org-metaleft)
-         ;; ("M-S-<right>" . org-metaright)
-         ;; ))
+  ;; ("M-S-<up>" . org-metaup)
+  ;; ("M-S-<down>" . org-metadown)
+  ;; ("M-S-<left>" . org-metaleft)
+  ;; ("M-S-<right>" . org-metaright)
+  ;; ))
   )
 
+(use-package buffer-move
+  :defer t)
 
-(global-set-key (kbd "M-<left>") 'windmove-left)
+
+(global-set-key (kbd "M-<left>")  'windmove-left)
 (global-set-key (kbd "M-<right>") 'windmove-right)
-(global-set-key (kbd "M-<up>") 'windmove-up)
-(global-set-key (kbd "M-<down>") 'windmove-down)
+(global-set-key (kbd "M-<up>")    'windmove-up)
+(global-set-key (kbd "M-<down>")  'windmove-down)
 
+(global-set-key (kbd "M-S-<up>")    'buf-move-up)
+(global-set-key (kbd "M-S-<down>")  'buf-move-down)
+(global-set-key (kbd "M-S-<left>")  'buf-move-left)
+(global-set-key (kbd "M-S-<right>") 'buf-move-right)
 
 (global-set-key (kbd "C-M-=") 'enlarge-window)
-(global-set-key (kbd "M-=") 'enlarge-window-horizontally)
+(global-set-key (kbd "M-=")   'enlarge-window-horizontally)
 (global-set-key (kbd "C-M--") 'shrink-window)
-(global-set-key (kbd "M--") 'shrink-window-horizontally)
-
-(global-set-key (kbd "<M-s-up>")     'buf-move-up)
-(global-set-key (kbd "<M-s-down>")   'buf-move-down)
-(global-set-key (kbd "<M-s-left>")   'buf-move-left)
-(global-set-key (kbd "<M-s-right>")  'buf-move-right)
+(global-set-key (kbd "M--")   'shrink-window-horizontally)
 
 (global-set-key (kbd "C-x |") 'toggle-window-split)
 
