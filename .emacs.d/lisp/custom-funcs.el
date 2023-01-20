@@ -235,8 +235,7 @@ Cancels itself, if this buffer was killed."
 (defun current-project ()
   "Return project-dir or nil."
   (ignore-errors   ;;; Pick one: projectile or find-file-in-project
-    (ffip-project-root)
-    ;; (projectile-project-root)
+    (or (projectile-project-root) (ffip-project-root))
     )
   )
 
