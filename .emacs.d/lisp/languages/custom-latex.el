@@ -8,6 +8,7 @@
 ;; M-x prettify-symbols-mode to display pretty math
 ;; C-c C-a to compile and view
 (use-package tex
+  :defer t
   :straight auctex)
 
 ;; to use pdfview with tex
