@@ -38,14 +38,18 @@
   (dolist (i custom-enabled-themes)
     (disable-theme i)))
 
+(defun update-theme (theme)
+  "Update theme."
+  (disable-all-themes)
+  (load-theme (intern theme) t))
+
 ;; change theme utility
 (defun my-change-theme ()
   "Choose theme from installed list using completing-read."
   (interactive)
   (let ((theme (completing-read "Choose theme : " (custom-available-themes)
                                 nil nil nil nil (symbol-name (car custom-enabled-themes)))))
-    (disable-all-themes)
-    (load-theme (intern theme) t)))
+    (update-theme theme)))
 
 ;; TODO add dynamic themeing
 (defun my-consult-change-theme ()
