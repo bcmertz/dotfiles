@@ -4,6 +4,8 @@
 -/undo
 -ido.last
 -/eln-cache
+-/.cache
+-/var
 -/multisession
 -/vimish-fold
 -/transient
