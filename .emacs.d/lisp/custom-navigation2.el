@@ -312,16 +312,19 @@ targets."
               ("C-c p P" . (lambda () (interactive)
                            (projectile-cleanup-known-projects)
                            (projectile-discover-projects-in-search-path)))
-              ("C-c p p" . consult-projectile-switch-project)
-              ("C-c p b" . consult-projectile-switch-to-buffer)
-              ("C-c p f" . consult-projectile-find-file)))
+              ("C-c p p" . projectile-switch-project)
+              ("C-c p b" . projectile-switch-to-buffer)
+              ("C-c p f" . projectile-find-file)))
+              ;; ("C-c p p" . consult-projectile-switch-project)
+              ;; ("C-c p b" . consult-projectile-switch-to-buffer)
+              ;; ("C-c p f" . consult-projectile-find-file)))
 
-(use-package consult-projectile
-  :after consult
-  :after projectile
-  :config
-  (setq consult-projectile-use-projectile-switch-project nil)
-  )
+;; (use-package consult-projectile
+  ;; :after consult
+  ;; :after projectile
+  ;; :config
+  ;; (setq consult-projectile-use-projectile-switch-project t)
+  ;; )
 
 
 ;; better C-x C-b
