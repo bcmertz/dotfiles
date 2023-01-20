@@ -29,6 +29,22 @@
 ;; toggle hl line mode
 (global-set-key (kbd "C-c t b") 'toggle-centaur-tabs)
 
+;; stateful window management
+(use-package winner
+  :config
+  (winner-mode)
+  (global-set-key (kbd "C-M-<right>") 'winner-redo)
+  (global-set-key (kbd "C-M-<left>") 'winner-undo)
+  )
+
+;; https://config.daviwil.com/emacs#control-buffer-placement
+(setq display-buffer-base-action
+      '(display-buffer-reuse-mode-window
+        display-buffer-reuse-window
+        display-buffer-same-window))
+;; If a popup does happen, don't resize windows to be equal-sized
+(setq even-window-sizes nil)
+
 
 (use-package windmove
   :after org
