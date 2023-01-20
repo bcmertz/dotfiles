@@ -51,17 +51,12 @@ include /usr/share/arduino/Arduino.mk
   (setq uno-info "BOARD_TAG    = uno
 MONITOR_PORT = /dev/ttyACM0
 include /usr/share/arduino/Arduino.mk")
+  (setq board (completing-read "Board: " '("nano" "uno")))
+  (if (string= board "nano")
+      (insert-makefile-info nano-info)
+    (if (string= board "uno")
+        (insert-makefile-info uno-info))))
 
-  (ivy-read "Board: " '("nano" "uno")
-            ;; :action '(1
-            ;;           ("nano" insert-makefile-info "nanos")
-            ;;           ("uno" insert-makefile-info "unos"))))
-            :action '(1
-                      ("nano-info" (lambda (x)
-                                     (insert-makefile-info nano-info)))
-                      ("uno-info" (lambda (x)
-                                    (insert-makefile-info uno-info)))
-                      )))
 
 (defun insert-makefile-info (board-info)
   "Helper to insert BOARD-INFO specific Makefile info."
