@@ -342,4 +342,10 @@ targets."
 (defalias 'list-buffers 'ibuffer)
 (bind-key "q" 'kill-current-buffer 'ibuffer-mode-map)
 
+;; code navigation
+(use-package avy
+  :bind (("M-g" . avy-goto-char)    ;; go to char
+         ("M-l" . avy-goto-line)))  ;; go to line
+
+
 ;;; custom-navigation2.el ends here
