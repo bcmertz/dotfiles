@@ -76,7 +76,6 @@
   :custom
   (org-roam-directory "~/kb/")
   (org-roam-completion-everywhere t)
-  (org-roam-completion-system 'ivy)
   ;; more info on template syntax
   ;; https://orgmode.org/manual/Template-expansion.html#Template-expansion
   (org-roam-capture-templates
