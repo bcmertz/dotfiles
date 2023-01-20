@@ -73,11 +73,7 @@
             :preselect (symbol-name (car custom-enabled-themes))
             :action (lambda (theme)
                       ;; disable enabled themes
-                      (disable-all-themes)
-                      ;; load new theme
-                      (load-theme (intern theme) t))))
-
-
+                      (update-theme theme))))
 
 ;; which key prefix for styling related keybindings
 (which-key-add-key-based-replacements "C-c t" "theming")
