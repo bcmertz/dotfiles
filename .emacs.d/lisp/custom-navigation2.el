@@ -289,7 +289,8 @@ targets."
 (defun projectile-find-file-refresh-cache ()
   "Projectile find file and invalidate cache."
   (interactive "")
-  (projectile-find-file t)
+  (projectile-invalidate-cache (if (current-project) nil t))
+  (projectile-find-file)
   )
 
 (use-package projectile
@@ -301,7 +302,7 @@ targets."
   (setq projectile-mode-line-prefix " ")
   (setq projectile-project-search-path '("~/coding/"))
   (setq projectile-enable-caching t)
-  ;; (setq projectile-indexing-method 'hybrid)
+  (setq projectile-indexing-method 'hybrid)
   ;; (setq projectile-indexing-method 'native)
   (which-key-add-key-based-replacements "C-c p P" "Projectile rediscover projects")
   :bind (:map projectile-mode-map
