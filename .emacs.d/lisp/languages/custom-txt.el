@@ -64,8 +64,9 @@
   ("C-c i b" . flyspell-correct-buffer)
   ("C-c i r" . flyspell-correct-region))
 
-(use-package flyspell-correct-ivy
-  :after flyspell-correct)
+;; TODO figure out selectively turning it on
+;; (use-package flyspell-correct-ivy
+;;   :after flyspell-correct)
 
 (defun set-C-i ()
   "C+i and tab are by default treated as the same, so rebind it to Hyper+i."
@@ -76,12 +77,12 @@
   )
 
 (defun flyspell-correct-buffer ()
-  "Interactively (ivy) correct buffer."
+  "Interactively correct buffer."
   (interactive "")
   (flyspell-correct-move 0 t t))
 
 (defun flyspell-correct-region ()
-  "Interactively (ivy) correct region."
+  "Interactively correct region."
   (interactive "")
   (if (use-region-p)
       (progn
