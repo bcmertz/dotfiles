@@ -51,20 +51,18 @@
                                 nil nil nil nil (symbol-name (car custom-enabled-themes)))))
     (update-theme theme)))
 
-;; TODO add dynamic themeing
 (defun my-consult-change-theme ()
   "Choose theme from installed list using consult--read."
   (interactive)
-  (let* ((candidates (mapcar #'symbol-name (custom-available-themes)))
-         (theme (consult--read
-                 candidates
-                 :prompt "dynamic theming <C-M-m>: "
-                 :default (symbol-name (car custom-enabled-themes))
-                 :preview-key (kbd "C-M-m")
-                 )))
-    (disable-all-themes)
-    (load-theme (intern theme) t)
-    ))
+  (consult--read
+   (mapcar #'symbol-name (custom-available-themes))
+   :require-match t
+   :prompt "dynamic theming <M-return>: "
+   :default (symbol-name (car custom-enabled-themes))
+   :state (lambda (action theme)
+            (pcase action
+              ('return (if theme (update-theme theme)))
+              ('preview (if theme (update-theme theme)))))))
 
 (defun my-ivy-change-theme ()
   "Choose theme from installed list using ivy-read."
@@ -77,7 +75,7 @@
 
 ;; which key prefix for styling related keybindings
 (which-key-add-key-based-replacements "C-c t" "theming")
-(global-set-key (kbd "C-c t t") 'my-ivy-change-theme)
+(global-set-key (kbd "C-c t t") 'my-consult-change-theme)
 
 ;; normally there is no load theme hook, create one here
 ;; https://www.reddit.com/r/emacs/comments/4v7tcj/does_emacs_have_a_hook_for_when_the_theme_changes/d5wyu1r/
