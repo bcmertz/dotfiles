@@ -165,7 +165,8 @@
   ;; is 'any, such that any key triggers the preview.
   (setq consult-preview-key nil)
   (consult-customize consult-line :preview-key 'any)
-  (consult-customize consult-theme :preview-key 'any)
+  (consult-customize consult-theme :preview-key (kbd "M-<return>"))
+  (consult-customize my-consult-change-theme :preview-key (kbd "M-<return>"))
   ;; (setq consult-preview-key (kbd "M-."))
   ;; (setq consult-preview-key (list (kbd "<S-down>") (kbd "<S-up>")))
   ;; For some commands and buffer sources it is useful to configure the
