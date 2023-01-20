@@ -34,8 +34,9 @@
 (measure-time(load "custom-styling.el"))          ;; appearance
 (measure-time(load "custom-completion.el"))       ;; completion && snippets
 (measure-time(load "custom-treesitter.el"))       ;; tree-sitter
-;; (measure-time(load "custom-navigation.el"))       ;; navigating projects and code
-(measure-time(load "custom-navigation2.el"))      ;; navigating projects and code
+(measure-time(load "custom-navigation.el"))       ;; navigating projects and code
+;; (measure-time(load "custom-ivy.el"))           ;; ivy navigation
+(measure-time(load "custom-dired.el"))            ;; dired
 (measure-time(load "custom-sidebar.el"))          ;; sidebar
 (measure-time(load "custom-editing.el"))          ;; efficient text editing
 (measure-time(load "custom-bidi-text.el"))        ;; rtl and ltr language support
