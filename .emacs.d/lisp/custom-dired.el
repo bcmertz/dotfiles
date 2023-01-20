@@ -54,4 +54,7 @@
   :bind (:map dired-mode-map ("<tab>" . dired-subtree-toggle)))
 
 
+(define-key dired-mode-map (kbd "M-s") 'consult-ripgrep)
+
+
 ;;; custom-dired.el ends here
