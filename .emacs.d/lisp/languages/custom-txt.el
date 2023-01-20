@@ -64,10 +64,6 @@
   ("C-c i b" . flyspell-correct-buffer)
   ("C-c i r" . flyspell-correct-region))
 
-;; TODO figure out selectively turning it on
-;; (use-package flyspell-correct-ivy
-;;   :after flyspell-correct)
-
 (defun set-C-i ()
   "C+i and tab are by default treated as the same, so rebind it to Hyper+i."
   ;; Translate the problematic keys to the function key Hyper:
