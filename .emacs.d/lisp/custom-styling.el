@@ -201,8 +201,29 @@
 ;; for daemon sessions and and nondaemons
 (apply-if-gui 'styling/set-fonts)
 
+(defun set-buffer-font ()
+  "Set buffer font."
+  (interactive "")
+  (let* ((completion-ignore-case t)
+          (default (frame-parameter nil 'font))
+	  (font (completing-read (format-prompt "Font name" default)
+				 ;; x-list-fonts will fail with an error
+				 ;; if this frame doesn't support fonts.
+				 (font-family-list  (selected-frame))
+                                 nil nil nil nil default)))
+    (when (or (stringp font) (fontp font))
+      (setq buffer-face-mode-face (list ':family font))
+      (buffer-face-mode))))
+
+(defun unset-buffer-font ()
+  "Unset buffer font."
+  (interactive "")
+  (setq buffer-face-mode-face nil)
+  (buffer-face-mode -1))
+
 ;; switch font
-(global-set-key (kbd "C-c t f") 'set-frame-font)
+(global-set-key (kbd "C-c t f") 'set-buffer-font)
+(global-set-key (kbd "C-c t F") 'unset-buffer-font)
 
 (use-package all-the-icons
   :defer t
