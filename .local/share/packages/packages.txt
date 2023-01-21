@@ -327,7 +327,7 @@ sed
 sg3_utils
 signal-desktop
 signify
-siji-git
+siji-ttf
 smartmontools
 sof-firmware
 speedtest-cli
