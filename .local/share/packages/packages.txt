@@ -327,6 +327,7 @@ sed
 sg3_utils
 signal-desktop
 signify
+siji-git
 smartmontools
 sof-firmware
 speedtest-cli
@@ -438,6 +439,7 @@ xorg-twm
 xorg-xbacklight
 xorg-xdpyinfo
 xorg-xev
+xorg-xfd
 xorg-xhost
 xorg-xinit
 xorg-xinput
