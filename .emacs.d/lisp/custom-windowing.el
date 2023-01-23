@@ -15,8 +15,11 @@
   (setq centaur-tabs-set-icons t)
 ;;  (setq centaur-tabs-set-bar 'left)
   :bind
-  ("C-<tab>" . centaur-tabs-backward)
-  ("C-<iso-lefttab>" . centaur-tabs-forward))
+  ;; ("C-<tab>" . centaur-tabs-backward)
+  ;; ("C-<iso-lefttab>" . centaur-tabs-forward)
+  ("C-M-<left>" . centaur-tabs-backward)
+  ("C-M-<right>" . centaur-tabs-forward)
+  )
 
 (defun toggle-centaur-tabs ()
   "Toggle centaur tabs mode."
@@ -33,8 +36,8 @@
 (use-package winner
   :config
   (winner-mode)
-  (global-set-key (kbd "C-M-<right>") 'winner-redo)
-  (global-set-key (kbd "C-M-<left>") 'winner-undo)
+  ;; (global-set-key (kbd "C-M-<right>") 'winner-redo)
+  ;; (global-set-key (kbd "C-M-<left>") 'winner-undo)
   )
 
 ;; https://config.daviwil.com/emacs#control-buffer-placement
@@ -52,18 +55,6 @@
   ;; wrap around at edges
   ;; (setq windmove-wrap-around t)
   (windmove-default-keybindings 'meta) ;; M-arrows to move
-  ;; :bind
-  ;; ((:map org-mode-map
-  ;; ("M-<left>" . windmove-left)
-  ;; ("M-<right>" . windmove-right)
-  ;; ("M-<up>" . windmove-up)
-  ;; ("M-<down>" . windmove-down)
-
-  ;; ("M-S-<up>" . org-metaup)
-  ;; ("M-S-<down>" . org-metadown)
-  ;; ("M-S-<left>" . org-metaleft)
-  ;; ("M-S-<right>" . org-metaright)
-  ;; ))
   )
 
 (use-package buffer-move
