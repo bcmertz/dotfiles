@@ -173,6 +173,7 @@ jq
 jre-openjdk
 k3b
 kcolorchooser
+kdeconnect
 kicad
 kid3
 kphotoalbum
