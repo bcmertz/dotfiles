@@ -1,4 +1,8 @@
-#test-fonts.pl
+#!/bin/sh
+#
+# test if a font contains a char
+
+test='#test-fonts.pl
 use strict;
 use warnings;
 use Font::FreeType;
@@ -10,4 +14,7 @@ foreach my $font_def (`fc-list`) {
     if ($glyph) {
         print $font_def;
     }
-}
+}'
+
+
+perl -e "$test" $1
