@@ -27,6 +27,7 @@ xfce4-power-manager --daemon &  # power management
 setxkbmap -layout us,ir -option grp:alts_toggle & # set keyboards
 oled-linux &                        # ugh
 battery-stats-collector &           # stats!
+kdeconnectd &                       # kdeconnect
 /usr/bin/emacs --daemon=term &      # terminal emacs daemon
 /usr/bin/emacs --daemon=gui &       # gui emacs daemon
 xset r rate 300 50 &                # faster repeating keys
