@@ -118,7 +118,9 @@
                  (window-height . fit-window-to-buffer)))
   )
 
-(use-package org-roam-protocol :straight nil)
+(use-package org-roam-protocol
+  :defer t
+  :straight nil)
 
 (defun org-roam-node-insert-immediate (arg &rest args)
   "Create and insert roam node without switching to it."
