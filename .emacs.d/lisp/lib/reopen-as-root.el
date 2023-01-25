@@ -87,5 +87,4 @@ as the current user."
     (remove-hook 'find-file-hook #'reopen-as-root)))
 
 (provide 'reopen-as-root)
-
 ;;; reopen-as-root.el ends here
