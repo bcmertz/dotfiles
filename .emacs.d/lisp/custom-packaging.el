@@ -8,7 +8,7 @@
 
 ;; don't create *straight-process* buffer
 (setq straight--process-log nil)
-
+(setq straight-check-for-modifications '(watch-files find-when-checking))
 ;; bootstrap straight
 (defvar bootstrap-version)
 (let ((bootstrap-file
