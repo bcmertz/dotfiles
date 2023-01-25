@@ -94,10 +94,7 @@
 !.emacs.d/*/
 !.emacs.d/etc/*
 !.emacs.d/org-templates/*
-!.emacs.d/lisp/*
-!.emacs.d/lisp/lib/*
-!.emacs.d/lisp/themes/*
-!.emacs.d/lisp/languages/*
+!.emacs.d/lisp/**/*
 !.emacs.d/snippets/**/*
 !.dir-locals.el # eglot config for lsp servers
 

@@ -6,12 +6,11 @@
 ;;;
 ;;; Code:
 
-;; reopen root files with sudo-edit
 (use-package reopen-as-root
-  :defer t
-  :straight nil
-  :load-path "~/.emacs.d/lisp/lib/reopen-as-root.el"
-  :config (reopen-as-root-mode))
+  :after tramp
+  :straight (reopen-as-root :local-repo "~/.emacs.d/lisp/lib/reopen-as-root"
+                            :files ("reopen-as-root.el"))
+  :init (reopen-as-root-mode))
 
 ;; zap to char using avy
 (use-package avy-zap :defer t)
