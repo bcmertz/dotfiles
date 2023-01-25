@@ -119,7 +119,6 @@
   )
 
 (use-package org-roam-protocol
-  :defer t
   :straight nil)
 
 (defun org-roam-node-insert-immediate (arg &rest args)
