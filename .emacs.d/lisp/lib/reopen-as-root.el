@@ -4,6 +4,8 @@
 ;;;
 ;;; Code:
 
+(require 'tramp)
+
 (defgroup reopen-as-root nil
   "Reopen as root."
   :group 'convenience)
