@@ -78,10 +78,9 @@ buffer is not visiting a file."
 
 ;;;###autoload
 (define-minor-mode reopen-as-root-mode
-  "Automatically reopen files as root if we can't write to them
+  "Automatically reopen files as root if we can't write to them\
 as the current user."
-  :lighter ""
-  :global t
+  :lighter "SUDO" :global t :group 'reopen-as-root
   (if reopen-as-root-mode
       (add-hook 'find-file-hook #'reopen-as-root)
     (remove-hook 'find-file-hook #'reopen-as-root)))
