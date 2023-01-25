@@ -70,7 +70,6 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ORG ROAM ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-
 (use-package org-roam
   :defer t
   :custom
@@ -103,9 +102,11 @@
         :map org-mode-map
         ("<backtab>" . completion-at-point)
         )
+  :init
+  (require 'org-roam-protocol)
+  (require 'org-roam-capture)
   :config
   (which-key-add-key-based-replacements "C-c n" "org-roam")
-  (org-roam-setup)
 
   ;; display tags in search results
   ;; (setq org-roam-node-display-template (concat "${title:40 " (propertize "${tags:*}" 'face 'org-tag)))
@@ -117,9 +118,6 @@
                  (display-buffer-in-direction)
                  (window-height . fit-window-to-buffer)))
   )
-
-(use-package org-roam-protocol
-  :straight nil)
 
 (defun org-roam-node-insert-immediate (arg &rest args)
   "Create and insert roam node without switching to it."
