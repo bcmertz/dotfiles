@@ -396,6 +396,7 @@ vpnc
 vulkan-intel
 vulkan-radeon
 w3m
+watchexec
 waybar
 welcome
 wget
