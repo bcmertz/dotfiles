@@ -93,5 +93,5 @@
 
 ;; (add-hook 'eglot--managed-mode-hook 'bcm/eglot-prefer-flycheck)
 
-
+(provide 'custom-errorcheck)
 ;;; custom-errorcheck.el ends here
