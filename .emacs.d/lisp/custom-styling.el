@@ -199,7 +199,9 @@
 ;; respect default terminal fonts
 ;; if we're in a gui set the fonts appropriately
 ;; for daemon sessions and and nondaemons
-(apply-if-gui 'styling/set-fonts)
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (apply-if-gui 'styling/set-fonts)))
 
 (defun set-buffer-font ()
   "Set buffer font."
