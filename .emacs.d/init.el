@@ -16,58 +16,61 @@
   "Measure the time it takes to evaluate BODY."
   `(let ((time (current-time)))
      ,@body
-     (message "%.06f" (float-time (time-since time)))))
+     (message "loaded %s: %.06f" ,@body (float-time (time-since time)))))
 
 ;; set customize config file location and load it
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (measure-time(load custom-file))
 
-(measure-time(load "custom-packaging.el"))        ;; repositories and package management
-(measure-time(load "custom-funcs.el"))            ;; custom functions used throughout our configuration
+(measure-time(require 'custom-packaging))        ;; repositories and package management
+(measure-time(require 'custom-funcs))            ;; custom functions used throughout our configuration
 
 (if (equal (getenv "SESSION") "emacs")            ;; see if SESSION env var is emacs
-    (measure-time(load "custom-exwm-config.el"))) ;; emacs as window manager
+    (measure-time(require 'custom-exwm-config))) ;; emacs as window manager
 
-(measure-time(load "custom-splashscreen.el"))     ;; splash-screen
-(measure-time(load "custom-general.el"))          ;; general configuration
-(measure-time(load "custom-keybindings.el"))      ;; evil, suggestions
-(measure-time(load "custom-styling.el"))          ;; appearance
-(measure-time(load "custom-completion.el"))       ;; completion && snippets
-(measure-time(load "custom-treesitter.el"))       ;; tree-sitter
-(measure-time(load "custom-navigation.el"))       ;; navigating projects and code
-;; (measure-time(load "custom-ivy.el"))           ;; ivy navigation
-(measure-time(load "custom-dired.el"))            ;; dired
-(measure-time(load "custom-sidebar.el"))          ;; sidebar
-(measure-time(load "custom-editing.el"))          ;; efficient text editing
-(measure-time(load "custom-bidi-text.el"))        ;; rtl and ltr language support
-(measure-time(load "custom-windowing.el"))        ;; buffer management
-(measure-time(load "custom-error-check.el"))      ;; error checking
-(measure-time(load "custom-pass.el"))             ;; password management
-(measure-time(load "custom-help.el"))             ;; help
-;; (measure-time(load "custom-email.el"))         ;; email - mu4e
-;; (measure-time(load "custom-music.el"))         ;; music - emms
-(measure-time(load "custom-lsp.el"))              ;; language server protocol
-(measure-time(load "custom-terminal.el"))         ;; terminal
-(measure-time(load "custom-org.el"))              ;; org mode
-(measure-time(load "custom-git.el"))              ;; version control
-(measure-time(load "custom-pdf.el"))              ;; pdf viewing/editing
-(measure-time(load "custom-compile.el"))          ;; compilation
-(measure-time(load "custom-menus.el"))            ;; mouse interaction and menus
+(measure-time(require 'custom-splashscreen))     ;; splash-screen
+(measure-time(require 'custom-general))          ;; general configuration
+(measure-time(require 'custom-keybindings))      ;; evil, suggestions
+(measure-time(require 'custom-styling))          ;; appearance
+(measure-time(require 'custom-completion))       ;; completion && snippets
+(measure-time(require 'custom-treesitter))       ;; tree-sitter
+(measure-time(require 'custom-navigation))       ;; navigating projects and code
+;; (measure-time(require 'custom-ivy))           ;; ivy navigation
+(measure-time(require 'custom-dired))            ;; dired
+(measure-time(require 'custom-sidebar))          ;; sidebar
+(measure-time(require 'custom-editing))          ;; efficient text editing
+(measure-time(require 'custom-bidi-text))        ;; rtl and ltr language support
+(measure-time(require 'custom-windowing))        ;; buffer management
+(measure-time(require 'custom-errorcheck))      ;; error checking
+(measure-time(require 'custom-pass))             ;; password management
+(measure-time(require 'custom-help))             ;; help
+;; (measure-time(require 'custom-email))         ;; email - mu4e
+;; (measure-time(require 'custom-music))         ;; music - emms
+(measure-time(require 'custom-lsp))              ;; language server protocol
+(measure-time(require 'custom-terminal))         ;; terminal
+(measure-time(require 'custom-org))              ;; org mode
+(measure-time(require 'custom-git))              ;; version control
+(measure-time(require 'custom-pdf))              ;; pdf viewing/editing
+(measure-time(require 'custom-compile))          ;; compilation
+(measure-time(require 'custom-menus))            ;; mouse interaction and menus
 
 ;; languages
-(measure-time(load "custom-txt.el"))
-(measure-time(load "custom-golang.el"))
-(measure-time(load "custom-js.el"))
-(measure-time(load "custom-typescript.el"))
-(measure-time(load "custom-python.el"))
-(measure-time(load "custom-markdown.el"))
-(measure-time(load "custom-css.el"))
-(measure-time(load "custom-bash.el"))
-(measure-time(load "custom-html.el"))
-(measure-time(load "custom-arduino.el"))
-(measure-time(load "custom-latex.el"))
+(measure-time(require 'custom-txt))
+(measure-time(require 'custom-golang))
+(measure-time(require 'custom-js))
+(measure-time(require 'custom-typescript))
+(measure-time(require 'custom-python))
+(measure-time(require 'custom-markdown))
+(measure-time(require 'custom-css))
+(measure-time(require 'custom-bash))
+(measure-time(require 'custom-html))
+(measure-time(require 'custom-arduino))
+(measure-time(require 'custom-latex))
 
-(setq gc-cons-threshold 800000)                ;; Return to normal gc value
-(add-hook 'focus-out-hook 'garbage-collect)    ;; garbage collect when emacs leaves focus
+;; Lower threshold back to 8 MiB (default is 800kB)
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            ;; (add-hook 'focus-out-hook 'garbage-collect)
+            (setq gc-cons-threshold (expt 2 23))))
 
 ;;; init.el ends here
