@@ -7,7 +7,7 @@
 ;;; Code:
 
 ;; useful funcs from doom-emacs used elsewhere in config
-(load "doom-lib.el")
+(require 'doom-lib)
 
 ;; if gui do something in whatver type of emacs instance we are using
 (defun apply-if-gui (&rest action)
