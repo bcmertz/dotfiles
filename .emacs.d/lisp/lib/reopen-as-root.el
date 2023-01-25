@@ -51,6 +51,7 @@ See also `reopen-as-root-mode'."
               (file-owned-by-user-p buffer-file-name))
     (find-alternate-file-as-root buffer-file-name)))
 
+;;;###autoload
 (defun sudo-edit (&optional arg)
   "Edit currently visited file as root.
 With a prefix ARG prompt for a file to visit.
