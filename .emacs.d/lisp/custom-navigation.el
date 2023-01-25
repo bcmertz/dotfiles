@@ -303,6 +303,7 @@ targets."
   )
 
 (use-package projectile
+  :defer t
   :init
   (projectile-mode +1)
   :config
