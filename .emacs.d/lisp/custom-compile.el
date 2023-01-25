@@ -22,4 +22,5 @@ https://stackoverflow.com/a/3612017"
   ("C-c c" . compile-comint)
   )
 
+(provide 'custom-compile)
 ;;; custom-compile.el ends here

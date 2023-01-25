@@ -22,4 +22,5 @@
       (lambda ()
         (local-unset-key (kbd "C-c C-l"))))
 
+(provide 'custom-html)
 ;;; custom-html.el ends here

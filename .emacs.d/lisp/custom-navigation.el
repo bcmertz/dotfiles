@@ -382,4 +382,5 @@ targets."
   :bind (("M-g" . avy-goto-char)    ;; go to char
          ("M-l" . avy-goto-line)))  ;; go to line
 
+(provide 'custom-navigation)
 ;;; custom-navigation.el ends here

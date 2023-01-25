@@ -14,4 +14,5 @@
 ;;                           (require 'lsp-pyright)
 ;;                           (lsp))))  ; or lsp-deferred
 
+(provide 'custom-python)
 ;;; custom-python.el ends here

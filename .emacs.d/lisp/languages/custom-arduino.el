@@ -68,5 +68,5 @@ include /usr/share/arduino/Arduino.mk")
       ))
 )
 
-
+(provide 'custom-arduino)
 ;;; custom-arduino.el ends here

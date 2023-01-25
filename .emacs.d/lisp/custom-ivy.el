@@ -136,4 +136,5 @@ The user is prompted to choose a directory starting with START-DIR."
 
 (define-key dired-mode-map (kbd "M-s") 'counsel-ag)
 
+(provide 'custom-ivy)
 ;;; custom-ivy.el ends here

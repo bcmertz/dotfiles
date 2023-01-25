@@ -50,4 +50,5 @@
 
 ;; (require 'use-package)
 
+(provide 'custom-packaging)
 ;;; custom-packaging.el ends here

@@ -184,5 +184,5 @@
   :defer t
   )
 
-
+(provide 'custom-txt)
 ;;; custom-txt.el ends here

@@ -42,5 +42,5 @@
     )
   (message "%s" bidi-paragraph-direction))
 
-
+(provide 'custom-bidi-text)
 ;;; custom-bidi-text.el ends here

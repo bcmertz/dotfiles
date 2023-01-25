@@ -1,4 +1,4 @@
-;;; custom-pdf.el --- pdf configuratiob
+;;; custom-pdf.el --- pdf configuration
 ;;;
 ;;; Commentary:
 ;;;
@@ -26,5 +26,5 @@
   ;; keyboard shortcuts
   )
 
-
+(provide 'custom-pdf)
 ;;; custom-pdf.el ends here

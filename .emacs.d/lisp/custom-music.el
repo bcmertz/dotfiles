@@ -1,4 +1,4 @@
-;;; music.el
+;;; custom-music.el
 ;;;
 ;;; Commentary:
 ;;;
@@ -12,4 +12,5 @@
 
 (setq emms-source-file-default-directory "~/media/music/")
 
-;;; music.el ends here
+(provide 'custom-music)
+;;; custom-music.el ends here

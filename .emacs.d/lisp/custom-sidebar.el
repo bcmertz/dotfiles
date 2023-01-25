@@ -74,4 +74,5 @@
   (beginning-of-line)
   (skip-chars-forward " \t\r"))
 
+(provide 'custom-sidebar)
 ;;; custom-sidebar.el ends here

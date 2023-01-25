@@ -36,5 +36,5 @@
 ;; dont start email services for terminal daemon :)
 (apply-if-gui 'startup-email)
 
-
+(provide 'custom-email)
 ;;; custom-email.el ends here

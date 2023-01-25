@@ -359,4 +359,5 @@ before calling `er/expand-region' for the first time ARG."
   (setq auto-revert-verbose t)
   (global-auto-revert-mode +1))
 
+(provide 'custom-editing)
 ;;; custom-editing.el ends here

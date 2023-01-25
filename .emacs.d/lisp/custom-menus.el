@@ -17,5 +17,5 @@
 ;;      ["My subentry" my-obscure-function t])))
 
 
-
+(provide 'custom-menus)
 ;;; custom-menus.el ends here

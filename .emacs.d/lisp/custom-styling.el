@@ -295,4 +295,5 @@
 (global-set-key (kbd "<S-mouse-4>") (lambda () (interactive)
                                       (if truncate-lines (scroll-right 10))))
 
+(provide 'custom-styling)
 ;;; custom-styling.el ends here

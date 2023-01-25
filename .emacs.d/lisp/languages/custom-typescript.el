@@ -28,4 +28,5 @@
 
 (add-hook 'web-mode-hook  'my-web-mode-hook)
 
+(provide 'custom-typescript)
 ;;; custom-typescript.el ends here

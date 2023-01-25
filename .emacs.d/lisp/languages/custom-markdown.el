@@ -16,4 +16,5 @@
     "mp"  'markdown-live-preview-mode)
   )
 
+(provide 'custom-markdown)
 ;;; custom-markdown.el ends here

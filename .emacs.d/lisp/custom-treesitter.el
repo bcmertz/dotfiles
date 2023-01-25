@@ -68,5 +68,5 @@
 ;;                          :repo "mickeynp/combobulate")
 ;;   )
 
-
+(provide 'custom-treesitter)
 ;;; custom-treesitter.el ends here

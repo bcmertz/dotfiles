@@ -295,4 +295,5 @@
 ;;                "xrandr" nil "xrandr --output eDP --left-of DisplayPort-0 --auto")))
 ;;   (exwm-randr-enable))
 
+(provide 'custom-exwm-config)
 ;;; custom-exwm-config ends here

@@ -497,5 +497,5 @@ selects backward.)"
         (right-word)))
     (mark-word arg allow-extend)))
 
-
+(provide 'custom-funcs)
 ;;; custom-funcs.el ends here

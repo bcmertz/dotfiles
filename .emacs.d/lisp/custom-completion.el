@@ -127,6 +127,5 @@
 ;;           (indent-for-tab-command)))))
 
 
-
-
+(provide 'custom-completion)
 ;;; custom-completion.el ends here

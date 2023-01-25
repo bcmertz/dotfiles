@@ -65,4 +65,5 @@ https://github.com/magit/magit/issues/460#issuecomment-837449105."
   :bind
   ("C-c l" . git-link))
 
+(provide 'custom-git)
 ;;; custom-git.el ends here

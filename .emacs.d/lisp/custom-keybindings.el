@@ -1,4 +1,4 @@
-;;; custom-evil-keymap.el --- set evil mode keymap
+;;; custom-keybindings.el --- set evil mode keymap
 ;;;
 ;;; Commentary:
 ;;;
@@ -135,4 +135,5 @@
 
 (global-set-key (kbd "M-SPC") 'evil-mode)
 
-;;; custom-evil-keymap.el ends here
+(provide 'custom-keybindings)
+;;; custom-keybindings.el ends here

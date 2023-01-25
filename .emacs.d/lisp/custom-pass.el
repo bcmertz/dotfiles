@@ -19,4 +19,5 @@
 ;;   (pinentry-start)
 ;; )
 
+(provide 'custom-pass)
 ;;; custom-pass.el ends here

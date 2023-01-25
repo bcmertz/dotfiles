@@ -17,5 +17,5 @@
          ("p" . help-goto-previous-page)
          ))
 
-
+(provide 'custom-help)
 ;;; custom-help.el ends here

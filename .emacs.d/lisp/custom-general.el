@@ -111,4 +111,5 @@
          ;;       '(file))
          )))
 
+(provide 'custom-general)
 ;;; custom-general.el ends here

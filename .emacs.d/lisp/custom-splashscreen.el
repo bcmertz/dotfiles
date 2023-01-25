@@ -59,4 +59,5 @@
 " (return-greeting) (capitalize (user-full-name)))))
 (apply-if-gui 'set-gui-scratch-greeting)
 
+(provide 'custom-splashscreen)
 ;;; custom-splashscreen.el ends here

@@ -11,4 +11,5 @@
 
 (setq css-indent-offset 2)
 
+(provide 'custom-css)
 ;;; custom-css.el ends here

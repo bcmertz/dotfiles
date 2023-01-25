@@ -56,5 +56,5 @@
 
 (define-key dired-mode-map (kbd "M-s") 'consult-ripgrep)
 
-
+(provide 'custom-dired)
 ;;; custom-dired.el ends here

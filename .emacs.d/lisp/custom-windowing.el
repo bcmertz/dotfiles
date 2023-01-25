@@ -78,4 +78,5 @@
 
 (global-set-key (kbd "C-x |") 'toggle-window-split)
 
+(provide 'custom-windowing)
 ;;; custom-windowing.el ends here

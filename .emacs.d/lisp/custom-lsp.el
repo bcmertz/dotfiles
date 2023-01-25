@@ -47,5 +47,5 @@
 ;;   )
 ;; (push 'company-lsp company-backends)
 
-
+(provide 'custom-lsp)
 ;;; custom-lsp.el ends here

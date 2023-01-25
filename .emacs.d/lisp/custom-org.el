@@ -329,4 +329,5 @@
 ;;          :publishing-function org-html-publish-to-html)
 ;;         ("org" :components ("org-notes"))))
 
+(provide 'custom-org)
 ;;; custom-org.el ends here

@@ -84,5 +84,5 @@
 ;;   (add-hook 'before-save-hook #'eglot-interactively-organize-imports nil t)
 ;;   )
 
-
+(provide 'custom-golang)
 ;;; custom-golang.el ends here

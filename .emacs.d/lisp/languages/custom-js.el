@@ -19,4 +19,5 @@
 ;;(add-to-list 'auto-mode-alist '("\\.tsx\\'" . js-mode))
 (setq js-indent-level 2)
 
+(provide 'custom-js)
 ;;; custom-js.el ends here
