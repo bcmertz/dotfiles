@@ -2,7 +2,7 @@
 ;;;
 ;;; Commentary:
 ;;;
-;;; modeline, scrolling, theme, etc
+;;; theme, scrolling, etc
 ;;;
 ;;; Code:
 
@@ -115,21 +115,6 @@
 ;; (set-display-table-slot standard-display-table 0 ?\ )
 ;; (set-face-attribute 'fringe nil :background nil)
 ;; (fringe-mode 0)
-
-;; modeline
-(use-package doom-modeline
-  ;; :load-path "~/coding/doom-modeline"
-  :config
-  (setq doom-modeline-vcs-max-length 100)
-  ;; lsp
-  (setq doom-modeline-lsp nil)
-  ;; :custom-face
-  ;; (mode-line ((t (:foreground "#D8DEE8" :background "#353645"))))
-  ;; (mode-line-inactive ((t (:background "#181A1F"))))
-  ;; (doom-modeline-buffer-modified ((t (:inherit (error bold) :foreground "#599DD5"))))
-  :init (doom-modeline-mode 1))
-
-(use-package hide-mode-line :defer t)
 
 ;; center 1 buffer
 (use-package centered-window
