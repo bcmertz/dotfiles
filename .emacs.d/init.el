@@ -14,9 +14,10 @@
 ;; debug startup performance / load time using (measure-time(load "custom-module.el"))
 (defmacro measure-time (&rest body)
   "Measure the time it takes to evaluate BODY."
-  `(let ((time (current-time)))
+  `(let ((time (current-time))
+         (name (format "%s" ,@body)))
      ,@body
-     (message "loaded %s: %.06f" ,@body (float-time (time-since time)))))
+     (message "%-24s %.03fs" (concat name "...") (float-time (time-since time)))))
 
 ;; set customize config file location and load it
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
