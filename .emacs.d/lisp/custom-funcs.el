@@ -419,6 +419,23 @@ With argument, do this that many times."
   (insert "#!/bin/sh\n#\n# description")
   (shell-script-mode))
 
+;; start elisp script and enable elisp mode
+(defun start-elisp-script ()
+  "Start elisp script by inserting header and entering elisp mode."
+  (interactive)
+  (let ((package (car (split-string (buffer-name) "\\.")))
+        (type (car (last (split-string (car (split-string (buffer-name) "\\.")) "\\-")))))
+    (insert (format ";;; %s --- custom %s
+;;;
+;;; Commentary:
+;;;
+;;; Code:
+
+
+(provide '%s)
+;;; %s.el ends here" (buffer-name) type package package))
+    ))
+
 
 ;; Turn org text into link and follow it to corresponding header
 (defun org-open-at-point-plaintext ()
