@@ -39,7 +39,7 @@ yay -S --needed - < $HOME/.local/share/packages/packages.txt || warn "failed to 
 
 # pacman makepackagelist hook
 sudo ln -s ~/.config/pacman/update-package-list.hook /etc/pacman.d/hooks/update-package-list.hook
-makepackagelist
+pacman-make_package_list
 
 # reflector timer - update mirrorlists periodically
 sudo systemctl enable --now reflector.timer
