@@ -83,6 +83,7 @@
 
 
 (use-package consult
+  :commands (consult--read)
   :bind (;; C-c bindings (mode-specific-map)
          ("C-c h" . consult-history)
          ("C-c m" . consult-mode-command)
