@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# view info on all pacman packages known
+
+pacman -Slq | fzf --preview 'pacman -Si {}' --layout=reverse

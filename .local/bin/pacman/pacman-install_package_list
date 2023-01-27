@@ -1,0 +1,4 @@
+#!/bin/bash
+# install packages from lists
+
+yay -S --needed - < ~/.local/share/packages/packages.txt

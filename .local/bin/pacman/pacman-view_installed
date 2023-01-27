@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# view installed pacman packages and info
+
+pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'

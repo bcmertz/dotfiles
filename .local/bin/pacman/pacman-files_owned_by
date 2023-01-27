@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# view all files owned by a package
+
+pacman -Qlq $1 | grep -v '/$' | xargs -r du -h | sort -h
