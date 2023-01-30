@@ -1,7 +1,6 @@
 #!/usr/bin/env sh
 
 location="41.8999,-74.7323"
-amber='\e]4;1;rgb:FB/C0/2D\e\\\e[31m'
 
 getforecast() {
     ping -q -c 1 1.1.1.1 >/dev/null 2>&1 || exit 1
@@ -9,15 +8,6 @@ getforecast() {
 }
 
 showtemperature() {
-    # current_weather=$(sed '3q;d' "$HOME/.local/share/weatherreport" | awk '{print $1}')
-    # case $current_weather in
-    #     Overcast)
-    #         current_weather=""
-    #         ;;
-    # esac
-
-    # printf "$amber%s""$current_weather"
-
     sed '4q;d' "$HOME/.local/share/weatherreport" | grep -o "m\\(-\\)*[0-9]\\+" | sed -e 1b -e '$!d' | tr '\n|m' ' ' | awk '{print $1"°"}'
 }
 
