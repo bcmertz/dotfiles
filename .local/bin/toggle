@@ -45,26 +45,6 @@ function redshift_toggle {
     fi
 }
 
-function led_toggle {
-    sudo modprobe -r ec_sys
-    sudo modprobe ec_sys write_support=1
-
-    state=$(cat /sys/devices/platform/thinkpad_acpi/leds/tpacpi\:\:power/brightness)
-
-    if [ $state == 0 ]; then
-        # need to use tee to avoid permission issues
-        echo 1 | sudo tee /sys/devices/platform/thinkpad_acpi/leds/tpacpi\:\:lid_logo_dot/brightness
-        echo 1 | sudo tee /sys/devices/platform/thinkpad_acpi/leds/tpacpi\:\:power/brightness
-    else
-        # need to use tee to avoid permission issues
-        echo 0 | sudo tee /sys/devices/platform/thinkpad_acpi/leds/tpacpi\:\:lid_logo_dot/brightness
-        echo 0 | sudo tee /sys/devices/platform/thinkpad_acpi/leds/tpacpi\:\:power/brightness
-    fi
-
-
-
-}
-
 for process in $processes; do
     function kill_command {
         killall $process
@@ -92,7 +72,7 @@ for process in $processes; do
             xautolock_command
             ;;
         leds)
-            led_toggle
+            pkexec toggle-leds
             ;;
         *)
             do_toggle $process start_command kill_command
