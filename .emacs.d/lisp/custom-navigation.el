@@ -168,6 +168,12 @@
   (consult-customize my-consult-change-theme :preview-key (kbd "M-<return>"))
 
   ;; TODO figure out ordering error on startup putting recent files first
+  (setq consult-buffer-filter '("\\` " "\\`\\*Completions\\*\\'"
+                                "\\`\\*Flymake log\\*\\'"
+                                "\\`\\*Semantic SymRef\\*\\'"
+                                "\\`\\*tramp/.*\\*\\'"
+                                "\\`\\*Async-native-compile-log\\*\\'"
+                                ))
   (setq consult-buffer-sources '(consult--source-hidden-buffer
                                  consult--source-modified-buffer
                                  consult--source-buffer
