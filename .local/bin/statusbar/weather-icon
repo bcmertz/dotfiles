@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# description
+
+current_weather=$(sed '3q;d' "$HOME/.local/share/weatherreport" | awk '{print $1}')
+case $current_weather in
+    # "Overcast")
+        # current_weather=""
+        # ;;
+    "Sunny")
+        current_weather=""
+        ;;
+    # "Partly cloudy")
+        # current_weather=""
+        # ;;
+    # "Heavy snow")
+        # current_weather=""
+        # ;;
+    # "Light snow")
+        # current_weather=""
+        # ;;
+    # "Freezing fog")
+        # current_weather=""
+        # ;;
+    # "Light snow showers")
+        # current_weather=""
+        # ;;
+    # *)
+        # current_weather="?"
+        # ;;
+esac
+
+printf "$current_weather"
