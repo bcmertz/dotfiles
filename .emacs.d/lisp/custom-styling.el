@@ -181,6 +181,10 @@
 ;; describe char face at mouse click
 ;; from https://emacs.stackexchange.com/a/35449
 ;; based on: https://emacs.stackexchange.com/a/19585/13444
+;;
+;; unable to describe-char in modeline, fringe, etc because describe-char
+;; only works in accessible buffers unfortunately. Can get the text though,
+;; see https://emacs.stackexchange.com/a/311
 (defun my-describe-char-at-mouse-click (click-event)
   "`describe-char' at CLICK-EVENT's position, CLICK-EVENT should be a mouse-click event."
   (interactive "e")
