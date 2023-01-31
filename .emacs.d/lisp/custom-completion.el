@@ -58,6 +58,7 @@
 (use-package yasnippet
   :defer t
   :init
+  (advice-add 'yas-reload-all :around #'silence-function-messages) ;; remove yas messages while reloading
   (yas-minor-mode)
   :bind
   (:map yas-minor-mode-map

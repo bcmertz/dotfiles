@@ -514,5 +514,11 @@ selects backward.)"
         (right-word)))
     (mark-word arg allow-extend)))
 
+(defun silence-function-messages (orig-fun &rest args)
+  "Advice function that silences all messages in ORIG-FUN."
+  (let ((inhibit-message t)      ;Don't show the messages in Echo area
+        (message-log-max nil))   ;Don't show the messages in the *Messages* buffer
+    (apply orig-fun args)))
+
 (provide 'custom-funcs)
 ;;; custom-funcs.el ends here
