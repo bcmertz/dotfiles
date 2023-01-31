@@ -1,4 +1,4 @@
-;;; custom-errorcheck.el --- syntax checking
+;;; custom-error-check.el --- syntax checking
 ;;;
 ;;; Commentary:
 ;;;
@@ -93,5 +93,5 @@
 
 ;; (add-hook 'eglot--managed-mode-hook 'my-eglot-prefer-flycheck)
 
-(provide 'custom-errorcheck)
-;;; custom-errorcheck.el ends here
+(provide 'custom-error-check)
+;;; custom-error-check.el ends here
