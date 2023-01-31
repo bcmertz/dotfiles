@@ -468,7 +468,7 @@ With argument, do this that many times."
           (apply 'delete-region remove)
           (insert description)))))
 
-(defun bcm/org-return ()
+(defun my-org-return ()
   "Org return and if header is closed cycle it."
   (interactive)
   (org-return)

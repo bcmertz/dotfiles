@@ -83,7 +83,7 @@
 
 ;; (push 'eglot flycheck-checkers)
 
-;; (defun bcm/eglot-prefer-flycheck ()
+;; (defun my-eglot-prefer-flycheck ()
 ;;   (when eglot--managed-mode
 ;;     (flycheck-add-mode 'eglot major-mode)
 ;;     (flycheck-select-checker 'eglot)
@@ -91,7 +91,7 @@
 ;;     (flymake-mode -1)
 ;;     (setq eglot--current-flymake-report-fn 'flycheck-eglot-report-fn)))
 
-;; (add-hook 'eglot--managed-mode-hook 'bcm/eglot-prefer-flycheck)
+;; (add-hook 'eglot--managed-mode-hook 'my-eglot-prefer-flycheck)
 
 (provide 'custom-errorcheck)
 ;;; custom-errorcheck.el ends here

@@ -33,7 +33,7 @@
         ("C-`" . org-open-at-point-plaintext)
         ("<C-delete>" . org-remove-link)
         ("<C-escape>" . org-mark-ring-goto)
-        ("<return>" . bcm/org-return)
+        ("<return>" . my-org-return)
         ("C-c C-c" . mc/edit-lines)
         ("C-c r" . github-start-review-at-link)))
 
