@@ -44,7 +44,7 @@
 (measure-time(require 'custom-editing))          ;; efficient text editing
 (measure-time(require 'custom-bidi-text))        ;; rtl and ltr language support
 (measure-time(require 'custom-windowing))        ;; buffer management
-(measure-time(require 'custom-errorcheck))      ;; error checking
+(measure-time(require 'custom-error-check))      ;; error checking
 (measure-time(require 'custom-pass))             ;; password management
 (measure-time(require 'custom-help))             ;; help
 ;; (measure-time(require 'custom-email))         ;; email - mu4e
