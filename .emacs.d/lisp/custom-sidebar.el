@@ -52,9 +52,14 @@
   (buffer-face-set :background (get-theme-variable-from-palette 'bg-alt))
   (buffer-face-mode 1)
   (set-face-attribute 'neo-root-dir-face nil :extend t :box nil :background (get-theme-variable-from-palette 'bg-alt))
-  (if (string= 'unspecified (string (get-theme-variable-from-palette 'bg-hl-line)))
-      (set-face-attribute 'hl-line :background (get-theme-variable-from-palette 'bg-alt))
-    (set-face-attribute 'hl-line :background (get-theme-variable-from-palette 'bg-hl-line))))
+  ;; (setq tmp-string (symbol-name (get-theme-variable-from-palette 'bg-hl-line)))
+  ;; (message "tmp-string: %s" tmp-string)
+  ;; (if (string= "unspecified" tmp-string)
+  ;;     (set-face-attribute 'hl-line :background (get-theme-variable-from-palette 'bg-alt))
+  ;;   (set-face-attribute 'hl-line :background (get-theme-variable-from-palette 'bg-hl-line))
+  ;;   )
+  )
+  ;; (if (equal 'unspecified (get-theme-variable-from-palette 'bg-hl-line))
 
 (advice-add 'neotree-show :after #'set-neotree-styling)
 
