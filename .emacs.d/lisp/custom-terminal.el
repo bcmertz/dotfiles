@@ -8,8 +8,8 @@
 
 (use-package vterm
   :defer t
-  :bind*
-  (("C-<return>" . vterm)))
+  :bind* (("C-<return>" . vterm)
+          :map vterm-mode-map (("C-c C-t" . vterm-copy-mode))))
 
 (provide 'custom-terminal)
 ;;; custom-terminal.el ends here

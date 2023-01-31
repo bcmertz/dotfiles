@@ -6,6 +6,7 @@
 
 (use-package dired-narrow
   :bind (:map dired-mode-map
+              ("C-c C-t" . wdired-change-to-wdired-mode)
               ("/ /" . dired-narrow)
               ("/ f" . dired-narrow-fuzzy)
               ("/ r" . dired-narrow-regexp)))
