@@ -21,7 +21,7 @@
 
 ;; set customize config file location and load it
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(measure-time(load custom-file))
+(load custom-file nil t)
 
 (measure-time(require 'custom-packaging))        ;; repositories and package management
 (measure-time(require 'custom-funcs))            ;; custom functions used throughout our configuration
