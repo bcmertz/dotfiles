@@ -2,7 +2,7 @@
 ;;;
 ;;; Commentary:
 ;;;
-;;; splashscreen
+;;; custom scratch splashscreen
 ;;;
 ;;; Code:
 
