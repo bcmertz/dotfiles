@@ -91,7 +91,11 @@ or the current buffer directory."
     (if (string-match-p (regexp-quote "doom") (format "%s" (car custom-enabled-themes)))
         (setq color (doom-darken (doom-color var) 0.05))
       (if (string-match-p (regexp-quote "ef-") (format "%s" (car custom-enabled-themes)))
-          (setq color (car (cdr (assoc var (ef-themes--palette-value (car custom-enabled-themes))))))))
+          (setq color (car (cdr (assoc var (ef-themes--palette-value (car custom-enabled-themes))))))
+        (if (string-match-p (regexp-quote "atom-one-dark") (format "%s" (car custom-enabled-themes)))
+            ;; need to test for various special names
+            (if (string= var "bg-alt")
+                (setq color (nth 4 (assoc "atom-one-dark-bg-1" atom-one-dark-colors-alist)))))))
     (if (not color)
         (setq color 'unspecified))
     color)
