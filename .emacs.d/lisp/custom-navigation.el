@@ -34,11 +34,13 @@
   ;; find file bind / to directory awareness
   ;; default posframe, with / unbound
   (setq vertico-multiform-categories
-        '((file (lambda (_) (define-key vertico-map "/" #'vertico-directory-enter)) posframe)
+        '((file (lambda (_) (progn
+                              (define-key vertico-map "/" #'vertico-directory-enter)
+                              (setq-local vertico-sort-override-function 'sort-directories-first))) posframe)
           (consult-grep buffer)
-          (t posframe (lambda (_) (define-key vertico-map "/" #'self-insert-command)))))
-  ;; sort directories first
-  (setq vertico-sort-override-function 'sort-directories-first))
+          (t posframe (lambda (_) (define-key vertico-map "/" #'self-insert-command)))
+          ))
+  )
 
 (use-package vertico-directory
   :after vertico
