@@ -18,7 +18,9 @@
         neo-theme (if (display-graphic-p) 'icons 'arrow)
         neo-window-width 30
         neo-window-fixed-size ())
-  :bind ("C-\\" . neotree-project-dir-toggle)
+  :bind (("C-\\" . neotree-project-dir-toggle)
+         :map neotree-mode-map (("<up>" . neotree-previous-line)
+                                ("<down>" . neotree-next-line)))
   :custom-face
   (neo-dir-link-face  ((t (:inherit fixed-pitch))))
   (neo-header-face    ((t (:inherit fixed-pitch))))
