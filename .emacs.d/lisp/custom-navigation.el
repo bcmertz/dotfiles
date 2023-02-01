@@ -30,7 +30,7 @@
   ;; no posframe for isearch equivalent so we dont hide text
   (setq vertico-multiform-commands
         '((magit-status posframe (vertico-preselect . prompt))
-          (consult-line (:not posframe))))
+          (consult-line (:not posframe) (vertico-cycle . t))))
   ;; find file bind / to directory awareness
   ;; default posframe, with / unbound
   (setq vertico-multiform-categories
