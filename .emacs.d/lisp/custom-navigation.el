@@ -168,6 +168,8 @@
   (consult-customize consult-line :preview-key 'any)
   (consult-customize consult-theme :preview-key (kbd "M-<return>"))
   (consult-customize my-consult-change-theme :preview-key (kbd "M-<return>"))
+  (setq consult-line-start-from-top nil)
+  ;; (consult-customize consult-buffer :sort t)
 
   ;; TODO figure out ordering error on startup putting recent files first
   (setq consult-buffer-filter '("\\` " "\\`\\*Completions\\*\\'"
