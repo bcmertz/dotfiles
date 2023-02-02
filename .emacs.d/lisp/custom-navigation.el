@@ -238,10 +238,12 @@
   :straight t
 
   :bind
-  (("M-<return>" . embark-collect)
-   ("C-." . embark-act)         ;; pick some comfortable binding
-   ("C-;" . embark-dwim)        ;; good alternative: M-.
-   ("C-h B" . embark-bindings)) ;; alternative for `describe-bindings'
+  (("C-h B" . embark-bindings) ;; alternative for `describe-bindings'
+   :map vertico-map (
+         ("C-." . embark-act)         ;; pick some comfortable binding
+         ("C-;" . embark-dwim)        ;; good alternative: M-.
+         ("M-<return>" . embark-collect)
+         ))
 
   :init
 
