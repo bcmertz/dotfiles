@@ -37,7 +37,7 @@
         '((file (lambda (_) (progn
                               (define-key vertico-map "/" #'vertico-directory-enter)
                               (setq-local vertico-sort-override-function 'sort-directories-first))) posframe)
-          (consult-grep buffer)
+          (consult-grep buffer) ;; makes all grep / ripgrep / git grep commands take place in dedicated buffer
           (t posframe (lambda (_) (define-key vertico-map "/" #'self-insert-command)))
           ))
   )
