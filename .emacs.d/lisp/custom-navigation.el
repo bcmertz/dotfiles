@@ -241,7 +241,7 @@
   (("C-h B" . embark-bindings) ;; alternative for `describe-bindings'
    :map vertico-map (
          ("C-." . embark-act)         ;; pick some comfortable binding
-         ("C-;" . embark-dwim)        ;; good alternative: M-.
+         ("M-." . embark-dwim)
          ("M-<return>" . embark-collect)
          ))
 
