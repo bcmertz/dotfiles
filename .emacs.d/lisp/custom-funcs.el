@@ -80,17 +80,13 @@ or the current buffer directory."
       (org-meta-return)
       (progn
         (newline-and-indent)
-        (indent-relative)
-        )
-      )
-  )
+        (indent-relative))))
 
 (defun choose-directory ()
   "Choose directory interactively."
   (file-name-as-directory
    (read-directory-name "Directory: "
                         (or (file-name-directory (or buffer-file-name "")) default-directory))))
-
 
 (defun get-theme-variable-from-palette (var)
   "Get theme VAR from palette."
