@@ -2,7 +2,7 @@
 ;;;
 ;;; Commentary:
 ;;;
-;;; theme, scrolling, etc
+;;; theme, UI, highlighting
 ;;;
 ;;; Code:
 
