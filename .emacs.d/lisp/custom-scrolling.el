@@ -8,16 +8,17 @@
 (set-default 'truncate-lines t)
 (add-hook 'text-mode-hook (lambda () (setq truncate-lines nil)))
 
-;; smooth scrolling
+;; mouse smooth scrolling
 (pixel-scroll-precision-mode t)
 (setq pixel-scroll-precision-interpolate-page nil)
 
+;; cursor scrolling
 (setq scroll-margin 1
       scroll-step 1
       scroll-conservatively 10000
       scroll-preserve-screen-position 1)
 
-;; horizontal scrolling
+;; cursor horizontal scrolling
 (setq auto-hscroll-mode t
       ;; how close to the edge of the window before the window is scrolled
       hscroll-margin 2
@@ -25,8 +26,8 @@
       hscroll-step 1
       )
 
+;; mouse horizontal scrolling
 (mouse-wheel-mode t)
-
 (setq mouse-wheel-tilt-scroll t
       mouse-wheel-flip-direction t
       mouse-wheel-scroll-amount-horizontal 1
