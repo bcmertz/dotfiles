@@ -200,12 +200,11 @@
 (set-default 'truncate-lines t)
 (add-hook 'text-mode-hook (lambda () (setq truncate-lines nil)))
 
-;; TODO not smooth anymore
 ;; smooth scrolling
+(pixel-scroll-precision-mode t)
 (setq scroll-margin 1
       scroll-step 1
       scroll-conservatively 10000
-      ;; mouse-wheel-scroll-amount '(1 ((shift) . 1)) ;; one line at a time
       scroll-preserve-screen-position 1)
 
 ;; TODO not horizontal scrolling anymore
