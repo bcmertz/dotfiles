@@ -13,7 +13,11 @@
          ("<next>" . vertico-scroll-up)
          ("<prior>" . vertico-scroll-down))
   :config
-  (setq vertico-preselect 'first))
+  (setq vertico-preselect 'first)
+  :hook
+  (minibuffer-setup . (lambda () (interactive) (pixel-scroll-precision-mode -1)))
+  (minibuffer-exit . (lambda () (interactive) (pixel-scroll-precision-mode 1)))
+  )
 
 (defun sort-directories-first (files)
   "Sort directories before FILES."
