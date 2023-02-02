@@ -175,7 +175,6 @@
   (setq consult-line-start-from-top nil)
   (consult-customize consult-buffer :history nil)
 
-  ;; TODO figure out ordering error on startup putting recent files first
   (setq consult-buffer-filter '("\\` " "\\`\\*Completions\\*\\'"
                                 "\\`\\*Flymake log\\*\\'"
                                 "\\`\\*Semantic SymRef\\*\\'"
