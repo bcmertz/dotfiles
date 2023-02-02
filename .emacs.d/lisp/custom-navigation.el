@@ -27,17 +27,18 @@
   :init (vertico-multiform-mode)
   :config
   ;; magit should not preselect so we can by default select directory
-  ;; no posframe for isearch equivalent so we dont hide text
+  ;; consult-line cycles and in minibuffer so we don't hide text
   (setq vertico-multiform-commands
         '((magit-status posframe (vertico-preselect . prompt))
           (consult-line (:not posframe) (vertico-cycle . t))))
+  ;; all consult grep like commands (grep / ripgrep / git grep) take place in dedicated buffer
   ;; find file bind / to directory awareness
   ;; default posframe, with / unbound
   (setq vertico-multiform-categories
-        '((file (lambda (_) (progn
+        '((consult-grep buffer)
+          (file (lambda (_) (progn
                               (define-key vertico-map "/" #'vertico-directory-enter)
                               (setq-local vertico-sort-override-function 'sort-directories-first))) posframe)
-          (consult-grep buffer) ;; makes all grep / ripgrep / git grep commands take place in dedicated buffer
           (t posframe (lambda (_) (define-key vertico-map "/" #'self-insert-command)))
           ))
   )
