@@ -207,27 +207,31 @@
       scroll-conservatively 10000
       scroll-preserve-screen-position 1)
 
-;; TODO not horizontal scrolling anymore
-;; nil disables automatic horizontal scrolling
+;; horizontal scrolling
 (setq auto-hscroll-mode t
       ;; how close to the edge of the window before the window is scrolled
       hscroll-margin 2
       ;; how many columns to scroll the window
-      ;; 0 horiz scrolling centers point horizontally within the window
-      ;; positive integer: # of cols to scroll by
-      ;; floating point: fraction of windows width to scroll by
       hscroll-step 1
       )
 
+(mouse-wheel-mode t)
 
-(global-set-key (kbd "<mouse-6>") (lambda () (interactive)
-                                    (if truncate-lines (scroll-right 5))))
-(global-set-key (kbd "<mouse-7>") (lambda () (interactive)
-                                    (if truncate-lines (scroll-left 5))))
-(global-set-key (kbd "<S-mouse-5>") (lambda () (interactive)
-                                      (if truncate-lines (scroll-left 10))))
-(global-set-key (kbd "<S-mouse-4>") (lambda () (interactive)
-                                      (if truncate-lines (scroll-right 10))))
+(setq mouse-wheel-tilt-scroll t
+      mouse-wheel-flip-direction t
+      mouse-wheel-scroll-amount-horizontal 1
+      mouse-wheel-progressive-speed nil
+      )
+
+;; (global-set-key (kbd "<mouse-4>") (lambda () (interactive)
+;;                                     (if truncate-lines (scroll-right 5))))
+;; (global-set-key (kbd "<mouse-5>") (lambda () (interactive)
+;;                                     (if truncate-lines (scroll-left 5))))
+;; (global-set-key (kbd "<S-mouse-5>") (lambda () (interactive)
+;;                                       (if truncate-lines (scroll-left 10))))
+;; (global-set-key (kbd "<S-mouse-4>") (lambda () (interactive)
+;;                                       (if truncate-lines (scroll-right 10))))
+
 
 (provide 'custom-styling)
 ;;; custom-styling.el ends here
