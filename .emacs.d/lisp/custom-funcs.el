@@ -82,6 +82,21 @@ or the current buffer directory."
         (newline-and-indent)
         (indent-relative))))
 
+;; https://kisaragi-hiu.com/emacs-completion-metadata.html
+;; utility function to give a completing read instance a new completion category
+;; that we can use vertico-multiform or marginalia to treat differently
+(defun my-mark-category (seq category)
+  "Mark SEQ as being in CATEGORY."
+  (lambda (str pred flag)
+    (pcase flag
+      ('metadata
+       `(metadata (category . ,category)))
+      (_
+       (all-completions str seq pred)))))
+;; Example usage:
+;; (completing-read "Prompt: "
+;;                 (my-mark-category '("/usr" "/tmp" "/home") 'dir))
+
 (defun choose-directory ()
   "Choose directory interactively."
   (file-name-as-directory
