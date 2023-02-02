@@ -33,6 +33,7 @@
 (measure-time(require 'custom-general))          ;; general configuration
 (measure-time(require 'custom-keybindings))      ;; evil, suggestions
 (measure-time(require 'custom-styling))          ;; appearance
+(measure-time(require 'custom-scrolling))        ;; scrolling
 (measure-time(require 'custom-fonts))            ;; fonts
 (measure-time(require 'custom-modeline))         ;; mode line
 (measure-time(require 'custom-completion))       ;; completion && snippets
