@@ -82,7 +82,11 @@
 (add-hook 'after-load-theme-hook #'my-posframe-tweaks t)
 (my-posframe-tweaks)
 
-
+(defun my-consult-locate () "My consult-locate." (interactive "") (consult-locate (choose-directory)))
+(defun my-consult-grep () "My consult-grep." (interactive "") (consult-grep (choose-directory)))
+(defun my-consult-git-grep () "My consult-git-grep." (interactive "") (consult-git-grep (choose-directory)))
+(defun my-consult-ripgrep () "My consult-ripgrep." (interactive "") (consult-ripgrep (choose-directory)))
+(defun my-consult-find () "Consult find." (interactive "") (consult-find (choose-directory)))
 
 (use-package consult
   :commands (consult--read)
@@ -114,11 +118,11 @@
          ;; ("M-g i" . consult-imenu)
          ;; ("M-g I" . consult-imenu-multi)
          ;; M-s bindings (search-map)
-         ("M-s d" . (lambda () (interactive) (consult-find (choose-directory))))
-         ("M-s D" . (lambda () (interactive) (consult-locate (choose-directory))))
-         ("M-s g" . (lambda () (interactive) (consult-grep (choose-directory))))
-         ("M-s G" . (lambda () (interactive) (consult-git-grep (choose-directory))))
-         ("M-s s" . (lambda () (interactive) (consult-ripgrep (choose-directory))))
+         ("M-s d" . my-consult-find)
+         ("M-s D" . my-consult-locate)
+         ("M-s g" . my-consult-grep)
+         ("M-s G" . my-consult-git-grep)
+         ("M-s s" . my-consult-ripgrep)
          ("C-s" . consult-line)
          ("C-r" . consult-line)
          ;; ("M-s L" . consult-line-multi)
