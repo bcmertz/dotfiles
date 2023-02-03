@@ -90,7 +90,7 @@
 (defun my-consult-grep () "My consult-grep." (interactive "") (consult-grep (choose-directory)))
 (defun my-consult-git-grep () "My consult-git-grep." (interactive "") (consult-git-grep (choose-directory)))
 (defun my-consult-ripgrep () "My consult-ripgrep." (interactive "") (consult-ripgrep (choose-directory)))
-(defun my-consult-find () "Consult find." (interactive "") (consult-find (choose-directory)))
+(defun my-consult-find () "My consult-find." (interactive "") (consult-find (choose-directory)))
 
 (use-package consult
   :commands (consult--read)
@@ -130,6 +130,8 @@
          ("M-s l" . consult-line-multi)
          ("C-s" . consult-line)
          ("C-r" . consult-line)
+         ("C-S-s" . consult-line-multi)
+         ("C-s-r" . consult-line-multi)
          ;; ("M-s k" . consult-keep-lines)
          ;; ("M-s u" . consult-focus-lines)
          ;; Isearch integration
