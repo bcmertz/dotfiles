@@ -109,19 +109,37 @@ sxev () {
 ex () {
     if [ -f "$1" ] ; then
         dest=$(echo $1 | sed 's/.zip//')
-        mkdir -p $dest
         case "$1" in
-            *.tar.bz2)   tar xjf "$1" --directory=$dest     ;;
-            *.tar.gz)    tar xzf "$1" --directory=$dest     ;;
-            *.tbz2)      tar xjf "$1" --directory=$dest     ;;
-            *.tgz)       tar xzf "$1" --directory=$dest     ;;
-            *.tar.xz)    tar xf "$1" --directory=$dest      ;;
-            *.tar)       tar xf "$1" --directory=$dest      ;;
-            *.rar)       rar x "$1" $dest                   ;;
-            *.zip)       unzip "$1" -d $dest                ;;
-            *.7z)        7z x "$1" -o $dest                 ;;
+            *.tar.bz2)
+                mkdir -p $dest
+                tar xjf "$1" --directory=$dest     ;;
+            *.tar.gz)
+                mkdir -p $dest
+                tar xzf "$1" --directory=$dest     ;;
+            *.tbz2)
+                mkdir -p $dest
+                tar xjf "$1" --directory=$dest     ;;
+            *.tgz)
+                mkdir -p $dest
+                tar xzf "$1" --directory=$dest     ;;
+            *.tar.xz)
+                mkdir -p $dest
+                tar xf "$1" --directory=$dest      ;;
+            *.tar)
+                mkdir -p $dest
+                tar xf "$1" --directory=$dest      ;;
+            *.rar)
+                mkdir -p $dest
+                rar x "$1" $dest                   ;;
+            *.zip)
+                mkdir -p $dest
+                unzip "$1" -d $dest                ;;
+            *.7z)
+                mkdir -p $dest
+                7z x "$1" -o $dest                 ;;
             *.bz2)       bunzip2 "$1"                       ;;
             *.gz)        gunzip "$1"                        ;;
+            *.xz)        unxz -k -v "$1"                          ;;
             *.Z)         uncompress "$1"                    ;;
             *)           echo "'$1' cannot be extracted via extract()" ;;
         esac
