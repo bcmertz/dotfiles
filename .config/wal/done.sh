@@ -18,5 +18,4 @@ ln -sf    "${HOME}/.cache/wal/dunstrc"    "${HOME}/.config/dunst/dunstrc"
 # ===================
 
 # Restart dunst with the new color scheme
-pkill dunst
-dunst &
+$HOME/.local/bin/refresh dunst
