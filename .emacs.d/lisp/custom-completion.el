@@ -23,7 +23,9 @@
   (setq corfu-preview-current nil)       ;; don't fill in selection cursor is on until enter
   :bind
   ;; Configure SPC for separator insertion, plays nicely with orderless for completion
-  (:map corfu-map ("SPC" . corfu-insert-separator))
+  (:map corfu-map (("SPC" . corfu-insert-separator)
+                   ("<next>" . corfu-scroll-up)
+                   ("<prior>" . corfu-scroll-down)))
   :init
   (global-corfu-mode)
   (corfu-popupinfo-mode)
