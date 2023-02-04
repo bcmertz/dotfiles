@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# raspberry pi ip addresses on network
+
+echo "rapsberrypi ip address: $(nmap -sP 192.168.1.*/24 | grep raspberry | awk '{print $6}' | tr -d '()')"
