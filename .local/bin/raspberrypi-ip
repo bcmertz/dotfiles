@@ -2,4 +2,16 @@
 #
 # raspberry pi ip addresses on network
 
-echo "rapsberrypi ip address: $(nmap -sP 192.168.1.*/24 | grep raspberry | awk '{print $6}' | tr -d '()')"
+ip=""
+
+function getIP {
+    ip=$(nmap -sP 192.168.1.*/24 | grep raspberry | awk '{print $6}' | tr -d '()')
+}
+
+while [ "$ip" == "" ]; do
+    echo "not found yet"
+    getIP
+done
+
+notify-send "found ip address: $ip"
+echo "rapsberrypi ip address: $ip"
