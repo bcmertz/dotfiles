@@ -38,7 +38,7 @@ font pango:DejaVu Sans Mono 10
 
 for_window [class="^.*"] border pixel 2
 
-set $default_inner_gap 45 # 60
+set $default_inner_gap 45
 gaps inner $default_inner_gap
 gaps outer 0
 
