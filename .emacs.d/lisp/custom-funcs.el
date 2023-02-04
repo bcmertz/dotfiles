@@ -542,5 +542,10 @@ selects backward.)"
         (message-log-max nil))   ;Don't show the messages in the *Messages* buffer
     (apply orig-fun args)))
 
+(defun ssh-remote ()
+  "SSH remote."
+  (interactive)
+  (find-file (concat "/ssh:" (read-string "Username: ") "@" (read-string "IP Address: ") ":~/")))
+
 (provide 'custom-funcs)
 ;;; custom-funcs.el ends here
