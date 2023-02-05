@@ -275,7 +275,7 @@ os-prober
 p7zip
 pacman
 pacman-contrib
-pandoc
+pandoc-cli
 papirus-maia-icon-theme-git
 pass
 patch
