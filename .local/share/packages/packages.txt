@@ -217,6 +217,7 @@ lxsession
 lynx
 m4
 make
+mako
 man-db
 man-pages
 maven
