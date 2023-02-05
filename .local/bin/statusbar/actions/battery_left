@@ -2,4 +2,8 @@
 #
 # battery left
 
+info=$(acpi)
+state="$(echo $info | awk '{print $3}' | tr -d ",")"
+remaining="\n$(echo $info | awk '{print $5}') remaining"
+notify-send "$state" "$remaining"
 battery-graph -d 1d
