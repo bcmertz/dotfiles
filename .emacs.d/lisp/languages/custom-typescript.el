@@ -10,13 +10,13 @@
   (setq typescript-indent-level 2)
   )
 
-(use-package web-mode
-  :defer t
-  :mode (
-         ("\\.[jt]sx\\'" . web-mode)
-	 ("\\.html\\'" . web-mode)
-         )
-  )
+;; (use-package web-mode
+;;   :defer t
+;;   :mode (
+;;          ("\\.[jt]sx\\'" . web-mode)
+;; 	 ("\\.html\\'" . web-mode)
+;;          )
+;;   )
 
 (defun my-web-mode-hook ()
   "Hooks for Web mode."
