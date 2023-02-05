@@ -234,6 +234,11 @@
                  nil
                  (window-parameters (mode-line-format . none)))))
 
+(defun embark-collect-no-read-only ()
+  "Ignore attempts to make embark-collect read-only by default."
+  (setq-local inhibit-read-only t))
+(add-hook 'embark-collect-mode-hook 'embark-collect-no-read-only)
+
 ;; Consult users will also want the embark-consult package.
 (use-package embark-consult
   :hook
