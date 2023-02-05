@@ -304,11 +304,13 @@ pv
 python
 python-capng
 python-defusedxml
+python-isort
 python-lsp-black
 python-lsp-server
 python-packaging
 python-pip
 python-psycopg2
+python-pyflakes
 python-pyqt5
 python-pywal
 python2
