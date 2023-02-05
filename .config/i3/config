@@ -72,6 +72,7 @@ for_window [class="Progress"] floating enable
 for_window [class="File Upload"] floating enable
 for_window [class="PCSX2"] floating enable
 for_window [class="kphotoalbum"] floating enable
+for_window [class="gnuplot_qt"] floating enable
 for_window [class="Nm-connection-editor"] floating enable
 for_window [title="Floating xfce"] floating enable fullscreen
 # for_window [title="GIMP Startup"] move workspace $ws5
