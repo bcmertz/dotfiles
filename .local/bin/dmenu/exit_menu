@@ -3,6 +3,7 @@
 # exit menu
 
 options="lock
+sleep
 logout
 reboot
 shutdown
@@ -35,6 +36,10 @@ case $chosen in
         pkill -9 -u reya
         ;;
 
+    sleep)
+        systemctl suspend
+        ;;
+
     shutdown)
         shutdown now
         ;;
@@ -45,6 +50,5 @@ case $chosen in
 
     reboot)
         shutdown -r now
-    ;;
-
+        ;;
 esac
