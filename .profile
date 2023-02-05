@@ -14,7 +14,7 @@ export sudoedit="SUDO_EDITOR=\"emacsclient -nw -a ''\" sudoedit"
 export VISUAL="emacsclient --socket-name=gui"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_RUNTIME_DIR=/run/user/$(id -u)
-export $(dbus-launch)
+# export $(dbus-launch)
 
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
