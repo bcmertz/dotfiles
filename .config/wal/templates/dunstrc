@@ -1,6 +1,25 @@
+# See dunst(5) for all configuration options
+
+[colors]
+    foreground = "{foreground}"
+    background = "{background}"
+
 [global]
-    # The geometry of the window:
-    geometry = "350x10-14+66"
+    ### Display ###
+    monitor = 0
+    follow = mouse
+
+    ### Geometry ###
+    width = 350
+    # The maximum height of a single notification, excluding the frame.
+    height = 300
+    # Position the notification in the top right corner
+    origin = top-right
+    # Offset from the origin
+    offset = 15x55
+    # Scale factor. It is auto-detected if value is 0.
+    scale = 0
+
 
     # Frame settings
     frame_width = 3
