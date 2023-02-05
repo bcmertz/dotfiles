@@ -20,6 +20,14 @@
   ;; prevent bolding function calls when the cursor isn't on them
   (set-face-attribute 'tree-sitter-hl-face:function.call nil :weight 'normal))
 
+(use-package treesit-auto
+  :straight (treesit-auto :type git
+                          :host github
+                          :repo "renzmann/treesit-auto")
+  :config
+  (setq treesit-auto-install 'prompt)
+  (global-treesit-auto-mode))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ts code folding ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; (use-package ts-fold
