@@ -67,7 +67,7 @@ sudo rm /usr/bin/passmenu
 sudo systemctl enable --new tlp.service
 
 # setup crons
-crontab $HOME/.local/bin/cron/crontabbackup.txt || warn "failed to create setup cron"
+crontab $HOME/.local/bin/cron/crontab.txt || warn "failed to create setup cron"
 sudo systemctl enable --now cronie.service  || warn "failed to enable cron service"
 
 # TODO: setupUFW
