@@ -176,6 +176,7 @@ jfsutils
 jq
 jre-openjdk
 k3b
+kaddressbook
 kcolorchooser
 kdeconnect
 kicad
