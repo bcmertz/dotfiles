@@ -9,9 +9,9 @@
 
 (use-package popper
   :defer t
-  :bind (("C-]"   . popper-toggle-latest)
-         ("M-]"   . popper-cycle)
-         ("C-M-]" . popper-toggle-type))
+  :bind (("C-`"   . popper-toggle-latest)
+         ("M-`"   . popper-cycle)
+         ("C-M-`" . popper-toggle-type))
   :config
   (setq popper-group-function #'popper-group-by-projectile) ; projectile projects
   :init
