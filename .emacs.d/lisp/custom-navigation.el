@@ -193,6 +193,13 @@
   (setq consult-narrow-key "<") ;; (kbd "C-+")
   )
 
+;; could help replace projectile in the future
+;; (use-package consult-dir
+;;   :bind (("C-x C-d" . consult-dir)
+;;          :map minibuffer-local-completion-map
+;;          ("C-x C-d" . consult-dir)
+;;          ("C-x C-j" . consult-dir-jump-file)))
+
 ;; (use-package consult-ag
 ;;   :bind
 ;;   ("M-s" . consult-ag))
