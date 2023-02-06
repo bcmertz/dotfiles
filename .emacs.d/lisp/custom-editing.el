@@ -63,8 +63,28 @@
   (global-set-key (kbd "C-c s u") 'sp-up-sexp)
   (global-set-key (kbd "C-c s d") 'sp-down-sexp)
   (global-set-key (kbd "C-c s i") 'sp-change-enclosing)
-  (global-set-key (kbd "C-c s c") 'sp-rewrap-sexp)
-  )
+  (global-set-key (kbd "C-c s c") 'sp-rewrap-sexp))
+
+;; maybe use puni and electric pair mode in the future in
+;; place of smartparens since puni has a lot more knowledge
+;; of builtin sexp parsing
+;; idk or wait for treesitter enabled libraries to do magic
+;;
+;; Use puni-mode globally and disable it for term-mode.
+;; (use-package puni
+;;   :defer t
+;;   :init
+;;   ;; The autoloads of Puni are set up so you can enable `puni-mode` or
+;;   ;; `puni-global-mode` before `puni` is actually loaded. Only after you press
+;;   ;; any key that calls Puni commands, it's loaded.
+;;   (puni-global-mode)
+;;   (add-hook 'term-mode-hook #'puni-disable-puni-mode))
+
+;; (use-package electric-pair-mode
+;;   :defer t
+;;   :init
+;;   (electric-pair-mode t)
+;;   )
 
 (defun set-sp-face ()
   "Customize matching sp face."
