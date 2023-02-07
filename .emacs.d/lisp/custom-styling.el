@@ -20,16 +20,14 @@
 ;; stop asking if my themes are trusted
 (setq custom-safe-themes t)
 
-;; default theme; DONT CHANGE to get pywal effects, it is modified in .config/global.cfg
-(setq custom-theme 'ef-summer)    ;; doom-dracula atom-one-dark doom-one ef-cherie doom-gruvbox ewal-doom-one
-(setq default-theme custom-theme) ;; default theme to be used by refresh-theme in custom-funcs.el
-
+;; for pywal effects modify ~/.config/global.cfg
+(defvar custom-theme 'ef-summer)    ;; doom-dracula atom-one-dark doom-one ef-cherie doom-gruvbox ewal-doom-one
+(defvar default-theme custom-theme) ;; default theme to be used by refresh-theme in custom-funcs.el
 ;; check if we're using pywal to set emacs colorscheme
 (if (string= (shell-command-to-string "global_cfg pywal_emacs") "true")
     (progn
       (use-package ewal)
       (setq custom-theme 'ewal-doom-one)))
-
 
 ;; default gui theme
 (apply-if-gui 'load-theme custom-theme t)
@@ -39,20 +37,20 @@
     (disable-theme i)))
 
 (defun update-theme (theme)
-  "Update theme."
+  "Update THEME."
   (disable-all-themes)
   (load-theme (intern theme) t))
 
 ;; change theme utility
 (defun my-change-theme ()
-  "Choose theme from installed list using completing-read."
+  "Choose theme from installed list using `completing-read'."
   (interactive)
   (let ((theme (completing-read "Choose theme : " (custom-available-themes)
                                 nil nil nil nil (symbol-name (car custom-enabled-themes)))))
     (update-theme theme)))
 
 (defun my-consult-change-theme ()
-  "Choose theme from installed list using consult--read."
+  "Choose theme from installed list using `consult--read'."
   (interactive)
   (consult--read
    (mapcar #'symbol-name (custom-available-themes))
@@ -65,7 +63,7 @@
               ('preview (if theme (update-theme theme)))))))
 
 (defun my-ivy-change-theme ()
-  "Choose theme from installed list using ivy-read."
+  "Choose theme from installed list using `ivy-read'."
   (interactive)
   (ivy-read "dynamic theming <C-M-m>: " (custom-available-themes)
             :preselect (symbol-name (car custom-enabled-themes))
@@ -134,7 +132,7 @@
 
 ;; toggle tool bar mode
 (defun toggle-scroll-bar ()
-  "Toggle scroll-bar-mode."
+  "Toggle `scroll-bar-mode'."
   (interactive)
   (if (eq scroll-bar-mode nil)
       (scroll-bar-mode 1)
@@ -144,7 +142,7 @@
 
 ;; toggle tool bar mode
 (defun toggle-tool-bar ()
-  "Toggle tool-bar-mode."
+  "Toggle `tool-bar-mode'."
   (interactive)
   (if (eq tool-bar-mode t)
       (tool-bar-mode -1)
@@ -154,7 +152,7 @@
 
 ;; toggle menu bar mode
 (defun toggle-menu-bar ()
-  "Toggle menu-bar-mode."
+  "Toggle `menu-bar-mode'."
   (interactive)
   (if (eq menu-bar-mode t)
       (menu-bar-mode -1)
@@ -186,7 +184,8 @@
 ;; only works in accessible buffers unfortunately. Can get the text though,
 ;; see https://emacs.stackexchange.com/a/311
 (defun my-describe-char-at-mouse-click (click-event)
-  "`describe-char' at CLICK-EVENT's position, CLICK-EVENT should be a mouse-click event."
+  "`describe-char' at CLICK-EVENT's position.
+CLICK-EVENT should be a mouse-click event."
   (interactive "e")
   (run-hooks 'mouse-leave-buffer-hook)
   (let ((pos (cadr (event-start click-event))))

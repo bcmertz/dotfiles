@@ -31,6 +31,7 @@
 ;; The depth of -10 places this before eglot's willSave notification,
 ;; so that that notification reports the actual contents that will be saved.
 (defun eglot-format-buffer-on-save ()
+  "Format buffer on save."
   (add-hook 'before-save-hook #'eglot-format-buffer -10 t))
 
 ;; eglot-organize-imports is hopefully a temporary stopgap until
@@ -61,7 +62,7 @@
 
 (defun eglot-organize-imports-on-save ()
   (defun eglot-organize-imports-nosignal ()
-    "Run eglot-organize-imports, but demote errors to messages."
+    "Run `eglot-organize-imports', but demote errors to messages."
     ;; Demote errors to work around
     ;; https://github.com/joaotavora/eglot/issues/411#issuecomment-749305401
     ;; so that we do not prevent subsequent save hooks from running
