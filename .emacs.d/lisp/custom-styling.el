@@ -33,6 +33,7 @@
 (apply-if-gui 'load-theme custom-theme t)
 
 (defun disable-all-themes ()
+  "Disable all themes."
   (dolist (i custom-enabled-themes)
     (disable-theme i)))
 
@@ -130,14 +131,7 @@
   (menu-bar-mode -1))
 (apply-gui-and-term 'hide-ui-elements)
 
-;; toggle tool bar mode
-(defun toggle-scroll-bar ()
-  "Toggle `scroll-bar-mode'."
-  (interactive)
-  (if (eq scroll-bar-mode nil)
-      (scroll-bar-mode 1)
-    (scroll-bar-mode -1))
-  )
+;; toggle tool bar mode [builtin]
 (global-set-key (kbd "C-c t s") 'toggle-scroll-bar)
 
 ;; toggle tool bar mode
