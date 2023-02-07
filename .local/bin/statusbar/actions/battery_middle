@@ -2,4 +2,4 @@
 #
 # battery middle
 
-battery-graph -d 1d
+battery-graph -d 12h
