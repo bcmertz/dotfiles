@@ -16,15 +16,24 @@
 (defun vterm-toggle ()
   "Toggle vterm."
   (interactive)
-  (if (get-buffer "*vterm*")
-      ;; if vterm exists
-      (if (get-buffer-window "*vterm*")
-          ;; and is visible
-          (quit-window nil (get-buffer-window "*vterm*"))
-        ;; and isn't visible
-        (display-buffer "*vterm*"))
-    ;; if vterm doesn't exist
-    (display-buffer (vterm-other-window))))
+  (let ((term-buffer (get-buffer "*vterm*"))
+        (term-window (get-buffer-window "*vterm*")))
+    (if term-buffer
+        ;; if vterm exists
+        (if term-window
+            ;; and is visible
+            (quit-window nil term-window)
+          ;; and isn't visible
+          (progn
+            (display-buffer term-buffer)
+            (select-window (get-buffer-window "*vterm*"))))
+      ;; if vterm doesn't exist
+      (progn
+        (display-buffer (vterm-other-window))
+        (select-window (get-buffer-window "*vterm*"))))
+    )
+  )
+
 
 ;; ;; hijack creation of vterm buffer so we can control where it goes
 ;; ;; and force it to be the outermost buffer on right or bottom of
