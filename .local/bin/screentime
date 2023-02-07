@@ -2,15 +2,30 @@
 #
 # show all the times in this folder
 
-total=0
-number=0
-
-for filename in ~/.time/*-* ; do
-    amt=$(cat $filename)
-    total=`expr $total + $amt`
-    number=`expr $number + 1`
+all='false'
+# parse all flag
+while getopts 'a' flag; do
+    case "${flag}" in
+        a) all='true';;
+    esac
 done
 
-average=`expr $total / $number`
-hrs=`expr $average / 60`
-echo "average screentime per day:" $average min = $hrs "hours, over $number days"
+date=`date '+%y-%m-%d'`
+min=$(cat ~/.time/"$date")
+hr=$(printf %.2f $(echo "$min/60" | bc -l))
+
+if [ "$all" = "true" ]; then
+    total=0
+    number=0
+    for filename in ~/.time/*-* ; do
+        amt=$(cat $filename)
+        total=`expr $total + $amt`
+        number=`expr $number + 1`
+    done
+    average=`expr $total / $number`
+    hrs=`expr $average / 60`
+    echo "average screentime per day:" $average min = $hrs "hours, over $number days"
+    echo "Computer time today: $hr hours"
+else
+    echo "Computer time today: $hr hours"
+fi
