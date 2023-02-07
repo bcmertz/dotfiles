@@ -25,7 +25,6 @@ if [ "$all" = "true" ]; then
     average=`expr $total / $number`
     hrs=`expr $average / 60`
     echo "average screentime per day:" $average min = $hrs "hours, over $number days"
-    echo "Computer time today: $hr hours"
-else
-    echo "Computer time today: $hr hours"
 fi
+
+echo "computer time today: $hr hours"
