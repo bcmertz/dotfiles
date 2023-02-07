@@ -13,8 +13,11 @@
   ("C-x c" . magit-checkout)
   ("C-x l" . magit-log-branches)
   (:map magit-status-mode-map
-        ("q" . mu-magit-kill-buffers))
-  )
+        ("q" . mu-magit-kill-buffers)))
+
+(add-to-list 'display-buffer-alist
+     '("\*magit: .*\*"
+       (display-buffer-full-frame)))
 
 (defun magit-restore-window-configuration (&optional kill-buffer)
   "Bury or kill the current buffer and restore previous window configuration."
