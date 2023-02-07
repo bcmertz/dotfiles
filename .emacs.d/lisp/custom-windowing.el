@@ -24,6 +24,21 @@
   (popper-mode +1)
   (popper-echo-mode +1))                ; For echo area hints
 
+;; EXAMPLE
+;; (defun adjust-window-split-thresholds nil
+;;   "Adjust split thresholds so that popup windows always split vertically in a tall frame, horizontally in a wide frame, with a maximum of two columns"
+;;   (interactive)
+;;   (if (>= (frame-pixel-width) (frame-pixel-height))
+;;       ; wide frame
+;;       (progn
+;;         (setq split-height-threshold (frame-height))
+;;         (setq split-width-threshold  (/ (frame-width) 2))
+;;         )
+;;       ; tall frame
+;;       (progn
+;;         (setq split-height-threshold (frame-height))
+;;         (setq split-width-threshold  (frame-width)))))
+;; (add-hook 'window-configuration-change-hook 'adjust-window-split-thresholds)
 
 (use-package centaur-tabs
   :demand
