@@ -26,7 +26,6 @@
     ;; if vterm doesn't exist
     (display-buffer (vterm-other-window))))
 
-
 ;; ;; hijack creation of vterm buffer so we can control where it goes
 ;; ;; and force it to be the outermost buffer on right or bottom of
 ;; ;; the frame based of the dimensions of that frame
