@@ -6,7 +6,8 @@
 ;;;
 ;;; Code:
 (use-package markdown-mode
-  :bind ("C-c m" . markdown-live-preview-mode)
+  :bind (:map markdown-mode-map
+              ("C-c m" . markdown-live-preview-mode))
   :mode (("README\\.md\\'" . gfm-mode)
          ("\\.md\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode))
