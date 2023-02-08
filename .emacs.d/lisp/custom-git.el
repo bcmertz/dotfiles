@@ -16,7 +16,7 @@
         ("q" . mu-magit-kill-buffers)))
 
 (add-to-list 'display-buffer-alist
-     '("\*magit: .*\*"
+     '("magit: .*"
        (display-buffer-full-frame)))
 
 (defun magit-restore-window-configuration (&optional kill-buffer)
