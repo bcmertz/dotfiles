@@ -30,7 +30,7 @@
       (setq custom-theme 'ewal-doom-one)))
 
 ;; default gui theme
-(apply-if-gui 'load-theme custom-theme t)
+(apply-if-gui 'update-theme nil)
 
 (defun disable-all-themes ()
   "Disable all themes."
@@ -40,7 +40,8 @@
 (defun update-theme (theme)
   "Update THEME."
   (disable-all-themes)
-  (load-theme (intern theme) t))
+  (if theme (setq custom-theme (intern theme)))
+  (load-theme custom-theme t))
 
 ;; change theme utility
 (defun my-change-theme ()
