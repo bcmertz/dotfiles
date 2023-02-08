@@ -6,6 +6,7 @@
 -/eln-cache
 -/.cache
 -/var
+-/.saves
 -/multisession
 -/vimish-fold
 -/transient

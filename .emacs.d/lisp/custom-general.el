@@ -16,11 +16,17 @@
 ;;   (pgtk-use-im-context t))
 
 ;; backup and tmp files
-(setq make-backup-files nil)
-(setq backup-directory-alist
-      `((".*" . ,temporary-file-directory)))
-(setq auto-save-file-name-transforms
-      `((".*" ,temporary-file-directory t)))
+;; (setq make-backup-files nil)
+;; (setq backup-directory-alist
+;;       `((".*" . ,temporary-file-directory)))
+(setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
+(setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
+(setq backup-by-copying t)
+(setq delete-old-versions t
+  kept-new-versions 6
+  kept-old-versions 2
+  version-control t)
+(setq create-lockfiles nil) ;; can't set to a different directory so disable :/
 
 (use-package minibuffer
   :straight nil
