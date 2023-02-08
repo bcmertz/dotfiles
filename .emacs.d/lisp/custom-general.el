@@ -6,6 +6,11 @@
 ;;;
 ;;; Code:
 
+;; handle various warnings from flymake, nil faces, etc
+;; (setq warning-suppress-log-types '((set-face-attribute)))
+(setq warning-minimum-log-level :error)
+(setq warning-suppress-log-types '((Warning: setting attribute)))
+
 ;; "Pure" gtk
 ;; (when (eq window-system 'pgtk)
 ;;   (pgtk-use-im-context t))
