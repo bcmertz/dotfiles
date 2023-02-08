@@ -62,6 +62,7 @@
 (measure-time(require 'custom-txt))
 (measure-time(require 'custom-golang))
 (measure-time(require 'custom-js))
+(measure-time(require 'custom-vue))
 (measure-time(require 'custom-typescript))
 (measure-time(require 'custom-python))
 (measure-time(require 'custom-markdown))
