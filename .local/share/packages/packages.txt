@@ -340,6 +340,7 @@ smartmontools
 sof-firmware
 speedtest-cli
 sshfs
+steam
 subversion
 sudo
 sunwait
@@ -405,6 +406,7 @@ vulkan-radeon
 w3m
 watchexec
 waybar
+webex-bin
 welcome
 wget
 whatsdesk-bin
