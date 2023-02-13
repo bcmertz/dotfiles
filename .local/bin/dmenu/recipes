@@ -2,6 +2,6 @@
 #
 # Search recipes
 
-chosen=$(ls ~/docs/recipes/ | dmenu -bw 3 -c -i -l 15)
+chosen=$(ls ~/docs/recipes/ | dmenu -bw 3 -c -i -l 15 -p "recipe:")
 [ "$chosen" != "" ] || exit
-st -c 'Fullscreen st' -e bash -c "head -n -1 $HOME/docs/recipes/$chosen; read"
+st -c 'Fullscreen st' -e bash -c "emacsclient --socket-name=term -t --alternate-editor='' $HOME/docs/recipes/$chosen;"
