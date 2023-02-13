@@ -4,6 +4,9 @@ case $- in
     *) return;;
 esac
 
+# Adds `~/.local/bin/` and all subdirectories to $PATH
+export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
+
 # set aliases
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
 
