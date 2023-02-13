@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# deamonize command
+
+interval=0
+
+# parse flags and or filepath
+while getopts 'i:' flag; do
+    case "${flag}" in
+        i) interval="${OPTARG}" ;;
+    esac
+done
+
+shift 1
+
+while true; do
+    "$@";
+    sleep $interval;
+done

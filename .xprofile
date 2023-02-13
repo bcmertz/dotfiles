@@ -31,8 +31,8 @@ battery-stats-collector &           # stats!
 /usr/bin/emacs --daemon=gui &       # gui emacs daemon
 /usr/bin/emacs --daemon=term &      # terminal emacs daemon
 xset r rate 300 50 &                # faster repeating keys
-lxpolkit &      # authentication agent
-setbg &         # set background
+lxpolkit &                          # authentication agent
+daemonize -i3600 setbg &            # set background & daemon
 # monerod &       # start the monero daemon
 # monero_mine &   # mine monero
 # nmcli connection up client & # connect to vpn on login
