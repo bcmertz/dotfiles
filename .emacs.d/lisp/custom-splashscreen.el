@@ -39,25 +39,33 @@
           (setq str "Good afternoon")
         (setq str "Good evening")))))
 
-(setq initial-scratch-message (format ";; %s, %s
+;; (setq initial-scratch-message (format ";; %s, %s
+;; ;; This buffer is for text that is not saved, and for Lisp evaluation.
+;; ;; To execute lisp, type C-x C-e
+
+;; " (return-greeting) (capitalize (user-full-name))))
+
+;; regexp_1 comments out lines, regexp_2 strips eol whitespace
+(setq initial-scratch-message (format "\n%s
 ;; This buffer is for text that is not saved, and for Lisp evaluation.
 ;; To execute lisp, type C-x C-e
 
-" (return-greeting) (capitalize (user-full-name))))
+" (replace-regexp-in-string "\s+$" "" (replace-regexp-in-string "^" ";; " (shell-command-to-string
+                                       (format "cowsay %s, %s"
+                                               (return-greeting) (capitalize (user-full-name))))))))
 
-;; cowsay example (close but not there, figure it out later if you want)
-;; (message "%s" (shell-command "cowsay hi" (current-buffer))) ____
 
+;;  ;; cowsay message
+;; (message "%s" (replace-regexp-in-string "^" ";; " (shell-command-to-string
+;;                (format "cowsay %s, %s"
+;;                        (return-greeting) (capitalize (user-full-name))))))
 
-(defun set-gui-scratch-greeting ()
+(defun set-gui-scratch-greeting (msg)
   "Set GUI scratch greeting."
-  (setq initial-scratch-message (format "
+  (setq initial-scratch-message msg))
 
-;; %s, %s
-;; To execute lisp, type C-x C-e
+(apply-if-gui 'set-gui-scratch-greeting initial-scratch-message)
 
-" (return-greeting) (capitalize (user-full-name)))))
-(apply-if-gui 'set-gui-scratch-greeting)
 
 (provide 'custom-splashscreen)
 ;;; custom-splashscreen.el ends here
