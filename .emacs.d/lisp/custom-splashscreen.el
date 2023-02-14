@@ -54,14 +54,8 @@
 ;; To execute lisp, type C-x C-e
 
 " (replace-regexp-in-string "\s+$" "" (replace-regexp-in-string "^" ";; " (shell-command-to-string
-                                       (format "cowsay %s, %s"
+                                       (format "cowsay -f udder %s, %s"
                                                (return-greeting) (capitalize (user-full-name))))))))
-
-
-;;  ;; cowsay message
-;; (message "%s" (replace-regexp-in-string "^" ";; " (shell-command-to-string
-;;                (format "cowsay %s, %s"
-;;                        (return-greeting) (capitalize (user-full-name))))))
 
 (defun set-gui-scratch-greeting (msg)
   "Set GUI scratch greeting."
