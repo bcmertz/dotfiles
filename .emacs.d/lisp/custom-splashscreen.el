@@ -16,8 +16,8 @@
   (let ((scratch (get-buffer-create "*scratch*")))
     (with-current-buffer "*scratch*"
       (delete-region (point-min) (point-max))
-      (setq-local imgs (directory-files "~/.emacs.d/etc/" t directory-files-no-dot-files-regexp))
-      (insert-image (create-image (nth (random (length imgs)) imgs)))
+      ;; (setq-local imgs (directory-files "~/.emacs.d/etc/" t directory-files-no-dot-files-regexp))
+      ;; (insert-image (create-image (nth (random (length imgs)) imgs)))
       (when initial-scratch-message
         (insert (substitute-command-keys initial-scratch-message))
         (set-buffer-modified-p nil))
@@ -49,7 +49,7 @@
 ;; " (return-greeting) (capitalize (user-full-name))))
 
 ;; regexp_1 comments out lines, regexp_2 strips eol whitespace
-(setq initial-scratch-message (format "\n%s
+(setq initial-scratch-message (format "%s
 ;; This buffer is for text that is not saved, and for Lisp evaluation.
 ;; To execute lisp, type C-x C-e
 
