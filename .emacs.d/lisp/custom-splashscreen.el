@@ -21,7 +21,8 @@
       (when initial-scratch-message
         (insert (substitute-command-keys initial-scratch-message))
         (set-buffer-modified-p nil))
-      (funcall initial-major-mode))
+      (funcall initial-major-mode)
+      (flyspell-mode -1))
     scratch))
 
 (defun add-scratch-advice ()
