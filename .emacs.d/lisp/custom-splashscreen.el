@@ -34,11 +34,13 @@
   "Return time based greeting."
   (let ((str "")
         (hour (string-to-number (nth 0 (split-string (nth 3 (split-string (current-time-string))) ":")))))
-    (if (< hour 12)
-        (setq str "Good morning")
-      (if (< hour 17)
-          (setq str "Good afternoon")
-        (setq str "Good evening")))))
+    (if (< hour 5)
+        (setq str "Good evening")
+      (if (< hour 12)
+          (setq str "Good morning")
+        (if (< hour 17)
+            (setq str "Good afternoon")
+          (setq str "Good evening"))))))
 
 ;; (setq initial-scratch-message (format ";; %s, %s
 ;; ;; This buffer is for text that is not saved, and for Lisp evaluation.
