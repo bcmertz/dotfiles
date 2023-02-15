@@ -291,6 +291,7 @@ pipes.sh
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
+pix
 pkgconf
 pkgfile
 plank
