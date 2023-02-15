@@ -297,11 +297,16 @@
 ;; (setq org-reveal-mathjax t)
 
 
-(use-package htmlize
-  :defer t
-  )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; PUBLISHING ORG->HTML ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; OUT OF DATE
+;; follow  https://www.youtube.com/watch?v=AfkrzFodoNw
+;; to get this working again
+
+;; (use-package htmlize
+;;   :defer t
+;;   )
 ;; failed attempts to add front matter to exported html doc
 ;; (setq org-publish-project-alist
 ;; '(("org-bcmertz"
