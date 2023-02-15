@@ -94,7 +94,6 @@ eos-log-tool
 eos-packagelist
 eos-quickstart
 eos-rankmirrors
-eos-update-notifier
 epdfview
 etcher-bin
 ethtool
