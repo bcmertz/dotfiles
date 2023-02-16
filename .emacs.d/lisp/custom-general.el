@@ -21,12 +21,25 @@
 ;;       `((".*" . ,temporary-file-directory)))
 (setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
 (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
-(setq backup-by-copying t)
 (setq delete-old-versions t
-  kept-new-versions 6
-  kept-old-versions 2
-  version-control t)
+      backup-by-copying t
+      kept-new-versions 6
+      kept-old-versions 2
+      version-control t)
 (setq create-lockfiles nil) ;; can't set to a different directory so disable :/
+
+
+(defun force-backup-of-buffer ()
+  (setq buffer-backed-up nil))
+(add-hook 'before-save-hook #'force-backup-of-buffer)
+
+(use-package backup-walker
+  :straight (backup-walker :type git
+                           :host github
+                           :repo "snowman/backup-walker")
+  :defer t
+  :bind (:map backup-walker-mode-map (("R" . diff-reverse-direction)))
+  )
 
 (use-package minibuffer
   :straight nil
