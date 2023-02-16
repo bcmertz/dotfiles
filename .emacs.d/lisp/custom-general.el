@@ -33,6 +33,7 @@
   (setq buffer-backed-up nil))
 (add-hook 'before-save-hook #'force-backup-of-buffer)
 
+;; use this fork for proper diff ordering (logically reversed by default)
 (use-package backup-walker
   :straight (backup-walker :type git
                            :host github
