@@ -21,10 +21,12 @@
 ;;       `((".*" . ,temporary-file-directory)))
 (setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
 (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
-(setq delete-old-versions t
+(setq make-backup-files t
       backup-by-copying t
-      kept-new-versions 6
-      kept-old-versions 2
+      kept-new-versions 200
+      kept-old-versions 0
+      delete-old-versions t
+      vc-make-backup-files t
       version-control t)
 (setq create-lockfiles nil) ;; can't set to a different directory so disable :/
 
