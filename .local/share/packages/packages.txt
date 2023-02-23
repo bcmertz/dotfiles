@@ -461,7 +461,7 @@ xterm
 yad
 yarn
 yay
-youtube-dl
+yt-dlp
 zathura
 zathura-pdf-mupdf
 zoom
