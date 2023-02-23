@@ -372,7 +372,7 @@ before calling `er/expand-region' for the first time ARG."
 (use-package autorevert
   :straight nil
   :config
-  (setq auto-revert-interval 2)
+  (setq auto-revert-interval 0.25)
   (setq auto-revert-check-vc-info t)
   (setq global-auto-revert-non-file-buffers t)
   (setq auto-revert-verbose t)
