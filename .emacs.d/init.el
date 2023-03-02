@@ -38,8 +38,8 @@
 (measure-time(require 'custom-modeline))         ;; mode line
 (measure-time(require 'custom-completion))       ;; completion && snippets
 (measure-time(require 'custom-treesitter))       ;; tree-sitter
-(measure-time(require 'custom-project))       ;; navigating projects and code
-(measure-time(require 'custom-navigation))       ;; navigating projects and code
+(measure-time(require 'custom-project))          ;; project management and navigation
+(measure-time(require 'custom-navigation))       ;; navigating code
 ;; (measure-time(require 'custom-ivy))           ;; ivy navigation
 (measure-time(require 'custom-dired))            ;; dired
 (measure-time(require 'custom-sidebar))          ;; sidebar
