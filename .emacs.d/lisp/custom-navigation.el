@@ -292,10 +292,12 @@ targets."
   (add-to-list 'recentf-exclude (format "%s/\\.emacs.d/straight/.*" (getenv "HOME")))
   (recentf-mode +1))
 
-
 ;; better C-x C-b
-(defalias 'list-buffers 'ibuffer)
-(bind-key "q" 'kill-current-buffer 'ibuffer-mode-map)
+(use-package ibuffer
+  :defer t
+  :config
+  (bind-key "q" 'kill-current-buffer 'ibuffer-mode-map)
+  (defalias 'list-buffers 'ibuffer))
 
 ;; code navigation
 (use-package avy
