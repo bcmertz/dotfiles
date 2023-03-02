@@ -41,11 +41,11 @@
               ;; ("C-c p f" . consult-projectile-find-file)))
 
 ;; (use-package consult-projectile
-  ;; :after consult
-  ;; :after projectile
-  ;; :config
-  ;; (setq consult-projectile-use-projectile-switch-project t)
-  ;; )
+;;   :after consult
+;;   :after projectile
+;;   :config
+;;   (setq consult-projectile-use-projectile-switch-project t)
+;;   )
 
 ;; perspective navigation
 ;; (use-package perspective
