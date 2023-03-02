@@ -1,0 +1,97 @@
+;;; custom-project.el --- custom project
+;;;
+;;; Commentary:
+;;;
+;;; Code:
+
+
+;; project navigation
+(defun projectile-find-file-refresh-cache ()
+  "Projectile find file and invalidate cache."
+  (interactive "")
+  (projectile-invalidate-cache (if (current-project) nil t))
+  (projectile-find-file)
+  )
+
+(use-package projectile
+  :defer t
+  :init
+  (projectile-mode +1)
+  :config
+  (setq projectile-sort-order 'recentf)
+  (setq projectile-completion-system 'auto)
+  (setq projectile-mode-line-prefix " ")
+  (setq projectile-project-search-path '("~/coding/"))
+  (setq projectile-enable-caching t)
+  (setq projectile-indexing-method 'hybrid)
+  ;; (setq projectile-indexing-method 'native)
+  (which-key-add-key-based-replacements "C-c p P" "Projectile rediscover projects")
+  :bind (:map projectile-mode-map
+              ("s-p" . projectile-command-map)
+              ("C-c p" . projectile-command-map)
+              ("C-c p F" . projectile-find-file-refresh-cache)
+              ("C-c p P" . (lambda () (interactive)
+                           (projectile-cleanup-known-projects)
+                           (projectile-discover-projects-in-search-path)))
+              ("C-c p p" . projectile-switch-project)
+              ("C-c p b" . projectile-switch-to-buffer)
+              ("C-c p f" . projectile-find-file)))
+              ;; ("C-c p p" . consult-projectile-switch-project)
+              ;; ("C-c p b" . consult-projectile-switch-to-buffer)
+              ;; ("C-c p f" . consult-projectile-find-file)))
+
+;; (use-package consult-projectile
+  ;; :after consult
+  ;; :after projectile
+  ;; :config
+  ;; (setq consult-projectile-use-projectile-switch-project t)
+  ;; )
+
+;; perspective navigation
+;; (use-package perspective
+;;   :bind (
+;;          ("C-x B" . persp-counsel-switch-buffer)
+;;          ;; ("C-x k" . persp-kill-buffer*)
+;;          ("C-M-<left>" . persp-prev)
+;;          ("C-M-<right>" . persp-next)
+;;          ("C-M-<return>" . persp-switch)
+;;          ("C-M-<delete>" . persp-state-save)
+;;          ("C-M-<backspace>" . persp-state-load)
+;;          )
+;;   :init
+;;   (setq persp-initial-frame-name "main")
+;;   (setq persp-sort 'created)
+;;   (persp-mode)
+;;   :config
+;;   ;; dont show modeline string
+;;   (setq persp-show-modestring nil)
+;;   ;; TODO figure out why restoring expects a directory
+;;   (setq persp-state-default-file "~/.emacs.d/save-perspective")
+;;   (add-hook 'kill-emacs-hook #'persp-state-save)
+;;   :custom
+;;   (persp-mode-prefix-key (kbd "C-c M-p"))
+;;   (persp-add-buffer-to-frame-global "*Messages*")
+;;   )
+
+;; (defun my-show-persp-modestring ()
+;;   "Show persp modestring."
+;;   (if (< 1 (length (persp-names)))
+;;       (setq persp-show-modestring t)
+;;     (setq persp-show-modestring nil)
+;;     )
+;;   )
+
+;; (add-hook 'persp-created-hook #'my-show-persp-modestring)
+;; (add-hook 'persp-killed-hook #'my-show-persp-modestring)
+
+
+;; could help replace projectile in the future
+;; (use-package consult-dir
+;;   :bind (("C-x C-d" . consult-dir)
+;;          :map minibuffer-local-completion-map
+;;          ("C-x C-d" . consult-dir)
+;;          ("C-x C-j" . consult-dir-jump-file)))
+
+
+(provide 'custom-project)
+;;; custom-project.el ends here
