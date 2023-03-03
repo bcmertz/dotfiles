@@ -4,41 +4,46 @@
 ;;;
 ;;; Code:
 
-
-;; project navigation
-(defun projectile-find-file-refresh-cache ()
-  "Projectile find file and invalidate cache."
-  (interactive "")
-  (projectile-invalidate-cache (if (current-project) nil t))
-  (projectile-find-file)
-  )
-
-(use-package projectile
-  :defer t
-  :init
-  (projectile-mode +1)
+(use-package project
   :config
-  (setq projectile-sort-order 'recentf)
-  (setq projectile-completion-system 'auto)
-  (setq projectile-mode-line-prefix " ")
-  (setq projectile-project-search-path '("~/coding/"))
-  (setq projectile-enable-caching t)
-  (setq projectile-indexing-method 'hybrid)
-  ;; (setq projectile-indexing-method 'native)
-  (which-key-add-key-based-replacements "C-c p P" "Projectile rediscover projects")
-  :bind (:map projectile-mode-map
-              ("s-p" . projectile-command-map)
-              ("C-c p" . projectile-command-map)
-              ("C-c p F" . projectile-find-file-refresh-cache)
-              ("C-c p P" . (lambda () (interactive)
-                           (projectile-cleanup-known-projects)
-                           (projectile-discover-projects-in-search-path)))
-              ("C-c p p" . projectile-switch-project)
-              ("C-c p b" . projectile-switch-to-buffer)
-              ("C-c p f" . projectile-find-file)))
-              ;; ("C-c p p" . consult-projectile-switch-project)
-              ;; ("C-c p b" . consult-projectile-switch-to-buffer)
-              ;; ("C-c p f" . consult-projectile-find-file)))
+  (setq project-vc-extra-root-markers '(".projectile" "requirements.txt" "package.json"))
+  (global-set-key (kbd "C-c p") project-prefix-map)
+  (setq project-vc-ignores '("ido.last" "eln-cache/" ".cache/" ".saves/" "save-perspective" "elpa/" "straight/" "auto-save-list/" "undo/" "var/" "tramp" ".lsp-session-v1" "history" "org-roam.db" "multisession/" "vimish-fold/" "transient/" "tree-sitter/")))
+
+;; ;; project navigation
+;; (defun projectile-find-file-refresh-cache ()
+;;   "Projectile find file and invalidate cache."
+;;   (interactive "")
+;;   (projectile-invalidate-cache (if (current-project) nil t))
+;;   (projectile-find-file)
+;;   )
+
+;; (use-package projectile
+;;   :defer t
+;;   :init
+;;   (projectile-mode +1)
+;;   :config
+;;   (setq projectile-sort-order 'recentf)
+;;   (setq projectile-completion-system 'auto)
+;;   (setq projectile-mode-line-prefix " ")
+;;   (setq projectile-project-search-path '("~/coding/"))
+;;   (setq projectile-enable-caching t)
+;;   (setq projectile-indexing-method 'hybrid)
+;;   ;; (setq projectile-indexing-method 'native)
+;;   (which-key-add-key-based-replacements "C-c p P" "Projectile rediscover projects")
+;;   :bind (:map projectile-mode-map
+;;               ("s-p" . projectile-command-map)
+;;               ("C-c p" . projectile-command-map)
+;;               ("C-c p F" . projectile-find-file-refresh-cache)
+;;               ("C-c p P" . (lambda () (interactive)
+;;                            (projectile-cleanup-known-projects)
+;;                            (projectile-discover-projects-in-search-path)))
+;;               ("C-c p p" . projectile-switch-project)
+;;               ("C-c p b" . projectile-switch-to-buffer)
+;;               ("C-c p f" . projectile-find-file)))
+;;               ;; ("C-c p p" . consult-projectile-switch-project)
+;;               ;; ("C-c p b" . consult-projectile-switch-to-buffer)
+;;               ;; ("C-c p f" . consult-projectile-find-file)))
 
 ;; (use-package consult-projectile
 ;;   :after consult
