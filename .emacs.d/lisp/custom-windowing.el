@@ -12,8 +12,8 @@
   :bind (("C-`"   . popper-toggle-latest)
          ("M-`"   . popper-cycle)
          ("C-M-`" . popper-toggle-type))
-  :config
-  (setq popper-group-function #'popper-group-by-projectile) ; projectile projects
+  ;; :config
+  ;; (setq popper-group-function #'popper-group-by-projectile) ; projectile projects
   :init
   (setq popper-reference-buffers
         '("\\*Messages\\*"
