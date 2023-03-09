@@ -177,6 +177,7 @@
                                 "\\`\\*Flymake log\\*\\'"
                                 "\\`\\*Semantic SymRef\\*\\'"
                                 "\\`\\*tramp/.*\\*\\'"
+                                "\\`\\*straight-process\\*\\'"
                                 "\\`\\*Async-native-compile-log\\*\\'"
                                 ))
   (setq consult-buffer-sources '(consult--source-hidden-buffer
