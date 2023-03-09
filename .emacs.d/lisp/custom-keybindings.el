@@ -18,6 +18,7 @@
   ;; (setq which-key-paging-key "<mouse-4>") ;; scroll up
   ;; (setq which-key-popup-type 'side-window)
   ;; (setq which-key-side-window-max-height 0.66)
+  (setq which-key-idle-delay 0.65)
   (which-key-mode))
 
 
