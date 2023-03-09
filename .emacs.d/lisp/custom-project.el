@@ -13,7 +13,14 @@
   (global-set-key (kbd "C-c p t") 'vterm-toggle)
   (global-set-key (kbd "C-c p f") 'consult-project-extra-find)
   (setq project-vc-extra-root-markers '(".projectile" "requirements.txt" "package.json"))
-  (setq project-vc-ignores '("ido.last" "eln-cache/" ".cache/" ".saves/" "save-perspective" "elpa/" "straight/" "auto-save-list/" "undo/" "var/" "tramp" ".lsp-session-v1" "history" "org-roam.db" "multisession/" "vimish-fold/" "transient/" "tree-sitter/"))
+  (setq project-vc-ignores '("ido.last" "eln-cache/" ".cache/" ".saves/" "save-perspective"
+                             "elpa/" "straight/" "auto-save-list/" "undo/" "var/" "tramp"
+                             ".lsp-session-v1" "history" "org-roam.db" "multisession/"
+                             "vimish-fold/" "transient/" "tree-sitter/" "Clementine/"
+                             "Code - OSS/" "Element/" "Pulsar/" "Signal*/" "Chromium/"
+                             "akonadi*" "balena-etcher/" "cef_user_data/" "chromium/"
+                             "icedtea-web/" "libreoffice/" "whatsdesk/"
+                             ))
   ;; always use consult-project-buffer instead of prompting different switching options
   ;; (setq project-switch-commands 'consult-project-buffer)
   (setq project-switch-commands 'consult-project-extra-find)
