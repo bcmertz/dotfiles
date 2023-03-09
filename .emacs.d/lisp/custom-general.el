@@ -99,7 +99,8 @@
 
 (use-package openwith
   :straight (openwith :local-repo "~/.emacs.d/lisp/lib/openwith"
-                      :files ("openwith.el"))
+                      :files ("openwith.el")
+                      :type nil)
   :config
   (openwith-mode)
   (setq openwith-associations
