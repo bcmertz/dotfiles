@@ -15,6 +15,7 @@ https://stackoverflow.com/a/3612017"
   (call-interactively 'compile)
   )
 
+;; TODO find better keybinding or dont make global, idk
 (use-package compile
   :config
   (setq compilation-scroll-output 1)
