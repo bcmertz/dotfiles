@@ -289,6 +289,7 @@ targets."
   :defer 1
   :straight nil
   :config
+  ;; TODO recentf-exclude not working
   (add-to-list 'recentf-exclude (format "%s/\\.emacs.d/elpa/.*" (getenv "HOME")))
   (add-to-list 'recentf-exclude (format "%s/\\.emacs.d/straight/.*" (getenv "HOME")))
   (recentf-mode +1))
