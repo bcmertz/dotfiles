@@ -2,7 +2,7 @@
 Description=toggles off annoying thinkpad leds
 
 [Service]
-ExecStart=/home/reya/.local/bin/thinkpad-leds
+ExecStart=/home/reya/.local/bin/toggle-leds
 
 [Install]
 WantedBy=multi-user.target
