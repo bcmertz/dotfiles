@@ -26,6 +26,7 @@ unclutter &            # get rid of mouse
 xfce4-power-manager --daemon &  # power management
 setxkbmap -layout us,ir -option grp:alts_toggle & # set keyboards
 oled-linux &                        # ugh
+touchegg --client &                 # gestures
 /usr/lib/kdeconnectd &              # kdeconnect
 battery-stats-collector &           # stats!
 /usr/bin/emacs --daemon=gui &       # gui emacs daemon
@@ -43,6 +44,5 @@ daemonize -i3600 setbg &            # set background & daemon
 # transmission-daemon &		# transmission in background
 
 # not relevant
-# touchegg &
 # redshift &      # reduce bluelight
 # start-pulseaudio-x11 &              # pulseaudio, should be automatic
