@@ -194,9 +194,12 @@
   (setq consult-narrow-key "<") ;; (kbd "C-+")
   )
 
+;; (defun my-consult-ag () "My consult-ag." (interactive "") (consult-ag (choose-directory)))
+
 ;; (use-package consult-ag
+;;   :defer t
 ;;   :bind
-;;   ("M-s" . consult-ag))
+;;   ("M-s a" . my-consult-ag))
 
 ;; Use `consult-completion-in-region' if Vertico is enabled.
 ;; Otherwise use the default `completion--in-region' function.
