@@ -289,7 +289,7 @@ targets."
 
 ;; nice to have in the future for cleaning up recent file suggestions
 (use-package recentf
-  :defer 1
+  :defer 0.1
   :straight nil
   :config
   ;; TODO recentf-exclude not working
