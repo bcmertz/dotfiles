@@ -40,7 +40,7 @@
   ;; default posframe, with / unbound
   (setq vertico-multiform-categories
         '(;; (consult-grep buffer)
-          (file (lambda (_) (progn
+          (file posframe (lambda (_) (progn
                               (define-key vertico-map "/" #'vertico-directory-enter)
                               (setq-local vertico-sort-override-function 'sort-directories-first))))
           (t posframe (lambda (_) (define-key vertico-map "/" #'self-insert-command))
