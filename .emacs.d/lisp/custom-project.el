@@ -28,6 +28,17 @@
   ;; (add-to-list 'project-switch-commands '(vterm-toggle "vterm" ?t))
   )
 
+;; TODO remove "... (choose a dir)" with advice or something
+;; (advice-add 'project-prompt-project-dir :before '((dir-choice . "testtttt")))
+;; (defun my-project-prompt-project-dir (orig-fun &rest args)
+;;   "This is ORIG-FUN and ARGS."
+;;   (let ((dir-choice "testttttttttt")
+;;         (res (apply orig-fun args)))
+;;     res))
+
+;; (advice-add 'project-prompt-project-dir :around #'my-project-prompt-project-dir)
+
+
 (use-package consult-project-extra
   :defer t
   :bind
