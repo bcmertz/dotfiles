@@ -39,7 +39,7 @@
   ;; find file bind / to directory awareness
   ;; default posframe, with / unbound
   (setq vertico-multiform-categories
-        '((consult-grep buffer)
+        '(;; (consult-grep buffer)
           (file (lambda (_) (progn
                               (define-key vertico-map "/" #'vertico-directory-enter)
                               (setq-local vertico-sort-override-function 'sort-directories-first))) posframe)
