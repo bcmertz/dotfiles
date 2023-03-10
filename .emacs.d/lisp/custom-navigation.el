@@ -168,8 +168,8 @@
   ;; is 'any, such that any key triggers the preview.
   (setq consult-preview-key nil)
   (consult-customize consult-line :preview-key 'any)
-  (consult-customize consult-theme :preview-key (kbd "M-<return>"))
-  (consult-customize my-consult-change-theme :preview-key (kbd "M-<return>"))
+  (consult-customize consult-theme :preview-key "C-<return>")
+  (consult-customize my-consult-change-theme :preview-key "C-<return>")
   (setq consult-line-start-from-top nil)
   (consult-customize consult-buffer :history nil)
 

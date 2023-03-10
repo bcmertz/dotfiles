@@ -57,7 +57,7 @@
   (consult--read
    (mapcar #'symbol-name (custom-available-themes))
    :require-match t
-   :prompt "dynamic theming <M-return>: "
+   :prompt "Choose theme (dynamic C-<return>): "
    :default (symbol-name (car custom-enabled-themes))
    :state (lambda (action theme)
             (pcase action
