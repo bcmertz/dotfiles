@@ -67,7 +67,7 @@
 (defun my-ivy-change-theme ()
   "Choose theme from installed list using `ivy-read'."
   (interactive)
-  (ivy-read "dynamic theming <C-M-m>: " (custom-available-themes)
+  (ivy-read "Choose theme (dynamic <C-M-m>): " (custom-available-themes)
             :preselect (symbol-name (car custom-enabled-themes))
             :action (lambda (theme)
                       ;; disable enabled themes
