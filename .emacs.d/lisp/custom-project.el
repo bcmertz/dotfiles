@@ -35,8 +35,24 @@
 ;;   (let ((dir-choice "testttttttttt")
 ;;         (res (apply orig-fun args)))
 ;;     res))
+(defun my-project-prompt-project-dir ()
+  "Prompt the user for a directory that is one of the known project roots.
+The project is chosen among projects known from the project list,
+see `project-list-file'.
+It's also possible to enter an arbitrary directory not in the list."
+  (project--ensure-read-project-list)
+  (let* ((choices
+          (project--file-completion-table
+           project--list))
+         (pr-dir ""))
+    (while (equal pr-dir "")
+      ;; If the user simply pressed RET, do this again until they don't.
+      (setq pr-dir (completing-read "Select project: " choices nil t)))
+    (if (equal pr-dir dir-choice)
+        (read-directory-name "Select directory: " default-directory nil t)
+      pr-dir)))
+(advice-add 'project-prompt-project-dir :override #'my-project-prompt-project-dir)
 
-;; (advice-add 'project-prompt-project-dir :around #'my-project-prompt-project-dir)
 
 
 (use-package consult-project-extra
