@@ -43,8 +43,8 @@
           (file (lambda (_) (progn
                               (define-key vertico-map "/" #'vertico-directory-enter)
                               (setq-local vertico-sort-override-function 'sort-directories-first))) posframe)
-          (t posframe (lambda (_) (define-key vertico-map "/" #'self-insert-command)))
-          )))
+          (t posframe (lambda (_) (define-key vertico-map "/" #'self-insert-command))
+             (vertico-posframe-fallback-mode . vertico-buffer-mode)))))
 
 (use-package vertico-directory
   :after vertico
