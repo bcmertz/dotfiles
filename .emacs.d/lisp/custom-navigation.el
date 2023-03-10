@@ -10,8 +10,8 @@
                                 vertico-directory))
   :init (vertico-mode)
   :bind (:map vertico-map
-         ("<next>" . vertico-scroll-up)
-         ("<prior>" . vertico-scroll-down))
+              ("<next>" . vertico-scroll-up)
+              ("<prior>" . vertico-scroll-down))
   :config
   (setq vertico-preselect 'first)
   :hook
