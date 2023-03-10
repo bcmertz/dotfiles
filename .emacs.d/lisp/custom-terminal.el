@@ -9,9 +9,11 @@
 (use-package vterm
   :defer t
   :commands vterm--internal
-  :bind* (("C-<return>" . vterm-toggle)
-          :map vterm-mode-map (("C-c C-t" . vterm-copy-mode))
-          ))
+  :bind (:map vterm-mode-map (("C-c C-t" . vterm-copy-mode)))
+  :hook
+  (minibuffer-setup . (lambda () (interactive) (global-set-key (kbd "C-<return>") nil)))
+  (minibuffer-exit . (lambda () (interactive) (global-set-key (kbd "C-<return>") 'vterm-toggle)))
+  )
 
 (defun vterm-toggle ()
   "Toggle vterm."
