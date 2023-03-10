@@ -44,6 +44,7 @@
                               (define-key vertico-map "/" #'vertico-directory-enter)
                               (setq-local vertico-sort-override-function 'sort-directories-first))))
           (t posframe
+             ;; TODO figure out how to get regular `vertico-mode' fallback working
              (vertico-posframe-fallback-mode . vertico-mode-buffer)
              (lambda (_) (define-key vertico-map "/" #'self-insert-command))
              ))))
