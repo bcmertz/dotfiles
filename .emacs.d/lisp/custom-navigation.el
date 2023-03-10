@@ -70,7 +70,7 @@
 (use-package vertico-posframe
   :after vertico
   :init
-  (apply-if-gui 'vertico-posframe-mode)
+  (vertico-posframe-mode)
   :config
   (add-hook 'vertico-posframe-mode-hook 'vertico-posframe-cleanup)
   (setq vertico-posframe-size-function 'my-vertico-posframe-get-size))
