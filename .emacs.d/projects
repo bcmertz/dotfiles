@@ -1,0 +1,10 @@
+;;; -*- lisp-data -*-
+(("~/.emacs.d/")
+ ("~/coding/trailcam/")
+ ("~/.config/")
+ ("~/.local/bin/")
+ ("~/coding/resume/")
+ ("~/coding/doom-emacs/")
+ ("~/coding/dmenu/")
+ ("~/coding/st/")
+ ("~/coding/dt-dotfiles/"))
