@@ -88,7 +88,6 @@
 !.emacs.d/early-init.el
 !.emacs.d/custom.el
 !.emacs.d/README.md
-!.emacs.d/projects
 !.emacs.d/.projectile
 !.emacs.d/.mc-lists.el
 !.emacs.d/smartparens-config
