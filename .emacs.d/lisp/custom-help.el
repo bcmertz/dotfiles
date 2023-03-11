@@ -6,16 +6,24 @@
 ;;;
 ;;; Code:
 
-(use-package help
-  :straight nil
-  :bind (:map help-mode-map
-         ("C-<left>" . help-go-back)
-         ("C-<right>" . help-go-forward)
-         ("i" . help-goto-info)
-         ("n" . help-goto-next-page)
-         ("I" . help-goto-lispref-info)
-         ("p" . help-goto-previous-page)
-         ))
+;; (use-package help
+;;   :straight nil
+;;   :bind (:map help-mode-map
+;;          ("C-<left>" . help-go-back)
+;;          ("C-<right>" . help-go-forward)
+;;          ("i" . help-goto-info)
+;;          ("n" . help-goto-next-page)
+;;          ("I" . help-goto-lispref-info)
+;;          ("p" . help-goto-previous-page)
+;;          ))
+
+(use-package helpful
+  :bind* (("C-h f" . #'helpful-function)
+          ("C-h F" . #'helpful-callable)
+          ("C-h v" . #'helpful-variable)
+          ("C-h k" . #'helpful-key)
+          ("C-h o" . #'helpful-symbol)
+          ("C-h x" . #'helpful-command)))
 
 ;; this example would cause the help buffer to always
 ;; be the bottom most buffer, full-width, with a height
