@@ -18,6 +18,7 @@
 ;;          ))
 
 (use-package helpful
+  :defer t
   :bind* (("C-h f" . #'helpful-function)
           ("C-h F" . #'helpful-callable)
           ("C-h v" . #'helpful-variable)
