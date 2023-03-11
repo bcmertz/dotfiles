@@ -6,6 +6,9 @@
 ;;;
 ;;; Code:
 
+(defvar splash-type "image" "String type of splash-screen to use.
+Possible values are `cowsay' and `image'")
+
 ;; Inital buffer
 (setq inhibit-startup-screen t)  ;; inhibit startup screen
 (setq initial-buffer-choice t)   ;; scratch instead
@@ -16,8 +19,11 @@
   (let ((scratch (get-buffer-create "*scratch*")))
     (with-current-buffer "*scratch*"
       (delete-region (point-min) (point-max))
-      ;; (setq-local imgs (directory-files "~/.emacs.d/etc/" t directory-files-no-dot-files-regexp))
-      ;; (insert-image (create-image (nth (random (length imgs)) imgs)))
+      (if (string= splash-type "image")
+          (progn
+            (setq-local imgs (directory-files "~/.emacs.d/etc/" t directory-files-no-dot-files-regexp))
+            (insert-image (create-image (nth (random (length imgs)) imgs)))
+            (newline)))
       (when initial-scratch-message
         (insert (substitute-command-keys initial-scratch-message))
         (set-buffer-modified-p nil))
@@ -42,20 +48,17 @@
             (setq str "Good afternoon")
           (setq str "Good evening"))))))
 
-;; (setq initial-scratch-message (format ";; %s, %s
-;; ;; This buffer is for text that is not saved, and for Lisp evaluation.
-;; ;; To execute lisp, type C-x C-e
-
-;; " (return-greeting) (capitalize (user-full-name))))
-
-;; regexp_1 comments out lines, regexp_2 strips eol whitespace
 (setq initial-scratch-message (format "%s
 ;; This buffer is for text that is not saved, and for Lisp evaluation.
 ;; To execute lisp, type C-x C-e
 
-" (replace-regexp-in-string "\s+$" "" (replace-regexp-in-string "^" ";; " (shell-command-to-string
-                                       (format "cowsay -f udder %s, %s"
-                                               (return-greeting) (capitalize (user-full-name))))))))
+" (if (string= splash-type "image")
+      (format ";; %s, %s" (return-greeting) (capitalize (user-full-name)))
+    (if (string= splash-type "cowsay")
+        ;; regexp_1 comments out lines, regexp_2 strips eol whitespace
+        (replace-regexp-in-string "\s+$" "" (replace-regexp-in-string "^" ";; " (shell-command-to-string
+                                                                                 (format "cowsay -f udder %s, %s"
+                                                                                         (return-greeting) (capitalize (user-full-name))))))))))
 
 (defun set-gui-scratch-greeting (msg)
   "Set GUI scratch greeting."
