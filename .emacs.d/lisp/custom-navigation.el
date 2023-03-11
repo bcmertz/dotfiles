@@ -30,24 +30,42 @@
   :straight nil
   :init (vertico-multiform-mode)
   :config
+  ;; command / category specific configuration
+  ;;
+  ;; Note:
+  ;; we need to check if we're in terminal or not as a hack because posframe
+  ;; fallback doesn't work with regular vertico display in terminal
+  ;; see - https://github.com/tumashu/vertico-posframe/issues/30
+  ;; otherwise could do: (t posframe (vertico-posframe-fallback-mode . vertico-buffer-mode))
+  ;; to make posframe default with normal fallback in terminal
+  ;;
+  ;; Configuration:
   ;; magit should not preselect so we can by default select directory
   ;; consult-line cycles and in minibuffer so we don't hide text
-  (setq vertico-multiform-commands
-        '((magit-status posframe (vertico-preselect . prompt))
-          (consult-line (:not posframe) (vertico-cycle . t))))
   ;; all consult grep like commands (grep / ripgrep / git grep) take place in dedicated buffer
   ;; find file bind / to directory awareness
   ;; default posframe, with / unbound
-  (setq vertico-multiform-categories
-        '(;; (consult-grep buffer)
-          (file posframe (lambda (_) (progn
-                              (define-key vertico-map "/" #'vertico-directory-enter)
-                              (setq-local vertico-sort-override-function 'sort-directories-first))))
-          (t posframe
-             ;; TODO figure out how to get regular `vertico-mode' fallback working
-             (vertico-posframe-fallback-mode . vertico-buffer-mode)
-             (lambda (_) (define-key vertico-map "/" #'self-insert-command))
-             ))))
+  (if (display-graphic-p)
+      (progn
+        (setq vertico-multiform-commands
+              '((magit-status posframe (vertico-preselect . prompt))
+                (consult-line (:not posframe) (vertico-cycle . t))))
+        (setq vertico-multiform-categories
+              '(;; (consult-grep buffer)
+                (file posframe (lambda (_) (progn
+                                             (define-key vertico-map "/" #'vertico-directory-enter)
+                                             (setq-local vertico-sort-override-function 'sort-directories-first))))
+                (t posframe (lambda (_) (define-key vertico-map "/" #'self-insert-command))))))
+    (progn
+      (setq vertico-multiform-commands
+            '((magit-status (vertico-preselect . prompt))
+              (consult-line (vertico-cycle . t))))
+      (setq vertico-multiform-categories
+            '(;; (consult-grep buffer)
+              (file (lambda (_) (progn
+                                  (define-key vertico-map "/" #'vertico-directory-enter)
+                                  (setq-local vertico-sort-override-function 'sort-directories-first))))
+              (t (lambda (_) (define-key vertico-map "/" #'self-insert-command))))))))
 
 (use-package vertico-directory
   :after vertico
@@ -73,7 +91,7 @@
 (use-package vertico-posframe
   :after vertico
   :init
-  (vertico-posframe-mode)
+  (apply-if-gui 'vertico-posframe-mode)
   :config
   (add-hook 'vertico-posframe-mode-hook 'vertico-posframe-cleanup)
   (setq vertico-posframe-size-function 'my-vertico-posframe-get-size))
