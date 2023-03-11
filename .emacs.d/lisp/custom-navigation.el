@@ -4,6 +4,8 @@
 ;;;
 ;;; Code:
 
+(defvar num-cands 9 "Number of completion candidates to use.")
+
 (use-package vertico
   :straight (vertico :files (:defaults "extensions/*")
                      :includes (vertico-multiform
@@ -14,6 +16,7 @@
               ("<prior>" . vertico-scroll-down))
   :config
   (setq vertico-preselect 'first)
+  (setq vertico-count num-cands)
   :hook
   (minibuffer-setup . (lambda () (interactive) (pixel-scroll-precision-mode -1)))
   (minibuffer-exit . (lambda () (interactive) (pixel-scroll-precision-mode 1)))
@@ -79,7 +82,7 @@
 
 (defun my-vertico-posframe-get-size (buffer)
   "Set the vertico-posframe size according to the current frame."
-  (let* ((height (or vertico-posframe-height 10))
+  (let* ((height (or vertico-posframe-height (+ 1 num-cands)))
          (min-height (min height (+ 1 (length vertico--candidates))))
          (width (min (or vertico-posframe-width 200) (round (* .75 (frame-width))))))
     (list
