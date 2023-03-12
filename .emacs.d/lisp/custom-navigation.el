@@ -175,7 +175,7 @@
   ;; preview for `consult-register', `consult-register-load',
   ;; `consult-register-store' and the Emacs built-ins.
   ;; (setq register-preview-delay 0.5
-        ;; register-preview-function #'consult-register-format)
+  ;; register-preview-function #'consult-register-format)
 
   ;; Optionally tweak the register preview window.
   ;; This adds thin lines, sorting and hides the mode line of the window.
