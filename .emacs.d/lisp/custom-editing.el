@@ -336,8 +336,12 @@ before calling `er/expand-region' for the first time ARG."
 (global-set-key [(control up)] 'move-lines-up)
 (global-set-key [(control down)] 'move-lines-down)
 
-;; TODO figure out what to use xref with
-;; xref-idk lol
+;; xref navigate definitions
+(use-package xref
+  :bind*
+  ("C-." . xref-find-definitions)
+  ("C-M-." . xref-find-definitions-other-window)
+  ("C-," . xref-go-back))
 
 ;; Multiple Cursors
 (use-package multiple-cursors
