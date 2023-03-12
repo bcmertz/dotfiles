@@ -247,11 +247,10 @@
   :straight t
   :bind
   (("C-h B" . embark-bindings) ;; alternative for `describe-bindings'
-   :map vertico-map (
-         ("C-." . embark-act)         ;; pick some comfortable binding
-         ("M-." . embark-dwim)
-         ("M-<return>" . embark-collect)
-         ))
+   :map vertico-map (("C-." . embark-act)         ;; pick some comfortable binding
+                     ("M-." . embark-dwim)
+                     ("M-<return>" . embark-collect)
+                     ))
   :init
   ;; Optionally replace the key help with a completing-read interface
   (setq prefix-help-command #'embark-prefix-help-command)
@@ -296,16 +295,16 @@ targets."
                    (not (string-suffix-p "-argument" (cdr binding))))))))
 
 (setq embark-indicators
-  '(embark-which-key-indicator
-    embark-highlight-indicator
-    embark-isearch-highlight-indicator))
+      '(embark-which-key-indicator
+        embark-highlight-indicator
+        embark-isearch-highlight-indicator))
 
 (defun embark-hide-which-key-indicator (fn &rest args)
   "Hide the which-key indicator immediately when using the completing-read prompter."
   (which-key--hide-popup-ignore-command)
   (let ((embark-indicators
          (remq #'embark-which-key-indicator embark-indicators)))
-      (apply fn args)))
+    (apply fn args)))
 
 (advice-add #'embark-completing-read-prompter
             :around #'embark-hide-which-key-indicator)
