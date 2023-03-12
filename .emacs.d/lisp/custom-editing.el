@@ -318,7 +318,6 @@ before calling `er/expand-region' for the first time ARG."
 (advice-add 'undo-tree-save-history :around 'my-undo-tree-save-history)
 
 
-
 ;; Utilities
 (global-set-key (kbd "M-/") 'comment-or-uncomment-region)
 (global-set-key (kbd "C-x C-e") 'eval-buffer)
