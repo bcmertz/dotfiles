@@ -48,27 +48,32 @@
   ;; all consult grep like commands (grep / ripgrep / git grep) take place in dedicated buffer
   ;; find file bind / to directory awareness
   ;; default posframe, with / unbound
-  (if (display-graphic-p)
-      (progn
-        (setq vertico-multiform-commands
-              '((magit-status posframe (vertico-preselect . prompt))
-                (consult-line (:not posframe) (vertico-cycle . t))))
-        (setq vertico-multiform-categories
-              '(;; (consult-grep buffer)
-                (file posframe (lambda (_) (progn
-                                             (define-key vertico-map "/" #'vertico-directory-enter)
-                                             (setq-local vertico-sort-override-function 'sort-directories-first))))
-                (t posframe (lambda (_) (define-key vertico-map "/" #'self-insert-command))))))
-    (progn
-      (setq vertico-multiform-commands
-            '((magit-status (vertico-preselect . prompt))
-              (consult-line (vertico-cycle . t))))
-      (setq vertico-multiform-categories
-            '(;; (consult-grep buffer)
-              (file (lambda (_) (progn
-                                  (define-key vertico-map "/" #'vertico-directory-enter)
-                                  (setq-local vertico-sort-override-function 'sort-directories-first))))
-              (t (lambda (_) (define-key vertico-map "/" #'self-insert-command))))))))
+  (defun my-vertico-posframe-config (_)
+    "My vertico posframe config."
+    (setq vertico-multiform-commands
+          '((magit-status posframe (vertico-preselect . prompt))
+            (consult-line (:not posframe) (vertico-cycle . t))))
+    (setq vertico-multiform-categories
+          '((consult-grep (:not posframe) buffer)
+            (file posframe (lambda (_) (progn
+                                         (define-key vertico-map "/" #'vertico-directory-enter)
+                                         (setq-local vertico-sort-override-function 'sort-directories-first))))
+            (t posframe (lambda (_) (define-key vertico-map "/" #'self-insert-command))))))
+
+  (defun my-vertico-regular-config (_)
+    "My vertico regular config."
+    (setq vertico-multiform-commands
+          '((magit-status (vertico-preselect . prompt))
+            (consult-line (vertico-cycle . t))))
+    (setq vertico-multiform-categories
+          '((consult-grep buffer)
+            (file (lambda (_) (progn
+                                (define-key vertico-map "/" #'vertico-directory-enter)
+                                (setq-local vertico-sort-override-function 'sort-directories-first))))
+            (t (lambda (_) (define-key vertico-map "/" #'self-insert-command))))))
+
+  (apply-if-gui 'my-vertico-posframe-config 'my-vertico-regular-config)
+  )
 
 (use-package vertico-directory
   :after vertico
