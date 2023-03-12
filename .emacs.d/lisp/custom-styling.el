@@ -29,9 +29,6 @@
       (use-package ewal)
       (setq custom-theme 'ewal-doom-one)))
 
-;; default gui theme
-(apply-if-gui 'update-theme nil)
-
 (defun disable-all-themes ()
   "Disable all themes."
   (dolist (i custom-enabled-themes)
@@ -42,6 +39,9 @@
   (disable-all-themes)
   (if theme (setq custom-theme (intern theme)))
   (load-theme custom-theme t))
+
+;; default gui theme
+(apply-if-gui '(lambda () (update-theme nil)))
 
 ;; change theme utility
 (defun my-change-theme ()
@@ -156,7 +156,7 @@
 (global-set-key (kbd "C-c t m") 'toggle-menu-bar)
 
 ;; Highlight current line in gui emacs
-(apply-if-gui 'global-hl-line-mode 1)
+(apply-if-gui '(lambda () (global-hl-line-mode 1)))
 
 ;; toggle hl line mode globally
 (defun toggle-hl-line ()

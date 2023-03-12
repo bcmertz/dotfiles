@@ -10,16 +10,18 @@
 (require 'doom-lib)
 
 ;; if gui do something in whatver type of emacs instance we are using
-(defun apply-if-gui (&rest action)
-  "Do specified ACTION if we're in a gui regardless of daemon or not."
+(defun apply-if-gui (&rest action action2)
+  "Do specified ACTION if we're in a gui regardless of daemon or not and if not ACTION2."
   (if (daemonp)
       (add-hook 'after-make-frame-functions
                 (lambda (frame)
                   (select-frame frame)
                   (if (display-graphic-p frame)
-                      (apply action))))
+                      (apply action)
+                    (if action2 (apply action2)))))
     (if (display-graphic-p)
-        (apply action))))
+        (apply action)
+      (if action2 (apply action2)))))
 
 ;; do for both gui and term, useful if an action gets messed up my emacsclient
 ;; in gui, as happens for styling / faces / fonts

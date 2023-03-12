@@ -64,7 +64,7 @@ Possible values are `cowsay' and `image'")
   "Set GUI scratch greeting."
   (setq initial-scratch-message msg))
 
-(apply-if-gui 'set-gui-scratch-greeting initial-scratch-message)
+(apply-if-gui '(lambda () (set-gui-scratch-greeting initial-scratch-message)))
 
 
 (provide 'custom-splashscreen)
