@@ -49,7 +49,6 @@ Possible values are `cowsay' and `image'")
           (setq str "Good evening"))))))
 
 (setq initial-scratch-message (format "%s
-;; This buffer is for text that is not saved, and for Lisp evaluation.
 ;; To execute lisp, type C-x C-e
 
 " (if (string= splash-type "image")
