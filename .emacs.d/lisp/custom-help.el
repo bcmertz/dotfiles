@@ -19,12 +19,19 @@
 
 (use-package helpful
   :defer t
+  :straight (helpful :type git
+                     :host github
+                     :repo "daanturo/helpful"
+                     :branch "go-backward")
   :bind* (("C-h f" . #'helpful-function)
           ("C-h F" . #'helpful-callable)
           ("C-h v" . #'helpful-variable)
           ("C-h k" . #'helpful-key)
           ("C-h o" . #'helpful-symbol)
-          ("C-h x" . #'helpful-command)))
+          ("C-h x" . #'helpful-command)
+          (:map helpful-mode-map
+                ("C-<left>" . helpful-go-back)
+                ("C-<right>" . helpful-go-forward))))
 
 ;; this example would cause the help buffer to always
 ;; be the bottom most buffer, full-width, with a height
