@@ -4,7 +4,6 @@
 ;;;
 ;;; Code:
 
-;; TODO figure out how to do recentf ordering
 (use-package project
   :defer t
   :config
@@ -27,6 +26,15 @@
   ;; alternatively use multiple switching commands
   ;; (add-to-list 'project-switch-commands '(vterm-toggle "vterm" ?t))
   )
+
+;; TODO recentf ordering not possible
+;; https://github.com/Qkessler/consult-project-extra/issues/10
+(use-package consult-project-extra
+  :defer t
+  :straight (consult-project-extra :type git :host github :repo "Qkessler/consult-project-extra")
+  :bind
+  (("C-c p f" . consult-project-extra-find)))
+
 
 ;; TODO remove "... (choose a dir)" with advice or something
 ;; (advice-add 'project-prompt-project-dir :before '((dir-choice . "testtttt")))
@@ -53,12 +61,6 @@
 ;;       pr-dir)))
 ;; (advice-add 'project-prompt-project-dir :override #'my-project-prompt-project-dir)
 
-
-
-(use-package consult-project-extra
-  :defer t
-  :bind
-  (("C-c p f" . consult-project-extra-find)))
 
 ;; (use-package consult-dir
 ;;   :defer t
