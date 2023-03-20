@@ -37,7 +37,7 @@
 (measure-time(require 'custom-fonts))            ;; fonts
 (measure-time(require 'custom-modeline))         ;; mode line
 (measure-time(require 'custom-completion))       ;; completion && snippets
-(measure-time(require 'custom-treesitter))       ;; tree-sitter
+;; (measure-time(require 'custom-treesitter))       ;; tree-sitter
 (measure-time(require 'custom-project))          ;; project management and navigation
 (measure-time(require 'custom-navigation))       ;; navigating code
 ;; (measure-time(require 'custom-ivy))           ;; ivy navigation
