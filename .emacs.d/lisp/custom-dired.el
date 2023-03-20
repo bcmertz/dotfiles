@@ -4,6 +4,11 @@
 ;;;
 ;;; Code:
 
+(use-package dired
+  :straight nil
+  :bind (:map dired-mode-map
+              ("M-s" . consult-ripgrep)))
+
 (use-package dired-narrow
   :bind (:map dired-mode-map
               ("C-c C-t" . wdired-change-to-wdired-mode)
@@ -54,8 +59,6 @@
   (setq dired-subtree-use-backgrounds nil)
   :bind (:map dired-mode-map ("<tab>" . dired-subtree-toggle)))
 
-
-(define-key dired-mode-map (kbd "M-s") 'consult-ripgrep)
 
 (provide 'custom-dired)
 ;;; custom-dired.el ends here
