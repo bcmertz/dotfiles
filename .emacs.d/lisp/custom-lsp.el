@@ -2,7 +2,9 @@
 ;;;
 ;;; Commentary:
 ;;;
-;;;
+;;; LSPs provide IDE like functionality - renaming variables, completion, error checking
+;;; which are digested through builtin functions in our LSP client (eg - eglot-rename)
+;;; or are digested by other libraries like flymake (error-checking) or corfu (completion)
 ;;;
 ;;; Code:
 

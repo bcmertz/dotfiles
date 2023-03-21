@@ -2,7 +2,8 @@
 ;;;
 ;;; Commentary:
 ;;;
-;;; tree-sitter
+;;; tree-sitter uses defined language grammars to have understanding of the syntax
+;;; of a program, allowing for nice syntax highlighting and structural editing
 ;;;
 ;;; Code:
 
