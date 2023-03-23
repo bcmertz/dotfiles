@@ -1,4 +1,4 @@
 [Desktop Entry]
 Type=Application
 Name=Text editor
-Exec=emacs
+Exec=emacsclient --socket-name=gui %u
