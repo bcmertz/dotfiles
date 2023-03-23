@@ -1,8 +1,8 @@
 [Default Applications]
 x-scheme-handler/http=browser.desktop
 x-scheme-handler/https=browser.desktop
-text/plain=emacs.desktop
-text/x-shellscript=text.desktop;
+text/plain=my-gui-emacs-client.desktop
+text/x-shellscript=my-gui-emacs-client.desktop;
 x-scheme-handler/lbry=lbry.desktop
 x-scheme-handler/mailto=mail.desktop;
 x-scheme-handler/magnet=torrent.desktop;
@@ -33,7 +33,7 @@ image/x-xpixmap=sxiv.desktop
 [Added Associations]
 inode/directory=pcmanfm.desktop;
 x-scheme-handler/http=firefox.desktop;
-text/plain=emacs.desktop;
+text/plain=my-gui-emacs-client.desktop;text.desktop;
 image/bmp=sxiv.desktop;
 image/gif=sxiv.desktop;
 image/jpg=sxiv.desktop;
