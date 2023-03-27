@@ -26,6 +26,7 @@ baobab
 base
 bash-completion
 bash-language-server
+bat
 battery-stats-git
 bc
 beep
@@ -119,6 +120,7 @@ gcolor2
 gettext
 gimp
 git
+git-delta
 git-lfs
 glances
 gnome-clocks
