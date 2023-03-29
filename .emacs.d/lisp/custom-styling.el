@@ -41,7 +41,7 @@
   (load-theme custom-theme t))
 
 ;; default gui theme
-(apply-if-gui '(lambda () (update-theme nil)))
+(if-gui (update-theme nil))
 
 ;; change theme utility
 (defun my-change-theme ()
@@ -156,7 +156,7 @@
 (global-set-key (kbd "C-c t m") 'toggle-menu-bar)
 
 ;; Highlight current line in gui emacs
-(apply-if-gui '(lambda () (global-hl-line-mode 1)))
+(if-gui (global-hl-line-mode 1))
 
 ;; toggle hl line mode globally
 (defun toggle-hl-line ()

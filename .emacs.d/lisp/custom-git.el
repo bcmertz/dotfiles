@@ -54,11 +54,10 @@ https://github.com/magit/magit/issues/460#issuecomment-837449105."
             :filter-return #'~/magit-process-environment)
 
 ;; syntax highlighting on git diffs
-(use-package magit-delta
-  :defer t
-  :config
-  (setq magit-delta-default-dark-theme "Dracula")
-  :hook (magit-mode . magit-delta-mode))
+(if-gui (use-package magit-delta
+                 :config
+                 (setq magit-delta-default-dark-theme "Dracula")
+                 :hook (magit-mode . magit-delta-mode)))
 
 (use-package github-review
   :defer t
