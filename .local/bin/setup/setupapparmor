@@ -2,21 +2,35 @@
 #
 # move overrides
 
-#abstractions
-sudo cp ~/.config/apparmor/*_abstraction /etc/apparmor.d/abstractions/
-sudo rename "_abstraction" "" /etc/apparmor.d/abstractions/*
+# #abstractions
+# sudo cp ~/.config/apparmor/*_abstraction /etc/apparmor.d/abstractions/
+# sudo rename "_abstraction" "" /etc/apparmor.d/abstractions/*
 
-# tunables
-sudo cp ~/.config/apparmor/*_tunable /etc/apparmor.d/tunables/
-sudo rename "_tunable" "" /etc/apparmor.d/tunables/*
+# # tunables
+# sudo cp ~/.config/apparmor/*_tunable /etc/apparmor.d/tunables/
+# sudo rename "_tunable" "" /etc/apparmor.d/tunables/*
 
-# profiles
-sudo cp ~/.config/apparmor/*_profile /etc/apparmor.d/
-sudo rename "_profile" "" /etc/apparmor.d/*
+# # profiles
+# sudo cp ~/.config/apparmor/*_profile /etc/apparmor.d/
+# sudo rename "_profile" "" /etc/apparmor.d/*
 
-# overrides
-sudo cp ~/.config/apparmor/*_apparmor /etc/apparmor.d/local/
-sudo rename "_apparmor" "" /etc/apparmor.d/local/*
+# # overrides
+# sudo cp ~/.config/apparmor/*_apparmor /etc/apparmor.d/local/
+# sudo rename "_apparmor" "" /etc/apparmor.d/local/*
+
+# speed up apparmor start by caching profiles
+#
+# https://wiki.archlinux.org/title/AppArmor#Speed-up_AppArmor_start_by_caching_profiles
+echo 'write-cache' | sudo tee -a /etc/apparmor/parser.conf
+echo 'Optimize=compress-fast' | sudo tee -a /etc/apparmor/parser.conf
+
+# add user to audit group so we can do notifications
+sudo gpasswd -a reya audit
+
+# TODO enable aa-notify in xprofile or something
+
+# set log group to audit group
+sudo sed -i 's/.*log_group.*/log_group = audit/g' /etc/audit/auditd.conf
 
 # enable services
 sudo systemctl enable --now apparmor.service auditd.service

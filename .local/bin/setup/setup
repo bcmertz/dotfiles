@@ -72,6 +72,9 @@ sudo systemctl enable --now cronie.service  || warn "failed to enable cron servi
 
 # TODO: setupUFW
 
+# apparmor
+setupapparmor || warn "failed to setup apparmor"
+
 # config grub
 sudo cp -r ~/.config/grub/virtuaverse/ /usr/share/grub/themes/
 if grep -q "GRUB_THEME" /etc/default/grub; then
