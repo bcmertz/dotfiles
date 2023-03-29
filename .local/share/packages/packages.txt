@@ -310,6 +310,7 @@ python-defusedxml
 python-isort
 python-lsp-black
 python-lsp-server
+python-notify2
 python-packaging
 python-pip
 python-psycopg2
