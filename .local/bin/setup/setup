@@ -98,7 +98,7 @@ sudo systemctl enable --now toggle-leds.service
 sudo gpasswd -a $USER input
 
 # printing
-# sudo systemctl enable --now cups.socket || warn "failed to setup printing service"
+sudo systemctl enable --now cups.socket || warn "failed to setup printing service"
 
 # paccache - cleanup old packages weekly
 sudo systemctl enable --now paccache.timer
