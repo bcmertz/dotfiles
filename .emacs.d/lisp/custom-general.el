@@ -67,9 +67,7 @@
 (setq use-dialog-box nil)
 
 ;; unbind C-z suspend unless were in a terminal where it's useful
-(defun unbind-suspend ()
-  (global-unset-key (kbd "C-z")))
-(apply-if-gui 'unbind-suspend)
+(if-gui (global-unset-key (kbd "C-z")))
 
 ;; Follow symlinks
 (setq vc-follow-symlinks t)
