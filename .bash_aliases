@@ -73,7 +73,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias c='clear'
 alias s='source ~/.bashrc'
 alias ag='ag --hidden --ignore node_modules --ignore .git'
-alias copy='xclip -sel clip'
+alias copy="sed 's/\x1B\[[0-9;]\{1,\}[A-Za-z]//g' | xclip -sel clip"
 alias r='fc -s'
 alias rc='fc -s | copy'
 alias reboot='shutdown -r now'
