@@ -10,6 +10,20 @@
 (require 'doom-lib)
 
 ;; if gui do something in whatver type of emacs instance we are using
+(defmacro if-gui (action &rest action2)
+  "Do specified ACTION if we're in a gui regardless of daemon or not and if not ACTION2."
+  `(if (daemonp)
+       (add-hook 'after-make-frame-functions
+                 (lambda (frame)
+                   (select-frame frame)
+                   (if (display-graphic-p frame)
+                       ,action
+                     ,@action2)))
+     (if (display-graphic-p)
+         ,action
+       ,@action2)))
+
+;; if gui do something in whatver type of emacs instance we are using
 (defun apply-if-gui (&rest action action2)
   "Do specified ACTION if we're in a gui regardless of daemon or not and if not ACTION2."
   (if (daemonp)
