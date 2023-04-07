@@ -110,6 +110,8 @@ filelight
 findutils
 firefox
 firefox-i18n-fa
+firejail
+firetools
 firewalld
 flex
 fsarchiver
