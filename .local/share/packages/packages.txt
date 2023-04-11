@@ -469,5 +469,4 @@ yay
 yt-dlp
 zathura
 zathura-pdf-mupdf
-zoom
 zsh
