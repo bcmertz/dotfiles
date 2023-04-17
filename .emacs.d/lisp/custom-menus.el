@@ -1,4 +1,4 @@
-;;; custom-menus.el --- configuration handling right click menus
+;;; custom-menus.el --- configuration handling right click menus -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

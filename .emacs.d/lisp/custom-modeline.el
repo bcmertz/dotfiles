@@ -1,4 +1,4 @@
-;;; custom-modeline.el --- custom modeline
+;;; custom-modeline.el --- custom modeline -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

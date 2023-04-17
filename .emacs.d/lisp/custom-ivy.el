@@ -1,4 +1,4 @@
-;;; custom-ivy.el --- ivy config
+;;; custom-ivy.el --- ivy config -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

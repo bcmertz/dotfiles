@@ -1,4 +1,4 @@
-;;; custom-pdf.el --- pdf configuration
+;;; custom-pdf.el --- pdf configuration -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

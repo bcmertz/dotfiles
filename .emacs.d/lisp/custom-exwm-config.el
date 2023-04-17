@@ -1,4 +1,4 @@
-;;; custom-exwm-config.el --- EXWM configuration
+;;; custom-exwm-config.el --- EXWM configuration -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;;
 ;;;

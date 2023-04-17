@@ -1,4 +1,4 @@
-;;; custom-scrolling.el --- custom scrolling
+;;; custom-scrolling.el --- custom scrolling -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

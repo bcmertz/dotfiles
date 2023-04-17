@@ -1,4 +1,4 @@
-;;; custom-terminal.el --- terminal config
+;;; custom-terminal.el --- terminal config -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

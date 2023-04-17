@@ -1,4 +1,4 @@
-;;; custom-windowing.el --- window manager
+;;; custom-windowing.el --- window manager -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

@@ -1,4 +1,4 @@
-;;; custom-funcs.el --- utilities and custom defined functions -*- lexical-binding:t -*-
+;;; custom-funcs.el --- utilities and custom defined functions -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;
@@ -463,7 +463,7 @@ With argument, do this that many times."
   (interactive)
   (let ((package (car (split-string (buffer-name) "\\.")))
         (type (car (last (split-string (car (split-string (buffer-name) "\\.")) "\\-")))))
-    (insert (format ";;; %s --- custom %s
+    (insert (format ";;; %s --- custom %s -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

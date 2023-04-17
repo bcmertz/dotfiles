@@ -1,4 +1,4 @@
-;;; custom-packaging.el --- configure package management
+;;; custom-packaging.el --- configure package management -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

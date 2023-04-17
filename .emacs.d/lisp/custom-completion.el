@@ -1,4 +1,4 @@
-;;; custom-completion.el --- completion configuration
+;;; custom-completion.el --- completion configuration -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

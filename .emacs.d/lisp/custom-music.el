@@ -1,4 +1,4 @@
-;;; custom-music.el
+;;; custom-music.el -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

@@ -1,4 +1,4 @@
-;;; custom-email.el --- custom email
+;;; custom-email.el --- custom email -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

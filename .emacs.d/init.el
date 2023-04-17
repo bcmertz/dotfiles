@@ -1,4 +1,4 @@
-;;; init.el --- loads various configuration layers
+;;; init.el --- loads various configuration layers -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

@@ -1,4 +1,4 @@
-;;; custom-help.el --- customize help mode
+;;; custom-help.el --- customize help mode -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

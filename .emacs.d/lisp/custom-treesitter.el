@@ -1,4 +1,4 @@
-;;; custom-treesitter.el --- tree-sitter configuration
+;;; custom-treesitter.el --- tree-sitter configuration -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

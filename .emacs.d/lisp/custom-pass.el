@@ -1,4 +1,4 @@
-;;; custom-pass.el --- pass configuration
+;;; custom-pass.el --- pass configuration -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

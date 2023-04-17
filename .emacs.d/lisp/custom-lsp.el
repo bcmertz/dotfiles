@@ -1,4 +1,4 @@
-;;; custom-lsp.el --- golang configuration
+;;; custom-lsp.el --- golang configuration -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

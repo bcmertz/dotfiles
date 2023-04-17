@@ -1,4 +1,4 @@
-;;; custom-sidebar.el --- sidebar config
+;;; custom-sidebar.el --- sidebar config -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

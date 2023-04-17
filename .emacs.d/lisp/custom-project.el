@@ -1,4 +1,4 @@
-;;; custom-project.el --- custom project
+;;; custom-project.el --- custom project -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

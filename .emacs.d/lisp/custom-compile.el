@@ -1,4 +1,4 @@
-;;; custom-compile.el --- compile config
+;;; custom-compile.el --- compile config -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

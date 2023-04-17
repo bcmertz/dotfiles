@@ -1,4 +1,4 @@
-;;; custom-error-check.el --- syntax checking
+;;; custom-error-check.el --- syntax checking -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

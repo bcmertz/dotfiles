@@ -1,4 +1,4 @@
-;;; custom-general.el --- general emacs configuration
+;;; custom-general.el --- general emacs configuration -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

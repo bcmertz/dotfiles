@@ -1,4 +1,4 @@
-;;; custom-bidi-text.el --- configuration handling rtl & ltr text
+;;; custom-bidi-text.el --- configuration handling rtl & ltr text -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

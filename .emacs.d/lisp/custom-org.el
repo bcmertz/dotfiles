@@ -1,4 +1,4 @@
-;;; custom-org.el --- org mode config
+;;; custom-org.el --- org mode config -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

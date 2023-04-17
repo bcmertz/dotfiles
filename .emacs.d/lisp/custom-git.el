@@ -1,4 +1,4 @@
-;;; custom-git.el --- git/magit config
+;;; custom-git.el --- git/magit config -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

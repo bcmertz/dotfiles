@@ -1,4 +1,4 @@
-;;; custom-fonts.el --- custom fonts
+;;; custom-fonts.el --- custom fonts -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

@@ -1,4 +1,4 @@
-;;; custom-splashscreen.el --- splashscreen
+;;; custom-splashscreen.el --- splashscreen -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

@@ -1,4 +1,4 @@
-;;; custom-keybindings.el --- set evil mode keymap
+;;; custom-keybindings.el --- set evil mode keymap -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

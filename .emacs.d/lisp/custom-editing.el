@@ -1,4 +1,4 @@
-;;; custom-editing.el --- configuration pertaining to editing text
+;;; custom-editing.el --- configuration pertaining to editing text -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

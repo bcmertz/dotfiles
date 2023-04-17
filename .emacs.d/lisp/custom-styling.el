@@ -1,4 +1,4 @@
-;;; custom-styling.el --- custom styling
+;;; custom-styling.el --- custom styling -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;
