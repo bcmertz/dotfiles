@@ -30,6 +30,7 @@
     (measure-time(require 'custom-exwm-config))) ;; emacs as window manager
 
 (measure-time(require 'custom-splashscreen))     ;; splash-screen
+(measure-time(require 'custom-backups))          ;; backups and temp files
 (measure-time(require 'custom-general))          ;; general configuration
 (measure-time(require 'custom-keybindings))      ;; evil, suggestions
 (measure-time(require 'custom-styling))          ;; appearance
