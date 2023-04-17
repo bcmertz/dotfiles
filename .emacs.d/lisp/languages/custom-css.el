@@ -6,7 +6,7 @@
 ;;;
 ;;; Code:
 (use-package css
-  :straight nil
+  :straight (:type built-in)
   :defer t)
 
 (setq css-indent-offset 2)

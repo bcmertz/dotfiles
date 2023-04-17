@@ -7,7 +7,7 @@
 ;;; Code:
 
 (use-package text-mode
-  :straight nil
+  :straight (:type built-in)
   :mode "\\.txt\\'"
   :defer t
   :config
@@ -24,7 +24,7 @@
 
 
 (use-package ispell
-  :straight nil
+  :straight (:type built-in)
   :config
   (setq ispell-program-name "aspell")
   (setq ispell-personal-dictionary (expand-file-name (concat "ispell/" ispell-dictionary ".pws")
@@ -35,7 +35,7 @@
          ("C-c i r" . ispell-region)))
 
 (use-package flyspell
-  :straight nil
+  :straight (:type built-in)
   :bind (("C-c i B" . flyspell-buffer)
          ("C-c i f" . flyspell-mode)))
 

@@ -7,7 +7,7 @@
 ;;; Code:
 
 (use-package help
-  :straight nil
+  :straight (:type built-in)
   :bind (:map help-mode-map
          ("C-<left>" . help-go-back)
          ("C-<right>" . help-go-forward)

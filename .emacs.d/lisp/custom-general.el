@@ -45,7 +45,7 @@
   )
 
 (use-package minibuffer
-  :straight nil
+  :straight (:type built-in)
   :config
   (setq enable-recursive-minibuffers t)    ;; Use the minibuffer whilst in the minibuffer
   )
