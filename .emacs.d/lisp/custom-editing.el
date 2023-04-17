@@ -13,10 +13,6 @@
                             :type nil)
   :init (reopen-as-root-mode))
 
-(use-package tramp
-  :straight nil
-  :defer 0.1)
-
 ;; zap to char using avy
 (use-package avy-zap :defer t)
 (global-set-key (kbd "M-z") 'avy-zap-to-char-dwim)
