@@ -44,6 +44,7 @@
 (measure-time(require 'custom-dired))            ;; dired
 (measure-time(require 'custom-sidebar))          ;; sidebar
 (measure-time(require 'custom-editing))          ;; efficient text editing
+(measure-time(require 'custom-tramp))            ;; tramp
 (measure-time(require 'custom-bidi-text))        ;; rtl and ltr language support
 (measure-time(require 'custom-windowing))        ;; buffer management
 (measure-time(require 'custom-error-check))      ;; error checking
