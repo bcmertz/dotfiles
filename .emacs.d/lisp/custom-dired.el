@@ -5,7 +5,7 @@
 ;;; Code:
 
 (use-package dired
-  :straight nil
+  :straight (:type built-in)
   :bind (:map dired-mode-map
               ("M-s" . consult-ripgrep)))
 
@@ -22,8 +22,8 @@
   :config
   ;; from centaur-emacs https://github.com/seagle0128/.emacs.d/blob/334d9afaedd67bc10f207ca72d6daff5ac6469cf/lisp/init-dired.el
   ;; BROKEN - work in progress
-   (with-no-warnings
-      (advice-add 'dired :around #'all-the-icons-dired--refresh-advice))
+  ;; (with-no-warnings
+  ;;    (advice-add 'dired :around #'all-the-icons-dired--refresh-advice))
 
   (with-no-warnings
     (defun my-all-the-icons-dired--refresh ()

@@ -124,7 +124,7 @@
 ;; builtin code folding
 ;; https://www.emacswiki.org/emacs/HideShow
 (use-package hs-minor-mode
-  :straight nil
+  :straight (:type built-in)
   :defer t
   :init
   (add-hook 'prog-mode-hook #'hs-minor-mode)
@@ -370,7 +370,7 @@ before calling `er/expand-region' for the first time ARG."
 
 ;; builtin autoreverting
 (use-package autorevert
-  :straight nil
+  :straight (:type built-in)
   :config
   (setq auto-revert-interval 0.25)
   (setq auto-revert-check-vc-info t)
