@@ -204,6 +204,9 @@
 
   (setq consult-buffer-filter '("\\` " "\\`\\*Completions\\*\\'"
                                 "\\`\\*Flymake log\\*\\'"
+                                "\\`\\*helpful.*\\*\\'"
+                                "\\`magit: .*\\'"
+                                "\\`\\*Directory\\*\\'"
                                 "\\`\\*Semantic SymRef\\*\\'"
                                 "\\`\\*tramp/.*\\*\\'"
                                 "\\`\\*straight-process\\*\\'"
