@@ -53,7 +53,7 @@
    `(mode-line-buffer-id ((t (:foreground ,color-middle :weight bold))))
    `(mode-line-inactive ((t (:foreground ,color-dark :box (:color ,color-dark)))))
    `(fringe ((t (:background ,color-bg))))
-   `(vertical-border ((t (:foreground ,color-dark :background nil))))
+   `(vertical-border ((t (:foreground ,color-dark :background unspecified))))
    `(minibuffer-prompt ((t (:foreground ,color-bright :weight bold))))
    `(isearch ((t (:foreground ,color-hl :weight bold :underline t))))
    `(isearch-fail ((t (:inherit error))))
@@ -106,7 +106,7 @@
    `(term-underline ((t (:underline t))))
 
    ;; shell-script-mode
-   `(sh-heredoc ((t (:foreground nil :inherit font-lock-string-face))))
+   `(sh-heredoc ((t (:foreground unspecified :inherit font-lock-string-face))))
    `(sh-quoted-exec ((t (:inherit font-lock-function-name-face))))
 
    ;; dired
@@ -226,7 +226,7 @@
    `(org-latex-and-related ((t (:foreground ,color-dark :italic t))))
    `(org-checkbox ((t (:foreground ,color-bright :weight normal :inherit fixed-pitch))))
    `(org-verbatim ((t (:inherit font-lock-string-face))))
-   `(org-mode-line-clock ((t (:background nil))))
+   `(org-mode-line-clock ((t (:background unspecified))))
    `(org-document-title ((t (:foreground ,color-middle :weight bold))))
    `(org-drawer ((t (:inherit font-lock-comment-face))))
    `(org-block ((t (:foreground ,color-fg :background ,color-bg-alt :inherit fixed-pitch :extend t))))
@@ -238,7 +238,7 @@
    `(org-archived ((t (:foreground ,color-dark))))
 
    ;; org-tree-slide
-   `(org-tree-slide-header-overlay-face ((t (:inherit font-lock-comment-face :foreground nil :background unspecified))))
+   `(org-tree-slide-header-overlay-face ((t (:inherit font-lock-comment-face :foreground unspecified :background unspecified))))
 
    ;; shortdoc
    `(shortdoc-heading ((t (:inherit outline-1))))
@@ -285,10 +285,10 @@
    ;; magit
    `(magit-branch-local ((t (:foreground ,color-middle :weight bold))))
    `(magit-branch-remote ((t (:foreground ,color-middle :weight bold :slant italic))))
-   `(magit-tag ((t (:foreground ,color-dark :background nil :inherit italic))))
+   `(magit-tag ((t (:foreground ,color-dark :background unspecified :inherit italic))))
    `(magit-hash ((t (:foreground ,color-bright))))
-   `(magit-section-title ((t (:foreground ,color-fg :background nil))))
-   `(magit-section-heading ((t (:background nil :foreground ,color-fg))))
+   `(magit-section-title ((t (:foreground ,color-fg :background unspecified))))
+   `(magit-section-heading ((t (:background unspecified :foreground ,color-fg))))
    `(magit-section-heading-selection ((t (:inherit region))))
    `(magit-section-highlight ((t (:background ,color-bg-alt))))
    `(magit-item-highlight ((t (:foreground ,color-fg :background ,color-bright))))
@@ -322,7 +322,7 @@
    `(company-echo ((t (:inherit company-preview))))
    `(company-echo-common ((t (:inherit company-tooltip-common))))
    `(company-preview ((t (:foreground ,color-fg))))
-   `(company-preview-common ((t (:foreground ,color-fg :background nil))))
+   `(company-preview-common ((t (:foreground ,color-fg :background unspecified))))
    `(company-tooltip-search ((t (:inherit lazy-highlight))))
    `(company-tooltip-search-selection ((t (:inherit company-tooltip-search))))
    `(company-tooltip ((t (:foreground ,color-bright :background ,color-darker))))
@@ -435,7 +435,7 @@
    `(utop-error  ((t (:inherit error))))
 
    ;; selectrum
-   `(selectrum-mouse-highlight ((t (:background nil :underline t :extend t))))
+   `(selectrum-mouse-highlight ((t (:background unspecified :underline t :extend t))))
    `(selectrum-prescient-primary-highlight ((t (:inherit completions-common-part))))
 
    ;; marginalia
@@ -452,18 +452,18 @@
    `(consult-preview-cursor ((t (:background ,color-bg :underline nil))))
 
    ;; helm
-   `(helm-candidate-number ((t (:foreground ,color-dark :background nil))))
+   `(helm-candidate-number ((t (:foreground ,color-dark :background unspecified))))
    `(helm-source-header ((t (:inherit font-lock-comment-face :background unspecified :foreground unspecified))))
    `(helm-selection ((t (:inherit highlight))))
    `(helm-prefarg ((t (:foreground ,color-dark))))
    `(helm-ff-file ((t (:inherit default))))
    `(helm-ff-directory ((t (:inherit dired-directory :foreground unspecified))))
    `(helm-ff-executable ((t (:inherit eshell-ls-executable :foreground unspecified))))
-   `(helm-ff-file-extension ((t (:foreground nil :background nil))))
+   `(helm-ff-file-extension ((t (:foreground unspecified :background unspecified))))
    `(helm-ff-invalid-symlink ((t (:slant italic :inherit error))))
    `(helm-ff-symlink ((t (:inherit dired-symlink))))
-   `(helm-ff-prefix ((t (:background nil))))
-   `(helm-ff-dotted-directory ((t (:background nil :foreground ,color-middle))))
+   `(helm-ff-prefix ((t (:background unspecified))))
+   `(helm-ff-dotted-directory ((t (:background unspecified :foreground ,color-middle))))
    `(helm-M-x-key ((t (:foreground ,color-bright))))
    `(helm-M-x-short-doc ((t (:inherit font-lock-doc-face))))
    `(helm-buffer-file ((t (:foreground ,color-fg))))
@@ -488,7 +488,7 @@
    `(markup-meta-hide-face ((t (:height 1.0 :foreground ,color-bright))))
    `(markup-meta-face ((t (:height 1.0 :foreground ,color-dark :family nil))))
    `(markup-reference-face ((t (:underline nil :foreground ,color-dark))))
-   `(markup-gen-face ((t (:inherit default :foreground nil))))
+   `(markup-gen-face ((t (:inherit default :foreground unspecified))))
    `(markup-passthrough-face ((t (:inherit markup-dark))))
    `(markup-replacement-face ((t (:family nil :foreground ,color-dark))))
    `(markup-list-face ((t (:weight bold))))
@@ -506,7 +506,7 @@
 
    ;; highlight-indent-guides
    `(highlight-indent-guides-odd-face ((t (:background ,color-bg-alt))))
-   `(highlight-indent-guides-even-face ((t (:background nil))))
+   `(highlight-indent-guides-even-face ((t (:background unspecified))))
 
    ;; notmuch
    `(notmuch-search-unread-face ((t (:foreground ,color-bright))))
@@ -518,12 +518,12 @@
    `(notmuch-message-summary-face ((t (:foreground ,color-dark))))
 
    ;; telega
-   `(telega-msg-heading ((t (:foreground ,color-dark :background nil :inherit nil))))
+   `(telega-msg-heading ((t (:foreground ,color-dark :background unspecified :inherit nil))))
    `(telega-msg-inline-reply ((t (:foreground ,color-bright :inherit nil))))
    `(telega-entity-type-texturl ((t (:inherit nil :foreground ,color-dark))))
 
    ;; beancount
-   `(beancount-date ((t (:inherit italic :foreground nil))))
+   `(beancount-date ((t (:inherit italic :foreground unspecified))))
    `(beancount-account ((t (:inherit default))))
 
    ;; w3m
