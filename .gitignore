@@ -86,6 +86,7 @@
 !.emacs.d/
 !.emacs.d/init.el
 !.emacs.d/early-init.el
+!.emacs.d/minimal-init.el
 !.emacs.d/custom.el
 !.emacs.d/README.md
 !.emacs.d/.projectile
