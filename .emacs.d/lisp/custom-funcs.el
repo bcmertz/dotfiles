@@ -563,5 +563,31 @@ selects backward.)"
   (interactive)
   (find-file (concat "/ssh:" (read-string "Username: ") "@" (read-string "IP Address: ") ":~/")))
 
+;; https://sqrtminusone.xyz/configs/emacs/#variables-and-environment
+(defun my/dump-bindings-recursive (prefix &optional level buffer)
+  (dolist (key (which-key--get-bindings (kbd prefix)))
+    (with-current-buffer buffer
+      (when level
+	(insert (make-string level ? )))
+      (insert (apply #'format "%s%s%s\n" key)))
+    (when (string-match-p
+	   (rx bos "+" (* nonl))
+	   (substring-no-properties (elt key 2)))
+      (my/dump-bindings-recursive
+       (concat prefix " " (substring-no-properties (car key)))
+       (+ 2 (or level 0))
+       buffer))))
+
+(defun my/dump-bindings (prefix)
+  "Dump keybindings starting with PREFIX in a tree-like form."
+  (interactive "sPrefix: ")
+  (let ((buffer (get-buffer-create "bindings")))
+    (with-current-buffer buffer
+      (erase-buffer))
+    (my/dump-bindings-recursive prefix 0 buffer)
+    (with-current-buffer buffer
+      (goto-char (point-min)))
+    (switch-to-buffer-other-window buffer)))
+
 (provide 'custom-funcs)
 ;;; custom-funcs.el ends here
