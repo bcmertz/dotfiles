@@ -334,6 +334,7 @@ before calling `er/expand-region' for the first time ARG."
 
 ;; xref navigate definitions
 (use-package xref
+  :straight (:type built-in)
   :bind*
   ("C-." . xref-find-definitions)
   ("C-M-." . xref-find-definitions-other-window)
