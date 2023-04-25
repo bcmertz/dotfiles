@@ -328,6 +328,7 @@ targets."
   ;; TODO recentf-exclude not working
   (add-to-list 'recentf-exclude (format "%s/\\.emacs.d/elpa/.*" (getenv "HOME")))
   (add-to-list 'recentf-exclude (format "%s/\\.emacs.d/straight/.*" (getenv "HOME")))
+  (add-to-list 'recentf-exclude "/dev/shm/.*")
   (recentf-mode +1))
 
 ;; better C-x C-b
