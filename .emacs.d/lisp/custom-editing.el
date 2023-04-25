@@ -335,7 +335,8 @@ before calling `er/expand-region' for the first time ARG."
   :bind*
   ("C-." . xref-find-definitions)
   ("C-M-." . xref-find-definitions-other-window)
-  ("C-," . xref-go-back))
+  ("C-," . xref-go-back)
+  ("C-M-," . xref-go-forward))
 
 ;; Multiple Cursors
 (use-package multiple-cursors
