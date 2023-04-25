@@ -279,9 +279,9 @@ before calling `er/expand-region' for the first time ARG."
   ("C-+" . text-scale-increase)
   :init
   (global-undo-tree-mode)
-  :custom
-  (undo-tree-auto-save-history t)
-  (undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
+  :config
+  (setq undo-tree-auto-save-history t)
+  (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
   ;; (undo-tree-enable-undo-in-region t)
   ;; (undo-tree-visualizer-diff t)
   ;; (undo-tree-visualizer-timestamps t)
@@ -317,12 +317,6 @@ before calling `er/expand-region' for the first time ARG."
 ;; Utilities
 (global-set-key (kbd "M-/") 'comment-or-uncomment-region)
 (global-set-key (kbd "C-x C-e") 'eval-buffer)
-(if (display-graphic-p)  ;; use after init hook for it to work for some reason
-    (add-hook 'after-init-hook (lambda ()
-                                 (global-unset-key (kbd "C-_"))
-                                 (global-set-key (kbd "C-+") 'text-scale-increase)
-                                 (global-set-key (kbd "C-_") 'text-scale-decrease)
-                                 )))
 
 (global-set-key (kbd "C-x C-l") 'mark-entire-line)
 

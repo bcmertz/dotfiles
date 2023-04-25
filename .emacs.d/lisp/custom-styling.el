@@ -117,6 +117,13 @@
 ;; (set-face-attribute 'fringe nil :background nil)
 ;; (fringe-mode 0)
 
+(if (display-graphic-p)  ;; use after init hook for it to work for some reason
+    (add-hook 'after-init-hook (lambda ()
+                                 (global-unset-key (kbd "C-_"))
+                                 (global-set-key (kbd "C-+") 'text-scale-increase)
+                                 (global-set-key (kbd "C-_") 'text-scale-decrease)
+                                 )))
+
 ;; center 1 buffer
 (use-package centered-window
   :config
