@@ -330,6 +330,8 @@ targets."
   (add-to-list 'recentf-exclude (format "%s/\\.emacs.d/straight/.*" (getenv "HOME")))
   (add-to-list 'recentf-exclude "/dev/shm/.*")
   (add-to-list 'recentf-exclude "/tmp/.*")
+  (add-to-list 'recentf-exclude "/var/.*")
+  (add-to-list 'recentf-exclude "/etc/.*")
   (add-to-list 'recentf-exclude "/sudo:root.*")
   (recentf-mode +1))
 
