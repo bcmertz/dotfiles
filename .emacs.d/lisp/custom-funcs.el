@@ -601,5 +601,16 @@ selects backward.)"
   (setq current-prefix-arg '(-1))
   (call-interactively 'global-text-scale-adjust))
 
+;; https://www.reddit.com/r/emacs/comments/12tj72z/nolittering_could_cause_backups_of_files/jh6i6oy/
+(defun file-is-root-p (name)
+  "Check whether tramp su/sudo method is used for opening filepath NAME."
+  ;; Adopted from https://www.gnu.org/software/emacs/manual/html_node/tramp/Auto_002dsave-File-Lock-and-Backup.html
+  (let ((method (file-remote-p name 'method)))
+    (when (stringp method)
+      (member method '("su" "sudo")))))
+
+(defun file-is-not-root-p (name)
+  (not (file-is-root-p name)))
+
 (provide 'custom-funcs)
 ;;; custom-funcs.el ends here

@@ -32,5 +32,30 @@
   :bind (:map backup-walker-mode-map (("R" . diff-reverse-direction)))
   )
 
+;; handle bug where backups are created for sensitive files like pass edit
+;; https://www.reddit.com/r/emacs/comments/12tj72z/nolittering_could_cause_backups_of_files/
+;; TODO check how this evolves, check if custom-funcs used can be deduplicated with reopen-as-root.el
+(defun my-backup-enable-predicate (name)
+  "Backup enable predicate for a given NAME."
+  (and (normal-backup-enable-predicate name)
+       ;; don't save password files
+       (not (s-starts-with? "/dev/shm" name))
+       (not (s-contains? "password-store" name))
+       (file-is-not-root-p name)))
+
+(setq backup-enable-predicate #'my-backup-enable-predicate)
+
+;; disable auto-save on certain tramp profiles
+(connection-local-set-profile-variables
+ 'no-remote-auto-save-profile
+ '((buffer-auto-save-file-name . nil)
+   (remote-file-name-inhibit-auto-save-visited . t)
+   (remote-file-name-inhibit-auto-save . t)))
+
+;; disable auto-save for specific protocols
+(dolist (protocol '("sudo" "doas" "su" "sudoedit" "ssh"))
+  (connection-local-set-profiles
+   `(:application tramp :protocol ,protocol 'no-remote-auto-save-profile))))
+
 (provide 'custom-backups)
 ;;; custom-backups.el ends here
