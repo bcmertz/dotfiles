@@ -42,7 +42,13 @@
 (setq backup-enable-predicate #'my-backup-enable-predicate)
 
 ;; auto-saves
-(setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t))
+(defvar auto-save-directory (format "%s/.emacs.d/var/auto-save/" (getenv "HOME")))
+(if (not (file-directory-p auto-save-directory))
+    (make-directory auto-save-directory t))
+
+(setq auto-save-file-name-transforms
+      `((".*" ,auto-save-directory t))
+      ;; `((".*" ,temporary-file-directory t))
       auto-save-default t
       auto-save-timeout 10
       auto-save-interval 100
