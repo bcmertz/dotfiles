@@ -5,11 +5,7 @@
 ;;; Code:
 
 ;; backup and tmp files
-;; (setq make-backup-files nil)
-;; (setq backup-directory-alist
-;;       `((".*" . ,temporary-file-directory)))
 (setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
-(setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 (setq make-backup-files t
       backup-by-copying t
       kept-new-versions 200
@@ -44,6 +40,14 @@
        (file-is-not-root-p name)))
 
 (setq backup-enable-predicate #'my-backup-enable-predicate)
+
+;; auto-saves
+(setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t))
+      auto-save-default t
+      auto-save-timeout 10
+      auto-save-interval 100
+      auto-save-no-message t
+      delete-auto-save-files t)
 
 ;; disable auto-save on certain tramp profiles
 (connection-local-set-profile-variables
