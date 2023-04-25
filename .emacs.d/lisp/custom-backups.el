@@ -55,7 +55,7 @@
 ;; disable auto-save for specific protocols
 (dolist (protocol '("sudo" "doas" "su" "sudoedit" "ssh"))
   (connection-local-set-profiles
-   `(:application tramp :protocol ,protocol 'no-remote-auto-save-profile))))
+   `(:application tramp :protocol ,protocol 'no-remote-auto-save-profile)))
 
 (provide 'custom-backups)
 ;;; custom-backups.el ends here
