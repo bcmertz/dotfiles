@@ -65,6 +65,9 @@
   (if (not (file-exists-p "~/.local/share/fonts/all-the-icons.ttf"))  (all-the-icons-install-fonts t))
   )
 
+;; ;; all the icons alternative
+;; (use-package nerd-icons)
+
 
 (provide 'custom-fonts)
 ;;; custom-fonts.el ends here
