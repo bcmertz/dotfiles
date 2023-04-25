@@ -589,5 +589,17 @@ selects backward.)"
       (goto-char (point-min)))
     (switch-to-buffer-other-window buffer)))
 
+(defun global-text-scale-increase ()
+  "Globally increase text scale."
+  (interactive)
+  (setq current-prefix-arg '(1))
+  (call-interactively 'global-text-scale-adjust))
+
+(defun global-text-scale-decrease ()
+  "Globally decrease text scale."
+  (interactive)
+  (setq current-prefix-arg '(-1))
+  (call-interactively 'global-text-scale-adjust))
+
 (provide 'custom-funcs)
 ;;; custom-funcs.el ends here

@@ -277,6 +277,8 @@ before calling `er/expand-region' for the first time ARG."
   :bind
   ("C-_" . text-scale-decrease)
   ("C-+" . text-scale-increase)
+  ("C-M-+" . global-text-scale-increase)
+  ("C-M-_" . global-text-scale-decrease)
   :init
   (global-undo-tree-mode)
   :config
@@ -300,7 +302,8 @@ before calling `er/expand-region' for the first time ARG."
   ;;           (lambda () (define-key undo-tree-map (kbd "C-_") 'text-scale-decrease)))
   ;; (global-set-key (kbd "C-_") 'text-scale-decrease)
   (with-eval-after-load "undo-tree"
-    (define-key undo-tree-map (kbd "C-_") 'text-scale-decrease)))
+    (define-key undo-tree-map (kbd "C-_") 'text-scale-decrease)
+    (define-key undo-tree-map (kbd "C-M-_") 'global-text-scale-decrease)))
 (apply-if-gui 'fix-undo-trickery)
 
 
