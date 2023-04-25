@@ -66,6 +66,7 @@
   )
 
 ;; ;; all the icons alternative
+;; ;; sudo pacman -S nerd-fonts-meta
 ;; (use-package nerd-icons)
 
 
