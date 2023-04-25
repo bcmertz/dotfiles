@@ -38,9 +38,7 @@ do
 done
 
 # if there is an existing emacs frame open file in it, if not create a new frame
-if_emacs_frame_exists \
-    "emacsclient --socket-name=gui $cfg" \
-    "emacsclient --socket-name=gui -c $cfg"
+emacsclient --socket-name=gui -r $cfg
 
 # focus emacs
 focus Emacs
