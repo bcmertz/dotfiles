@@ -5,41 +5,14 @@
 ;;; tabs, moving and resizing windows / buffers
 ;;;
 ;;; Code:
-;; emacs window management
 
-;; (use-package popper
-;;   :defer t
-;;   :bind (("C-`"   . popper-toggle-latest)
-;;          ("M-`"   . popper-cycle)
-;;          ("C-M-`" . popper-toggle-type))
-;;   :config
-;;   (setq popper-group-function #'popper-group-by-project) ;; projects
-;;   ;; (setq popper-group-function #'popper-group-by-projectile) ;; projectile projects
-;;   :init
-;;   (setq popper-reference-buffers
-;;         '("\\*Messages\\*"
-;;           "Output\\*$"
-;;           "\\*Async Shell Command\\*"
-;;           help-mode
-;;           compilation-mode))
-;;   (popper-mode +1)
-;;   (popper-echo-mode +1))                ; For echo area hints
-
-;; EXAMPLE
-;; (defun adjust-window-split-thresholds nil
-;;   "Adjust split thresholds so that popup windows always split vertically in a tall frame, horizontally in a wide frame, with a maximum of two columns"
-;;   (interactive)
-;;   (if (>= (frame-pixel-width) (frame-pixel-height))
-;;       ; wide frame
-;;       (progn
-;;         (setq split-height-threshold (frame-height))
-;;         (setq split-width-threshold  (/ (frame-width) 2))
-;;         )
-;;       ; tall frame
-;;       (progn
-;;         (setq split-height-threshold (frame-height))
-;;         (setq split-width-threshold  (frame-width)))))
-;; (add-hook 'window-configuration-change-hook 'adjust-window-split-thresholds)
+;; better C-x C-b
+(use-package ibuffer
+  :defer t
+  :bind (("C-x C-b" . ibuffer))
+  :config
+  (bind-key "q" 'kill-current-buffer 'ibuffer-mode-map)
+  (defalias 'list-buffers 'ibuffer))
 
 (use-package centaur-tabs
   :demand
@@ -94,7 +67,6 @@
 (use-package buffer-move
   :defer t)
 
-
 (global-set-key (kbd "M-<left>")  'windmove-left)
 (global-set-key (kbd "M-<right>") 'windmove-right)
 (global-set-key (kbd "M-<up>")    'windmove-up)
@@ -111,6 +83,42 @@
 (global-set-key (kbd "M--")   'shrink-window-horizontally)
 
 (global-set-key (kbd "C-x |") 'toggle-window-split)
+
+
+;; (use-package popper
+;;   :defer t
+;;   :bind (("C-`"   . popper-toggle-latest)
+;;          ("M-`"   . popper-cycle)
+;;          ("C-M-`" . popper-toggle-type))
+;;   :config
+;;   (setq popper-group-function #'popper-group-by-project) ;; projects
+;;   ;; (setq popper-group-function #'popper-group-by-projectile) ;; projectile projects
+;;   :init
+;;   (setq popper-reference-buffers
+;;         '("\\*Messages\\*"
+;;           "Output\\*$"
+;;           "\\*Async Shell Command\\*"
+;;           help-mode
+;;           compilation-mode))
+;;   (popper-mode +1)
+;;   (popper-echo-mode +1))                ; For echo area hints
+
+;; EXAMPLE
+;; (defun adjust-window-split-thresholds nil
+;;   "Adjust split thresholds so that popup windows always split vertically in a tall frame, horizontally in a wide frame, with a maximum of two columns"
+;;   (interactive)
+;;   (if (>= (frame-pixel-width) (frame-pixel-height))
+;;       ; wide frame
+;;       (progn
+;;         (setq split-height-threshold (frame-height))
+;;         (setq split-width-threshold  (/ (frame-width) 2))
+;;         )
+;;       ; tall frame
+;;       (progn
+;;         (setq split-height-threshold (frame-height))
+;;         (setq split-width-threshold  (frame-width)))))
+;; (add-hook 'window-configuration-change-hook 'adjust-window-split-thresholds)
+
 
 (provide 'custom-windowing)
 ;;; custom-windowing.el ends here
