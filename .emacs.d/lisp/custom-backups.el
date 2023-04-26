@@ -5,7 +5,7 @@
 ;;; Code:
 
 ;; backup and tmp files
-(setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
+(setq backup-directory-alist `(("." . "~/.emacs.d/var/backups")))
 (setq make-backup-files t
       backup-by-copying t
       kept-new-versions 200
