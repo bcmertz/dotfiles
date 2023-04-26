@@ -47,12 +47,12 @@
 (setq backup-enable-predicate #'my-backup-enable-predicate)
 
 ;; auto-saves
-(defvar auto-save-directory "~/.emacs.d/var/auto-save/")
-(if (not (file-directory-p auto-save-directory))
-    (make-directory auto-save-directory t))
+(defvar my-auto-save-directory "~/.emacs.d/var/auto-save/")
+(if (not (file-directory-p my-auto-save-directory))
+    (make-directory my-auto-save-directory t))
 
 (setq auto-save-file-name-transforms
-      `((".*" ,auto-save-directory t))
+      `((".*" ,my-auto-save-directory t))
       ;; `((".*" ,temporary-file-directory t))
       auto-save-list-file-prefix "~/.emacs.d/var/auto-save-list/.saves-"
       auto-save-default t
