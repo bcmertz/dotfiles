@@ -4,8 +4,12 @@
 ;;;
 ;;; Code:
 
+(defvar my-backup-directory "~/.emacs.d/var/backups/")
+(if (not (file-directory-p my-backup-directory))
+    (make-directory my-backup-directory t))
+
 ;; backup and tmp files
-(setq backup-directory-alist `(("." . "~/.emacs.d/var/backups")))
+(setq backup-directory-alist `(("." . ,my-backup-directory)))
 (setq make-backup-files t
       backup-by-copying t
       kept-new-versions 200
