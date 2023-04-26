@@ -14,6 +14,21 @@
   (bind-key "q" 'kill-current-buffer 'ibuffer-mode-map)
   (defalias 'list-buffers 'ibuffer))
 
+;; nice to have in the future for cleaning up recent file suggestions
+(use-package recentf
+  :defer 0.1
+  :straight nil
+  :config
+  ;; TODO recentf-exclude not working
+  (add-to-list 'recentf-exclude (format "%s/\\.emacs.d/elpa/.*" (getenv "HOME")))
+  (add-to-list 'recentf-exclude (format "%s/\\.emacs.d/straight/.*" (getenv "HOME")))
+  (add-to-list 'recentf-exclude "/dev/shm/.*")
+  (add-to-list 'recentf-exclude "/tmp/.*")
+  (add-to-list 'recentf-exclude "/var/.*")
+  (add-to-list 'recentf-exclude "/etc/.*")
+  (add-to-list 'recentf-exclude "/sudo:root.*")
+  (recentf-mode +1))
+
 (use-package centaur-tabs
   :demand
   :config
