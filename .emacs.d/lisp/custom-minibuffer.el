@@ -17,6 +17,20 @@
 (setq savehist-save-minibuffer-history 1)
 (setq savehist-additional-variables '(kill-ring search-ring regexp-search-ring))
 
+;; nice to have in the future for cleaning up recent file suggestions
+(use-package recentf
+  :defer 0.1
+  :straight nil
+  :config
+  ;; TODO recentf-exclude not working
+  (add-to-list 'recentf-exclude (format "%s/\\.emacs.d/elpa/.*" (getenv "HOME")))
+  (add-to-list 'recentf-exclude (format "%s/\\.emacs.d/straight/.*" (getenv "HOME")))
+  (add-to-list 'recentf-exclude "/dev/shm/.*")
+  (add-to-list 'recentf-exclude "/tmp/.*")
+  (add-to-list 'recentf-exclude "/var/.*")
+  (add-to-list 'recentf-exclude "/etc/.*")
+  (add-to-list 'recentf-exclude "/sudo:root.*")
+  (recentf-mode +1))
 
 (defvar num-cands 9 "Number of completion candidates to use.")
 
