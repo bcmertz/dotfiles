@@ -15,24 +15,11 @@
 ;; (when (eq window-system 'pgtk)
 ;;   (pgtk-use-im-context t))
 
-(use-package minibuffer
-  :straight (:type built-in)
-  :config
-  (setq enable-recursive-minibuffers t)    ;; Use the minibuffer whilst in the minibuffer
-  )
-
 ;; confirm we want to exit the garden
 ;; (setq confirm-kill-emacs 'y-or-n-p)
 
 ;; save place in files
 (save-place-mode 1)
-
-;; save history of minibuffer prompts
-(savehist-mode 1)
-(setq history-length 200)
-(setq history-delete-duplicates t)
-(setq savehist-save-minibuffer-history 1)
-(setq savehist-additional-variables '(kill-ring search-ring regexp-search-ring))
 
 ;; Don't pop up UI dialogs when prompting
 (setq use-dialog-box nil)

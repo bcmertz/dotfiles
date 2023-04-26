@@ -1,8 +1,22 @@
-;;; custom-navigation.el --- navigation configuration -*- lexical-binding: t -*-
+;;; custom-minibuffer.el --- minibuffer / vertico family configuration -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;
 ;;; Code:
+
+(use-package minibuffer
+  :straight (:type built-in)
+  :config
+  ;; Use the minibuffer whilst in the minibuffer
+  (setq enable-recursive-minibuffers t))
+
+;; save history of minibuffer prompts
+(savehist-mode 1)
+(setq history-length 200)
+(setq history-delete-duplicates t)
+(setq savehist-save-minibuffer-history 1)
+(setq savehist-additional-variables '(kill-ring search-ring regexp-search-ring))
+
 
 (defvar num-cands 9 "Number of completion candidates to use.")
 
@@ -320,33 +334,5 @@ targets."
             :around #'embark-hide-which-key-indicator)
 
 
-;; nice to have in the future for cleaning up recent file suggestions
-(use-package recentf
-  :defer 0.1
-  :straight nil
-  :config
-  ;; TODO recentf-exclude not working
-  (add-to-list 'recentf-exclude (format "%s/\\.emacs.d/elpa/.*" (getenv "HOME")))
-  (add-to-list 'recentf-exclude (format "%s/\\.emacs.d/straight/.*" (getenv "HOME")))
-  (add-to-list 'recentf-exclude "/dev/shm/.*")
-  (add-to-list 'recentf-exclude "/tmp/.*")
-  (add-to-list 'recentf-exclude "/var/.*")
-  (add-to-list 'recentf-exclude "/etc/.*")
-  (add-to-list 'recentf-exclude "/sudo:root.*")
-  (recentf-mode +1))
-
-;; better C-x C-b
-(use-package ibuffer
-  :defer t
-  :bind (("C-x C-b" . ibuffer))
-  :config
-  (bind-key "q" 'kill-current-buffer 'ibuffer-mode-map)
-  (defalias 'list-buffers 'ibuffer))
-
-;; code navigation
-(use-package avy
-  :bind (("M-g" . avy-goto-char)    ;; go to char
-         ("M-l" . avy-goto-line)))  ;; go to line
-
-(provide 'custom-navigation)
-;;; custom-navigation.el ends here
+(provide 'custom-minibuffer)
+;;; custom-minibuffer.el ends here
