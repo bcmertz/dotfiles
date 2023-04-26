@@ -20,6 +20,7 @@
 (setq create-lockfiles nil) ;; can't set to a different directory so disable :/
 
 (defun force-backup-of-buffer ()
+  "Force backup of saved buffer."
   (setq buffer-backed-up nil))
 (add-hook 'before-save-hook #'force-backup-of-buffer)
 
