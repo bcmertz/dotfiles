@@ -13,6 +13,11 @@
                             :type nil)
   :init (reopen-as-root-mode))
 
+;; code navigation
+(use-package avy
+  :bind (("M-g" . avy-goto-char)    ;; go to char
+         ("M-l" . avy-goto-line)))  ;; go to line
+
 ;; zap to char using avy
 (use-package avy-zap :defer t)
 (global-set-key (kbd "M-z") 'avy-zap-to-char-dwim)
