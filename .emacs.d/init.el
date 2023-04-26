@@ -41,7 +41,6 @@
 ;; (measure-time(require 'custom-treesitter))       ;; tree-sitter
 (measure-time(require 'custom-project))          ;; project management and navigation
 (measure-time(require 'custom-minibuffer))       ;; vertico consult marginalia embark family
-;; (measure-time(require 'custom-ivy))           ;; ivy navigation
 (measure-time(require 'custom-dired))            ;; dired
 (measure-time(require 'custom-sidebar))          ;; sidebar
 (measure-time(require 'custom-editing))          ;; efficient text editing
