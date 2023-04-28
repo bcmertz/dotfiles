@@ -33,7 +33,10 @@
   (eldoc-add-command #'corfu-insert)
   )
 
-(if-gui nil (use-package corfu-terminal))
+(if-gui nil
+        (use-package corfu-terminal
+          :init
+          (corfu-terminal-mode +1)))
 
 ;;;;;;;;;;;;;;;;;;;; Completion styling ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
