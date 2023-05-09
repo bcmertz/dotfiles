@@ -199,6 +199,7 @@ libgsf
 libinput-gestures
 libopenraw
 libreoffice-still
+librewolf
 libtool
 libva-mesa-driver
 libva-utils
