@@ -26,6 +26,7 @@ unclutter &            # get rid of mouse
 xfce4-power-manager --daemon &  # power management
 setxkbmap -layout us,ir -option grp:alts_toggle & # set keyboards
 oled-linux &                        # ugh
+mullvad-daemon                      # mullvad vpn
 touchegg --client &                 # gestures
 /usr/lib/kdeconnectd &              # kdeconnect
 battery-stats-collector &           # stats!
