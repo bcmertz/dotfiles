@@ -16,6 +16,19 @@
               ("/ f" . dired-narrow-fuzzy)
               ("/ r" . dired-narrow-regexp)))
 
+(use-package dired-subtree
+  :after dired
+  :config
+  (setq dired-subtree-use-backgrounds nil)
+  :bind (:map dired-mode-map ("<tab>" . dired-subtree-toggle)))
+
+(use-package dired-ranger
+  :after dired
+  :bind (:map dired-mode-map
+              ("C" . dired-ranger-copy)
+              ("P" . dired-ranger-paste)
+              ("M" . dired-ranger-move)))
+
 (use-package all-the-icons-dired
   :diminish
   :hook (dired-mode . all-the-icons-dired-mode)
@@ -52,13 +65,6 @@
               (forward-line 1)))
         (message "Remote folder or too many items.")))
     (advice-add #'all-the-icons-dired--refresh :override #'my-all-the-icons-dired--refresh)))
-
-(use-package dired-subtree
-  :after dired
-  :config
-  (setq dired-subtree-use-backgrounds nil)
-  :bind (:map dired-mode-map ("<tab>" . dired-subtree-toggle)))
-
 
 (provide 'custom-dired)
 ;;; custom-dired.el ends here
