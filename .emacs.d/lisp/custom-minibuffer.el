@@ -237,6 +237,7 @@
                                 "\\`magit: .*\\'"
                                 "\\`magit-diff: .*\\'"
                                 "\\`\\*Directory\\*\\'"
+                                "\\`\\*Dired log\\*\\'"
                                 "\\`\\*Semantic SymRef\\*\\'"
                                 "\\`\\*tramp/.*\\*\\'"
                                 "\\`\\*straight-process\\*\\'"
