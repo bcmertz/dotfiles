@@ -8,13 +8,6 @@
   "Reopen as root."
   :group 'convenience)
 
-(defun already-root-p ()
-  (let ((remote-method (file-remote-p default-directory 'method))
-        (remote-user (file-remote-p default-directory 'user)))
-    (and remote-method
-         (or (member remote-method '("sudo" "su" "ksu" "doas"))
-             (string= remote-user "root")))))
-
 (defun find-alternate-file-as-root (filename)
   "Wraps `find-alternate-file' with opening FILENAME as root."
   (let ((remote-method (file-remote-p default-directory 'method))
@@ -68,7 +61,7 @@ buffer is not visiting a file."
                            (or remote-localname
                                (read-file-name "Find file (as root): ")))))
 
-    (if (already-root-p)
+    (if (file-is-root-p)
         (message "Already editing this file as root.")
       (let ((place (point)))
         (find-alternate-file-as-root buffer-file-name)

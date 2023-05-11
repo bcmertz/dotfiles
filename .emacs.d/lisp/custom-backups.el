@@ -35,7 +35,6 @@
 
 ;; handle bug where backups are created for sensitive files like pass edit
 ;; https://www.reddit.com/r/emacs/comments/12tj72z/nolittering_could_cause_backups_of_files/
-;; TODO check how this evolves, check if custom-funcs used can be deduplicated with reopen-as-root.el
 (defun my-backup-enable-predicate (name)
   "Backup enable predicate for a given NAME."
   (and (normal-backup-enable-predicate name)
