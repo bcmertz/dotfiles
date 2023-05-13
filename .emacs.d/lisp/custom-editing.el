@@ -259,10 +259,9 @@ before calling `er/expand-region' for the first time ARG."
 (use-package multiple-cursors-core
   :straight nil
   :defer t
-  :bind
-  (:map mc/keymap
-        ("<return>" . nil)
-        ("C-<return>" . multiple-cursors-mode)))
+  :bind (:map mc/keymap
+              ("<return>" . nil)
+              ("C-<return>" . multiple-cursors-mode)))
 
 (global-unset-key (kbd "M-<down-mouse-1>"))
 (global-set-key (kbd "M-<mouse-1>") 'mc/add-cursor-on-click)
