@@ -67,6 +67,9 @@ dfc
 dhclient
 dhcpcd
 dialog
+dict-gcide
+dict-wn
+dictd
 diffutils
 diylc
 dmidecode
@@ -423,6 +426,7 @@ wine
 wireless-regdb
 wireless_tools
 wireplumber
+words
 wpa_supplicant
 wpgtk
 xarchiver
