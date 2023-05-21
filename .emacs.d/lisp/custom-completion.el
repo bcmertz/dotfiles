@@ -47,7 +47,26 @@
           :init
           (corfu-terminal-mode +1)))
 
-;;;;;;;;;;;;;;;;;;;; Completion styling ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; additional completion extensions
+(use-package cape
+  :init
+  ;; Add `completion-at-point-functions', used by `completion-at-point'.
+  ;; NOTE: The order matters!
+  (add-to-list 'completion-at-point-functions #'cape-file)
+  (add-to-list 'completion-at-point-functions #'cape-dict)
+  ;; (add-to-list 'completion-at-point-functions #'cape-dabbrev)
+  ;; (add-to-list 'completion-at-point-functions #'cape-elisp-block)
+  ;; (add-to-list 'completion-at-point-functions #'cape-history)
+  ;; (add-to-list 'completion-at-point-functions #'cape-keyword)
+  ;; (add-to-list 'completion-at-point-functions #'cape-tex)
+  ;; (add-to-list 'completion-at-point-functions #'cape-sgml)
+  ;; (add-to-list 'completion-at-point-functions #'cape-rfc1345)
+  ;; (add-to-list 'completion-at-point-functions #'cape-abbrev)
+  ;; (add-to-list 'completion-at-point-functions #'cape-symbol)
+  ;; (add-to-list 'completion-at-point-functions #'cape-line)
+  )
+
+;;;;;;;;;;;;;;;;;;;; Completion styling ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; orderless completion style - allow space separated `search terms'
 (use-package orderless
@@ -57,7 +76,7 @@
         completion-category-overrides '((file (styles . (partial-completion))))))
 
 
-;;;;;;;;;;;; builtin arglist and variable docstrings info in echo area ;;;;;;;;;;;;;;
+;;;;; builtin arglist and variable docstrings info in echo area ;;;;;
 
 (use-package eldoc
   :config
@@ -66,9 +85,7 @@
   (global-eldoc-mode)
   )
 
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;; Snippets ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;; Snippets ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package yasnippet
   :defer t
