@@ -16,6 +16,7 @@
   :after eldoc
   :straight (corfu :files (:defaults "extensions/*")
                    :includes (corfu-popupinfo
+                              corfu-info
                               corfu-history))
   :config
   (setq corfu-separator ?\s)             ;; Orderless field separator - space
