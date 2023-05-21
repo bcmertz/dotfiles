@@ -13,6 +13,7 @@
          ("C-<right>" . help-go-forward)
          ("i" . help-goto-info)
          ("n" . help-goto-next-page)
+         ("q" . kill-current-buffer)
          ("I" . help-goto-lispref-info)
          ("p" . help-goto-previous-page)
          ))
@@ -30,6 +31,7 @@
           ("C-h o" . #'helpful-symbol)
           ("C-h x" . #'helpful-command)
           (:map helpful-mode-map
+                ("q" . kill-current-buffer)
                 ("C-<left>" . helpful-go-back)
                 ("C-<right>" . helpful-go-forward))))
 
