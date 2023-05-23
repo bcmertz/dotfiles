@@ -239,6 +239,7 @@
                                 "\\`\\*Dired log\\*\\'"
                                 "\\`\\*Semantic SymRef\\*\\'"
                                 "\\`\\*tramp/.*\\*\\'"
+                                "\\`\\*word-definition\\*\\'"
                                 "\\`\\*straight-process\\*\\'"
                                 "\\`\\*Async-native-compile-log\\*\\'"
                                 ))
