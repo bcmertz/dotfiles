@@ -64,6 +64,18 @@
   ;; (add-to-list 'completion-at-point-functions #'cape-abbrev)
   ;; (add-to-list 'completion-at-point-functions #'cape-symbol)
   ;; (add-to-list 'completion-at-point-functions #'cape-line)
+  :config
+  (defun text--company-doc-buffer (word)
+    (with-current-buffer (get-buffer-create "*word-definition*")
+      (erase-buffer)
+      (fundamental-mode)
+      (when word
+        (save-excursion
+          (insert (shell-command-to-string (format "dict %s" word)))))
+      (current-buffer)))
+
+  (setq cape--dict-properties (append cape--dict-properties
+                                      (list :company-doc-buffer 'text--company-doc-buffer)))
   )
 
 ;;;;;;;;;;;;;;;;;;;; Completion styling ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
