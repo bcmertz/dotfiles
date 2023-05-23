@@ -1,4 +1,4 @@
-;;; custom-theme.el --- custom theme -*- lexical-binding: t -*-
+;;; custom-themeing.el --- custom themeing -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;
@@ -79,5 +79,5 @@
   "Run `after-load-theme-hook'."
   (run-hooks 'after-load-theme-hook))
 
-(provide 'custom-theme)
-;;; custom-theme.el ends here
+(provide 'custom-themeing)
+;;; custom-themeing.el ends here
