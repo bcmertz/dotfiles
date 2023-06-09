@@ -140,7 +140,6 @@ gnuplot
 go
 gopls
 gparted
-gperf
 gpick
 gradle
 grep
@@ -326,8 +325,6 @@ python-pyflakes
 python-pyqt5
 python-pywal
 python2
-qt5-doc
-qt5-tools
 qt5ct
 ranger
 rclone
