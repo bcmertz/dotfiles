@@ -81,5 +81,8 @@
           (lambda ()
             ;; (add-hook 'focus-out-hook 'garbage-collect)
             (setq gc-cons-threshold (expt 2 23))))
+;; (use-package emacs-gc-stats)
+;; (setq emacs-gc-stats-gc-defaults 'emacs-defaults) ; optional
+;; (emacs-gc-stats-mode +1)
 
 ;;; init.el ends here
