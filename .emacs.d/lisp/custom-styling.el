@@ -58,6 +58,15 @@
   (setq cwm-centered-window-width 130)
   (centered-window-mode t))
 
+;; (use-package spacious-padding
+;;   :straight (spacious-padding :type git
+;;                               :host github
+;;                               :repo "protesilaos/spacious-padding")
+;;   ;; :config
+;;   ;; (setq spacious-padding-widths '(:internal-border-width 0 :right-divider-width 40 :scroll-bar-width 0))
+;;   )
+;; (if-gui (spacious-padding-mode 1))
+
 ;; remove ugly change in bg color in fringes
 ;; (set-face-attribute 'fringe nil :background nil)
 
