@@ -399,6 +399,7 @@ ttf-roboto-mono
 ttf-ubuntu-mono-nerd
 tumbler
 unclutter
+units
 unrar
 unzip
 upower
