@@ -120,6 +120,7 @@ firetools
 firewalld
 flex
 fsarchiver
+gammastep
 garcon
 gawk
 gcc
