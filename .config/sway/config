@@ -10,34 +10,27 @@ set $mod Mod4
 
 # Startup polybar if it isn't running
 # exec_always --no-startup-id refresh polybar
-exec_always --no-startup-id setbg -s
+exec_always --no-startup-id setbg
 exec redshift
 exec mako # exec dunst
-exec transmission-daemon
+# exec transmission-daemon
 exec lxpolkit
-exec emacs --daemon=term
-exec emacs --daemon=gui
+# exec emacs --daemon=term
+# exec emacs --daemon=gui
 
 # not working
 # exec clipmenud
 # exec nm-applet
 # exec unclutter
-xwayland disable
-
-# bar {
-# 	font pango:mono 10
-# 	status_command i3blocks
-# 	position top
-# 	mode dock
-# }
+# xwayland disable # pure wayland
 
 bar {
     swaybar_command waybar
 }
 
 # formerly X stuff
-output eDP-1 scale 2
-input 1118:1997:Microsoft_Surface_Keyboard_Touchpad tap enabled
+# output eDP-1 scale 1
+# input 1118:1997:Microsoft_Surface_Keyboard_Touchpad tap enabled
 input * xkb_layout "us,ir"
 input * xkb_options "grp:alt_shift_toggle"
 input type:keyboard {
@@ -46,22 +39,29 @@ input type:keyboard {
 }
 
 
-# colour of border, background, text, indicator, and child_border
-client.focused          #bf616a #2f343f #d8dee8 #bf616a #d8dee8
-client.focused_inactive #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.unfocused        #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.urgent           #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.placeholder      #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.background       #2f343f
+set $black #000000
+
+set $fg #f0f0f0
+set $bg #f0f0f0
+# set_from_resource $fg i3wm.color7 #f0f0f0
+# set_from_resource $bg i3wm.color4 #f0f0f0
+
+# class                 border  backgr. text indicator child_border
+client.focused          $bg          $bg            $fg  $bg              $bg
+client.focused_inactive $black       $black         $fg  $black           $black
+client.unfocused        $black       $black         $fg  $black           $black
+client.urgent           $bg          $bg            $fg  $bg              $bg
+client.placeholder      $bg          $bg            $fg  $bg              $bg
+
+client.background       $bg
 
 # Font for window titles
 font pango:DejaVu Sans Mono 10
 
-# no border for now because it does some weird stuff
-default_border none
-# for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 2
 
-gaps inner 50
+set $default_inner_gap 45
+gaps inner $default_inner_gap
 gaps outer 0
 
 bindsym $mod+plus        gaps inner all plus 5
@@ -70,22 +70,33 @@ bindsym $mod+minus       gaps inner all minus 5
 bindsym $mod+Shift+plus  gaps outer all plus 5
 bindsym $mod+Shift+minus gaps outer all minus 5
 
-bindsym $mod+0           gaps inner all set 50
+bindsym $mod+0           gaps inner all set $default_inner_gap
 bindsym $mod+Shift+0     gaps outer all set 0
 
 focus_follows_mouse no
+
 # Browser popups
-for_window [window_role="pop-up"] floating enable
-# float file manager
+for_window [window_role="pop-up"] floating enable floating enable resize set 970 610, move position 500 300
+for_window [window_role="GtkFileChooserDialog"] floating enable resize set 970 610, move position 500 300
+
 # for_window [class="ranger"] floating enable # resize set 2400 1600, move position 100 100
-# Weather reports
 for_window [class="Fullscreen st"] floating enable fullscreen
+for_window [instance="Floating nsxiv"] floating enable resize set 870 610
+for_window [instance="Floating sxiv"] floating enable resize set 870 610
 for_window [class="Floating st"] floating enable resize set 2400 750, move position 400 400
-# xarchiver
+for_window [class="Gsimplecal"] move position 1250 50
 for_window [class="Xarchiver"] floating enable
 for_window [class="Gpick"] floating enable
+for_window [class="Pavucontrol"] floating enable resize set 1170 610
+for_window [class="org.gnome.clocks"] floating enable resize set 936 592, move position 460 300
+for_window [class="Wpg"] floating enable resize set 1170 610, move position 400 300
 for_window [class="Progress"] floating enable
 for_window [class="File Upload"] floating enable
+for_window [class="PCSX2"] floating enable
+for_window [class="kphotoalbum"] floating enable
+for_window [class="gnuplot_qt"] floating enable
+for_window [class="Nm-connection-editor"] floating enable
+for_window [title="Floating xfce"] floating enable fullscreen
 # for_window [title="GIMP Startup"] move workspace $ws5
 # for_window [class="Gimp"] move workspace $ws5
 # for_window [class="Emacs"] move workspace $ws2
@@ -97,61 +108,64 @@ bindsym $mod+Print exec i3-scrot
 bindsym Print exec gnome-screenshot -i
 
 # Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% && pkill -SIGRTMIN+10 i3blocks
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% && pkill -SIGRTMIN+10 i3blocks
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -SIGRTMIN+10 i3blocks
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -SIGRTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && pkill -SIGRTMIN+10 i3blocks
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -SIGRTMIN+10 i3blocks
 bindsym XF86AudioStop exec --no-startup-id clementine --play-pause
 
-
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
 bindsym $mod+Shift+Return exec st
+# bindsym $mod+Shift+Return exec xfce4-terminal
+
+for_window [instance="Scratchpad-term"] floating enable resize set 950 650 move position center scratchpad border pixel 5
+for_window [instance="Scratchpad-calc"] floating enable resize set 950 650 move position center scratchpad border pixel 5
+# terminal scratchpad
+bindsym $mod+Return exec show_scratchpad 'term'
+# calculator scratchpad
+bindsym $mod+c exec show_scratchpad 'calc'
 
 # kill focused window
 bindsym $mod+q kill
 
 # dmenu programs
-bindsym $mod+d exec dmenu_run_history -c -h 50 -l 10 -bw 3
+bindsym $mod+d exec dmenu_run_history -i -c -h 35 -l 10 -bw 3
 bindsym $mod+u exec unicode_picker
 bindsym $mod+y exec clipmenu
 bindsym $mod+o exec info_query
+bindsym --release $mod+Shift+o exec searchsite
 bindsym $mod+p exec passmenu
-bindsym $mod+Shift+p exec emacs -f password-store-insert
 bindsym $mod+i exec choose_keyboard
 bindsym $mod+Shift+i exec farsi_text
-bindsym $mod+w exec displayselect
-bindsym $mod+Shift+w exec wallpaper_picker
+bindsym $mod+Shift+w exec displayselect
+bindsym $mod+w exec wallpaper_picker
 
 # utils
 bindsym $mod+g exec gpick
 bindsym $mod+s exec peek
+# global config
+bindsym $mod+t exec edit_config
+bindsym $mod+Shift+t exec edit_global_config
 # bmenu
 bindsym $mod+Shift+d exec fullscreen bmenu
 # file managers
 bindsym $mod+Shift+f exec fullscreen find_file
-bindsym $mod+x exec termview ranger
+bindsym $mod+x exec st -e ranger
 bindsym $mod+Shift+x exec pcmanfm
 # browsers
-bindsym $mod+b exec MOZ_ENABLE_WAYLAND=1 firefox-nightly
+bindsym $mod+b exec firefox
 bindsym $mod+Shift+b exec torbrowser-launcher
 # text editors
-bindsym $mod+a exec emacs
+bindsym $mod+a exec emacsclient --socket-name=gui -c
 bindsym $mod+Shift+a exec mousepad
-
-# scratchpad
-exec --no-startup-id st -n dropdown -e python3 -q
-for_window [instance="dropdown"] floating enable
-for_window [instance="dropdown"] resize set 950 650
-for_window [instance="dropdown"] move scratchpad
-for_window [instance="dropdown"] border pixel 5
-bindsym $mod+Shift+u [instance="dropdown"] scratchpad show [instance="dropdown"] move position center
+# pass insert
+bindsym $mod+Shift+p exec manage_passwords
 
 # change focus
 bindsym $mod+j focus left
@@ -205,16 +219,16 @@ bindsym $mod+space focus mode_toggle
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 1
-set $ws2 2
-set $ws3 3
-set $ws4 4
-set $ws5 5
-set $ws6 6
-set $ws7 7
-set $ws8 8
-set $ws9 9
-set $ws10 10
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -241,24 +255,26 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 # bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file
-bindsym $mod+Shift+r reload
+bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+c restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-msg exit"
+bindsym $mod+Shift+r restart
+# choose action
+bindsym $mod+Shift+e exec exit_menu
 
-# resize window (you can also use the mouse for that)
+set $Locker slock && sleep 1
+
+set $resize_amt 2
 mode "resize" {
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym j resize shrink width $resize_amt px or $resize_amt ppt
+        bindsym k resize grow height $resize_amt px or $resize_amt ppt
+        bindsym l resize shrink height $resize_amt px or $resize_amt ppt
+        bindsym semicolon resize grow width $resize_amt px or $resize_amt ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width $resize_amt px or $resize_amt ppt
+        bindsym Down resize grow height $resize_amt px or $resize_amt ppt
+        bindsym Up resize shrink height $resize_amt px or $resize_amt ppt
+        bindsym Right resize grow width $resize_amt px or $resize_amt ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"

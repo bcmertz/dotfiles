@@ -13,24 +13,28 @@
 
 
     // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}",
+        // "format": "{name}: {icon}",
+
+        // "format-icons": {
+        //     "1": "",
+        //     "2": "",
+        //     "3": "",
+        //     "4": "",
+        //     "5": "",
+        //     "urgent": "",
+        //     "focused": "",
+        //     "default": ""
+        //}
+    },
+
     "sway/mode": {
         "format": "<span>{}</span>"
     },
+
     "custom/language": {
         "exec": "language",
         "radius": "15",
@@ -59,10 +63,12 @@
     },
 
     "custom/battery": {
-        "exec": "battery BAT2",
+        "exec": "battery BAT0 -n",
         "format-padding": "1",
-        "click-left": "notify-send \"⚡ Full 🔌 Charging 🔋 Discharging\"",
-        "interval": "5",
+        "click-left": "battery_left",
+        "click-middle": "battery_middle",
+        "click-right": "battery_right",
+        "interval": "60",
         "format": "{}",
     },
 
@@ -97,7 +103,7 @@
     },
 
     "custom/weather": {
-        "exec" : "weather",
+        "exec" : "~/.local/bin/statusbar/weather -t",
         "format-padding" : "1",
         "interval" : "120",
         "format" : "{}",
