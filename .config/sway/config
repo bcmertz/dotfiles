@@ -15,6 +15,7 @@ exec redshift
 exec mako # exec dunst
 # exec transmission-daemon
 exec lxpolkit
+exec gammastep
 # exec emacs --daemon=term
 # exec emacs --daemon=gui
 

@@ -358,6 +358,7 @@ subversion
 sudo
 sunwait
 sway
+swaybg
 sxhkd
 sxiv
 sysfsutils
