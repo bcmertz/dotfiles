@@ -29,13 +29,15 @@ bar {
 }
 
 # formerly X stuff
-# output eDP-1 scale 1
-# input 1118:1997:Microsoft_Surface_Keyboard_Touchpad tap enabled
+output eDP-1 scale 1
 input * xkb_layout "us,ir"
-input * xkb_options "grp:alt_shift_toggle"
+input * xkb_options "grp:alts_toggle"
 input type:keyboard {
       repeat_delay 300
       repeat_rate 50
+}
+input type:touchpad {
+      tap enabled
 }
 
 

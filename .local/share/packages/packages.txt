@@ -84,6 +84,8 @@ duf
 dunst
 dvd+rw-tools
 e2fsprogs
+easyeffects
+easyeffects-presets
 easytag
 ecryptfs-utils
 efibootmgr
