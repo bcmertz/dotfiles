@@ -12,7 +12,7 @@ set $mod Mod4
 # exec_always --no-startup-id refresh polybar
 exec_always --no-startup-id setbg
 exec redshift
-exec mako # exec dunst
+exec dunst
 # exec transmission-daemon
 exec lxpolkit
 exec gammastep
