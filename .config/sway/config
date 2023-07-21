@@ -10,7 +10,7 @@ set $mod Mod4
 
 # Startup polybar if it isn't running
 # exec_always --no-startup-id refresh polybar
-exec_always --no-startup-id setbg
+exec_always setbg
 exec redshift
 exec dunst
 exec lxpolkit
