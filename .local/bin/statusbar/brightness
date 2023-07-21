@@ -2,7 +2,8 @@
 #
 # brightness
 
-brightness=$(xbacklight -get | cut -d '.' -f 1)
+# brightness=$(xbacklight -get | cut -d '.' -f 1)
+brightness=$(brightnessctl | awk 'FNR == 2 {print}' | awk '{print $4}' | tr -d '(%)')
 icon="🔆"
 
 if [ "$1" == "-n" ]; then
