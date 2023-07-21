@@ -9,7 +9,7 @@
 
     "modules-left": ["sway/workspaces", "sway/mode", "custom/weather", "custom/language"],
     "modules-center": ["custom/date"],
-    "modules-right": ["custom/network", "custom/volume", "custom/battery", "custom/memory", "custom/temp", "custom/filesystem"],
+    "modules-right": ["custom/network", "custom/volume", "custom/battery", "custom/memory", "custom/temp", "custom/filesystem", "custom/brightness"],
 
 
     // Modules configuration
@@ -108,6 +108,13 @@
         "interval" : "120",
         "format" : "{}",
         "click-left" : "fullscreen 'head -n -1 $HOME/.local/share/weatherreport; read'",
+    },
+
+    "custom/brightness": {
+        "type": "custom/script",
+        "exec": "brightness -n",
+        "interval": "0.1",
+        "format": "{}",
     },
 
     "custom/filesystem": {
