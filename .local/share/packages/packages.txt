@@ -431,6 +431,7 @@ wine
 wireless-regdb
 wireless_tools
 wireplumber
+wmctrl
 words
 wpa_supplicant
 wpgtk
