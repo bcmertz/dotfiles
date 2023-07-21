@@ -44,6 +44,9 @@ input type:touchpad {
       tap enabled
 }
 
+# unclutter
+seat * hide_cursor 8000
+seat * hide_cursor when-typing enable
 
 set $black #000000
 
