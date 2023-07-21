@@ -434,6 +434,7 @@ wireplumber
 words
 wpa_supplicant
 wpgtk
+wtype
 xarchiver
 xautolock
 xclip
