@@ -32,6 +32,7 @@
 !.config/user-dirs.dirs
 !.config/oled-linux.conf
 !.config/user-dirs.locale
+!.config/libinput-gestures.conf
 !.config/Clementine/customiconset/
 !.config/Clementine/customiconset/*
 !.config/Clementine/Clementine.conf
