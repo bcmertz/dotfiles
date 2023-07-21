@@ -13,17 +13,20 @@ set $mod Mod4
 exec_always --no-startup-id setbg
 exec redshift
 exec dunst
-# exec transmission-daemon
 exec lxpolkit
 exec gammastep
+exec libinput-gestures-setup start
 # exec emacs --daemon=term
 # exec emacs --daemon=gui
 
 # not working
+# exec touchegg
 # exec clipmenud
 # exec nm-applet
 # exec unclutter
-# xwayland disable # pure wayland
+
+# pure wayland
+# xwayland disable
 
 bar {
     swaybar_command waybar
