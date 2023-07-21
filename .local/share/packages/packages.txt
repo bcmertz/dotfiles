@@ -38,6 +38,7 @@ bluez
 bluez-utils
 breeze
 breeze-gtk
+brightnessctl
 brother-hll2395dw
 bspwm
 btrfs-progs
