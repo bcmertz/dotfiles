@@ -39,7 +39,7 @@
         "exec": "language",
         "radius": "15",
         "format-padding": "1",
-        "interval": "1",
+        "interval": 1,
         "click-left": "notify-send \"Language\" \"Alt-Shift to toggle\\n\\nMod+i to select a new language\\n\\nMod+Shift+i to query keymap\"",
         "click-right": "gkbd-keyboard-display -l ir",
     },
@@ -47,7 +47,7 @@
     "custom/date": {
         "exec": "clock",
         "format-padding": "1",
-        "interval": "10",
+        "interval": 10,
         "format": "{}",
         "click-left": "gsimplecal",
         "click-right": "calendar",
@@ -56,25 +56,25 @@
     "custom/memory": {
         "exec": "memory",
         "format-padding": "1",
-        "interval": "1",
+        "interval": 1,
         "format": "🧠 {}",
         "click-left": "notify-send \"🧠 Memory hogs\" \"$(ps axch -o cmd:15,%mem --sort:-%mem | head)\"",
         "click-right": "fullscreen htop",
     },
 
     "custom/battery": {
-        "exec": "battery BAT0 -n",
+        "exec": "battery BAT0",
         "format-padding": "1",
         "click-left": "battery_left",
         "click-middle": "battery_middle",
         "click-right": "battery_right",
-        "interval": "60",
+        "interval": 60,
         "format": "{}",
     },
 
     "custom/temp": {
         "exec": "cpu",
-        "interval": "1",
+        "interval": 1,
         "format-padding": "1",
         "format": "💻 {}",
         "click-left": "notify-send \"🖥 CPU hogs\" \"$(ps axch -o cmd:15,%cpu --sort:-%cpu | head)\"",
@@ -83,7 +83,7 @@
 
     "custom/network": {
         "exec": "internet",
-        "interval": "2",
+        "interval": 2,
         "format-padding": "1",
         "format": "{}",
         "click-left": "fullscreen nmtui",
@@ -91,29 +91,29 @@
 
     "custom/volume": {
         "exec": "volume",
-        "interval": "0.2",
+        "interval": 1,
         "format": "{}",
     },
 
     "custom/torrent": {
         "exec": "torrent",
         "format-padding": "1",
-        "interval": "2",
+        "interval": 2,
         "format": "{}",
     },
 
     "custom/weather": {
         "exec" : "~/.local/bin/statusbar/weather -t",
         "format-padding" : "1",
-        "interval" : "120",
+        "interval" : 120,
         "format" : "{}",
         "click-left" : "fullscreen 'head -n -1 $HOME/.local/share/weatherreport; read'",
     },
 
     "custom/brightness": {
         "type": "custom/script",
-        "exec": "brightness -n",
-        "interval": "0.1",
+        "exec": "brightness",
+        "interval": 1,
         "format": "{}",
     },
 
@@ -121,7 +121,7 @@
         "exec" : "disk / 📁",
         "format-padding" : "1",
         "label-padding-right" : "6",
-        "interval" : "60",
+        "interval" : 60,
         "format" : "{}",
         "click-left" : "pgrep -x dunst >/dev/null && notify-send '💽 Disk space' '$(df -h / --output:target,used,size && echo -e '\nFolders' && du -t 1M -sh .[!.]* * | sort -hr)'",
         "click-right" :  "baobab",
