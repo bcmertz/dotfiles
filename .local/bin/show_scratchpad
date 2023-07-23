@@ -23,15 +23,18 @@ case ${name} in
         ;;
 esac
 
-
-if  [ "_$(xdotool search --classname $classname | head -n 1)"  = "_" ]; then
-    background $command
-    sleep 1
-    # Set the instance to identify the scratchpad.
-    st_id=$(xdotool search --classname $classname)
-    xdotool set_window $st_id --classname $classname
-    i3-msg "[instance=$classname] move scratchpad"
-    i3-msg "[instance=$classname] scratchpad show"
-else
-    i3-msg "[instance=$classname] scratchpad show"
-fi
+# if is_wayland; then
+#     swaymsg -t get_tree | jq # or something
+# else
+    if  [ "_$(xdotool search --classname $classname | head -n 1)"  = "_" ]; then
+        background $command
+        sleep 1
+        # Set the instance to identify the scratchpad.
+        st_id=$(xdotool search --classname $classname)
+        xdotool set_window $st_id --classname $classname
+        i3-msg "[instance=$classname] move scratchpad"
+        i3-msg "[instance=$classname] scratchpad show"
+    else
+        i3-msg "[instance=$classname] scratchpad show"
+    fi
+# fi
