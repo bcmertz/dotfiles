@@ -23,6 +23,7 @@ case ${name} in
         ;;
 esac
 
+# TODO - https://github.com/swaywm/sway/issues/3122
 # if is_wayland; then
 #     swaymsg -t get_tree | jq # or something
 # else
