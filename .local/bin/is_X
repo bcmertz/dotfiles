@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# check if we're in Xorg
+
+[ "$XDG_SESSION_TYPE" == "x11" ]

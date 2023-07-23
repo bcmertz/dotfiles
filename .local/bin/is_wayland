@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# check if we're in wayland
+
+[ "$XDG_SESSION_TYPE" == "wayland" ]
