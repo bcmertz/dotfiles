@@ -116,8 +116,9 @@ for_window [title="Floating xfce"] floating enable fullscreen
 # for_window [class="Emacs"] move workspace $ws2
 # for_window [class="firefox"] move workspace $ws1
 
-# Interactive screenshot
 set $screenshot $(xdg-user-dir PICTURES)/screenshots/$(date +"%Y-%m-%d-%H-%M-%S").png
+
+# Interactive screenshot
 bindsym Print exec grim -g "$(slurp)" $screenshot
 # Screenshot
 bindsym $mod+Print exec grim $screenshot
