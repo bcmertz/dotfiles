@@ -36,9 +36,7 @@ fi
 
 case ${SESSION} in
     sway)
-        wal -i $filepath # -o ~/.config/wal/done.sh
-        # swaymsg output "*" bg $filepath fill
-        # swaymsg reload
+        wal -i $filepath -o ~/.config/wal/done.sh
         ;;
 
     *)
