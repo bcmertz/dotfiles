@@ -16,14 +16,13 @@ exec dunst
 exec lxpolkit
 exec gammastep
 exec libinput-gestures-setup start
+exec wl-paste -t text --watch clipman store --no-persist 1>> /tmp/clipman-log 2>&1
+exec wl-paste -p -t text --watch clipman store --no-persist -P --histpath="~/.cache/clipman-primary.json"
 # exec emacs --daemon=term
 # exec emacs --daemon=gui
 
 # not working
-# exec touchegg
-# exec clipmenud
 # exec nm-applet
-# exec unclutter
 
 # pure wayland
 # xwayland disable
@@ -153,7 +152,7 @@ bindsym $mod+q kill
 # dmenu programs
 bindsym $mod+d exec dmenu_run_history -i -c -h 35 -l 10 -bw 3
 bindsym $mod+u exec unicode_picker
-bindsym $mod+y exec clipmenu
+bindsym $mod+y exec clipman pick -t STDOUT | dmenu -i -c -h 35 -l 10 -bw 3 | wl-copy
 bindsym $mod+o exec info_query
 bindsym --release $mod+Shift+o exec searchsite
 bindsym $mod+p exec passmenu
