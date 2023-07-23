@@ -116,10 +116,11 @@ for_window [title="Floating xfce"] floating enable fullscreen
 # for_window [class="Emacs"] move workspace $ws2
 # for_window [class="firefox"] move workspace $ws1
 
-# Screenshot
-bindsym $mod+Print exec i3-scrot
 # Interactive screenshot
-bindsym Print exec gnome-screenshot -i
+set $screenshot $(xdg-user-dir PICTURES)/screenshots/$(date +"%Y-%m-%d-%H-%M-%S").png
+bindsym Print exec grim -g "$(slurp)" $screenshot
+# Screenshot
+bindsym $mod+Print exec grim $screenshot
 
 # Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -SIGRTMIN+10 i3blocks

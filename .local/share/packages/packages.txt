@@ -50,6 +50,7 @@ cdrtools
 cheese
 chromium
 cinnamon
+clipman
 clipmenu
 cmatrix
 code
@@ -147,6 +148,7 @@ gparted
 gpick
 gradle
 grep
+grim
 groff
 grsync
 grub
@@ -350,6 +352,7 @@ sg3_utils
 signal-desktop
 signify
 siji-ttf
+slurp
 smartmontools
 sof-firmware
 speedtest-cli
