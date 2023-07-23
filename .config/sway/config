@@ -10,7 +10,7 @@ set $mod Mod4
 
 # Startup polybar if it isn't running
 # exec_always --no-startup-id refresh polybar
-exec_always setbg
+exec setbg
 exec redshift
 exec dunst
 exec lxpolkit
@@ -48,12 +48,15 @@ input type:touchpad {
 seat * hide_cursor 5000
 seat * hide_cursor when-typing enable
 
+# pywal
+include "$HOME/.cache/wal/colors-sway"
+
 set $black #000000
 
-set $fg #f0f0f0
-set $bg #f0f0f0
-# set_from_resource $fg i3wm.color7 #f0f0f0
-# set_from_resource $bg i3wm.color4 #f0f0f0
+# set $fg #f0f0f0
+#set $bg #f0f0f0
+set $fg $color7
+set $bg $color4
 
 # class                 border  backgr. text indicator child_border
 client.focused          $bg          $bg            $fg  $bg              $bg
@@ -63,6 +66,8 @@ client.urgent           $bg          $bg            $fg  $bg              $bg
 client.placeholder      $bg          $bg            $fg  $bg              $bg
 
 client.background       $bg
+
+output "*" background $wallpaper fill
 
 # Font for window titles
 font pango:DejaVu Sans Mono 10
@@ -265,8 +270,8 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+# sway only has reload and no restart like i3
+bindsym $mod+Shift+r reload
 # choose action
 bindsym $mod+Shift+e exec exit_menu
 
