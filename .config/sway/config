@@ -8,6 +8,9 @@
 # Windows key as Mod
 set $mod Mod4
 
+# fix gtk stuff with local/bin script
+exec_always import-gsettings
+
 # Startup polybar if it isn't running
 # exec_always --no-startup-id refresh polybar
 exec setbg
