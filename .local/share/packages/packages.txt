@@ -92,7 +92,7 @@ easytag
 ecryptfs-utils
 efibootmgr
 efitools
-emacs-git
+emacs-pgtk-git
 endeavouros-keyring
 endeavouros-mirrorlist
 endeavouros-theming
@@ -296,7 +296,7 @@ patch
 patchutils
 pavucontrol
 pcmanfm
-pcsx2
+pcsx2-latest-bin
 peek
 perl
 perl-file-mimeinfo
