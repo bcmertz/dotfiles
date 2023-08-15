@@ -106,7 +106,6 @@ epdfview
 etcher-bin
 ethtool
 exfat-utils
-exo
 expect
 f2fs-tools
 fakeroot
@@ -123,7 +122,6 @@ firewalld
 flex
 fsarchiver
 gammastep
-garcon
 gawk
 gcc
 gcolor2
@@ -309,6 +307,8 @@ pix
 pkgconf
 pkgfile
 plank
+plasma-desktop
+plasma-wayland-session
 polybar
 poppler-data
 poppler-glib
@@ -384,8 +384,6 @@ texlive-pictures
 texlive-pstricks
 texlive-publishers
 the_silver_searcher
-thunar
-thunar-volman
 tldr
 tlp
 tlpui
@@ -405,7 +403,6 @@ ttf-opensans
 ttf-roboto
 ttf-roboto-mono
 ttf-ubuntu-mono-nerd
-tumbler
 unclutter
 units
 unrar
@@ -453,17 +450,9 @@ xf86-video-amdgpu
 xf86-video-ati
 xf86-video-intel
 xf86-video-nouveau
-xfce4-appfinder
-xfce4-panel
 xfce4-power-manager
-xfce4-session
-xfce4-settings
 xfce4-terminal
-xfce4-whiskermenu-plugin
-xfdesktop
 xfsprogs
-xfwm4
-xfwm4-themes
 xkb-switch
 xl2tpd
 xorg-server
