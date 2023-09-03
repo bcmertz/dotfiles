@@ -256,6 +256,7 @@ multimarkdown
 mutt
 nano
 nano-syntax-highlighting
+nautilus
 nbd
 ncdu
 ndisc6
