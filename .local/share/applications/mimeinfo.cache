@@ -1,5 +1,24 @@
 [MIME Cache]
+application/vnd.ms-htmlhelp=wine-extension-chm.desktop;
+application/winhlp=wine-extension-hlp.desktop;
+application/x-shellscript=my-gui-emacs-client.desktop;
+application/x-wine-extension-msp=wine-extension-msp.desktop;
+text/english=my-gui-emacs-client.desktop;
+text/plain=my-gui-emacs-client.desktop;
+text/vbscript=wine-extension-vbs.desktop;
 text/x-arduino=arduino-arduinoide.desktop;
+text/x-c=my-gui-emacs-client.desktop;
+text/x-c++=my-gui-emacs-client.desktop;
+text/x-c++hdr=my-gui-emacs-client.desktop;
+text/x-c++src=my-gui-emacs-client.desktop;
+text/x-chdr=my-gui-emacs-client.desktop;
+text/x-csrc=my-gui-emacs-client.desktop;
+text/x-java=my-gui-emacs-client.desktop;
+text/x-makefile=my-gui-emacs-client.desktop;
+text/x-moc=my-gui-emacs-client.desktop;
+text/x-pascal=my-gui-emacs-client.desktop;
+text/x-tcl=my-gui-emacs-client.desktop;
+text/x-tex=my-gui-emacs-client.desktop;
 x-scheme-handler/monero=monero-gui.desktop;
 x-scheme-handler/moneroseed=monero-gui.desktop;
 x-scheme-handler/org-protocol=org-protocol.desktop;
