@@ -432,6 +432,7 @@ whatsdesk-bin
 which
 whois
 wine
+winegui
 wireless-regdb
 wireless_tools
 wireplumber
