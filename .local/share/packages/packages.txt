@@ -136,6 +136,7 @@ glances
 gnome-clocks
 gnome-control-center
 gnome-maps
+gnome-network-displays
 gnome-screensaver
 gnome-screenshot
 gnome-shell
@@ -240,6 +241,7 @@ memtest86+
 mesa-demos
 mesa-utils
 mesa-vdpau
+miraclecast-git
 mkinitcpio
 mkinitcpio-busybox
 mkinitcpio-nfs-utils
