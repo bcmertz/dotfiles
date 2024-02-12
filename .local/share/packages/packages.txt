@@ -136,7 +136,6 @@ glances
 gnome-clocks
 gnome-control-center
 gnome-maps
-gnome-network-displays
 gnome-screensaver
 gnome-screenshot
 gnome-shell
@@ -242,6 +241,7 @@ mesa-demos
 mesa-utils
 mesa-vdpau
 miraclecast-git
+mkchromecast-git
 mkinitcpio
 mkinitcpio-busybox
 mkinitcpio-nfs-utils
@@ -287,6 +287,7 @@ ntp
 nvm
 okular
 openconnect
+openh264
 openvpn
 os-prober
 p7zip
