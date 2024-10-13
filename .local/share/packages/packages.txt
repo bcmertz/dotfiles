@@ -37,8 +37,8 @@ bison
 blueman
 bluez
 bluez-utils
-breeze
 breeze-gtk
+breeze5
 brightnessctl
 brother-hll2395dw
 bspwm
@@ -314,7 +314,6 @@ pkgconf
 pkgfile
 plank
 plasma-desktop
-plasma-wayland-session
 polybar
 poppler-data
 poppler-glib
