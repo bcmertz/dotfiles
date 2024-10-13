@@ -246,7 +246,6 @@ mkinitcpio
 mkinitcpio-busybox
 mkinitcpio-nfs-utils
 mkinitcpio-openswap
-mlocate
 moc
 modemmanager
 mokutil
@@ -314,6 +313,7 @@ pkgconf
 pkgfile
 plank
 plasma-desktop
+plocate
 polybar
 poppler-data
 poppler-glib
