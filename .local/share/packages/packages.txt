@@ -1,3 +1,4 @@
+7zip
 accountsservice
 acpi
 acpid
@@ -11,7 +12,6 @@ android-file-transfer
 android-tools
 ant
 apparmor
-apparmor.d-git
 arandr
 arch-wiki-docs
 archlinux-keyring
@@ -94,10 +94,10 @@ easytag
 ecryptfs-utils
 efibootmgr
 efitools
-emacs-pgtk-git
+emacs
+endeavouros-branding
 endeavouros-keyring
 endeavouros-mirrorlist
-endeavouros-theming
 eos-apps-info
 eos-hooks
 eos-log-tool
@@ -198,7 +198,6 @@ less
 lib32-flex
 lib32-libva-vdpau-driver
 lib32-mesa-demos
-lib32-mesa-vdpau
 lib32-vulkan-icd-loader
 lib32-vulkan-intel
 lib32-vulkan-radeon
@@ -210,7 +209,6 @@ libopenraw
 libreoffice-still
 librewolf
 libtool
-libva-mesa-driver
 libva-utils
 libva-vdpau-driver
 libwnck3
@@ -239,7 +237,6 @@ meld
 memtest86+
 mesa-demos
 mesa-utils
-mesa-vdpau
 miraclecast-git
 mkchromecast-git
 mkinitcpio
@@ -289,7 +286,6 @@ openconnect
 openh264
 openvpn
 os-prober
-p7zip
 pacman
 pacman-contrib
 pandoc-cli
@@ -397,6 +393,7 @@ touche
 touchegg
 transmission-cli
 transmission-gtk
+tree-sitter
 ttf-anonymous-pro
 ttf-bitstream-vera
 ttf-dejavu
