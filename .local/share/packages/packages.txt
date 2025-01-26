@@ -41,6 +41,7 @@ breeze-gtk
 breeze5
 brightnessctl
 brother-hll2395dw
+brother-hll2395dw-debug
 bspwm
 btrfs-progs
 calibre
