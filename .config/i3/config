@@ -119,7 +119,7 @@ bindsym $mod+u exec unicode_picker
 bindsym $mod+y exec clipmenu
 bindsym $mod+o exec info_query
 bindsym --release $mod+Shift+o exec searchsite
-bindsym $mod+p exec passmenu
+bindsym $mod+p exec ~/.local/bin/dmenu/passmenu
 bindsym $mod+i exec choose_keyboard
 bindsym $mod+Shift+i exec farsi_text
 bindsym $mod+Shift+w exec displayselect
