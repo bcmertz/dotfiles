@@ -3,7 +3,7 @@
 # copy
 
 if is_X; then
-    sed 's/\x1B\[[0-9;]\{1,\}[A-Za-z]//g' | xclip -sel clip
+    sed 's/\x1B\[[0-9;]\{1,\}[A-Za-z]//g' | sed -z '$ s/\n$//' | xclip -sel clip
 else
     # remove trailing newline and copy
     sed -z '$ s/\n$//' | wl-copy
