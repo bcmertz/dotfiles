@@ -251,7 +251,6 @@ mousepad
 mpv
 msmtp
 mtools
-mullvad-vpn
 multimarkdown
 mutt
 nano
