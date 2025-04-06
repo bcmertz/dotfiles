@@ -29,6 +29,7 @@ image/x-portable-bitmap=sxiv.desktop
 image/x-portable-graymap=sxiv.desktop
 image/x-tga=sxiv.desktop
 image/x-xpixmap=sxiv.desktop
+image/svg+xml=org.inkscape.Inkscape.desktop
 
 [Added Associations]
 inode/directory=pcmanfm.desktop;
@@ -47,3 +48,4 @@ image/x-tga=sxiv.desktop;
 image/x-xpixmap=sxiv.desktop;
 application/xml=diylc.desktop;
 image/jpeg=libreoffice-draw.desktop;com.uploadedlobster.peek.desktop;org.inkscape.Inkscape.desktop;org.kde.kphotoalbum.desktop;
+image/svg+xml=org.inkscape.Inkscape.desktop;
