@@ -134,7 +134,6 @@ git
 git-delta
 git-lfs
 glances
-gn
 gnome-clocks
 gnome-control-center
 gnome-maps
@@ -188,7 +187,6 @@ java-environment-common
 jdk8-openjdk
 jfsutils
 jq
-jre-openjdk
 k3b
 kaddressbook
 kcolorchooser
@@ -273,7 +271,6 @@ newsboat
 nfs-utils
 nilfs-utils
 nmap
-nodejs-lts-iron
 noto-color-emoji-fontconfig
 noto-fonts
 noto-fonts-emoji
@@ -323,7 +320,6 @@ pv
 python
 python-capng
 python-defusedxml
-python-httplib2
 python-isort
 python-lsp-black
 python-lsp-server
@@ -348,7 +344,6 @@ rsync
 rtkit
 ruby
 rust
-rust-bindgen
 s-nail
 sbxkb
 scrot
