@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# update timezone from IPAPI geolocating service
+
+timedatectl set-timezone "$(curl --fail https://ipapi.co/timezone)"
