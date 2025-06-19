@@ -59,15 +59,13 @@
 (global-set-key (kbd "C-c t f") 'set-buffer-font)
 (global-set-key (kbd "C-c t F") 'unset-buffer-font)
 
-(use-package all-the-icons
+(use-package nerd-icons
   :defer t
+  ;:custom
+  ;(nerd-icons-font-family "Symbols Nerd Font Mono")
   :config
-  (if (not (file-exists-p "~/.local/share/fonts/all-the-icons.ttf"))  (all-the-icons-install-fonts t))
+  (if (not (file-exists-p "~/.local/share/fonts/NFM.ttf"))  (nerd-icons-install-fonts))
   )
-
-;; ;; all the icons alternative
-;; ;; sudo pacman -S nerd-fonts-meta
-;; (use-package nerd-icons)
 
 
 (provide 'custom-fonts)
