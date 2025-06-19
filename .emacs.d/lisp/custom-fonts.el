@@ -67,6 +67,9 @@
   (if (not (file-exists-p "~/.local/share/fonts/NFM.ttf"))  (nerd-icons-install-fonts))
   )
 
+;; other interesting icon packages to consider
+;; https://github.com/rainstormstudio/nerd-icons-completion
+;; https://github.com/LuigiPiucco/nerd-icons-corfu
 
 (provide 'custom-fonts)
 ;;; custom-fonts.el ends here
