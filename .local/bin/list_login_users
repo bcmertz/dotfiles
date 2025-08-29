@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# list login users
+#
+# source: https://www.cyberciti.biz/faq/linux-list-users-command/
+
+## get UID limit ##
+l=$(grep "^UID_MIN" /etc/login.defs)
+## use awk to print if UID >= $UID_LIMIT ##
+awk -F':' -v "limit=${l##UID_MIN}" '{ if ( $3 >= limit ) print $1}' /etc/passwdl=$(grep "^UID_MIN" /etc/login.defs)
