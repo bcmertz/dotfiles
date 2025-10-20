@@ -42,7 +42,7 @@
 (measure-time(require 'custom-fonts))            ;; fonts
 (measure-time(require 'custom-modeline))         ;; mode line
 (measure-time(require 'custom-completion))       ;; completion && snippets
-;; (measure-time(require 'custom-treesitter))       ;; tree-sitter
+(measure-time(require 'custom-treesitter))       ;; tree-sitter
 (measure-time(require 'custom-project))          ;; project management and navigation
 (measure-time(require 'custom-minibuffer))       ;; vertico consult marginalia embark family
 (measure-time(require 'custom-dired))            ;; dired
