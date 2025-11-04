@@ -12,6 +12,7 @@
 	required = true
 [core]
 	excludesfile = $HOME/.config/git/.gitignore_global
+	autocrlf = input
 [pull]
 	rebase = false
 [github]
