@@ -316,6 +316,7 @@ powertop
 ppp
 pptpclient
 pulsar-bin
+putty
 pv
 python
 python-capng
