@@ -123,30 +123,6 @@
 
 
 
-;;;;;;;;;;;;;;;;;;;;; DEPRECATED - replaced by corfu
-
-;; (use-package company
-;;   :defer t
-;;   :after eldoc
-;;   :init
-;;   (progn
-;;     (global-company-mode)
-;;     (setq company-tooltip-limit 20)                         ; bigger popup window
-;;     (setq company-idle-delay nil)                           ; don't completion on typing, backtab instead
-;;     ;; (setq company-idle-delay .3)  			     ; decrease delay before completion popup shows
-;;     ;;(setq company-echo-delay 0)                           ; remove annoying blinking
-;;     ;;(setq company-begin-commands '(self-insert-command))  ; start completion after typing, if we want to ignore our special tab key we bind below
-;;     ))
-
-
-;; (use-package company-box
-;;   :defer t
-;;   :hook
-;;   (company-mode . company-box-mode))
-
-;; ;; (global-set-key [tab] 'tab-indent-or-complete)
-;; (global-set-key [backtab] 'company-complete-common) ;; backtab triggers completion
-
 ;; useful if using tab for expanding completion and indent
 ;; https://www.emacswiki.org/emacs/CompanyMode#toc11
 ;; (defun check-expansion ()
