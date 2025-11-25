@@ -12,9 +12,9 @@
   :ensure t
   :defer t
   :hook
-  (python-mode . eglot-ensure)
-  (bash-ts-mode-hook eglot-ensure)
-  (go-ts-mode-hook eglot-ensure)
+  (python-ts-mode . eglot-ensure)
+  (bash-ts-mode . eglot-ensure)
+  (go-ts-mode . eglot-ensure)
   )
 
 ;; turn off JSONRPC debug event log mechanism.
