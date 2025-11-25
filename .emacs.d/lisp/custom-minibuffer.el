@@ -237,6 +237,7 @@
                                 "\\`magit-diff: .*\\'"
                                 "\\`\\*Directory\\*\\'"
                                 "\\`\\*Dired log\\*\\'"
+                                "\\`\\*EGLOT.*\\'"
                                 "\\`\\*Semantic SymRef\\*\\'"
                                 "\\`\\*tramp/.*\\*\\'"
                                 "\\`\\*word-definition\\*\\'"
