@@ -7,27 +7,16 @@
 ;;;
 ;;; Code:
 
-(use-package tree-sitter
-  :init
-  (advice-add 'tsc-dyn-get--log :around #'silence-function-messages)
-  (global-tree-sitter-mode))
-
-(use-package tree-sitter-langs
-  :init
-  (advice-add 'tree-sitter-langs-install-grammars :around #'silence-function-messages)
-  :config
-  ;; always turn on tree-sitter-hl-mode
-  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
-  ;; prevent bolding function calls when the cursor isn't on them
-  (set-face-attribute 'tree-sitter-hl-face:function.call nil :weight 'normal))
+(use-package treesit
+  :defer t
+  :straight (:type built-in))
 
 (use-package treesit-auto
-  :straight (treesit-auto :type git
-                          :host github
-                          :repo "renzmann/treesit-auto")
   :config
   (setq treesit-auto-install 'prompt)
+  (treesit-auto-add-to-auto-mode-alist 'all)
   (global-treesit-auto-mode))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ts code folding ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
