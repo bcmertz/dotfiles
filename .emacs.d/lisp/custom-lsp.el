@@ -9,14 +9,13 @@
 ;;; Code:
 
 (use-package eglot
+  :ensure t
   :defer t
-  :init
-  (defvar lsp-tool "eglot")
+  :hook
+  (python-mode . eglot-ensure)
+  (bash-ts-mode-hook eglot-ensure)
+  (go-ts-mode-hook eglot-ensure)
   )
-
-(add-hook 'python-ts-mode-hook 'eglot-ensure)
-(add-hook 'bash-ts-mode-hook 'eglot-ensure)
-(add-hook 'go-ts-mode-hook 'eglot-ensure)
 
 ;; turn off JSONRPC debug event log mechanism.
 ;; helps speed up eglot
