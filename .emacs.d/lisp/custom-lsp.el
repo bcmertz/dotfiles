@@ -16,6 +16,11 @@
   (add-to-list 'eglot-server-programs '(python-mode . ("pylsp")))
   )
 
+;; turn off JSONRPC debug event log mechanism.
+;; helps speed up eglot
+;; https://www.reddit.com/r/emacs/comments/1447fy2/looking_for_help_in_improving_typescript_eglot/
+(fset #'jsonrpc--log-event #'ignore)
+
 (add-hook 'python-mode-hook 'eglot-ensure)
 (add-hook 'shell-mode-hook 'eglot-ensure)
 (add-hook 'go-mode-hook 'eglot-ensure)
