@@ -15,6 +15,11 @@
   (python-ts-mode . eglot-ensure)
   (bash-ts-mode . eglot-ensure)
   (go-ts-mode . eglot-ensure)
+  :config
+  ;; remove bold from occurrences of variable under cursor
+  (setq eglot-ignored-server-capabilities '(:documentHighlightProvider))
+  ;; silence long-running process notifications
+  (setq eglot-report-progress nil)
   )
 
 ;; turn off JSONRPC debug event log mechanism.
