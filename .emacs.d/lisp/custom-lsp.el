@@ -12,47 +12,18 @@
   :defer t
   :init
   (defvar lsp-tool "eglot")
-  :config
-  (add-to-list 'eglot-server-programs '(python-mode . ("pylsp")))
   )
+
+(add-hook 'python-ts-mode-hook 'eglot-ensure)
+(add-hook 'bash-ts-mode-hook 'eglot-ensure)
+(add-hook 'go-ts-mode-hook 'eglot-ensure)
 
 ;; turn off JSONRPC debug event log mechanism.
 ;; helps speed up eglot
 ;; https://www.reddit.com/r/emacs/comments/1447fy2/looking_for_help_in_improving_typescript_eglot/
-(fset #'jsonrpc--log-event #'ignore)
-
-(add-hook 'python-mode-hook 'eglot-ensure)
-(add-hook 'shell-mode-hook 'eglot-ensure)
-(add-hook 'go-mode-hook 'eglot-ensure)
-
-;; (use-package lsp-mode
-;;   :defer t
-;;   :init
-;;   (defvar lsp-tool "lsp")
-;;   ;; (setq lsp-keymap-prefix "C-c l")
-;;   :hook ((go-mode . lsp)
-;;          (js-mode . lsp)
-;;          (typescript-mode . lsp)
-;;          ;; (lsp-mode . flycheck-mode)
-;;          ;; (lsp-mode . lsp-enable-which-key-integration)
-;;          )
-;;   :config
-;;   (setq lsp-headerline-breadcrumb-enable nil)
-;;   (setq lsp-enable-symbol-highlighting nil)
-;;   (lsp-enable-which-key-integration)
-;;   )
-
-
-;; (use-package lsp-ui
-;;   :defer t
-;;   :custom
-;;   (lsp-ui-sideline-enable nil)
-;;   )
-
-;; (use-package company-lsp
-;;   :commands company-lsp
-;;   )
-;; (push 'company-lsp company-backends)
+;; maybe no longer necessary as of v30?
+;; https://www.reddit.com/r/emacs/comments/1b25904/is_there_anything_i_can_do_to_make_eglots/
+;;(fset #'jsonrpc--log-event #'ignore)
 
 (provide 'custom-lsp)
 ;;; custom-lsp.el ends here
