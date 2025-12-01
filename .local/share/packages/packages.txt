@@ -55,7 +55,6 @@ cinnamon
 clipman
 clipmenu
 cmatrix
-code
 cowsay
 cozette-otb
 cpupower
