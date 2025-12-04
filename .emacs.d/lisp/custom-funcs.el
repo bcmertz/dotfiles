@@ -254,9 +254,8 @@ Cancels itself, if this buffer was killed."
 
 (defun current-project ()
   "Return project-dir or nil."
-  (ignore-errors   ;;; Pick one: projectile or find-file-in-project
-    (or (projectile-project-root) (ffip-project-root))
-    )
+  (ignore-errors
+    (consult--project-root))
   )
 
 (defun if-in-project (action_1 &optional action_2)
