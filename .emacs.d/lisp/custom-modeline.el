@@ -8,7 +8,8 @@
   :config
   (setq doom-modeline-vcs-max-length 100)
   ;; lsp
-  (setq doom-modeline-lsp nil)
+  (setq doom-modeline-lsp-icon t)
+  (setq doom-modeline-lsp t)
   ;; :custom-face
   ;; (doom-modeline-bar-inactive ((t (:background unspecified))))
   ;; (mode-line ((t (:foreground "#D8DEE8" :background "#353645"))))
