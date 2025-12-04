@@ -10,10 +10,6 @@
   ;; lsp
   (setq doom-modeline-lsp-icon t)
   (setq doom-modeline-lsp t)
-  ;; :custom-face
-  ;; (doom-modeline-bar-inactive ((t (:background unspecified))))
-  ;; (mode-line ((t (:foreground "#D8DEE8" :background "#353645"))))
-  ;; (doom-modeline-buffer-modified ((t (:inherit (error bold) :foreground "#599DD5"))))
   :init
   (defface doom-modeline-bar-inactive
     '((t (:background unspecified)))
