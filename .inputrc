@@ -2,6 +2,9 @@ $include /etc/inputrc
 # do not bell on tab-completion
 #set bell-style none
 
+# ignore case in completion
+set completion-ignore-case On
+
 set meta-flag on
 set input-meta on
 set convert-meta off
