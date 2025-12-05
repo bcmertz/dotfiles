@@ -253,7 +253,7 @@ Cancels itself, if this buffer was killed."
   (load-theme custom-theme))
 
 (defun current-project ()
-  "Return project-dir or nil."
+  "Return current project dir or nil."
   (ignore-errors
     (consult--project-root))
   )
