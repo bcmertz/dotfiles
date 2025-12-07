@@ -280,7 +280,7 @@ Cancels itself, if this buffer was killed."
 
 (defun if-in-project (action_1 &optional action_2)
   "If in a project, do ACTION_1 else ACTION_2."
-  (let ((project-dir (current-project)))
+  (let ((project-dir (current-project-root)))
     (if project-dir
         (apply action_1)
       (if action_2
