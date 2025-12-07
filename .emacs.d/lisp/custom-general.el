@@ -82,5 +82,9 @@
          ;;       '(file))
          )))
 
+;; string manipulation library
+(use-package s
+  :ensure t)
+
 (provide 'custom-general)
 ;;; custom-general.el ends here
