@@ -64,14 +64,14 @@
     (project-root (project-current)))
   )
 
+;; toggle neotree in project root directory
 (defun neotree-project-dir-toggle ()
-    "Open NeoTree using the project root, using find-file-in-project,
-or the current buffer directory."
+    "Open NeoTree at the project root."
     (interactive)
     (defvar project-dir)
     (defvar file-name)
     (defvar neo-smart-open)
-    (let ((project-dir (current-project))
+    (let ((project-dir (current-project-root))
           (file-name (buffer-file-name))
           (neo-smart-open t))
       (if (and (fboundp 'neo-global--window-exists-p)
