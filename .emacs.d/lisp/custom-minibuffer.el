@@ -274,7 +274,7 @@
                  #'completion--in-region)
                args)))
 
-
+;; marginalia mode provides context (descriptions, set variable values, etc) inside of minibuffer
 (use-package marginalia
   ;; Either bind `marginalia-cycle' globally or only in the minibuffer
   :bind (("M-A" . marginalia-cycle)
