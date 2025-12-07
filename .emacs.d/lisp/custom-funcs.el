@@ -350,6 +350,7 @@ With argument, do this that many times."
      (forward-word arg)
      (point))))
 
+;; move file
 (defun move-file (new-location)
   "Write this file to NEW-LOCATION, and delete the old one."
   (interactive (list (expand-file-name
