@@ -283,6 +283,7 @@
   :init
   (marginalia-mode))
 
+;; TODO: add description / find use case that I intended for this package...
 (use-package embark
   :straight t
   :bind
