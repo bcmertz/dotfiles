@@ -58,6 +58,12 @@
   (end-of-line))
 
 
+(defun current-project-root ()
+  "Return current project root dir or nil."
+  (ignore-errors
+    (project-root (project-current)))
+  )
+
 (defun neotree-project-dir-toggle ()
     "Open NeoTree using the project root, using find-file-in-project,
 or the current buffer directory."
@@ -271,12 +277,6 @@ Cancels itself, if this buffer was killed."
     (disable-theme i))
   ;; load theme
   (load-theme custom-theme))
-
-(defun current-project ()
-  "Return current project dir or nil."
-  (ignore-errors
-    (consult--project-root))
-  )
 
 (defun if-in-project (action_1 &optional action_2)
   "If in a project, do ACTION_1 else ACTION_2."
