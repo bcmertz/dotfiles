@@ -239,6 +239,26 @@ Cancels itself, if this buffer was killed."
     (fset fns fn)
     fn))
 
+;; return or comment the percent of a file that is comments and docstrings
+;; modified from https://github.com/radian-software/straight.el?tab=readme-ov-file#comments-and-docstrings
+(defun percent-comments ()
+  "Find the percent of a file that is comments and docstrings."
+  (interactive)
+  (let ((lines (make-hash-table :test #'equal)))
+  (goto-char (point-min))
+  (while (< (point) (point-max))
+    (when (memq (face-at-point)
+                '(font-lock-comment-face
+                  font-lock-doc-face))
+      (puthash (line-number-at-pos) t lines))
+    (forward-char))
+  (setq per (* (/ (float (length (hash-table-keys lines)))
+        (line-number-at-pos))
+     100))
+  (if (called-interactively-p 'interactive)
+      (message "%s" per)
+    per)))
+
 ;; refresh ewal theme
 (defun refresh-theme ()
   "Refresh the theme based on global config of whether to use pywal colors for Emacs."
