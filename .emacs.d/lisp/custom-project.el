@@ -11,7 +11,7 @@
   (which-key-add-key-based-replacements "C-c p" "project")
   (global-set-key (kbd "C-c p t") 'vterm-toggle)
   (global-set-key (kbd "C-c p f") 'consult-project-extra-find)
-  (setq project-vc-extra-root-markers '(".projectile" "requirements.txt" "package.json" "go.mod"))
+  (setq project-vc-extra-root-markers '(".projectile" "requirements.txt" "package.json" "go.mod" "README.md" "init.el"))
   (setq project-vc-ignores '("ido.last" "eln-cache/" ".cache/" ".saves/" "save-perspective"
                              "elpa/" "straight/" "auto-save-list/" "undo/" "var/" "tramp"
                              ".lsp-session-v1" "history" "org-roam.db" "multisession/"
