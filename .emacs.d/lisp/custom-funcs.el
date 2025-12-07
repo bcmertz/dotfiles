@@ -391,7 +391,7 @@ With argument, do this that many times."
           (kill-buffer))))))
 
 
-;; source: http://steve.yegge.googlepages.com/my-dot-emacs-file
+;; modified from: http://steve.yegge.googlepages.com/my-dot-emacs-file
 (defun rename-file-and-buffer (new-name)
   "Renames both current buffer and file it's visiting to NEW-NAME."
   (interactive "sNew name: ")
