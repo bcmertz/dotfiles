@@ -371,8 +371,6 @@ With argument, do this that many times."
              old-location
              new-location)
     (write-file new-location t)
-    (if-in-project
-     (projectile-cache-current-file))
     (when (and old-location
                (file-exists-p new-location)
                (not (string-equal old-location new-location)))
@@ -410,11 +408,7 @@ With argument, do this that many times."
           (rename-buffer new-name)
           (set-visited-file-name new-name)
           (set-buffer-modified-p nil)
-          (setq recentf-list (delete filename recentf-list))
-          (if-in-project
-           (progn
-             (projectile-cache-current-file)
-             (delete-file-projectile-remove-from-cache filename))))))))
+          (setq recentf-list (delete filename recentf-list)))))))
 
 ;; (defun rename-file-and-buffer ()
 ;;   "Rename current buffer and if the buffer is visiting a file, rename it too."
