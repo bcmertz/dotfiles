@@ -9,7 +9,9 @@
 ;; C-c C-a to compile and view
 (use-package tex
   :defer t
-  :straight auctex)
+  :straight auctex
+  :mode "\\*.tex\\'"
+  )
 
 ;; to use pdfview with tex
 (setq TeX-view-program-selection '((output-pdf "PDF Tools"))

@@ -7,7 +7,9 @@
 ;;; Code:
 (use-package css
   :straight (:type built-in)
-  :defer t)
+  :defer t
+  :mode "\\*.css\\'"
+  )
 
 (setq css-indent-offset 2)
 
