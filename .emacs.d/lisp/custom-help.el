@@ -19,6 +19,13 @@
          ("p" . help-goto-previous-page)
          ))
 
+(defun quit-helpful ()
+  "Quit helpful buffer and kill other helpful buffers."
+  (interactive)
+  (helpful-kill-buffers)
+  (delete-window)
+  )
+
 (use-package helpful
   :defer t
   :straight (helpful :type git
@@ -32,7 +39,7 @@
           ("C-h o" . #'helpful-symbol)
           ("C-h x" . #'helpful-command)
           (:map helpful-mode-map
-                ("q" . kill-buffer-and-window)
+                ("q" . quit-helpful)
                 ;; ("q" . kill-current-buffer)
                 ("C-<left>" . helpful-go-back)
                 ("C-<right>" . helpful-go-forward))))
