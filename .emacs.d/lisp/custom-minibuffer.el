@@ -235,6 +235,7 @@
                                 "\\`\\*Help\\*\\'"
                                 "\\`magit: .*\\'"
                                 "\\`magit-diff: .*\\'"
+                                "\\`magit-process: .*\\'"
                                 "\\`\\*Directory\\*\\'"
                                 "\\`\\*Dired log\\*\\'"
                                 "\\`\\*EGLOT.*\\'"
