@@ -15,13 +15,12 @@ https://stackoverflow.com/a/3612017"
   (call-interactively 'compile)
   )
 
-;; TODO find better keybinding or dont make global, idk
 (use-package compile
   :config
   (setq compilation-scroll-output 1)
-  :bind
-  ("C-c c" . compile-comint)
-  )
+  :bind (:map prog-mode-map
+              ("C-c c" . compile-comint)
+              ))
 
 (provide 'custom-compile)
 ;;; custom-compile.el ends here
