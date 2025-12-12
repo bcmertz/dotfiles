@@ -394,12 +394,14 @@ touchegg
 transmission-cli
 transmission-gtk
 tree-sitter
+ttc-iosevka
 ttf-anonymous-pro
 ttf-bitstream-vera
 ttf-dejavu
 ttf-droid
 ttf-fira-code
 ttf-indic-otf
+ttf-jetbrains-mono
 ttf-liberation
 ttf-opensans
 ttf-roboto
