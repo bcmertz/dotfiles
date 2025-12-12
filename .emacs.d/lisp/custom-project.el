@@ -31,7 +31,7 @@
 ;; https://github.com/Qkessler/consult-project-extra/issues/10
 (use-package consult-project-extra
   :defer t
-  :straight (consult-project-extra :type git :host github :repo "Qkessler/consult-project-extra")
+  :custom (consult-project-function #'consult-project-extra-project-fn) ;; Optional but recommended for a more consistent UI
   :bind
   (("C-c p f" . consult-project-extra-find)))
 
