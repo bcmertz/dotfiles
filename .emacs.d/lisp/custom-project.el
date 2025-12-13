@@ -27,7 +27,9 @@
   ;; (add-to-list 'project-switch-commands '(vterm-toggle "vterm" ?t))
   )
 
-;; TODO recentf ordering not possible
+;; this creates consult like completion within projects
+;;
+;; known limitation: recentf ordering not possible
 ;; https://github.com/Qkessler/consult-project-extra/issues/10
 (use-package consult-project-extra
   :defer t
@@ -36,7 +38,7 @@
   (("C-c p f" . consult-project-extra-find)))
 
 
-;; TODO remove "... (choose a dir)" with advice or something
+;; broken: remove "... (choose a dir)" with advice or something
 ;; (advice-add 'project-prompt-project-dir :before '((dir-choice . "testtttt")))
 ;; (defun my-project-prompt-project-dir (orig-fun &rest args)
 ;;   "This is ORIG-FUN and ARGS."
@@ -129,7 +131,7 @@
 ;;   :config
 ;;   ;; dont show modeline string
 ;;   (setq persp-show-modestring nil)
-;;   ;; TODO figure out why restoring expects a directory
+;;   ;; figure out why restoring expects a directory
 ;;   (setq persp-state-default-file "~/.emacs.d/save-perspective")
 ;;   (add-hook 'kill-emacs-hook #'persp-state-save)
 ;;   :custom

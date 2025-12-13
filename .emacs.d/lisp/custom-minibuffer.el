@@ -284,7 +284,7 @@
   :init
   (marginalia-mode))
 
-;; TODO: add description / find use case that I intended for this package...
+;; like a context menu of actions for a given thing in a minibuffer (i think)
 (use-package embark
   :straight t
   :bind
