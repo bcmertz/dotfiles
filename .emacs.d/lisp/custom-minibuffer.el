@@ -230,7 +230,7 @@
   (consult-customize consult-buffer :history nil)
 
   (setq consult-buffer-filter '("\\` " "\\`\\*Completions\\*\\'"
-                                "\\`\\*Flymake log\\*\\'"
+                                "\\`\\*Flymake .*\\*\\'"
                                 "\\`\\*helpful.*\\*\\'"
                                 "\\`\\*Help\\*\\'"
                                 "\\`magit: .*\\'"
