@@ -37,81 +37,12 @@
   :bind
   (("C-c p f" . consult-project-extra-find)))
 
-
-;; broken: remove "... (choose a dir)" with advice or something
-;; (advice-add 'project-prompt-project-dir :before '((dir-choice . "testtttt")))
-;; (defun my-project-prompt-project-dir (orig-fun &rest args)
-;;   "This is ORIG-FUN and ARGS."
-;;   (let ((dir-choice "testttttttttt")
-;;         (res (apply orig-fun args)))
-;;     res))
-;; (defun my-project-prompt-project-dir ()
-;;   "Prompt the user for a directory that is one of the known project roots.
-;; The project is chosen among projects known from the project list,
-;; see `project-list-file'.
-;; It's also possible to enter an arbitrary directory not in the list."
-;;   (project--ensure-read-project-list)
-;;   (let* ((choices
-;;           (project--file-completion-table
-;;            project--list))
-;;          (pr-dir ""))
-;;     (while (equal pr-dir "")
-;;       ;; If the user simply pressed RET, do this again until they don't.
-;;       (setq pr-dir (completing-read "Select project: " choices nil t)))
-;;     (if (equal pr-dir dir-choice)
-;;         (read-directory-name "Select directory: " default-directory nil t)
-;;       pr-dir)))
-;; (advice-add 'project-prompt-project-dir :override #'my-project-prompt-project-dir)
-
-
 ;; (use-package consult-dir
 ;;   :defer t
 ;;   :bind (("C-x C-d" . consult-dir)
 ;;          :map minibuffer-local-completion-map
 ;;          ("C-x C-d" . consult-dir)
 ;;          ("C-x C-j" . consult-dir-jump-file)))
-
-;; ;; project navigation
-;; (defun projectile-find-file-refresh-cache ()
-;;   "Projectile find file and invalidate cache."
-;;   (interactive "")
-;;   (projectile-invalidate-cache (if (current-project) nil t))
-;;   (projectile-find-file)
-;;   )
-
-;; (use-package projectile
-;;   :defer t
-;;   :init
-;;   (projectile-mode +1)
-;;   :config
-;;   (setq projectile-sort-order 'recentf)
-;;   (setq projectile-completion-system 'auto)
-;;   (setq projectile-mode-line-prefix " ")
-;;   (setq projectile-project-search-path '("~/coding/"))
-;;   (setq projectile-enable-caching t)
-;;   (setq projectile-indexing-method 'hybrid)
-;;   ;; (setq projectile-indexing-method 'native)
-;;   (which-key-add-key-based-replacements "C-c p P" "Projectile rediscover projects")
-;;   :bind (:map projectile-mode-map
-;;               ("s-p" . projectile-command-map)
-;;               ("C-c p" . projectile-command-map)
-;;               ("C-c p F" . projectile-find-file-refresh-cache)
-;;               ("C-c p P" . (lambda () (interactive)
-;;                            (projectile-cleanup-known-projects)
-;;                            (projectile-discover-projects-in-search-path)))
-;;               ("C-c p p" . projectile-switch-project)
-;;               ("C-c p b" . projectile-switch-to-buffer)
-;;               ("C-c p f" . projectile-find-file)))
-;;               ;; ("C-c p p" . consult-projectile-switch-project)
-;;               ;; ("C-c p b" . consult-projectile-switch-to-buffer)
-;;               ;; ("C-c p f" . consult-projectile-find-file)))
-
-;; (use-package consult-projectile
-;;   :after consult
-;;   :after projectile
-;;   :config
-;;   (setq consult-projectile-use-projectile-switch-project t)
-;;   )
 
 ;; perspective navigation
 ;; (use-package perspective
