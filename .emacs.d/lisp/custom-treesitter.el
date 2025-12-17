@@ -17,6 +17,37 @@
   (treesit-auto-add-to-auto-mode-alist 'all)
   (global-treesit-auto-mode))
 
+(defun treesit-auto-for-each (fn)
+  (cl-loop for recipe in treesit-auto-recipe-list
+	   do
+	   (let ((from (treesit-auto-recipe-remap recipe))
+		 (to (treesit-auto-recipe-ts-mode recipe)))
+	     (funcall fn from to))))
+
+(defun treesit-auto-get-mode-hook-symbol (mode)
+  (intern (concat (symbol-name mode) "-hook")))
+
+(defvar treesit-auto-run-original-hooks t)
+
+;; this takes a non-treesitter major mode's hooks and applies it to the ts mode
+;;
+;; slightly tweaked from https://github.com/renzmann/treesit-auto/issues/52
+(treesit-auto-for-each
+ (lambda (from to)
+   (interactive)
+   (let ((targets (if (listp from) from (list from))))
+     (cl-loop for from in targets
+              do
+              (letrec ((to-hook (treesit-auto-get-mode-hook-symbol to))
+	               (from-hook (treesit-auto-get-mode-hook-symbol from))
+                       (treesit-auto-hook-name (intern (concat "treesit-auto-" (symbol-name from-hook)))))
+                (defalias treesit-auto-hook-name
+                  `(lambda ()
+                     (when (and treesit-auto-run-original-hooks
+                                (boundp ',from-hook))
+                       (message "Running hooks from %s for %s" ',from-hook ',to)
+                       (run-hooks ',from-hook))))
+                (add-hook to-hook treesit-auto-hook-name))))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ts code folding ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
