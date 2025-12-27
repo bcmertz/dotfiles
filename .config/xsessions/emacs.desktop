@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=emacs
+Comment=emacs
+Exec=emacs
+TryExec=emacs
+Type=XSession
+X-LightDM-DesktopName=emacs
+DesktopNames=emacs
+Keywords=emacs

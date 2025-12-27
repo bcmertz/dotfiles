@@ -87,6 +87,9 @@ else
 fi
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
+# add emacs as window manager option
+sudo cp "~/.config/xsessions/emacs.desktop" "/usr/share/xsessions/"
+
 # touchegg gestures
 sudo ln -s ~/.config/X11/40-libinput.conf /etc/X11/xorg.conf.d/
 sudo systemctl enable --now touchegg.service || warn "failed to setup touchegg service"

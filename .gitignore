@@ -61,6 +61,7 @@
 !.config/calibre/*
 !.config/systemd/*
 !.config/apparmor/*
+!.config/xsessions/*
 !.config/touchegg/touchegg.conf
 !.config/newsboat/*
 !.config/i3blocks/*
