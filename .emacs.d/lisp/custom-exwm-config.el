@@ -9,7 +9,6 @@
   :config
   (setq alert-default-style 'notifications))
 
-
 (defun efs/run-in-background (command)
   (let ((command-parts (split-string command "[ ]+")))
     (apply #'call-process `(,(car command-parts) nil 0 nil ,@(cdr command-parts)))))
@@ -24,27 +23,18 @@
   ;; Make workspace 1 be the one where we land at startup
   (exwm-workspace-switch-create 1)
 
-  ;; Open eshell by default
-  ;;(eshell)
-
-  ;; NOTE: The next two are disabled because we now use Polybar!
-
   ;; Show battery status in the mode line
-  ;;(display-battery-mode 1)
-
+  ;; (display-battery-mode 1)
   ;; Show the time and date in modeline
-  ;;(setq display-time-day-and-date t)
-  ;;(display-time-mode 1)
+  ;; (setq display-time-day-and-date t)
+  ;; (display-time-mode 1)
   ;; Also take a look at display-time-format and format-time-string
-
-  ;; Start the Polybar panel
-  (efs/start-panel)
 
   ;; Launch apps that will run in the background
   (efs/run-in-background "dunst")
   (efs/run-in-background "nm-applet")
-  (efs/run-in-background "pasystray")
-  (efs/run-in-background "blueman-applet"))
+  (efs/run-in-background "blueman-applet")
+  )
 
 (defun efs/exwm-update-class ()
   (exwm-workspace-rename-buffer exwm-class-name))
@@ -81,22 +71,16 @@
   :config
   ;; Set the default number of workspaces
   (setq exwm-workspace-number 5)
-
   ;; When window "class" updates, use it to set the buffer name
   (add-hook 'exwm-update-class-hook #'efs/exwm-update-class)
-
   ;; When window title updates, use it to set the buffer name
   (add-hook 'exwm-update-title-hook #'efs/exwm-update-title)
-
   ;; Configure windows as they're created
   (add-hook 'exwm-manage-finish-hook #'efs/configure-window-by-class)
-
   ;; When EXWM starts up, do some extra confifuration
   (add-hook 'exwm-init-hook #'efs/exwm-init-hook)
-
   ;; Rebind CapsLock to Ctrl
   (start-process-shell-command "xmodmap" nil "xmodmap ~/.emacs.d/exwm/Xmodmap")
-
   ;; NOTE: Uncomment the following two options if you want window buffers
   ;;       to be available on all workspaces!
 
@@ -111,35 +95,28 @@
   ;;(setq exwm-workspace-minibuffer-position 'top)
 
   ;; Set the screen resolution (update this to be the correct resolution for your screen!)
-  (require 'exwm-randr)
-  (exwm-randr-enable)
+  ;; (use-package exwm-randr
+    ;; :defer t
+    ;; :init
+    ;; )
+  (exwm-randr-mode)
   (start-process-shell-command "xrandr" nil "xrandr --output Virtual-1 --primary --mode 2048x1152 --pos 0x0 --rotate normal")
-
   ;; This will need to be updated to the name of a display!  You can find
   ;; the names of your displays by looking at arandr or the output of xrandr
   (setq exwm-randr-workspace-monitor-plist '(2 "Virtual-2" 3 "Virtual-2"))
-
   ;; NOTE: Uncomment these lines after setting up autorandr!
   ;; React to display connectivity changes, do initial display update
   ;; (add-hook 'exwm-randr-screen-change-hook #'efs/update-displays)
   ;; (efs/update-displays)
-
   ;; Set the wallpaper after changing the resolution
   (efs/set-wallpaper)
-
-  ;; NOTE: This is disabled because we now use Polybar!
-  ;; Load the system tray before exwm-init
-  ;; (require 'exwm-systemtray)
-  ;; (setq exwm-systemtray-height 32)
-  ;; (exwm-systemtray-enable)
+  ;; TODO: systray? exwm-systemtray?
 
   ;; Automatically send the mouse cursor to the selected workspace's display
   (setq exwm-workspace-warp-cursor t)
-
   ;; Window focus should follow the mouse pointer
   (setq mouse-autoselect-window t
         focus-follows-mouse t)
-
   ;; These keys should always pass through to Emacs
   (setq exwm-input-prefix-keys
         '(?\C-x
@@ -151,10 +128,8 @@
           ?\M-:
           ?\C-\M-j  ;; Buffer list
           ?\C-\ ))  ;; Ctrl+Space
-
   ;; Ctrl+Q will enable the next key to be sent directly
   (define-key exwm-mode-map [?\C-q] 'exwm-input-send-next-key)
-
   ;; Set up global key bindings.  These always work, no matter the input state!
   ;; Keep in mind that changing this list after EXWM initializes has no effect.
   (setq exwm-input-global-keys
@@ -185,37 +160,24 @@
                           (exwm-workspace-switch-create ,i))))
                     (number-sequence 0 9))))
 
-  (exwm-input-set-key (kbd "s-SPC") 'counsel-linux-app)
+  (defun launch-desktop-program ()
+    "Launch desktop program."
+    (interactive)
+    (let ((command (completing-read
+                    (format-prompt "Run Program" nil)
+                    (split-string (shell-command-to-string "compgen -c") "\n")
+                    nil t)))
+      (start-process-shell-command command nil command)))
 
-  (exwm-enable))
+  (exwm-input-set-key (kbd "s-d") 'launch-desktop-program)
 
-(defvar efs/polybar-process nil
-  "Holds the process of the running Polybar instance, if any")
-
-(defun efs/kill-panel ()
-  (interactive)
-  (when efs/polybar-process
-    (ignore-errors
-      (kill-process efs/polybar-process)))
-  (setq efs/polybar-process nil))
-
-(defun efs/start-panel ()
-  (interactive)
-  (efs/kill-panel)
-  (setq efs/polybar-process (start-process-shell-command "polybar" nil "polybar i3")))
-
-(defun efs/send-polybar-hook (module-name hook-index)
-  (start-process-shell-command "polybar-msg" nil (format "polybar-msg hook %s %s" module-name hook-index)))
-
-(defun efs/send-polybar-exwm-workspace ()
-  (efs/send-polybar-hook "exwm-workspace" 1))
-
-;; Update panel indicator when workspace changes
-(add-hook 'exwm-workspace-switch-hook #'efs/send-polybar-exwm-workspace)
+  (exwm-wm-mode)
+  )
 
 (use-package desktop-environment
   :after exwm
-  :config (desktop-environment-mode))
+  :config
+  (desktop-environment-mode))
 
 
 (defun efs/disable-desktop-notifications ()
@@ -234,15 +196,6 @@
 ;; (require 'exwm)
 ;; (require 'exwm-config)
 ;; (exwm-config-example)
-;; (require 'exwm-systemtray)
-;; (exwm-systemtray-enable)
-
-;; ;; 's-&': Launch application
-;; (exwm-input-set-key (kbd "s-&")
-;;                     (lambda (command)
-;;                       (interactive (list (read-shell-command "$ ")))
-;;                       (start-process-shell-command command nil command)))
-
 
 ;;   ;; Bind keys for resizing windows
 ;;   (exwm-input-set-key (kbd "C-{") #'shrink-window-horizontally)
