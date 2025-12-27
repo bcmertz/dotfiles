@@ -27,8 +27,10 @@
 ;; use use-package
 (straight-use-package 'use-package)
 ;; automatically ensure every package exists (like :ensure or :straight)
-(setq straight-use-package-by-default t)
+;; (setq use-package-always-ensure t)
 
+
+(setq straight-use-package-by-default t)
 
 ;; DEPRECATED Packages and repository management
 ;; (require 'package)
@@ -39,7 +41,6 @@
 ;;                          ("nongnu" . "https://elpa.nongnu.org/nongnu/")
 ;;                          ("elpa" . "https://elpa.gnu.org/packages/")))
 
-;; (setq use-package-always-ensure t)
 ;; ;; (setq use-package-verbose t)
 
 ;; ;; unless we have use-package, refresh cache and install use-package
