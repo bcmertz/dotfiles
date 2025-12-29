@@ -2,6 +2,8 @@
 #
 # weather right
 
+notify-send "refreshing forecast"
+
 getforecast() {
     ping -q -c 1 1.1.1.1 >/dev/null 2>&1 || exit 1
     curl -s "wttr.in/$location?u" > "$HOME/.local/share/weatherreport" || exit 1 ;

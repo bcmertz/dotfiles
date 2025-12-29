@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# memory right
+
+fullscreen htop
