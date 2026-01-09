@@ -384,6 +384,7 @@ texlive-music
 texlive-pictures
 texlive-pstricks
 texlive-publishers
+texlive-xetex
 the_silver_searcher
 tldr
 tlp

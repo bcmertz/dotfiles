@@ -22,5 +22,14 @@
 (add-hook 'TeX-after-compilation-finished-functions
           #'TeX-revert-document-buffer)
 
+(defun compile-latex-document ()
+  "Compile latex document."
+  (TeX-command-run-all nil)
+  )
+
+;; look hook to recompile after saving
+(add-hook 'LaTeX-mode-hook
+          (lambda () (add-hook 'after-save-hook 'compile-latex-document nil 'local)))
+
 (provide 'custom-latex)
 ;;; custom-latex.el ends here
