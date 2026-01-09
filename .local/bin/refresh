@@ -27,6 +27,11 @@ case $process in
         then
             polybar bspwm -c $HOME/.config/polybar/$theme/config.ini  >>/tmp/polybar.log 2>&1 &
         fi
+
+        if [ "$SESSION" = "emacs" ]
+        then
+            polybar i3 -c $HOME/.config/polybar/$theme/config.ini  >>/tmp/polybar.log 2>&1 &
+        fi
         ;;
 
     emacs-gui)
