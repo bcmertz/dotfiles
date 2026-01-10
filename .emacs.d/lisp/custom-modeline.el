@@ -10,6 +10,7 @@
   ;; lsp
   (setq doom-modeline-lsp-icon t)
   (setq doom-modeline-lsp t)
+  (setq doom-modeline-buffer-encoding nil)
   :init
   (defface doom-modeline-bar-inactive
     '((t (:background unspecified)))
