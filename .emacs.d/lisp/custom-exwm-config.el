@@ -23,17 +23,21 @@
   ;; Make workspace 1 be the one where we land at startup
   (exwm-workspace-switch-create 1)
 
-  ;; Show battery status in the mode line
+  ;; use polybar instead of modeline for system info
+  ;; ;; Show battery status in the mode line
   ;; (display-battery-mode 1)
-  ;; Show the time and date in modeline
+
+  ;; ;; Show the time and date in modeline
+  ;; ;; Also take a look at display-time-format and format-time-string
   ;; (setq display-time-day-and-date t)
+  ;; (setq world-clock-time-format "%a, %d %b %I:%M %p")
   ;; (display-time-mode 1)
-  ;; Also take a look at display-time-format and format-time-string
 
   ;; Launch apps that will run in the background
   (efs/run-in-background "dunst")
   (efs/run-in-background "nm-applet")
   (efs/run-in-background "blueman-applet")
+  (efs/run-in-background "refresh polybar")
   )
 
 (defun efs/exwm-update-class ()
