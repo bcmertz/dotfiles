@@ -207,7 +207,7 @@ libgsf
 libinput-gestures
 libopenraw
 libreoffice-still
-librewolf
+librewolf-bin
 libtool
 libva-utils
 libva-vdpau-driver
