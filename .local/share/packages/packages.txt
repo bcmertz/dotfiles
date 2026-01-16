@@ -392,6 +392,7 @@ tlpui
 torbrowser-launcher
 touche
 touchegg
+traceroute
 transmission-cli
 transmission-gtk
 tree-sitter
