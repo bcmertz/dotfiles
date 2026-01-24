@@ -409,6 +409,7 @@ ttf-opensans
 ttf-roboto
 ttf-roboto-mono
 ttf-ubuntu-mono-nerd
+typescript-language-server
 unclutter
 units
 unrar
