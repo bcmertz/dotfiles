@@ -20,6 +20,11 @@
   (setq eglot-ignored-server-capabilities '(:documentHighlightProvider))
   ;; silence long-running process notifications
   (setq eglot-report-progress nil)
+  (setq-default eglot-workspace-configuration
+                '(:pylsp (:plugins (:jedi_completion (:include_params t
+                                                      :fuzzy t)
+                                                     :pylint (:enabled :json-false)))
+                         :gopls (:usePlaceholders t)))
   )
 
 ;; turn off JSONRPC debug event log mechanism.

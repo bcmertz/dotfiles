@@ -101,7 +101,6 @@
 !.emacs.d/snippets/**/*
 !.emacs.d/straight/*/
 !.emacs.d/straight/versions/default.el
-!.dir-locals.el # eglot config for lsp servers
 
 # scripts
 !.local/
