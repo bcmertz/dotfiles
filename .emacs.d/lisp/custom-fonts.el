@@ -12,21 +12,25 @@
 
 ;; cool fonts to try - ETBembo, Source Sans Pro, Lucida Grande, Verdana
 ;; Emoji: 😄, 🤦, 🏴, ,  ;; should render as 3 color emojis and 2 glyphs
+
+(defmacro if-font (font code)
+  "Execute some CODE if FONT exists."
+  `(if (find-font (font-spec :name ,font))
+      ,code))
+
 (defun styling/set-fonts()
   "Set the emoji and glyph fonts."
-  (set-fontset-font "fontset-default" '(#xE0B4 . #xE0B6)
-                    "UbuntuMono Nerd Font" nil 'prepend)
-
-  (set-fontset-font t 'symbol "Apple Color Emoji" nil 'prepend)
-  (set-fontset-font t 'symbol "Noto Color Emoji" nil 'prepend)
-  (set-fontset-font t 'symbol "Segoe UI Emoji" nil 'prepend)
-  (set-fontset-font t 'symbol "Siji" nil 'prepend)
-  (set-fontset-font t 'symbol "UbuntuMono Nerd Font" nil 'prepend)
-
+  (if-font "UbuntuMono Nerd Font"
+           (set-fontset-font "fontset-default" '(#xE0B4 . #xE0B6)
+                             "UbuntuMono Nerd Font" nil 'prepend))
+  (if-font "Apple Color Emoji" (set-fontset-font t 'symbol "Apple Color Emoji" nil 'prepend))
+  (if-font "Noto Color Emoji" (set-fontset-font t 'symbol "Noto Color Emoji" nil 'prepend))
+  (if-font "Segoe UI Emoji" (set-fontset-font t 'symbol "Segoe UI Emoji" nil 'prepend))
+  (if-font "Siji" (set-fontset-font t 'symbol "Siji" nil 'prepend))
+  (if-font "UbuntuMono Nerd Font" (set-fontset-font t 'symbol "UbuntuMono Nerd Font" nil 'prepend))
+  (if-font "ETBembo" (set-face-attribute 'variable-pitch nil :font "ETBembo" :weight 'thin :height 118))
   (set-face-attribute 'default nil :font "Monospace" :weight 'light :height 130)
-  (set-face-attribute 'fixed-pitch nil :font "Monospace" :weight 'light :height 130)
-  (set-face-attribute 'variable-pitch nil :font "ETBembo" :weight 'thin :height 118)
-  )
+  (set-face-attribute 'fixed-pitch nil :font "Monospace" :weight 'light :height 130))
 
 ;; respect default terminal fonts
 ;; if we're in a gui set the fonts appropriately
