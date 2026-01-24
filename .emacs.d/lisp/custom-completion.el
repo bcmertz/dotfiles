@@ -116,12 +116,11 @@
   (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/js-mode")
   (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/go-mode")
   (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/web-mode")
+  (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/python-mode")
   (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/org-mode")
   (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/emacs-lisp-mode")
   (yas-global-mode 1)
   )
-
-
 
 ;; useful if using tab for expanding completion and indent
 ;; https://www.emacswiki.org/emacs/CompanyMode#toc11
