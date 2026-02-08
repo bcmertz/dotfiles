@@ -27,7 +27,7 @@
 ;; use use-package
 (straight-use-package 'use-package)
 ;; automatically ensure every package exists (like :ensure or :straight)
-;; (setq use-package-always-ensure t)
+(setq use-package-always-ensure t)
 
 
 (setq straight-use-package-by-default t)

@@ -257,7 +257,7 @@ before calling `er/expand-region' for the first time ARG."
   ("C-c C-e" . mc/edit-lines))
 
 (use-package multiple-cursors-core
-  :straight nil
+  :straight multiple-cursors
   :defer t
   :bind (:map mc/keymap
               ("<return>" . nil)

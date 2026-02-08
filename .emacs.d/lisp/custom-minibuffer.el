@@ -57,7 +57,7 @@
 
 (use-package vertico-multiform
   :after vertico
-  :straight nil
+  :straight vertico
   :init (vertico-multiform-mode)
   :config
   ;; command / category specific configuration
@@ -104,7 +104,7 @@
 
 (use-package vertico-directory
   :after vertico
-  :straight nil
+  :straight vertico
   ;; More convenient directory navigation commands
   :bind (:map vertico-map
               ("DEL" . vertico-directory-delete-char)

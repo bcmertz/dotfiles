@@ -38,7 +38,7 @@
         ("C-c r" . github-start-review-at-link)))
 
 (use-package org-indent
-  :straight nil
+  :straight org
   :defer t)
 
 ;; https://orgmode.org/worg/org-contrib/org-protocol.html#org9e2e3ac
