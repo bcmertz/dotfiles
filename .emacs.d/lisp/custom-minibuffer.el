@@ -288,7 +288,6 @@
 
 ;; like a context menu of actions for a given thing in a minibuffer (i think)
 (use-package embark
-  :straight t
   :bind
   (("C-h B" . embark-bindings) ;; alternative for `describe-bindings'
    :map vertico-map (("C-." . embark-act)         ;; pick some comfortable binding
