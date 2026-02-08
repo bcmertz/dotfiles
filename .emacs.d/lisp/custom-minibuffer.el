@@ -245,14 +245,16 @@
                                 "\\`\\*straight-process\\*\\'"
                                 "\\`\\*Async-native-compile-log\\*\\'"
                                 ))
-  (setq consult-buffer-sources '(consult--source-hidden-buffer
-                                 consult--source-modified-buffer
-                                 consult--source-buffer
-                                 consult--source-recent-file
-                                 consult--source-file-register
-                                 consult--source-bookmark
-                                 consult--source-project-buffer
-                                 consult--source-project-recent-file))
+  (setq consult-buffer-sources '(
+                                 consult-source-hidden-buffer
+                                 consult-source-modified-buffer
+                                 consult-source-buffer
+                                 consult-source-recent-file
+                                 consult-source-file-register
+                                 consult-source-bookmark
+                                 consult-source-project-buffer
+                                 consult-source-project-recent-file))
+
 
   ;; Optionally configure the narrowing key.
   ;; Both < and C-+ work reasonably well.
