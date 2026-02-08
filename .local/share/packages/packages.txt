@@ -107,6 +107,7 @@ eos-rankmirrors
 epdfview
 etcher-bin
 ethtool
+ex-vi-compat
 exfat-utils
 expect
 f2fs-tools
@@ -418,7 +419,6 @@ upower
 usb_modeswitch
 usbutils
 ventoy-bin
-vi
 vim
 virtualbox-host-dkms
 vlc
