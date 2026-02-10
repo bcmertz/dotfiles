@@ -13,13 +13,10 @@
                ("<backtab>" . completion-at-point))
          (:map python-ts-mode-map
                ("<backtab>" . completion-at-point)))
+  :config
+  ;; (setq python-flymake-command '("flake8" "-"))
+  (setq python-flymake-command '("pyflakes3"))
   )
-
-
-;; (use-package lsp-pyright
-;;   :hook (python-mode . (lambda ()
-;;                           (require 'lsp-pyright)
-;;                           (lsp))))  ; or lsp-deferred
 
 (provide 'custom-python)
 ;;; custom-python.el ends here
