@@ -6,6 +6,7 @@
 
 (use-package doom-modeline
   :config
+  (setq doom-modeline-check 'simple)
   (setq doom-modeline-vcs-max-length 100)
   ;; lsp
   (setq doom-modeline-lsp-icon t)
