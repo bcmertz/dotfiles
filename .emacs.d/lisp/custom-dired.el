@@ -4,6 +4,12 @@
 ;;;
 ;;; Code:
 
+(use-package ls-lisp
+  :straight (:type built-in)
+  :config
+  (setq ls-lisp-dirs-first t)
+  (setq ls-lisp-use-insert-directory-program nil))
+
 (use-package dired
   :straight (:type built-in)
   :bind (:map dired-mode-map
