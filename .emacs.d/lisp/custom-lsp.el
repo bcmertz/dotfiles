@@ -17,6 +17,11 @@
   (go-ts-mode . eglot-ensure)
   (js-ts-mode . eglot-ensure)
   :config
+  ;; A setting of nil or 0 means Eglot will not block the UI at all, allowing
+  ;; Emacs to remain fully responsive, although LSP features will only become
+  ;; available once the connection is established in the background.
+  ;; (setq eglot-sync-connect 0)
+  (setq eglot-autoshutdown t)  ; Shut down after killing last managed buffer
   ;; remove bold from occurrences of variable under cursor
   (setq eglot-ignored-server-capabilities '(:documentHighlightProvider))
   ;; silence long-running process notifications
