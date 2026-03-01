@@ -17,13 +17,13 @@
   :config
   (auth-source-pass-enable))
 
-;; ;; pinentry for emacs
-;; (use-package pinentry
-;;   :config
-;;   (setq epa-pinentry-mode 'loopback)
-;;   :init
-;;   (pinentry-start)
-;; )
+;; By default, Emacs stores sensitive authinfo credentials as unencrypted text
+;; in your home directory. Use GPG to encrypt the authinfo file for enhanced
+;; security.
+(setq auth-sources (list "~/.authinfo.gpg"))
+;; This directs gpg-agent to use the minibuffer for passphrase entry
+;; not working for some reason, consider gpg-agent conf ~/.gnupg/gpg-agent.conf
+;; (setq epg-pinentry-mode 'loopback)
 
 (provide 'custom-pass)
 ;;; custom-pass.el ends here
