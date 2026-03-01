@@ -30,6 +30,10 @@
 ;; Follow symlinks
 (setq vc-follow-symlinks t)
 
+;; Continue wrapped lines at whitespace rather than breaking in the
+;; middle of a word.
+(setq-default word-wrap t)
+
 ;; use y/n instead of yes or no
 (fset 'yes-or-no-p 'y-or-n-p)
 

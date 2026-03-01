@@ -6,6 +6,13 @@
 ;;;
 ;;; Code:
 
+;; Enable multi-line commenting which ensures that `comment-indent-new-line'
+;; properly continues comments onto new lines.
+(setq comment-multi-line t)
+;; Ensures that empty lines within the commented region are also commented out.
+;; This prevents unintended visual gaps and maintains a consistent appearance.
+(setq comment-empty-lines t)
+
 (use-package reopen-as-root
   :after tramp
   :straight (reopen-as-root :local-repo "~/.emacs.d/lisp/lib/reopen-as-root"
