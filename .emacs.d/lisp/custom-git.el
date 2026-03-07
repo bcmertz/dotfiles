@@ -10,8 +10,6 @@
   :defer t
   :bind
   ("C-x g" . magit-status)
-  ("C-x c" . magit-checkout)
-  ("C-x l" . magit-log-branches)
   (:map magit-status-mode-map
         ("q" . mu-magit-kill-buffers)))
 
