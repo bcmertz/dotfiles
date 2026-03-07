@@ -58,15 +58,6 @@
               ('return (if theme (update-theme theme)))
               ('preview (if theme (update-theme theme)))))))
 
-(defun my-ivy-change-theme ()
-  "Choose theme from installed list using `ivy-read'."
-  (interactive)
-  (ivy-read "Choose theme (dynamic <C-M-m>): " (custom-available-themes)
-            :preselect (symbol-name (car custom-enabled-themes))
-            :action (lambda (theme)
-                      ;; disable enabled themes
-                      (update-theme theme))))
-
 ;; which key prefix for styling related keybindings
 (which-key-add-key-based-replacements "C-c t" "theming")
 (global-set-key (kbd "C-c t t") 'my-consult-change-theme)
