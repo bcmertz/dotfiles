@@ -6,6 +6,8 @@
 ;;;
 ;;; Code:
 
+(which-key-add-key-based-replacements "C-c g" "git")
+
 (use-package magit
   :defer t
   :bind
@@ -70,7 +72,8 @@ https://github.com/magit/magit/issues/460#issuecomment-837449105."
 (use-package git-link
   :defer t
   :bind
-  ("C-c l" . git-link))
+  ("C-c g l" . git-link))
+
 (use-package blamer
   :defer t
   :init
