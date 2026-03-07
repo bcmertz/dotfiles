@@ -1,33 +1,38 @@
+* Overview:
+
 # .emacs.d
 
-* Building from source [9/19/2022]
+My emacs configuration. A lightweight but heavily customized config. As much as possible functionality is broken out into separately loaded modules. Built-in libraries are used wherever possible over external dependencies. This config is pretty stable on Linux / WSL2 but has some rough edges on Windows. 
 
-Modification of the default Arch nativecomp [[https://github.com/archlinux/svntogit-packages/blob/packages/emacs/trunk/PKGBUILD][PKGBUILD]]
+** Configuration:
+- Package manager: straight
+- Window manager: exwm (optional)
+- Modeline: doom-modeline
+- Completion: corfu, cape, eldoc, yasnippet, 
+- Projects: project
+- Minibuffer: vertico, consult, marginalia, embark
+- LSP: eglot
+- Tree-sitter: treesit
+- Sidebar: neotree
+- Syntax checking: flymake
+- Git: magit, forge
+- Spelling: ispell, flyspell
 
-#+begin_src sh
-./configure --sysconfdir=/etc \
- --prefix=/usr \
- --libexecdir=/usr/lib \
- --localstatedir=/var \
- --with-cairo \
- --with-harfbuzz \
- --with-libsystemd \
- --with-modules \
- --with-x-toolkit=gtk3 \
- --with-native-compilation \
- --with-xwidgets \
- --with-json \
- --with-mailutils \
- --with-json
-#+end_src
+* Inluenced by:
 
-#+begin_src sh
-make -j$(nproc) NATIVE_FULL_AOT=1 bootstrap
-#+end_src
-
-* Inluenced by 
-
-sam217pa, zamansky, clarete, xahlee
+- clarete
+- spacemacs
+- zamanksy
+- sam217pa
+- emacs-bedrock
+- minimal-emacs
+- daviwil
+- daedreth
+- sqrtminusone
+- karthink
+- sachac
+- protesilaos
+- xahlee
 
 ** Other sources:
 
