@@ -71,6 +71,20 @@ https://github.com/magit/magit/issues/460#issuecomment-837449105."
   :defer t
   :bind
   ("C-c l" . git-link))
+(use-package blamer
+  :defer t
+  :init
+  (which-key-add-key-based-replacements "C-c g b" "blamer")
+  :bind (("C-c g b m" . blamer-mode)
+         ("C-c g b l" . blamer-kill-ring-commit-hash)
+         ("C-c g b i" . blamer-show-posframe-commit-info)
+         ("C-c g b I" . blamer-show-commit-info))
+  :config
+  (setq blamer-idle-time 0.05)
+  (setq blamer-author-formatter "%s ")
+  (setq blamer-datetime-formatter "[%s]")
+  (setq blamer-commit-formatter ": %s")
+  (setq blamer-max-commit-message-length 100))
 
 (provide 'custom-git)
 ;;; custom-git.el ends here
