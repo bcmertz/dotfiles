@@ -1,3 +1,4 @@
+
 * Overview:
 
 # .emacs.d
@@ -5,7 +6,7 @@
 My emacs configuration. A lightweight but heavily customized config. As much as possible functionality is broken out into separately loaded modules. Built-in libraries are used wherever possible over external dependencies. This config is pretty stable on Linux / WSL2 but has some rough edges on Windows. 
 
 ** Configuration:
-- Package manager: straight
+- Package manager: straight, use-package
 - Window manager: exwm (optional)
 - Modeline: doom-modeline
 - Completion: corfu, cape, eldoc, yasnippet, 
