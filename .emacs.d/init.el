@@ -89,4 +89,7 @@
 ;; (setq emacs-gc-stats-gc-defaults 'emacs-defaults) ; optional
 ;; (emacs-gc-stats-mode +1)
 
+;; message total startup time
+(message "%-24s %s" "Startup time:" (emacs-init-time "%.03fs"))
+
 ;;; init.el ends here
