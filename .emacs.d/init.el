@@ -7,7 +7,7 @@
 ;;; Code:
 
 ;; debugging
-;; (setq debug-on-error t)
+(setq debug-on-error t)
 ;; (setq debug-on-event t)
 
 ;; load paths
