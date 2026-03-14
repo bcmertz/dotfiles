@@ -140,8 +140,8 @@
   :defer t
   :init
   (add-hook 'prog-mode-hook #'hs-minor-mode)
-  (which-key-add-key-based-replacements "C-c f" "folding")
-  (assq-delete-all 'hs-minor-mode minor-mode-map-alist)
+  (setq hs-minor-mode-map (make-sparse-keymap)) ;; turn off default keymap
+  (which-key-add-key-based-replacements "C-c f" "folding") ;; add our own keymap
   :config
   (setq hs-hide-comments nil)
   :bind
@@ -150,8 +150,6 @@
   ("C-c f d" . hs-show-block)
   ("C-c f a" . hs-show-all)
   ("M-`" . hs-show-all)
-  (:map hs-minor-mode-map
-        ("C-c @" . nil))
   )
 
 
