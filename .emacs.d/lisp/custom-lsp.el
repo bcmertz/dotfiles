@@ -22,8 +22,8 @@
   ;; available once the connection is established in the background.
   ;; (setq eglot-sync-connect 0)
   (setq eglot-autoshutdown t)  ; Shut down after killing last managed buffer
-  ;; remove bold from occurrences of variable under cursor
-  (setq eglot-ignored-server-capabilities '(:documentHighlightProvider))
+  ;; remove bold from occurrences of variable under cursor and type hints
+  (setq eglot-ignored-server-capabilities '(:documentHighlightProvider :inlayHintProvider))
   ;; silence long-running process notifications
   (setq eglot-report-progress nil)
   (setq-default eglot-workspace-configuration
