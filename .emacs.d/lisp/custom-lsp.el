@@ -16,16 +16,21 @@
   (bash-ts-mode . eglot-ensure)
   (go-ts-mode . eglot-ensure)
   (js-ts-mode . eglot-ensure)
+  (python-mode . eglot-ensure)
+  (bash-mode . eglot-ensure)
+  (go-mode . eglot-ensure)
+  (js-mode . eglot-ensure)
   :config
-  ;; A setting of nil or 0 means Eglot will not block the UI at all, allowing
-  ;; Emacs to remain fully responsive, although LSP features will only become
-  ;; available once the connection is established in the background.
-  ;; (setq eglot-sync-connect 0)
+  (setq eglot-server-programs ;; set eglot server programs for python
+        '((python-mode . ("ruff" "server"))))
+  (setq eglot-code-action-indications '()) ;; set how eglot lets you know there are code actions
   (setq eglot-autoshutdown t)  ; Shut down after killing last managed buffer
   ;; remove bold from occurrences of variable under cursor and type hints
-  (setq eglot-ignored-server-capabilities '(:documentHighlightProvider :inlayHintProvider))
   ;; silence long-running process notifications
   (setq eglot-report-progress nil)
+  ;; don't use these eglot server features
+  (setq eglot-ignored-server-capabilities '(:documentHighlightProvider :inlayHintProvider))
+  ;; workspace configuration
   (setq-default eglot-workspace-configuration
                 '(:pylsp (:plugins (:jedi_completion (:include_params t
                                                       :fuzzy t)
