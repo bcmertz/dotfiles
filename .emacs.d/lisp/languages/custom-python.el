@@ -8,16 +8,24 @@
 
 (use-package python
   :defer t
-  :mode "\\*.py\\'"
+  :mode "\\*.py*.\\'"
   :bind ((:map python-mode-map
                ("<backtab>" . completion-at-point))
          (:map python-ts-mode-map
                ("<backtab>" . completion-at-point)))
   :config
-  ;; (setq python-flymake-command '("flake8" "-"))
-  (setq python-flymake-command '("ruff"))
   (setq python-indent-guess-indent-offset t)
   (setq python-indent-guess-indent-offset-verbose nil)
+  ;; first installed command will be set as `python-flymake-command'
+  (setq python-flymake-commands '(("flake8" "-") ("pyflakes") ("pyflakes3k") ("ruff")))
+  (cl-loop for c in python-flymake-commands
+           do (if (executable-find (car c))
+                  (progn
+                    (setq python-flymake-command c)
+                    (cl-return)
+                    )
+                )
+           )
   )
 
 (provide 'custom-python)
