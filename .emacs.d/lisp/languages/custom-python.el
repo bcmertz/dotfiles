@@ -15,7 +15,7 @@
                ("<backtab>" . completion-at-point)))
   :config
   ;; (setq python-flymake-command '("flake8" "-"))
-  (setq python-flymake-command '("pyflakes3"))
+  (setq python-flymake-command '("ruff"))
   )
 
 (provide 'custom-python)
