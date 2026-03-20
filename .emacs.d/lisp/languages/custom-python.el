@@ -17,7 +17,7 @@
   (setq python-indent-guess-indent-offset t)
   (setq python-indent-guess-indent-offset-verbose nil)
   ;; first installed command will be set as `python-flymake-command'
-  (setq python-flymake-commands '(("flake8" "-") ("pyflakes") ("pyflakes3k") ("ruff")))
+  (setq python-flymake-commands '(("ty" "server") ("ruff") ("flake8" "-") ("pyflakes") ("pyflakes3k")))
   (cl-loop for c in python-flymake-commands
            do (if (executable-find (car c))
                   (progn
