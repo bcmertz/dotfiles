@@ -345,6 +345,7 @@ rp-pppoe
 rsync
 rtkit
 ruby
+ruff
 rust
 s-nail
 sbxkb
