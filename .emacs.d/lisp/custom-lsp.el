@@ -12,10 +12,6 @@
   :ensure t
   :defer t
   :hook
-  (python-ts-mode . eglot-ensure)
-  (bash-ts-mode . eglot-ensure)
-  (go-ts-mode . eglot-ensure)
-  (js-ts-mode . eglot-ensure)
   (python-mode . eglot-ensure)
   (bash-mode . eglot-ensure)
   (go-mode . eglot-ensure)
