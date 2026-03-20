@@ -53,7 +53,7 @@
 (measure-time(require 'custom-tramp))            ;; tramp
 (measure-time(require 'custom-bidi-text))        ;; rtl and ltr language support
 (measure-time(require 'custom-windowing))        ;; window & buffer management
-(measure-time(require 'custom-error-check))      ;; error checking
+(measure-time(require 'custom-error-check))      ;; flymake
 (measure-time(require 'custom-pass))             ;; password management
 (measure-time(require 'custom-help))             ;; help
 ;; (measure-time(require 'custom-email))         ;; email - mu4e
