@@ -10,7 +10,6 @@
   :defer t
   :init
   (add-hook 'prog-mode-hook #'flymake-mode)
-  ;; (add-hook 'emacs-lisp-mode-hook #'flymake-mode nil)
   :config
   (which-key-add-key-based-replacements "C-c !" "flymake")
   (global-set-key (kbd "C-c ! n") 'flymake-goto-next-error)
