@@ -27,7 +27,7 @@
   ;; silence long-running process notifications
   (setq eglot-report-progress nil)
   ;; don't use these eglot server features
-  (setq eglot-ignored-server-capabilities '(:documentHighlightProvider :inlayHintProvider))
+  (setq eglot-ignored-server-capabilities '(:documentHighlightProvider :inlayHintProvider :semanticTokensProvider))
   ;; workspace configuration
   (setq-default eglot-workspace-configuration
                 '(:pylsp (:plugins (:jedi_completion (:include_params t
