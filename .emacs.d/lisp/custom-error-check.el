@@ -10,15 +10,15 @@
   :defer t
   :init
   (add-hook 'prog-mode-hook #'flymake-mode)
+  :bind (:map flymake-mode-map
+              ("C-c e n" . flymake-goto-next-error)
+              ("C-c e p" . flymake-goto-prev-error)
+              ("C-c e s" . flymake-start)
+              ("C-c e i" . flymake-show-diagnostic)
+              ("C-c e l" . flymake-show-buffer-diagnostics)
+              ("C-c e m" . flymake-mode))
   :config
-  (which-key-add-key-based-replacements "C-c !" "flymake")
-  (global-set-key (kbd "C-c ! n") 'flymake-goto-next-error)
-  (global-set-key (kbd "C-c ! p") 'flymake-goto-prev-error)
-  (global-set-key (kbd "C-c ! s") 'flymake-start)
-  (global-set-key (kbd "C-c ! i") 'flymake-show-diagnostic)
-  (global-set-key (kbd "C-c ! l") 'flymake-show-buffer-diagnostics)
-  (global-set-key (kbd "C-c ! m") 'flymake-mode)
-  )
+  (which-key-add-key-based-replacements "C-c e" "flymake"))
 
 (provide 'custom-error-check)
 ;;; custom-error-check.el ends here
