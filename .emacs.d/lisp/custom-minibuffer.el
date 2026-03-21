@@ -290,6 +290,7 @@
 (use-package embark
   :bind
   (("C-h B" . embark-bindings) ;; alternative for `describe-bindings'
+   :map embark-collect-mode-map (("q" . kill-buffer-and-window))
    :map vertico-map (("C-." . embark-act)         ;; pick some comfortable binding
                      ("M-." . embark-dwim)
                      ("M-<return>" . embark-collect)
