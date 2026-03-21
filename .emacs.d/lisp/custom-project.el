@@ -36,12 +36,12 @@
   :bind
   (("C-c p f" . consult-project-extra-find)))
 
-;; (use-package consult-dir
-;;   :defer t
-;;   :bind (("C-x C-d" . consult-dir)
-;;          :map minibuffer-local-completion-map
-;;          ("C-x C-d" . consult-dir)
-;;          ("C-x C-j" . consult-dir-jump-file)))
+(use-package consult-dir
+  :defer t
+  :bind (("C-x C-d" . consult-dir)
+         :map minibuffer-local-completion-map
+         ("C-x C-d" . consult-dir)
+         ("C-x C-j" . consult-dir-jump-file)))
 
 ;; perspective navigation
 ;; (use-package perspective
