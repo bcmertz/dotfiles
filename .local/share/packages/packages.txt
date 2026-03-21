@@ -420,6 +420,7 @@ unzip
 upower
 usb_modeswitch
 usbutils
+uv
 ventoy-bin
 vim
 virtualbox-host-dkms
