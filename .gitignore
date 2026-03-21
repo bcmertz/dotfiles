@@ -106,6 +106,7 @@
 !.local/
 !.local/bin/
 !.local/bin/**
+.local/bin/rass
 
 # shared resources
 !.local/share/
