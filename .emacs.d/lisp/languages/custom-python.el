@@ -16,8 +16,12 @@
   :config
   (setq python-indent-guess-indent-offset t)
   (setq python-indent-guess-indent-offset-verbose nil)
-  ;; first installed command will be set as `python-flymake-command'
-  (setq python-flymake-commands '(("ty" "server") ("ruff") ("flake8" "-") ("pyflakes") ("pyflakes3k")))
+  ;; First installed command will be set as `python-flymake-command'
+  ;;
+  ;; Use ruff check even though it is setup in eglot using `rass python` which sets up ruff and ty
+  ;; lsp servers. We do this because otherwise flymake will setup another flymake backend that duplicates
+  ;; function, and calling ruff check here basically does nothing.
+  (setq python-flymake-commands '(("ruff" "check") ("flake8" "-") ("pyflakes") ("pyflakes3k")))
   (cl-loop for c in python-flymake-commands
            do (if (executable-find (car c))
                   (progn
