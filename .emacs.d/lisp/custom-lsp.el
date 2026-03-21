@@ -16,7 +16,22 @@
   (bash-mode . eglot-ensure)
   (go-mode . eglot-ensure)
   (js-mode . eglot-ensure)
+  :bind (:map eglot-mode-map
+              ("C-c l f" . eglot-format-buffer)
+              ("C-c l F" . eglot-format)
+              ("C-c l D" . eglot-find-declaration)
+              ("C-c l d" . eglot-find-typeDefinition)
+              ("C-c l i" . eglot-find-implementation)
+              ("C-c l S" . eglot-server-menu)
+              ("C-c l a" . eglot-code-actions)
+              ("C-c l o" . eglot-code-actions-organize-imports)
+              ("C-c l k" . eglot-shutdown)
+              ("C-c l K" . eglot-shutdown-all)
+              ("C-c l r" . eglot-rename)
+              ("C-c l x" . eglot-code-actions-quickfix)
+              ("C-c l h" . eglot-momentary-inlay-hints))
   :config
+  (which-key-add-key-based-replacements "C-c l" "lsp")
   (add-to-list 'eglot-server-programs
                '(python-mode . ("rass" "python"))  ;; install `pipx install rassumfrassum ty ruff`
                ;; '(python-mode . ("ty" "server"))
