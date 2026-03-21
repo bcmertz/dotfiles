@@ -18,7 +18,7 @@
   (js-mode . eglot-ensure)
   :config
   (add-to-list 'eglot-server-programs
-               '(python-mode . ("rass" "python"))
+               '(python-mode . ("rass" "python"))  ;; install `pipx install rassumfrassum ty ruff`
                ;; '(python-mode . ("ty" "server"))
                )
   (setq eglot-code-action-indications '()) ;; set how eglot lets you know there are code actions
