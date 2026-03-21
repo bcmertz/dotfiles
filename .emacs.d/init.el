@@ -54,11 +54,11 @@
 (measure-time(require 'custom-bidi-text))        ;; rtl and ltr language support
 (measure-time(require 'custom-windowing))        ;; window & buffer management
 (measure-time(require 'custom-error-check))      ;; flymake
+(measure-time(require 'custom-lsp))              ;; language server protocol
 (measure-time(require 'custom-pass))             ;; password management
 (measure-time(require 'custom-help))             ;; help
 ;; (measure-time(require 'custom-email))         ;; email - mu4e
 ;; (measure-time(require 'custom-music))         ;; music - emms
-(measure-time(require 'custom-lsp))              ;; language server protocol
 (measure-time(require 'custom-terminal))         ;; terminal
 (measure-time(require 'custom-org))              ;; org mode
 (measure-time(require 'custom-git))              ;; version control
