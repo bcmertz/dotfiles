@@ -17,8 +17,10 @@
   (go-mode . eglot-ensure)
   (js-mode . eglot-ensure)
   :config
-  (setq eglot-server-programs ;; set eglot server programs for python
-        '((python-mode . ("ty" "server"))))
+  (add-to-list 'eglot-server-programs
+               '(python-mode . ("rass" "python"))
+               ;; '(python-mode . ("ty" "server"))
+               )
   (setq eglot-code-action-indications '()) ;; set how eglot lets you know there are code actions
   (setq eglot-autoshutdown t)  ; Shut down after killing last managed buffer
   ;; remove bold from occurrences of variable under cursor and type hints
