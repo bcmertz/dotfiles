@@ -328,6 +328,7 @@ python-lsp-server
 python-notify2
 python-packaging
 python-pip
+python-pipx
 python-psycopg2
 python-pyflakes
 python-pyqt5
