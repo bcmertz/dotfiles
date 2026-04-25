@@ -52,7 +52,7 @@ Possible values are `cowsay' and `image'")
 ;; To execute lisp, type C-x C-e
 
 " (if (string= splash-type "image")
-      (format ";; %s, %s" (return-greeting) (capitalize (user-full-name)))
+      (format ";; %s, %s" (return-greeting) (capitalize (user-login-name)))
     (if (string= splash-type "cowsay")
         ;; regexp_1 comments out lines, regexp_2 strips eol whitespace
         (replace-regexp-in-string "\s+$" "" (replace-regexp-in-string "^" ";; " (shell-command-to-string
