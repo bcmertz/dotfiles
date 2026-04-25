@@ -182,7 +182,7 @@ intel-gpu-tools
 intel-media-driver
 intel-ucode
 inxi
-iptables-nft
+iptables
 iwd
 java-environment-common
 jdk8-openjdk
