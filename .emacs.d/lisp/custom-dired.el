@@ -16,6 +16,7 @@
               ("M-s" . consult-ripgrep)))
 
 (use-package dired-narrow
+  :after dired
   :bind (:map dired-mode-map
               ("C-c C-t" . wdired-change-to-wdired-mode)
               ("/ /" . dired-narrow)
