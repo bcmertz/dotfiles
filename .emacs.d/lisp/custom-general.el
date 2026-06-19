@@ -6,6 +6,10 @@
 ;;;
 ;;; Code:
 
+;; emacs-31 compatibility
+(use-package compat
+  :straight (:host github :repo "emacs-compat/compat" :commit 4769d459aacfd34dfeac3556bd5f019ab51b581a))
+
 ;; handle various warnings from flymake, nil faces, etc
 ;; (setq warning-suppress-log-types '((set-face-attribute)))
 (setq warning-minimum-log-level :error)

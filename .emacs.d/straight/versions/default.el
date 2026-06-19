@@ -8,7 +8,7 @@
  ("cape" . "2b2a5c5bef16eddcce507d9b5804e5a0cc9481ae")
  ("centaur-tabs" . "5ec350da6cacc34ac0efaac17d6ac5031ef82bd4")
  ("centered-window-mode" . "701f56cd1d2b68352d29914f05ca1b0037bb2595")
- ("compat" . "6c11d1ce2c6cae75cd281d142ee7edd2781cf112")
+ ("compat" . "4769d459aacfd34dfeac3556bd5f019ab51b581a")
  ("consult" . "d1d39d52151a10f7ca29aa291886e99534cc94db")
  ("consult-project-extra" . "2b3fa36fd3a14deacf594f4acd54d220d6890c55")
  ("corfu" . "1d8cf388c842881fe7603ee621a2b26207cf4fcb")
