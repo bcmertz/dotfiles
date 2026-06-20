@@ -8,7 +8,7 @@
 
 (use-package python
   :defer t
-  :mode "\\*.py*.\\'"
+  :mode ("\\.pyt?\\'" . python-mode)
   :bind ((:map python-mode-map
                ("<backtab>" . completion-at-point))
          (:map python-ts-mode-map
