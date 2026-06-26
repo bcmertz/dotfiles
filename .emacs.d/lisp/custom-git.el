@@ -58,6 +58,14 @@ https://github.com/magit/magit/issues/460#issuecomment-837449105."
                  :config
                  (setq magit-delta-default-dark-theme "Dracula")
                  :hook (magit-mode . magit-delta-mode)))
+;; ;; alternative using tree-sitter enabled diffs
+;; (use-package magit-difftastic
+;;   :after magit
+;;   :straight (magit-difftastic :type git
+;;                               :host github
+;;                               :repo "rschmukler/magit-difftastic")
+;;   :config
+;;   (magit-difftastic-mode +1))
 
 (use-package github-review
   :defer t
