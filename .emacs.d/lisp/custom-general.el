@@ -22,6 +22,12 @@
 ;; confirm we want to exit the garden
 ;; (setq confirm-kill-emacs 'y-or-n-p)
 
+;; make right-click behave normally with context menu
+(if-gui (context-menu-mode))
+
+;; make shift click select region
+(global-set-key (kbd "S-<down-mouse-1>") #'mouse-set-mark)
+
 ;; save place in files
 (save-place-mode 1)
 
