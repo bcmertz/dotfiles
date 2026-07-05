@@ -10,9 +10,15 @@
   :defer t
   :mode ("\\.pyt?\\'" . python-mode)
   :bind ((:map python-mode-map
-               ("<backtab>" . completion-at-point))
+               ("<backtab>" . completion-at-point)
+               ("C-c >" . python-indent-shift-right) ;; default
+               ("C-c <" . python-indent-shift-left)  ;; default
+               )
          (:map python-ts-mode-map
-               ("<backtab>" . completion-at-point)))
+               ("<backtab>" . completion-at-point)
+               ("C-c >" . python-indent-shift-right) ;; default
+               ("C-c <" . python-indent-shift-left)  ;; default
+               ))
   :config
   (setq python-indent-guess-indent-offset t)
   (setq python-indent-guess-indent-offset-verbose nil)
