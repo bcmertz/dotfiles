@@ -17,13 +17,11 @@
 (use-package centaur-tabs
   :demand
   :config
-  (centaur-tabs-mode -1)
+  (centaur-tabs-mode -1) ;; only use centaur-tab-history-mode
   (setq centaur-tabs-height 32)
   (setq centaur-tabs-set-icons t)
-;;  (setq centaur-tabs-set-bar 'left)
+  ;;  (setq centaur-tabs-set-bar 'left)
   :bind
-  ;; ("C-<tab>" . centaur-tabs-backward)
-  ;; ("C-<iso-lefttab>" . centaur-tabs-forward)
   ("C-M-<left>" . centaur-tabs-backward)
   ("C-M-<right>" . centaur-tabs-forward)
   )
