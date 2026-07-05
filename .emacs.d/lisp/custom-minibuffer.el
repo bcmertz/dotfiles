@@ -34,7 +34,11 @@
 (defvar num-cands 9 "Number of completion candidates to use.")
 
 (use-package vertico
-  :straight (vertico :files (:defaults "extensions/*")
+
+  :straight (vertico :type git
+                     :host github
+                     :repo "bcmertz/vertico"
+                     :files (:defaults "extensions/*")
                      :includes (vertico-multiform
                                 vertico-directory))
   :init (vertico-mode)
