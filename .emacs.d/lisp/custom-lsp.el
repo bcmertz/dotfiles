@@ -18,8 +18,8 @@
   :bind (:map eglot-mode-map
               ("C-c l f" . eglot-format-buffer)
               ("C-c l F" . eglot-format)
-              ("C-c l D" . eglot-find-declaration)
-              ("C-c l d" . eglot-find-typeDefinition)
+              ("C-c l d" . eglot-find-declaration)
+              ("C-c l D" . eglot-find-typeDefinition)
               ("C-c l i" . eglot-find-implementation)
               ("C-c l S" . eglot-server-menu)
               ("C-c l a" . eglot-code-actions)
