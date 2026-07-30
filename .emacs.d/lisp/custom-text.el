@@ -8,6 +8,8 @@
 
 (defun setup-text-mode ()
   "Setup text mode."
+  ;; wrap lines
+  (setq truncate-lines nil)
   ;; C-e goes to the end of the visual line not the logical line
   (turn-on-visual-line-mode)
   ;; no hl-line-mode locally

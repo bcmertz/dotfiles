@@ -5,8 +5,8 @@
 ;;; Code:
 
 ;; truncate long lines l/r horizontal scrolling
+;; default for prog-mode, set differently for text-mode based modes
 (set-default 'truncate-lines t)
-(add-hook 'text-mode-hook (lambda () (setq truncate-lines nil)))
 
 ;; mouse smooth scrolling
 (pixel-scroll-precision-mode t)
