@@ -20,5 +20,8 @@
   :config
   (which-key-add-key-based-replacements "C-c e" "errors"))
 
+;; TODO: flymake-show-directory-diagnostics: consult--read to get directory, then
+;; goes through every file in the dir and checks for errors, and outputs them
+
 (provide 'custom-error-check)
 ;;; custom-error-check.el ends here
