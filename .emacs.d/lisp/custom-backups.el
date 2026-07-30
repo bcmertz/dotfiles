@@ -19,10 +19,8 @@
       version-control t)
 (setq create-lockfiles nil) ;; can't set to a different directory so disable :/
 
-(defun force-backup-of-buffer ()
-  "Force backup of saved buffer."
-  (setq buffer-backed-up nil))
-(add-hook 'before-save-hook #'force-backup-of-buffer)
+;; force backup of saved buffer
+(add-hook 'before-save-hook (lambda () (setq buffer-backed-up nil)))
 
 ;; use this fork for proper diff ordering (logically reversed by default)
 (use-package backup-walker

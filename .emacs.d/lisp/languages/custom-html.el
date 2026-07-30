@@ -19,8 +19,8 @@
   (setq web-mode-enable-auto-quoting t)) ; this fixes the quote problem I mentioned
 
 (add-hook 'web-mode-hook
-      (lambda ()
-        (local-unset-key (kbd "C-c C-l"))))
+          (lambda ()
+            (local-unset-key (kbd "C-c C-l"))))
 
 (provide 'custom-html)
 ;;; custom-html.el ends here
