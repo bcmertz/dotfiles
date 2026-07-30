@@ -72,6 +72,7 @@
   ;; see - https://github.com/tumashu/vertico-posframe/issues/30
   ;; otherwise could do: (t posframe (vertico-posframe-fallback-mode . vertico-buffer-mode))
   ;; to make posframe default with normal fallback in terminal
+  ;; TODO: update for emacs 31, this might be fixed
   ;;
   ;; Configuration:
   ;; magit should not preselect so we can by default select directory
