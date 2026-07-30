@@ -34,6 +34,12 @@
       mouse-wheel-progressive-speed nil
       )
 
+;; scrolling without changing the cursor
+;; https://github.com/clarete/emacs.d/blob/main/README.org
+(global-set-key (kbd "M-n") (lambda () (interactive) (scroll-up 1)))
+(global-set-key (kbd "M-p") (lambda () (interactive) (scroll-down 1)))
+
+
 ;; (global-set-key (kbd "<mouse-4>") (lambda () (interactive)
 ;;                                     (if truncate-lines (scroll-right 5))))
 ;; (global-set-key (kbd "<mouse-5>") (lambda () (interactive)
