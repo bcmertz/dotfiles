@@ -115,12 +115,5 @@
                          :gopls (:usePlaceholders t)))
   )
 
-;; turn off JSONRPC debug event log mechanism.
-;; helps speed up eglot
-;; https://www.reddit.com/r/emacs/comments/1447fy2/looking_for_help_in_improving_typescript_eglot/
-;; maybe no longer necessary as of v30?
-;; https://www.reddit.com/r/emacs/comments/1b25904/is_there_anything_i_can_do_to_make_eglots/
-;;(fset #'jsonrpc--log-event #'ignore)
-
 (provide 'custom-lsp)
 ;;; custom-lsp.el ends here

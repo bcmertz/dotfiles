@@ -39,15 +39,5 @@
 (global-set-key (kbd "M-n") (lambda () (interactive) (scroll-up 1)))
 (global-set-key (kbd "M-p") (lambda () (interactive) (scroll-down 1)))
 
-
-;; (global-set-key (kbd "<mouse-4>") (lambda () (interactive)
-;;                                     (if truncate-lines (scroll-right 5))))
-;; (global-set-key (kbd "<mouse-5>") (lambda () (interactive)
-;;                                     (if truncate-lines (scroll-left 5))))
-;; (global-set-key (kbd "<S-mouse-5>") (lambda () (interactive)
-;;                                       (if truncate-lines (scroll-left 10))))
-;; (global-set-key (kbd "<S-mouse-4>") (lambda () (interactive)
-;;                                       (if truncate-lines (scroll-right 10))))
-
 (provide 'custom-scrolling)
 ;;; custom-scrolling.el ends here

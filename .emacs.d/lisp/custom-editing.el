@@ -74,21 +74,6 @@
   (global-set-key (kbd "C-c s i") 'sp-change-enclosing)
   (global-set-key (kbd "C-c s c") 'sp-rewrap-sexp))
 
-;; maybe use puni and electric pair mode in the future in
-;; place of smartparens since puni has a lot more knowledge
-;; of builtin sexp parsing
-;; idk or wait for treesitter enabled libraries to do magic
-;;
-;; Use puni-mode globally and disable it for term-mode.
-;; (use-package puni
-;;   :defer t
-;;   :init
-;;   ;; The autoloads of Puni are set up so you can enable `puni-mode` or
-;;   ;; `puni-global-mode` before `puni` is actually loaded. Only after you press
-;;   ;; any key that calls Puni commands, it's loaded.
-;;   (puni-global-mode)
-;;   (add-hook 'term-mode-hook #'puni-disable-puni-mode))
-
 ;; (use-package electric-pair-mode
 ;;   :defer t
 ;;   :init
@@ -139,20 +124,6 @@
 (global-set-key (kbd "C-x k") 'my/kill-this-buffer)
 
 ;;;;;;;;;;;;;; code folding ;;;;;;;;;;;;;;;;;;;;;;
-
-;; (use-package vimish-fold
-;;   :defer t
-;;   :init
-;;   (vimish-fold-global-mode 1)
-;;   :config
-;;   (which-key-add-key-based-replacements "C-c f" "vimish fold")
-;;   :bind
-;;   ("C-c f f" . vimish-fold)
-;;   ("C-c f d" . vimish-fold-delete)
-;;   ("C-c f l" . vimish-fold-avy) ;; fold to line
-;;   ("C-c f t" . vimish-fold-toggle) ;; fold to line
-;;   ("M-`" . vimish-fold-delete-all)
-;;   )
 
 ;; builtin code folding
 ;; https://www.emacswiki.org/emacs/HideShow
