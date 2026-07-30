@@ -51,6 +51,8 @@
 (measure-time(require 'custom-editing))          ;; efficient text editing
 (measure-time(require 'custom-undo))             ;; undo
 (measure-time(require 'custom-tramp))            ;; tramp
+(measure-time(require 'custom-text))             ;; text
+(measure-time(require 'custom-spelling))         ;; spelling
 (measure-time(require 'custom-bidi-text))        ;; rtl and ltr language support
 (measure-time(require 'custom-windowing))        ;; window & buffer management
 (measure-time(require 'custom-error-check))      ;; flymake
@@ -67,7 +69,6 @@
 (measure-time(require 'custom-menus))            ;; mouse interaction and menus
 
 ;; languages
-(measure-time(require 'custom-txt))
 (measure-time(require 'custom-golang))
 (measure-time(require 'custom-js))
 (measure-time(require 'custom-vue))
