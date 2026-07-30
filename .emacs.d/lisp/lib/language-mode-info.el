@@ -220,7 +220,6 @@
 
 (defun buffer-lang ()
   "Return language corresponding to buffer mode."
-  (message "%s" (current-mode))
   (language-map-lang (current-mode)))
 (defun buffer-mode ()
   "Return non-typescript mode of current buffer."
