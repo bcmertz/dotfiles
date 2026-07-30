@@ -27,12 +27,7 @@
             (display-buffer term-buffer)
             (select-window (get-buffer-window "*vterm*"))))
       ;; if vterm doesn't exist
-      (progn
-        (display-buffer (vterm-other-window))
-        (select-window (get-buffer-window "*vterm*"))))
-    )
-  )
-
+      (vterm--internal #'display-buffer))))
 
 ;; ;; hijack creation of vterm buffer so we can control where it goes
 ;; ;; and force it to be the outermost buffer on right or bottom of
