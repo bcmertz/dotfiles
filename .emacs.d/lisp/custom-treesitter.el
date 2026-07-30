@@ -17,6 +17,8 @@
   (treesit-auto-add-to-auto-mode-alist 'all)
   (global-treesit-auto-mode))
 
+;; TODO: with emacs 31 treesit-auto shouldn't be needed. Convert this all over
+;; to lib/language-mode-info.el
 (defun treesit-auto-for-each (fn)
   (cl-loop for recipe in treesit-auto-recipe-list
 	   do
