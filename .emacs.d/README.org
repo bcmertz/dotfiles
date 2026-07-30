@@ -26,6 +26,7 @@ My emacs configuration. A lightweight but heavily customized config. As much as 
 - zamanksy
 - sam217pa
 - emacs-bedrock
+- mastering emacs
 - minimal-emacs
 - daviwil
 - daedreth
@@ -33,6 +34,8 @@ My emacs configuration. A lightweight but heavily customized config. As much as 
 - karthink
 - sachac
 - protesilaos
+- magnars
+- casouri
 - xahlee
 
 ** Other sources:
