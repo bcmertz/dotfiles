@@ -11,6 +11,7 @@
         c-indent-line-or-region
         comment-line
         end-of-visual-line
+        expreg-expand
         indent-for-tab-command
         kill-region
         markdown-enter-key
