@@ -8,6 +8,64 @@
 ;;;
 ;;; Code:
 
+(setq eglot-save-format-alist '((python . t)
+                                (go . t)))
+
+(defun eglot-save-format-hook ()
+  "TODO."
+  (let* ((lang (buffer-lang))
+        (val (cdr (assoc-string lang eglot-save-format-alist))))
+    (if val
+        (progn
+          (eglot-ensure)
+          (eglot-format)))))
+
+(defun setup-eglot-save-format-hook ()
+  "TODO."
+  (let* ((lang (buffer-lang))
+        (rule (assoc-string lang eglot-save-format-alist)))
+    (if rule
+        (add-hook 'after-save-hook 'eglot-save-format-hook nil t))))
+
+(defun toggle-eglot-save-format-hook ()
+  "TODO."
+  (interactive)
+  (let* ((lang (buffer-lang))
+        (rule (assoc-string lang eglot-save-format-alist)))
+    (if rule
+        (if (cdr rule)
+            (setcdr rule nil)
+          (setcdr rule t)))))
+
+(setq eglot-save-import-alist '((python . nil)
+                                (go . t)))
+
+(defun eglot-save-import-hook ()
+  "TODO."
+  (let* ((lang (buffer-lang))
+        (val (cdr (assoc-string lang eglot-save-import-alist))))
+    (if val
+        (progn
+          (eglot-ensure)
+          (eglot-code-action-organize-imports (point-min) (point-max))))))
+
+(defun setup-eglot-save-import-hook ()
+  "TODO."
+  (let* ((lang (buffer-lang))
+        (rule (assoc-string lang eglot-save-import-alist)))
+    (if rule
+        (add-hook 'after-save-hook 'eglot-save-import-hook nil t))))
+
+(defun toggle-eglot-save-import-hook ()
+  "TODO."
+  (interactive)
+  (let* ((lang (buffer-lang))
+        (rule (assoc-string lang eglot-save-import-alist)))
+    (if rule
+        (if (cdr rule)
+            (setcdr rule nil)
+          (setcdr rule t)))))
+
 (use-package eglot
   :defer t
   :hook
@@ -23,15 +81,22 @@
               ("C-c l i" . eglot-find-implementation)
               ("C-c l S" . eglot-server-menu)
               ("C-c l a" . eglot-code-actions)
-              ("C-c l o" . eglot-code-actions-organize-imports)
+              ("C-c l o" . eglot-code-action-organize-imports)
               ("C-c l k" . eglot-shutdown)
               ("C-c l K" . eglot-shutdown-all)
               ("C-c l r" . eglot-rename)
               ("C-c l x" . eglot-code-actions-quickfix)
-              ("C-c l h" . eglot-momentary-inlay-hints))
+              ("C-c l h" . eglot-momentary-inlay-hints)
+              ("C-c l t f" . toggle-eglot-save-format-hook)
+              ("C-c l t i" . toggle-eglot-save-import-hook)
+              )
   :config
+  (add-hook 'prog-mode-hook #'setup-eglot-save-format-hook)
+  (add-hook 'prog-mode-hook #'setup-eglot-save-import-hook)
   (which-key-add-key-based-replacements "C-c l" "lsp")
+  (which-key-add-key-based-replacements "C-c l t" "toggle features")
   (add-to-list 'eglot-server-programs
+               ;; '((python-mode python-ts-mode) "basedpyright-langserver" "--stdio")
                '(python-mode . ("rass" "python"))  ;; install `pipx install rassumfrassum ty ruff`
                ;; '(python-mode . ("ty" "server"))
                )
