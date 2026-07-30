@@ -16,6 +16,7 @@
         markdown-enter-key
         move-line-down
         move-line-up
+        move-lines-up
         org-beginning-of-line
         org-end-of-line
         org-kill-line
