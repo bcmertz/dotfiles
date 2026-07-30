@@ -4,7 +4,7 @@
 ;;;
 ;;; This provides a mapping of programming languages to file extensions, mode names,
 ;;; and typescript mode names, as well as facilities for converting between them.
-;;; Inspired by treesit-auto functionality.
+;;; Extension of work from renzmann/treesit-auto.
 ;;;
 ;;; Code:
 
