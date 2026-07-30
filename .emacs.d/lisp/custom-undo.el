@@ -78,21 +78,6 @@
 ;;     )
 ;;   )
 
-;; ;; ;; idk could be nice but isn't really necessary / might not work
-;; ;; (defun undo-tree-temp-buffer-visualizer (buffer)
-;; ;;   "Put BUFFER something here."
-;; ;;   (switch-to-buffer-other-window temp-buf)
-;; ;;   (shrink-window ( / (window-body-height) 2))
-;; ;;   (help-mode)
-
-;; ;;   ;; (display-buffer-pop-up-window buffer alist)
-;; ;;   )
-
-;; ;; ;;
-;; ;; (add-to-list 'display-buffer-alist
-;; ;;              '("*tmpy*" undo-tree-temp-buffer-visualizer))
-
-
 ;; ;; Undo tree
 ;; (use-package undo-tree
 ;;   :defer t

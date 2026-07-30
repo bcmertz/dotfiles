@@ -112,13 +112,6 @@
 ;;   ;; (setq org-roam-node-display-template (concat "${title:40 " (propertize "${tags:*}" 'face 'org-tag)))
 ;;   (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:40}" 'face 'org-tag)))
 
-;;   ;; fit org select buffer to the height of all the options
-;;   (add-to-list 'display-buffer-alist
-;;                '("^\\*Org Select*"
-;;                  (display-buffer-in-direction)
-;;                  (window-height . fit-window-to-buffer)))
-;;   )
-
 ;; (defun org-roam-node-insert-immediate (arg &rest args)
 ;;   "Create and insert roam node without switching to it."
 ;;   (interactive "P")
