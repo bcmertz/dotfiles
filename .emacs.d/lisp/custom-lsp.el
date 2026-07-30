@@ -12,7 +12,7 @@
                                 (go . t)))
 
 (defun eglot-save-format-hook ()
-  "TODO."
+  "Eglot format."
   (let* ((lang (buffer-lang))
         (val (cdr (assoc-string lang eglot-save-format-alist))))
     (if val
@@ -21,14 +21,14 @@
           (eglot-format)))))
 
 (defun setup-eglot-save-format-hook ()
-  "TODO."
+  "Setup eglot format on save hook."
   (let* ((lang (buffer-lang))
         (rule (assoc-string lang eglot-save-format-alist)))
     (if rule
         (add-hook 'after-save-hook 'eglot-save-format-hook nil t))))
 
 (defun toggle-eglot-save-format-hook ()
-  "TODO."
+  "Toggle eglot format on save hook."
   (interactive)
   (let* ((lang (buffer-lang))
         (rule (assoc-string lang eglot-save-format-alist)))
@@ -41,7 +41,7 @@
                                 (go . t)))
 
 (defun eglot-save-import-hook ()
-  "TODO."
+  "Eglot organize imports."
   (let* ((lang (buffer-lang))
         (val (cdr (assoc-string lang eglot-save-import-alist))))
     (if val
@@ -50,14 +50,14 @@
           (eglot-code-action-organize-imports (point-min) (point-max))))))
 
 (defun setup-eglot-save-import-hook ()
-  "TODO."
+  "Setup eglot organize imports on save hook."
   (let* ((lang (buffer-lang))
         (rule (assoc-string lang eglot-save-import-alist)))
     (if rule
         (add-hook 'after-save-hook 'eglot-save-import-hook nil t))))
 
 (defun toggle-eglot-save-import-hook ()
-  "TODO."
+  "Toggle eglot organize imports save hook."
   (interactive)
   (let* ((lang (buffer-lang))
         (rule (assoc-string lang eglot-save-import-alist)))
