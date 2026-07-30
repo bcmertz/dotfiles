@@ -21,13 +21,11 @@
 
 (use-package text-mode
   :straight (:type built-in)
-  :defer t
   :hook (text-mode . setup-text-mode))
 
-(use-package special-mode
-  :straight (:type built-in)
-  :defer t
-  :hook (special-mode . setup-text-mode))
+;; (use-package special-mode
+;;   :straight (:type built-in)
+;;   :hook (special-mode . setup-text-mode))
 
 (provide 'custom-text)
 ;;; custom-text.el ends here
