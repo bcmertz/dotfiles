@@ -105,8 +105,11 @@
 ;; If non-nil, switch-to-buffer runs pop-to-buffer-same-window instead.
 (setq switch-to-buffer-obey-display-actions t)
 
-;;;;;;;;;;;;;;;;; window rules ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; window rules ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; inspired by https://www.masteringemacs.org/article/demystifying-emacs-window-manager
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; help and info windows top of dedicated right pane
 (add-to-list 'display-buffer-alist
              '((or (major-mode . Info-mode)
                    (major-mode . help-mode)
@@ -118,6 +121,7 @@
                (slot . -1)
                (window-width . 0.4)))
 
+;; embark collect and grep bottom of dedicated right pane
 (add-to-list 'display-buffer-alist
              '((or (major-mode . embark-collect-mode)
                    (major-mode . grep-mode))
@@ -128,11 +132,12 @@
                (slot . 1)
                (window-width . 0.4)))
 
+;; make magit fullscreen
 (add-to-list 'display-buffer-alist
              '((major-mode . magit-status-mode)
                (display-buffer-full-frame)))
 
-;; control where vterm appears - place it into dedicated bottom slot 1/4 of screen
+;; force vterm to bottom window
 (add-to-list 'display-buffer-alist
              '((major-mode . vterm-mode)
                (display-buffer-in-side-window)
