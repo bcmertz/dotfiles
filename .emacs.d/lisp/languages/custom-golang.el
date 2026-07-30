@@ -21,10 +21,5 @@
     "md" 'godef-describe
     "mt"  'gocode-toggle))
 
-;; (defun go-mode-save-hook ()
-;;   "Internal function to format buffer organize imports."
-;;   (add-hook 'before-save-hook #'eglot-format-buffer t t)
-;;   (add-hook 'before-save-hook #'(lambda () (eglot-code-action-organize-imports 1) ) t t))
-
 (provide 'custom-golang)
 ;;; custom-golang.el ends here
