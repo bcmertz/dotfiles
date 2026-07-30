@@ -74,6 +74,23 @@
 
 (global-set-key (kbd "C-x |") 'toggle-window-split)
 
+;; from https://www.masteringemacs.org/article/demystifying-emacs-window-manager
+(defun root-split-below (arg)
+  "Split window right from the parent or from root with ARG."
+  (interactive "P")
+  (split-window (if arg (frame-root-window)
+                  (window-parent (selected-window)))
+                nil 'below nil))
+
+(defun root-split-right (arg)
+  "Split window below from the parent or from root with ARG."
+  (interactive "P")
+  (split-window (if arg (frame-root-window)
+                  (window-parent (selected-window)))
+                nil 'right nil))
+
+(global-set-key (kbd "C-x @") 'root-split-below)
+(global-set-key (kbd "C-x #") 'root-split-right)
 
 ;; (use-package popper
 ;;   :defer t
