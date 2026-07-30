@@ -65,10 +65,10 @@
 
 (use-package nerd-icons
   :defer t
-  ;:custom
-  ;(nerd-icons-font-family "Symbols Nerd Font Mono")
+  ;; :custom
+  ;; (nerd-icons-font-family "Symbols Nerd Font Mono")
   :config
-  (if (not (file-exists-p "~/.local/share/fonts/NFM.ttf"))  (nerd-icons-install-fonts))
+  (if (not (file-exists-p "~/.local/share/fonts/NFM.ttf"))  (nerd-icons-install-fonts t))
   )
 
 ;; other interesting icon packages to consider
