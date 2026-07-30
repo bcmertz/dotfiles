@@ -124,6 +124,8 @@
 ;; embark collect and grep bottom of dedicated right pane
 (add-to-list 'display-buffer-alist
              '((or (major-mode . embark-collect-mode)
+                   (major-mode . occur-mode)
+                   (major-mode . comint-mode)
                    (major-mode . grep-mode))
                (display-buffer-reuse-window
                 display-buffer-in-side-window)
