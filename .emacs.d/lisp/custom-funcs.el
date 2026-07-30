@@ -9,6 +9,9 @@
 ;; useful funcs from doom-emacs used elsewhere in config
 (require 'doom-lib)
 
+;; handy mappings between langs, modes, ts modes, and file extensions
+(require 'language-mode-info)
+
 ;; if gui do something in whatver type of emacs instance we are using
 (defmacro if-gui (action &rest action2)
   "Do specified ACTION if we're in a gui regardless of daemon or not and if not ACTION2."
