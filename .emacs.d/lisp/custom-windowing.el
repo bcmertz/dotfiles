@@ -73,6 +73,7 @@
 (global-set-key (kbd "M--")   'shrink-window-horizontally)
 
 (global-set-key (kbd "C-x |") 'toggle-window-split)
+(global-set-key (kbd "C-x w d") 'toggle-window-dedicated)
 
 ;; from https://www.masteringemacs.org/article/demystifying-emacs-window-manager
 (defun parent-split-below (root)
@@ -92,6 +93,54 @@
 ;; use C-u C-x @/# for ROOT argument
 (global-set-key (kbd "C-x @") 'parent-split-below)
 (global-set-key (kbd "C-x #") 'parent-split-right)
+
+;; set dedicated side slots for left top right bottom
+;; neotree | nil | help, embark, etc | terminal
+(setq window-sides-slots '(1 0 2 1))
+
+;; allow switching to buffer in strongly dedicated windows.
+;; pop - perform pop-to-buffer instead
+(setq switch-to-buffer-in-dedicated-window 'pop)
+
+;; If non-nil, switch-to-buffer runs pop-to-buffer-same-window instead.
+(setq switch-to-buffer-obey-display-actions t)
+
+;;;;;;;;;;;;;;;;; window rules ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(add-to-list 'display-buffer-alist
+             '((or (major-mode . Info-mode)
+                   (major-mode . help-mode)
+                   (major-mode . helpful-mode))
+               (display-buffer-reuse-window
+                display-buffer-in-side-window)
+               (reusable-frames . visible)
+               (side . right)
+               (slot . -1)
+               (window-width . 0.4)))
+
+(add-to-list 'display-buffer-alist
+             '((or (major-mode . embark-collect-mode)
+                   (major-mode . grep-mode))
+               (display-buffer-reuse-window
+                display-buffer-in-side-window)
+               (reusable-frames . visible)
+               (side . right)
+               (slot . 1)
+               (window-width . 0.4)))
+
+(add-to-list 'display-buffer-alist
+             '((major-mode . magit-status-mode)
+               (display-buffer-full-frame)))
+
+;; control where vterm appears - place it into dedicated bottom slot 1/4 of screen
+(add-to-list 'display-buffer-alist
+             '((major-mode . vterm-mode)
+               (display-buffer-in-side-window)
+               (window-height . 0.4)
+               (slot . 0)
+               (side . bottom)
+               (reusable-frames . visible)))
+
 
 ;; (use-package popper
 ;;   :defer t
