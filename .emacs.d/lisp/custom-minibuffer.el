@@ -17,6 +17,12 @@
 (setq savehist-save-minibuffer-history 1)
 (setq savehist-additional-variables '(kill-ring search-ring regexp-search-ring))
 
+;; keep cursor out of read only sections of minibuffer
+;; https://github.com/jamescherti/minimal-emacs.d
+(setq minibuffer-prompt-properties
+      '(read-only t intangible t cursor-intangible t face minibuffer-prompt))
+(add-hook 'minibuffer-setup-hook #'cursor-intangible-mode)
+
 ;; nice to have in the future for cleaning up recent file suggestions
 (use-package recentf
   :defer 0.1
