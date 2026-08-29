@@ -104,24 +104,27 @@
 
 ;; give option to diff modified file before killing it
 ;; https://emacs.stackexchange.com/questions/3245/kill-buffer-prompt-with-option-to-diff-the-changes/3363#3363
-(defun my/kill-this-buffer ()
-  (interactive)
+(defun my/save-or-diff-buffer ()
+  "TODO."
   (catch 'quit
     (save-window-excursion
-      (let (done)
+      (let ((done nil)
+            (kill t))
         (when (and buffer-file-name (buffer-modified-p))
           (while (not done)
             (let ((response (read-char-choice
                              (format "Save file %s? (y, n, d, q) " (buffer-file-name))
                              '(?y ?n ?d ?q))))
               (setq done (cond
-                          ((eq response ?q) (throw 'quit nil))
+                          ((eq response ?q)
+                           (setq-local kill nil)
+                           (throw 'quit nil))
                           ((eq response ?y) (save-buffer) t)
                           ((eq response ?n) (set-buffer-modified-p nil) t)
                           ((eq response ?d) (diff-buffer-with-file) nil))))))
-        (kill-buffer (current-buffer))))))
-;; Remap kill buffer to my/kill-this-buffer
-(global-set-key (kbd "C-x k") 'my/kill-this-buffer)
+        kill))))
+
+(add-to-list 'kill-buffer-query-functions #'my/save-or-diff-buffer t)
 
 ;;;;;;;;;;;;;; code folding ;;;;;;;;;;;;;;;;;;;;;;
 
