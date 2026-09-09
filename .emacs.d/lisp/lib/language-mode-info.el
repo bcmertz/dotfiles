@@ -209,11 +209,11 @@
 (defun current-mode ()
   "Find current mode from first matching method found in `language-list'."
   (seq-find (lambda (r)
-              (if-let ((out (string-match (language-map-mode r) (symbol-name major-mode))))
+              (if-let* ((out (string-match (language-map-mode r) (symbol-name major-mode))))
                   out
-                (if-let ((out (string-match (language-map-ts-mode r) (symbol-name major-mode))))
+                (if-let* ((out (string-match (language-map-ts-mode r) (symbol-name major-mode))))
                     out
-                  (if-let ((out (string-match (language-map-ext r) (buffer-name))))
+                  (if-let* ((out (string-match (language-map-ext r) (buffer-name))))
                       out
                     nil))))
             language-list))
