@@ -240,6 +240,11 @@
   (setq consult-line-start-from-top nil)
   (consult-customize consult-buffer :history nil)
 
+  ;; speed up consult async searches
+  (setq consult-async-input-debounce 0.05
+        consult-async-input-throttle 0.1
+        consult-async-refresh-delay 0.05)
+
   (setq consult-buffer-filter '("\\` " "\\`\\*Completions\\*\\'"
                                 "\\`\\*Flymake .*\\*\\'"
                                 "\\`\\*helpful.*\\*\\'"
