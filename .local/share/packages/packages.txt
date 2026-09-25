@@ -38,11 +38,9 @@ bison
 blueman
 bluez
 bluez-utils
-breeze-gtk
 breeze5
 brightnessctl
 brother-hll2395dw
-bspwm
 btrfs-progs
 calibre
 cantarell-fonts
@@ -51,7 +49,6 @@ cdrdao
 cdrtools
 cheese
 chromium
-cinnamon
 clipman
 clipmenu
 cmatrix
@@ -308,7 +305,6 @@ pix
 pkgconf
 pkgfile
 plank
-plasma-desktop
 plocate
 polybar
 poppler-data
