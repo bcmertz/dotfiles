@@ -8,7 +8,7 @@
 ;;;
 ;;; Code:
 
-(setq eglot-save-format-alist '((python . t)
+(setq eglot-save-format-alist '((python . nil)
                                 (go . t)))
 
 (defun eglot-save-format-hook ()
