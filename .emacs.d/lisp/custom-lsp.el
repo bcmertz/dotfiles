@@ -67,6 +67,8 @@
   (bash-mode . eglot-ensure)
   (go-mode . eglot-ensure)
   (js-mode . eglot-ensure)
+  (prog-mode . setup-eglot-save-format-hook)
+  (prog-mode . setup-eglot-save-import-hook)
   :bind (:map eglot-mode-map
               ("C-c l f" . eglot-format-buffer)
               ("C-c l F" . eglot-format)
@@ -85,8 +87,6 @@
               ("C-c l t i" . toggle-eglot-save-import-hook)
               )
   :init
-  (add-hook 'prog-mode-hook #'setup-eglot-save-format-hook)
-  (add-hook 'prog-mode-hook #'setup-eglot-save-import-hook)
   :config
   (which-key-add-key-based-replacements "C-c l" "lsp")
   (which-key-add-key-based-replacements "C-c l t" "toggle features")
