@@ -22,10 +22,7 @@
 
 (defun setup-eglot-save-format-hook ()
   "Setup eglot format on save hook."
-  (let* ((lang (buffer-lang))
-        (rule (assoc-string lang eglot-save-format-alist)))
-    (if rule
-        (add-hook 'after-save-hook 'eglot-save-format-hook nil t))))
+  (add-hook 'after-save-hook 'eglot-save-format-hook nil t))
 
 (defun toggle-eglot-save-format-hook ()
   "Toggle eglot format on save hook."
@@ -51,10 +48,7 @@
 
 (defun setup-eglot-save-import-hook ()
   "Setup eglot organize imports on save hook."
-  (let* ((lang (buffer-lang))
-        (rule (assoc-string lang eglot-save-import-alist)))
-    (if rule
-        (add-hook 'after-save-hook 'eglot-save-import-hook nil t))))
+  (add-hook 'after-save-hook 'eglot-save-import-hook nil t))
 
 (defun toggle-eglot-save-import-hook ()
   "Toggle eglot organize imports save hook."
@@ -90,9 +84,10 @@
               ("C-c l t f" . toggle-eglot-save-format-hook)
               ("C-c l t i" . toggle-eglot-save-import-hook)
               )
-  :config
+  :init
   (add-hook 'prog-mode-hook #'setup-eglot-save-format-hook)
   (add-hook 'prog-mode-hook #'setup-eglot-save-import-hook)
+  :config
   (which-key-add-key-based-replacements "C-c l" "lsp")
   (which-key-add-key-based-replacements "C-c l t" "toggle features")
   (add-to-list 'eglot-server-programs
