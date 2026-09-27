@@ -86,7 +86,6 @@
               ("C-c l t f" . toggle-eglot-save-format-hook)
               ("C-c l t i" . toggle-eglot-save-import-hook)
               )
-  :init
   :config
   (which-key-add-key-based-replacements "C-c l" "lsp")
   (which-key-add-key-based-replacements "C-c l t" "toggle features")
