@@ -160,6 +160,7 @@ gst-plugins-good
 gst-plugins-ugly
 gucharmap
 gufw
+gvfs-mtp
 gzip
 haveged
 hdparm
