@@ -55,6 +55,7 @@
 (measure-time(require 'custom-spelling))         ;; spelling
 (measure-time(require 'custom-bidi-text))        ;; rtl and ltr language support
 (measure-time(require 'custom-windowing))        ;; window & buffer management
+(measure-time(require 'custom-ibuffer))          ;; ibuffer
 (measure-time(require 'custom-error-check))      ;; flymake
 (measure-time(require 'custom-lsp))              ;; language server protocol
 (measure-time(require 'custom-pass))             ;; password management

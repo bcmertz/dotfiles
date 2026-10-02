@@ -6,14 +6,6 @@
 ;;;
 ;;; Code:
 
-;; better C-x C-b
-(use-package ibuffer
-  :defer t
-  :bind (("C-x C-b" . ibuffer))
-  :config
-  (bind-key "q" 'kill-current-buffer 'ibuffer-mode-map)
-  (defalias 'list-buffers 'ibuffer))
-
 (use-package centaur-tabs
   :demand
   :config
