@@ -50,9 +50,9 @@
                      (name . "\\`\\*scratch.*\\*\\'")
                      (name . "\\`\\*Backtrace\\*\\'")
                      (name . "\\`\\*Messages\\*\\'")
-                     (name . "\\`\\*Warnings\\*\\'"))))))
+                     (name . "\\`\\*Warnings\\*\\'")))
            ("Directories" (mode . dired-mode))
-           ("Org" (mode . org-mode))
+           ("Org" (mode . org-mode)))))
   )
 
 (provide 'custom-ibuffer)
