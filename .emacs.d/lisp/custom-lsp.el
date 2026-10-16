@@ -106,6 +106,7 @@
                 '(:pylsp (:plugins (:jedi_completion (:include_params t
                                                                       :fuzzy t)
                                                      :pylint (:enabled :json-false)))
+                         :ty (:diagnosticMode "workspace")
                          :gopls (:usePlaceholders t)))
   )
 
