@@ -14,7 +14,7 @@
 (defun eglot-save-format-hook ()
   "Eglot format."
   (let* ((lang (buffer-lang))
-        (val (cdr (assoc-string lang eglot-save-format-alist))))
+         (val (cdr (assoc-string lang eglot-save-format-alist))))
     (if val
         (progn
           (eglot-ensure)
@@ -28,7 +28,7 @@
   "Toggle eglot format on save hook."
   (interactive)
   (let* ((lang (buffer-lang))
-        (rule (assoc-string lang eglot-save-format-alist)))
+         (rule (assoc-string lang eglot-save-format-alist)))
     (if rule
         (if (cdr rule)
             (setcdr rule nil)
@@ -40,7 +40,7 @@
 (defun eglot-save-import-hook ()
   "Eglot organize imports."
   (let* ((lang (buffer-lang))
-        (val (cdr (assoc-string lang eglot-save-import-alist))))
+         (val (cdr (assoc-string lang eglot-save-import-alist))))
     (if val
         (progn
           (eglot-ensure)
@@ -54,7 +54,7 @@
   "Toggle eglot organize imports save hook."
   (interactive)
   (let* ((lang (buffer-lang))
-        (rule (assoc-string lang eglot-save-import-alist)))
+         (rule (assoc-string lang eglot-save-import-alist)))
     (if rule
         (if (cdr rule)
             (setcdr rule nil)
