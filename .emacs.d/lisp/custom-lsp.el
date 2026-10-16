@@ -104,7 +104,7 @@
   ;; workspace configuration
   (setq-default eglot-workspace-configuration
                 '(:pylsp (:plugins (:jedi_completion (:include_params t
-                                                      :fuzzy t)
+                                                                      :fuzzy t)
                                                      :pylint (:enabled :json-false)))
                          :gopls (:usePlaceholders t)))
   )
