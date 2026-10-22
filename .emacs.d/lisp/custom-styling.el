@@ -52,7 +52,7 @@
 ;; center 1 buffer
 (use-package centered-window
   :config
-  (setq cwm-centered-window-width 130)
+  (setq cwm-centered-window-width 110)
   (centered-window-mode t))
 
 ;; remove ugly change in bg color in fringes
