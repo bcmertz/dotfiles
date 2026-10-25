@@ -6,8 +6,19 @@
 ;;;
 ;;; Code:
 
-(defun setup-text-mode ()
-  "Setup text mode."
+;; toggle truncate lines
+(defun toggle-truncate-lines ()
+  "Toggle `truncate-lines'."
+  (interactive)
+  (if (eq truncate-lines t)
+      (setq-local truncate-lines nil)
+    (setq-local truncate-lines t))
+  )
+(global-set-key (kbd "C-c t w") 'toggle-truncate-lines)
+
+(use-package text-mode
+  :straight (:type built-in)
+  :config
   ;; wrap lines
   (setq truncate-lines nil)
   ;; C-e goes to the end of the visual line not the logical line
@@ -19,13 +30,6 @@
   ;; dont have super long lines, break them
   (setq word-wrap t))
 
-(use-package text-mode
-  :straight (:type built-in)
-  :hook (text-mode . setup-text-mode))
-
-;; (use-package special-mode
-;;   :straight (:type built-in)
-;;   :hook (special-mode . setup-text-mode))
 
 (provide 'custom-text)
 ;;; custom-text.el ends here
