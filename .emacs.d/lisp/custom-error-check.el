@@ -16,6 +16,7 @@
               ("C-c e s" . flymake-start)
               ("C-c e i" . flymake-show-diagnostic)
               ("C-c e l" . flymake-show-buffer-diagnostics)
+              ("<left-fringe> <mouse-1>" . nil)
               ("C-c e m" . flymake-mode))
   :config
   (which-key-add-key-based-replacements "C-c e" "errors"))
