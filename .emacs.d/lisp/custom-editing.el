@@ -227,7 +227,6 @@ before calling `er/expand-region' for the first time ARG."
 
 
 ;; Utilities
-(global-set-key (kbd "M-/") 'comment-or-uncomment-region)
 (global-set-key (kbd "C-x C-e") 'eval-buffer)
 
 (global-set-key (kbd "C-x C-l") 'mark-entire-line)
@@ -253,7 +252,7 @@ before calling `er/expand-region' for the first time ARG."
   :bind*
   ("M-." . mc/mark-next-like-this)
   ("M-," . mc/mark-previous-like-this)
-  ("C-c M-." . mc/mark-all-like-this)
+  ("M-/" . mc/mark-all-like-this)
   ("C-c C-e" . mc/edit-lines))
 
 (use-package multiple-cursors-core
