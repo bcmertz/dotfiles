@@ -64,8 +64,11 @@
 (global-set-key (kbd "C-M--") 'shrink-window)
 (global-set-key (kbd "M--")   'shrink-window-horizontally)
 
-(global-set-key (kbd "C-x |") 'toggle-window-split)
+(global-set-key (kbd "C-x |") 'window-layout-transpose)
 (global-set-key (kbd "C-x w d") 'toggle-window-dedicated)
+(global-set-key (kbd "C-x w r") 'window-layout-rotate-clockwise)
+(global-set-key (kbd "C-x w f h") 'window-layout-flip-leftright)
+(global-set-key (kbd "C-x w f v") 'window-layout-flip-topdown)
 
 ;; from https://www.masteringemacs.org/article/demystifying-emacs-window-manager
 (defun parent-split-below (root)
