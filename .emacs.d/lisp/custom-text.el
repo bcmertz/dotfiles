@@ -6,16 +6,6 @@
 ;;;
 ;;; Code:
 
-;; toggle truncate lines
-(defun toggle-truncate-lines ()
-  "Toggle `truncate-lines'."
-  (interactive)
-  (if (eq truncate-lines t)
-      (setq-local truncate-lines nil)
-    (setq-local truncate-lines t))
-  )
-(global-set-key (kbd "C-c t w") 'toggle-truncate-lines)
-
 (use-package text-mode
   :straight (:type built-in)
   :config

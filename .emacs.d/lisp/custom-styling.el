@@ -103,6 +103,8 @@
 ;; toggle hl line mode
 (global-set-key (kbd "C-c t h") 'toggle-hl-line)
 
+;; toggle truncate lines
+(global-set-key (kbd "C-c t w") 'toggle-truncate-lines)
 
 ;; describe char face at mouse click
 ;; from https://emacs.stackexchange.com/a/35449
