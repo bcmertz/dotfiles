@@ -9,9 +9,18 @@
 
 (use-package treesit
   :defer t
-  :straight (:type built-in))
+  :straight (:type built-in)
+  ;; TODO
+  ;; :config
+  ;; (if (not (version< emacs-version "31.1"))
+  ;;     (progn
+  ;;       (setq treesit-auto-install-grammar 'ask)
+  ;;       (setq treesit-enabled-modes t)))
+  )
 
 (use-package treesit-auto
+  ;; TODO
+  ;; :if (version< emacs-version "31.1")
   :config
   (setq treesit-auto-install 'prompt)
   (treesit-auto-add-to-auto-mode-alist 'all)
