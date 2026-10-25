@@ -13,8 +13,6 @@
          ("C-<right>" . help-go-forward)
          ("i" . help-goto-info)
          ("n" . help-goto-next-page)
-         ("q" . kill-buffer-and-window)
-         ;; ("q" . kill-current-buffer)
          ("I" . help-goto-lispref-info)
          ("p" . help-goto-previous-page)
          ))
