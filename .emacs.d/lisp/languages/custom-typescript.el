@@ -1,4 +1,4 @@
-;;; custom-typescript.el --- ts configuration
+;;; custom-typescript.el --- ts configuration  -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary: This is really just the web mode config but since we use it for tsx files primarily here it is
 ;;;

@@ -1,4 +1,4 @@
-;;; custom-golang.el --- golang configuration
+;;; custom-golang.el --- golang configuration  -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

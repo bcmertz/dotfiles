@@ -1,4 +1,4 @@
-;;; custom-latex.el --- latex configuratiob
+;;; custom-latex.el --- latex configuration  -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

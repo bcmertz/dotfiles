@@ -1,4 +1,4 @@
-;;; custom-python.el --- python config
+;;; custom-python.el --- python config  -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

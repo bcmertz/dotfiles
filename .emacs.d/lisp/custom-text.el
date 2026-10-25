@@ -1,4 +1,4 @@
-;;; custom-text.el --- basic non-programming mode configuration
+;;; custom-text.el --- basic non-programming mode configuration  -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

@@ -1,4 +1,4 @@
-;;; custom-js.el --- js configuration
+;;; custom-js.el --- js configuration  -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

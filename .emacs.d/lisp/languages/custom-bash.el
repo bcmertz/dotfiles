@@ -1,4 +1,4 @@
-;;; custom-bash.el --- bash config
+;;; custom-bash.el --- bash config  -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

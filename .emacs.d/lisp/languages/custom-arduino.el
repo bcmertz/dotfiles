@@ -1,4 +1,4 @@
-;;; custom-arduino.el --- arduino configuratiob
+;;; custom-arduino.el --- arduino configuration  -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

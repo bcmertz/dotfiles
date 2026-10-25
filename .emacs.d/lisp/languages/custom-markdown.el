@@ -1,4 +1,4 @@
-;;; custom-markdown.el --- markdown configuratiob
+;;; custom-markdown.el --- markdown configuration  -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

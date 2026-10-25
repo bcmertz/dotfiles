@@ -1,4 +1,4 @@
-;;; custom-html.el --- html configuration
+;;; custom-html.el --- html configuration  -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

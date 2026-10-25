@@ -1,4 +1,4 @@
-;;; custom-css.el --- css config
+;;; custom-css.el --- css config  -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

@@ -1,4 +1,4 @@
-;;; custom-vue.el --- custom vue
+;;; custom-vue.el --- custom vue  -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

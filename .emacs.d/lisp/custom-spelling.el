@@ -1,4 +1,4 @@
-;;; custom-spelling.el --- spell check configuration
+;;; custom-spelling.el --- spell check configuration -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;
