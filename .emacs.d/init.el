@@ -53,6 +53,7 @@
 (measure-time(require 'custom-tramp))            ;; tramp
 (measure-time(require 'custom-text))             ;; text and derived modes
 (measure-time(require 'custom-special))          ;; special and derived modes
+(measure-time(require 'custom-debug))            ;; debugging
 (measure-time(require 'custom-spelling))         ;; spelling
 (measure-time(require 'custom-bidi-text))        ;; rtl and ltr language support
 (measure-time(require 'custom-windowing))        ;; window & buffer management
