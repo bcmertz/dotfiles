@@ -11,6 +11,8 @@
         c-electric-semi&comma
         c-indent-line-or-region
         comment-line
+        completion-at-point
+        corfu-complete
         end-of-visual-line
         expreg-expand
         indent-for-tab-command
