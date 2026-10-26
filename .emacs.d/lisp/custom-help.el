@@ -37,8 +37,7 @@
           ("C-h o" . #'helpful-symbol)
           ("C-h x" . #'helpful-command)
           (:map helpful-mode-map
-                ("q" . quit-helpful)
-                ;; ("q" . kill-current-buffer)
+                ("Q" . quit-helpful)
                 ("C-<left>" . helpful-go-back)
                 ("C-<right>" . helpful-go-forward))))
 
