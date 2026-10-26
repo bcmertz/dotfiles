@@ -82,8 +82,8 @@
       :ext "[/\\]\\(?:Containerfile\\|Dockerfile\\)\\(?:\\.[^/\\]*\\)?\\'")
     ,(make-language-map
       :lang 'elisp
-      :ts-mode 'il
       :mode '(emacs-lisp-mode lisp-interaction-mode)
+      :ts-mode 'nil
       :ext "\\.el\\'")
     ,(make-language-map
       :lang 'elixir
