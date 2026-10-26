@@ -63,6 +63,16 @@ https://github.com/magit/magit/issues/460#issuecomment-837449105."
 ;;   :config
 ;;   (magit-difftastic-mode +1))
 
+(use-package magit-pre-commit
+  :straight (magit-pre-commit :type git
+                              :host github
+                              :repo "gamboz/magit-pre-commit.el"
+                              :branch "fix-for-transient-012")
+  :after magit
+  :hook (magit-mode . magit-pre-commit-mode)
+  :config
+  (setq magit-pre-commit-show-buffer-on-failure t))
+
 (use-package github-review
   :defer t
   :after magit
