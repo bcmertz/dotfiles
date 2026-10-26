@@ -8,6 +8,8 @@
 ;;;
 ;;; Code:
 
+(require 'language-mode-info)
+
 (setq eglot-save-format-alist '((python . nil)
                                 (go . t)))
 
