@@ -30,9 +30,15 @@
   "For each treesit language apply FN."
   (cl-loop for lang in language-list
 	   do
-	   (let ((from (language-map-mode lang))
-		 (to (language-map-ts-mode lang)))
-	     (funcall fn from to))))
+           (if (listp (language-map-mode lang))
+               (cl-loop for mode in (language-map-mode lang)
+                        do
+                        (let ((from mode)
+		              (to (language-map-ts-mode lang)))
+	                  (funcall fn from to)))
+	     (let ((from (language-map-mode lang))
+		   (to (language-map-ts-mode lang)))
+	       (funcall fn from to)))))
 
 (defun treesit-mode-hook-symbol (mode)
   "Return MODE hook name."
