@@ -182,7 +182,7 @@
       :ext "\\.rs\\'")
     ,(make-language-map
       :lang 'tsx
-      :mode '(typescript-tsx-mode)
+      :mode 'typescript-tsx-mode
       :ts-mode 'tsx-ts-mode
       :ext "\\.tsx\\'")
     ,(make-language-map
