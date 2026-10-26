@@ -26,39 +26,39 @@
   (treesit-auto-add-to-auto-mode-alist 'all)
   (global-treesit-auto-mode))
 
-;; TODO: with emacs 31 treesit-auto shouldn't be needed. Convert this all over
-;; to lib/language-mode-info.el
-(defun treesit-auto-for-each (fn)
-  (cl-loop for recipe in treesit-auto-recipe-list
+(defun treesit-lang-for-each (fn)
+  "For each treesit language apply FN."
+  (cl-loop for lang in language-list
 	   do
-	   (let ((from (treesit-auto-recipe-remap recipe))
-		 (to (treesit-auto-recipe-ts-mode recipe)))
+	   (let ((from (language-map-mode lang))
+		 (to (language-map-ts-mode lang)))
 	     (funcall fn from to))))
 
-(defun treesit-auto-get-mode-hook-symbol (mode)
+(defun treesit-mode-hook-symbol (mode)
+  "Return MODE hook name."
   (intern (concat (symbol-name mode) "-hook")))
 
-(defvar treesit-auto-run-original-hooks t)
+(defvar treesit-run-original-hooks t)
 
 ;; this takes a non-treesitter major mode's hooks and applies it to the ts mode
 ;;
-;; slightly tweaked from https://github.com/renzmann/treesit-auto/issues/52
-(treesit-auto-for-each
+;; adapted from https://github.com/renzmann/treesit-auto/issues/52
+(treesit-lang-for-each
  (lambda (from to)
    (interactive)
    (let ((targets (if (listp from) from (list from))))
      (cl-loop for from in targets
               do
-              (letrec ((to-hook (treesit-auto-get-mode-hook-symbol to))
-	               (from-hook (treesit-auto-get-mode-hook-symbol from))
-                       (treesit-auto-hook-name (intern (concat "treesit-auto-" (symbol-name from-hook)))))
-                (defalias treesit-auto-hook-name
+              (letrec ((to-hook (treesit-mode-hook-symbol to))
+	               (from-hook (treesit-mode-hook-symbol from))
+                       (treesit-hook-name (intern (concat "treesit-" (symbol-name from-hook)))))
+                (defalias treesit-hook-name
                   `(lambda ()
-                     (when (and treesit-auto-run-original-hooks
+                     (when (and treesit-run-original-hooks
                                 (boundp ',from-hook))
                        (message "Running hooks from %s for %s" ',from-hook ',to)
                        (run-hooks ',from-hook))))
-                (add-hook to-hook treesit-auto-hook-name))))))
+                (add-hook to-hook treesit-hook-name))))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ts code folding ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
