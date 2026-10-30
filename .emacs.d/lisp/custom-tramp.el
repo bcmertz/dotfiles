@@ -15,11 +15,7 @@
         (format "\\(%s\\)\\|\\(%s\\)"
 	        vc-ignore-dir-regexp
 	        tramp-file-name-regexp))
-  (setq tramp-verbose 1) ;; 6 for debugging
-  ;; https://emacs.stackexchange.com/questions/82010/why-is-emacs-recompiling-some-packages-on-every-startup
-  ;; fix for native comp repeatedly compiling tramp
-  (push "tramp-loaddefs.el.gz" native-comp-jit-compilation-deny-list)
-  )
+  (setq tramp-verbose 1)) ;; 6 for debugging
 
 (provide 'custom-tramp)
 ;;; custom-tramp.el ends here
