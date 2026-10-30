@@ -6,6 +6,8 @@
 ;;;
 ;;; Code:
 
+(require 'doom-lib)
+
 ;; Sidebar File navigation
 (use-package neotree ;; C-c C-c makes the focused directory the new root view
   :config

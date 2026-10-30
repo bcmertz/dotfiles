@@ -7,6 +7,8 @@
 ;;;
 ;;; Code:
 
+(require 'language-mode-info)
+
 (use-package treesit
   :defer t
   :straight (:type built-in)
