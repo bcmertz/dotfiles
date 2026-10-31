@@ -21,6 +21,7 @@ fi
 screenlock "start"
 
 dunst &                # notifications
+dictd &                # dictionary server
 clipmenud &            # clipmenu daemon
 unclutter &            # get rid of mouse
 xfce4-power-manager --daemon &  # power management
