@@ -63,6 +63,7 @@
 (measure-time(require 'custom-lsp))              ;; language server protocol
 (measure-time(require 'custom-pass))             ;; password management
 (measure-time(require 'custom-help))             ;; help
+(measure-time(require 'custom-rss))              ;; rss
 ;; (measure-time(require 'custom-email))         ;; email - mu4e
 ;; (measure-time(require 'custom-music))         ;; music - emms
 (measure-time(require 'custom-terminal))         ;; terminal
