@@ -284,5 +284,15 @@ before calling `er/expand-region' for the first time ARG."
   (setq auto-revert-verbose t)
   (global-auto-revert-mode +1))
 
+(use-package highlight-changes
+  :straight (:type built-in)
+  :defer t)
+
+(use-package highlight-unsaved
+  :after highlight-changes
+  :straight (highlight-unsaved :local-repo "~/.emacs.d/lisp/lib/highlight-unsaved"
+                               :files ("highlight-unsaved.el")
+                               :type nil))
+
 (provide 'custom-editing)
 ;;; custom-editing.el ends here
