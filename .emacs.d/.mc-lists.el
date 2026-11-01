@@ -27,6 +27,8 @@
         org-self-insert-command
         smex
         sp-remove-active-pair-overlay
+        sp-unwrap-sexp
+        sp-wrap-round
         suspend-frame
         ))
 
