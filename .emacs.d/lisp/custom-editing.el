@@ -74,12 +74,6 @@
   (global-set-key (kbd "C-c s i") 'sp-change-enclosing)
   (global-set-key (kbd "C-c s c") 'sp-rewrap-sexp))
 
-;; (use-package electric-pair-mode
-;;   :defer t
-;;   :init
-;;   (electric-pair-mode t)
-;;   )
-
 (defun set-sp-face ()
   "Customize matching sp face."
   (add-hook 'smartparens-mode-hook
