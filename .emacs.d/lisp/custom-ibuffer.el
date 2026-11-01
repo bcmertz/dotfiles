@@ -9,7 +9,9 @@
 ;; better C-x C-b
 (use-package ibuffer
   :defer t
-  :bind (("C-x C-b" . ibuffer))
+  :bind (("C-x C-b" . ibuffer)
+         :map ibuffer-mode-map
+         ("q" . kill-current-buffer))
   :config
   (setq ibuffer-human-readable-size t)
   (defalias 'list-buffers 'ibuffer))
