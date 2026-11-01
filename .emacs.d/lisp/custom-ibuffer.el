@@ -12,7 +12,6 @@
   :bind (("C-x C-b" . ibuffer))
   :config
   (setq ibuffer-human-readable-size t)
-  (bind-key "q" 'kill-current-buffer 'ibuffer-mode-map)
   (defalias 'list-buffers 'ibuffer))
 
 ;; group buffers by project root
