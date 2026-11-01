@@ -12,7 +12,7 @@
   :bind ((:map elfeed-search-mode-map
                ("C-\\" . elfeed-tree))
          (:map elfeed-tree-mode-map
-              ("C-\\" . quit-window)))
+              ("C-\\" . kill-buffer-and-window)))
   :config
   (setq elfeed-set-max-connections 5)
   (setq elfeed-feeds
