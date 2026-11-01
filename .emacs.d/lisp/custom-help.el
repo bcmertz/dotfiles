@@ -21,8 +21,7 @@
   "Quit helpful buffer and kill other helpful buffers."
   (interactive)
   (helpful-kill-buffers)
-  (delete-window)
-  )
+  (delete-window))
 
 (use-package helpful
   :defer t
