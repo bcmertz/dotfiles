@@ -55,7 +55,7 @@
 (delete-selection-mode t)		; By default emacs will not delete selection text when typing on it, let's fix it
 (setq kill-whole-line t) 			; kills the entire line plus the newline whenever you invoke kill-line (i.e. via C-k).
 
-;; smart parenthesis
+;; sexpr wrapping
 (use-package smartparens
   :defer t
   :init
