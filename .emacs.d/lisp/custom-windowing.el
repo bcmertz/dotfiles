@@ -136,7 +136,8 @@
 
 ;; force vterm to bottom window
 (add-to-list 'display-buffer-alist
-             '((major-mode . vterm-mode)
+             '((or (major-mode . vterm-mode)
+                   (major-mode . ghostel-mode))
                (display-buffer-in-side-window)
                (window-height . 0.4)
                (slot . 0)
