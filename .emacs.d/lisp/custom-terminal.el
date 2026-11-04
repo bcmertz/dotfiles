@@ -26,7 +26,7 @@
   "Toggle ghostel terminal."
   (interactive)
   (let* ((proj (current-project-root))
-         (gh-list-cmd (if proj 'ghostel-project-buffer-list 'ghostel-buffer-list))
+         (gh-list-cmd (if proj 'ghostel-project-buffer-list 'ghostel-buffer-list)) ;; TODO: only return non-project buffers if no proj
          (gh-new-cmd (if proj 'ghostel-project-new 'ghostel-new))
          (term-buffer (car (funcall gh-list-cmd))))
     (if term-buffer
