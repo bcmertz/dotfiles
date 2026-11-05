@@ -39,5 +39,21 @@
 (global-set-key (kbd "M-n") (lambda () (interactive) (scroll-up 1)))
 (global-set-key (kbd "M-p") (lambda () (interactive) (scroll-down 1)))
 
+;; scrolling without changing the cursor
+;; https://github.com/clarete/emacs.d/blob/main/README.org
+(global-set-key (kbd "M-S-n") (lambda () (interactive) (scroll-all-scroll-up-all 1)))
+(global-set-key (kbd "M-S-p") (lambda () (interactive) (scroll-all-scroll-down-all 1)))
+
+;; toggle scroll all mode
+(defun toggle-scroll-all ()
+  "Toggle `scroll-all-mode'."
+  (interactive)
+  (if (eq scroll-all-mode t)
+      (scroll-all-mode -1)
+    (scroll-all-mode 1))
+  )
+(global-set-key (kbd "C-c t s") 'toggle-scroll-all)
+
+
 (provide 'custom-scrolling)
 ;;; custom-scrolling.el ends here
