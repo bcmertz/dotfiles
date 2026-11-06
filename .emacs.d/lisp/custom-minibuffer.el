@@ -319,9 +319,7 @@
             (setq-local inhibit-read-only t)))
 
 ;; Consult users will also want the embark-consult package.
-(use-package embark-consult
-  :hook
-  (embark-collect-mode . consult-preview-at-point-mode))
+(use-package embark-consult)
 
 (defun embark-which-key-indicator ()
   "An embark indicator that displays keymaps using which-key.
