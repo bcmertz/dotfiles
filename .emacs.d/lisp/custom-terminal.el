@@ -30,7 +30,7 @@
          (gh-new-cmd (if proj 'ghostel-project-new 'ghostel-new))
          (term-buffer (car (funcall gh-list-cmd))))
     (if term-buffer
-        (if-let* (term-window (get-buffer-window term-buffer))
+        (if-let* ((term-window (get-buffer-window term-buffer)))
             ;; yes term buffer and window
             (quit-window nil term-window)
           ;; yes term buffer no window
