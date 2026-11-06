@@ -66,7 +66,7 @@
 (apply-gui-and-term 'hide-ui-elements)
 
 ;; toggle tool bar mode [builtin]
-(global-set-key (kbd "C-c t s") 'toggle-scroll-bar)
+(global-set-key (kbd "C-c t S") 'toggle-scroll-bar)
 
 ;; toggle tool bar mode
 (defun toggle-tool-bar ()
