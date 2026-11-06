@@ -1,4 +1,4 @@
-;;; openwith.el --- Open files with external programs
+;;; openwith.el --- Open files with external programs -*- lexical-binding: t -*-
 
 ;; Modified 2022 by me
 ;; github.com/bcmertz/dotfiles/.emacs.d/lisp/openwith.el

@@ -1,4 +1,4 @@
-;;; reopen-as-root.el --- Reopen root files as root user
+;;; reopen-as-root.el --- Reopen root files as root user -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;

@@ -1,4 +1,4 @@
-;;; narrow-indirect.el --- Narrow using an indirect buffer that is a clone
+;;; narrow-indirect.el --- Narrow using an indirect buffer that is a clone  -*- lexical-binding: t -*-
 ;;
 ;; Filename: narrow-indirect.el
 ;; Description: Narrow using an indirect buffer that is a clone
