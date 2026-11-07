@@ -27,7 +27,7 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
-;; use use-package
+;; initialize use-package
 (straight-use-package 'use-package)
 ;; automatically ensure every package exists (like :ensure or :straight)
 (setq use-package-always-ensure t)
