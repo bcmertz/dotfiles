@@ -312,11 +312,11 @@
    ("C-h B" . describe-bindings)
    :map vertico-map (("C-." . embark-act)         ;; pick some comfortable binding
                      ("M-." . embark-dwim)
-                     ("M-<return>" . embark-collect)
-                     ))
+                     ("M-<return>" . embark-collect)))
   :init
   ;; Optionally replace the key help with a completing-read interface
-  (setq prefix-help-command #'embark-prefix-help-command))
+  (setq prefix-help-command #'embark-prefix-help-command)
+  )
 
 ;; Ignore attempts to make embark-collect read-only by default
 (add-hook 'embark-collect-mode-hook
