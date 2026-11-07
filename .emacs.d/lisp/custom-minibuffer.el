@@ -237,7 +237,8 @@
   (setq consult-preview-key nil)
   (consult-customize consult-line :preview-key 'any)
   (consult-customize consult-theme :preview-key "C-<return>")
-  (consult-customize my-consult-change-theme :preview-key "C-<return>")
+  (if (fboundp 'my-change-theme)
+      (consult-customize my-change-theme :preview-key "C-<return>"))
   (setq consult-line-start-from-top nil)
   (consult-customize consult-buffer :history nil)
 
