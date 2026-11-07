@@ -27,10 +27,11 @@
   :defer t
   :config
   (global-set-key (kbd "C-c p f") 'consult-project-extra-find)
-  (setq consult-project-function #'consult-project-extra-project-fn) ;; Optional but recommended for a more consistent UI
+  :custom
+  (consult-project-function #'consult-project-extra-project-fn) ;; Optional but recommended for a more consistent UI
   ;; always use consult-project-buffer instead of prompting different switching options
   ;; (setq project-switch-commands 'consult-project-buffer)
-  (setq project-switch-commands 'consult-project-extra-find)  
+  (project-switch-commands 'consult-project-extra-find)
   :bind
   (("C-c p f" . consult-project-extra-find)))
 
