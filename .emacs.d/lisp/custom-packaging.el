@@ -7,9 +7,11 @@
 ;;; Code:
 
 ;; don't create *straight-process* buffer
-(setq straight-check-for-modifications '(watch-files find-when-checking))
-;; (setq straight-check-for-modifications '(find-at-startup find-when-checking)) ;; rebuild changed packages on startup, slower
 (setq straight--process-log nil)
+
+;; rebuild changed packages based on these conditions
+(setq straight-check-for-modifications '(find-at-startup find-when-checking)) ;; rebuild changed packages on startup, slower
+;; (setq straight-check-for-modifications '(watch-files find-when-checking)) ;; faster
 
 ;; bootstrap straight
 (defvar bootstrap-version)
