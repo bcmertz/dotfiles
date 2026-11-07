@@ -16,6 +16,15 @@
 ;; This prevents unintended visual gaps and maintains a consistent appearance.
 (setq comment-empty-lines t)
 
+;; xref navigate definitions
+(use-package xref
+  :straight (:type built-in)
+  :bind (:map prog-mode-map
+              ("C-." . xref-find-definitions)
+              ("C-M-." . xref-find-definitions-other-window)
+              ("C-," . xref-go-back)
+              ("C-M-," . xref-go-forward)))
+
 ;; code navigation
 (use-package avy
   :bind (("M-g" . avy-goto-char)    ;; go to char
@@ -174,14 +183,6 @@
 (global-set-key [(control up)] 'move-lines-up)
 (global-set-key [(control down)] 'move-lines-down)
 
-;; xref navigate definitions
-(use-package xref
-  :straight (:type built-in)
-  :bind (:map prog-mode-map
-              ("C-." . xref-find-definitions)
-              ("C-M-." . xref-find-definitions-other-window)
-              ("C-," . xref-go-back)
-              ("C-M-," . xref-go-forward)))
 ;; delete don't kill backwards for M-del
 (defun delete-word (arg)
     "Delete characters forward until encountering the end of a word.
