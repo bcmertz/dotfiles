@@ -13,9 +13,8 @@
   :config
   ;;(define-key which-key-mode-map (kbd "<next>") 'which-key-show-next-page-cycle)
   ;;(define-key which-key-mode-map (kbd "<prior>") 'which-key-show-previous-page-cycle)
-  ;; (setq which-key-paging-prefixes '(""))
-  ;; (setq which-key-paging-key "<mouse-5>") ;; scroll down
-  ;; (setq which-key-paging-key "<mouse-4>") ;; scroll up
+  ;; (setq which-key-paging-prefixes '())
+  ;; (setq which-key-paging-key "C-h")
   ;; (setq which-key-popup-type 'side-window)
   ;; (setq which-key-side-window-max-height 0.66)
   (setq which-key-sort-order 'which-key-prefix-then-key-order)
