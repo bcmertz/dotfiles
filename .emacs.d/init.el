@@ -48,7 +48,7 @@
 (measure-time(require 'custom-sidebar))          ;; sidebar
 (measure-time(require 'custom-editing))          ;; efficient text editing
 (measure-time(require 'custom-folding))          ;; code folding
-(measure-time(require 'custom-seletion))         ;; point / mark selections
+(measure-time(require 'custom-selection))        ;; point / mark selections
 (measure-time(require 'custom-undo))             ;; undo
 (measure-time(require 'custom-tramp))            ;; tramp
 (measure-time(require 'custom-text))             ;; text and derived modes
