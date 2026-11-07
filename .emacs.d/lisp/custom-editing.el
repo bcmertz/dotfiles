@@ -91,7 +91,7 @@
 ;; give option to diff modified file before killing it
 ;; https://emacs.stackexchange.com/questions/3245/kill-buffer-prompt-with-option-to-diff-the-changes/3363#3363
 (defun my/save-or-diff-buffer ()
-  "TODO."
+  "When an unsaved buffer is kill give the option to diff it first."
   (catch 'quit
     (save-window-excursion
       (let ((done nil)
