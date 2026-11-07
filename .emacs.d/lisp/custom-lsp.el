@@ -8,7 +8,8 @@
 ;;;
 ;;; Code:
 
-(require 'language-mode-info)
+(use-package language-mode-info
+  :straight (language-mode-info :local-repo "~/.emacs.d/lisp/lib/language-mode-info/"))
 
 (setq eglot-save-format-alist '((python . nil)
                                 (go . t)))

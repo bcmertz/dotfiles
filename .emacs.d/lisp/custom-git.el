@@ -6,7 +6,8 @@
 ;;;
 ;;; Code:
 
-(require 'util-funcs)
+(use-package util-funcs
+  :straight (util-funcs :local-repo "~/.emacs.d/lisp/lib/util-funcs/"))
 
 (which-key-add-key-based-replacements "C-c g" "git")
 

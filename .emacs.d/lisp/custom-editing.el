@@ -6,7 +6,8 @@
 ;;;
 ;;; Code:
 
-(require 'util-funcs)
+(use-package util-funcs
+  :straight (util-funcs :local-repo "~/.emacs.d/lisp/lib/util-funcs/"))
 
 ;; Enable multi-line commenting which ensures that `comment-indent-new-line'
 ;; properly continues comments onto new lines.

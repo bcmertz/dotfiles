@@ -4,7 +4,8 @@
 ;;;
 ;;; Code:
 
-(require 'util-funcs)
+(use-package util-funcs
+  :straight (util-funcs :local-repo "~/.emacs.d/lisp/lib/util-funcs/"))
 
 ;; Default font (cant be font with hyphen in the name like current default monospace Inconsolata-g)
 (setq initial-frame-alist '((font . "Monospace")))
