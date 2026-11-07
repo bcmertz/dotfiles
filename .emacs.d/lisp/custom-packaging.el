@@ -29,11 +29,13 @@
 
 ;; initialize use-package
 (straight-use-package 'use-package)
-;; automatically ensure every package exists (like :ensure or :straight)
-(setq use-package-always-ensure t)
 
+;; whether to automatically ensure every package exists (like :ensure or :straight)
+;; not needed because of straight-use-package-by-default t which accomplishes
+;; the same thing but through straight
+(setq use-package-always-ensure nil)
+(setq straight-use-package-by-default t) ;; always :straight t
 
-(setq straight-use-package-by-default t)
 
 ;; DEPRECATED Packages and repository management
 ;; (require 'package)
