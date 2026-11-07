@@ -13,17 +13,15 @@
 (use-package treesit
   :defer t
   :straight (:type built-in)
-  ;; TODO
-  ;; :config
-  ;; (if (not (version< emacs-version "31.1"))
-  ;;     (progn
-  ;;       (setq treesit-auto-install-grammar 'ask)
-  ;;       (setq treesit-enabled-modes t)))
-  )
+  :config
+  (if (not (version< emacs-version "31.1"))
+      (progn
+        (setopt treesit-auto-install-grammar 'ask)
+        (setopt treesit-enabled-modes t))))
 
+;; legacy support
 (use-package treesit-auto
-  ;; TODO
-  ;; :if (version< emacs-version "31.1")
+  :if (version< emacs-version "31.1")
   :config
   (setq treesit-auto-install 'prompt)
   (treesit-auto-add-to-auto-mode-alist 'all)
