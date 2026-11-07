@@ -8,8 +8,7 @@
 
 (use-package flymake
   :defer t
-  :init
-  (add-hook 'prog-mode-hook #'flymake-mode)
+  :hook (prog-mode . flymake-mode)
   :bind (:map flymake-mode-map
               ("C-c e n" . flymake-goto-next-error)
               ("C-c e p" . flymake-goto-prev-error)
