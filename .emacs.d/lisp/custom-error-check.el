@@ -15,7 +15,8 @@
               ("C-c e p" . flymake-goto-prev-error)
               ("C-c e s" . flymake-start)
               ("C-c e i" . flymake-show-diagnostic)
-              ("C-c e l" . flymake-show-buffer-diagnostics)
+              ("C-c e l" . consult-flymake)
+              ("C-c e L" . flymake-show-buffer-diagnostics)
               ("<left-fringe> <mouse-1>" . nil)
               ("C-c e m" . flymake-mode))
   :config
