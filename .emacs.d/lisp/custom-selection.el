@@ -7,6 +7,11 @@
 ;; move point (cursor) to mark (start of selection)
 (global-set-key (kbd "C-x C-x") 'exchange-point-and-mark)
 
+;; rectangular selection
+(use-package rect
+  :straight (:type built-in)
+  :bind ("C-x SPC" . rectangle-mark-mode))
+
 ;; make shift click select region
 (mouse-shift-adjust-mode)
 
