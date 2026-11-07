@@ -9,7 +9,6 @@
   :config
   (global-set-key (kbd "C-c p") project-prefix-map)
   (which-key-add-key-based-replacements "C-c p" "project")
-  (global-set-key (kbd "C-c p f") 'consult-project-extra-find)
   (setq project-vc-extra-root-markers '(".projectile" "requirements.txt" "package.json" "go.mod" "README.md" "init.el"))
   (setq project-vc-ignores '("ido.last" "eln-cache/" ".cache/" ".saves/" "save-perspective"
                              "elpa/" "straight/" "auto-save-list/" "undo/" "var/" "tramp"
@@ -17,26 +16,26 @@
                              "vimish-fold/" "transient/" "tree-sitter/" "Clementine/"
                              "Code - OSS/" "Element/" "Pulsar/" "Signal*/" "Chromium/"
                              "akonadi*" "balena-etcher/" "cef_user_data/" "chromium/"
-                             "icedtea-web/" "libreoffice/" "whatsdesk/"
-                             ))
-  ;; always use consult-project-buffer instead of prompting different switching options
-  ;; (setq project-switch-commands 'consult-project-buffer)
-  (setq project-switch-commands 'consult-project-extra-find)
-  ;; alternatively use multiple switching commands
-  ;; (add-to-list 'project-switch-commands '(vterm-toggle "vterm" ?t))
-  )
+                             "icedtea-web/" "libreoffice/" "whatsdesk/")))
 
 ;; this creates consult like completion within projects
 ;;
 ;; known limitation: recentf ordering not possible
 ;; https://github.com/Qkessler/consult-project-extra/issues/10
 (use-package consult-project-extra
+  :after consult
   :defer t
-  :custom (consult-project-function #'consult-project-extra-project-fn) ;; Optional but recommended for a more consistent UI
+  :config
+  (global-set-key (kbd "C-c p f") 'consult-project-extra-find)
+  (setq consult-project-function #'consult-project-extra-project-fn) ;; Optional but recommended for a more consistent UI
+  ;; always use consult-project-buffer instead of prompting different switching options
+  ;; (setq project-switch-commands 'consult-project-buffer)
+  (setq project-switch-commands 'consult-project-extra-find)  
   :bind
   (("C-c p f" . consult-project-extra-find)))
 
 (use-package consult-dir
+  :after consult
   :defer t
   :bind (("C-x C-d" . consult-dir)
          :map minibuffer-local-completion-map
