@@ -25,9 +25,6 @@
 ;; confirm we want to exit the garden
 ;; (setq confirm-kill-emacs 'y-or-n-p)
 
-;; make right-click behave normally with context menu
-(if-gui (context-menu-mode))
-
 ;; make shift click select region
 (mouse-shift-adjust-mode)
 
