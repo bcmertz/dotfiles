@@ -36,6 +36,8 @@
 (setq use-package-always-ensure nil)
 (setq straight-use-package-by-default t) ;; always :straight t
 
+;; use most up-to-date use-package integration syntax
+(setq straight-use-package-version 'straight)
 
 (provide 'custom-packaging)
 ;;; custom-packaging.el ends here
