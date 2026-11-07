@@ -61,6 +61,7 @@
 
 (use-package org
   :defer t
+  :straight (:type built-in)
   :config
   ;;(setq org-agenda-files '("~/docs/org/"))
   (setq org-support-shift-select t)
