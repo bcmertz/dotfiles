@@ -4,6 +4,9 @@
 ;;;
 ;;; Code:
 
+;; fontify elisp more semantically
+;; (setq elisp-fontify-semantically t)
+
 ;; start elisp script and enable elisp mode
 (defun start-elisp-script ()
   "Start elisp script by inserting header and entering elisp mode."
