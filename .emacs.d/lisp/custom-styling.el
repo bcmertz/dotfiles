@@ -44,13 +44,6 @@
 ;; (set-face-attribute 'fringe nil :background nil)
 ;; (fringe-mode 0)
 
-;; text sizing commands
-(global-unset-key (kbd "C-_"))
-(global-set-key (kbd "C-+") 'text-scale-increase)
-(global-set-key (kbd "C-_") 'text-scale-decrease)
-(global-set-key (kbd "C-M-+") 'global-text-scale-increase)
-(global-set-key (kbd "C-M-_") 'global-text-scale-decrease)
-
 ;; center 1 buffer
 (use-package centered-window
   :config
