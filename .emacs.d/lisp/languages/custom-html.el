@@ -6,6 +6,11 @@
 ;;;
 ;;; Code:
 
+;; get rid of annoying web mode binding
+(add-hook 'web-mode-hook
+          (lambda ()
+            (local-unset-key (kbd "M-;"))))
+
 (use-package web-mode
   :defer t
   :config

@@ -9,6 +9,26 @@
 (require 'util-funcs)
 (require 'doom-lib)
 
+;; toggle neotree in project root directory
+(defun neotree-project-dir-toggle ()
+    "Open NeoTree at the project root."
+    (interactive)
+    (defvar project-dir)
+    (defvar file-name)
+    (defvar neo-smart-open)
+    (let ((project-dir (current-project-root))
+          (file-name (buffer-file-name))
+          (neo-smart-open t))
+      (if (and (fboundp 'neo-global--window-exists-p)
+               (neo-global--window-exists-p))
+          (neotree-hide)
+        (progn
+          (neotree-show)
+          (if project-dir
+              (neotree-dir project-dir))
+          (if file-name
+              (neotree-find file-name))))))
+
 ;; Sidebar File navigation
 (use-package neotree ;; C-c C-c makes the focused directory the new root view
   :config

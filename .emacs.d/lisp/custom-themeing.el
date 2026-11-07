@@ -25,6 +25,19 @@
       (use-package ewal)
       (setq custom-theme 'ewal-doom-one)))
 
+;; refresh ewal theme
+(defun refresh-theme ()
+  "Refresh the theme based on global config of whether to use pywal colors for Emacs."
+  (interactive)
+  (if (string= (shell-command-to-string "global_cfg pywal_emacs") "true")
+      (setq custom-theme 'ewal-doom-one)
+    (setq custom-theme default-theme))
+  ;; disable all enabled themes
+  (dolist (i custom-enabled-themes)
+    (disable-theme i))
+  ;; load theme
+  (load-theme custom-theme))
+
 (defun disable-all-themes ()
   "Disable all themes."
   (dolist (i custom-enabled-themes)

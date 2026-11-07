@@ -67,6 +67,26 @@
 (global-set-key (kbd "C-c t f") 'set-buffer-font)
 (global-set-key (kbd "C-c t F") 'unset-buffer-font)
 
+;; text scale controls
+(defun global-text-scale-increase ()
+  "Globally increase text scale."
+  (interactive)
+  (setq current-prefix-arg '(1))
+  (call-interactively 'global-text-scale-adjust))
+
+(defun global-text-scale-decrease ()
+  "Globally decrease text scale."
+  (interactive)
+  (setq current-prefix-arg '(-1))
+  (call-interactively 'global-text-scale-adjust))
+
+;; text sizing commands
+(global-unset-key (kbd "C-_"))
+(global-set-key (kbd "C-+") 'text-scale-increase)
+(global-set-key (kbd "C-_") 'text-scale-decrease)
+(global-set-key (kbd "C-M-+") 'global-text-scale-increase)
+(global-set-key (kbd "C-M-_") 'global-text-scale-decrease)
+
 (use-package nerd-icons
   :defer t
   ;; :custom

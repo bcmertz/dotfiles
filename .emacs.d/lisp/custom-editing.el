@@ -218,9 +218,60 @@ before calling `er/expand-region' for the first time ARG."
 ;; Utilities
 (global-set-key (kbd "C-x C-e") 'eval-buffer)
 
+;; select current line
+(defun mark-entire-line ()
+  "Mark the whole line from the indent to the end."
+  (interactive)
+  (beginning-of-line-text)
+  (set-mark-command nil)
+  (end-of-line))
+
 (global-set-key (kbd "C-x C-l") 'mark-entire-line)
 
+(defun return-newline-below ()
+  "Go to end of line and return bc in TTy C-m and RET is weird."
+  (interactive)
+  (end-of-line)
+  (newline-and-indent))
+
 (global-set-key (kbd "<M-RET>") 'return-newline-below)     ;; return new line below
+
+(defun move-lines (n)
+  (let ((beg) (end) (keep))
+    (if mark-active
+        (save-excursion
+          (setq keep t)
+          (setq beg (region-beginning)
+                end (region-end))
+          (goto-char beg)
+          (setq beg (line-beginning-position))
+          (goto-char end)
+          (setq end (line-beginning-position 2)))
+      (setq beg (line-beginning-position)
+            end (line-beginning-position 2)))
+    (let ((offset (if (and (mark t)
+                           (and (>= (mark t) beg)
+                                (< (mark t) end)))
+                      (- (point) (mark t))))
+          (rewind (- end (point))))
+      (goto-char (if (< n 0) beg end))
+      (forward-line n)
+      (insert (delete-and-extract-region beg end))
+      (backward-char rewind)
+      (if offset (set-mark (- (point) offset))))
+    (if keep
+        (setq mark-active t
+              deactivate-mark nil))))
+
+(defun move-lines-up (n)
+  "Move the line(s) spanned by the active region up by N lines."
+  (interactive "*p")
+  (move-lines (- (or n 1))))
+
+(defun move-lines-down (n)
+  "Move the line(s) spanned by the active region down by N lines."
+  (interactive "*p")
+  (move-lines (or n 1)))
 
 ;; use 'transpose-regions for region marking
 (global-set-key [(control up)] 'move-lines-up)
@@ -253,6 +304,32 @@ before calling `er/expand-region' for the first time ARG."
 
 (global-unset-key (kbd "M-<down-mouse-1>"))
 (global-set-key (kbd "M-<mouse-1>") 'mc/add-cursor-on-click)
+
+;; delete don't kill backwards for M-del
+(defun delete-word (arg)
+    "Delete characters forward until encountering the end of a word.
+With argument, do this that many times."
+    (interactive "p")
+    (if (use-region-p)
+        (delete-region (region-beginning) (region-end))
+      (delete-region (point) (progn (forward-word arg) (point)))))
+
+(defun backward-delete-word (arg)
+    "Delete characters backward until encountering the end of a word.
+With argument, do this that many times."
+    (interactive "p")
+    (delete-word (- arg)))
+
+;; http://xahlee.info/emacs/emacs/emacs_kill-ring.html
+(defun forward-delete-word (arg)
+  "Delete characters forward until encountering the end of a word.
+With argument, do this that many times."
+  (interactive "p")
+  (delete-region
+   (point)
+   (progn
+     (forward-word arg)
+     (point))))
 
 (global-set-key (read-kbd-macro "<M-DEL>") 'backward-delete-word)
 (global-set-key [C-backspace] 'backward-delete-word)

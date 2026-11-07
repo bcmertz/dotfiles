@@ -6,6 +6,59 @@
 ;;;
 ;;; Code:
 
+(defun org-return-newline-below ()
+  "Go to end of line and org-meta-return."
+  (interactive)
+  (end-of-line)
+  (if (string= major-mode "org-mode")
+      (org-meta-return)
+      (progn
+        (newline-and-indent)
+        (indent-relative))))
+
+;; Turn org text into link and follow it to corresponding header
+(defun org-open-at-point-plaintext ()
+  "Turn org text into link and follow it to corresponding header."
+  (interactive)
+  (if (string= " " (string (preceding-char)))
+      (insert "[[")
+    (progn
+      (backward-word)
+      (insert "[[")))
+  (forward-word)
+  (insert "]]")
+  (backward-word)
+  (org-open-at-point)
+  (org-cycle))
+
+;; https://emacs.stackexchange.com/a/10714
+(defun org-remove-link ()
+  "Replace an org link by its description or if empty its address."
+  (interactive)
+  (if (org-in-regexp org-link-bracket-re 1)
+      (save-excursion
+        (let ((remove (list (match-beginning 0) (match-end 0)))
+              (description
+               (if (match-end 2)
+                   (org-match-string-no-properties 2)
+                 (org-match-string-no-properties 1))))
+          (apply 'delete-region remove)
+          (insert description)))))
+
+;; https://emacs.stackexchange.com/a/26840
+(defun org-folded-p ()
+  "Return non-nil if point is on a folded headline or plain list item."
+  (and (or (org-at-heading-p)
+           (org-at-item-p))
+       (invisible-p (point-at-eol))))
+
+(defun my-org-return ()
+  "Org return and if header is closed cycle it."
+  (interactive)
+  (org-return)
+  (if (org-folded-p)
+      (org-cycle)))
+
 (use-package org
   :defer t
   :config
