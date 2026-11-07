@@ -22,7 +22,6 @@
       ,code))
 
 ;; TODO: try fira code
-
 (defun styling/set-fonts()
   "Set the emoji and glyph fonts."
   (if-font "UbuntuMono Nerd Font"
