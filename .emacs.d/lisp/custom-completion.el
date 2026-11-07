@@ -79,26 +79,21 @@
   (setq cape--dict-properties (append cape--dict-properties
                                       (list :company-doc-buffer 'text--company-doc-buffer))))
 
-;;;;;;;;;;;;;;;;;;;; Completion styling ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;; orderless completion style - allow space separated `search terms'
+;; completion style - allow space separated `search terms'
 (use-package orderless
   :init
   (setq completion-styles '(orderless)
         completion-category-defaults nil
         completion-category-overrides '((file (styles . (partial-completion))))))
 
-
-;;;;; builtin arglist and variable docstrings info in echo area ;;;;;
-
+;; builtin arglist and variable docstrings info in echo area
 (use-package eldoc
   :config
   (setq eldoc-idle-delay 0.2)
   :init
   (global-eldoc-mode))
 
-;;;;;;;;;;;;;;;;;;;;;;;;; Snippets ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+;; snippets
 (use-package yasnippet
   :defer t
   :init
@@ -120,30 +115,6 @@
   (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/org-mode")
   (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/emacs-lisp-mode")
   (yas-global-mode 1))
-
-;; useful if using tab for expanding completion and indent
-;; https://www.emacswiki.org/emacs/CompanyMode#toc11
-;; (defun check-expansion ()
-;;   (save-excursion
-;;     (if (looking-at "\\_>") t
-;;       (backward-char 1)
-;;       (if (looking-at "\\.") t
-;;         (backward-char 1)
-;;         (if (looking-at "->") t nil)))))
-
-;; (defun do-yas-expand ()
-;;   (let ((yas/fallback-behavior 'return-nil))
-;;     (yas/expand)))
-
-;; (defun tab-indent-or-complete ()
-;;   (interactive)
-;;   (if (minibufferp)
-;;       (minibuffer-complete)
-;;     (if (or (not yas/minor-mode)
-;;             (null (do-yas-expand)))
-;;         (if (check-expansion)
-;;             (company-complete-common)
-;;           (indent-for-tab-command)))))
 
 (provide 'custom-completion)
 ;;; custom-completion.el ends here
