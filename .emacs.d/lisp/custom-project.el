@@ -28,6 +28,7 @@
   :config
   (global-set-key (kbd "C-c p f") 'consult-project-extra-find)
   :custom
+  ;; https://www.gnu.org/software/emacs/manual/html_node/use-package/User-options.html
   (consult-project-function #'consult-project-extra-project-fn) ;; Optional but recommended for a more consistent UI
   ;; always use consult-project-buffer instead of prompting different switching options
   ;; (setq project-switch-commands 'consult-project-buffer)
