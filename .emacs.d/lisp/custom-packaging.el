@@ -7,7 +7,7 @@
 ;;; Code:
 
 ;; don't create *straight-process* buffer
-(setq straight--process-log nil)
+;; (setq straight--process-log nil)
 
 ;; rebuild changed packages based on these conditions
 (setq straight-check-for-modifications '(find-at-startup find-when-checking)) ;; rebuild changed packages on startup, slower
