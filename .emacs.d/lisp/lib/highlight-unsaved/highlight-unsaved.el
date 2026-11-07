@@ -1,7 +1,7 @@
 ;;; highlight-unsaved.el --- highlight unsaved changes -*- lexical-binding: t; -*-
 ;;;
 ;;; Commentary:
-;;
+;;;
 ;;; modified from: https://karthinks.com/software/even-more-batteries-included-with-emacs/
 ;;;
 ;;; Code:
