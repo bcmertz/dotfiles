@@ -10,9 +10,6 @@
 ;; make right-click behave normally with context menu
 (if-gui (context-menu-mode))
 
-(eval-after-load "artist"
-   '(define-key artist-mode-map [(down-mouse-3)] 'artist-mouse-choose-operation))
-
 ;; example easy-menu
 ;;
 ;; (easy-menu-define my-menu my-mode-map "My own menu"
