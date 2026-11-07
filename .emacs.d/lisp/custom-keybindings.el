@@ -8,6 +8,7 @@
 
 ;; Keystroke Completion
 (use-package which-key
+  :straight (:type built-in)
   :defer t
   :config
   ;;(define-key which-key-mode-map (kbd "<next>") 'which-key-show-next-page-cycle)
