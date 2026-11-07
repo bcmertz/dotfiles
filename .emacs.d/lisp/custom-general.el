@@ -29,7 +29,7 @@
 (if-gui (context-menu-mode))
 
 ;; make shift click select region
-(global-set-key (kbd "S-<down-mouse-1>") #'mouse-set-mark)
+(mouse-shift-adjust-mode)
 
 ;; save place in files
 (save-place-mode 1)
