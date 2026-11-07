@@ -33,8 +33,8 @@
   (if-font "Siji" (set-fontset-font t 'symbol "Siji" nil 'prepend))
   (if-font "UbuntuMono Nerd Font" (set-fontset-font t 'symbol "UbuntuMono Nerd Font" nil 'prepend))
   (if-font "ETBembo" (set-face-attribute 'variable-pitch nil :font "ETBembo" :weight 'thin :height 118))
-  (set-face-attribute 'default nil :font "Monospace" :weight 'light :height 130)
-  (set-face-attribute 'fixed-pitch nil :font "Monospace" :weight 'light :height 130))
+  (set-face-attribute 'default nil :font "Monospace" :weight 'light :height 120)
+  (set-face-attribute 'fixed-pitch nil :font "Monospace" :weight 'light :height 120))
 
 ;; respect default terminal fonts
 ;; if we're in a gui set the fonts appropriately
