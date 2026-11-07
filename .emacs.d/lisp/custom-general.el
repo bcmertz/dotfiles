@@ -22,11 +22,8 @@
 ;; (when (eq window-system 'pgtk)
 ;;   (pgtk-use-im-context t))
 
-;; confirm we want to exit the garden
+;; confirm we want to exit
 ;; (setq confirm-kill-emacs 'y-or-n-p)
-
-;; make shift click select region
-(mouse-shift-adjust-mode)
 
 ;; save place in files
 (save-place-mode 1)
