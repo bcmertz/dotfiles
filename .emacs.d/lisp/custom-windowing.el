@@ -15,16 +15,14 @@
   ;;  (setq centaur-tabs-set-bar 'left)
   :bind
   ("C-M-<left>" . centaur-tabs-backward)
-  ("C-M-<right>" . centaur-tabs-forward)
-  )
+  ("C-M-<right>" . centaur-tabs-forward))
 
 (defun toggle-centaur-tabs ()
   "Toggle centaur tabs mode."
   (interactive)
   (if (eq centaur-tabs-mode t)
       (centaur-tabs-mode -1)
-    (centaur-tabs-mode 1))
-  )
+    (centaur-tabs-mode 1)))
 
 ;; toggle hl line mode
 (global-set-key (kbd "C-c t b") 'toggle-centaur-tabs)
@@ -37,14 +35,12 @@
 ;; If a popup does happen, don't resize windows to be equal-sized
 (setq even-window-sizes nil)
 
-
 (use-package windmove
   :after org
   :config
   ;; wrap around at edges
   ;; (setq windmove-wrap-around t)
-  (windmove-default-keybindings 'meta) ;; M-arrows to move
-  )
+  (windmove-default-keybindings 'meta)) ;; M-arrows to move
 
 (use-package buffer-move
   :defer t)

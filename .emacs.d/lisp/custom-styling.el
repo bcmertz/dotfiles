@@ -76,8 +76,7 @@
   (interactive)
   (if (eq tool-bar-mode t)
       (tool-bar-mode -1)
-    (tool-bar-mode 1))
-  )
+    (tool-bar-mode 1)))
 (global-set-key (kbd "C-c t l") 'toggle-tool-bar)
 
 ;; toggle menu bar mode
@@ -86,8 +85,7 @@
   (interactive)
   (if (eq menu-bar-mode t)
       (menu-bar-mode -1)
-    (menu-bar-mode 1))
-  )
+    (menu-bar-mode 1)))
 (global-set-key (kbd "C-c t m") 'toggle-menu-bar)
 
 ;; Highlight current line in gui emacs
@@ -99,8 +97,7 @@
   (interactive)
   (if (eq global-hl-line-mode t)
       (global-hl-line-mode -1)
-    (global-hl-line-mode 1))
-  )
+    (global-hl-line-mode 1)))
 
 ;; toggle hl line mode
 (global-set-key (kbd "C-c t h") 'toggle-hl-line)

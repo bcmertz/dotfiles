@@ -14,8 +14,7 @@
          ("i" . help-goto-info)
          ("n" . help-goto-next-page)
          ("I" . help-goto-lispref-info)
-         ("p" . help-goto-previous-page)
-         ))
+         ("p" . help-goto-previous-page)))
 
 (defun quit-helpful ()
   "Quit helpful buffer and kill other helpful buffers."

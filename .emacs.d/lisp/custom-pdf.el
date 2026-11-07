@@ -14,17 +14,13 @@
          ( "D" . pdf-annot-delete)
          ( "A" . pdf-annot-list-annotations)
          ( "t" . pdf-annot-add-text-annotation)
-         ( "h" . pdf-annot-add-highlight-markup-annotation)
-
-         ))
+         ( "h" . pdf-annot-add-highlight-markup-annotation)))
   :config
   (setq-default pdf-view-display-size 'fit-page)
   (setq pdf-annot-activate-created-annotations t)
   (doc-view-mode)
   (pdf-tools-install :no-query)
-  (require 'pdf-occur)
-  ;; keyboard shortcuts
-  )
+  (require 'pdf-occur))
 
 (provide 'custom-pdf)
 ;;; custom-pdf.el ends here

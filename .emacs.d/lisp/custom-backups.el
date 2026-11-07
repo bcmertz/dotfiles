@@ -37,8 +37,7 @@
                            :host github
                            :repo "snowman/backup-walker")
   :defer t
-  :bind (:map backup-walker-mode-map (("R" . diff-reverse-direction)))
-  )
+  :bind (:map backup-walker-mode-map (("R" . diff-reverse-direction))))
 
 ;; handle bug where backups are created for sensitive files like pass edit
 ;; https://www.reddit.com/r/emacs/comments/12tj72z/nolittering_could_cause_backups_of_files/

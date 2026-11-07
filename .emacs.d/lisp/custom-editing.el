@@ -211,8 +211,7 @@ before calling `er/expand-region' for the first time ARG."
 
 (use-package expand-region
   :defer t
-  :bind*("C-;" . er/expand-region)
-  )
+  :bind*("C-;" . er/expand-region))
 
 
 ;; Utilities

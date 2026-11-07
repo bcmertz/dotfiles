@@ -49,8 +49,7 @@
   (neo-header-face    ((t (:inherit fixed-pitch))))
   (neo-banner-face    ((t (:inherit fixed-pitch))))
   (neo-root-dir-face  ((t (:inherit fixed-pitch))))
-  (neo-file-link-face ((t (:inherit fixed-pitch))))
-  )
+  (neo-file-link-face ((t (:inherit fixed-pitch)))))
 
 (defun set-neotree-settings ()
   "Function to set neotree settings buffer locally."

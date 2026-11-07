@@ -54,8 +54,7 @@
   ;; Translate the problematic keys to the function key Hyper:
   (keyboard-translate ?\C-i ?\H-i)
   ;; Rebind then accordingly:
-  (global-set-key [?\H-i] 'ispell-word)
-  )
+  (global-set-key [?\H-i] 'ispell-word))
 
 (defun flyspell-correct-buffer ()
   "Interactively correct buffer."
@@ -148,9 +147,7 @@
                                  (/= (mark t) (point)))
                             ;; `flyspell-correct-at-point' may move point, use
                             ;; original `incorrect-word-pos' instead
-                            (push-mark incorrect-word-pos t))))
-                    )
-                  )))))
+                            (push-mark incorrect-word-pos t))))))))))
 
       (when hard-move-point
         (when mark-opos
@@ -166,8 +163,7 @@
 (global-set-key (kbd "M-i") 'ispell-region)
 
 (use-package define-word
-  :defer t
-  )
+  :defer t)
 
 (provide 'custom-spelling)
 ;;; custom-spelling.el ends here

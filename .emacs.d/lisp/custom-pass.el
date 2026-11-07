@@ -8,8 +8,7 @@
 (use-package pass
   :defer t
   :config
-  (setq pass-username-fallback-on-filename t)
-  )
+  (setq pass-username-fallback-on-filename t))
 
 ;; use auth-source-pass as the primary auth-source provider
 ;; so that all passwords are stored in a single place.

@@ -17,8 +17,7 @@
     '((t (:background unspecified)))
     "Face used for the inactive bar."
     :group 'doom-modeline-faces)
-  (doom-modeline-mode 1)
-  )
+  (doom-modeline-mode 1))
 
 (use-package hide-mode-line
   :defer t

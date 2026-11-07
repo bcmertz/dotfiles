@@ -57,8 +57,7 @@
 
 
 (use-package evil
-  :defer t
-  )
+  :defer t)
 
 (use-package general
   :config

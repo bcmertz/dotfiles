@@ -32,9 +32,7 @@
         (list (concat "\\`" temporary-file-directory)
               "\\`/tmp/"
               "/COMMIT_EDITMSG\\'"
-              "\\`/dev/shm/"))
-  )
-
+              "\\`/dev/shm/")))
 
 ;;;;;;;;;;;;;;;;;;;;;;; Undo Tree - buggy ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

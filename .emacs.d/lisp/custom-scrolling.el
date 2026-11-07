@@ -23,16 +23,14 @@
       ;; how close to the edge of the window before the window is scrolled
       hscroll-margin 2
       ;; how many columns to scroll the window
-      hscroll-step 1
-      )
+      hscroll-step 1)
 
 ;; mouse horizontal scrolling
 (mouse-wheel-mode t)
 (setq mouse-wheel-tilt-scroll t
       mouse-wheel-flip-direction t
       mouse-wheel-scroll-amount-horizontal 1
-      mouse-wheel-progressive-speed nil
-      )
+      mouse-wheel-progressive-speed nil)
 
 ;; scrolling without changing the cursor
 ;; https://github.com/clarete/emacs.d/blob/main/README.org
@@ -50,8 +48,8 @@
   (interactive)
   (if (eq scroll-all-mode t)
       (scroll-all-mode -1)
-    (scroll-all-mode 1))
-  )
+    (scroll-all-mode 1)))
+
 (global-set-key (kbd "C-c t s") 'toggle-scroll-all)
 
 

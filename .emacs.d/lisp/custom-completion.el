@@ -41,8 +41,7 @@
   (global-corfu-mode)
   (corfu-popupinfo-mode)
   (corfu-history-mode)
-  (eldoc-add-command #'corfu-insert)
-  )
+  (eldoc-add-command #'corfu-insert))
 
 (if-gui nil
         (use-package corfu-terminal
@@ -77,8 +76,7 @@
       (current-buffer)))
 
   (setq cape--dict-properties (append cape--dict-properties
-                                      (list :company-doc-buffer 'text--company-doc-buffer)))
-  )
+                                      (list :company-doc-buffer 'text--company-doc-buffer))))
 
 ;;;;;;;;;;;;;;;;;;;; Completion styling ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -96,8 +94,7 @@
   :config
   (setq eldoc-idle-delay 0.2)
   :init
-  (global-eldoc-mode)
-  )
+  (global-eldoc-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;; Snippets ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -121,8 +118,7 @@
   (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/python-mode")
   (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/org-mode")
   (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/emacs-lisp-mode")
-  (yas-global-mode 1)
-  )
+  (yas-global-mode 1))
 
 ;; useful if using tab for expanding completion and indent
 ;; https://www.emacswiki.org/emacs/CompanyMode#toc11
@@ -147,7 +143,6 @@
 ;;         (if (check-expansion)
 ;;             (company-complete-common)
 ;;           (indent-for-tab-command)))))
-
 
 (provide 'custom-completion)
 ;;; custom-completion.el ends here

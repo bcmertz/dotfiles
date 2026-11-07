@@ -17,8 +17,7 @@
   "Toggle bidirectional display reordering."
   (interactive)
   (setq bidi-display-reordering (not bidi-display-reordering))
-  (message "bidi reordering is %s" bidi-display-reordering)
-  )
+  (message "bidi reordering is %s" bidi-display-reordering))
 
 ;; default display reordering to on for the following hooks
 ;; (defun bidi-display-reordering-on ()
@@ -38,8 +37,7 @@
   (setq-default bidi-display-reordering t)
   (if (equal bidi-paragraph-direction 'right-to-left)
       (setq bidi-paragraph-direction 'left-to-right)
-    (setq bidi-paragraph-direction 'right-to-left)
-    )
+    (setq bidi-paragraph-direction 'right-to-left))
   (message "%s" bidi-paragraph-direction))
 
 (provide 'custom-bidi-text)

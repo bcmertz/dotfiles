@@ -5,8 +5,7 @@
 ;;; Code:
 
 (eval-after-load "artist"
-   '(define-key artist-mode-map [(down-mouse-3)] 'artist-mouse-choose-operation)
-   )
+   '(define-key artist-mode-map [(down-mouse-3)] 'artist-mouse-choose-operation))
 
 ;; example easy-menu
 ;;
