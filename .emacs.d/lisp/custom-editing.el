@@ -13,13 +13,6 @@
 ;; This prevents unintended visual gaps and maintains a consistent appearance.
 (setq comment-empty-lines t)
 
-(use-package reopen-as-root
-  :after tramp
-  :straight (reopen-as-root :local-repo "~/.emacs.d/lisp/lib/reopen-as-root"
-                            :files ("reopen-as-root.el")
-                            :type nil)
-  :init (reopen-as-root-mode))
-
 ;; code navigation
 (use-package avy
   :bind (("M-g" . avy-goto-char)    ;; go to char
@@ -284,9 +277,7 @@ before calling `er/expand-region' for the first time ARG."
 
 (use-package highlight-unsaved
   :after highlight-changes
-  :straight (highlight-unsaved :local-repo "~/.emacs.d/lisp/lib/highlight-unsaved"
-                               :files ("highlight-unsaved.el")
-                               :type nil))
+  :straight (highlight-unsaved :local-repo "~/.emacs.d/lisp/lib/highlight-unsaved"))
 
 (provide 'custom-editing)
 ;;; custom-editing.el ends here

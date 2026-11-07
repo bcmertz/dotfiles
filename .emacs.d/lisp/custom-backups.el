@@ -4,6 +4,11 @@
 ;;;
 ;;; Code:
 
+(use-package reopen-as-root
+  :after tramp
+  :straight (reopen-as-root :local-repo "~/.emacs.d/lisp/lib/reopen-as-root")
+  :init (reopen-as-root-mode))
+
 (defvar my-backup-directory "~/.emacs.d/var/backups/")
 (if (not (file-directory-p my-backup-directory))
     (make-directory my-backup-directory t))

@@ -68,9 +68,7 @@
 (setq display-time-world-time-format "%a, %d %b %I:%M %p %Z")
 
 (use-package openwith
-  :straight (openwith :local-repo "~/.emacs.d/lisp/lib/openwith"
-                      :files ("openwith.el")
-                      :type nil)
+  :straight (openwith :local-repo "~/.emacs.d/lisp/lib/openwith")
   :config
   (openwith-mode)
   (setq openwith-associations
