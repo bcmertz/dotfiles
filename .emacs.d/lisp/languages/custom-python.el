@@ -11,13 +11,13 @@
   :mode ("\\.pyt?\\'" . python-mode)
   :bind ((:map python-mode-map
                ("<backtab>" . completion-at-point)
-               ("C-c >" . python-indent-shift-right) ;; default
-               ("C-c <" . python-indent-shift-left)  ;; default
+               ("C-c >" . python-indent-shift-right) ;; default, with repeat-mode <, > repeations accepted
+               ("C-c <" . python-indent-shift-left)  ;; default, with repeat-mode <, > repeations accepted
                )
          (:map python-ts-mode-map
                ("<backtab>" . completion-at-point)
-               ("C-c >" . python-indent-shift-right) ;; default
-               ("C-c <" . python-indent-shift-left)  ;; default
+               ("C-c >" . python-indent-shift-right) ;; default, with repeat-mode <, > repeations accepted
+               ("C-c <" . python-indent-shift-left)  ;; default, with repeat-mode <, > repeations accepted
                ))
   :config
   (setq python-indent-guess-indent-offset t)
