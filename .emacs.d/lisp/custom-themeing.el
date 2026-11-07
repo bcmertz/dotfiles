@@ -18,7 +18,8 @@
 ;; default theme
 ;; for pywal effects modify ~/.config/global.cfg
 (defvar custom-theme 'doom-dracula)     ;; ef-summer atom-one-dark doom-one doom-dracula ef-cherie doom-gruvbox ewal-doom-one
-(defvar default-theme custom-theme) ;; default theme to be used by refresh-theme in custom-funcs.el
+(defvar default-theme custom-theme) ;; default theme to be used by refresh-theme
+
 ;; check if we're using pywal to set emacs colorscheme
 (if (string= (shell-command-to-string "global_cfg pywal_emacs") "true")
     (progn
