@@ -6,6 +6,8 @@
 ;;;
 ;;; Code:
 
+(require 'util-funcs)
+
 (setq completion-ignore-case t)
 (setq tab-always-indent t)
 (global-set-key [backtab] 'completion-at-point) ;; backtab triggers completion

@@ -4,6 +4,8 @@
 ;;;
 ;;; Code:
 
+(require 'util-funcs)
+
 (use-package doom-themes)
 (use-package ef-themes)
 

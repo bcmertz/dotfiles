@@ -6,6 +6,8 @@
 ;;;
 ;;; Code:
 
+(require 'util-funcs)
+
 (defvar splash-type "image" "String type of splash-screen to use.
 Possible values are `cowsay' and `image'")
 

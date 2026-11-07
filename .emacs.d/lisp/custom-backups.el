@@ -4,6 +4,10 @@
 ;;;
 ;;; Code:
 
+(require 'util-funcs)
+
+(use-package s)
+
 (use-package reopen-as-root
   :after tramp
   :straight (reopen-as-root :local-repo "~/.emacs.d/lisp/lib/reopen-as-root")

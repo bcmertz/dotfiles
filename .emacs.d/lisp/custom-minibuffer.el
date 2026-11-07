@@ -4,6 +4,8 @@
 ;;;
 ;;; Code:
 
+(require 'util-funcs)
+
 (use-package minibuffer
   :straight (:type built-in)
   :config

@@ -6,6 +6,8 @@
 ;;;
 ;;; Code:
 
+(require 'util-funcs)
+
 (use-package ispell
   :straight (:type built-in)
   :config

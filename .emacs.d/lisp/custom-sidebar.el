@@ -6,6 +6,7 @@
 ;;;
 ;;; Code:
 
+(require 'util-funcs)
 (require 'doom-lib)
 
 ;; Sidebar File navigation

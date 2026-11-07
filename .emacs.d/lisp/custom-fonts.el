@@ -4,6 +4,8 @@
 ;;;
 ;;; Code:
 
+(require 'util-funcs)
+
 ;; Default font (cant be font with hyphen in the name like current default monospace Inconsolata-g)
 (setq initial-frame-alist '((font . "Monospace")))
 (setq default-frame-alist '((font . "Monospace")))

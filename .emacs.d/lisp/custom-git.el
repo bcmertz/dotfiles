@@ -6,6 +6,8 @@
 ;;;
 ;;; Code:
 
+(require 'util-funcs)
+
 (which-key-add-key-based-replacements "C-c g" "git")
 
 (use-package magit

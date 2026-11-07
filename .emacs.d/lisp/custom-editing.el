@@ -6,6 +6,8 @@
 ;;;
 ;;; Code:
 
+(require 'util-funcs)
+
 ;; Enable multi-line commenting which ensures that `comment-indent-new-line'
 ;; properly continues comments onto new lines.
 (setq comment-multi-line t)

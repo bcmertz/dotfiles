@@ -6,6 +6,8 @@
 ;;;
 ;;; Code:
 
+(require 'util-funcs)
+
 (use-package ghostel
   :defer t
   :straight (ghostel :includes (ghostel-project

@@ -6,6 +6,8 @@
 ;;;
 ;;; Code:
 
+(require 'util-funcs)
+
 ;; cursor behavior
 (setq cursor-type 'box)
 (setq visible-cursor t)
