@@ -57,26 +57,23 @@
 (defun my-change-theme ()
   "Choose theme from installed list using `completing-read'."
   (interactive)
-  (let ((theme (completing-read "Choose theme : " (custom-available-themes)
-                                nil nil nil nil (symbol-name (car custom-enabled-themes)))))
-    (update-theme theme)))
-
-(defun my-consult-change-theme ()
-  "Choose theme from installed list using `consult--read'."
-  (interactive)
-  (consult--read
-   (mapcar #'symbol-name (custom-available-themes))
-   :require-match t
-   :prompt "Choose theme (dynamic C-<return>): "
-   :default (symbol-name (car custom-enabled-themes))
-   :state (lambda (action theme)
-            (pcase action
-              ('return (if theme (update-theme theme)))
-              ('preview (if theme (update-theme theme)))))))
+  (if (fboundp 'consult--read)
+      (consult--read
+       (mapcar #'symbol-name (custom-available-themes))
+       :require-match t
+       :prompt "Choose theme (dynamic C-<return>): "
+       :default (symbol-name (car custom-enabled-themes))
+       :state (lambda (action theme)
+                (pcase action
+                  ('return (if theme (update-theme theme)))
+                  ('preview (if theme (update-theme theme))))))
+    (let ((theme (completing-read "Choose theme : " (custom-available-themes)
+                                  nil nil nil nil (symbol-name (car custom-enabled-themes)))))
+      (update-theme theme))))
 
 ;; which key prefix for styling related keybindings
 (which-key-add-key-based-replacements "C-c t" "theming")
-(global-set-key (kbd "C-c t t") 'my-consult-change-theme)
+(global-set-key (kbd "C-c t t") 'my-change-theme)
 
 ;; normally there is no load theme hook, create one here
 ;; https://www.reddit.com/r/emacs/comments/4v7tcj/does_emacs_have_a_hook_for_when_the_theme_changes/d5wyu1r/
