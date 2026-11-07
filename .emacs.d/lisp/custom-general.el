@@ -7,7 +7,7 @@
 ;;; Code:
 
 (use-package util-funcs
-  :straight (util-funcs :local-repo "~/.emacs.d/lisp/lib/util-funcs/"))
+  :straight (util-funcs :type nil :local-repo "~/.emacs.d/lisp/lib/util-funcs/"))
 
 ;; emacs-31 compatibility
 (use-package compat
@@ -67,7 +67,7 @@
 (setq display-time-world-time-format "%a, %d %b %I:%M %p %Z")
 
 (use-package openwith
-  :straight (openwith :local-repo "~/.emacs.d/lisp/lib/openwith")
+  :straight (openwith :type nil :local-repo "~/.emacs.d/lisp/lib/openwith" :type nil)
   :config
   (openwith-mode)
   (setq openwith-associations

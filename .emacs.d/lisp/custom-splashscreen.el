@@ -7,7 +7,7 @@
 ;;; Code:
 
 (use-package util-funcs
-  :straight (util-funcs :local-repo "~/.emacs.d/lisp/lib/util-funcs/"))
+  :straight (util-funcs :type nil :local-repo "~/.emacs.d/lisp/lib/util-funcs/"))
 
 (defvar splash-type "image" "String type of splash-screen to use.
 Possible values are `cowsay' and `image'")

@@ -7,7 +7,7 @@
 ;;; Code:
 
 (use-package util-funcs
-  :straight (util-funcs :local-repo "~/.emacs.d/lisp/lib/util-funcs/"))
+  :straight (util-funcs :type nil :local-repo "~/.emacs.d/lisp/lib/util-funcs/"))
 
 (setq completion-ignore-case t)
 (setq tab-always-indent t)

@@ -7,7 +7,7 @@
 ;;; Code:
 
 (use-package util-funcs
-  :straight (util-funcs :local-repo "~/.emacs.d/lisp/lib/util-funcs/"))
+  :straight (util-funcs :type nil :local-repo "~/.emacs.d/lisp/lib/util-funcs/"))
 
 ;; Enable multi-line commenting which ensures that `comment-indent-new-line'
 ;; properly continues comments onto new lines.
@@ -352,7 +352,7 @@ With argument, do this that many times."
 
 (use-package highlight-unsaved
   :after highlight-changes
-  :straight (highlight-unsaved :local-repo "~/.emacs.d/lisp/lib/highlight-unsaved"))
+  :straight (highlight-unsaved :type nil :local-repo "~/.emacs.d/lisp/lib/highlight-unsaved"))
 
 (provide 'custom-editing)
 ;;; custom-editing.el ends here

@@ -7,10 +7,10 @@
 ;;; Code:
 
 (use-package util-funcs
-  :straight (util-funcs :local-repo "~/.emacs.d/lisp/lib/util-funcs/"))
+  :straight (util-funcs :type nil :local-repo "~/.emacs.d/lisp/lib/util-funcs/"))
 
 (use-package doom-lib
-  :straight (doom-lib :local-repo "~/.emacs.d/lisp/lib/doom-lib/"))
+  :straight (doom-lib :type nil :local-repo "~/.emacs.d/lisp/lib/doom-lib/"))
 
 ;; toggle neotree in project root directory
 (defun neotree-project-dir-toggle ()

@@ -5,13 +5,13 @@
 ;;; Code:
 
 (use-package util-funcs
-  :straight (util-funcs :local-repo "~/.emacs.d/lisp/lib/util-funcs/"))
+  :straight (util-funcs :type nil :local-repo "~/.emacs.d/lisp/lib/util-funcs/"))
 
 (use-package s)
 
 (use-package reopen-as-root
   :after tramp
-  :straight (reopen-as-root :local-repo "~/.emacs.d/lisp/lib/reopen-as-root")
+  :straight (reopen-as-root :type nil :local-repo "~/.emacs.d/lisp/lib/reopen-as-root")
   :init (reopen-as-root-mode))
 
 (defvar my-backup-directory "~/.emacs.d/var/backups/")
