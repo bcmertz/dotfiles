@@ -28,11 +28,9 @@
 (load custom-file nil t)
 
 (measure-time(require 'custom-packaging))        ;; repositories and package management
-(measure-time(require 'custom-funcs))            ;; custom functions used throughout our configuration
 
 (if (equal (getenv "SESSION") "emacs")            ;; see if SESSION env var is emacs
     (measure-time(require 'custom-exwm-config))) ;; emacs as window manager
-
 (measure-time(require 'custom-splashscreen))     ;; splash-screen
 (measure-time(require 'custom-backups))          ;; backups and temp files
 (measure-time(require 'custom-general))          ;; general configuration
@@ -82,6 +80,7 @@
 (measure-time(require 'custom-markdown))
 (measure-time(require 'custom-css))
 (measure-time(require 'custom-bash))
+(measure-time(require 'custom-elisp))
 (measure-time(require 'custom-html))
 (measure-time(require 'custom-arduino))
 (measure-time(require 'custom-latex))
