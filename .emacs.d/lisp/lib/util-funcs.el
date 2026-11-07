@@ -1,11 +1,10 @@
-;;; custom-funcs.el --- utilities and custom defined functions -*- lexical-binding: t -*-
+;;; util-funcs.el --- utilities and custom defined functions -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;
 ;;; custom funcs
 ;;;
 ;;; Code:
-
 
 ;; if gui do something in whatver type of emacs instance we are using
 (defmacro if-gui (action &rest action2)
@@ -47,60 +46,9 @@
                       (apply action))))
     (apply action)))
 
-;; select current line
-(defun mark-entire-line ()
-  "Mark the whole line from the indent to the end."
-  (interactive)
-  (beginning-of-line-text)
-  (set-mark-command nil)
-  (end-of-line))
-
-
 (defun current-project-root ()
   "Return current project root dir or nil."
-  (ignore-errors
-    (project-root (project-current)))
-  )
-
-;; toggle neotree in project root directory
-(defun neotree-project-dir-toggle ()
-    "Open NeoTree at the project root."
-    (interactive)
-    (defvar project-dir)
-    (defvar file-name)
-    (defvar neo-smart-open)
-    (let ((project-dir (current-project-root))
-          (file-name (buffer-file-name))
-          (neo-smart-open t))
-      (if (and (fboundp 'neo-global--window-exists-p)
-               (neo-global--window-exists-p))
-          (neotree-hide)
-        (progn
-          (neotree-show)
-          (if project-dir
-              (neotree-dir project-dir))
-          (if file-name
-              (neotree-find file-name))))))
-
-(defun return-newline-below ()
-  "Go to end of line and return bc in TTy C-m and RET is weird."
-  (interactive)
-  (end-of-line)
-  (newline-and-indent)
-  ;; (if (string= major-mode "web-mode")
-  ;;     (indent-relative)
-  ;;     )
-  )
-
-(defun org-return-newline-below ()
-  "Go to end of line and org-meta-return."
-  (interactive)
-  (end-of-line)
-  (if (string= major-mode "org-mode")
-      (org-meta-return)
-      (progn
-        (newline-and-indent)
-        (indent-relative))))
+  (ignore-errors (project-root (project-current))))
 
 ;; https://kisaragi-hiu.com/emacs-completion-metadata.html
 ;; utility function to give a completing read instance a new completion category
@@ -129,7 +77,7 @@
     (if (string-match-p (regexp-quote "doom") (format "%s" (car custom-enabled-themes)))
         (setq color (doom-darken (doom-color var) 0.05))
       (if (string-match-p (regexp-quote "ef-") (format "%s" (car custom-enabled-themes)))
-          (setq color (car (cdr (assoc var (ef-themes--palette-value (car custom-enabled-themes))))))
+          (setq color (ef-themes-get-color-value (car custom-enabled-themes)))
         (if (string-match-p (regexp-quote "atom-one-dark") (format "%s" (car custom-enabled-themes)))
             ;; need to test for various special names
             (if (string= var "bg-alt")
@@ -140,7 +88,7 @@
   )
 
 ;; https://www.emacswiki.org/emacs/EmacsAsDaemon#h5o-10
-(defun client-save-kill-emacs(&optional display)
+(defun client-save-kill-emacs (&optional display)
   " This is a function that can bu used to save buffers and
 shutdown the emacs daemon. It should be called using
 emacsclient -e '(client-save-kill-emacs)'.  This function will
@@ -190,7 +138,7 @@ be prompted."
     ; If we made a frame then kill it.
     (when (or modified-buffers active-clients-or-frames) (delete-frame new-frame))))
 
-(defun modified-buffers-exist()
+(defun modified-buffers-exist ()
   "This function will check to see if there are any buffers
 that have been modified.  It will return true if there are
 and nil otherwise. Buffers that have buffer-offer-save set to
@@ -263,18 +211,6 @@ Cancels itself, if this buffer was killed."
       (message "%s" per)
     per)))
 
-;; refresh ewal theme
-(defun refresh-theme ()
-  "Refresh the theme based on global config of whether to use pywal colors for Emacs."
-  (interactive)
-  (if (string= (shell-command-to-string "global_cfg pywal_emacs") "true")
-      (setq custom-theme 'ewal-doom-one)
-    (setq custom-theme default-theme))
-  ;; disable all enabled themes
-  (dolist (i custom-enabled-themes)
-    (disable-theme i))
-  ;; load theme
-  (load-theme custom-theme))
 
 (defun if-in-project (action_1 &optional action_2)
   "If in a project, do ACTION_1 else ACTION_2."
@@ -284,69 +220,6 @@ Cancels itself, if this buffer was killed."
       (if action_2
           (apply action_2)
         ))))
-
-(defun move-lines (n)
-  (let ((beg) (end) (keep))
-    (if mark-active
-        (save-excursion
-          (setq keep t)
-          (setq beg (region-beginning)
-                end (region-end))
-          (goto-char beg)
-          (setq beg (line-beginning-position))
-          (goto-char end)
-          (setq end (line-beginning-position 2)))
-      (setq beg (line-beginning-position)
-            end (line-beginning-position 2)))
-    (let ((offset (if (and (mark t)
-                           (and (>= (mark t) beg)
-                                (< (mark t) end)))
-                      (- (point) (mark t))))
-          (rewind (- end (point))))
-      (goto-char (if (< n 0) beg end))
-      (forward-line n)
-      (insert (delete-and-extract-region beg end))
-      (backward-char rewind)
-      (if offset (set-mark (- (point) offset))))
-    (if keep
-        (setq mark-active t
-              deactivate-mark nil))))
-
-(defun move-lines-up (n)
-  "Move the line(s) spanned by the active region up by N lines."
-  (interactive "*p")
-  (move-lines (- (or n 1))))
-
-(defun move-lines-down (n)
-  "Move the line(s) spanned by the active region down by N lines."
-  (interactive "*p")
-  (move-lines (or n 1)))
-
-;; delete don't kill backwards for M-del
-(defun delete-word (arg)
-    "Delete characters forward until encountering the end of a word.
-With argument, do this that many times."
-    (interactive "p")
-    (if (use-region-p)
-        (delete-region (region-beginning) (region-end))
-      (delete-region (point) (progn (forward-word arg) (point)))))
-
-(defun backward-delete-word (arg)
-    "Delete characters backward until encountering the end of a word.
-With argument, do this that many times."
-    (interactive "p")
-    (delete-word (- arg)))
-
-;; http://xahlee.info/emacs/emacs/emacs_kill-ring.html
-(defun forward-delete-word (arg)
-  "Delete characters forward until encountering the end of a word.
-With argument, do this that many times."
-  (interactive "p")
-  (delete-region
-   (point)
-   (progn
-     (forward-word arg)
-     (point))))
 
 ;; move file
 (defun move-file (new-location)
@@ -408,103 +281,9 @@ With argument, do this that many times."
           (set-buffer-modified-p nil)
           (setq recentf-list (delete filename recentf-list)))))))
 
-;; (defun rename-file-and-buffer ()
-;;   "Rename current buffer and if the buffer is visiting a file, rename it too."
-;;   (interactive)
-;;   (when-let* ((filename (buffer-file-name))
-;;               (new-name (or (read-file-name "New name: " (file-name-directory filename) nil 'confirm)))
-;;               (containing-dir (file-name-directory new-name)))
-;;     ;; make sure the current buffer is saved and backed by some file
-;;     (when (or (buffer-modified-p) (not (file-exists-p filename)))
-;;       (if (y-or-n-p "Can't move file before saving it.  Would you like to save it now?")
-;;           (save-buffer)))
-;;     (if (get-file-buffer new-name)
-;;         (message "There already exists a buffer named %s" new-name)
-;;       (progn
-;;         (make-directory containing-dir t)
-;;         (cond
-;;          ((vc-backend filename)
-;;           ;; vc-rename-file seems not able to cope with remote filenames?
-;;           (let ((vc-filename (if (tramp-tramp-file-p filename) (tramp-file-local-name filename) filename))
-;;                 (vc-new-name (if (tramp-tramp-file-p new-name) (tramp-file-local-name filename) new-name)))
-;;             (vc-rename-file vc-filename vc-new-name)))
-;;          (t
-;;           (rename-file filename new-name t)
-;;           (set-visited-file-name new-name t t)))))))
 
 
 
-;; start bash script and enable shell mode
-(defun start-shell-script ()
-  "Start shell script by inserting header and entering shell mode."
-  (interactive)
-  (insert "#!/bin/sh\n#\n# description")
-  (shell-script-mode))
-
-;; start elisp script and enable elisp mode
-(defun start-elisp-script ()
-  "Start elisp script by inserting header and entering elisp mode."
-  (interactive)
-  (let ((package (car (split-string (buffer-name) "\\.")))
-        (type (car (last (split-string (car (split-string (buffer-name) "\\.")) "\\-")))))
-    (insert (format ";;; %s --- custom %s -*- lexical-binding: t -*-
-;;;
-;;; Commentary:
-;;;
-;;; Code:
-
-
-(provide '%s)
-;;; %s.el ends here" (buffer-name) type package package))
-    ))
-
-
-;; Turn org text into link and follow it to corresponding header
-(defun org-open-at-point-plaintext ()
-  "Turn org text into link and follow it to corresponding header."
-  (interactive)
-  (if (string= " " (string (preceding-char)))
-      (insert "[[")
-    (progn
-      (backward-word)
-      (insert "[["))
-    )
-  (forward-word)
-  (insert "]]")
-  (backward-word)
-  (org-open-at-point)
-  (org-cycle)
-  )
-
-;; https://emacs.stackexchange.com/a/10714
-(defun org-remove-link ()
-  "Replace an org link by its description or if empty its address."
-  (interactive)
-  (if (org-in-regexp org-link-bracket-re 1)
-      (save-excursion
-        (let ((remove (list (match-beginning 0) (match-end 0)))
-              (description
-               (if (match-end 2)
-                   (org-match-string-no-properties 2)
-                 (org-match-string-no-properties 1))))
-          (apply 'delete-region remove)
-          (insert description)))))
-
-(defun my-org-return ()
-  "Org return and if header is closed cycle it."
-  (interactive)
-  (org-return)
-  (if (org-folded-p)
-      (org-cycle)
-      )
-  )
-
-;; https://emacs.stackexchange.com/a/26840
-(defun org-folded-p ()
-  "Return non-nil if point is on a folded headline or plain list item."
-  (and (or (org-at-heading-p)
-           (org-at-item-p))
-       (invisible-p (point-at-eol))))
 
 ;; https://emacs.stackexchange.com/a/35072
 ;; mark whole word
@@ -573,31 +352,5 @@ selects backward.)"
       (goto-char (point-min)))
     (switch-to-buffer-other-window buffer)))
 
-(defun global-text-scale-increase ()
-  "Globally increase text scale."
-  (interactive)
-  (setq current-prefix-arg '(1))
-  (call-interactively 'global-text-scale-adjust))
-
-(defun global-text-scale-decrease ()
-  "Globally decrease text scale."
-  (interactive)
-  (setq current-prefix-arg '(-1))
-  (call-interactively 'global-text-scale-adjust))
-
-;; https://www.reddit.com/r/emacs/comments/12tj72z/nolittering_could_cause_backups_of_files/jh6i6oy/
-(defun file-is-root-p (&optional name)
-  "Check whether tramp su/sudo method is used for opening filepath NAME."
-  ;; Adopted from https://www.gnu.org/software/emacs/manual/html_node/tramp/Auto_002dsave-File-Lock-and-Backup.html
-  (let ((remote-method (file-remote-p (or name default-directory) 'method))
-        (remote-user (file-remote-p (or name default-directory) 'user)))
-    (and remote-method
-         (or (member remote-method '("sudo" "su" "ksu" "doas"))
-             (string= remote-user "root")))))
-
-(defun file-is-not-root-p (&optional name)
-  "Check whether file given by NAME is not a root file."
-  (not (file-is-root-p name)))
-
-(provide 'custom-funcs)
-;;; custom-funcs.el ends here
+(provide 'util-funcs)
+;;; util-funcs.el ends here
