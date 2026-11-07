@@ -21,6 +21,11 @@
   (setq which-key-idle-delay 0.5)
   (which-key-mode))
 
+(use-package repeat
+  :straight (:type built-in)
+  :defer t
+  :init
+  (repeat-mode))
 
 ;; terminal specific escape codes
 ;; found with showkey -a
