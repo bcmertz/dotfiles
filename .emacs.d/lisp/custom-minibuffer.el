@@ -308,7 +308,8 @@
 ;; like a context menu of actions for a given thing in a minibuffer (i think)
 (use-package embark
   :bind
-  (("C-h B" . embark-bindings) ;; alternative for `describe-bindings'
+  (("C-h b" . embark-bindings) ;; alternative for `describe-bindings'
+   ("C-h B" . describe-bindings)
    :map vertico-map (("C-." . embark-act)         ;; pick some comfortable binding
                      ("M-." . embark-dwim)
                      ("M-<return>" . embark-collect)
