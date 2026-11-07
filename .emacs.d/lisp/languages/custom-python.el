@@ -32,11 +32,7 @@
            do (if (executable-find (car c))
                   (progn
                     (setq python-flymake-command c)
-                    (cl-return)
-                    )
-                )
-           )
-  )
+                    (cl-return)))))
 
 (provide 'custom-python)
 ;;; custom-python.el ends here
