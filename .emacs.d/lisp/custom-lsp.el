@@ -99,11 +99,18 @@
                )
   (setq eglot-code-action-indications '()) ;; set how eglot lets you know there are code actions
   (setq eglot-autoshutdown t)  ; Shut down after killing last managed buffer
-  ;; remove bold from occurrences of variable under cursor and type hints
+
+  ;; speedup eglot
+  ;;
+  ;; don't keep eglot events JSON-RPC data
+  (setq eglot-events-buffer-config '(:size 0 :format short))
   ;; silence long-running process notifications
   (setq eglot-report-progress nil)
+
   ;; don't use these eglot server features
-  (setq eglot-ignored-server-capabilities '(:documentHighlightProvider :inlayHintProvider))
+  (setq eglot-ignored-server-capabilities '(:documentHighlightProvider   ;; remove bold from occurrences of variable under cursor and type hints
+                                            :inlayHintProvider ;; no need for type annotations
+                                            :semanticTokensProvider)) ;; allow treesitter to handle fontification
   ;; workspace configuration
   (setq-default eglot-workspace-configuration
                 '(:pylsp (:plugins (:jedi_completion (:include_params t
