@@ -99,6 +99,7 @@
 !.emacs.d/etc/*
 !.emacs.d/org-templates/*
 !.emacs.d/lisp/**/*
+!.emacs.d/ispell/*
 !.emacs.d/snippets/**/*
 !.emacs.d/straight/*/
 !.emacs.d/straight/versions/default.el

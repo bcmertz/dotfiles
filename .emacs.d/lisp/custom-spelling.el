@@ -24,6 +24,7 @@
   :straight (:type built-in)
   :config
   (setq ispell-program-name "aspell")
+  (setq ispell-dictionary "en_US")
   (setq ispell-personal-dictionary (expand-file-name (concat "ispell/" ispell-dictionary ".pws")
                                                      user-emacs-directory))
   (which-key-add-key-based-replacements "C-c i" "spell checking")
