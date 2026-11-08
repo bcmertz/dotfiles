@@ -25,11 +25,17 @@
               ("t" . ghostel-project)
               ("T" . ghostel-project-list-buffers)))
 
+(defun ghostel-buffers-default ()
+  "Return list of default non-project ghostel buffers."
+  (let* ((bufs (seq-filter (lambda (buf) (string-prefix-p ghostel-buffer-name (buffer-name buf)))
+                         (ghostel-buffer-list))))
+    bufs))
+
 (defun toggle-terminal ()
   "Toggle ghostel terminal."
   (interactive)
   (let* ((proj (current-project-root))
-         (gh-list-cmd (if proj 'ghostel-project-buffer-list 'ghostel-buffer-list)) ;; TODO: only return non-project buffers if no proj
+         (gh-list-cmd (if proj 'ghostel-project-buffer-list 'ghostel-buffers-default))
          (gh-new-cmd (if proj 'ghostel-project-new 'ghostel-new))
          (term-buffer (car (funcall gh-list-cmd))))
     (if term-buffer
