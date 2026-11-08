@@ -30,6 +30,7 @@ My emacs configuration. A lightweight but heavily customized config. As much as 
 - minimal-emacs
 - daviwil
 - daedreth
+- jamescherti
 - sqrtminusone
 - karthink
 - sachac
