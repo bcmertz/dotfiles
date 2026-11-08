@@ -14,6 +14,43 @@
 (setq visible-cursor t)
 (blink-cursor-mode 1)
 
+;; toggle indent bars mode
+(defun toggle-indent-bars ()
+  "Toggle `indent-bars-mode'."
+  (interactive)
+  (indent-bars-mode 'toggle))
+
+;; visual indentation indicator
+(use-package indent-bars
+  :defer t
+  :hook ((yaml-mode . indent-bars-mode)
+         (python-mode . indent-bars-mode))
+  :bind ("C-c t i" . toggle-indent-bars)
+  :config
+  ;; style examples from https://github.com/jdtsmith/indent-bars/blob/main/examples.md
+  ;;
+  ;; minimal color pop
+  ;; (setq indent-bars-color '(highlight :face-bg t :blend 0.15)
+  ;;       indent-bars-pattern "."
+  ;;       indent-bars-width-frac 0.1
+  ;;       indent-bars-pad-frac 0.1
+  ;;       indent-bars-zigzag nil
+  ;;       indent-bars-color-by-depth '(:regexp "outline-\\([0-9]+\\)" :blend 1) ; blend=1: blend with BG only
+  ;;       indent-bars-highlight-current-depth '(:blend 0.5) ; pump up the BG blend on current
+  ;;       indent-bars-display-on-blank-lines t)
+  ;; minimal
+  (setq indent-bars-color '(highlight :face-bg t :blend 0.2)
+        indent-bars-pattern "."
+        indent-bars-width-frac 0.1
+        indent-bars-pad-frac 0.1
+        indent-bars-zigzag nil
+        indent-bars-color-by-depth nil
+        indent-bars-highlight-current-depth nil
+        indent-bars-display-on-blank-lines t))
+;; :custom
+;; (indent-bars-prefer-character t)
+
+
 ;; true transparency
 (set-frame-parameter nil 'alpha-background 100)
 (add-to-list 'default-frame-alist '(alpha-background . 100))
