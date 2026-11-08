@@ -9,6 +9,7 @@
 (use-package util-funcs
   :straight (util-funcs :type nil :local-repo "~/.emacs.d/lisp/lib/util-funcs/"))
 
+;; https://www.masteringemacs.org/article/correcting-typos-misspellings-abbrev
 (use-package abbrev
   :defer t
   :straight (:type built-in)
