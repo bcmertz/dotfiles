@@ -79,7 +79,8 @@
   ;; see - https://github.com/tumashu/vertico-posframe/issues/30
   ;; otherwise could do: (t posframe (vertico-posframe-fallback-mode . vertico-buffer-mode))
   ;; to make posframe default with normal fallback in terminal
-  ;; TODO: update for emacs 31, this might be fixed - confirmed veritco-posframe works in 31.1, need
+  ;;
+  ;; as of emacs 31, this might be fixed - confirmed veritco-posframe works in 31.1, need
   ;; to decide if this is desirable behavior and what configurations to use
   ;;
   ;; Configuration:
