@@ -40,6 +40,7 @@
 ;; use auth-source-pass as the primary auth-source provider
 ;; so that all passwords are stored in a single place.
 (use-package auth-source-pass
+  :straight (:type built-in)
   :config
   (auth-source-pass-enable))
 
