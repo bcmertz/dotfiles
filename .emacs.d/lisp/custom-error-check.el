@@ -21,8 +21,32 @@
   :config
   (which-key-add-key-based-replacements "C-c e" "errors"))
 
-;; TODO: flymake-show-directory-diagnostics: consult--read to get directory, then
-;; goes through every file in the dir and checks for errors, and outputs them
+;; TODO: WIP collect all diagnostics from project root / user specified dir
+(defun my/check-all-files-in-project ()
+  (interactive)
+  (let* ((dir (read-directory-name "Select directory: " (current-project-root)))
+         (check-dir (file-name-as-directory dir)))
+    (dolist (file (directory-files-recursively check-dir
+                                               "\\`[^\\.].*\\'"
+                                               nil
+                                               t))
+      (message "%s" file)
+      (message "%s" (file-name-extension file))
+
+      (with-temp-buffer
+        ;; (save-excursion
+        ;; (find-file file)
+        (insert-file-contents file t)
+        (python-mode)
+        ;; (message "%s" major-mode)
+        ;; (eglot-ensure)
+        (flymake-mode 1)
+        (flymake-start)
+        (message "%s" (flymake-diagnostics)) ;; ?? this doesn't work but is the function which collects diagnostics in open buffers successfully
+        )
+      )
+    ))
+
 
 (provide 'custom-error-check)
 ;;; custom-error-check.el ends here
