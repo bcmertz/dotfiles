@@ -92,6 +92,7 @@
 !.emacs.d/minimal-init.el
 !.emacs.d/custom.el
 !.emacs.d/README.md
+!.emacs.d/abbrev_defs
 !.emacs.d/.mc-lists.el
 !.emacs.d/smartparens-config
 !.emacs.d/*/

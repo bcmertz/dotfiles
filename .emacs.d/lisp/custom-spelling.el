@@ -9,6 +9,16 @@
 (use-package util-funcs
   :straight (util-funcs :type nil :local-repo "~/.emacs.d/lisp/lib/util-funcs/"))
 
+(use-package abbrev
+  :defer t
+  :straight (:type built-in)
+  :hook (text-mode . abbrev-mode)
+  :config
+  (setq abbrev-file-name "~/.emacs.d/abbrev_defs")
+  ;; (setq save-abbrevs 'silently)
+  (if (file-exists-p abbrev-file-name)
+    (quietly-read-abbrev-file)))
+
 (use-package ispell
   :straight (:type built-in)
   :config
@@ -23,7 +33,10 @@
 (use-package flyspell
   :straight (:type built-in)
   :bind (("C-c i B" . flyspell-buffer)
-         ("C-c i f" . flyspell-mode)))
+         ("C-c i f" . flyspell-mode))
+  :config
+  ;; add corrections to abbrev_defs for automatic correction
+  (setq flyspell-abbrev-p t))
 
 (defun setup-flyspell ()
   "Setup spell checking on the fly."
