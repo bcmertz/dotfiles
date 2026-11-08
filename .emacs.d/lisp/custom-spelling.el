@@ -9,23 +9,33 @@
 (use-package util-funcs
   :straight (util-funcs :type nil :local-repo "~/.emacs.d/lisp/lib/util-funcs/"))
 
+(defun append-buffer-abbrevs ()
+  "Append buffer abbrevs to abbrev file"
+  (interactive)
+  (if (and abbrev-mode
+           (file-exists-p abbrev-file-name))
+      (progn
+        (read-abbrev-file abbrev-file-name t)
+        (write-abbrev-file abbrev-file-name))))
+
 ;; https://www.masteringemacs.org/article/correcting-typos-misspellings-abbrev
 (use-package abbrev
   :defer t
   :straight (:type built-in)
-  :hook (text-mode . abbrev-mode)
+  :hook ((text-mode . abbrev-mode)
+         (after-save . append-buffer-abbrevs))
   :config
   (setq abbrev-file-name "~/.emacs.d/abbrev_defs")
   ;; (setq save-abbrevs 'silently)
   (if (file-exists-p abbrev-file-name)
-    (quietly-read-abbrev-file)))
+      (quietly-read-abbrev-file)))
 
 (use-package ispell
   :straight (:type built-in)
   :config
   (setq ispell-program-name "aspell")
   (setq ispell-personal-dictionary (expand-file-name (concat "ispell/" ispell-dictionary ".pws")
-                               user-emacs-directory))
+                                                     user-emacs-directory))
   (which-key-add-key-based-replacements "C-c i" "spell checking")
   :bind (("C-c i d" . ispell-change-dictionary)
          ("C-c i k" . ispell-kill-ispell)
