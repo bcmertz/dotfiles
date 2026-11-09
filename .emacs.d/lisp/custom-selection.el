@@ -12,8 +12,9 @@
   :straight (:type built-in)
   :bind ("C-x SPC" . rectangle-mark-mode))
 
-;; make shift click select region
-(mouse-shift-adjust-mode)
+;; ;; make shift click select region
+(if (not (version< emacs-version "31.1"))
+    (mouse-shift-adjust-mode))
 
 ;; replace highlighted sections
 ;; by default emacs will not delete selection text when typing on it
