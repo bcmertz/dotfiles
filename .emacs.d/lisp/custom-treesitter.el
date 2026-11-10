@@ -20,6 +20,7 @@
         (setopt treesit-enabled-modes t))))
 
 ;; legacy support
+;; TODO - remove when emacs 32.1 is out
 (use-package treesit-auto
   :if (version< emacs-version "31.1")
   :config
