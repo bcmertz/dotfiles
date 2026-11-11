@@ -161,6 +161,7 @@
 
 ;; EXAMPLE
 ;; (defun adjust-window-split-thresholds nil
+;; https://github.com/ianyepan/.wsl-emacs.d/blob/master/init.el#L121
 ;;   "Adjust split thresholds so that popup windows always split vertically in a tall frame, horizontally in a wide frame, with a maximum of two columns"
 ;;   (interactive)
 ;;   (if (>= (frame-pixel-width) (frame-pixel-height))
