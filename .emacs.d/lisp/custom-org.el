@@ -106,8 +106,7 @@
         ("l" "Link" entry (file+headline "~/docs/org/links.org" "Links")
          "* %? \n[[%:link][%:description]] \nCaptured On: %U")
         ("L" "Quote Link" entry (file+headline "~/docs/org/links.org" "Links")
-         "* %? \nSource: %:link, \n\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\nCaptured On: %U")
-        ))
+         "* %? \nSource: %:link, \n\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\nCaptured On: %U")))
 
 ;; overwrite web mode binding for C-c C-l
 (global-set-key (kbd "C-c C-l") 'org-store-link)
@@ -285,8 +284,7 @@
   (setq org-modern-table-horizontal nil)
   (setq org-modern-statistics nil)
   :init
-  (global-org-modern-mode)
-  )
+  (global-org-modern-mode))
 
 ;; ;; table of contents - maybe add save hook in org mode
 ;; (use-package org-make-toc

@@ -7,8 +7,7 @@
 
 (use-package vue-mode
     :defer t
-    :mode "\\*.vue\\'"
-    )
+    :mode "\\*.vue\\'")
 
 (provide 'custom-vue)
 ;;; custom-vue.el ends here

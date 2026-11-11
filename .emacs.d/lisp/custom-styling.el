@@ -62,8 +62,7 @@
     (set-frame-parameter
      nil 'alpha-background
      (if (eql (cond ((numberp alpha-background) alpha-background)
-                    ((numberp (cdr alpha-background)) (cdr alpha-background))
-                    )
+                    ((numberp (cdr alpha-background)) (cdr alpha-background)))
               100)
          '96 '100))))
 

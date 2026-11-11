@@ -21,8 +21,7 @@
 
 
 (provide '%s)
-;;; %s.el ends here" (buffer-name) type package package))
-    ))
+;;; %s.el ends here" (buffer-name) type package package))))
 
 (provide 'custom-elisp)
 ;;; custom-elisp.el ends here

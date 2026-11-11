@@ -95,12 +95,12 @@ check to see if there are any modified buffers, active clients
 or frame.  If so, an x window will be opened and the user will
 be prompted."
   (let (new-frame modified-buffers active-clients-or-frames)
-    ; Check if there are modified buffers, active clients or frames.
+    ;; Check if there are modified buffers, active clients or frames.
     (setq modified-buffers (modified-buffers-exist))
     (setq active-clients-or-frames ( or (> (length server-clients) 1)
 				     (> (length (frame-list)) 1)))
 
-    ; Create a new frame if prompts are needed.
+    ;; Create a new frame if prompts are needed.
     (when (or modified-buffers active-clients-or-frames)
       (when (not (eq window-system 'x))
 	(message "Initializing x windows system.")
@@ -109,31 +109,31 @@ be prompted."
       (message "Opening frame on display: %s" display)
       (select-frame (make-frame-on-display display '((window-system . x)))))
 
-    ; Save the current frame.
+    ;; Save the current frame.
     (setq new-frame (selected-frame))
 
-    ; When displaying the number of clients and frames:
-    ; subtract 1 from clients (this client).
-    ; subtract 2 from frames (the frame just created and the default frame.)
+    ;; When displaying the number of clients and frames:
+    ;; subtract 1 from clients (this client).
+    ;; subtract 2 from frames (the frame just created and the default frame.)
     (when (or (not active-clients-or-frames)
-	       (yes-or-no-p (format "There are currently %d clients and %d frames. Exit anyway?" (- (length server-clients) 1) (- (length (frame-list)) 2))))
+	      (yes-or-no-p (format "There are currently %d clients and %d frames. Exit anyway?" (- (length server-clients) 1) (- (length (frame-list)) 2))))
 
-      ; If the user quits during the save dialog then don't exit emacs.
-      ; Still close the terminal though.
+      ;; If the user quits during the save dialog then don't exit emacs.
+      ;; Still close the terminal though.
       (let((inhibit-quit t))
-             ; Save buffers
+        ;; Save buffers
 	(with-local-quit
 	  (save-some-buffers))
 	(if quit-flag
-	  (setq quit-flag nil)
-          ; Kill all remaining clients
+	    (setq quit-flag nil)
+          ;; Kill all remaining clients
 	  (progn
 	    (dolist (client server-clients)
 	      (server-delete-client client))
-		 ; Exit emacs
+            ;; Exit emacs
 	    (kill-emacs)))))
 
-    ; If we made a frame then kill it.
+    ;; If we made a frame then kill it.
     (when (or modified-buffers active-clients-or-frames) (delete-frame new-frame))))
 
 (defun modified-buffers-exist ()
@@ -195,19 +195,19 @@ Cancels itself, if this buffer was killed."
   "Find the percent of a file that is comments and docstrings."
   (interactive)
   (let ((lines (make-hash-table :test #'equal)))
-  (goto-char (point-min))
-  (while (< (point) (point-max))
-    (when (memq (face-at-point)
-                '(font-lock-comment-face
-                  font-lock-doc-face))
-      (puthash (line-number-at-pos) t lines))
-    (forward-char))
-  (setq per (* (/ (float (length (hash-table-keys lines)))
-        (line-number-at-pos))
-     100))
-  (if (called-interactively-p 'interactive)
-      (message "%s" per)
-    per)))
+    (goto-char (point-min))
+    (while (< (point) (point-max))
+      (when (memq (face-at-point)
+                  '(font-lock-comment-face
+                    font-lock-doc-face))
+        (puthash (line-number-at-pos) t lines))
+      (forward-char))
+    (setq per (* (/ (float (length (hash-table-keys lines)))
+                    (line-number-at-pos))
+                 100))
+    (if (called-interactively-p 'interactive)
+        (message "%s" per)
+      per)))
 
 
 (defun if-in-project (action_1 &optional action_2)
@@ -263,10 +263,8 @@ Cancels itself, if this buffer was killed."
 (defun rename-file-and-buffer (new-name)
   "Renames both current buffer and file it's visiting to NEW-NAME."
   (interactive "sNew name: ")
-  (let (
-        (name (buffer-name))
-        (filename (buffer-file-name))
-        )
+  (let ((name (buffer-name))
+        (filename (buffer-file-name)))
     (if (not filename)
         (message "Buffer '%s' is not visiting a file!" name)
       (if (get-buffer new-name)

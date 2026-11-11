@@ -30,8 +30,7 @@
     ;; (setq mu4e-change-filenames-when-moving t)
     ;; update script every two minutes
     (setq mu4e-update-interval 300
-          mu4e-headers-auto-update t))
-  )
+          mu4e-headers-auto-update t)))
 
 ;; dont start email services for terminal daemon :)
 (apply-if-gui 'startup-email)

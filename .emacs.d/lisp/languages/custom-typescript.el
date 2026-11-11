@@ -7,8 +7,7 @@
 (use-package typescript-mode
   :defer t
   :init
-  (setq typescript-indent-level 2)
-  )
+  (setq typescript-indent-level 2))
 
 ;; (use-package web-mode
 ;;   :defer t

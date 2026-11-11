@@ -50,8 +50,7 @@
   '(("\\.pdf\\'" "acroread" (file))
     ("\\.mp3\\'" "xmms" (file))
     ("\\.\\(?:mpe?g\\|avi\\|wmv\\)\\'" "mplayer" ("-idx" file))
-    ("\\.\\(?:jpe?g\\|png\\)\\'" "display" (file))
-    )
+    ("\\.\\(?:jpe?g\\|png\\)\\'" "display" (file)))
   "Associations of file patterns to external programs.
 File pattern is a regular expression describing the files to
 associate with a program. The program arguments are a list of
@@ -84,8 +83,7 @@ string."
      (concat
       "exec nohup " command " "
       (mapconcat 'shell-quote-argument arglist " ")
-      " >/dev/null"))
-     ))
+      " >/dev/null"))))
 
 (defun openwith-open-windows (file)
   "Run external command COMMAND, in such a way that it is

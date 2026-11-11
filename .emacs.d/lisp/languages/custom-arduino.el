@@ -7,8 +7,7 @@
 
 (use-package arduino-mode
   :mode "\\.ino\\'"
-  :defer t
-  )
+  :defer t)
 
 ;; make useful keys work in serial terminal
 (eval-after-load 'term
@@ -23,8 +22,7 @@
   (interactive "")
   (setq dir "/usr/share/arduino/examples")
   (save-excursion
-    (setq file (counsel-find-file dir))
-    )
+    (setq file (counsel-find-file dir)))
   (save-excursion
     (let ((buffer (generate-new-buffer "scratch.ino")))
       (switch-to-buffer buffer)
@@ -33,8 +31,7 @@
       (setq filename (file-name-sans-extension (file-name-nondirectory file)))
       (setq directory (concat "~/coding/arduino/" filename))
       (mkdir directory)
-      (write-file (concat (concat directory "/") (file-name-nondirectory file)))
-      ))
+      (write-file (concat (concat directory "/") (file-name-nondirectory file)))))
   (kill-buffer (file-name-nondirectory file)))
 
 ;; BOARD_TAG - MONITOR_PORT
@@ -64,9 +61,7 @@ include /usr/share/arduino/Arduino.mk")
     (let ((buffer (generate-new-buffer "Makefile")))
       (switch-to-buffer buffer)
       (insert board-info)
-      (write-file "Makefile")
-      ))
-)
+      (write-file "Makefile"))))
 
 (provide 'custom-arduino)
 ;;; custom-arduino.el ends here

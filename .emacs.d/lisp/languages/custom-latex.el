@@ -10,8 +10,7 @@
 (use-package tex
   :defer t
   :straight auctex
-  :mode "\\*.tex\\'"
-  )
+  :mode "\\*.tex\\'")
 
 ;; to use pdfview with tex
 (setq TeX-view-program-selection '((output-pdf "PDF Tools"))
@@ -24,8 +23,7 @@
 
 (defun compile-latex-document ()
   "Compile latex document."
-  (TeX-command-run-all nil)
-  )
+  (TeX-command-run-all nil))
 
 ;; look hook to recompile after saving
 (add-hook 'LaTeX-mode-hook

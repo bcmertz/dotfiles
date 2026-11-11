@@ -14,8 +14,7 @@
   :init (setq markdown-command "multimarkdown")
   :general
   (tyrant-def markdown-mode-map
-    "mp"  'markdown-live-preview-mode)
-  )
+    "mp"  'markdown-live-preview-mode))
 
 (provide 'custom-markdown)
 ;;; custom-markdown.el ends here

@@ -87,8 +87,7 @@
               ("C-c l x" . eglot-code-actions-quickfix)
               ("C-c l h" . eglot-momentary-inlay-hints)
               ("C-c l t f" . toggle-eglot-save-format-hook)
-              ("C-c l t i" . toggle-eglot-save-import-hook)
-              )
+              ("C-c l t i" . toggle-eglot-save-import-hook))
   :config
   (which-key-add-key-based-replacements "C-c l" "lsp")
   (which-key-add-key-based-replacements "C-c l t" "toggle features")
@@ -117,8 +116,7 @@
                                                                       :fuzzy t)
                                                      :pylint (:enabled :json-false)))
                          :ty (:diagnosticMode "workspace")
-                         :gopls (:usePlaceholders t)))
-  )
+                         :gopls (:usePlaceholders t))))
 
 (provide 'custom-lsp)
 ;;; custom-lsp.el ends here

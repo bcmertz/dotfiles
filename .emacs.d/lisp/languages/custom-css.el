@@ -8,8 +8,7 @@
 (use-package css
   :straight (:type built-in)
   :defer t
-  :mode "\\*.css\\'"
-  )
+  :mode "\\*.css\\'")
 
 (setq css-indent-offset 2)
 

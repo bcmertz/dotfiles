@@ -113,8 +113,7 @@
                                 (setq-local vertico-sort-override-function 'sort-directories-first))))
             (t (lambda (_) (define-key vertico-map "/" #'self-insert-command))))))
 
-  (apply-if-gui 'my-vertico-posframe-config 'my-vertico-regular-config)
-  )
+  (apply-if-gui 'my-vertico-posframe-config 'my-vertico-regular-config))
 
 (use-package vertico-directory
   :after vertico
@@ -316,8 +315,7 @@
                      ("M-<return>" . embark-collect)))
   :init
   ;; Optionally replace the key help with a completing-read interface
-  (setq prefix-help-command #'embark-prefix-help-command)
-  )
+  (setq prefix-help-command #'embark-prefix-help-command))
 
 ;; Ignore attempts to make embark-collect read-only by default
 (add-hook 'embark-collect-mode-hook

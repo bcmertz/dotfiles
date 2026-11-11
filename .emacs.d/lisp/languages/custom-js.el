@@ -14,8 +14,8 @@
   (setq js-indent-level 2)
   :general
   (tyrant-def js-mode-map
-    "mf"  'js-find-symbol)
-  )
+    "mf"  'js-find-symbol))
+
 ;;(add-to-list 'auto-mode-alist '("\\.tsx\\'" . js-mode))
 
 (provide 'custom-js)

@@ -50,8 +50,8 @@
              (define-key input-decode-map "\e[5~" (kbd "<prior>"))
              (define-key input-decode-map "\e[6~" (kbd "<next>"))
              ;; quick and dirty way to bind C-/ to undo in terminal
-             (global-set-key (kbd "C-_") 'undo)
-             ))
+             (global-set-key (kbd "C-_") 'undo)))
+
 (if (equal "st-meta-256color" (tty-type))
     (define-key input-decode-map "\e[1;2A\" [S-up]))
 (defadvice terminal-init-xterm (after select-shift-up activate)
