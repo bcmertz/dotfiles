@@ -278,6 +278,23 @@ Cancels itself, if this buffer was killed."
           (set-buffer-modified-p nil)
           (setq recentf-list (delete filename recentf-list)))))))
 
+;; https://www.emacswiki.org/emacs/misc-cmds.el
+(defun quit-window-delete (&optional window)
+  "Quit WINDOW, deleting it, and bury its buffer.
+WINDOW must be a live window and defaults to the selected one.
+With prefix argument KILL non-nil, kill the buffer instead of
+burying it.
+
+This is similar to the version of `quit-window' that Emacs had before
+the introduction of `quit-restore-window'.  It ignores the information
+stored in WINDOW's `quit-restore' window parameter.
+
+It deletes the WINDOW more often, rather than switching to another
+buffer in it.  If WINDOW is alone in its frame then the frame is
+deleted or iconified, according to option `frame-auto-hide-function'."
+  (interactive "P")
+  (set-window-parameter window 'quit-restore `(frame frame nil ,(current-buffer)))
+  (quit-restore-window window 'kill))
 
 ;; https://emacs.stackexchange.com/a/35072
 ;; mark whole word
