@@ -209,13 +209,13 @@
   :hook (org-mode . org-bullets-mode))
 
 
-(add-hook 'org-mode-hook 'variable-pitch-mode)
-
-;; make org preeeetty
-(eval-after-load "org"
-  '(add-hook 'org-mode-hook 'set-org-faces))
-;; when we change the theme reload org faces
-(add-hook 'after-load-them-hook 'set-org-faces)
+;; (add-hook 'org-mode-hook 'variable-pitch-mode)
+;;
+;; ;; make org preeeetty
+;; (eval-after-load "org"
+;;   '(add-hook 'org-mode-hook 'set-org-faces))
+;; ;; when we change the theme reload org faces
+;; (add-hook 'after-load-them-hook 'set-org-faces)
 
 (defun set-org-faces ()
   "Set org faces."
@@ -228,30 +228,30 @@
   ;; or type C-u C-x = to see what faces the selected text has
   ;; (buffer-face-mode t)
 
-  (set-face-attribute 'org-default nil :inherit 'fixed-pitch :height 1.1) ;; base from which everything is scaled
-  (set-face-attribute 'org-level-1 nil :weight 'medium :height 1.3)
-  (set-face-attribute 'org-level-2 nil :weight 'medium :height 1.2)
-  (set-face-attribute 'org-level-3 nil :weight 'medium :height 1.1)
-  (set-face-attribute 'org-level-4 nil :weight 'medium :height 1.05)
-  (set-face-attribute 'org-level-5 nil :weight 'medium :height 1.05)
-  (set-face-attribute 'org-level-6 nil :weight 'medium :height 1.05)
-  (set-face-attribute 'org-level-7 nil :weight 'medium :height 1.05)
-  (set-face-attribute 'org-level-8 nil :weight 'medium :height 1.05)
-  (set-face-attribute 'org-indent nil :inherit '(org-hide fixed-pitch) :height 1.0)
-  (set-face-attribute 'org-code nil :inherit '(shadow fixed-pitch) :height 1.0)
-  (set-face-attribute 'org-block nil :inherit '(shadow fixed-pitch) :height 0.95)
-  (set-face-attribute 'org-document-title nil :foreground "dark orange" :weight 'bold :height 1.75)
-  (set-face-attribute 'org-document-info nil :foreground "dark orange" :height 1.3)
-  (set-face-attribute 'org-link nil :foreground "royal blue" :underline t :height 1.0)
-  (set-face-attribute 'org-table nil :inherit 'fixed-pitch :foreground "#83a598")
-  (set-face-attribute 'org-property-value nil :inherit 'fixed-pitch)
-  (set-face-attribute 'org-formula t :inherit 'fixed-pitch)
-  (set-face-attribute 'org-checkbox t :inherit 'fixed-pitch)
-  (set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
-  (set-face-attribute 'org-special-keyword nil :inherit '(font-lock-comment-face fixed-pitch))
-  (set-face-attribute 'org-verbatim nil :inherit '(shadow fixed-pitch))
-  (set-face-attribute 'org-tag nil :inherit '(shadow fixed-pitch) :weight 'bold :height 0.8)
-  (set-face-attribute 'org-document-info-keyword nil :inherit '(shadow fixed-pitch) :height 0.9)
+  ;; (set-face-attribute 'org-default nil :inherit 'fixed-pitch :height 1.1) ;; base from which everything is scaled
+  ;; (set-face-attribute 'org-level-1 nil :weight 'medium :height 1.3)
+  ;; (set-face-attribute 'org-level-2 nil :weight 'medium :height 1.2)
+  ;; (set-face-attribute 'org-level-3 nil :weight 'medium :height 1.1)
+  ;; (set-face-attribute 'org-level-4 nil :weight 'medium :height 1.05)
+  ;; (set-face-attribute 'org-level-5 nil :weight 'medium :height 1.05)
+  ;; (set-face-attribute 'org-level-6 nil :weight 'medium :height 1.05)
+  ;; (set-face-attribute 'org-level-7 nil :weight 'medium :height 1.05)
+  ;; (set-face-attribute 'org-level-8 nil :weight 'medium :height 1.05)
+  ;; (set-face-attribute 'org-indent nil :inherit '(org-hide fixed-pitch) :height 1.0)
+  ;; (set-face-attribute 'org-code nil :inherit '(shadow fixed-pitch) :height 1.0)
+  ;; (set-face-attribute 'org-block nil :inherit '(shadow fixed-pitch) :height 0.95)
+  ;; (set-face-attribute 'org-document-title nil :foreground "dark orange" :weight 'bold :height 1.75)
+  ;; (set-face-attribute 'org-document-info nil :foreground "dark orange" :height 1.3)
+  ;; (set-face-attribute 'org-link nil :foreground "royal blue" :underline t :height 1.0)
+  ;; (set-face-attribute 'org-table nil :inherit 'fixed-pitch :foreground "#83a598")
+  ;; (set-face-attribute 'org-property-value nil :inherit 'fixed-pitch)
+  ;; (set-face-attribute 'org-formula t :inherit 'fixed-pitch)
+  ;; (set-face-attribute 'org-checkbox t :inherit 'fixed-pitch)
+  ;; (set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
+  ;; (set-face-attribute 'org-special-keyword nil :inherit '(font-lock-comment-face fixed-pitch))
+  ;; (set-face-attribute 'org-verbatim nil :inherit '(shadow fixed-pitch))
+  ;; (set-face-attribute 'org-tag nil :inherit '(shadow fixed-pitch) :weight 'bold :height 0.8)
+  ;; (set-face-attribute 'org-document-info-keyword nil :inherit '(shadow fixed-pitch) :height 0.9)
 
   ;; ;; Get rid of the background on column views
   ;; (set-face-attribute 'org-column nil :background nil)
