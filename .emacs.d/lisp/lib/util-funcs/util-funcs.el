@@ -84,8 +84,7 @@
                 (setq color (nth 4 (assoc "atom-one-dark-bg-1" atom-one-dark-colors-alist)))))))
     (if (not color)
         (setq color 'unspecified))
-    color)
-  )
+    color))
 
 ;; https://www.emacswiki.org/emacs/EmacsAsDaemon#h5o-10
 (defun client-save-kill-emacs (&optional display)
@@ -132,8 +131,7 @@ be prompted."
 	    (dolist (client server-clients)
 	      (server-delete-client client))
 		 ; Exit emacs
-	    (kill-emacs)))
-	))
+	    (kill-emacs)))))
 
     ; If we made a frame then kill it.
     (when (or modified-buffers active-clients-or-frames) (delete-frame new-frame))))
@@ -218,8 +216,7 @@ Cancels itself, if this buffer was killed."
     (if project-dir
         (apply action_1)
       (if action_2
-          (apply action_2)
-        ))))
+          (apply action_2)))))
 
 ;; move file
 (defun move-file (new-location)
@@ -280,9 +277,6 @@ Cancels itself, if this buffer was killed."
           (set-visited-file-name new-name)
           (set-buffer-modified-p nil)
           (setq recentf-list (delete filename recentf-list)))))))
-
-
-
 
 
 ;; https://emacs.stackexchange.com/a/35072
