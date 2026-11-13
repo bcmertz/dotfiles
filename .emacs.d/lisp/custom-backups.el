@@ -10,7 +10,6 @@
 (use-package s)
 
 (use-package reopen-as-root
-  :after tramp
   :straight (reopen-as-root :type nil :local-repo "~/.emacs.d/lisp/lib/reopen-as-root")
   :init (reopen-as-root-mode))
 
