@@ -49,7 +49,7 @@ See `file-attributes' for more info."
 
 Meant to be used as `find-file-hook'.
 See also `reopen-as-root-mode'."
-  (unless (or (tramp-tramp-file-p buffer-file-name)
+  (unless (or (if (fboundp 'tramp-tramp-file-p) (tramp-tramp-file-p buffer-file-name))
               (derived-mode-p 'dired-mode)
               (not (file-exists-p (file-name-directory buffer-file-name)))
               (file-writable-p buffer-file-name)
