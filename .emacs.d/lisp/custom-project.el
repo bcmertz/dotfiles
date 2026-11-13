@@ -4,12 +4,18 @@
 ;;;
 ;;; Code:
 
+(defun project-save-all-buffers ()
+  "Save all buffers in project."
+  (interactive)
+  (save-some-buffers t (save-some-buffers-root)))
+
 (use-package project
   :defer t
   :straight (:type built-in)
   :bind (:map project-prefix-map
-              ("s" . project-save-some-buffers))
-
+              ("s" . project-save-some-buffers)
+              ("S" . project-save-all-buffers)
+              ("C-x" . nil))
   :config
   (global-set-key (kbd "C-c p") project-prefix-map)
   (which-key-add-key-based-replacements "C-c p" "project")
