@@ -37,6 +37,8 @@
 (setq straight-use-package-by-default t) ;; always :straight t
 
 ;; if this is set to t, always defer loading unless :demand is used
+;; current package loading is pretty fragile to load order, especially custom-minibuffer.el
+;; TODO: get config working with always defer - hopefully will help make load order dependencies more explicit
 (setq use-package-always-defer nil)
 
 ;; use most up-to-date use-package integration syntax
