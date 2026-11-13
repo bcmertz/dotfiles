@@ -7,6 +7,9 @@
 (use-package project
   :defer t
   :straight (:type built-in)
+  :bind (:map project-prefix-map
+              ("s" . project-save-some-buffers))
+
   :config
   (global-set-key (kbd "C-c p") project-prefix-map)
   (which-key-add-key-based-replacements "C-c p" "project")
