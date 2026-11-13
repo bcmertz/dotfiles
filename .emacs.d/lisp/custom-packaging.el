@@ -36,6 +36,9 @@
 (setq use-package-always-ensure nil)
 (setq straight-use-package-by-default t) ;; always :straight t
 
+;; if this is set to t, always defer loading unless :demand is used
+(setq use-package-always-defer nil)
+
 ;; use most up-to-date use-package integration syntax
 (setq straight-use-package-version 'straight)
 
