@@ -7,6 +7,11 @@
 ;;; Code:
 
 (use-package bind-key
+  :defer t
+  :straight (:type built-in))
+
+(use-package transient
+  :defer t
   :straight (:type built-in))
 
 ;; Keystroke Completion

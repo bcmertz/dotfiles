@@ -84,7 +84,6 @@
  ("straight.el" . "3ad4414072ba512e39e19e8a7101bdfcb8318410")
  ("tablist" . "01f065e387ffe6b7a41f180f257cd12551c7a9c2")
  ("themes" . "a59202912ad55014e53a685eee6cd94130bdd4fd")
- ("transient" . "08d85042ced662a73da813a143785f135f66a769")
  ("treepy.el" . "806c000bd40153d17dfa5709c6d19546d507a416")
  ("treesit-auto" . "3106c739c2a84bec2cb671997fe074e5dd5dd967")
  ("typescript.el" . "2535780bdb318d86761b9bd21b0347ca6a89628f")
