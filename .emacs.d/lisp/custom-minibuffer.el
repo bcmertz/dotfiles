@@ -280,6 +280,14 @@
   (setq consult-narrow-key "<") ;; (kbd "C-+")
   )
 
+(use-package consult-dir
+  :after consult
+  :defer t
+  :bind (("C-x C-d" . consult-dir)
+         :map minibuffer-local-completion-map
+         ("C-x C-d" . consult-dir)
+         ("C-x C-j" . consult-dir-jump-file)))
+
 ;; (defun my-consult-ag () "My consult-ag." (interactive "") (consult-ag (choose-directory)))
 
 ;; (use-package consult-ag
