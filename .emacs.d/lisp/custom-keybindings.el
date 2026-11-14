@@ -6,6 +6,9 @@
 ;;;
 ;;; Code:
 
+(use-package bind-key
+  :straight (:type built-in))
+
 ;; Keystroke Completion
 (use-package which-key
   :straight (:type built-in)

@@ -8,6 +8,7 @@
 
 (use-package python
   :defer t
+  :straight (:type built-in)
   :mode ("\\.pyt?\\'" . python-mode)
   :bind ((:map python-mode-map
                ("<backtab>" . completion-at-point)

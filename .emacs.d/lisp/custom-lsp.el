@@ -65,6 +65,7 @@
 
 (use-package eglot
   :defer t
+  :straight (:type built-in)
   :hook
   (python-mode . eglot-ensure)
   (bash-mode . eglot-ensure)

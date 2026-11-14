@@ -29,7 +29,7 @@
 ;; nice to have in the future for cleaning up recent file suggestions
 (use-package recentf
   :defer 0.1
-  :straight nil
+  :straight (:type built-in)
   :config
   (add-to-list 'recentf-exclude (format "%s/\\.emacs.d/elpa/.*" (getenv "HOME")))
   (add-to-list 'recentf-exclude (format "%s/\\.emacs.d/straight/.*" (getenv "HOME")))

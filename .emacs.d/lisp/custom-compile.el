@@ -15,6 +15,7 @@ https://stackoverflow.com/a/3612017"
   (call-interactively 'compile))
 
 (use-package compile
+  :straight (:type built-in)
   :config
   (setq compilation-scroll-output 1)
   :bind (:map prog-mode-map

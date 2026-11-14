@@ -28,7 +28,7 @@
   (load bootstrap-file nil 'nomessage))
 
 ;; initialize use-package
-(straight-use-package 'use-package)
+(straight-use-package '(use-package :type built-in))
 
 ;; whether to automatically ensure every package exists (like :ensure or :straight)
 ;; not needed because of straight-use-package-by-default t which accomplishes

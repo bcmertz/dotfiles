@@ -88,6 +88,7 @@
 
 ;; builtin arglist and variable docstrings info in echo area
 (use-package eldoc
+  :straight (:type built-in)
   :config
   (setq eldoc-idle-delay 0.2)
   :init

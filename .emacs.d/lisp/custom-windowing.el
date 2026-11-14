@@ -37,6 +37,7 @@
 
 (use-package windmove
   :after org
+  :straight (:type built-in)
   :config
   ;; wrap around at edges
   ;; (setq windmove-wrap-around t)

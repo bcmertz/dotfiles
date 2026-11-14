@@ -9,6 +9,7 @@
 ;; better C-x C-b
 (use-package ibuffer
   :defer t
+  :straight (:type built-in)
   :bind (("C-x C-b" . ibuffer)
          :map ibuffer-mode-map
          ("q" . kill-current-buffer))

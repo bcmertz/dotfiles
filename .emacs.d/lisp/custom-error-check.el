@@ -8,6 +8,7 @@
 
 (use-package flymake
   :defer t
+  :straight (:type built-in)
   :hook (prog-mode . flymake-mode)
   :bind (:map flymake-mode-map
               ("C-c e n" . flymake-goto-next-error)

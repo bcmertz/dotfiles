@@ -7,6 +7,7 @@
 ;;; Code:
 (use-package js
   :defer t
+  :straight (:type built-in)
   :mode "\\*.js\\'"
   :config
   (define-key js-mode-map (kbd "M-.") nil)
