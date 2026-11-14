@@ -6,15 +6,14 @@
 ;;; Code:
 
 (use-package pdf-tools
-  :mode ("\\.pdf\\'" . pdf-view-mode)
   :defer t
-  :bind
-  ((:map pdf-view-mode-map
-         ( "C-s" . pdf-occur)
-         ( "D" . pdf-annot-delete)
-         ( "A" . pdf-annot-list-annotations)
-         ( "t" . pdf-annot-add-text-annotation)
-         ( "h" . pdf-annot-add-highlight-markup-annotation)))
+  :mode ("\\.pdf\\'" . pdf-view-mode)
+  :bind ((:map pdf-view-mode-map
+               ( "C-s" . pdf-occur)
+               ( "D" . pdf-annot-delete)
+               ( "A" . pdf-annot-list-annotations)
+               ( "t" . pdf-annot-add-text-annotation)
+               ( "h" . pdf-annot-add-highlight-markup-annotation)))
   :config
   (setq-default pdf-view-display-size 'fit-page)
   (setq pdf-annot-activate-created-annotations t)
