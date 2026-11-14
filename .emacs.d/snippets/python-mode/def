@@ -1,7 +1,11 @@
 # -*- mode: snippet -*-
-# name: def method(self, ...):
+# name: def
 # key: def
 # group: definitions
+# Use minimum indentation, because Emacs 25+ doesn't dedent docstrings.
 # --
-def ${1:methodname}(self, ${2:arg}):
-    ${3:pass}
+def ${1:name}($2):
+ \"\"\"$3
+ ${2:$(python-args-to-docstring)}
+ \"\"\"
+ $0

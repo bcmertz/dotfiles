@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: enum
-# key: en
+# key: enum
 # group: object oriented
 # --
 class ${1:class}(Enum):

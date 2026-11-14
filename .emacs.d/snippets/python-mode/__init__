@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: __init__
-# key: _init
+# key: init
 # group : definitions
 # --
 def __init__(self${1:, args}):

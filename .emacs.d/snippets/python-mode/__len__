@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: __len__
-# key: _len
+# key: len
 # group: Special methods
 # --
 def __len__(self):

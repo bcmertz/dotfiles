@@ -1,11 +1,10 @@
 # -*- mode: snippet -*-
-# name: tryelse
-# key: tryelse
+# name: ifelse
+# key: ifelse
 # expand-env: ((yas-indent-line 'fixed))
+# group : control structure
 # --
-try:
-    $0
-except $1:
+if $1:
     $2
 else:
-    $3
+    $0
