@@ -15,17 +15,7 @@
          ("q" . kill-current-buffer))
   :config
   (setq ibuffer-human-readable-size t)
-  (defalias 'list-buffers 'ibuffer))
-
-;; group buffers by project root
-;; source: prot
-(use-package ibuffer-vc
-  :after ibuffer
-  :hook (ibuffer . ibuffer-vc-set-filter-groups-by-vc-root)
-  :bind (:map ibuffer-mode-map
-              ("/ v" . ibuffer-vc-set-filter-groups-by-vc-root)
-              ("/ <backspace>" . ibuffer-clear-filter-groups))
-  :config
+  (defalias 'list-buffers 'ibuffer)
   (setq ibuffer-saved-filter-groups
         '(("Main"
            ("Programming" (or (mode . css-mode)
@@ -58,6 +48,15 @@
            ("Directories" (mode . dired-mode))
            ("Org" (mode . org-mode)))))
   )
+
+;; group buffers by project root
+;; source: prot
+(use-package ibuffer-vc
+  :after ibuffer
+  :hook (ibuffer . ibuffer-vc-set-filter-groups-by-vc-root)
+  :bind (:map ibuffer-mode-map
+              ("/ v" . ibuffer-vc-set-filter-groups-by-vc-root)
+              ("/ <backspace>" . ibuffer-clear-filter-groups)))
 
 (provide 'custom-ibuffer)
 ;;; custom-ibuffer.el ends here
