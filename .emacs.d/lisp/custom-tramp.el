@@ -2,7 +2,7 @@
 ;;;
 ;;; Commentary:
 ;;;
-;;;  remote file access
+;;; remote file access
 ;;;
 ;;; Code:
 
