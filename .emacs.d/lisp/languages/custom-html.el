@@ -9,8 +9,9 @@
 (use-package web-mode
   :defer t
   :mode "\\.html\\'"
-  :bind-keymap (("M-;" . nil)
-                ("C-c C-l" . nil))
+  ;; TODO: figure this out
+  ;; :bind-keymap* (("M-;" . nil)
+  ;;               ("C-c C-l" . nil))
   :config
   (setq web-mode-engines-alist
         '(("django"    . "\\.html\\'")))
