@@ -9,6 +9,8 @@
 (use-package util-funcs
   :straight (util-funcs :type nil :local-repo "~/.emacs.d/lisp/lib/util-funcs/"))
 
+(use-package s)
+
 (which-key-add-key-based-replacements "C-c g" "git")
 
 (use-package magit
@@ -40,10 +42,13 @@
 (defun ~/magit-process-environment (env)
   "Add GIT_DIR and GIT_WORK_TREE to ENV when in a special directory.
 https://github.com/magit/magit/issues/460 (@cpitclaudel) and
-https://github.com/magit/magit/issues/460#issuecomment-837449105."
-  (let ((default (file-name-as-directory (expand-file-name default-directory)))
-        (home (expand-file-name "~/")))
-    (when (string= default home)
+https://github.com/magit/magit/issues/460#issuecomment-837449105. Also check
+if we're in an Emacs config directory as well."
+  (let* ((default (file-name-as-directory (expand-file-name default-directory)))
+         (home (expand-file-name "~/"))
+         (emacs (concat home ".emacs.d")))
+    (when (or (string= default home)
+              (s-starts-with? emacs default))
       (let ((gitdir (expand-file-name "~/.cfg/")))
         (push (format "GIT_WORK_TREE=%s" home) env)
         (push (format "GIT_DIR=%s" gitdir) env))))
