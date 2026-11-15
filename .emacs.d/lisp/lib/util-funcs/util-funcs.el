@@ -53,6 +53,11 @@
 ;; https://kisaragi-hiu.com/emacs-completion-metadata.html
 ;; utility function to give a completing read instance a new completion category
 ;; that we can use vertico-multiform or marginalia to treat differently
+;;
+;; Example usage:
+;; (completing-read "Prompt: "
+;;                 (my-mark-category '("/usr" "/tmp" "/home") 'dir))
+;;
 (defun my-mark-category (seq category)
   "Mark SEQ as being in CATEGORY."
   (lambda (str pred flag)
@@ -62,9 +67,6 @@
       (_
        (all-completions str seq pred)))))
 
-;; Example usage:
-;; (completing-read "Prompt: "
-;;                 (my-mark-category '("/usr" "/tmp" "/home") 'dir))
 (defun choose-directory ()
   "Choose directory interactively."
   (file-name-as-directory
