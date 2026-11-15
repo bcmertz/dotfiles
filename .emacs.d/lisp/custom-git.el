@@ -46,9 +46,9 @@ https://github.com/magit/magit/issues/460#issuecomment-837449105. Also check
 if we're in an Emacs config directory as well."
   (let* ((default (file-name-as-directory (expand-file-name default-directory)))
          (home (expand-file-name "~/"))
-         (emacs (concat home ".emacs.d/")))
+         (dot (concat home ".")))
     (when (or (string= default home)
-              (s-starts-with? emacs default))
+              (s-starts-with? dot default))
       (let ((gitdir (expand-file-name "~/.cfg/")))
         (push (format "GIT_WORK_TREE=%s" home) env)
         (push (format "GIT_DIR=%s" gitdir) env))))
