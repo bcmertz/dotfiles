@@ -20,8 +20,8 @@
   (:map magit-status-mode-map
         ("q" . mu-magit-kill-buffers)))
 
-(defun magit-restore-window-configuration (&optional kill-buffer)
-  "Bury or kill the current buffer and restore previous window configuration."
+(defun magit-restore-window-configuration (&optional kill)
+  "Bury or KILL the current buffer and restore previous window configuration."
   (let ((winconf magit-previous-window-configuration)
         (buffer (current-buffer))
         (frame (selected-frame)))

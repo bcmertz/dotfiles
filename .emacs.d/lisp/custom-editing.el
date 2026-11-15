@@ -135,7 +135,7 @@
 (global-set-key (kbd "C-x C-e") 'eval-buffer)
 
 (defun return-newline-below ()
-  "Go to end of line and return bc in TTy C-m and RET is weird."
+  "Go to end of line and return bc in TTy `newline' behavior is weird."
   (interactive)
   (end-of-line)
   (newline-and-indent))
@@ -143,6 +143,7 @@
 (global-set-key (kbd "<M-RET>") 'return-newline-below)     ;; return new line below
 
 (defun move-lines (n)
+  "Move line +- N lines away."
   (let ((beg) (end) (keep))
     (if mark-active
         (save-excursion
@@ -186,7 +187,7 @@
 ;; delete don't kill backwards for M-del
 (defun delete-word (arg)
     "Delete characters forward until encountering the end of a word.
-With argument, do this that many times."
+With argument, do this ARG many times."
     (interactive "p")
     (if (use-region-p)
         (delete-region (region-beginning) (region-end))
@@ -194,14 +195,14 @@ With argument, do this that many times."
 
 (defun backward-delete-word (arg)
     "Delete characters backward until encountering the end of a word.
-With argument, do this that many times."
+Do this ARG many times."
     (interactive "p")
     (delete-word (- arg)))
 
 ;; http://xahlee.info/emacs/emacs/emacs_kill-ring.html
 (defun forward-delete-word (arg)
   "Delete characters forward until encountering the end of a word.
-With argument, do this that many times."
+Do this ARG many times."
   (interactive "p")
   (delete-region
    (point)

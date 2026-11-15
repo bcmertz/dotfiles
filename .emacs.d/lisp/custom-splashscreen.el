@@ -63,7 +63,7 @@ Possible values are `cowsay' and `image'")
                                                                                          (return-greeting) (capitalize (user-full-name))))))))))
 
 (defun set-gui-scratch-greeting (msg)
-  "Set GUI scratch greeting."
+  "Set GUI scratch greeting MSG."
   (setq initial-scratch-message msg))
 
 (apply-if-gui '(lambda () (set-gui-scratch-greeting initial-scratch-message)))

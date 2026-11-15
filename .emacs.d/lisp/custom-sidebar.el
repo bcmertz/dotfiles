@@ -87,6 +87,7 @@
       (+neotree--indent-cursor-a))))
 
 (defadvice! +neotree--indent-cursor-a (&rest _)
+  "Indent cursor."
   :after '(neotree-next-line neotree-previous-line)
   (beginning-of-line)
   (skip-chars-forward " \t\r"))

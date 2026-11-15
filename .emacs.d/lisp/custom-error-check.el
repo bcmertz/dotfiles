@@ -24,6 +24,7 @@
 
 ;; TODO: WIP collect all diagnostics from project root / user specified dir
 (defun my/check-all-files-in-project ()
+  "Check for diagnostics in all files in a selected directory."
   (interactive)
   (let* ((dir (read-directory-name "Select directory: " (current-project-root)))
          (check-dir (file-name-as-directory dir)))

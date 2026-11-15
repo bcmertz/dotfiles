@@ -128,7 +128,7 @@
   :hook (rfn-eshadow-update-overlay . vertico-directory-tidy))
 
 (defun my-vertico-posframe-get-size (buffer)
-  "Set the vertico-posframe size according to the current frame."
+  "Set the vertico-posframe size of BUFFER according to the current frame."
   (let* ((height (or vertico-posframe-height (+ 1 num-cands)))
          (min-height (min height (+ 1 (length vertico--candidates))))
          (width (min (or vertico-posframe-width 200) (round (* .75 (frame-width))))))
@@ -148,7 +148,7 @@
 
 ;; apply contrast styling
 (defun my-posframe-tweaks (&optional frame)
-  "My posframe tweaks."
+  "Apply posframe tweaks in FRAME."
   (unless frame
     (setq frame (selected-frame)))
   (set-face-attribute 'vertico-posframe nil :background (get-theme-variable-from-palette 'bg-alt)))
@@ -157,11 +157,11 @@
 (add-hook 'after-load-theme-hook #'my-posframe-tweaks t)
 (my-posframe-tweaks)
 
-(defun my-consult-locate () "My consult-locate." (interactive "") (consult-locate (choose-directory)))
-(defun my-consult-grep () "My consult-grep." (interactive "") (consult-grep (choose-directory)))
-(defun my-consult-git-grep () "My consult-git-grep." (interactive "") (consult-git-grep (choose-directory)))
-(defun my-consult-ripgrep () "My consult-ripgrep." (interactive "") (consult-ripgrep (choose-directory)))
-(defun my-consult-find () "My consult-find." (interactive "") (consult-find (choose-directory)))
+(defun my-consult-locate () "My `consult-locate'." (interactive "") (consult-locate (choose-directory)))
+(defun my-consult-grep () "My `consult-grep'." (interactive "") (consult-grep (choose-directory)))
+(defun my-consult-git-grep () "My `consult-git-grep'." (interactive "") (consult-git-grep (choose-directory)))
+(defun my-consult-ripgrep () "My `consult-ripgrep'." (interactive "") (consult-ripgrep (choose-directory)))
+(defun my-consult-find () "My `consult-find'." (interactive "") (consult-find (choose-directory)))
 
 (use-package consult
   :commands (consult--read)
@@ -364,7 +364,7 @@ targets."
         embark-isearch-highlight-indicator))
 
 (defun embark-hide-which-key-indicator (fn &rest args)
-  "Hide the which-key indicator immediately when using the completing-read prompter."
+  "Hide the FN which-key indicator immediately when using the `completing-read' prompter and apply ARGS."
   (which-key--hide-popup-ignore-command)
   (let ((embark-indicators
          (remq #'embark-which-key-indicator embark-indicators)))

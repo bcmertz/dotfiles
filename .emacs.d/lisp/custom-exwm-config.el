@@ -12,17 +12,19 @@
   (setq alert-default-style 'notifications))
 
 (defun efs/run-in-background (command)
+  "Run COMMAND in background."
   (let ((command-parts (split-string command "[ ]+")))
     (apply #'call-process `(,(car command-parts) nil 0 nil ,@(cdr command-parts)))))
 
 (defun efs/set-wallpaper ()
+  "Call setbg."
   (interactive)
   ;; NOTE: You will need to update this to a valid background path!
   (start-process-shell-command
    "setbg" nil  "setbg"))
 
 (defun efs/exwm-init-hook ()
-  ;; Make workspace 1 be the one where we land at startup
+  "Make workspace 1 be the one where we land at startup."
   (exwm-workspace-switch-create 1)
 
   ;; use polybar instead of modeline for system info
@@ -43,15 +45,18 @@
   )
 
 (defun efs/exwm-update-class ()
+  "Update class."
   (exwm-workspace-rename-buffer exwm-class-name))
 
 (defun efs/exwm-update-title ()
+  "Update title."
   (pcase exwm-class-name
     ("Firefox" (exwm-workspace-rename-buffer (format "Firefox: %s" exwm-title)))))
 
 ;; This function isn't currently used, only serves as an example how to
 ;; position a window
 (defun efs/position-window ()
+  "Position window."
   (let* ((pos (frame-position))
          (pos-x (car pos))
          (pos-y (cdr pos)))
@@ -59,6 +64,7 @@
     (exwm-floating-move (- pos-x) (- pos-y))))
 
 (defun efs/configure-window-by-class ()
+  "Configure window by class."
   (interactive)
   (pcase exwm-class-name
     ("Firefox" (exwm-workspace-move-window 2))
@@ -68,6 +74,7 @@
 
 ;; This function should be used only after configuring autorandr!
 (defun efs/update-displays ()
+  "Update displays."
   (efs/run-in-background "autorandr --change --force")
   (efs/set-wallpaper)
   (message "Display config: %s"
@@ -187,14 +194,17 @@
 
 
 (defun efs/disable-desktop-notifications ()
+  "Disable `dunst' desktop notifications."
   (interactive)
   (start-process-shell-command "notify-send" nil "notify-send \"DUNST_COMMAND_PAUSE\""))
 
 (defun efs/enable-desktop-notifications ()
+  "Enable `dunst' desktop notifications."
   (interactive)
   (start-process-shell-command "notify-send" nil "notify-send \"DUNST_COMMAND_RESUME\""))
 
 (defun efs/toggle-desktop-notifications ()
+  "Toggle `dunst' desktop notifications."
   (interactive)
   (start-process-shell-command "notify-send" nil "notify-send \"DUNST_COMMAND_TOGGLE\""))
 

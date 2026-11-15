@@ -88,12 +88,13 @@
 
 ;; https://www.emacswiki.org/emacs/EmacsAsDaemon#h5o-10
 (defun client-save-kill-emacs (&optional display)
-  " This is a function that can bu used to save buffers and
-shutdown the emacs daemon. It should be called using
+  "This is a function that can bu used to save buffers and\
+shutdown the Emacs daemon.  It should be called using
 emacsclient -e '(client-save-kill-emacs)'.  This function will
 check to see if there are any modified buffers, active clients
 or frame.  If so, an x window will be opened and the user will
-be prompted."
+be prompted.  DISPLAY allows user to specify where to create
+any new frames that are needed."
   (let (new-frame modified-buffers active-clients-or-frames)
     ;; Check if there are modified buffers, active clients or frames.
     (setq modified-buffers (modified-buffers-exist))
@@ -116,7 +117,7 @@ be prompted."
     ;; subtract 1 from clients (this client).
     ;; subtract 2 from frames (the frame just created and the default frame.)
     (when (or (not active-clients-or-frames)
-	      (yes-or-no-p (format "There are currently %d clients and %d frames. Exit anyway?" (- (length server-clients) 1) (- (length (frame-list)) 2))))
+	      (yes-or-no-p (format "There are currently %d clients and %d frames.  Exit anyway?" (- (length server-clients) 1) (- (length (frame-list)) 2))))
 
       ;; If the user quits during the save dialog then don't exit emacs.
       ;; Still close the terminal though.
@@ -137,9 +138,9 @@ be prompted."
     (when (or modified-buffers active-clients-or-frames) (delete-frame new-frame))))
 
 (defun modified-buffers-exist ()
-  "This function will check to see if there are any buffers
+  "This function will check to see if there are any buffers\
 that have been modified.  It will return true if there are
-and nil otherwise. Buffers that have buffer-offer-save set to
+and nil otherwise.  Buffers that have `buffer-offer-save' set to
 nil are ignored."
   (let (modified-found)
     (dolist (buffer (buffer-list))
@@ -158,7 +159,7 @@ nil are ignored."
 ;; https://www.emacswiki.org/emacs/misc-cmds.el
 (defun kill-buffer-and-its-windows (buffer &optional msgp)
   "Kill BUFFER and delete its windows.  Default is `current-buffer'.
-BUFFER may be either a buffer or its name (a string)."
+BUFFER may be either a buffer or its name (a string).  MSGP optional."
   (interactive (list (read-buffer "Kill buffer: " (current-buffer) 'existing) 'MSGP))
   (setq buffer  (get-buffer buffer))
   (if (buffer-live-p buffer)            ; Kill live buffer only.
@@ -177,7 +178,8 @@ BUFFER may be either a buffer or its name (a string)."
 ;; https://emacs.stackexchange.com/a/13275
 (defun run-with-local-idle-timer (secs repeat function &rest args)
   "Like `run-with-idle-timer', but always runs in the `current-buffer'.
-Cancels itself, if this buffer was killed."
+Cancels itself, if this buffer was killed.  Takes same arguments of SECS,
+REPEAT, FUNCTION, and rest of ARGS."
   (let* (;; Chicken and egg problem.
          (fns (make-symbol "local-idle-timer"))
          (timer (apply 'run-with-idle-timer secs repeat fns args))
@@ -297,8 +299,8 @@ deleted or iconified, according to option `frame-auto-hide-function'."
 ;; https://emacs.stackexchange.com/a/35072
 ;; mark whole word
 (defun mark-whole-word (&optional arg allow-extend)
-  "Like `mark-word', but selects whole words and skips over whitespace.
-If you use a negative prefix arg then select words backward.
+  "Like `mark-word', but selects ARG whole words and skips over whitespace.
+If you use a negative prefix ARG then select words backward.
 Otherwise select them forward.
 
 If cursor starts in the middle of word then select that whole word.
@@ -308,7 +310,10 @@ first word (in the selection direction), it is skipped (not selected).
 
 If the command is repeated or the mark is active, select the next NUM
 words, where NUM is the numeric prefix argument.  (Negative NUM
-selects backward.)"
+selects backward.)
+
+When called from Lisp with ALLOW-EXTEND omitted or nil, mark is
+set ARG words from point."
   (interactive "P\np")
   (let ((num  (prefix-numeric-value arg)))
     (unless (eq last-command this-command)
@@ -325,7 +330,8 @@ selects backward.)"
     (mark-word arg allow-extend)))
 
 (defun silence-function-messages (orig-fun &rest args)
-  "Advice function that silences all messages in ORIG-FUN."
+  "Advice function that silences all messages in ORIG-FUN.
+Pass additional ARGS to function call."
   (let ((inhibit-message t)      ;Don't show the messages in Echo area
         (message-log-max nil))   ;Don't show the messages in the *Messages* buffer
     (apply orig-fun args)))
@@ -337,6 +343,8 @@ selects backward.)"
 
 ;; https://sqrtminusone.xyz/configs/emacs/#variables-and-environment
 (defun my/dump-bindings-recursive (prefix &optional level buffer)
+  "Dump keybindings starting with PREFIX in a tree like form.
+Optionally specify tree depth with LEVEL and current BUFFER."
   (dolist (key (which-key--get-bindings (kbd prefix)))
     (with-current-buffer buffer
       (when level
