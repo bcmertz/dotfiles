@@ -4,7 +4,6 @@
 ;;;
 ;;; Code:
 
-
 (use-package vue-mode
     :defer t
     :mode "\\*.vue\\'")
