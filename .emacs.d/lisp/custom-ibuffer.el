@@ -44,6 +44,7 @@
                         (mode . magit-process-mode)
                         (mode . magit-status-mode)))
            ("Special" (or (name . "\\`\\*Help\\*\\'")
+                          (name . "\\`\\*helpful.*\\*\\'")
                           (name . "\\`\\*Custom.*")
                           (name . "\\`\\*Org Agenda\\*\\'")
                           (name . "\\`\\*straight.*\\'")
