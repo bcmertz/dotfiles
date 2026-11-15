@@ -9,17 +9,5 @@
   :init
   (setq typescript-indent-level 2))
 
-;; (use-package web-mode
-;;   :defer t
-;;   :mode (
-;;          ("\\.[jt]sx\\'" . web-mode)
-;; 	 ("\\.html\\'" . web-mode)
-;;          )
-;;   :config
-;;   (setq web-mode-markup-indent-offset 2)
-;;   (setq web-mode-css-indent-offset 2)
-;;   (setq web-mode-code-indent-offset 2)
-;;   (setq web-mode-indent-style 2))
-
 (provide 'custom-typescript)
 ;;; custom-typescript.el ends here
