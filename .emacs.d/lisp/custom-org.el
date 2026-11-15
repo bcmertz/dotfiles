@@ -7,7 +7,7 @@
 ;;; Code:
 
 (defun org-return-newline-below ()
-  "Go to end of line and org-meta-return."
+  "Go to end of line and `org-meta-return'."
   (interactive)
   (end-of-line)
   (if (string= major-mode "org-mode")
@@ -113,7 +113,7 @@
 
 ;; start github review with given link at point
 (defun github-start-review-at-link ()
-  "Copies the URL from an org link at the point and starts github review"
+  "Copies the URL from an org link at the point and starts github review."
   (interactive)
   (let ((plain-url (url-get-url-at-point)))
     (if plain-url

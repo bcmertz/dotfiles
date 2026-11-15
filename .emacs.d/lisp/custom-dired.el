@@ -2,7 +2,7 @@
 ;;;
 ;;; Commentary:
 ;;;
-;;; dired config
+;;; Dired config
 ;;;
 ;;; Code:
 

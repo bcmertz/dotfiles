@@ -7,7 +7,7 @@
 ;;; Code:
 
 (defun turn-on-text-mode ()
-  ;; wrap lines
+  "Wrap lines."
   (setq truncate-lines nil)
   ;; C-e goes to the end of the visual line not the logical line
   (turn-on-visual-line-mode)

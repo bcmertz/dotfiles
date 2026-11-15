@@ -2,7 +2,7 @@
 ;;;
 ;;; Commentary:
 ;;;
-;;; setup emacs theme
+;;; setup Emacs theme
 ;;;
 ;;; Code:
 
