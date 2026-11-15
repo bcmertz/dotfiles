@@ -157,6 +157,12 @@
 (add-hook 'after-load-theme-hook #'my-posframe-tweaks t)
 (my-posframe-tweaks)
 
+(defun choose-directory ()
+  "Choose directory interactively."
+  (file-name-as-directory
+   (read-directory-name "Directory: "
+                        (or (file-name-directory (or buffer-file-name "")) default-directory))))
+
 (defun my-consult-locate () "My `consult-locate'." (interactive "") (consult-locate (choose-directory)))
 (defun my-consult-grep () "My `consult-grep'." (interactive "") (consult-grep (choose-directory)))
 (defun my-consult-git-grep () "My `consult-git-grep'." (interactive "") (consult-git-grep (choose-directory)))

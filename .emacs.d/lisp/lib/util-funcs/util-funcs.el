@@ -67,12 +67,6 @@
       (_
        (all-completions str seq pred)))))
 
-(defun choose-directory ()
-  "Choose directory interactively."
-  (file-name-as-directory
-   (read-directory-name "Directory: "
-                        (or (file-name-directory (or buffer-file-name "")) default-directory))))
-
 (defun get-theme-variable-from-palette (var)
   "Get theme VAR from palette."
   (let (color)
@@ -88,6 +82,24 @@
         (setq color 'unspecified))
     color))
 
+(defun modified-buffers-exist-p ()
+  "This function will check to see if there are any buffers\
+that have been modified.  It will return true if there are
+and nil otherwise.  Buffers that have `buffer-offer-save' set to
+nil are ignored."
+  (let (modified-found)
+    (dolist (buffer (buffer-list))
+      (when (and (buffer-live-p buffer)
+		 (buffer-modified-p buffer)
+		 (not (buffer-base-buffer buffer))
+		 (or
+		  (buffer-file-name buffer)
+		  (progn
+		    (set-buffer buffer)
+		    (and buffer-offer-save (> (buffer-size) 0)))))
+	(setq modified-found t)))
+    modified-found))
+
 ;; https://www.emacswiki.org/emacs/EmacsAsDaemon#h5o-10
 (defun client-save-kill-emacs (&optional display)
   "This is a function that can bu used to save buffers and\
@@ -99,7 +111,7 @@ be prompted.  DISPLAY allows user to specify where to create
 any new frames that are needed."
   (let (new-frame modified-buffers active-clients-or-frames)
     ;; Check if there are modified buffers, active clients or frames.
-    (setq modified-buffers (modified-buffers-exist))
+    (setq modified-buffers (modified-buffers-exist-p))
     (setq active-clients-or-frames ( or (> (length server-clients) 1)
 				     (> (length (frame-list)) 1)))
     ;; Create a new frame if prompts are needed.
@@ -133,24 +145,6 @@ any new frames that are needed."
 	    (kill-emacs)))))
     ;; If we made a frame then kill it.
     (when (or modified-buffers active-clients-or-frames) (delete-frame new-frame))))
-
-(defun modified-buffers-exist ()
-  "This function will check to see if there are any buffers\
-that have been modified.  It will return true if there are
-and nil otherwise.  Buffers that have `buffer-offer-save' set to
-nil are ignored."
-  (let (modified-found)
-    (dolist (buffer (buffer-list))
-      (when (and (buffer-live-p buffer)
-		 (buffer-modified-p buffer)
-		 (not (buffer-base-buffer buffer))
-		 (or
-		  (buffer-file-name buffer)
-		  (progn
-		    (set-buffer buffer)
-		    (and buffer-offer-save (> (buffer-size) 0)))))
-	(setq modified-found t)))
-    modified-found))
 
 ;; https://www.emacswiki.org/emacs/misc-cmds.el
 (defun kill-buffer-and-its-windows (buffer &optional msgp)
@@ -242,36 +236,6 @@ REPEAT, FUNCTION, and rest of ARGS."
       (delete-file old-location) ;; removes from cache
       (setq recentf-list (delete old-location recentf-list)))))
 
-;; from crux.el
-(defun delete-file-and-buffer ()
-  "Kill the current buffer and deletes the file it is visiting."
-  (interactive)
-  (let ((filename (buffer-file-name)))
-    (when filename
-      (if (vc-backend filename)
-          (vc-delete-file filename)
-        (when (y-or-n-p (format "Are you sure you want to delete %s? " filename))
-          (delete-file filename delete-by-moving-to-trash)
-          (message "Deleted file %s" filename)
-          (kill-buffer))))))
-
-;; modified from: http://steve.yegge.googlepages.com/my-dot-emacs-file
-(defun rename-file-and-buffer (new-name)
-  "Renames both current buffer and file it's visiting to NEW-NAME."
-  (interactive "sNew name: ")
-  (let ((name (buffer-name))
-        (filename (buffer-file-name)))
-    (if (not filename)
-        (message "Buffer '%s' is not visiting a file!" name)
-      (if (get-buffer new-name)
-          (message "A buffer named '%s' already exists!" new-name)
-        (progn
-          (rename-file filename new-name 1)
-          (rename-buffer new-name)
-          (set-visited-file-name new-name)
-          (set-buffer-modified-p nil)
-          (setq recentf-list (delete filename recentf-list)))))))
-
 ;; https://www.emacswiki.org/emacs/misc-cmds.el
 (defun quit-window-delete (&optional window)
   "Quit WINDOW, deleting it, and bury its buffer.
@@ -329,39 +293,6 @@ Pass additional ARGS to function call."
   (let ((inhibit-message t)      ;Don't show the messages in Echo area
         (message-log-max nil))   ;Don't show the messages in the *Messages* buffer
     (apply orig-fun args)))
-
-(defun ssh-remote ()
-  "SSH remote."
-  (interactive)
-  (find-file (concat "/ssh:" (read-string "Username: ") "@" (read-string "IP Address: ") ":~/")))
-
-;; https://sqrtminusone.xyz/configs/emacs/#variables-and-environment
-(defun my/dump-bindings-recursive (prefix &optional level buffer)
-  "Dump keybindings starting with PREFIX in a tree like form.
-Optionally specify tree depth with LEVEL and current BUFFER."
-  (dolist (key (which-key--get-bindings (kbd prefix)))
-    (with-current-buffer buffer
-      (when level
-	(insert (make-string level ? )))
-      (insert (apply #'format "%s%s%s\n" key)))
-    (when (string-match-p
-	   (rx bos "+" (* nonl))
-	   (substring-no-properties (elt key 2)))
-      (my/dump-bindings-recursive
-       (concat prefix " " (substring-no-properties (car key)))
-       (+ 2 (or level 0))
-       buffer))))
-
-(defun my/dump-bindings (prefix)
-  "Dump keybindings starting with PREFIX in a tree-like form."
-  (interactive "sPrefix: ")
-  (let ((buffer (get-buffer-create "bindings")))
-    (with-current-buffer buffer
-      (erase-buffer))
-    (my/dump-bindings-recursive prefix 0 buffer)
-    (with-current-buffer buffer
-      (goto-char (point-min)))
-    (switch-to-buffer-other-window buffer)))
 
 (provide 'util-funcs)
 ;;; util-funcs.el ends here

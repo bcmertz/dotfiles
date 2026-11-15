@@ -6,6 +6,11 @@
 ;;;
 ;;; Code:
 
+(defun ssh-remote ()
+  "SSH remote."
+  (interactive)
+  (find-file (concat "/ssh:" (read-string "Username: ") "@" (read-string "IP Address: ") ":~/")))
+
 (use-package tramp
   :straight (:type built-in)
   :defer 0.1
