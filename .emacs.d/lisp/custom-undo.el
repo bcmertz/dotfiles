@@ -2,6 +2,8 @@
 ;;;
 ;;; Commentary:
 ;;;
+;;; undo behavior
+;;;
 ;;; Code:
 
 ;; use builtin undo commands, and vundo as overlay on top of them

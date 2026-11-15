@@ -2,6 +2,8 @@
 ;;;
 ;;; Commentary:
 ;;;
+;;; customize scrolling behavior
+;;;
 ;;; Code:
 
 ;; truncate long lines l/r horizontal scrolling

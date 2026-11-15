@@ -2,6 +2,8 @@
 ;;;
 ;;; Commentary:
 ;;;
+;;; dired config
+;;;
 ;;; Code:
 
 (use-package ls-lisp

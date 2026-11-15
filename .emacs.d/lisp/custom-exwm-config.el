@@ -1,6 +1,8 @@
 ;;; custom-exwm-config.el --- EXWM configuration -*- lexical-binding: t -*-
+;;;
 ;;; Commentary:
 ;;;
+;;; custom exwm config
 ;;;
 ;;; Code:
 
@@ -253,4 +255,4 @@
 ;;   (exwm-randr-enable))
 
 (provide 'custom-exwm-config)
-;;; custom-exwm-config ends here
+;;; custom-exwm-config.el ends here

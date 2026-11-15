@@ -2,6 +2,8 @@
 ;;;
 ;;; Commentary:
 ;;;
+;;; setup emacs theme
+;;;
 ;;; Code:
 
 (use-package util-funcs

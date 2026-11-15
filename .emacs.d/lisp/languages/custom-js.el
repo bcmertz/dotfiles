@@ -5,6 +5,7 @@
 ;;; snippets, keybindings
 ;;;
 ;;; Code:
+
 (use-package js
   :defer t
   :straight (:type built-in)

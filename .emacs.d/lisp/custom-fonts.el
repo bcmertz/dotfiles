@@ -2,6 +2,8 @@
 ;;;
 ;;; Commentary:
 ;;;
+;;; setup fonts
+;;;
 ;;; Code:
 
 (use-package util-funcs

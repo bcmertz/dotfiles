@@ -1,8 +1,8 @@
-;;; custom-music.el -*- lexical-binding: t -*-
+;;; custom-music.el --- music player config  -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;
-;;;
+;;; music player config
 ;;;
 ;;; Code:
 

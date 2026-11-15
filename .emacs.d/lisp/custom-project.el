@@ -2,6 +2,8 @@
 ;;;
 ;;; Commentary:
 ;;;
+;;; project config
+;;;
 ;;; Code:
 
 (defun project-save-all-buffers ()

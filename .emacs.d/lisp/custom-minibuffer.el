@@ -2,6 +2,8 @@
 ;;;
 ;;; Commentary:
 ;;;
+;;; minibuffer configuration
+;;;
 ;;; Code:
 
 (use-package util-funcs

@@ -2,6 +2,8 @@
 ;;;
 ;;; Commentary:
 ;;;
+;;;  remote file access
+;;;
 ;;; Code:
 
 (use-package tramp

@@ -2,6 +2,8 @@
 ;;;
 ;;; Commentary:
 ;;;
+;;; custom modeline config
+;;;
 ;;; Code:
 
 (use-package doom-modeline

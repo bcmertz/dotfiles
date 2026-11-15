@@ -2,6 +2,8 @@
 ;;;
 ;;; Commentary:
 ;;;
+;;; vue config
+;;;
 ;;; Code:
 
 (use-package vue-mode

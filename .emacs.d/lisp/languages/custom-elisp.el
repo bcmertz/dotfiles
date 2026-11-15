@@ -2,6 +2,8 @@
 ;;;
 ;;; Commentary:
 ;;;
+;;; elisp config
+;;;
 ;;; Code:
 
 ;; fontify elisp more semantically

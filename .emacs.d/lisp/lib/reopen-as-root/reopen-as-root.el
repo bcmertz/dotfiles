@@ -2,6 +2,8 @@
 ;;;
 ;;; Commentary:
 ;;;
+;;; check if file needs root permission to open and open as root if needed
+;;;
 ;;; Code:
 
 (defgroup reopen-as-root nil

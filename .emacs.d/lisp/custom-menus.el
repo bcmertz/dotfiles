@@ -2,6 +2,8 @@
 ;;;
 ;;; Commentary:
 ;;;
+;;; setup context right click menus
+;;;
 ;;; Code:
 
 (use-package util-funcs

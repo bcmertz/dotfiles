@@ -2,6 +2,8 @@
 ;;;
 ;;; Commentary:
 ;;;
+;;; cursor selection
+;;;
 ;;; Code:
 
 ;; move point (cursor) to mark (start of selection)

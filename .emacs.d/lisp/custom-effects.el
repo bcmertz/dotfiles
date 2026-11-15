@@ -1,7 +1,8 @@
 ;;; custom-effects.el --- custom effects -*- lexical-binding: t -*-
 ;;;
-;;; Commentary: graphical effects that could be fun
-;;; to setup later
+;;; Commentary:
+;;;
+;;; graphical effects that could be fun to setup later
 ;;;
 ;;; Code:
 

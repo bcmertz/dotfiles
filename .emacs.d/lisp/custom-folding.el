@@ -2,6 +2,8 @@
 ;;;
 ;;; Commentary:
 ;;;
+;;; code folding
+;;;
 ;;; Code:
 
 ;; builtin code folding

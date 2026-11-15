@@ -2,6 +2,7 @@
 ;;;
 ;;; Commentary:
 ;;;
+;;; arduino config
 ;;;
 ;;; Code:
 

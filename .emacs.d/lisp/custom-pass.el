@@ -2,6 +2,7 @@
 ;;;
 ;;; Commentary:
 ;;;
+;;; password and PGP config
 ;;;
 ;;; Code:
 
