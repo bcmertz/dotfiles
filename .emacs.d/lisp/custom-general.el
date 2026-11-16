@@ -10,9 +10,7 @@
   :straight (util-funcs :type nil :local-repo "~/.emacs.d/lisp/lib/util-funcs/"))
 
 ;; emacs-31 compatibility
-(use-package compat
-  :straight (:host github :repo "emacs-compat/compat" :commit 4769d459aacfd34dfeac3556bd5f019ab51b581a)
-  :if (version< emacs-version "31.1"))
+(use-package compat)
 
 ;; handle various warnings from flymake, nil faces, etc
 ;; (setq warning-suppress-log-types '((set-face-attribute)))

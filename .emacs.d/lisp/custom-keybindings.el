@@ -39,8 +39,7 @@ Optionally specify tree depth with LEVEL and current BUFFER."
   :straight (:type built-in))
 
 (use-package transient
-  :defer t
-  :straight (:type built-in))
+  :defer t)
 
 ;; Keystroke Completion
 (use-package which-key
