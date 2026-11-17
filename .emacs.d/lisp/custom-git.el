@@ -59,9 +59,9 @@ if we're in an Emacs config directory as well."
 
 ;; syntax highlighting on git diffs
 (if-gui (use-package magit-delta
-                 :config
-                 (setq magit-delta-default-dark-theme "Dracula")
-                 :hook (magit-mode . magit-delta-mode)))
+          :config
+          (setq magit-delta-default-dark-theme "Dracula")
+          :hook (magit-mode . magit-delta-mode)))
 ;; ;; alternative using tree-sitter enabled diffs
 ;; (use-package magit-difftastic
 ;;   :after magit
@@ -85,7 +85,7 @@ if we're in an Emacs config directory as well."
   :defer t
   :after magit
   :bind (:map magit-mode-map
-         ("C-c r" . github-review-forge-pr-at-point)))
+              ("C-c r" . github-review-forge-pr-at-point)))
 
 (use-package forge
   :defer t

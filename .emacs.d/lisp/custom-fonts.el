@@ -21,7 +21,7 @@
 (defmacro if-font (font code)
   "Execute some CODE if FONT exists."
   `(if (find-font (font-spec :name ,font))
-      ,code))
+       ,code))
 
 (defun styling/set-fonts()
   "Set the emoji and glyph fonts."
@@ -48,12 +48,12 @@
   "Set buffer font."
   (interactive "")
   (let* ((completion-ignore-case t)
-          (default (frame-parameter nil 'font))
-	  (font (completing-read (format-prompt "Font name" default)
-				 ;; x-list-fonts will fail with an error
-				 ;; if this frame doesn't support fonts.
-				 (font-family-list  (selected-frame))
-                                 nil nil nil nil default)))
+         (default (frame-parameter nil 'font))
+	 (font (completing-read (format-prompt "Font name" default)
+				;; x-list-fonts will fail with an error
+				;; if this frame doesn't support fonts.
+				(font-family-list  (selected-frame))
+                                nil nil nil nil default)))
     (when (or (stringp font) (fontp font))
       (setq buffer-face-mode-face (list ':family font))
       (buffer-face-mode))))

@@ -16,7 +16,7 @@
   (setq js-indent-level 2)
   :general
   (tyrant-def js-mode-map
-    "mf"  'js-find-symbol))
+              "mf"  'js-find-symbol))
 
 (provide 'custom-js)
 ;;; custom-js.el ends here

@@ -576,11 +576,11 @@ Can chain these comparisons by adding more (COMPn Vn) pairs afterwards.
           forms))))
 ;; PERF: Store in symbol plist for ultra-fast lookups at this scale.
 (setplist 'versionp! '(>  version-list-<
-                       >= version-list-<=
-                       <  version-list-<
-                       <= version-list-<=
-                       =  version-list-=
-                       /= version-list-=))
+                          >= version-list-<=
+                          <  version-list-<
+                          <= version-list-<=
+                          =  version-list-=
+                          /= version-list-=))
 
 (defmacro with-delayed-gc! (&rest body)
   "Evaluate BODY with GC deferred."
@@ -782,10 +782,10 @@ TYPE is a symbol representing one of Doom's dotfiles. It must be one of:
 Throws `doom-core-error' if TYPE is not a valid type. See `doom-config--alist'
 for possible values of TYPE."
   (or (plist-get '(project  ".doom"
-                   module   ".doommodule"
-                   modules  ".doommodules"
-                   profile  ".doomprofile"
-                   profiles ".doomprofiles")
+                            module   ".doommodule"
+                            modules  ".doommodules"
+                            profile  ".doomprofile"
+                            profiles ".doomprofiles")
                  type)
       (signal 'doom-core-error `(invalid-config-type ,type))))
 
@@ -1165,7 +1165,7 @@ All valid contexts:
     run        -- running a CLI command")
 (put 'doom-context 'valid
      '(compile error startup emacs docs reload sandbox eval module external
-       config doctor init package test cli run))
+               config doctor init package test cli run))
 (put 'doom-context 'risky-local-variable t)
 
 (defun doom-context-p (contexts)
