@@ -13,6 +13,8 @@
   (setq doom-modeline-lsp-icon t)
   (setq doom-modeline-lsp t)
   (setq doom-modeline-buffer-encoding nil)
+  (line-number-mode)
+  (column-number-mode)
   :init
   (defface doom-modeline-bar-inactive
     '((t (:background unspecified)))
