@@ -25,11 +25,17 @@
   (setq corfu-separator ?\s)             ;; Orderless field separator - space
   (setq corfu-popupinfo-delay 0.2)
   (setq corfu-preview-current nil)       ;; don't fill in selection cursor is on until enter
+
   (defun corfu-move-to-minibuffer ()
     (interactive)
-    (let ((completion-extra-properties corfu--extra)
-          completion-cycle-threshold completion-cycling)
-      (apply #'consult-completion-in-region completion-in-region--data)))
+    (pcase completion-in-region--data
+      (`(,beg ,end ,table ,pred ,extras)
+       (let ((completion-extra-properties extras)
+             completion-cycle-threshold completion-cycling)
+         (consult-completion-in-region beg end table pred)))))
+
+  (add-to-list 'corfu-continue-commands #'corfu-move-to-minibuffer)
+
   :bind
   ;; Configure SPC for separator insertion, plays nicely with orderless for completion
   (:map corfu-map (("SPC" . corfu-insert-separator)
