@@ -1,4 +1,6 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
+;; misspellings from https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings
+;; source - https://www.masteringemacs.org/article/correcting-typos-misspellings-abbrev
 (define-abbrev-table 'global-abbrev-table
   '(
     ("abandonned" "abandoned" nil :count 1)
@@ -4104,4 +4106,3 @@
     ("yuo" "you" nil :count 1)
     ("zeebra" "zebra" nil :count 1)
    ))
-
