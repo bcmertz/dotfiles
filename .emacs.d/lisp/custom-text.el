@@ -23,5 +23,8 @@
   :straight (:type built-in)
   :hook (text-mode . turn-on-text-mode))
 
+;; don't require two spaces after period
+(setq sentence-end-double-space nil)
+
 (provide 'custom-text)
 ;;; custom-text.el ends here

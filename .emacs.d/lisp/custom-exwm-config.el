@@ -143,7 +143,7 @@
           ?\C-\ ))  ;; Ctrl+Space
   ;; Ctrl+Q will enable the next key to be sent directly
   (define-key exwm-mode-map [?\C-q] 'exwm-input-send-next-key)
-  ;; Set up global key bindings.  These always work, no matter the input state!
+  ;; Set up global key bindings. These always work, no matter the input state!
   ;; Keep in mind that changing this list after EXWM initializes has no effect.
   (setq exwm-input-global-keys
         `(
