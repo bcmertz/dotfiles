@@ -71,8 +71,8 @@ buffer is not visiting a file."
             (remote-localname (file-remote-p default-directory 'localname)))
         (find-file (format "/%s:root@%s:%s"
                            (or remote-method (if (executable-find "doas")
-						       "doas"
-						     "sudo"))
+						 "doas"
+					       "sudo"))
                            (or remote-host "localhost")
                            (or remote-localname
                                (read-file-name "Find file (as root): ")))))

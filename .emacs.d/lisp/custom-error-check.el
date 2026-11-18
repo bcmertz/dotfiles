@@ -23,6 +23,8 @@
   (which-key-add-key-based-replacements "C-c e" "errors"))
 
 ;; TODO: WIP collect all diagnostics from project root / user specified dir
+;;
+;; https://lists.gnu.org/archive/html/bug-gnu-emacs/2026-10/msg01524.html
 (defun my/check-all-files-in-project ()
   "Check for diagnostics in all files in a selected directory."
   (interactive)

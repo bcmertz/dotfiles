@@ -28,7 +28,7 @@
 (defun ghostel-buffers-default ()
   "Return list of default non-project ghostel buffers."
   (let* ((bufs (seq-filter (lambda (buf) (string-prefix-p ghostel-buffer-name (buffer-name buf)))
-                         (ghostel-buffer-list))))
+                           (ghostel-buffer-list))))
     bufs))
 
 (defun toggle-terminal ()

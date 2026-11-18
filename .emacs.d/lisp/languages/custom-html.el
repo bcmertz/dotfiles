@@ -6,12 +6,19 @@
 ;;;
 ;;; Code:
 
+(defun web-comment-line (&optional N)
+  "Comment N lines if region is active else `web-mode' comment."
+  (interactive "p")
+  (if (region-active-p)
+      (comment-line N)
+    (web-mode-comment-or-uncomment)))
+
 (use-package web-mode
   :defer t
   :mode "\\.html\\'"
-  ;; TODO: figure this out
-  ;; :bind-keymap* (("M-;" . nil)
-  ;;               ("C-c C-l" . nil))
+  :bind (:map web-mode-map
+              ("M-;" . web-comment-line)
+              ("C-c C-l" . org-store-link))
   :config
   (setq web-mode-engines-alist
         '(("django"    . "\\.html\\'")))

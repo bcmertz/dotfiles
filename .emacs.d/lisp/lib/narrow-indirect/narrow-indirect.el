@@ -178,7 +178,7 @@
   "Narrow using an indirect buffer."
   :prefix "ni-" :group 'editing
   :link `(url-link :tag "Send Bug Report"
-          ,(concat "mailto:" "drew.adams" "@" "oracle" ".com?subject=\
+                   ,(concat "mailto:" "drew.adams" "@" "oracle" ".com?subject=\
 narrow-indirect.el bug: \
 &body=Describe bug here, starting with `emacs -q'.  \
 Don't forget to mention your Emacs and library versions."))
@@ -190,7 +190,7 @@ Don't forget to mention your Emacs and library versions."))
 (defcustom ni-narrowed-buf-name-max 60
   "Max length of cloned indirect buffer name, for narrowing commands."
   :type '(restricted-sexp :tag "Max length of buffer name" :match-alternatives ((lambda (x) (and (integerp x)  (> x 0))))
-          :value ignore)
+                          :value ignore)
   :group 'Narrow-Indirect)
 
 (defcustom ni-buf-name-prefix "I-"

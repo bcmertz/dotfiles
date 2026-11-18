@@ -9,12 +9,12 @@
 (use-package help
   :straight (:type built-in)
   :bind (:map help-mode-map
-         ("C-<left>" . help-go-back)
-         ("C-<right>" . help-go-forward)
-         ("i" . help-goto-info)
-         ("n" . help-goto-next-page)
-         ("I" . help-goto-lispref-info)
-         ("p" . help-goto-previous-page)))
+              ("C-<left>" . help-go-back)
+              ("C-<right>" . help-go-forward)
+              ("i" . help-goto-info)
+              ("n" . help-goto-next-page)
+              ("I" . help-goto-lispref-info)
+              ("p" . help-goto-previous-page)))
 
 (defun quit-helpful ()
   "Quit helpful buffer and kill other helpful buffers."

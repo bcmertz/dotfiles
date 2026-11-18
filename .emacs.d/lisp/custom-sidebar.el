@@ -9,28 +9,25 @@
 (use-package util-funcs
   :straight (util-funcs :type nil :local-repo "~/.emacs.d/lisp/lib/util-funcs/"))
 
-(use-package doom-lib
-  :straight (doom-lib :type nil :local-repo "~/.emacs.d/lisp/lib/doom-lib/"))
-
 ;; toggle neotree in project root directory
 (defun neotree-project-dir-toggle ()
-    "Open NeoTree at the project root."
-    (interactive)
-    (defvar project-dir)
-    (defvar file-name)
-    (defvar neo-smart-open)
-    (let ((project-dir (current-project-root))
-          (file-name (buffer-file-name))
-          (neo-smart-open t))
-      (if (and (fboundp 'neo-global--window-exists-p)
-               (neo-global--window-exists-p))
-          (neotree-hide)
-        (progn
-          (neotree-show)
-          (if project-dir
-              (neotree-dir project-dir))
-          (if file-name
-              (neotree-find file-name))))))
+  "Open NeoTree at the project root."
+  (interactive)
+  (defvar project-dir)
+  (defvar file-name)
+  (defvar neo-smart-open)
+  (let ((project-dir (current-project-root))
+        (file-name (buffer-file-name))
+        (neo-smart-open t))
+    (if (and (fboundp 'neo-global--window-exists-p)
+             (neo-global--window-exists-p))
+        (neotree-hide)
+      (progn
+        (neotree-show)
+        (if project-dir
+            (neotree-dir project-dir))
+        (if file-name
+            (neotree-find file-name))))))
 
 ;; Sidebar File navigation
 (use-package neotree ;; C-c C-c makes the focused directory the new root view
@@ -81,16 +78,17 @@
 ;; The cursor always sits at bol. `+neotree--fix-cursor-h' and
 ;; `+neotree--indent-cursor-a' change that behavior so that the cursor is
 ;; always on the first non-blank character on the line, in the neo buffer. (src - doom-emacs)
-(add-hook! 'neo-enter-hook
-  (defun +neotree-fix-cursor-h (&rest _)
-    (with-current-buffer neo-global--buffer
-      (+neotree--indent-cursor-a))))
-
-(defadvice! +neotree--indent-cursor-a (&rest _)
-  "Indent cursor."
-  :after '(neotree-next-line neotree-previous-line)
+(defun +neotree--indent-cursor-a (&rest _)
+  "Neotree indent cursor."
   (beginning-of-line)
   (skip-chars-forward " \t\r"))
+
+(add-hook 'neo-enter-hook '(lambda (&rest _)
+                             (with-current-buffer neo-global--buffer
+                               (+neotree--indent-cursor-a))))
+
+(advice-add 'neotree-next-line :after '+neotree--indent-cursor-a)
+(advice-add 'neotree-previous-line :after '+neotree--indent-cursor-a)
 
 (provide 'custom-sidebar)
 ;;; custom-sidebar.el ends here

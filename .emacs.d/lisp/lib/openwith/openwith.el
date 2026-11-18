@@ -1,9 +1,10 @@
 ;;; openwith.el --- Open files with external programs -*- lexical-binding: t -*-
 
-;; Modified 2022 by me
-;; github.com/bcmertz/dotfiles/.emacs.d/lisp/openwith.el
-
 ;; Copyright (C) 2007  Markus Triska
+;;
+;; Modified 2022 by me
+;;
+;; github.com/bcmertz/dotfiles/.emacs.d/lisp/openwith.el
 
 ;; Author: Markus Triska <markus.triska@gmx.at>
 ;; Keywords: files, processes

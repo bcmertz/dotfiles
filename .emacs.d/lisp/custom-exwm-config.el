@@ -109,9 +109,9 @@
 
   ;; Set the screen resolution (update this to be the correct resolution for your screen!)
   ;; (use-package exwm-randr
-    ;; :defer t
-    ;; :init
-    ;; )
+  ;; :defer t
+  ;; :init
+  ;; )
   (exwm-randr-mode)
   (start-process-shell-command "xrandr" nil "xrandr --output Virtual-1 --primary --mode 2048x1152 --pos 0x0 --rotate normal")
   ;; This will need to be updated to the name of a display!  You can find

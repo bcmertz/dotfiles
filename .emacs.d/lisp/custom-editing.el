@@ -49,8 +49,8 @@
 
 ;; delete trailing whitespace on save
 (add-hook 'before-save-hook (lambda()
-                               (when (not (or (derived-mode-p 'markdown-mode 'org-mode)))
-                                 (delete-trailing-whitespace))))
+                              (when (not (or (derived-mode-p 'markdown-mode 'org-mode)))
+                                (delete-trailing-whitespace))))
 
 ;; kills the entire line plus the newline whenever you invoke kill-line (i.e. via C-k).
 (setq kill-whole-line t)
@@ -186,18 +186,18 @@
 
 ;; delete don't kill backwards for M-del
 (defun delete-word (arg)
-    "Delete characters forward until encountering the end of a word.
+  "Delete characters forward until encountering the end of a word.
 With argument, do this ARG many times."
-    (interactive "p")
-    (if (use-region-p)
-        (delete-region (region-beginning) (region-end))
-      (delete-region (point) (progn (forward-word arg) (point)))))
+  (interactive "p")
+  (if (use-region-p)
+      (delete-region (region-beginning) (region-end))
+    (delete-region (point) (progn (forward-word arg) (point)))))
 
 (defun backward-delete-word (arg)
-    "Delete characters backward until encountering the end of a word.
+  "Delete characters backward until encountering the end of a word.
 Do this ARG many times."
-    (interactive "p")
-    (delete-word (- arg)))
+  (interactive "p")
+  (delete-word (- arg)))
 
 ;; http://xahlee.info/emacs/emacs/emacs_kill-ring.html
 (defun forward-delete-word (arg)

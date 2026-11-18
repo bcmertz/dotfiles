@@ -12,9 +12,9 @@
   (end-of-line)
   (if (string= major-mode "org-mode")
       (org-meta-return)
-      (progn
-        (newline-and-indent)
-        (indent-relative))))
+    (progn
+      (newline-and-indent)
+      (indent-relative))))
 
 ;; Turn org text into link and follow it to corresponding header
 (defun org-open-at-point-plaintext ()
