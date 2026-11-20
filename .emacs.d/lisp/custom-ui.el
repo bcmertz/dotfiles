@@ -1,8 +1,8 @@
-;;; custom-styling.el --- custom styling -*- lexical-binding: t -*-
+;;; custom-ui.el --- control appearance -*- lexical-binding: t -*-
 ;;;
 ;;; Commentary:
 ;;;
-;;; UI, highlighting
+;;; tabs, tool bar, indent bars, transparency, highlight line, etc
 ;;;
 ;;; Code:
 
@@ -87,6 +87,27 @@
   (setq cwm-centered-window-width 110)
   (centered-window-mode t))
 
+(use-package centaur-tabs
+  :demand
+  :config
+  (centaur-tabs-mode -1) ;; only use centaur-tab-history-mode
+  (setq centaur-tabs-height 32)
+  (setq centaur-tabs-set-icons t)
+  ;;  (setq centaur-tabs-set-bar 'left)
+  :bind
+  ("C-M-<left>" . centaur-tabs-backward)
+  ("C-M-<right>" . centaur-tabs-forward))
+
+(defun toggle-centaur-tabs ()
+  "Toggle centaur tabs mode."
+  (interactive)
+  (if (eq centaur-tabs-mode t)
+      (centaur-tabs-mode -1)
+    (centaur-tabs-mode 1)))
+
+;; toggle hl line mode
+(global-set-key (kbd "C-c t b") 'toggle-centaur-tabs)
+
 ;; remove ugly change in bg color in fringes
 ;; (set-face-attribute 'fringe nil :background nil)
 
@@ -154,5 +175,5 @@ CLICK-EVENT should be a mouse-click event."
                 #'my-describe-char-at-mouse-click)
 
 
-(provide 'custom-styling)
-;;; custom-styling.el ends here
+(provide 'custom-ui)
+;;; custom-ui.el ends here

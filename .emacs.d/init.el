@@ -35,7 +35,7 @@
 (measure-time(require 'custom-general))          ;; general configuration
 (measure-time(require 'custom-native-comp))      ;; native comp config
 (measure-time(require 'custom-keybindings))      ;; evil, suggestions
-(measure-time(require 'custom-styling))          ;; appearance
+(measure-time(require 'custom-ui))               ;; appearance
 (measure-time(require 'custom-themeing))         ;; themeing
 (measure-time(require 'custom-scrolling))        ;; scrolling
 (measure-time(require 'custom-fonts))            ;; fonts
