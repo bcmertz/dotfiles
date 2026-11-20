@@ -2,30 +2,9 @@
 ;;;
 ;;; Commentary:
 ;;;
-;;; tabs, moving and resizing windows / buffers
+;;; moving and resizing windows / buffers
 ;;;
 ;;; Code:
-
-(use-package centaur-tabs
-  :demand
-  :config
-  (centaur-tabs-mode -1) ;; only use centaur-tab-history-mode
-  (setq centaur-tabs-height 32)
-  (setq centaur-tabs-set-icons t)
-  ;;  (setq centaur-tabs-set-bar 'left)
-  :bind
-  ("C-M-<left>" . centaur-tabs-backward)
-  ("C-M-<right>" . centaur-tabs-forward))
-
-(defun toggle-centaur-tabs ()
-  "Toggle centaur tabs mode."
-  (interactive)
-  (if (eq centaur-tabs-mode t)
-      (centaur-tabs-mode -1)
-    (centaur-tabs-mode 1)))
-
-;; toggle hl line mode
-(global-set-key (kbd "C-c t b") 'toggle-centaur-tabs)
 
 ;; https://config.daviwil.com/emacs#control-buffer-placement
 (setq display-buffer-base-action
