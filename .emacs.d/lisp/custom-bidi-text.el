@@ -32,7 +32,7 @@
 (setq-default bidi-paragraph-direction 'left-to-right)
 
 (defun bidi-ltr-toggle ()
-  "Will switch the explicit direction of text for the current buffer.  This will set 'bidi-display-reordering' to t."
+  "Will switch the explicit direction of text for the current buffer. This will set 'bidi-display-reordering' to t."
   (interactive "")
   (setq-default bidi-display-reordering t)
   (if (equal bidi-paragraph-direction 'right-to-left)
